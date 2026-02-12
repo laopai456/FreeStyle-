@@ -1,0 +1,13 @@
+bin/
+obj/
+*.user
+*.suo
+*.csproj.user
+*.cache
+*.vs/
+.vs/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
