@@ -24,6 +24,9 @@ namespace FS服装搭配专家v1._0
                 MainWindow mainWindow = new MainWindow();
                 Console.WriteLine("主窗口创建完成");
                 
+                // 设置应用程序的主窗口
+                this.MainWindow = mainWindow;
+                
                 Console.WriteLine("显示主窗口");
                 mainWindow.Show();
                 Console.WriteLine("主窗口显示完成");
