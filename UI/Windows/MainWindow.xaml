@@ -520,7 +520,7 @@
                                 Margin="0">
                             <Grid Width="24" Height="24">
                                 <!-- 渐变背景 -->
-                                <Border Width="24" Height="24">
+                                <Border Width="24" Height="24" CornerRadius="4">
                                     <Border.Background>
                                         <LinearGradientBrush x:Name="IconGradient" StartPoint="-1,-1" EndPoint="2,2">
                                             <GradientStop Color="#FF667EEA" Offset="0" />
@@ -528,6 +528,13 @@
                                             <GradientStop Color="#FFC58AF9" Offset="1" />
                                         </LinearGradientBrush>
                                     </Border.Background>
+                                    <!-- 使用ImageBrush作为遮罩，确保只在图片非透明区域显示渐变 -->
+                                    <Border.OpacityMask>
+                                        <ImageBrush ImageSource="C:\Users\27507\Desktop\py\UI\FS服装搭配专家v1.0\template\vest-l.png" 
+                                                   Stretch="Uniform" 
+                                                   AlignmentX="Center" 
+                                                   AlignmentY="Center" />
+                                    </Border.OpacityMask>
                                     <Border.Triggers>
                                         <EventTrigger RoutedEvent="Border.Loaded">
                                             <BeginStoryboard>
@@ -547,12 +554,6 @@
                                         </EventTrigger>
                                     </Border.Triggers>
                                 </Border>
-                                <!-- 图标 -->
-                                <Image Source="C:\Users\27507\Desktop\py\UI\FS服装搭配专家v1.0\template\vest-l.png" 
-                                       Width="24" 
-                                       Height="24" 
-                                       Stretch="Uniform" 
-                                       Visibility="Visible" />
                             </Grid>
                         </Button>
                     </StackPanel>
