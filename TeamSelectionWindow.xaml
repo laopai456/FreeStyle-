@@ -1,0 +1,138 @@
+<Window x:Class="FS服装搭配专家v1._0.TeamSelectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="选择你的主队"
+        Height="600"
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="White">
+    <Window.Resources>
+        <!-- 颜色资源 -->
+        <SolidColorBrush x:Key="GlassCardColor" Color="#20FFFFFF" />
+        <SolidColorBrush x:Key="GlassBorderColor" Color="#4DFFFFFF" />
+        <SolidColorBrush x:Key="TextColor" Color="#FFFFFFFF" />
+        <SolidColorBrush x:Key="TitleTextColor" Color="#FFFFFFFF" />
+        <SolidColorBrush x:Key="ButtonGlassColor" Color="#25FFFFFF" />
+        <SolidColorBrush x:Key="ButtonGlassHoverColor" Color="#40FFFFFF" />
+        
+        <!-- 主容器样式 -->
+        <Style x:Key="MainContainer" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource GlassCardColor}" />
+            <Setter Property="CornerRadius" Value="16" />
+            <Setter Property="Margin" Value="20" />
+            <Setter Property="Padding" Value="24" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="{StaticResource GlassBorderColor}" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="32"
+                                      ShadowDepth="8"
+                                      Opacity="0.15"
+                                      Direction="270"
+                                      Color="#000000" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!-- 按钮样式 -->
+        <Style x:Key="GlassButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource ButtonGlassColor}" />
+            <Setter Property="Foreground" Value="{StaticResource TextColor}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="{StaticResource GlassBorderColor}" />
+            <Setter Property="Padding" Value="16,8" />
+            <Setter Property="Margin" Value="8" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FontWeight" Value="600" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder"
+                                CornerRadius="8"
+                                Background="{TemplateBinding Background}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              TextElement.Foreground="{TemplateBinding Foreground}"
+                                              TextElement.FontWeight="{TemplateBinding FontWeight}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource ButtonGlassHoverColor}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!-- 球队卡片样式 -->
+        <Style x:Key="TeamCard" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource GlassCardColor}" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="Margin" Value="8" />
+            <Setter Property="Padding" Value="12" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="{StaticResource GlassBorderColor}" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="8"
+                                      ShadowDepth="2"
+                                      Opacity="0.1"
+                                      Direction="270"
+                                      Color="#000000" />
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource ButtonGlassHoverColor}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    <!-- 渐变背景 -->
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#6a85b6" Offset="0" />
+                <GradientStop Color="#bac8e0" Offset="0.5" />
+                <GradientStop Color="#f0c9e8" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <!-- 主内容区域 -->
+        <Border Style="{StaticResource MainContainer}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="80" />
+                </Grid.RowDefinitions>
+                
+                <!-- 标题 -->
+                <Grid Grid.Row="0">
+                    <TextBlock Text="选择你的NBA主队" 
+                               FontSize="24" 
+                               FontWeight="Bold" 
+                               Foreground="{StaticResource TitleTextColor}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center" />
+                </Grid>
+                
+                <!-- 球队选择区域 -->
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                    <WrapPanel x:Name="TeamsWrapPanel" Orientation="Horizontal" HorizontalAlignment="Center" Margin="16" />
+                </ScrollViewer>
+                
+                <!-- 底部按钮 -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Content="取消" Style="{StaticResource GlassButton}" Click="Cancel_Click" />
+                    <Button Content="确定" Style="{StaticResource GlassButton}" Click="Confirm_Click" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
