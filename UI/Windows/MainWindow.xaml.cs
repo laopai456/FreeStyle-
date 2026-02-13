@@ -89,6 +89,116 @@ namespace FS服装搭配专家v1._0
             Console.WriteLine($"切换到皮肤 {currentSkinIndex + 1}");
         }
         
+        private void btnSkin_Click(object sender, RoutedEventArgs e)
+        {
+            // 切换到下一个皮肤颜色
+            currentSkinIndex = (currentSkinIndex + 1) % skinColors.Length;
+            
+            // 应用皮肤颜色到窗口
+            ApplySkin(skinColors[currentSkinIndex]);
+            
+            Console.WriteLine($"切换到皮肤 {currentSkinIndex + 1}");
+        }
+        
+        private void ApplySkin(SolidColorBrush skinColor)
+        {
+            // 应用皮肤颜色到窗口元素
+            // 这里可以根据需要修改窗口的各种元素颜色
+            // 例如：修改按钮背景、文本颜色、边框颜色等
+            
+            // 示例：修改换肤按钮的背景颜色
+            btnSkin.Background = skinColor;
+            
+            // 示例：修改其他窗口按钮的背景颜色
+            // 注意：这里需要根据实际的按钮名称进行修改
+            // 由于我们没有直接引用其他按钮，可以通过遍历视觉树来找到它们
+            ApplySkinToVisualTree(this, skinColor);
+        }
+        
+        private void ApplySkinToVisualTree(DependencyObject parent, SolidColorBrush skinColor)
+        {
+            // 遍历视觉树，应用皮肤颜色到所有元素
+            int childrenCount = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i = 0; i < childrenCount; i++)
+            {
+                DependencyObject child = VisualTreeHelper.GetChild(parent, i);
+                
+                // 应用皮肤颜色到按钮
+                if (child is System.Windows.Controls.Button button)
+                {
+                    // 修改窗口管理按钮和换肤按钮
+                    if (button.Name == "btnSkin" || button.Content.ToString() == "最小化" || button.Content.ToString() == "最大化" || button.Content.ToString() == "关闭")
+                    {
+                        button.Background = skinColor;
+                    }
+                }
+                
+                // 应用皮肤颜色到边框
+                if (child is System.Windows.Controls.Border border)
+                {
+                    // 修改主要容器边框
+                    if (border.CornerRadius.TopLeft == 16 && border.Margin.Top == 10)
+                    {
+                        border.Background = new SolidColorBrush(Color.FromArgb(21, skinColor.Color.R, skinColor.Color.G, skinColor.Color.B));
+                        border.BorderBrush = new SolidColorBrush(Color.FromArgb(77, skinColor.Color.R, skinColor.Color.G, skinColor.Color.B));
+                    }
+                    // 修改预览区域边框
+                    else if (border.CornerRadius.TopLeft == 16 && border.Height == 400)
+                    {
+                        border.Background = new SolidColorBrush(Color.FromArgb(21, skinColor.Color.R, skinColor.Color.G, skinColor.Color.B));
+                        border.BorderBrush = new SolidColorBrush(Color.FromArgb(77, skinColor.Color.R, skinColor.Color.G, skinColor.Color.B));
+                    }
+                    // 修改列表项边框
+                    else if (border.CornerRadius.TopLeft == 12 && border.Margin.Top == 4)
+                    {
+                        border.Background = new SolidColorBrush(Color.FromArgb(26, skinColor.Color.R, skinColor.Color.G, skinColor.Color.B));
+                        border.BorderBrush = new SolidColorBrush(Color.FromArgb(51, skinColor.Color.R, skinColor.Color.G, skinColor.Color.B));
+                    }
+                }
+                
+                // 应用皮肤颜色到文本块
+                if (child is System.Windows.Controls.TextBlock textBlock)
+                {
+                    // 修改标题文本颜色
+                    if (textBlock.FontWeight == FontWeights.Bold && textBlock.FontSize >= 18)
+                    {
+                        textBlock.Foreground = new SolidColorBrush(GetContrastColor(skinColor.Color));
+                    }
+                    // 修改正文文本颜色
+                    else if (textBlock.FontSize >= 14)
+                    {
+                        textBlock.Foreground = new SolidColorBrush(GetContrastColor(skinColor.Color));
+                    }
+                }
+                
+                // 应用皮肤颜色到标签控件
+                if (child is System.Windows.Controls.TabControl tabControl)
+                {
+                    // 修改标签控件的背景颜色
+                    tabControl.Background = new SolidColorBrush(Color.FromArgb(13, skinColor.Color.R, skinColor.Color.G, skinColor.Color.B));
+                }
+                
+                // 应用皮肤颜色到列表框
+                if (child is System.Windows.Controls.ListBox listBox)
+                {
+                    // 修改列表框的背景颜色
+                    listBox.Background = new SolidColorBrush(Color.FromArgb(13, skinColor.Color.R, skinColor.Color.G, skinColor.Color.B));
+                }
+                
+                // 递归处理子元素
+                ApplySkinToVisualTree(child, skinColor);
+            }
+        }
+        
+        private Color GetContrastColor(Color color)
+        {
+            // 计算颜色的亮度
+            double brightness = (0.299 * color.R + 0.587 * color.G + 0.114 * color.B) / 255;
+            
+            // 如果亮度大于0.5，返回黑色；否则返回白色
+            return brightness > 0.5 ? Colors.Black : Colors.White;
+        }
+        
         private void InitializeItemList()
         {
             // 添加示例服装数据

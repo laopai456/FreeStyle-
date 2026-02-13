@@ -499,12 +499,63 @@
             <!-- 顶部标题栏卡片 -->
             <Border Grid.Row="0" Style="{StaticResource TitleBarContainer}" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
                 <Grid Height="60">
-                    <TextBlock Text="FreeStyle" 
-                               FontSize="20" 
-                               FontWeight="Bold" 
-                               Foreground="White"
-                               VerticalAlignment="Center" 
-                               HorizontalAlignment="Left" />
+                    <StackPanel Orientation="Horizontal" 
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Left">
+                        <TextBlock Text="FreeStyle" 
+                                   FontSize="20" 
+                                   FontWeight="Bold" 
+                                   Foreground="White"
+                                   VerticalAlignment="Center" 
+                                   Margin="0,0,10,0" />
+                        <Button Name="btnSkin" 
+                                Width="40" 
+                                Height="40" 
+                                Click="btnSkin_Click"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                Padding="0"
+                                Margin="0">
+                            <Grid Width="24" Height="24">
+                                <!-- 渐变背景 -->
+                                <Border Width="24" Height="24">
+                                    <Border.Background>
+                                        <LinearGradientBrush x:Name="IconGradient" StartPoint="-1,-1" EndPoint="2,2">
+                                            <GradientStop Color="#FF667EEA" Offset="0" />
+                                            <GradientStop Color="#FF6DD5FA" Offset="0.5" />
+                                            <GradientStop Color="#FFC58AF9" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border.Triggers>
+                                        <EventTrigger RoutedEvent="Border.Loaded">
+                                            <BeginStoryboard>
+                                                <Storyboard RepeatBehavior="Forever">
+                                                    <PointAnimation 
+                                                        Storyboard.TargetName="IconGradient" 
+                                                        Storyboard.TargetProperty="StartPoint" 
+                                                        From="-1,-1" To="1,1" 
+                                                        Duration="0:0:3" />
+                                                    <PointAnimation 
+                                                        Storyboard.TargetName="IconGradient" 
+                                                        Storyboard.TargetProperty="EndPoint" 
+                                                        From="0,0" To="2,2" 
+                                                        Duration="0:0:3" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Border.Triggers>
+                                </Border>
+                                <!-- 图标 -->
+                                <Image Source="C:\Users\27507\Desktop\py\UI\FS服装搭配专家v1.0\template\vest-l.png" 
+                                       Width="24" 
+                                       Height="24" 
+                                       Stretch="Uniform" 
+                                       Visibility="Visible" />
+                            </Grid>
+                        </Button>
+                    </StackPanel>
                     <StackPanel Orientation="Horizontal" 
                                 HorizontalAlignment="Right" 
                                 VerticalAlignment="Top" 

@@ -4,9 +4,24 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows;
 
 namespace FS服装搭配专家v1._0
 {
+    /// <summary>
+    /// 应用程序入口点
+    /// </summary>
+    public class Program
+    {
+        [STAThread]
+        public static void Main(string[] args)
+        {
+            App app = new App();
+            app.Run();
+        }
+    }
+
     /// <summary>
     /// 皮肤数据结构
     /// </summary>
@@ -94,6 +109,7 @@ namespace FS服装搭配专家v1._0
     public class SkinManager
     {
         private const string SkinConfigFile = "skins.ini";
+        private const string TemplateFolder = "template";
         private List<SkinData> skins;
         private SkinData currentSkin;
 
@@ -115,6 +131,9 @@ namespace FS服装搭配专家v1._0
 
             // 添加默认皮肤
             AddDefaultSkins();
+
+            // 从模板图片生成皮肤
+            AddSkinsFromTemplates();
 
             // 从配置文件加载自定义皮肤
             if (File.Exists(SkinConfigFile))
@@ -175,6 +194,169 @@ namespace FS服装搭配专家v1._0
         }
 
         /// <summary>
+        /// 从模板图片生成皮肤
+        /// </summary>
+        private void AddSkinsFromTemplates()
+        {
+            try
+            {
+                // 检查template文件夹是否存在
+                // 尝试多个可能的路径
+                string[] possiblePaths = {
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, TemplateFolder),
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", TemplateFolder),
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", TemplateFolder)
+                };
+                
+                string templatePath = null;
+                foreach (var path in possiblePaths)
+                {
+                    if (Directory.Exists(path))
+                    {
+                        templatePath = path;
+                        break;
+                    }
+                }
+                
+                if (templatePath != null)
+                {
+                    // 获取template文件夹中的图片文件
+                    string[] imageExtensions = { ".jpg", ".jpeg", ".png", ".bmp" };
+                    var imageFiles = Directory.GetFiles(templatePath)
+                        .Where(file => imageExtensions.Contains(Path.GetExtension(file).ToLower()))
+                        .ToList();
+
+                    // 为每个图片文件生成皮肤
+                    foreach (var imageFile in imageFiles)
+                    {
+                        try
+                        {
+                            string skinName = Path.GetFileNameWithoutExtension(imageFile);
+                            if (!skins.Any(s => s.Name == skinName))
+                            {
+                                // 从图片中提取颜色
+                                Color dominantColor = GetDominantColorFromImage(imageFile);
+                                
+                                // 创建基于图片颜色的皮肤
+                                SkinData skin = new SkinData(
+                                    skinName,
+                                    dominantColor,
+                                    AdjustColorBrightness(dominantColor, 0.9f),
+                                    AdjustColorBrightness(dominantColor, 0.8f),
+                                    GetContrastColor(dominantColor),
+                                    AdjustColorBrightness(dominantColor, 0.7f),
+                                    AdjustColorBrightness(dominantColor, 0.95f),
+                                    AdjustColorBrightness(dominantColor, 0.85f)
+                                );
+                                
+                                skins.Add(skin);
+                            }
+                        }
+                        catch
+                        {
+                            // 处理单个图片失败，继续处理其他图片
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                // 处理文件夹访问失败
+            }
+        }
+
+        /// <summary>
+        /// 从图片中提取主色调
+        /// </summary>
+        /// <param name="imagePath">图片路径</param>
+        /// <returns>主色调</returns>
+        private Color GetDominantColorFromImage(string imagePath)
+        {
+            try
+            {
+                // 加载图片
+                BitmapImage bitmap = new BitmapImage(new Uri(imagePath));
+                FormatConvertedBitmap formattedBitmap = new FormatConvertedBitmap(bitmap, PixelFormats.Bgr32, null, 0);
+                int width = formattedBitmap.PixelWidth;
+                int height = formattedBitmap.PixelHeight;
+                int stride = width * 4; // 4 bytes per pixel (B, G, R, A)
+                byte[] pixels = new byte[height * stride];
+                formattedBitmap.CopyPixels(pixels, stride, 0);
+
+                // 计算颜色频率
+                Dictionary<Color, int> colorFrequency = new Dictionary<Color, int>();
+                for (int i = 0; i < pixels.Length; i += 4)
+                {
+                    byte b = pixels[i];
+                    byte g = pixels[i + 1];
+                    byte r = pixels[i + 2];
+                    Color color = Color.FromRgb(r, g, b);
+
+                    if (colorFrequency.ContainsKey(color))
+                    {
+                        colorFrequency[color]++;
+                    }
+                    else
+                    {
+                        colorFrequency[color] = 1;
+                    }
+                }
+
+                // 找出出现频率最高的颜色
+                Color dominantColor = Colors.LightPink; // 默认颜色
+                int maxFrequency = 0;
+                foreach (var kvp in colorFrequency)
+                {
+                    if (kvp.Value > maxFrequency)
+                    {
+                        maxFrequency = kvp.Value;
+                        dominantColor = kvp.Key;
+                    }
+                }
+
+                return dominantColor;
+            }
+            catch
+            {
+                // 处理图片加载失败，返回默认颜色
+                return Colors.LightPink;
+            }
+        }
+
+        /// <summary>
+        /// 调整颜色亮度
+        /// </summary>
+        /// <param name="color">原始颜色</param>
+        /// <param name="factor">亮度调整因子（小于1变暗，大于1变亮）</param>
+        /// <returns>调整后的颜色</returns>
+        private Color AdjustColorBrightness(Color color, float factor)
+        {
+            float r = color.R * factor;
+            float g = color.G * factor;
+            float b = color.B * factor;
+
+            return Color.FromRgb(
+                (byte)Math.Max(0, Math.Min(255, r)),
+                (byte)Math.Max(0, Math.Min(255, g)),
+                (byte)Math.Max(0, Math.Min(255, b))
+            );
+        }
+
+        /// <summary>
+        /// 获取与给定颜色对比度高的颜色
+        /// </summary>
+        /// <param name="color">原始颜色</param>
+        /// <returns>对比色</returns>
+        private Color GetContrastColor(Color color)
+        {
+            // 计算颜色的亮度
+            double brightness = (0.299 * color.R + 0.587 * color.G + 0.114 * color.B) / 255;
+            
+            // 如果亮度大于0.5，返回黑色；否则返回白色
+            return brightness > 0.5 ? Colors.Black : Colors.White;
+        }
+
+        /// <summary>
         /// 保存皮肤配置
         /// </summary>
         public void SaveSkins()
@@ -187,8 +369,8 @@ namespace FS服装搭配专家v1._0
                     writer.WriteLine("# 格式: 名称|背景色|按钮色|边框色|文本色|分组框边框色|组合框基色|组合框边框色");
                     writer.WriteLine();
 
-                    // 只保存自定义皮肤（非默认皮肤）
-                    foreach (SkinData skin in skins.Where(s => !IsDefaultSkin(s)))
+                    // 只保存自定义皮肤（非默认皮肤和非模板皮肤）
+                    foreach (SkinData skin in skins.Where(s => !IsDefaultSkin(s) && !IsTemplateSkin(s)))
                     {
                         writer.WriteLine(skin.ToString());
                     }
@@ -212,6 +394,46 @@ namespace FS服装搭配专家v1._0
         }
 
         /// <summary>
+        /// 判断是否为模板皮肤
+        /// </summary>
+        /// <param name="skin">皮肤数据</param>
+        /// <returns>是否为模板皮肤</returns>
+        private bool IsTemplateSkin(SkinData skin)
+        {
+            try
+            {
+                // 检查skin.Name是否对应template文件夹中的图片文件
+                // 尝试多个可能的路径
+                string[] possiblePaths = {
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, TemplateFolder),
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", TemplateFolder),
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", TemplateFolder)
+                };
+                
+                foreach (var templatePath in possiblePaths)
+                {
+                    if (Directory.Exists(templatePath))
+                    {
+                        string[] imageExtensions = { ".jpg", ".jpeg", ".png", ".bmp" };
+                        foreach (var extension in imageExtensions)
+                        {
+                            string expectedFilePath = Path.Combine(templatePath, skin.Name + extension);
+                            if (File.Exists(expectedFilePath))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                // 处理文件夹访问失败
+            }
+            return false;
+        }
+
+        /// <summary>
         /// 添加新皮肤
         /// </summary>
         /// <param name="skin">皮肤数据</param>
@@ -230,8 +452,9 @@ namespace FS服装搭配专家v1._0
         /// <param name="skinName">皮肤名称</param>
         public void RemoveSkin(string skinName)
         {
-            // 不允许删除默认皮肤
-            if (!IsDefaultSkin(new SkinData { Name = skinName }))
+            // 不允许删除默认皮肤和模板皮肤
+            SkinData tempSkin = new SkinData { Name = skinName };
+            if (!IsDefaultSkin(tempSkin) && !IsTemplateSkin(tempSkin))
             {
                 skins.RemoveAll(s => s.Name == skinName);
                 SaveSkins();
@@ -244,11 +467,15 @@ namespace FS服装搭配专家v1._0
         /// <param name="skin">皮肤数据</param>
         public void UpdateSkin(SkinData skin)
         {
-            int index = skins.FindIndex(s => s.Name == skin.Name);
-            if (index >= 0)
+            // 不允许更新默认皮肤和模板皮肤
+            if (!IsDefaultSkin(skin) && !IsTemplateSkin(skin))
             {
-                skins[index] = skin;
-                SaveSkins();
+                int index = skins.FindIndex(s => s.Name == skin.Name);
+                if (index >= 0)
+                {
+                    skins[index] = skin;
+                    SaveSkins();
+                }
             }
         }
 
