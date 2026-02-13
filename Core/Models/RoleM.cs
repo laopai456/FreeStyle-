@@ -19,6 +19,16 @@ namespace FS服装搭配专家v1._0
         // (set)
         public string RolePath { get; set; }
 
+        // Token: 0x1700000C RID: 12
+        // (get)
+        // (set)
+        public string RoleName { get; set; }
+
+        // Token: 0x1700000D RID: 13
+        // (get)
+        // (set)
+        public string CHSRoleName { get; set; }
+
         // Token: 0x17000021 RID: 33
         // (get)
         // (set)

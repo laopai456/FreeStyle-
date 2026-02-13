@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -136,21 +138,6 @@ namespace FS服装搭配专家v1._0
             }
         }
 
-        // Token: 0x0600009B RID: 155 RVA: 0x0000ED9C File Offset: 0x0000CF9C
-        public static int PrintFileVersionInfo(string fileName)
-        {
-            int result = 0;
-            try
-            {
-                FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(fileName);
-                result = File.ReadAllBytes(fileName).Length;
-            }
-            catch (Exception ex)
-            {
-            }
-            return result;
-        }
-
         // Token: 0x0600009C RID: 156 RVA: 0x0000EDE0 File Offset: 0x0000CFE0
         public static string ConvertBig5(string str, bool toBig5)
         {
@@ -208,5 +195,112 @@ namespace FS服装搭配专家v1._0
                 return false;
             }
         }
+
+        // Token: 0x060000F9 RID: 249
+        [DllImport("kernel32", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern int LCMapString(int Locale, int dwMapFlags, string lpSrcStr, int cchSrc, [Out] string lpDestStr, int cchDest);
+
+        // Token: 0x060000FA RID: 250 RVA: 0x00017F14 File Offset: 0x00016114
+        public static string ToSimplified(string source)
+        {
+            string text = new string(' ', source.Length);
+            int num = LCMapString(2048, 33554432, source, source.Length, text, source.Length);
+            return text;
+        }
+
+        // Token: 0x06000100 RID: 256 RVA: 0x000182A8 File Offset: 0x000164A8
+        public static bool IsFileInUse(string fileName)
+        {
+            bool result = true;
+            FileStream fileStream = null;
+            try
+            {
+                fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.None);
+                result = false;
+            }
+            catch
+            {
+            }
+            finally
+            {
+                if (fileStream != null)
+                {
+                    fileStream.Close();
+                }
+            }
+            return result;
+        }
+
+        // Token: 0x06000106 RID: 262 RVA: 0x000184B8 File Offset: 0x000166B8
+        public static int PrintFileVersionInfo(string path)
+        {
+            FileInfo fileInfo = null;
+            try
+            {
+                fileInfo = new FileInfo(path);
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+            int result;
+            if (fileInfo != null && fileInfo.Exists)
+            {
+                result = Convert.ToInt32((double)fileInfo.Length / 1024.0);
+            }
+            else
+            {
+                result = 0;
+            }
+            return result;
+        }
+
+        // Token: 0x06000105 RID: 261 RVA: 0x00018484 File Offset: 0x00016684
+        public static void Delay(int milliSecond)
+        {
+            int tickCount = Environment.TickCount;
+            while (Math.Abs(Environment.TickCount - tickCount) < milliSecond)
+            {
+                // 移除 Application.DoEvents()，使用 Thread.Sleep 代替
+                System.Threading.Thread.Sleep(1);
+            }
+        }
+
+        // Token: 0x060000F7 RID: 247 RVA: 0x00017DC8 File Offset: 0x00015FC8
+        public static void CopyDir(string srcPath, string aimPath)
+        {
+            try
+            {
+                if (aimPath[aimPath.Length - 1] != Path.DirectorySeparatorChar)
+                {
+                    aimPath += Path.DirectorySeparatorChar;
+                }
+                if (!Directory.Exists(aimPath))
+                {
+                    Directory.CreateDirectory(aimPath);
+                }
+                string[] files = Directory.GetFiles(srcPath);
+                foreach (string text in files)
+                {
+                    if (!File.Exists(aimPath + Path.GetFileName(text)))
+                    {
+                        File.Copy(text, aimPath + Path.GetFileName(text), true);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        // Token: 0x0400011A RID: 282
+        private const int LOCALE_SYSTEM_DEFAULT = 2048;
+
+        // Token: 0x0400011B RID: 283
+        private const int LCMAP_SIMPLIFIED_CHINESE = 33554432;
+
+        // Token: 0x0400011C RID: 284
+        private const int LCMAP_TRADITIONAL_CHINESE = 67108864;
     }
 }
