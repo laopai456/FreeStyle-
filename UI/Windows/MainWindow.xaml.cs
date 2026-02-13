@@ -21,6 +21,9 @@ namespace FS服装搭配专家v1._0
             new SolidColorBrush(Color.FromRgb(255, 182, 193)), // 浅红色
         };
 
+        // 皮肤管理器
+        private SkinManager skinManager;
+
         // 核心变量
         private List<FS服装搭配专家v1._0.ItemshopM> list = new List<FS服装搭配专家v1._0.ItemshopM>();
         private string cookiename = "cookies";
@@ -81,6 +84,11 @@ namespace FS服装搭配专家v1._0
                     labErrorMsg.Text = "欢迎使用 FreeStyle 服装搭配专家\n请按照以下步骤操作:\n1. 点击'加载图片'按钮获取服装图标\n2. 在服装列表中选择要预览的服装\n3. 设置当前装备和目标装备\n4. 点击'更新搭配'完成操作"; 
                     labErrorMsg.Visibility = Visibility.Visible;
                 });
+                
+                // 初始化皮肤管理器
+                Console.WriteLine("初始化皮肤管理器...");
+                skinManager = new SkinManager();
+                Console.WriteLine("皮肤管理器初始化完成");
                 
                 // 初始化服装列表数据
                 Console.WriteLine("初始化服装列表数据...");

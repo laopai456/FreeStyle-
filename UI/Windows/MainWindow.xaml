@@ -501,84 +501,148 @@
             <!-- 顶部导航栏 -->
             <Border Grid.Row="0" Style="{StaticResource TitleBarContainer}" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
                 <Grid>
-                    <!-- 标题和图标 -->
-                    <StackPanel Orientation="Horizontal" 
-                                VerticalAlignment="Center" 
-                                HorizontalAlignment="Left">
-                        <Button Name="btnSkin" 
-                                Width="40" 
-                                Height="40" 
-                                Click="btnSkin_Click"
-                                Background="Transparent"
-                                BorderBrush="Transparent"
-                                BorderThickness="0"
-                                Cursor="Hand"
-                                Padding="0"
-                                Margin="0">
-                            <Grid Width="24" Height="24">
-                                <!-- 渐变背景 -->
-                                <Border Width="24" Height="24" CornerRadius="4">
-                                    <Border.Background>
-                                        <LinearGradientBrush x:Name="IconGradient" StartPoint="-1,-1" EndPoint="2,2">
-                                            <GradientStop Color="#FF667EEA" Offset="0" />
-                                            <GradientStop Color="#FF6DD5FA" Offset="0.5" />
-                                            <GradientStop Color="#FFC58AF9" Offset="1" />
-                                        </LinearGradientBrush>
-                                    </Border.Background>
-                                    <!-- 使用ImageBrush作为遮罩，确保只在图片非透明区域显示渐变 -->
-                                    <Border.OpacityMask>
-                                        <ImageBrush ImageSource="D:\py\反编译\FreeStyle\template\vest-l.png" 
-                                                   Stretch="Uniform" 
-                                                   AlignmentX="Center" 
-                                                   AlignmentY="Center" />
-                                    </Border.OpacityMask>
-                                    <Border.Triggers>
-                                        <EventTrigger RoutedEvent="Border.Loaded">
-                                            <BeginStoryboard>
-                                                <Storyboard RepeatBehavior="Forever">
-                                                    <PointAnimation 
-                                                        Storyboard.TargetName="IconGradient" 
-                                                        Storyboard.TargetProperty="StartPoint" 
-                                                        From="-1,-1" To="1,1" 
-                                                        Duration="0:0:3" />
-                                                    <PointAnimation 
-                                                        Storyboard.TargetName="IconGradient" 
-                                                        Storyboard.TargetProperty="EndPoint" 
-                                                        From="0,0" To="2,2" 
-                                                        Duration="0:0:3" />
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                
+                <!-- 标题和图标 -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" 
+                            VerticalAlignment="Center" 
+                            HorizontalAlignment="Left">
+                    <TextBlock Text="FreeStyle" 
+                               FontSize="16" 
+                               FontWeight="Bold" 
+                               Foreground="White"
+                               VerticalAlignment="Center" 
+                               Margin="0,0,8,0" />
+                    <Button Name="btnSkin" 
+                            Width="24" 
+                            Height="24" 
+                            MinWidth="24" 
+                            MinHeight="24" 
+                            MaxWidth="24" 
+                            MaxHeight="24" 
+                            Click="btnSkin_Click"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Padding="2"
+                            Margin="0,0,4,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="ButtonBorder" 
+                                        CornerRadius="6" 
+                                        Background="Transparent"
+                                        BorderThickness="1"
+                                        BorderBrush="Transparent">
+                                    <ContentPresenter x:Name="ContentPresenter" 
+                                                      Content="{TemplateBinding Content}"
+                                                      HorizontalAlignment="Center" 
+                                                      VerticalAlignment="Center" />
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal" />
+                                            <VisualState x:Name="MouseOver">
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetName="ButtonBorder" 
+                                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
+                                                                    To="#40FFFFFF" 
+                                                                    Duration="0:0:0.2" />
+                                                    <ColorAnimation Storyboard.TargetName="ButtonBorder" 
+                                                                    Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" 
+                                                                    To="#60FFFFFF" 
+                                                                    Duration="0:0:0.2" />
                                                 </Storyboard>
-                                            </BeginStoryboard>
-                                        </EventTrigger>
-                                    </Border.Triggers>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetName="ButtonBorder" 
+                                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
+                                                                    To="#60FFFFFF" 
+                                                                    Duration="0:0:0.1" />
+                                                    <ColorAnimation Storyboard.TargetName="ButtonBorder" 
+                                                                    Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" 
+                                                                    To="#80FFFFFF" 
+                                                                    Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
                                 </Border>
-                            </Grid>
-                        </Button>
-                        <TextBlock Text="FreeStyle 服装搭配专家" 
-                                   FontSize="16" 
-                                   FontWeight="Bold" 
-                                   Foreground="White"
-                                   VerticalAlignment="Center" 
-                                   Margin="12,0,0,0" />
-                    </StackPanel>
-                    
-                    <!-- 窗口控制按钮 -->
-                    <StackPanel Orientation="Horizontal" 
-                                HorizontalAlignment="Right" 
-                                VerticalAlignment="Center">
-                        <Button Content="最小化" 
-                                Width="70" 
-                                Style="{StaticResource WindowButton}" 
-                                Click="Minimize_Click" />
-                        <Button Content="最大化" 
-                                Width="70" 
-                                Style="{StaticResource WindowButton}" 
-                                Click="Maximize_Click" />
-                        <Button Content="关闭" 
-                                Width="70" 
-                                Style="{StaticResource WindowButton}" 
-                                Click="Close_Click" />
-                    </StackPanel>
-                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Grid>
+                            <Grid.Triggers>
+                                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard RepeatBehavior="Forever">
+                                            <DoubleAnimation Storyboard.TargetName="GradientStop1" 
+                                                             Storyboard.TargetProperty="Offset" 
+                                                             From="0" To="1" 
+                                                             Duration="4" 
+                                                             AutoReverse="True" />
+                                            <DoubleAnimation Storyboard.TargetName="GradientStop2" 
+                                                             Storyboard.TargetProperty="Offset" 
+                                                             From="0.5" To="1.5" 
+                                                             Duration="4" 
+                                                             AutoReverse="True" />
+                                            <DoubleAnimation Storyboard.TargetName="GradientStop3" 
+                                                             Storyboard.TargetProperty="Offset" 
+                                                             From="1" To="2" 
+                                                             Duration="4" 
+                                                             AutoReverse="True" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Grid.Triggers>
+                            <!-- 渐变背景，只在背心区域显示 -->
+                            <Rectangle>
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop x:Name="GradientStop1" Color="#FF667EEA" Offset="0" />
+                                        <GradientStop x:Name="GradientStop2" Color="#FF6DD5FA" Offset="0.5" />
+                                        <GradientStop x:Name="GradientStop3" Color="#FFC58AF9" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                                <Rectangle.OpacityMask>
+                                    <ImageBrush ImageSource="D:\py\反编译\FreeStyle\template\vest-l.png" 
+                                               Stretch="Uniform" />
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <!-- 原始背心图片，降低透明度以让渐变效果更加明显 -->
+                            <Image Source="D:\py\反编译\FreeStyle\template\vest-l.png" 
+                                   Stretch="Uniform" 
+                                   Opacity="0.5" />
+                        </Grid>
+                    </Button>
+                </StackPanel>
+                
+                <!-- 占位列 -->
+                <Grid Grid.Column="1" />
+                
+                <!-- 窗口控制按钮 -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" 
+                            HorizontalAlignment="Right" 
+                            VerticalAlignment="Center">
+                    <Button Content="最小化" 
+                            Width="70" 
+                            Style="{StaticResource WindowButton}" 
+                            Click="Minimize_Click" />
+                    <Button Content="最大化" 
+                            Width="70" 
+                            Style="{StaticResource WindowButton}" 
+                            Click="Maximize_Click" />
+                    <Button Content="关闭" 
+                            Width="70" 
+                            Style="{StaticResource WindowButton}" 
+                            Click="Close_Click" />
+                </StackPanel>
+            </Grid>
             </Border>
             
             <!-- 中间内容 -->

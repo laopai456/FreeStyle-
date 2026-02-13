@@ -10,4 +10,9 @@
     <ApplicationIcon>icon\favicon.ico</ApplicationIcon>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Resource Include="template\*.png" />
+    <Resource Include="template\*.jpg" />
+  </ItemGroup>
+
 </Project>
