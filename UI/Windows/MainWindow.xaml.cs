@@ -51,88 +51,114 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
-                Console.WriteLine("=== 主窗口初始化开始 ===");
+                // 创建日志文件路径
+                string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "mainwindow.log");
                 
-                // 记录初始化前的状态
-                Console.WriteLine("开始InitializeComponent()...");
+                // 确保日志文件所在目录存在
+                string logDir = Path.GetDirectoryName(logFilePath);
+                if (!Directory.Exists(logDir))
+                {
+                    Directory.CreateDirectory(logDir);
+                }
+                
+                // 写入初始化开始日志
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] === 主窗口初始化开始 ===");
+                }
+                
+                // 调用InitializeComponent
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] 开始InitializeComponent()...");
+                }
                 InitializeComponent();
-                Console.WriteLine("InitializeComponent()完成");
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] InitializeComponent()完成");
+                }
                 
-                // 强制设置窗口属性
-                Console.WriteLine("设置窗口属性...");
+                // 设置窗口属性
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] 设置窗口属性...");
+                }
                 this.Width = 1400;
                 this.Height = 720;
                 this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 this.WindowState = WindowState.Normal;
                 this.Visibility = Visibility.Visible;
                 
-                // 记录设置后的状态
-                Console.WriteLine($"窗口宽度: {this.Width}");
-                Console.WriteLine($"窗口高度: {this.Height}");
-                Console.WriteLine($"窗口启动位置: {this.WindowStartupLocation}");
-                Console.WriteLine($"窗口状态: {this.WindowState}");
-                Console.WriteLine($"窗口可见性: {this.Visibility}");
-                
-                // 确保窗口激活和焦点
-                Console.WriteLine("激活窗口并获取焦点...");
-                this.Activate();
-                this.Focus();
-                
-                // 显示初始化提示
-                this.Dispatcher.Invoke(() =>
+                // 写入窗口状态日志
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
                 {
-                    labErrorMsg.Text = "欢迎使用 FreeStyle 服装搭配专家\n请按照以下步骤操作:\n1. 点击'加载图片'按钮获取服装图标\n2. 在服装列表中选择要预览的服装\n3. 设置当前装备和目标装备\n4. 点击'更新搭配'完成操作"; 
-                    labErrorMsg.Visibility = Visibility.Visible;
-                });
+                    writer.WriteLine($"[{DateTime.Now}] 窗口宽度: {this.Width}");
+                    writer.WriteLine($"[{DateTime.Now}] 窗口高度: {this.Height}");
+                    writer.WriteLine($"[{DateTime.Now}] 窗口启动位置: {this.WindowStartupLocation}");
+                    writer.WriteLine($"[{DateTime.Now}] 窗口状态: {this.WindowState}");
+                    writer.WriteLine($"[{DateTime.Now}] 窗口可见性: {this.Visibility}");
+                }
                 
                 // 初始化皮肤管理器
-                Console.WriteLine("初始化皮肤管理器...");
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] 初始化皮肤管理器...");
+                }
                 skinManager = new SkinManager();
-                Console.WriteLine("皮肤管理器初始化完成");
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] 皮肤管理器初始化完成");
+                }
+                
+                // 显示初始化提示
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] 显示初始化提示...");
+                }
+                labErrorMsg.Text = "正在初始化配置...";
+                labErrorMsg.Visibility = Visibility.Visible;
                 
                 // 初始化服装列表数据
-                Console.WriteLine("初始化服装列表数据...");
-                InitializeItemList();
-                Console.WriteLine("服装列表数据初始化完成");
-                
-                // 再次确认窗口状态
-                Console.WriteLine($"最终窗口状态: {this.WindowState}");
-                Console.WriteLine($"最终窗口可见性: {this.Visibility}");
-                Console.WriteLine($"最终窗口大小: {this.Width}, {this.Height}");
-                Console.WriteLine("=== 主窗口初始化完成 ===");
-                
-                // 写入日志文件
-                string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "mainwindow.log");
-                using (StreamWriter writer = new StreamWriter(logFilePath))
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
                 {
-                    writer.WriteLine($"=== 主窗口初始化日志 ===");
-                    writer.WriteLine($"初始化时间: {DateTime.Now}");
-                    writer.WriteLine($"窗口宽度: {this.Width}");
-                    writer.WriteLine($"窗口高度: {this.Height}");
-                    writer.WriteLine($"窗口状态: {this.WindowState}");
-                    writer.WriteLine($"窗口可见性: {this.Visibility}");
-                    writer.WriteLine("=== 初始化完成 ===");
+                    writer.WriteLine($"[{DateTime.Now}] 初始化服装列表数据...");
+                }
+                
+                // 直接调用InitializeConfig，不使用后台线程
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] 直接调用InitializeConfig方法...");
+                }
+                InitializeConfig();
+                
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] 窗口初始化完成，准备显示...");
+                }
+                
+                // 写入初始化完成日志
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] 最终窗口状态: {this.WindowState}");
+                    writer.WriteLine($"[{DateTime.Now}] 最终窗口可见性: {this.Visibility}");
+                    writer.WriteLine($"[{DateTime.Now}] 最终窗口大小: {this.Width}, {this.Height}");
+                    writer.WriteLine($"[{DateTime.Now}] 游戏安装目录: {this.strInstallDirectory}");
+                    writer.WriteLine($"[{DateTime.Now}] === 主窗口初始化完成 ===");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"主窗口初始化出错: {ex.Message}");
-                Console.WriteLine($"堆栈跟踪: {ex.StackTrace}");
-                
                 // 写入错误日志
                 string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "mainwindow.log");
                 using (StreamWriter writer = new StreamWriter(logFilePath, true))
                 {
-                    writer.WriteLine($"初始化出错: {ex.Message}");
-                    writer.WriteLine($"堆栈跟踪: {ex.StackTrace}");
-                    writer.WriteLine("=== 初始化失败 ===");
+                    writer.WriteLine($"[{DateTime.Now}] 初始化出错: {ex.Message}");
+                    writer.WriteLine($"[{DateTime.Now}] 堆栈跟踪: {ex.StackTrace}");
+                    writer.WriteLine($"[{DateTime.Now}] === 初始化失败 ===");
                 }
                 
                 // 显示错误消息
-                this.Dispatcher.Invoke(() =>
-                {
-                    MessageBox.Show($"主窗口初始化失败: {ex.Message}", "初始化错误", MessageBoxButton.OK, MessageBoxImage.Error);
-                });
+                MessageBox.Show($"主窗口初始化失败: {ex.Message}", "初始化错误", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -156,6 +182,54 @@ namespace FS服装搭配专家v1._0
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // 写入日志文件
+                string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "mainwindow.log");
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] === 窗口Loaded事件触发，开始异步加载服装数据 ===");
+                }
+                
+                // 在后台线程中加载服装数据
+                System.Threading.ThreadPool.QueueUserWorkItem((state) =>
+                {
+                    try
+                    {
+                        // 加载服装数据
+                        GetNewItem();
+                        
+                        // 写入日志文件
+                        using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                        {
+                            writer.WriteLine($"[{DateTime.Now}] 服装数据加载完成");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // 写入错误日志
+                        using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                        {
+                            writer.WriteLine($"[{DateTime.Now}] 异步加载服装数据出错: {ex.Message}");
+                            writer.WriteLine($"[{DateTime.Now}] 堆栈跟踪: {ex.StackTrace}");
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                // 写入错误日志
+                string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "mainwindow.log");
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] Loaded事件处理出错: {ex.Message}");
+                    writer.WriteLine($"[{DateTime.Now}] 堆栈跟踪: {ex.StackTrace}");
+                }
+            }
         }
 
         private void TitleBar_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -194,6 +268,37 @@ namespace FS服装搭配专家v1._0
         {
             // 简单的换肤功能
             Console.WriteLine("换肤按钮点击");
+        }
+        
+        // 手动加载服装数据按钮点击事件
+        private void btnLoadData_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // 显示加载提示
+                this.Dispatcher.Invoke(() =>
+                {
+                    labErrorMsg.Text = "正在加载服装数据...请稍候";
+                    labErrorMsg.Visibility = Visibility.Visible;
+                    picLoding.Visibility = Visibility.Visible;
+                });
+                
+                // 初始化配置
+                InitializeConfig();
+                
+                // 加载服装数据
+                GetNewItem();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("加载服装数据按钮点击事件出错: " + ex.Message);
+                this.Dispatcher.Invoke(() =>
+                {
+                    labErrorMsg.Text = "加载服装数据失败: " + ex.Message;
+                    labErrorMsg.Visibility = Visibility.Visible;
+                    picLoding.Visibility = Visibility.Collapsed;
+                });
+            }
         }
         
         private void ApplySkin(SolidColorBrush skinColor)
@@ -609,12 +714,39 @@ namespace FS服装搭配专家v1._0
         
         private void InitializeItemList()
         {
-            // 初始化后台工作线程
-            bwMain = new BackgroundWorker();
-            bwMain.WorkerSupportsCancellation = true;
-            bwMain.DoWork += bwMain_DoLoadList;
-            bwMain.RunWorkerCompleted += bwMain_CompletedLoadList;
-            bwMain.RunWorkerAsync();
+            try
+            {
+                // 写入日志文件
+                string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "init.log");
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] 开始InitializeItemList方法");
+                }
+                
+                // 初始化后台工作线程
+                bwMain = new BackgroundWorker();
+                bwMain.WorkerSupportsCancellation = true;
+                bwMain.DoWork += bwMain_DoLoadList;
+                bwMain.RunWorkerCompleted += bwMain_CompletedLoadList;
+                
+                // 写入日志文件
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] 启动bwMain后台线程");
+                }
+                
+                bwMain.RunWorkerAsync();
+            }
+            catch (Exception ex)
+            {
+                // 写入日志文件
+                string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "init.log");
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] InitializeItemList方法出错: {ex.Message}");
+                    writer.WriteLine($"[{DateTime.Now}] 堆栈跟踪: {ex.StackTrace}");
+                }
+            }
         }
 
         // 核心业务逻辑方法
@@ -624,25 +756,31 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
+                Console.WriteLine("=== 开始加载服装数据 ===");
+                Console.WriteLine($"游戏安装目录: {this.strInstallDirectory}");
+                
                 // 使用Dispatcher.Invoke确保UI操作在主线程执行
                 this.Dispatcher.Invoke(() =>
                 {
                     // 显示加载状态
                     picLoding.Visibility = Visibility.Visible;
                     labErrorMsg.Visibility = Visibility.Collapsed;
-                    labErrorMsg.Text = "";
+                    labErrorMsg.Text = "正在加载服装数据...";
+                    labErrorMsg.Visibility = Visibility.Visible;
                 });
                 
                 this.list = new List<ItemshopM>();
                 
                 // 简化版本：只使用本地安装目录
-                string sourceFileName = this.strInstallDirectory + "\\item_text.pak";
-                string destFileName = this.cookiename + "\\item_text.pak";
+                string appBaseDir = AppDomain.CurrentDomain.BaseDirectory;
+                string sourceFileName = Path.Combine(this.strInstallDirectory, "item_text.pak");
+                string destFileName = Path.Combine(appBaseDir, this.cookiename, "item_text.pak");
                 
                 // 确保目标目录存在
-                if (!Directory.Exists(this.cookiename))
+                string cookiesDir = Path.Combine(appBaseDir, this.cookiename);
+                if (!Directory.Exists(cookiesDir))
                 {
-                    Directory.CreateDirectory(this.cookiename);
+                    Directory.CreateDirectory(cookiesDir);
                 }
                 
                 // 检查源文件是否存在
@@ -658,28 +796,121 @@ namespace FS服装搭配专家v1._0
                     return;
                 }
                 
-                // 复制文件
-                File.Copy(sourceFileName, destFileName, true);
+                // 尝试复制文件，处理文件锁定情况
+                bool copied = false;
+                int retryCount = 0;
+                while (!copied && retryCount < 3)
+                {
+                    try
+                    {
+                        // 检查目标文件是否存在，如果存在则尝试删除
+                        if (File.Exists(destFileName))
+                        {
+                            try
+                            {
+                                File.Delete(destFileName);
+                                Console.WriteLine("已删除现有文件");
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"删除文件失败: {ex.Message}");
+                            }
+                        }
+                        
+                        // 复制文件
+                        File.Copy(sourceFileName, destFileName, true);
+                        copied = true;
+                        Console.WriteLine("文件复制成功");
+                    }
+                    catch (Exception ex)
+                    {
+                        retryCount++;
+                        Console.WriteLine($"复制文件失败 (尝试 {retryCount}/3): {ex.Message}");
+                        System.Threading.Thread.Sleep(1000);
+                    }
+                }
+                
+                if (!copied)
+                {
+                    // 显示友好的错误提示
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        labErrorMsg.Text = "无法复制文件，请确保文件未被其他进程使用，然后重试";
+                        labErrorMsg.Visibility = Visibility.Visible;
+                        picLoding.Visibility = Visibility.Collapsed;
+                    });
+                    return;
+                }
                 
                 // 提取数据
                 string extractCmd = string.Concat(new string[]
                 {
-                    "pack\\resources \"",
-                    Environment.CurrentDirectory,
-                    "\\",
-                    this.cookiename,
-                    "\\item_text.pak\" -all"
+                    "pack\\resources ",
+                    "\"",
+                    Path.Combine(appBaseDir, this.cookiename, "item_text.pak"),
+                    "\"",
+                    " -all"
                 });
-                conmon.RunCmd(extractCmd);
+                
+                // 写入日志文件
+                string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "getnewitem.log");
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] 开始GetNewItem方法");
+                    writer.WriteLine($"[{DateTime.Now}] 游戏安装目录: {this.strInstallDirectory}");
+                    writer.WriteLine($"[{DateTime.Now}] 执行提取命令: {extractCmd}");
+                }
+                
+                // 执行提取命令
+                try
+                {
+                    conmon.RunCmd(extractCmd);
+                    Console.WriteLine("提取命令执行完成");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"提取命令执行失败: {ex.Message}");
+                    // 写入日志文件
+                    using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                    {
+                        writer.WriteLine($"[{DateTime.Now}] 提取命令执行失败: {ex.Message}");
+                    }
+                    
+                    // 显示友好的错误提示
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        labErrorMsg.Text = "提取数据失败，请确保pack\resources.exe工具存在且可执行";
+                        labErrorMsg.Visibility = Visibility.Visible;
+                        picLoding.Visibility = Visibility.Collapsed;
+                    });
+                    return;
+                }
+                
+                // 写入日志文件
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] 提取命令执行完成");
+                }
                 
                 // 读取并解析服装数据
-                string itemshopPath = Environment.CurrentDirectory + "\\" + this.cookiename + "\\item_text_pak\\itemshop.txt";
-                if (File.Exists(itemshopPath))
+                string itemshopPath = Path.Combine(appBaseDir, this.cookiename, "item_text_pak", "itemshop.txt");
+                
+                // 尝试打开文件并解析
+                using (StreamReader streamReader = new StreamReader(itemshopPath, Encoding.Default))
                 {
-                    StreamReader streamReader = new StreamReader(itemshopPath, Encoding.Default);
+                    // 写入日志文件
+                    using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                    {
+                        writer.WriteLine($"[{DateTime.Now}] 成功打开itemshop.txt文件，开始解析");
+                    }
+                    
                     string text;
+                    int lineCount = 0;
+                    int addedCount = 0;
+                    
                     while ((text = streamReader.ReadLine()) != null)
                     {
+                        lineCount++;
                         string text2 = text.ToString();
                         if (text2.IndexOf("ItemCode") == -1)
                         {
@@ -691,14 +922,13 @@ namespace FS服装搭配专家v1._0
                                     this.list.Add(new ItemshopM
                                     {
                                         ItemCode = array[0],
-                                        PakNum = "*" + ((array[1] == "1") ? "" : array[1]) + ".pak",
+                                        PakNum = array[1],
                                         ImgPath = string.Concat(new string[]
                                         {
-                                            Environment.CurrentDirectory,
-                                            "\\",
+                                            appBaseDir,
                                             this.cookiename,
                                             "\\icon",
-                                            (array[1] == "1") ? "" : array[1],
+                                            array[1],
                                             "_pak\\u",
                                             array[0],
                                             ".png"
@@ -707,6 +937,7 @@ namespace FS服装搭配专家v1._0
                                         ItemName = array[3],
                                         Comment = array[3]
                                     });
+                                    addedCount++;
                                 }
                             }
                             else if (array.Length == 4)
@@ -719,8 +950,7 @@ namespace FS服装搭配专家v1._0
                                         PakNum = "*" + ((array[1] == "1") ? "" : array[1]) + ".pak",
                                         ImgPath = string.Concat(new string[]
                                         {
-                                            Environment.CurrentDirectory,
-                                            "\\",
+                                            appBaseDir,
                                             this.cookiename,
                                             "\\icon",
                                             (array[1] == "1") ? "" : array[1],
@@ -731,11 +961,26 @@ namespace FS服装搭配专家v1._0
                                         ItemName = array[2],
                                         Comment = array[3]
                                     });
+                                    addedCount++;
+                                }
+                            }
+                            else
+                            {
+                                // 写入日志文件
+                                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                                {
+                                    writer.WriteLine($"[{DateTime.Now}] 行 {lineCount} 分割后数组长度不足: {array.Length}, 内容: {text2}");
                                 }
                             }
                         }
                     }
-                    streamReader.Close();
+                    
+                    // 写入日志文件
+                    using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                    {
+                        writer.WriteLine($"[{DateTime.Now}] 解析完成，共读取 {lineCount} 行，添加 {addedCount} 个物品到列表");
+                        writer.WriteLine($"[{DateTime.Now}] list列表最终大小: {this.list.Count}");
+                    }
                     
                     // 加载常用物品颜色配置
                     List<string> colorList = new List<string>();
@@ -743,13 +988,14 @@ namespace FS服装搭配专家v1._0
                     {
                         if (File.Exists(this.oftenitemcode))
                         {
-                            StreamReader streamReader2 = new StreamReader(this.oftenitemcode, Encoding.Default);
-                            string text3;
-                            while ((text3 = streamReader2.ReadLine()) != null)
+                            using (StreamReader streamReader2 = new StreamReader(this.oftenitemcode, Encoding.Default))
                             {
-                                colorList.Add(text3.ToString());
+                                string text3;
+                                while ((text3 = streamReader2.ReadLine()) != null)
+                                {
+                                    colorList.Add(text3.ToString());
+                                }
                             }
-                            streamReader2.Close();
                         }
                     }
                     catch (Exception ex)
@@ -763,13 +1009,14 @@ namespace FS服装搭配专家v1._0
                     {
                         if (File.Exists("dopaklog.ini"))
                         {
-                            StreamReader streamReader2 = new StreamReader("dopaklog.ini", Encoding.Default);
-                            string text4;
-                            while ((text4 = streamReader2.ReadLine()) != null)
+                            using (StreamReader streamReader2 = new StreamReader("dopaklog.ini", Encoding.Default))
                             {
-                                modifyList.Add(text4.ToString());
+                                string text4;
+                                while ((text4 = streamReader2.ReadLine()) != null)
+                                {
+                                    modifyList.Add(text4.ToString());
+                                }
                             }
-                            streamReader2.Close();
                         }
                     }
                     catch (Exception ex)
@@ -803,10 +1050,6 @@ namespace FS服装搭配专家v1._0
                     {
                         CheckAndLoadImages();
                     });
-                }
-                else
-                {
-                    throw new FileNotFoundException("解析后的服装数据文件不存在", itemshopPath);
                 }
             }
             catch (Exception ex)
@@ -888,7 +1131,20 @@ namespace FS服装搭配专家v1._0
                 // 检查服装列表是否为空
                 if (this.list == null || this.list.Count == 0)
                 {
-                    throw new InvalidOperationException("服装列表为空，请先加载服装数据");
+                    // 自动加载服装数据
+                    Console.WriteLine("服装列表为空，自动加载服装数据");
+                    
+                    // 初始化配置
+                    InitializeConfig();
+                    
+                    // 加载服装数据
+                    GetNewItem();
+                    
+                    // 再次检查服装列表是否为空
+                    if (this.list == null || this.list.Count == 0)
+                    {
+                        throw new InvalidOperationException("服装列表为空，请先加载服装数据");
+                    }
                 }
                 
                 // 获取唯一的PakNum列表
@@ -906,23 +1162,25 @@ namespace FS服装搭配专家v1._0
                         labErrorMsg.Text = string.Format("正在加载图片... {0}/{1}", currentCount, totalCount);
                     });
                     
-                    string iconDir = this.cookiename + "\\icon" + itemshopM.PakNum.Replace(".", "_").Replace("*", "");
+                    string appBaseDir = AppDomain.CurrentDomain.BaseDirectory;
+                    string iconDir = appBaseDir + this.cookiename + "\\icon" + itemshopM.PakNum.Replace(".", "_").Replace("*", "");
                     if (!Directory.Exists(iconDir))
                     {
-                        string iconPakName = "icon" + itemshopM.PakNum.Replace("*", "");
+                        string iconPakName = "icon" + itemshopM.PakNum.Replace("*", "") + ".pak";
                         try
                         {
                             // 简化版本：只使用本地安装目录
                             string sourcePath = this.strInstallDirectory + "\\" + iconPakName;
-                            string destPath = this.cookiename + "\\" + iconPakName;
+                            string destPath = appBaseDir + this.cookiename + "\\" + iconPakName;
                             
                             // 检查源文件是否存在
                             if (File.Exists(sourcePath))
                             {
                                 // 确保目标目录存在
-                                if (!Directory.Exists(this.cookiename))
+                                string cookiesDir = appBaseDir + this.cookiename;
+                                if (!Directory.Exists(cookiesDir))
                                 {
-                                    Directory.CreateDirectory(this.cookiename);
+                                    Directory.CreateDirectory(cookiesDir);
                                 }
                                 
                                 // 复制文件
@@ -931,8 +1189,7 @@ namespace FS服装搭配专家v1._0
                                 // 提取图片
                                 string extractPath = string.Concat(new string[]
                                 {
-                                    Environment.CurrentDirectory,
-                                    "\\",
+                                    appBaseDir,
                                     this.cookiename,
                                     "\\",
                                     iconPakName
@@ -1096,6 +1353,30 @@ namespace FS服装搭配专家v1._0
                     streamReader.Close();
                 }
                 
+                // 如果没有配置路径，使用默认路径
+                if (string.IsNullOrEmpty(this.strInstallDirectory) || !Directory.Exists(this.strInstallDirectory))
+                {
+                    // 使用Console.WriteLine来调试
+                    Console.WriteLine("没有配置路径或路径不存在，使用默认路径");
+                    
+                    // 使用默认路径
+                    string defaultPath = "C:\\Program Files (x86)\\T2CN\\街头篮球";
+                    this.strInstallDirectory = defaultPath;
+                    
+                    // 保存路径到配置文件
+                    using (StreamWriter writer = new StreamWriter("config.ini", false, Encoding.Default))
+                    {
+                        writer.WriteLine(this.strInstallDirectory);
+                    }
+                    
+                    Console.WriteLine($"使用默认游戏安装目录: {this.strInstallDirectory}");
+                    Console.WriteLine("如果路径不正确，请手动编辑config.ini文件修改路径");
+                }
+                else
+                {
+                    Console.WriteLine($"使用已保存的游戏安装目录: {this.strInstallDirectory}");
+                }
+                
                 // 创建必要的目录
                 if (!Directory.Exists(this.cookiename))
                 {
@@ -1113,25 +1394,90 @@ namespace FS服装搭配专家v1._0
             catch (Exception ex)
             {
                 Console.WriteLine("初始化配置失败: " + ex.Message);
+                Console.WriteLine("堆栈跟踪: " + ex.StackTrace);
+                
+                // 显示错误消息
+                MessageBox.Show("初始化配置失败: " + ex.Message, "错误", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
         // 后台工作线程方法
         private void bwMain_DoLoadList(object sender, DoWorkEventArgs e)
         {
-            InitializeConfig();
-            GetNewItem();
+            try
+            {
+                // 写入日志文件
+                string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "init.log");
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] 开始bwMain_DoLoadList方法");
+                }
+                
+                InitializeConfig();
+                
+                // 写入日志文件
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] InitializeConfig方法执行完成");
+                    writer.WriteLine($"[{DateTime.Now}] 开始调用GetNewItem方法");
+                }
+                
+                GetNewItem();
+                
+                // 写入日志文件
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] GetNewItem方法执行完成");
+                }
+            }
+            catch (Exception ex)
+            {
+                // 写入日志文件
+                string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "init.log");
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] bwMain_DoLoadList方法出错: {ex.Message}");
+                    writer.WriteLine($"[{DateTime.Now}] 堆栈跟踪: {ex.StackTrace}");
+                }
+            }
         }
 
         private void bwMain_CompletedLoadList(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (e.Error != null)
+            try
             {
-                MessageBox.Show("加载数据失败: " + e.Error.Message);
+                // 写入日志文件
+                string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "init.log");
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] 开始bwMain_CompletedLoadList方法");
+                    if (e.Error != null)
+                    {
+                        writer.WriteLine($"[{DateTime.Now}] 加载数据失败: {e.Error.Message}");
+                    }
+                    else
+                    {
+                        writer.WriteLine($"[{DateTime.Now}] 加载数据成功");
+                    }
+                }
+                
+                if (e.Error != null)
+                {
+                    MessageBox.Show("加载数据失败: " + e.Error.Message);
+                }
+                else
+                {
+                    bwMain.Dispose();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                bwMain.Dispose();
+                // 写入日志文件
+                string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "init.log");
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    writer.WriteLine($"[{DateTime.Now}] bwMain_CompletedLoadList方法出错: {ex.Message}");
+                }
             }
         }
 
