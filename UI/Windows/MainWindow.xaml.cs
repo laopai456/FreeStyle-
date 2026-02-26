@@ -405,6 +405,16 @@ namespace FS服装搭配专家v1._0
             bwMain.WorkerSupportsCancellation = true;
             bwMain.DoWork += bwMain_DoLoadList;
             bwMain.RunWorkerCompleted += bwMain_CompletedLoadList;
+            
+            // 显示初始化状态
+            this.Dispatcher.Invoke(() =>
+            {
+                labErrorMsg.Text = "正在初始化服装数据...";
+                labErrorMsg.Visibility = Visibility.Visible;
+                picLoding.Visibility = Visibility.Visible;
+            });
+            
+            Console.WriteLine("开始后台线程加载服装数据...");
             bwMain.RunWorkerAsync();
         }
 
@@ -413,24 +423,39 @@ namespace FS服装搭配专家v1._0
         // 加载服装数据
         public void GetNewItem()
         {
+            // 确保日志文件路径正确
+            string logPath = Path.Combine(Environment.CurrentDirectory, "debug.log");
+            Console.WriteLine("日志文件路径: " + logPath);
+            
+            // 清空旧日志
+            if (File.Exists(logPath))
+            {
+                Console.WriteLine("删除旧日志文件");
+                File.Delete(logPath);
+            }
+            
+            // 日志记录函数
+            Action<string> Log = (message) =>
+            {
+                string logMessage = $"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] {message}";
+                Console.WriteLine(logMessage);
+                try
+                {
+                    File.AppendAllText(logPath, logMessage + "\n");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("写入日志失败: " + ex.Message);
+                }
+            };
+            
+            Log("=== 开始加载服装数据 ===");
+            Log("当前工作目录: " + Environment.CurrentDirectory);
+            Log("应用程序基目录: " + AppDomain.CurrentDomain.BaseDirectory);
+            Log("开始加载服装数据");
+            
             try
             {
-                // 清空旧日志
-                string logPath = "debug.log";
-                if (File.Exists(logPath))
-                {
-                    File.Delete(logPath);
-                }
-                
-                // 日志记录函数
-                Action<string> Log = (message) =>
-                {
-                    string logMessage = $"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] {message}";
-                    Console.WriteLine(logMessage);
-                    File.AppendAllText(logPath, logMessage + "\n");
-                };
-                
-                Log("开始加载服装数据");
                 
                 // 使用Dispatcher.Invoke确保UI操作在主线程执行
                 this.Dispatcher.Invoke(() =>
@@ -442,19 +467,57 @@ namespace FS服装搭配专家v1._0
                 });
                 
                 this.list = new List<ItemshopM>();
+                Log("创建服装列表成功，初始数量: " + this.list.Count);
                 
                 // 简化版本：只使用本地安装目录
                 Log("当前strInstallDirectory: " + this.strInstallDirectory);
+                
+                // 检查strInstallDirectory是否为空
+                if (string.IsNullOrEmpty(this.strInstallDirectory))
+                {
+                    Log("游戏目录为空，无法加载服装数据");
+                    // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        labErrorMsg.Text = "游戏目录为空，请在config.ini文件中设置游戏目录路径";
+                        labErrorMsg.Visibility = Visibility.Visible;
+                        picLoding.Visibility = Visibility.Collapsed;
+                    });
+                    return;
+                }
+                
                 string sourceFileName = Path.Combine(this.strInstallDirectory, "item_text.pak");
                 Log("源文件路径: " + sourceFileName);
-                string destFileName = this.cookiename + "\\item_text.pak";
+                string destFileName = Path.Combine(Environment.CurrentDirectory, this.cookiename, "item_text.pak");
                 Log("目标文件路径: " + destFileName);
                 
                 // 确保目标目录存在
-                if (!Directory.Exists(this.cookiename))
+                string localCookiesPath = Path.Combine(Environment.CurrentDirectory, this.cookiename);
+                Log("cookies目录路径: " + localCookiesPath);
+                if (!Directory.Exists(localCookiesPath))
                 {
-                    Log("创建目标目录: " + this.cookiename);
-                    Directory.CreateDirectory(this.cookiename);
+                    Log("创建目标目录: " + localCookiesPath);
+                    try
+                    {
+                        Directory.CreateDirectory(localCookiesPath);
+                        Log("创建目录成功");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log("创建目录失败: " + ex.Message);
+                        // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            labErrorMsg.Text = "创建目录失败: " + ex.Message;
+                            labErrorMsg.Visibility = Visibility.Visible;
+                            picLoding.Visibility = Visibility.Collapsed;
+                        });
+                        return;
+                    }
+                }
+                else
+                {
+                    Log("目标目录已存在");
                 }
                 
                 // 检查源文件是否存在
@@ -470,201 +533,372 @@ namespace FS服装搭配专家v1._0
                     });
                     return;
                 }
-                
-                // 复制文件
-                try
+                else
                 {
-                    Log("尝试复制文件: " + sourceFileName + " -> " + destFileName);
-                    File.Copy(sourceFileName, destFileName, true);
-                    Log("文件复制成功");
+                    Log("源文件存在，大小: " + new FileInfo(sourceFileName).Length + " 字节");
                 }
-                catch (Exception ex)
+                
+                // 检查cookies目录中是否已经有解包后的itemshop.txt文件
+                string itemshopPath = Path.Combine(cookiesPath, "item_text_pak", "itemshop.txt");
+                if (File.Exists(itemshopPath))
                 {
-                    Log("文件复制失败: " + ex.Message);
+                    Log("cookies目录中已有解包后的itemshop.txt文件，直接使用");
+                }
+                else
+                {
+                    // 复制item_text.pak文件到cookies目录
+                    Log("cookies目录中没有解包后的文件，开始复制item_text.pak");
+                    try
+                    {
+                        File.Copy(sourceFileName, pakPath, true);
+                        Log("复制文件成功: " + sourceFileName + " -> " + pakPath);
+                        destFileName = pakPath; // 使用复制到cookies目录的文件
+                    }
+                    catch (Exception ex)
+                    {
+                        Log("复制文件失败: " + ex.Message);
+                        Log("使用游戏目录中的文件作为备选");
+                        destFileName = sourceFileName; // 使用游戏目录中的文件作为备选
+                    }
+                }
+                Log("使用的pak文件路径: " + destFileName);
+                
+                // 验证文件是否存在
+                if (!File.Exists(destFileName))
+                {
+                    Log("文件不存在，无法解包: " + destFileName);
                     // 使用Dispatcher.Invoke确保UI操作在主线程执行
                     this.Dispatcher.Invoke(() =>
                     {
-                        labErrorMsg.Text = "文件复制失败: " + ex.Message;
+                        labErrorMsg.Text = "文件不存在，无法解包: " + destFileName;
                         labErrorMsg.Visibility = Visibility.Visible;
                         picLoding.Visibility = Visibility.Collapsed;
                     });
                     return;
                 }
+                Log("文件存在，开始解包");
                 
-                // 提取数据
-                // 使用应用程序根目录作为基准路径，确保便携性
-                string appBasePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                string projectRootPath = Path.GetFullPath(Path.Combine(appBasePath, "..", "..", ".."));
+                // 使用当前工作目录作为基准路径，确保路径一致
+                string currentDir = Environment.CurrentDirectory;
+                Log("当前工作目录: " + currentDir);
                 
-                // 简化路径结构，将cookies目录放在项目根目录
-                string projectCookiesPath = Path.Combine(projectRootPath, this.cookiename);
-                string projectPakPath = Path.Combine(projectCookiesPath, "item_text.pak");
-                string resourcesExePath = Path.Combine(projectRootPath, "pack", "resources.exe");
+                // 统一使用当前工作目录下的cookies目录
+                string cookiesPath = Path.Combine(currentDir, this.cookiename);
+                Log("统一cookies目录路径: " + cookiesPath);
+                string pakPath = Path.Combine(cookiesPath, "item_text.pak");
+                Log("统一pak文件路径: " + pakPath);
                 
-                // 确保项目根目录的cookies目录存在
-                if (!Directory.Exists(projectCookiesPath))
+                // 确保cookies目录存在
+                if (!Directory.Exists(cookiesPath))
                 {
-                    Log("创建项目根目录cookies: " + projectCookiesPath);
-                    Directory.CreateDirectory(projectCookiesPath);
-                }
-                
-                // 复制文件到项目根目录的cookies
-                try
-                {
-                    Log("尝试复制文件到项目根目录: " + sourceFileName + " -> " + projectPakPath);
-                    File.Copy(sourceFileName, projectPakPath, true);
-                    Log("文件复制到项目根目录成功");
-                }
-                catch (Exception ex)
-                {
-                    Log("文件复制到项目根目录失败: " + ex.Message);
-                }
-                
-                Log("resources.exe路径: " + resourcesExePath);
-                Log("pak文件路径: " + projectPakPath);
-                
-                // 执行解包命令并获取输出
-                try
-                {
-                    ProcessStartInfo processStartInfo = new ProcessStartInfo();
-                    processStartInfo.FileName = resourcesExePath;
-                    processStartInfo.Arguments = $"\"{projectPakPath}\" -all";
-                    processStartInfo.UseShellExecute = false;
-                    processStartInfo.RedirectStandardInput = true;
-                    processStartInfo.RedirectStandardOutput = true;
-                    processStartInfo.RedirectStandardError = true;
-                    processStartInfo.CreateNoWindow = true;
-                    processStartInfo.WorkingDirectory = projectRootPath; // 设置工作目录为项目根目录
-                    
-                    Log("执行解包命令: " + processStartInfo.FileName + " " + processStartInfo.Arguments);
-                    Log("工作目录: " + processStartInfo.WorkingDirectory);
-                    
-                    Process process = Process.Start(processStartInfo);
-                    string output = process.StandardOutput.ReadToEnd();
-                    string error = process.StandardError.ReadToEnd();
-                    process.WaitForExit();
-                    int exitCode = process.ExitCode;
-                    process.Close();
-                    
-                    Log("解包命令输出: " + output);
-                    if (!string.IsNullOrEmpty(error))
+                    Log("创建cookies目录: " + cookiesPath);
+                    try
                     {
-                        Log("解包命令错误: " + error);
+                        Directory.CreateDirectory(cookiesPath);
+                        Log("创建cookies目录成功");
                     }
-                    Log("解包命令执行完成，退出码: " + exitCode);
+                    catch (Exception ex)
+                    {
+                        Log("创建cookies目录失败: " + ex.Message);
+                        // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            labErrorMsg.Text = "创建cookies目录失败: " + ex.Message;
+                            labErrorMsg.Visibility = Visibility.Visible;
+                            picLoding.Visibility = Visibility.Collapsed;
+                        });
+                        return;
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    Log("执行解包命令失败: " + ex.Message);
+                    Log("cookies目录已存在");
                 }
                 
-                // 检查解包结果
-                string itemshopPath = Path.Combine(projectCookiesPath, "item_text_pak", "itemshop.txt");
-                Log("检查解析后的文件: " + itemshopPath);
+                // 检查resources.exe是否存在
+                string resourcesExePath = Path.Combine(currentDir, "..", "..", "..", "pack", "resources.exe");
+                Log("resources.exe路径: " + resourcesExePath);
+                
+                if (!File.Exists(resourcesExePath))
+                {
+                    // 尝试其他可能的路径
+                    resourcesExePath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "..", "..", "..", "pack", "resources.exe");
+                    Log("尝试resources.exe路径: " + resourcesExePath);
+                    
+                    if (!File.Exists(resourcesExePath))
+                    {
+                        Log("resources.exe不存在: " + resourcesExePath);
+                        // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            labErrorMsg.Text = "resources.exe不存在: " + resourcesExePath;
+                            labErrorMsg.Visibility = Visibility.Visible;
+                            picLoding.Visibility = Visibility.Collapsed;
+                        });
+                        return;
+                    }
+                }
+                Log("resources.exe存在");
+                
+                // 检查itemshop.txt文件是否已经存在
+                string itemshopPath = Path.Combine(cookiesPath, "item_text_pak", "itemshop.txt");
                 if (File.Exists(itemshopPath))
                 {
-                    StreamReader streamReader = new StreamReader(itemshopPath, Encoding.Default);
-                    string text;
-                    while ((text = streamReader.ReadLine()) != null)
+                    Log("itemshop.txt文件已经存在，跳过解包步骤");
+                }
+                else
+                {
+                    // 执行解包命令
+                    Log("开始执行解包命令");
+                    try
                     {
-                        string text2 = text.ToString();
-                        if (text2.IndexOf("ItemCode") == -1)
+                        Log("创建ProcessStartInfo");
+                        ProcessStartInfo processStartInfo = new ProcessStartInfo();
+                        processStartInfo.FileName = resourcesExePath;
+                        processStartInfo.Arguments = $"\"{destFileName}\" -all";
+                        processStartInfo.UseShellExecute = true; // 使用ShellExecute，避免输出流阻塞
+                        processStartInfo.CreateNoWindow = true;
+                        processStartInfo.WorkingDirectory = currentDir; // 设置工作目录为当前工作目录
+                        
+                        Log("执行解包命令: " + processStartInfo.FileName + " " + processStartInfo.Arguments);
+                        Log("工作目录: " + processStartInfo.WorkingDirectory);
+                        
+                        Log("启动进程");
+                        Process process = Process.Start(processStartInfo);
+                        Log("进程启动成功，等待退出");
+                        
+                        // 等待进程结束，最多等待15秒
+                        bool exited = process.WaitForExit(15000);
+                        if (exited)
                         {
-                            string[] array = text2.Split(new string[] { "\t" }, StringSplitOptions.None);
-                            if (array.Length >= 5)
+                            int exitCode = process.ExitCode;
+                            Log("解包命令执行完成，退出码: " + exitCode);
+                        }
+                        else
+                        {
+                            Log("解包命令执行超时，强制关闭进程");
+                            process.Kill();
+                        }
+                        process.Close();
+                        
+                        Log("解包命令处理完成");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log("执行解包命令失败: " + ex.Message);
+                        Log("堆栈跟踪: " + ex.StackTrace);
+                        // 即使解包命令执行失败，也继续尝试读取文件，因为可能已经成功解包
+                        // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            labErrorMsg.Text = "执行解包命令时出现错误，但将继续尝试读取解包结果: " + ex.Message;
+                            labErrorMsg.Visibility = Visibility.Visible;
+                        });
+                    }
+                }
+                
+                Log("解包命令执行完成，开始检查解包结果");
+                
+                // 检查解包结果
+                Log("检查解析后的文件: " + itemshopPath);
+                
+                // 检查cookies目录是否存在
+                if (!Directory.Exists(cookiesPath))
+                {
+                    Log("cookies目录不存在: " + cookiesPath);
+                }
+                else
+                {
+                    Log("cookies目录存在");
+                    // 检查item_text_pak目录是否存在
+                    string itemTextPakPath = Path.Combine(cookiesPath, "item_text_pak");
+                    if (!Directory.Exists(itemTextPakPath))
+                    {
+                        Log("item_text_pak目录不存在: " + itemTextPakPath);
+                    }
+                    else
+                    {
+                        Log("item_text_pak目录存在");
+                        // 列出item_text_pak目录中的文件
+                        try
+                        {
+                            string[] files = Directory.GetFiles(itemTextPakPath);
+                            Log("item_text_pak目录中的文件数量: " + files.Length);
+                            foreach (string file in files)
                             {
-                                if (array[3] != "" && array[3] != "--")
-                                {
-                                    this.list.Add(new ItemshopM
-                                    {
-                                        ItemCode = array[0],
-                                        PakNum = "*" + ((array[1] == "1") ? "" : array[1]) + ".pak",
-                                        ImgPath = string.Concat(new string[]
-                                        {
-                                            projectRootPath,
-                                            "\\",
-                                            this.cookiename,
-                                            "\\icon",
-                                            (array[1] == "1") ? "" : array[1],
-                                            "_pak\\u",
-                                            array[0],
-                                            ".png"
-                                        }),
-                                        EffectCode = ((array[2] == "") ? "无" : ("特效代码:" + array[2])),
-                                        ItemName = array[3],
-                                        Comment = array[3]
-                                    });
-                                }
-                            }
-                            else if (array.Length == 4)
-                            {
-                                if (array[3] != "" && array[3] != "--")
-                                {
-                                    this.list.Add(new ItemshopM
-                                    {
-                                        ItemCode = array[0],
-                                        PakNum = "*" + ((array[1] == "1") ? "" : array[1]) + ".pak",
-                                        ImgPath = string.Concat(new string[]
-                                        {
-                                            projectRootPath,
-                                            "\\",
-                                            this.cookiename,
-                                            "\\icon",
-                                            (array[1] == "1") ? "" : array[1],
-                                            "_pak\\u",
-                                            array[0],
-                                            ".png"
-                                        }),
-                                        ItemName = array[2],
-                                        Comment = array[3]
-                                    });
-                                }
+                                Log("文件: " + Path.GetFileName(file));
                             }
                         }
+                        catch (Exception ex)
+                        {
+                            Log("列出文件失败: " + ex.Message);
+                        }
                     }
-                    streamReader.Close();
+                }
+                
+                if (File.Exists(itemshopPath))
+                {
+                    Log("itemshop.txt文件存在，开始解析");
+                    Log("itemshop.txt文件大小: " + new FileInfo(itemshopPath).Length + " 字节");
+                    
+                    int itemCount = 0;
+                    int lineCount = 0;
+                    try
+                    {
+                        StreamReader streamReader = new StreamReader(itemshopPath, Encoding.Default);
+                        string text;
+                        while ((text = streamReader.ReadLine()) != null)
+                        {
+                            lineCount++;
+                            string text2 = text.ToString();
+                            Log($"解析第 {lineCount} 行: {text2.Substring(0, Math.Min(50, text2.Length))}...");
+                            
+                            if (text2.IndexOf("ItemCode") == -1)
+                            {
+                                string[] array = text2.Split(new string[] { "\t" }, StringSplitOptions.None);
+                                Log($"分割后数组长度: {array.Length}");
+                                
+                                if (array.Length >= 5)
+                                {
+                                    Log($"数组元素: [0]={array[0]}, [1]={array[1]}, [2]={array[2]}, [3]={array[3]}");
+                                    if (array[3] != "" && array[3] != "--")
+                                    {
+                                        this.list.Add(new ItemshopM
+                                        {
+                                            ItemCode = array[0],
+                                            PakNum = "*" + ((array[1] == "1") ? "" : array[1]) + ".pak",
+                                            ImgPath = string.Concat(new string[]
+                                            {
+                                                currentDir,
+                                                "\\",
+                                                this.cookiename,
+                                                "\\icon",
+                                                (array[1] == "1") ? "" : array[1],
+                                                "_pak\\u",
+                                                array[0],
+                                                ".png"
+                                            }),
+                                            EffectCode = ((array[2] == "") ? "无" : ("特效代码:" + array[2])),
+                                            ItemName = array[3],
+                                            Comment = array[3]
+                                        });
+                                        itemCount++;
+                                        Log($"添加服装成功: {array[3]}");
+                                    }
+                                    else
+                                    {
+                                        Log($"跳过空名称或--的服装: {array[3]}");
+                                    }
+                                }
+                                else if (array.Length == 4)
+                                {
+                                    Log($"数组元素: [0]={array[0]}, [1]={array[1]}, [2]={array[2]}, [3]={array[3]}");
+                                    if (array[3] != "" && array[3] != "--")
+                                    {
+                                        this.list.Add(new ItemshopM
+                                        {
+                                            ItemCode = array[0],
+                                            PakNum = "*" + ((array[1] == "1") ? "" : array[1]) + ".pak",
+                                            ImgPath = string.Concat(new string[]
+                                            {
+                                                currentDir,
+                                                "\\",
+                                                this.cookiename,
+                                                "\\icon",
+                                                (array[1] == "1") ? "" : array[1],
+                                                "_pak\\u",
+                                                array[0],
+                                                ".png"
+                                            }),
+                                            ItemName = array[2],
+                                            Comment = array[3]
+                                        });
+                                        itemCount++;
+                                        Log($"添加服装成功: {array[2]}");
+                                    }
+                                    else
+                                    {
+                                        Log($"跳过空名称或--的服装: {array[3]}");
+                                    }
+                                }
+                                else
+                                {
+                                    Log($"跳过数组长度不足的行: {array.Length}");
+                                }
+                            }
+                            else
+                            {
+                                Log("跳过表头行");
+                            }
+                        }
+                        streamReader.Close();
+                        
+                        Log("解析完成，共加载 " + itemCount + " 件服装");
+                        Log("服装列表总数量: " + this.list.Count);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log("解析文件失败: " + ex.Message);
+                        Log("堆栈跟踪: " + ex.StackTrace);
+                        Log("当前处理到第 " + lineCount + " 行");
+                    }
                     
                     // 加载常用物品颜色配置
                     List<string> colorList = new List<string>();
                     try
                     {
-                        if (File.Exists(this.oftenitemcode))
+                        string oftenitemcodePath = Path.Combine(Environment.CurrentDirectory, this.oftenitemcode);
+                        Log("加载常用物品颜色配置: " + oftenitemcodePath);
+                        if (File.Exists(oftenitemcodePath))
                         {
-                            StreamReader streamReader2 = new StreamReader(this.oftenitemcode, Encoding.Default);
+                            StreamReader streamReader2 = new StreamReader(oftenitemcodePath, Encoding.Default);
                             string text3;
                             while ((text3 = streamReader2.ReadLine()) != null)
                             {
                                 colorList.Add(text3.ToString());
                             }
                             streamReader2.Close();
+                            Log("加载常用物品颜色配置成功，共 " + colorList.Count + " 条");
+                        }
+                        else
+                        {
+                            Log("常用物品颜色配置文件不存在: " + oftenitemcodePath);
                         }
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("加载常用物品颜色配置失败: " + ex.Message);
+                        Log("加载常用物品颜色配置失败: " + ex.Message);
                     }
                     
                     // 加载修改记录
                     List<string> modifyList = new List<string>();
                     try
                     {
-                        if (File.Exists("dopaklog.ini"))
+                        string dopaklogPath = Path.Combine(Environment.CurrentDirectory, "dopaklog.ini");
+                        Log("加载修改记录: " + dopaklogPath);
+                        if (File.Exists(dopaklogPath))
                         {
-                            StreamReader streamReader2 = new StreamReader("dopaklog.ini", Encoding.Default);
+                            StreamReader streamReader2 = new StreamReader(dopaklogPath, Encoding.Default);
                             string text4;
                             while ((text4 = streamReader2.ReadLine()) != null)
                             {
                                 modifyList.Add(text4.ToString());
                             }
                             streamReader2.Close();
+                            Log("加载修改记录成功，共 " + modifyList.Count + " 条");
+                        }
+                        else
+                        {
+                            Log("修改记录文件不存在: " + dopaklogPath);
                         }
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("加载修改记录失败: " + ex.Message);
+                        Log("加载修改记录失败: " + ex.Message);
                     }
                     
                     // 更新物品属性
+                    Log("更新物品属性");
                     foreach (ItemshopM item in this.list)
                     {
                         // 设置背景颜色
@@ -686,26 +920,88 @@ namespace FS服装搭配专家v1._0
                     }
                     
                     // 更新UI
+                    Log("更新UI，绑定服装数据到ListView");
+                    Log("服装列表数量: " + list.Count);
+                    Log("ListView控件是否为空: " + (lstClothing == null));
+                    
                     this.Dispatcher.Invoke(() =>
                     {
-                        CheckAndLoadImages();
+                        try
+                        {
+                            Log("开始数据绑定");
+                            
+                            // 清空ListView
+                            lstClothing.Items.Clear();
+                            
+                            // 绑定服装数据到ListView
+                            lstClothing.ItemsSource = null;
+                            lstClothing.ItemsSource = list;
+                            lstClothing.DisplayMemberPath = "ItemName";
+                            
+                            Log("数据绑定完成，ListView项目数量: " + lstClothing.Items.Count);
+                            Log("ListView显示路径: " + lstClothing.DisplayMemberPath);
+                            
+                            // 测试：手动添加一个项目验证ListView是否正常
+                            if (list.Count == 0)
+                            {
+                                Log("服装列表为空，添加测试项目");
+                                list.Add(new ItemshopM { ItemName = "测试服装" });
+                                lstClothing.ItemsSource = list;
+                                Log("测试项目添加完成，ListView项目数量: " + lstClothing.Items.Count);
+                            }
+                            
+                            // 显示成功消息
+                            labErrorMsg.Text = "服装数据加载成功，共 " + list.Count + " 件服装";
+                            labErrorMsg.Visibility = Visibility.Visible;
+                            
+                            CheckAndLoadImages();
+                        }
+                        catch (Exception ex)
+                        {
+                            Log("UI更新失败: " + ex.Message);
+                            Log("堆栈跟踪: " + ex.StackTrace);
+                            labErrorMsg.Text = "UI更新失败: " + ex.Message;
+                            labErrorMsg.Visibility = Visibility.Visible;
+                        }
                     });
                 }
                 else
                 {
-                    throw new FileNotFoundException("解析后的服装数据文件不存在", itemshopPath);
+                    Log("解析后的服装数据文件不存在: " + itemshopPath);
+                    // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        labErrorMsg.Text = "解析后的服装数据文件不存在: " + itemshopPath;
+                        labErrorMsg.Visibility = Visibility.Visible;
+                        picLoding.Visibility = Visibility.Collapsed;
+                    });
+                    return;
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("加载服装数据失败: " + ex.Message);
+                string errorMessage = "加载服装数据失败: " + ex.Message;
+                Console.WriteLine(errorMessage);
                 Console.WriteLine("堆栈跟踪: " + ex.StackTrace);
+                
+                // 写入日志
+                try
+                {
+                    string errorLogPath = Path.Combine(Environment.CurrentDirectory, "debug.log");
+                    string logMessage = $"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] {errorMessage}";
+                    string stackTraceMessage = $"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] 堆栈跟踪: {ex.StackTrace}";
+                    File.AppendAllText(errorLogPath, logMessage + "\n" + stackTraceMessage + "\n");
+                }
+                catch (Exception logEx)
+                {
+                    Console.WriteLine("写入错误日志失败: " + logEx.Message);
+                }
                 
                 // 使用Dispatcher.Invoke确保UI操作在主线程执行
                 this.Dispatcher.Invoke(() =>
                 {
                     // 显示错误消息
-                    MessageBox.Show("加载服装数据失败: " + ex.Message, "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(errorMessage, "错误", MessageBoxButton.OK, MessageBoxImage.Error);
                     
                     // 更新错误状态
                     labErrorMsg.Text = "加载失败: " + ex.Message;
@@ -719,6 +1015,18 @@ namespace FS服装搭配专家v1._0
                 {
                     // 隐藏加载状态
                     picLoding.Visibility = Visibility.Collapsed;
+                    
+                    // 写入日志
+                    try
+                    {
+                        string logPath = Path.Combine(Environment.CurrentDirectory, "debug.log");
+                        string logMessage = $"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] 加载流程完成，最终服装数量: {this.list.Count}";
+                        File.AppendAllText(logPath, logMessage + "\n");
+                    }
+                    catch (Exception logEx)
+                    {
+                        Console.WriteLine("写入完成日志失败: " + logEx.Message);
+                    }
                 });
             }
         }
@@ -741,16 +1049,24 @@ namespace FS服装搭配专家v1._0
                     }
                 }
                 
-                // 如果没有图片文件，提示用户
+                // 如果没有图片文件，自动加载图片
                 if (!hasIconFiles && this.list.Count > 0)
                 {
-                    Console.WriteLine("检测到没有图片文件");
+                    Console.WriteLine("检测到没有图片文件，自动开始加载");
                     // 使用Dispatcher.Invoke确保UI操作在主线程执行
                     this.Dispatcher.Invoke(() =>
                     {
-                        labErrorMsg.Text = "提示: 请点击'加载图片'按钮获取服装图标";
+                        labErrorMsg.Text = "检测到没有图片文件，正在自动加载...";
                         labErrorMsg.Visibility = Visibility.Visible;
+                        picLoding.Visibility = Visibility.Visible;
                     });
+                    
+                    // 启动后台线程加载图片
+                    bwLoadImg = new BackgroundWorker();
+                    bwLoadImg.WorkerSupportsCancellation = true;
+                    bwLoadImg.DoWork += bw_DoWorkAllIcon;
+                    bwLoadImg.RunWorkerCompleted += bw_CompletedWorkAllIcon;
+                    bwLoadImg.RunWorkerAsync();
                 }
             }
             catch (Exception ex)
@@ -783,6 +1099,24 @@ namespace FS服装搭配专家v1._0
                 int totalCount = distinctList.Count;
                 int currentCount = 0;
                 
+                // 确保日志文件路径正确
+                string logPath = Path.Combine(Environment.CurrentDirectory, "debug.log");
+                Action<string> Log = (message) =>
+                {
+                    string logMessage = $"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] {message}";
+                    Console.WriteLine(logMessage);
+                    try
+                    {
+                        File.AppendAllText(logPath, logMessage + "\n");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("写入日志失败: " + ex.Message);
+                    }
+                };
+                
+                Log("开始加载图片，共 " + totalCount + " 个不同的icon pak文件");
+                
                 foreach (FS服装搭配专家v1._0.ItemshopM itemshopM in distinctList)
                 {
                     currentCount++;
@@ -793,56 +1127,107 @@ namespace FS服装搭配专家v1._0
                         labErrorMsg.Text = string.Format("正在加载图片... {0}/{1}", currentCount, totalCount);
                     });
                     
-                    string iconDir = this.cookiename + "\\icon" + itemshopM.PakNum.Replace(".", "_").Replace("*", "");
+                    string iconDir = Path.Combine(Environment.CurrentDirectory, this.cookiename, "icon" + itemshopM.PakNum.Replace(".", "_").Replace("*", ""));
+                    Log("检查icon目录: " + iconDir);
+                    
                     if (!Directory.Exists(iconDir))
                     {
                         string iconPakName = "icon" + itemshopM.PakNum.Replace("*", "");
+                        Log("处理icon pak文件: " + iconPakName);
                         try
                         {
-                            // 简化版本：只使用本地安装目录
-                            string sourcePath = this.strInstallDirectory + "\\" + iconPakName;
-                            string destPath = this.cookiename + "\\" + iconPakName;
+                            // 构建源文件和目标文件路径
+                            string sourcePath = Path.Combine(this.strInstallDirectory, iconPakName);
+                            string destPath = Path.Combine(Environment.CurrentDirectory, this.cookiename, iconPakName);
+                            
+                            Log("源文件路径: " + sourcePath);
+                            Log("目标文件路径: " + destPath);
                             
                             // 检查源文件是否存在
                             if (File.Exists(sourcePath))
                             {
                                 // 确保目标目录存在
-                                if (!Directory.Exists(this.cookiename))
+                                string cookiesDir = Path.Combine(Environment.CurrentDirectory, this.cookiename);
+                                if (!Directory.Exists(cookiesDir))
                                 {
-                                    Directory.CreateDirectory(this.cookiename);
+                                    Log("创建cookies目录: " + cookiesDir);
+                                    Directory.CreateDirectory(cookiesDir);
                                 }
                                 
                                 // 复制文件
+                                Log("复制文件: " + sourcePath + " -> " + destPath);
                                 File.Copy(sourcePath, destPath, true);
+                                Log("文件复制成功");
                                 
                                 // 提取图片
-                                string extractPath = string.Concat(new string[]
+                                if (File.Exists(destPath))
                                 {
-                                    Environment.CurrentDirectory,
-                                    "\\",
-                                    this.cookiename,
-                                    "\\",
-                                    iconPakName
-                                });
-                                
-                                if (File.Exists(extractPath))
+                                    Log("开始解包icon pak文件: " + destPath);
+                                    
+                                    // 构建resources.exe路径
+                                    string resourcesExePath = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "pack", "resources.exe");
+                                    if (!File.Exists(resourcesExePath))
+                                    {
+                                        resourcesExePath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "..", "..", "..", "pack", "resources.exe");
+                                    }
+                                    
+                                    if (File.Exists(resourcesExePath))
+                                    {
+                                        // 执行解包命令
+                                        ProcessStartInfo processStartInfo = new ProcessStartInfo();
+                                        processStartInfo.FileName = resourcesExePath;
+                                        processStartInfo.Arguments = $"\"{destPath}\" -byname .+\\.png";
+                                        processStartInfo.UseShellExecute = false;
+                                        processStartInfo.RedirectStandardInput = true;
+                                        processStartInfo.RedirectStandardOutput = true;
+                                        processStartInfo.RedirectStandardError = true;
+                                        processStartInfo.CreateNoWindow = true;
+                                        processStartInfo.WorkingDirectory = Environment.CurrentDirectory;
+                                        
+                                        Log("执行解包命令: " + processStartInfo.FileName + " " + processStartInfo.Arguments);
+                                        
+                                        Process process = Process.Start(processStartInfo);
+                                        string output = process.StandardOutput.ReadToEnd();
+                                        string error = process.StandardError.ReadToEnd();
+                                        process.WaitForExit();
+                                        int exitCode = process.ExitCode;
+                                        process.Close();
+                                        
+                                        Log("解包命令输出: " + output);
+                                        if (!string.IsNullOrEmpty(error))
+                                        {
+                                            Log("解包命令错误: " + error);
+                                        }
+                                        Log("解包命令执行完成，退出码: " + exitCode);
+                                    }
+                                    else
+                                    {
+                                        Log("resources.exe不存在: " + resourcesExePath);
+                                    }
+                                }
+                                else
                                 {
-                                    string extractCmd = "pack\\resources \"" + extractPath + "\" -byname .+\\.png";
-                                    conmon.RunCmd(extractCmd);
+                                    Log("复制后文件不存在: " + destPath);
                                 }
                             }
                             else
                             {
-                                Console.WriteLine("图片文件不存在: " + sourcePath);
+                                Log("图片文件不存在: " + sourcePath);
                             }
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("加载图片失败: " + ex.Message);
-                            Console.WriteLine("堆栈跟踪: " + ex.StackTrace);
+                            Log("加载图片失败: " + ex.Message);
+                            Log("堆栈跟踪: " + ex.StackTrace);
                         }
                     }
+                    else
+                    {
+                        Log("icon目录已存在，跳过: " + iconDir);
+                    }
                 }
+                
+                Log("图片加载完成，共处理 " + totalCount + " 个icon pak文件");
                 
                 // 加载完成
                 this.Dispatcher.Invoke(() =>
@@ -967,6 +1352,8 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
+                Console.WriteLine("=== 开始初始化配置 ===");
+                
                 // 尝试从多个位置读取配置文件
                 string[] configPaths = new string[]
                 {
@@ -975,6 +1362,7 @@ namespace FS服装搭配专家v1._0
                     Path.Combine(Environment.CurrentDirectory, "config.ini")
                 };
                 
+                bool configFound = false;
                 foreach (string configPath in configPaths)
                 {
                     Console.WriteLine("尝试读取配置文件: " + configPath);
@@ -989,6 +1377,7 @@ namespace FS服装搭配专家v1._0
                             Console.WriteLine("读取到游戏目录: " + this.strInstallDirectory);
                         }
                         streamReader.Close();
+                        configFound = true;
                         break; // 找到配置文件后退出循环
                     }
                     else
@@ -1001,32 +1390,115 @@ namespace FS服装搭配专家v1._0
                 if (string.IsNullOrEmpty(this.strInstallDirectory))
                 {
                     Console.WriteLine("游戏目录为空");
-                    MessageBox.Show("请先设置游戏安装目录。\n在config.ini文件中添加游戏目录路径。", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+                    
+                    // 显示错误消息
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        labErrorMsg.Text = "请先设置游戏安装目录。\n在config.ini文件中添加游戏目录路径。";
+                        labErrorMsg.Visibility = Visibility.Visible;
+                    });
                 }
                 else
                 {
                     Console.WriteLine("游戏目录: " + this.strInstallDirectory);
+                    
+                    // 检查游戏目录是否存在
+                    if (!Directory.Exists(this.strInstallDirectory))
+                    {
+                        Console.WriteLine("游戏目录不存在: " + this.strInstallDirectory);
+                        
+                        // 显示错误消息
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            labErrorMsg.Text = "游戏目录不存在: " + this.strInstallDirectory;
+                            labErrorMsg.Visibility = Visibility.Visible;
+                        });
+                    }
+                    else
+                    {
+                        // 检查item_text.pak文件是否存在
+                        string itemTextPakPath = Path.Combine(this.strInstallDirectory, "item_text.pak");
+                        if (!File.Exists(itemTextPakPath))
+                        {
+                            Console.WriteLine("item_text.pak文件不存在: " + itemTextPakPath);
+                            
+                            // 显示错误消息
+                            this.Dispatcher.Invoke(() =>
+                            {
+                                labErrorMsg.Text = "item_text.pak文件不存在: " + itemTextPakPath;
+                                labErrorMsg.Visibility = Visibility.Visible;
+                            });
+                        }
+                        else
+                        {
+                            Console.WriteLine("item_text.pak文件存在: " + itemTextPakPath);
+                        }
+                    }
                 }
                 // 不检查路径有效性，因为用户确认路径正确
                 
                 // 创建必要的目录
                 if (!Directory.Exists(this.cookiename))
                 {
+                    Console.WriteLine("创建cookies目录: " + this.cookiename);
                     Directory.CreateDirectory(this.cookiename);
                 }
+                else
+                {
+                    Console.WriteLine("cookies目录已存在: " + this.cookiename);
+                }
+                
+                Console.WriteLine("=== 配置初始化完成 ===");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("初始化配置失败: " + ex.Message);
-                MessageBox.Show("初始化配置失败: " + ex.Message, "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+                Console.WriteLine("初始化配置时出错: " + ex.Message);
+                Console.WriteLine("堆栈跟踪: " + ex.StackTrace);
+                
+                // 显示错误消息
+                this.Dispatcher.Invoke(() =>
+                {
+                    labErrorMsg.Text = "初始化配置时出错: " + ex.Message;
+                    labErrorMsg.Visibility = Visibility.Visible;
+                });
             }
         }
 
         // 后台工作线程方法
         private void bwMain_DoLoadList(object sender, DoWorkEventArgs e)
         {
-            InitializeConfig();
-            GetNewItem();
+            try
+            {
+                Console.WriteLine("=== 开始加载服装数据 ===");
+                
+                // 记录当前工作目录
+                Console.WriteLine("当前工作目录: " + Environment.CurrentDirectory);
+                
+                // 初始化配置
+                Console.WriteLine("开始初始化配置...");
+                InitializeConfig();
+                Console.WriteLine("配置初始化完成，游戏目录: " + this.strInstallDirectory);
+                
+                // 加载服装数据
+                Console.WriteLine("开始加载服装数据...");
+                GetNewItem();
+                Console.WriteLine("服装数据加载完成，共加载 " + this.list.Count + " 件服装");
+                
+                Console.WriteLine("=== 服装数据加载流程完成 ===");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("加载服装数据时出错: " + ex.Message);
+                Console.WriteLine("堆栈跟踪: " + ex.StackTrace);
+                
+                // 显示错误消息
+                this.Dispatcher.Invoke(() =>
+                {
+                    labErrorMsg.Text = "加载服装数据时出错: " + ex.Message;
+                    labErrorMsg.Visibility = Visibility.Visible;
+                    picLoding.Visibility = Visibility.Collapsed;
+                });
+            }
         }
 
         private void bwMain_CompletedLoadList(object sender, RunWorkerCompletedEventArgs e)
