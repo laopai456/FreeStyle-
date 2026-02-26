@@ -144,14 +144,19 @@ namespace FS服装搭配专家v1._0
             string result = str;
             try
             {
-                byte[] bytes = Encoding.Default.GetBytes(str);
+                // 注册代码页提供程序
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
                 if (toBig5)
                 {
+                    // 将Unicode转换为Big5
+                    byte[] bytes = Encoding.Unicode.GetBytes(str);
                     result = Encoding.GetEncoding(950).GetString(bytes);
                 }
                 else
                 {
-                    result = Encoding.Default.GetString(bytes);
+                    // 将Big5转换为Unicode
+                    byte[] bytes = Encoding.GetEncoding(950).GetBytes(str);
+                    result = Encoding.Unicode.GetString(bytes);
                 }
             }
             catch (Exception ex)

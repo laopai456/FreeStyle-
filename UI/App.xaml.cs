@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Windows.Controls;
+using System.Text;
 
 namespace FS服装搭配专家v1._0
 {
@@ -16,6 +17,8 @@ namespace FS服装搭配专家v1._0
         
         protected override void OnStartup(StartupEventArgs e)
         {
+            // 注册编码提供程序以支持Big5编码
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             base.OnStartup(e);
             
             try

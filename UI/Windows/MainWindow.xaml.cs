@@ -44,6 +44,10 @@ namespace FS服装搭配专家v1._0
         private string thisOtherPropName = "";
         private bool iseffok = false;
 
+        // 变更前和变更后的服装列表
+        private List<ItemshopM> beforeItems = new List<ItemshopM>();
+        private List<ItemshopM> afterItems = new List<ItemshopM>();
+
         // 后台工作线程
         private BackgroundWorker bwMain;
         private BackgroundWorker bwLoadImg;
@@ -62,10 +66,10 @@ namespace FS服装搭配专家v1._0
                 
                 // 强制设置窗口属性
                 Console.WriteLine("设置窗口属性...");
-                this.Width = 1400;
-                this.Height = 720;
+                this.Width = 1440;
+                this.Height = 1080;
                 this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                this.WindowState = WindowState.Normal;
+                this.WindowState = WindowState.Maximized;
                 this.Visibility = Visibility.Visible;
                 
                 // 记录设置后的状态
@@ -258,23 +262,43 @@ namespace FS服装搭配专家v1._0
 
         private void Search()
         {
-            // 简化版搜索功能
             try
             {
-                // 获取搜索文本
                 string searchText = "";
                 this.Dispatcher.Invoke(() =>
                 {
-                    // 显示搜索状态
                     labErrorMsg.Visibility = Visibility.Collapsed;
                     labErrorMsg.Text = "";
                     searchText = txtSearch.Text.Trim();
                 });
                 
-                // 显示搜索结果
+                if (this.list == null || this.list.Count == 0)
+                {
+                    return;
+                }
+                
+                if (string.IsNullOrEmpty(searchText))
+                {
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        lstClothing.ItemsSource = this.list;
+                    });
+                    return;
+                }
+                
+                var filteredList = this.list.Where(item =>
+                    (item.ItemCode != null && item.ItemCode.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                    (item.PakNum != null && item.PakNum.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                    (item.EffectCode != null && item.EffectCode.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                    (item.ItemName != null && item.ItemName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                    (item.Comment != null && item.Comment.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                    (item.ItemType != null && item.ItemType.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
+                ).ToList();
+                
                 this.Dispatcher.Invoke(() =>
                 {
-                    labErrorMsg.Text = string.Format("搜索功能已简化，当前搜索文本: {0}", searchText);
+                    lstClothing.ItemsSource = filteredList;
+                    labErrorMsg.Text = string.Format("找到 {0} 个结果", filteredList.Count);
                     labErrorMsg.Visibility = Visibility.Visible;
                 });
             }
@@ -289,20 +313,321 @@ namespace FS服装搭配专家v1._0
             }
         }
 
-        private void lstClothing_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void lstClothing_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // 服装列表点击事件
-            // 实现左键添加到变更前，Ctrl+左键添加到变更后
+            try
+            {
+                if (lstClothing.SelectedItem == null) return;
+                
+                ItemshopM selectedItem = lstClothing.SelectedItem as ItemshopM;
+                if (selectedItem == null) return;
+                
+                if (Keyboard.Modifiers == ModifierKeys.Control)
+                {
+                    AddToAfterList(selectedItem);
+                }
+                else
+                {
+                    AddToBeforeList(selectedItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("选择服装失败: " + ex.Message);
+                labErrorMsg.Text = "选择服装失败: " + ex.Message;
+                labErrorMsg.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void AddToBeforeList(ItemshopM item)
+        {
+            if (beforeItems.Any(x => x.ItemCode == item.ItemCode))
+            {
+                labErrorMsg.Text = "该服装已在变更前列表中";
+                labErrorMsg.Visibility = Visibility.Visible;
+                return;
+            }
+            
+            beforeItems.Add(item);
+            UpdateBeforePanel();
+            UpdatePairStatus();
+            
+            labErrorMsg.Text = string.Format("已添加 [{0}] 到变更前", item.ItemName);
+            labErrorMsg.Visibility = Visibility.Visible;
+        }
+
+        private void AddToAfterList(ItemshopM item)
+        {
+            if (afterItems.Any(x => x.ItemCode == item.ItemCode))
+            {
+                labErrorMsg.Text = "该服装已在变更后列表中";
+                labErrorMsg.Visibility = Visibility.Visible;
+                return;
+            }
+            
+            afterItems.Add(item);
+            UpdateAfterPanel();
+            UpdatePairStatus();
+            
+            labErrorMsg.Text = string.Format("已添加 [{0}] 到变更后", item.ItemName);
+            labErrorMsg.Visibility = Visibility.Visible;
+        }
+
+        private void UpdateBeforePanel()
+        {
+            try
+            {
+                var wrapPanel = FindVisualChild<WrapPanel>(beforePanel);
+                if (wrapPanel == null) return;
+                
+                wrapPanel.Children.Clear();
+                
+                foreach (var item in beforeItems)
+                {
+                    var border = new Border
+                    {
+                        Width = 70,
+                        Height = 70,
+                        Margin = new Thickness(5),
+                        Background = new SolidColorBrush(Color.FromArgb(30, 255, 255, 255)),
+                        BorderBrush = new SolidColorBrush(Color.FromArgb(80, 255, 255, 255)),
+                        BorderThickness = new Thickness(1),
+                        CornerRadius = new CornerRadius(8),
+                        Cursor = Cursors.Hand,
+                        Tag = item
+                    };
+                    
+                    var grid = new Grid();
+                    
+                    var image = new Image
+                    {
+                        Width = 60,
+                        Height = 60,
+                        Stretch = Stretch.Uniform,
+                        HorizontalAlignment = HorizontalAlignment.Center,
+                        VerticalAlignment = VerticalAlignment.Center
+                    };
+                    
+                    if (File.Exists(item.ImgPath))
+                    {
+                        try
+                        {
+                            var bitmap = new System.Windows.Media.Imaging.BitmapImage();
+                            bitmap.BeginInit();
+                            bitmap.UriSource = new Uri(item.ImgPath, UriKind.Absolute);
+                            bitmap.CacheOption = System.Windows.Media.Imaging.BitmapCacheOption.OnLoad;
+                            bitmap.EndInit();
+                            image.Source = bitmap;
+                        }
+                        catch
+                        {
+                        }
+                    }
+                    
+                    var tooltip = new ToolTip
+                    {
+                        Content = item.ItemName ?? item.ItemCode
+                    };
+                    ToolTipService.SetToolTip(border, tooltip);
+                    
+                    grid.Children.Add(image);
+                    border.Child = grid;
+                    
+                    border.MouseLeftButtonDown += (s, e) =>
+                    {
+                        var borderItem = s as Border;
+                        var itemData = borderItem?.Tag as ItemshopM;
+                        if (itemData != null)
+                        {
+                            beforeItems.Remove(itemData);
+                            UpdateBeforePanel();
+                            UpdatePairStatus();
+                        }
+                    };
+                    
+                    wrapPanel.Children.Add(border);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("更新变更前面板失败: " + ex.Message);
+            }
+        }
+
+        private void UpdateAfterPanel()
+        {
+            try
+            {
+                var wrapPanel = FindVisualChild<WrapPanel>(afterPanel);
+                if (wrapPanel == null) return;
+                
+                wrapPanel.Children.Clear();
+                
+                foreach (var item in afterItems)
+                {
+                    var border = new Border
+                    {
+                        Width = 70,
+                        Height = 70,
+                        Margin = new Thickness(5),
+                        Background = new SolidColorBrush(Color.FromArgb(30, 255, 255, 255)),
+                        BorderBrush = new SolidColorBrush(Color.FromArgb(80, 255, 255, 255)),
+                        BorderThickness = new Thickness(1),
+                        CornerRadius = new CornerRadius(8),
+                        Cursor = Cursors.Hand,
+                        Tag = item
+                    };
+                    
+                    var grid = new Grid();
+                    
+                    var image = new Image
+                    {
+                        Width = 60,
+                        Height = 60,
+                        Stretch = Stretch.Uniform,
+                        HorizontalAlignment = HorizontalAlignment.Center,
+                        VerticalAlignment = VerticalAlignment.Center
+                    };
+                    
+                    if (File.Exists(item.ImgPath))
+                    {
+                        try
+                        {
+                            var bitmap = new System.Windows.Media.Imaging.BitmapImage();
+                            bitmap.BeginInit();
+                            bitmap.UriSource = new Uri(item.ImgPath, UriKind.Absolute);
+                            bitmap.CacheOption = System.Windows.Media.Imaging.BitmapCacheOption.OnLoad;
+                            bitmap.EndInit();
+                            image.Source = bitmap;
+                        }
+                        catch
+                        {
+                        }
+                    }
+                    
+                    var tooltip = new ToolTip
+                    {
+                        Content = item.ItemName ?? item.ItemCode
+                    };
+                    ToolTipService.SetToolTip(border, tooltip);
+                    
+                    grid.Children.Add(image);
+                    border.Child = grid;
+                    
+                    border.MouseLeftButtonDown += (s, e) =>
+                    {
+                        var borderItem = s as Border;
+                        var itemData = borderItem?.Tag as ItemshopM;
+                        if (itemData != null)
+                        {
+                            afterItems.Remove(itemData);
+                            UpdateAfterPanel();
+                            UpdatePairStatus();
+                        }
+                    };
+                    
+                    wrapPanel.Children.Add(border);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("更新变更后面板失败: " + ex.Message);
+            }
+        }
+
+        private void UpdatePairStatus()
+        {
+            int pairCount = Math.Min(beforeItems.Count, afterItems.Count);
+            txtPairStatus.Text = string.Format("已配对 {0} 件服装", pairCount);
+        }
+
+        private T FindVisualChild<T>(DependencyObject parent) where T : DependencyObject
+        {
+            for (int i = 0; i < System.Windows.Media.VisualTreeHelper.GetChildrenCount(parent); i++)
+            {
+                DependencyObject child = System.Windows.Media.VisualTreeHelper.GetChild(parent, i);
+                if (child is T typedChild)
+                {
+                    return typedChild;
+                }
+                T result = FindVisualChild<T>(child);
+                if (result != null)
+                {
+                    return result;
+                }
+            }
+            return null;
         }
 
         private void btnConfirm_Click(object sender, RoutedEventArgs e)
         {
-            // 确认变更按钮点击事件
+            try
+            {
+                if (beforeItems.Count == 0 || afterItems.Count == 0)
+                {
+                    labErrorMsg.Text = "请先添加变更前和变更后的服装";
+                    labErrorMsg.Visibility = Visibility.Visible;
+                    return;
+                }
+                
+                if (beforeItems.Count != afterItems.Count)
+                {
+                    labErrorMsg.Text = string.Format("变更前({0})和变更后({1})数量不一致，请配对后再确认", beforeItems.Count, afterItems.Count);
+                    labErrorMsg.Visibility = Visibility.Visible;
+                    return;
+                }
+                
+                labErrorMsg.Text = "正在执行服装变更...";
+                labErrorMsg.Visibility = Visibility.Visible;
+                
+                for (int i = 0; i < beforeItems.Count; i++)
+                {
+                    var beforeItem = beforeItems[i];
+                    var afterItem = afterItems[i];
+                    
+                    string logEntry = string.Format("{0}#{1}#{2}#{3}\r\n",
+                        beforeItem.ItemCode,
+                        afterItem.ItemCode,
+                        beforeItem.PakNum,
+                        DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    
+                    File.AppendAllText("dopaklog.ini", logEntry, Encoding.Default);
+                }
+                
+                labErrorMsg.Text = string.Format("成功配对 {0} 件服装，变更已记录", beforeItems.Count);
+                labErrorMsg.Visibility = Visibility.Visible;
+                
+                beforeItems.Clear();
+                afterItems.Clear();
+                UpdateBeforePanel();
+                UpdateAfterPanel();
+                UpdatePairStatus();
+            }
+            catch (Exception ex)
+            {
+                labErrorMsg.Text = "确认变更失败: " + ex.Message;
+                labErrorMsg.Visibility = Visibility.Visible;
+            }
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
-            // 清空所有按钮点击事件
+            try
+            {
+                beforeItems.Clear();
+                afterItems.Clear();
+                UpdateBeforePanel();
+                UpdateAfterPanel();
+                UpdatePairStatus();
+                
+                labErrorMsg.Text = "已清空所有服装";
+                labErrorMsg.Visibility = Visibility.Visible;
+            }
+            catch (Exception ex)
+            {
+                labErrorMsg.Text = "清空失败: " + ex.Message;
+                labErrorMsg.Visibility = Visibility.Visible;
+            }
         }
         
         // 加载图片按钮点击事件
@@ -466,7 +791,15 @@ namespace FS服装搭配专家v1._0
                     labErrorMsg.Text = "";
                 });
                 
+                // 检查是否已经加载过数据
+                if (this.list != null && this.list.Count > 0)
+                {
+                    Log("数据已加载，跳过加载步骤");
+                    return;
+                }
+                
                 this.list = new List<ItemshopM>();
+                
                 Log("创建服装列表成功，初始数量: " + this.list.Count);
                 
                 // 简化版本：只使用本地安装目录
@@ -488,18 +821,26 @@ namespace FS服装搭配专家v1._0
                 
                 string sourceFileName = Path.Combine(this.strInstallDirectory, "item_text.pak");
                 Log("源文件路径: " + sourceFileName);
-                string destFileName = Path.Combine(Environment.CurrentDirectory, this.cookiename, "item_text.pak");
+                
+                // 使用当前工作目录作为基准路径，确保路径一致
+                string currentDir = Environment.CurrentDirectory;
+                Log("当前工作目录: " + currentDir);
+                
+                // 统一使用当前工作目录下的cookies目录
+                string cookiesPath = Path.Combine(currentDir, this.cookiename);
+                Log("统一cookies目录路径: " + cookiesPath);
+                string pakPath = Path.Combine(cookiesPath, "item_text.pak");
+                Log("统一pak文件路径: " + pakPath);
+                string destFileName = pakPath;
                 Log("目标文件路径: " + destFileName);
                 
                 // 确保目标目录存在
-                string localCookiesPath = Path.Combine(Environment.CurrentDirectory, this.cookiename);
-                Log("cookies目录路径: " + localCookiesPath);
-                if (!Directory.Exists(localCookiesPath))
+                if (!Directory.Exists(cookiesPath))
                 {
-                    Log("创建目标目录: " + localCookiesPath);
+                    Log("创建目标目录: " + cookiesPath);
                     try
                     {
-                        Directory.CreateDirectory(localCookiesPath);
+                        Directory.CreateDirectory(cookiesPath);
                         Log("创建目录成功");
                     }
                     catch (Exception ex)
@@ -578,16 +919,6 @@ namespace FS服装搭配专家v1._0
                 }
                 Log("文件存在，开始解包");
                 
-                // 使用当前工作目录作为基准路径，确保路径一致
-                string currentDir = Environment.CurrentDirectory;
-                Log("当前工作目录: " + currentDir);
-                
-                // 统一使用当前工作目录下的cookies目录
-                string cookiesPath = Path.Combine(currentDir, this.cookiename);
-                Log("统一cookies目录路径: " + cookiesPath);
-                string pakPath = Path.Combine(cookiesPath, "item_text.pak");
-                Log("统一pak文件路径: " + pakPath);
-                
                 // 确保cookies目录存在
                 if (!Directory.Exists(cookiesPath))
                 {
@@ -641,7 +972,6 @@ namespace FS服装搭配专家v1._0
                 Log("resources.exe存在");
                 
                 // 检查itemshop.txt文件是否已经存在
-                string itemshopPath = Path.Combine(cookiesPath, "item_text_pak", "itemshop.txt");
                 if (File.Exists(itemshopPath))
                 {
                     Log("itemshop.txt文件已经存在，跳过解包步骤");
@@ -745,9 +1075,12 @@ namespace FS服装搭配专家v1._0
                     int lineCount = 0;
                     try
                     {
-                        StreamReader streamReader = new StreamReader(itemshopPath, Encoding.Default);
-                        string text;
-                        while ((text = streamReader.ReadLine()) != null)
+                        Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+                        using (FileStream fileStream = new FileStream(itemshopPath, FileMode.Open, FileAccess.Read))
+                        using (StreamReader streamReader = new StreamReader(fileStream, Encoding.GetEncoding("GB2312")))
+                        {
+                            string text;
+                            while ((text = streamReader.ReadLine()) != null)
                         {
                             lineCount++;
                             string text2 = text.ToString();
@@ -759,68 +1092,68 @@ namespace FS服装搭配专家v1._0
                                 Log($"分割后数组长度: {array.Length}");
                                 
                                 if (array.Length >= 5)
-                                {
-                                    Log($"数组元素: [0]={array[0]}, [1]={array[1]}, [2]={array[2]}, [3]={array[3]}");
-                                    if (array[3] != "" && array[3] != "--")
                                     {
-                                        this.list.Add(new ItemshopM
+                                        Log($"数组元素: [0]={array[0]}, [1]={array[1]}, [2]={array[2]}, [3]={array[3]}");
+                                        if (array[3] != "" && array[3] != "--")
                                         {
-                                            ItemCode = array[0],
-                                            PakNum = "*" + ((array[1] == "1") ? "" : array[1]) + ".pak",
-                                            ImgPath = string.Concat(new string[]
+                                            this.list.Add(new ItemshopM
                                             {
-                                                currentDir,
-                                                "\\",
-                                                this.cookiename,
-                                                "\\icon",
-                                                (array[1] == "1") ? "" : array[1],
-                                                "_pak\\u",
-                                                array[0],
-                                                ".png"
-                                            }),
-                                            EffectCode = ((array[2] == "") ? "无" : ("特效代码:" + array[2])),
-                                            ItemName = array[3],
-                                            Comment = array[3]
-                                        });
-                                        itemCount++;
-                                        Log($"添加服装成功: {array[3]}");
-                                    }
-                                    else
-                                    {
-                                        Log($"跳过空名称或--的服装: {array[3]}");
-                                    }
-                                }
-                                else if (array.Length == 4)
-                                {
-                                    Log($"数组元素: [0]={array[0]}, [1]={array[1]}, [2]={array[2]}, [3]={array[3]}");
-                                    if (array[3] != "" && array[3] != "--")
-                                    {
-                                        this.list.Add(new ItemshopM
+                                                ItemCode = array[0],
+                                                PakNum = "*" + ((array[1] == "1") ? "" : array[1]) + ".pak",
+                                                ImgPath = string.Concat(new string[]
+                                                {
+                                                    currentDir,
+                                                    "\\",
+                                                    this.cookiename,
+                                                    "\\icon",
+                                                    (array[1] == "1") ? "" : array[1],
+                                                    "_pak\\u",
+                                                    array[0],
+                                                    ".png"
+                                                }),
+                                                EffectCode = ((array[2] == "") ? "无" : ("特效代码:" + array[2])),
+                                                ItemName = array[3],
+                                                Comment = array[4]
+                                            });
+                                            itemCount++;
+                                            Log($"添加服装成功: {array[3]}");
+                                        }
+                                        else
                                         {
-                                            ItemCode = array[0],
-                                            PakNum = "*" + ((array[1] == "1") ? "" : array[1]) + ".pak",
-                                            ImgPath = string.Concat(new string[]
-                                            {
-                                                currentDir,
-                                                "\\",
-                                                this.cookiename,
-                                                "\\icon",
-                                                (array[1] == "1") ? "" : array[1],
-                                                "_pak\\u",
-                                                array[0],
-                                                ".png"
-                                            }),
-                                            ItemName = array[2],
-                                            Comment = array[3]
-                                        });
-                                        itemCount++;
-                                        Log($"添加服装成功: {array[2]}");
+                                            Log($"跳过空名称或--的服装: {array[3]}");
+                                        }
                                     }
-                                    else
+                                    else if (array.Length == 4)
                                     {
-                                        Log($"跳过空名称或--的服装: {array[3]}");
+                                        Log($"数组元素: [0]={array[0]}, [1]={array[1]}, [2]={array[2]}, [3]={array[3]}");
+                                        if (array[3] != "" && array[3] != "--")
+                                        {
+                                            this.list.Add(new ItemshopM
+                                            {
+                                                ItemCode = array[0],
+                                                PakNum = "*" + ((array[1] == "1") ? "" : array[1]) + ".pak",
+                                                ImgPath = string.Concat(new string[]
+                                                {
+                                                    currentDir,
+                                                    "\\",
+                                                    this.cookiename,
+                                                    "\\icon",
+                                                    (array[1] == "1") ? "" : array[1],
+                                                    "_pak\\u",
+                                                    array[0],
+                                                    ".png"
+                                                }),
+                                                ItemName = array[2],
+                                                Comment = array[3]
+                                            });
+                                            itemCount++;
+                                            Log($"添加服装成功: {array[2]}");
+                                        }
+                                        else
+                                        {
+                                            Log($"跳过空名称或--的服装: {array[3]}");
+                                        }
                                     }
-                                }
                                 else
                                 {
                                     Log($"跳过数组长度不足的行: {array.Length}");
@@ -830,8 +1163,8 @@ namespace FS服装搭配专家v1._0
                             {
                                 Log("跳过表头行");
                             }
+                            }
                         }
-                        streamReader.Close();
                         
                         Log("解析完成，共加载 " + itemCount + " 件服装");
                         Log("服装列表总数量: " + this.list.Count);
