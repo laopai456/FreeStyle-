@@ -577,47 +577,43 @@
                             </ControlTemplate>
                         </Button.Template>
                         <Grid>
-                            <Grid.Triggers>
-                                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                                    <BeginStoryboard>
-                                        <Storyboard RepeatBehavior="Forever">
-                                            <DoubleAnimation Storyboard.TargetName="GradientStop1" 
-                                                             Storyboard.TargetProperty="Offset" 
-                                                             From="0" To="1" 
-                                                             Duration="4" 
-                                                             AutoReverse="True" />
-                                            <DoubleAnimation Storyboard.TargetName="GradientStop2" 
-                                                             Storyboard.TargetProperty="Offset" 
-                                                             From="0.5" To="1.5" 
-                                                             Duration="4" 
-                                                             AutoReverse="True" />
-                                            <DoubleAnimation Storyboard.TargetName="GradientStop3" 
-                                                             Storyboard.TargetProperty="Offset" 
-                                                             From="1" To="2" 
-                                                             Duration="4" 
-                                                             AutoReverse="True" />
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </Grid.Triggers>
-                            <!-- 渐变背景，只在背心区域显示 -->
-                            <Rectangle>
-                                <Rectangle.Fill>
-                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                        <GradientStop x:Name="GradientStop1" Color="#FF667EEA" Offset="0" />
-                                        <GradientStop x:Name="GradientStop2" Color="#FF6DD5FA" Offset="0.5" />
-                                        <GradientStop x:Name="GradientStop3" Color="#FFC58AF9" Offset="1" />
+                            <!-- 渐变背景 -->
+                            <Border Width="24" Height="24" CornerRadius="4">
+                                <Border.Background>
+                                    <LinearGradientBrush x:Name="IconGradient" StartPoint="-1,-1" EndPoint="2,2">
+                                        <GradientStop Color="#FF667EEA" Offset="0" />
+                                        <GradientStop Color="#FF6DD5FA" Offset="0.5" />
+                                        <GradientStop Color="#FFC58AF9" Offset="1" />
                                     </LinearGradientBrush>
-                                </Rectangle.Fill>
-                                <Rectangle.OpacityMask>
-                                    <ImageBrush ImageSource="D:\py\反编译\FreeStyle\template\vest-l.png" 
-                                               Stretch="Uniform" />
-                                </Rectangle.OpacityMask>
-                            </Rectangle>
-                            <!-- 原始背心图片，降低透明度以让渐变效果更加明显 -->
-                            <Image Source="D:\py\反编译\FreeStyle\template\vest-l.png" 
-                                   Stretch="Uniform" 
-                                   Opacity="0.5" />
+                                </Border.Background>
+                                <!-- 使用ImageBrush作为遮罩，确保只在图片非透明区域显示渐变 -->
+                                <Border.OpacityMask>
+                                    <ImageBrush ImageSource="pack://application:,,,/template/vest-l.png" 
+                                               Stretch="Uniform" 
+                                               AlignmentX="Center" 
+                                               AlignmentY="Center" />
+                                </Border.OpacityMask>
+                                <Border.Triggers>
+                                    <EventTrigger RoutedEvent="Border.Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard RepeatBehavior="Forever">
+                                                <PointAnimation 
+                                                    Storyboard.TargetName="IconGradient" 
+                                                    Storyboard.TargetProperty="StartPoint" 
+                                                    From="-1,-1" To="1,1" 
+                                                    Duration="0:0:3" 
+                                                    AutoReverse="True" />
+                                                <PointAnimation 
+                                                    Storyboard.TargetName="IconGradient" 
+                                                    Storyboard.TargetProperty="EndPoint" 
+                                                    From="0,0" To="2,2" 
+                                                    Duration="0:0:3" 
+                                                    AutoReverse="True" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Border.Triggers>
+                            </Border>
                         </Grid>
                     </Button>
                 </StackPanel>
@@ -628,7 +624,8 @@
                 <!-- 窗口控制按钮 -->
                 <StackPanel Grid.Column="2" Orientation="Horizontal" 
                             HorizontalAlignment="Right" 
-                            VerticalAlignment="Center">
+                            VerticalAlignment="Center" 
+                            Visibility="Hidden">
                     <Button Content="最小化" 
                             Width="70" 
                             Style="{StaticResource WindowButton}" 
@@ -651,15 +648,15 @@
                 <TabItem Header="服装道具" Style="{StaticResource GlassTabItem}">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="350" />
-                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="3*" />
                         </Grid.ColumnDefinitions>
                         
-                        <!-- 左侧操作面板 -->
+                        <!-- 左侧服装列表区域 -->
                         <Border Grid.Column="0" Padding="20" CornerRadius="16" Background="Transparent">
                             <StackPanel Orientation="Vertical">
                                 <!-- 功能标题 -->
-                                <TextBlock Text="服装道具" 
+                                <TextBlock Text="服装列表" 
                                            FontSize="18" 
                                            FontWeight="600" 
                                            Foreground="{StaticResource TitleTextColor}" 
@@ -667,7 +664,7 @@
                                 
                                 <!-- 搜索区域 -->
                                 <StackPanel Orientation="Vertical" Margin="0,0,0,20">
-                                    <TextBlock Text="搜索服装" 
+                                    <TextBlock Text="🔍 搜索服装" 
                                                FontSize="14" 
                                                Foreground="{StaticResource StatusTextColor}" 
                                                Margin="0,0,0,8" />
@@ -679,90 +676,33 @@
                                              BorderThickness="1" 
                                              Padding="12,8" 
                                              Height="36" 
-                                             ToolTip="输入服装名称或代码进行搜索" />
+                                             ToolTip="输入服装名称进行搜索" 
+                                             TextChanged="txtSearch_TextChanged" />
                                 </StackPanel>
                                 
-                                <!-- 控制按钮 - 并排 -->
-                                <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
-                                    <Button x:Name="btnSearch" 
-                                            Content="🔍 搜索" 
-                                            Style="{StaticResource WindowButton}" 
-                                            Height="36" 
-                                            Width="150" 
-                                            Click="btnSearch_Click" 
-                                            Margin="0,0,10,0" />
-                                    <Button x:Name="btnLoadImg" 
-                                            Content="🖼️ 加载图片" 
-                                            Style="{StaticResource WindowButton}" 
-                                            Height="36" 
-                                            Width="150" 
-                                            Click="btnLoadImg_Click" />
-                                </StackPanel>
+                                <!-- 服装列表 -->
+                                <Border Background="#15FFFFFF" 
+                                        BorderBrush="{StaticResource GlassBorderColor}" 
+                                        BorderThickness="1" 
+                                        CornerRadius="12" 
+                                        Padding="8" 
+                                        Height="400">
+                                    <ListBox x:Name="lstClothing" 
+                                             Style="{StaticResource GlassListBox}" 
+                                             MouseLeftButtonDown="lstClothing_MouseLeftButtonDown">
+                                        <!-- 列表项将通过数据绑定动态生成 -->
+                                    </ListBox>
+                                </Border>
                                 
-                                <!-- 搭配功能 -->
-                                <StackPanel Orientation="Vertical" Margin="0,0,0,20">
-                                    <TextBlock Text="装备变更" 
-                                               FontSize="16" 
-                                               FontWeight="600" 
-                                               Foreground="{StaticResource TitleTextColor}" 
-                                               Margin="0,0,0,12" />
-                                    
-                                    <!-- 搭配信息 - 并排 -->
-                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
-                                        <!-- 当前装备 -->
-                                        <StackPanel Orientation="Vertical" Width="150" Margin="0,0,10,0">
-                                            <TextBlock Text="当前装备:" 
-                                                       FontSize="12" 
-                                                       Foreground="{StaticResource StatusTextColor}" 
-                                                       Margin="0,0,0,4" />
-                                            <TextBox x:Name="tsbBeforeInfo" 
-                                                     Text="请选择当前装备" 
-                                                     FontSize="12" 
-                                                     Foreground="{StaticResource TextColor}" 
-                                                     Background="#20FFFFFF" 
-                                                     BorderBrush="{StaticResource GlassBorderColor}" 
-                                                     BorderThickness="1" 
-                                                     Padding="8,4" 
-                                                     Height="24" />
-                                        </StackPanel>
-                                        
-                                        <!-- 目标装备 -->
-                                        <StackPanel Orientation="Vertical" Width="150">
-                                            <TextBlock Text="目标装备:" 
-                                                       FontSize="12" 
-                                                       Foreground="{StaticResource StatusTextColor}" 
-                                                       Margin="0,0,0,4" />
-                                            <TextBox x:Name="tsbAfterInfo" 
-                                                     Text="请选择目标装备" 
-                                                     FontSize="12" 
-                                                     Foreground="{StaticResource TextColor}" 
-                                                     Background="#20FFFFFF" 
-                                                     BorderBrush="{StaticResource GlassBorderColor}" 
-                                                     BorderThickness="1" 
-                                                     Padding="8,4" 
-                                                     Height="24" />
-                                        </StackPanel>
-                                    </StackPanel>
-                                    
-                                    <!-- 操作按钮 - 并排 -->
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button x:Name="btnUpdate" 
-                                                Content="变更" 
-                                                Style="{StaticResource WindowButton}" 
-                                                Height="36" 
-                                                Width="150" 
-                                                Click="btnUpdate_Click" 
-                                                Margin="0,0,10,0" />
-                                        <Button x:Name="btnBatchUpdate" 
-                                                Content="批量变更" 
-                                                Style="{StaticResource WindowButton}" 
-                                                Height="36" 
-                                                Width="150" />
-                                    </StackPanel>
-                                </StackPanel>
+                                <!-- 操作提示 -->
+                                <TextBlock Text="左键添加到变更前 | Ctrl+左键添加到变更后" 
+                                           FontSize="11" 
+                                           Foreground="{StaticResource StatusTextColor}" 
+                                           Margin="0,12,0,0" 
+                                           TextAlignment="Center" />
                                 
                                 <!-- 状态信息 -->
-                                <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Vertical" Margin="0,12,0,0">
                                     <TextBlock x:Name="labErrorMsg" 
                                                Text="" 
                                                FontSize="12" 
@@ -778,38 +718,107 @@
                             </StackPanel>
                         </Border>
                         
-                        <!-- 右侧预览区域 -->
+                        <!-- 右侧变更区域 -->
                         <Border Grid.Column="1" Padding="20" CornerRadius="16" Background="Transparent">
                             <StackPanel Orientation="Vertical">
-                                <!-- 预览区域标题 -->
-                                <TextBlock Text="预览效果" 
+                                <!-- 变更区域标题 -->
+                                <TextBlock Text="变更区域" 
                                            FontSize="18" 
                                            FontWeight="600" 
                                            Foreground="{StaticResource TitleTextColor}" 
                                            Margin="0,0,0,20" />
                                 
-                                <!-- 道具名称 - 在框上面 -->
-                                <TextBlock x:Name="txtPreview" 
-                                           Text="请搜索并选择服装" 
-                                           HorizontalAlignment="Center" 
-                                           Foreground="{StaticResource BodyTextColor}" 
-                                           FontSize="16" 
-                                           FontWeight="Medium" 
+                                <!-- 配对状态 -->
+                                <TextBlock x:Name="txtPairStatus" 
+                                           Text="已配对 0 件服装" 
+                                           FontSize="12" 
+                                           Foreground="{StaticResource StatusTextColor}" 
                                            Margin="0,0,0,20" />
                                 
-                                <!-- 预览图片 -->
-                                <Border x:Name="PreviewBorder" 
-                                        Style="{StaticResource PreviewStyle}">
-                                    <Grid>
-                                        <!-- 道具图片 -->
-                                        <Image x:Name="picPreview" 
-                                               HorizontalAlignment="Center" 
-                                               VerticalAlignment="Center" 
-                                               Width="200" 
-                                               Height="200" 
-                                               Stretch="Uniform" />
-                                    </Grid>
-                                </Border>
+                                <!-- 变更前和变更后区域 -->
+                                <Grid Margin="0,0,0,20">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <!-- 变更前区域 -->
+                                    <Border Grid.Column="0" 
+                                            Background="#15FFFFFF" 
+                                            BorderBrush="{StaticResource GlassBorderColor}" 
+                                            BorderThickness="1" 
+                                            CornerRadius="12" 
+                                            Padding="16" 
+                                            Margin="0,0,10,0">
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="变更前" 
+                                                       FontSize="14" 
+                                                       FontWeight="600" 
+                                                       Foreground="{StaticResource TitleTextColor}" 
+                                                       Margin="0,0,0,12" />
+                                            <Border x:Name="beforePanel" 
+                                                    Background="Transparent" 
+                                                    MinHeight="200">
+                                                <WrapPanel Orientation="Horizontal" 
+                                                           HorizontalAlignment="Left" 
+                                                           VerticalAlignment="Top" 
+                                                           ItemWidth="80" 
+                                                           ItemHeight="80" 
+                                                           Margin="0">
+                                                    <!-- 变更前图标将动态添加 -->
+                                                </WrapPanel>
+                                            </Border>
+                                        </StackPanel>
+                                    </Border>
+                                    
+                                    <!-- 变更后区域 -->
+                                    <Border Grid.Column="1" 
+                                            Background="#15FFFFFF" 
+                                            BorderBrush="{StaticResource GlassBorderColor}" 
+                                            BorderThickness="1" 
+                                            CornerRadius="12" 
+                                            Padding="16" 
+                                            Margin="10,0,0,0">
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="变更后" 
+                                                       FontSize="14" 
+                                                       FontWeight="600" 
+                                                       Foreground="{StaticResource TitleTextColor}" 
+                                                       Margin="0,0,0,12" />
+                                            <Border x:Name="afterPanel" 
+                                                    Background="Transparent" 
+                                                    MinHeight="200">
+                                                <WrapPanel Orientation="Horizontal" 
+                                                           HorizontalAlignment="Left" 
+                                                           VerticalAlignment="Top" 
+                                                           ItemWidth="80" 
+                                                           ItemHeight="80" 
+                                                           Margin="0">
+                                                    <!-- 变更后图标将动态添加 -->
+                                                </WrapPanel>
+                                            </Border>
+                                        </StackPanel>
+                                    </Border>
+                                </Grid>
+                                
+                                <!-- 操作按钮 -->
+                                <StackPanel Orientation="Horizontal" 
+                                            HorizontalAlignment="Center" 
+                                            Margin="0,0,0,20">
+                                    <Button x:Name="btnConfirm" 
+                                            Content="✅ 确认变更" 
+                                            Style="{StaticResource GlassButton}" 
+                                            Height="44" 
+                                            Width="200" 
+                                            Click="btnConfirm_Click" 
+                                            Margin="0,0,10,0" />
+                                    <Button x:Name="btnClear" 
+                                            Content="🗑️ 清空所有" 
+                                            Style="{StaticResource WindowButton}" 
+                                            Height="40" 
+                                            Width="150" 
+                                            Click="btnClear_Click" />
+                                </StackPanel>
                             </StackPanel>
                         </Border>
                     </Grid>

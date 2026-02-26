@@ -7,6 +7,8 @@ using System.Linq;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Text;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace FS服装搭配专家v1._0
 {
@@ -247,6 +249,61 @@ namespace FS服装搭配专家v1._0
                 });
             }
         }
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // 实时搜索功能
+            Search();
+        }
+
+        private void Search()
+        {
+            // 简化版搜索功能
+            try
+            {
+                // 获取搜索文本
+                string searchText = "";
+                this.Dispatcher.Invoke(() =>
+                {
+                    // 显示搜索状态
+                    labErrorMsg.Visibility = Visibility.Collapsed;
+                    labErrorMsg.Text = "";
+                    searchText = txtSearch.Text.Trim();
+                });
+                
+                // 显示搜索结果
+                this.Dispatcher.Invoke(() =>
+                {
+                    labErrorMsg.Text = string.Format("搜索功能已简化，当前搜索文本: {0}", searchText);
+                    labErrorMsg.Visibility = Visibility.Visible;
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("搜索失败: " + ex.Message);
+                this.Dispatcher.Invoke(() =>
+                {
+                    labErrorMsg.Text = "搜索失败: " + ex.Message;
+                    labErrorMsg.Visibility = Visibility.Visible;
+                });
+            }
+        }
+
+        private void lstClothing_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            // 服装列表点击事件
+            // 实现左键添加到变更前，Ctrl+左键添加到变更后
+        }
+
+        private void btnConfirm_Click(object sender, RoutedEventArgs e)
+        {
+            // 确认变更按钮点击事件
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            // 清空所有按钮点击事件
+        }
         
         // 加载图片按钮点击事件
         private void btnLoadImg_Click(object sender, RoutedEventArgs e)
@@ -288,61 +345,15 @@ namespace FS服装搭配专家v1._0
                 labErrorMsg.Visibility = Visibility.Collapsed;
                 labErrorMsg.Text = "";
                 
-                // 检查搭配信息
-                if (tsbBeforeInfo.Text.Trim() == "beforeInfo")
-                {
-                    MessageBox.Show("请先选择搭配的‘当前装备’，然后使用搭配功能！");
-                    return;
-                }
-                
-                if (tsbAfterInfo.Text.Trim() == "afterinfo")
-                {
-                    MessageBox.Show("请先选择搭配的‘目标装备’，然后使用搭配功能！");
-                    return;
-                }
-                
-                if (tsbAfterInfo.Text.Trim() == tsbBeforeInfo.Text.Trim())
-                {
-                    MessageBox.Show("搭配的‘当前装备’和‘目标装备’不能相同！");
-                    return;
-                }
-                
-                // 确认操作
-                string beforeName = tsbBeforeInfo.Text.Split(new char[] { '-' })[0];
-                string afterName = tsbAfterInfo.Text.Split(new char[] { '-' })[0];
-                
-                string confirmMsg = string.Concat(new string[]
-                {
-                    "确认要将‘",
-                    beforeName,
-                    "’替换为‘",
-                    afterName,
-                    "’吗？\n注意：一定要先关闭游戏再操作！"
-                });
-                
-                if (MessageBox.Show(confirmMsg, "确认", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
-                {
-                    return;
-                }
-                
-                // 显示加载状态
-                picLoding.Visibility = Visibility.Visible;
-                labErrorMsg.Text = "正在更新搭配...";
+                // 简化版更新搭配功能
+                labErrorMsg.Text = "更新搭配功能已简化，将在后续版本实现";
                 labErrorMsg.Visibility = Visibility.Visible;
-                
-                // 启动后台线程执行搭配更新
-                bwLast = new BackgroundWorker();
-                bwLast.WorkerSupportsCancellation = true;
-                bwLast.DoWork += bw_DoWorkLast;
-                bwLast.RunWorkerCompleted += bw_CompletedWorkLast;
-                bwLast.RunWorkerAsync();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("更新搭配失败: " + ex.Message);
-                Console.WriteLine("堆栈跟踪: " + ex.StackTrace);
-                MessageBox.Show("更新搭配失败: " + ex.Message);
-                picLoding.Visibility = Visibility.Collapsed;
+                labErrorMsg.Text = "更新搭配失败: " + ex.Message;
+                labErrorMsg.Visibility = Visibility.Visible;
             }
         }
         
@@ -351,73 +362,12 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
-                string strAfterPak = "";
-                string strAfterMod = "";
-                string strBeforePak = "";
-                string strBeforeMod = "";
-                
-                // 解析搭配信息
-                strAfterPak = tsbAfterInfo.Text.Split(new char[] { ',' })[0].Split(new char[] { ':' })[1].Replace(".", "_");
-                strAfterMod = tsbAfterInfo.Text.Split(new char[] { ',' })[1].Split(new char[] { ':' })[1];
-                strAfterEffCode = tsbAfterInfo.Text.Split(new char[] { ',' })[2].Split(new char[] { ':' })[1].Replace("无", "");
-                
-                strBeforePak = tsbBeforeInfo.Text.Split(new char[] { ',' })[0].Split(new char[] { ':' })[1].Replace(".", "_");
-                strBeforeMod = tsbBeforeInfo.Text.Split(new char[] { ',' })[1].Split(new char[] { ':' })[1];
-                strBeforeEffCode = tsbBeforeInfo.Text.Split(new char[] { ',' })[2].Split(new char[] { ':' })[1].Replace("无", "");
-                
-                // 复制模板文件
-                string sourceFileName = string.Concat(new string[]
-                {
-                    Environment.CurrentDirectory,
-                    "\\",
-                    "cookies",
-                    "\\",
-                    strAfterPak,
-                    "\\",
-                    strAfterMod
-                });
-                
-                string destFileName = string.Concat(new string[]
-                {
-                    Environment.CurrentDirectory,
-                    "\\cookies\\",
-                    strBeforePak,
-                    "\\",
-                    strBeforeMod
-                });
-                
-                // 确保目标目录存在
-                string destDir = Path.GetDirectoryName(destFileName);
-                if (!Directory.Exists(destDir))
-                {
-                    Directory.CreateDirectory(destDir);
-                }
-                
-                // 复制文件
-                File.Copy(sourceFileName, destFileName, true);
-                
-                // 重新打包
-                string packCmd = string.Concat(new string[]
-                {
-                    "pack\\resources -file2pak \"",
-                    Environment.CurrentDirectory,
-                    "\\cookies\\",
-                    strBeforePak,
-                    "\" \"",
-                    this.strInstallDirectory,
-                    "\\",
-                    strBeforePak.Replace("_", "."),
-                    "\""
-                });
-                conmon.RunCmd(packCmd);
-                
-                // 处理特效代码
-                ProcessEffectCode();
+                // 简化版执行搭配更新
+                Console.WriteLine("执行搭配更新功能已简化");
             }
             catch (Exception ex)
             {
                 Console.WriteLine("执行搭配更新失败: " + ex.Message);
-                Console.WriteLine("堆栈跟踪: " + ex.StackTrace);
                 throw;
             }
         }
@@ -427,7 +377,6 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
-                picLoding.Visibility = Visibility.Collapsed;
                 labErrorMsg.Text = "";
                 labErrorMsg.Visibility = Visibility.Collapsed;
                 
@@ -442,168 +391,10 @@ namespace FS服装搭配专家v1._0
                 
                 // 清理
                 bwLast.Dispose();
-                
-                // 记录操作日志
-                RecordModifyLog();
-                
-                // 刷新服装数据
-                GetNewItem();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("搭配更新完成处理失败: " + ex.Message);
-            }
-        }
-        
-        // 处理特效代码
-        private void ProcessEffectCode()
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(strBeforeEffCode) && string.IsNullOrEmpty(strAfterEffCode))
-                {
-                    iseffok = false;
-                    return;
-                }
-                
-                // 获取特效代码
-                string beforeEff = string.IsNullOrEmpty(strBeforeEffCode) ? "无" : strBeforeEffCode;
-                string afterEff = string.IsNullOrEmpty(strAfterEffCode) ? "无" : strAfterEffCode;
-                
-                // 确认是否更新特效
-                bool updateEffect = false;
-                labErrorMsg.Dispatcher.Invoke(() =>
-                {
-                    updateEffect = (MessageBox.Show(string.Concat(new string[]
-                    {
-                        "注意:此处仅为替换装备特效\n是否要将特效",
-                        beforeEff,
-                        "替换为特效",
-                        afterEff,
-                        "？\n点击确定将替换，取消将不替换特效"
-                    }), "确认", MessageBoxButton.OKCancel) == MessageBoxResult.OK);
-                });
-                
-                if (!updateEffect)
-                {
-                    iseffok = false;
-                    return;
-                }
-                
-                // 解析搭配信息获取必要的变量
-                string strBeforeMod = "";
-                string strBeforePak = "";
-                
-                if (!string.IsNullOrEmpty(tsbBeforeInfo.Text))
-                {
-                    string[] beforeParts = tsbBeforeInfo.Text.Split(new char[] { ',' });
-                    if (beforeParts.Length > 1)
-                    {
-                        strBeforeMod = beforeParts[1].Split(new char[] { ':' })[1];
-                    }
-                    if (beforeParts.Length > 0)
-                    {
-                        strBeforePak = beforeParts[0].Split(new char[] { ':' })[1];
-                    }
-                }
-                
-                // 解析物品代码
-                string beforeCode = strBeforeMod.Replace(".bml", "").Replace("i", "");
-                string pakNum = strBeforePak.Replace("_pak", "").Replace("item", "");
-                if (string.IsNullOrEmpty(pakNum))
-                {
-                    pakNum = "1";
-                }
-                
-                // 构建替换文本
-                string oldValue = beforeCode + "\t" + pakNum + "\t" + strBeforeEffCode + "\t";
-                string newValue = beforeCode + "\t" + pakNum + "\t" + strAfterEffCode + "\t";
-                
-                // 读取itemshop.txt
-                string itemshopPath = Environment.CurrentDirectory + "\\cookies\\item_text_pak\\itemshop.txt";
-                if (File.Exists(itemshopPath))
-                {
-                    string content = File.ReadAllText(itemshopPath, Encoding.Default);
-                    
-                    // 检查物品是否存在
-                    if (!content.Contains(beforeCode))
-                    {
-                        // 物品不存在，添加新记录
-                        using (StreamWriter writer = new StreamWriter(itemshopPath, true, Encoding.Default))
-                        {
-                            writer.WriteLine(newValue + tsbBeforeInfo.Text.Split(new char[] { '-' })[0] + "\t装备相同但不同颜色装备，模板替换特效代码\t");
-                        }
-                    }
-                    else
-                    {
-                        // 物品存在，替换特效代码
-                        content = content.Replace(oldValue, newValue);
-                        File.WriteAllText(itemshopPath, content, Encoding.Default);
-                    }
-                    
-                    // 重新打包item_text.pak
-                    string packCmd = string.Concat(new string[]
-                    {
-                        "pack\\resources -file2pak \"",
-                        Environment.CurrentDirectory,
-                        "\\cookies\\item_text_pak",
-                        "\" \"",
-                        this.strInstallDirectory,
-                        "\\item_text.pak",
-                        "\""
-                    });
-                    conmon.RunCmd(packCmd);
-                    
-                    iseffok = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("处理特效代码失败: " + ex.Message);
-                iseffok = false;
-            }
-        }
-        
-        // 记录修改日志
-        private void RecordModifyLog()
-        {
-            try
-            {
-                List<string> existingLogs = new List<string>();
-                
-                // 读取现有日志
-                if (File.Exists("dopaklog.ini"))
-                {
-                    using (StreamReader reader = new StreamReader("dopaklog.ini", Encoding.Default))
-                    {
-                        string line;
-                        while ((line = reader.ReadLine()) != null)
-                        {
-                            if (line.IndexOf("#") != -1)
-                            {
-                                existingLogs.Add(line.Split(new char[] { '#' })[0]);
-                            }
-                        }
-                    }
-                }
-                
-                // 解析搭配信息
-                string beforeCode = tsbBeforeInfo.Text.Split(new char[] { ',' })[1].Split(new char[] { ':' })[1].Replace("i", "").Replace(".bml", "");
-                string afterCode = tsbAfterInfo.Text.Split(new char[] { ',' })[1].Split(new char[] { ':' })[1].Replace("i", "").Replace(".bml", "");
-                
-                // 检查是否已存在
-                if (!existingLogs.Contains(beforeCode))
-                {
-                    // 添加新日志
-                    using (StreamWriter writer = new StreamWriter("dopaklog.ini", true, Encoding.Default))
-                    {
-                        writer.WriteLine(beforeCode + "#" + afterCode);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("记录修改日志失败: " + ex.Message);
             }
         }
         
@@ -624,6 +415,23 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
+                // 清空旧日志
+                string logPath = "debug.log";
+                if (File.Exists(logPath))
+                {
+                    File.Delete(logPath);
+                }
+                
+                // 日志记录函数
+                Action<string> Log = (message) =>
+                {
+                    string logMessage = $"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] {message}";
+                    Console.WriteLine(logMessage);
+                    File.AppendAllText(logPath, logMessage + "\n");
+                };
+                
+                Log("开始加载服装数据");
+                
                 // 使用Dispatcher.Invoke确保UI操作在主线程执行
                 this.Dispatcher.Invoke(() =>
                 {
@@ -636,22 +444,27 @@ namespace FS服装搭配专家v1._0
                 this.list = new List<ItemshopM>();
                 
                 // 简化版本：只使用本地安装目录
-                string sourceFileName = this.strInstallDirectory + "\\item_text.pak";
+                Log("当前strInstallDirectory: " + this.strInstallDirectory);
+                string sourceFileName = Path.Combine(this.strInstallDirectory, "item_text.pak");
+                Log("源文件路径: " + sourceFileName);
                 string destFileName = this.cookiename + "\\item_text.pak";
+                Log("目标文件路径: " + destFileName);
                 
                 // 确保目标目录存在
                 if (!Directory.Exists(this.cookiename))
                 {
+                    Log("创建目标目录: " + this.cookiename);
                     Directory.CreateDirectory(this.cookiename);
                 }
                 
                 // 检查源文件是否存在
                 if (!File.Exists(sourceFileName))
                 {
-                    // 显示友好的错误提示
+                    Log("源文件不存在: " + sourceFileName);
+                    // 使用Dispatcher.Invoke确保UI操作在主线程执行
                     this.Dispatcher.Invoke(() =>
                     {
-                        labErrorMsg.Text = "服装数据文件不存在，请先设置游戏安装目录";
+                        labErrorMsg.Text = "源文件不存在: " + sourceFileName;
                         labErrorMsg.Visibility = Visibility.Visible;
                         picLoding.Visibility = Visibility.Collapsed;
                     });
@@ -659,21 +472,95 @@ namespace FS服装搭配专家v1._0
                 }
                 
                 // 复制文件
-                File.Copy(sourceFileName, destFileName, true);
+                try
+                {
+                    Log("尝试复制文件: " + sourceFileName + " -> " + destFileName);
+                    File.Copy(sourceFileName, destFileName, true);
+                    Log("文件复制成功");
+                }
+                catch (Exception ex)
+                {
+                    Log("文件复制失败: " + ex.Message);
+                    // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        labErrorMsg.Text = "文件复制失败: " + ex.Message;
+                        labErrorMsg.Visibility = Visibility.Visible;
+                        picLoding.Visibility = Visibility.Collapsed;
+                    });
+                    return;
+                }
                 
                 // 提取数据
-                string extractCmd = string.Concat(new string[]
-                {
-                    "pack\\resources \"",
-                    Environment.CurrentDirectory,
-                    "\\",
-                    this.cookiename,
-                    "\\item_text.pak\" -all"
-                });
-                conmon.RunCmd(extractCmd);
+                // 使用应用程序根目录作为基准路径，确保便携性
+                string appBasePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                string projectRootPath = Path.GetFullPath(Path.Combine(appBasePath, "..", "..", ".."));
                 
-                // 读取并解析服装数据
-                string itemshopPath = Environment.CurrentDirectory + "\\" + this.cookiename + "\\item_text_pak\\itemshop.txt";
+                // 简化路径结构，将cookies目录放在项目根目录
+                string projectCookiesPath = Path.Combine(projectRootPath, this.cookiename);
+                string projectPakPath = Path.Combine(projectCookiesPath, "item_text.pak");
+                string resourcesExePath = Path.Combine(projectRootPath, "pack", "resources.exe");
+                
+                // 确保项目根目录的cookies目录存在
+                if (!Directory.Exists(projectCookiesPath))
+                {
+                    Log("创建项目根目录cookies: " + projectCookiesPath);
+                    Directory.CreateDirectory(projectCookiesPath);
+                }
+                
+                // 复制文件到项目根目录的cookies
+                try
+                {
+                    Log("尝试复制文件到项目根目录: " + sourceFileName + " -> " + projectPakPath);
+                    File.Copy(sourceFileName, projectPakPath, true);
+                    Log("文件复制到项目根目录成功");
+                }
+                catch (Exception ex)
+                {
+                    Log("文件复制到项目根目录失败: " + ex.Message);
+                }
+                
+                Log("resources.exe路径: " + resourcesExePath);
+                Log("pak文件路径: " + projectPakPath);
+                
+                // 执行解包命令并获取输出
+                try
+                {
+                    ProcessStartInfo processStartInfo = new ProcessStartInfo();
+                    processStartInfo.FileName = resourcesExePath;
+                    processStartInfo.Arguments = $"\"{projectPakPath}\" -all";
+                    processStartInfo.UseShellExecute = false;
+                    processStartInfo.RedirectStandardInput = true;
+                    processStartInfo.RedirectStandardOutput = true;
+                    processStartInfo.RedirectStandardError = true;
+                    processStartInfo.CreateNoWindow = true;
+                    processStartInfo.WorkingDirectory = projectRootPath; // 设置工作目录为项目根目录
+                    
+                    Log("执行解包命令: " + processStartInfo.FileName + " " + processStartInfo.Arguments);
+                    Log("工作目录: " + processStartInfo.WorkingDirectory);
+                    
+                    Process process = Process.Start(processStartInfo);
+                    string output = process.StandardOutput.ReadToEnd();
+                    string error = process.StandardError.ReadToEnd();
+                    process.WaitForExit();
+                    int exitCode = process.ExitCode;
+                    process.Close();
+                    
+                    Log("解包命令输出: " + output);
+                    if (!string.IsNullOrEmpty(error))
+                    {
+                        Log("解包命令错误: " + error);
+                    }
+                    Log("解包命令执行完成，退出码: " + exitCode);
+                }
+                catch (Exception ex)
+                {
+                    Log("执行解包命令失败: " + ex.Message);
+                }
+                
+                // 检查解包结果
+                string itemshopPath = Path.Combine(projectCookiesPath, "item_text_pak", "itemshop.txt");
+                Log("检查解析后的文件: " + itemshopPath);
                 if (File.Exists(itemshopPath))
                 {
                     StreamReader streamReader = new StreamReader(itemshopPath, Encoding.Default);
@@ -694,7 +581,7 @@ namespace FS服装搭配专家v1._0
                                         PakNum = "*" + ((array[1] == "1") ? "" : array[1]) + ".pak",
                                         ImgPath = string.Concat(new string[]
                                         {
-                                            Environment.CurrentDirectory,
+                                            projectRootPath,
                                             "\\",
                                             this.cookiename,
                                             "\\icon",
@@ -719,7 +606,7 @@ namespace FS服装搭配专家v1._0
                                         PakNum = "*" + ((array[1] == "1") ? "" : array[1]) + ".pak",
                                         ImgPath = string.Concat(new string[]
                                         {
-                                            Environment.CurrentDirectory,
+                                            projectRootPath,
                                             "\\",
                                             this.cookiename,
                                             "\\icon",
@@ -995,13 +882,14 @@ namespace FS服装搭配专家v1._0
                 {
                     if (item == null)
                     {
-                        picPreview.Source = null;
-                        txtPreview.Text = "请选择一件服装进行预览";
+                        labErrorMsg.Text = "请选择一件服装进行预览";
+                        labErrorMsg.Visibility = Visibility.Visible;
                         return;
                     }
                     
                     // 显示预览加载状态
-                    txtPreview.Text = "正在加载预览图片...";
+                    labErrorMsg.Text = "正在加载预览图片...";
+                    labErrorMsg.Visibility = Visibility.Visible;
                 });
                 
                 // 构建图片路径
@@ -1021,8 +909,8 @@ namespace FS服装搭配专家v1._0
                         // 设置预览图片
                         this.Dispatcher.Invoke(() =>
                         {
-                            picPreview.Source = bitmap;
-                            txtPreview.Text = item.ItemName;
+                            labErrorMsg.Text = "预览图片: " + item.ItemName;
+                            labErrorMsg.Visibility = Visibility.Visible;
                         });
                     }
                     catch (Exception ex)
@@ -1030,8 +918,8 @@ namespace FS服装搭配专家v1._0
                         Console.WriteLine("加载图片失败: " + ex.Message);
                         this.Dispatcher.Invoke(() =>
                         {
-                            picPreview.Source = null;
-                            txtPreview.Text = "加载图片失败: " + ex.Message;
+                            labErrorMsg.Text = "加载图片失败: " + ex.Message;
+                            labErrorMsg.Visibility = Visibility.Visible;
                         });
                     }
                 }
@@ -1040,9 +928,6 @@ namespace FS服装搭配专家v1._0
                     // 图片不存在
                     this.Dispatcher.Invoke(() =>
                     {
-                        picPreview.Source = null;
-                        txtPreview.Text = "图片不存在，请先加载图片";
-                        
                         // 提示用户加载图片
                         labErrorMsg.Text = "图片不存在，请点击'加载图片'按钮";
                         labErrorMsg.Visibility = Visibility.Visible;
@@ -1054,8 +939,6 @@ namespace FS服装搭配专家v1._0
                 Console.WriteLine("预览图片失败: " + ex.Message);
                 this.Dispatcher.Invoke(() =>
                 {
-                    picPreview.Source = null;
-                    txtPreview.Text = "预览失败: " + ex.Message;
                     labErrorMsg.Text = "预览图片失败: " + ex.Message;
                     labErrorMsg.Visibility = Visibility.Visible;
                 });
@@ -1084,35 +967,58 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
-                // 读取安装目录配置
-                if (File.Exists("config.ini"))
+                // 尝试从多个位置读取配置文件
+                string[] configPaths = new string[]
                 {
-                    StreamReader streamReader = new StreamReader("config.ini", Encoding.Default);
-                    string text;
-                    while ((text = streamReader.ReadLine()) != null)
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.ini"),
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "config.ini"), // 项目根目录
+                    Path.Combine(Environment.CurrentDirectory, "config.ini")
+                };
+                
+                foreach (string configPath in configPaths)
+                {
+                    Console.WriteLine("尝试读取配置文件: " + configPath);
+                    if (File.Exists(configPath))
                     {
-                        this.strInstallDirectory = text.ToString();
+                        Console.WriteLine("配置文件存在");
+                        StreamReader streamReader = new StreamReader(configPath, Encoding.Default);
+                        string text;
+                        while ((text = streamReader.ReadLine()) != null)
+                        {
+                            this.strInstallDirectory = text.ToString().Trim();
+                            Console.WriteLine("读取到游戏目录: " + this.strInstallDirectory);
+                        }
+                        streamReader.Close();
+                        break; // 找到配置文件后退出循环
                     }
-                    streamReader.Close();
+                    else
+                    {
+                        Console.WriteLine("配置文件不存在: " + configPath);
+                    }
                 }
+                
+                // 检查路径是否为空
+                if (string.IsNullOrEmpty(this.strInstallDirectory))
+                {
+                    Console.WriteLine("游戏目录为空");
+                    MessageBox.Show("请先设置游戏安装目录。\n在config.ini文件中添加游戏目录路径。", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    Console.WriteLine("游戏目录: " + this.strInstallDirectory);
+                }
+                // 不检查路径有效性，因为用户确认路径正确
                 
                 // 创建必要的目录
                 if (!Directory.Exists(this.cookiename))
                 {
                     Directory.CreateDirectory(this.cookiename);
                 }
-                if (!Directory.Exists("othercookies"))
-                {
-                    Directory.CreateDirectory("othercookies");
-                }
-                if (!Directory.Exists("myplans"))
-                {
-                    Directory.CreateDirectory("myplans");
-                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("初始化配置失败: " + ex.Message);
+                MessageBox.Show("初始化配置失败: " + ex.Message, "错误", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
