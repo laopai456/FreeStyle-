@@ -377,13 +377,19 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
-                var wrapPanel = FindVisualChild<WrapPanel>(beforePanel);
-                if (wrapPanel == null) return;
+                if (beforeWrapPanel == null)
+                {
+                    File.AppendAllText("debug.log", "UpdateBeforePanel: beforeWrapPanel is null\n");
+                    return;
+                }
                 
-                wrapPanel.Children.Clear();
+                beforeWrapPanel.Children.Clear();
                 
                 foreach (var item in beforeItems)
                 {
+                    File.AppendAllText("debug.log", string.Format("UpdateBeforePanel: item.ImgPath = {0}\n", item.ImgPath));
+                    File.AppendAllText("debug.log", string.Format("UpdateBeforePanel: File.Exists = {0}\n", File.Exists(item.ImgPath)));
+                    
                     var border = new Border
                     {
                         Width = 70,
@@ -418,10 +424,16 @@ namespace FS服装搭配专家v1._0
                             bitmap.CacheOption = System.Windows.Media.Imaging.BitmapCacheOption.OnLoad;
                             bitmap.EndInit();
                             image.Source = bitmap;
+                            File.AppendAllText("debug.log", "UpdateBeforePanel: 图片加载成功\n");
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            File.AppendAllText("debug.log", string.Format("UpdateBeforePanel: 图片加载失败 - {0}\n", ex.Message));
                         }
+                    }
+                    else
+                    {
+                        File.AppendAllText("debug.log", "UpdateBeforePanel: 图片文件不存在\n");
                     }
                     
                     var tooltip = new ToolTip
@@ -445,12 +457,12 @@ namespace FS服装搭配专家v1._0
                         }
                     };
                     
-                    wrapPanel.Children.Add(border);
+                    beforeWrapPanel.Children.Add(border);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("更新变更前面板失败: " + ex.Message);
+                File.AppendAllText("debug.log", string.Format("更新变更前面板失败: {0}\n", ex.Message));
             }
         }
 
@@ -458,10 +470,9 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
-                var wrapPanel = FindVisualChild<WrapPanel>(afterPanel);
-                if (wrapPanel == null) return;
+                if (afterWrapPanel == null) return;
                 
-                wrapPanel.Children.Clear();
+                afterWrapPanel.Children.Clear();
                 
                 foreach (var item in afterItems)
                 {
@@ -526,7 +537,7 @@ namespace FS服装搭配专家v1._0
                         }
                     };
                     
-                    wrapPanel.Children.Add(border);
+                    afterWrapPanel.Children.Add(border);
                 }
             }
             catch (Exception ex)
@@ -577,24 +588,57 @@ namespace FS服装搭配专家v1._0
                     return;
                 }
                 
+                string msg = string.Format("确认要将 {0} 件服装进行变更吗？\n注意：一定要先关闭游戏！", beforeItems.Count);
+                var result = MessageBox.Show(msg, "确认变更", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+                
+                if (result != MessageBoxResult.OK)
+                {
+                    return;
+                }
+                
                 labErrorMsg.Text = "正在执行服装变更...";
                 labErrorMsg.Visibility = Visibility.Visible;
+                
+                int successCount = 0;
+                int failCount = 0;
+                List<string> errorMessages = new List<string>();
                 
                 for (int i = 0; i < beforeItems.Count; i++)
                 {
                     var beforeItem = beforeItems[i];
                     var afterItem = afterItems[i];
                     
-                    string logEntry = string.Format("{0}#{1}#{2}#{3}\r\n",
-                        beforeItem.ItemCode,
-                        afterItem.ItemCode,
-                        beforeItem.PakNum,
-                        DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    
-                    File.AppendAllText("dopaklog.ini", logEntry, Encoding.Default);
+                    try
+                    {
+                        ExecuteClothingChange(beforeItem, afterItem);
+                        
+                        string logEntry = string.Format("{0}#{1}#{2}\r\n",
+                            beforeItem.ItemCode,
+                            afterItem.ItemCode,
+                            DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        
+                        File.AppendAllText("dopaklog.ini", logEntry, Encoding.Default);
+                        
+                        successCount++;
+                    }
+                    catch (Exception ex)
+                    {
+                        failCount++;
+                        errorMessages.Add(string.Format("{0} -> {1}: {2}", beforeItem.ItemName, afterItem.ItemName, ex.Message));
+                    }
                 }
                 
-                labErrorMsg.Text = string.Format("成功配对 {0} 件服装，变更已记录", beforeItems.Count);
+                string resultMsg = string.Format("变更完成！成功: {0}, 失败: {1}", successCount, failCount);
+                if (errorMessages.Count > 0)
+                {
+                    resultMsg += "\n失败详情:\n" + string.Join("\n", errorMessages.Take(5));
+                    if (errorMessages.Count > 5)
+                    {
+                        resultMsg += string.Format("\n...还有 {0} 个错误", errorMessages.Count - 5);
+                    }
+                }
+                
+                labErrorMsg.Text = resultMsg;
                 labErrorMsg.Visibility = Visibility.Visible;
                 
                 beforeItems.Clear();
@@ -607,6 +651,74 @@ namespace FS服装搭配专家v1._0
             {
                 labErrorMsg.Text = "确认变更失败: " + ex.Message;
                 labErrorMsg.Visibility = Visibility.Visible;
+            }
+        }
+        
+        private void ExecuteClothingChange(ItemshopM beforeItem, ItemshopM afterItem)
+        {
+            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            
+            string beforePakName = beforeItem.PakNum.Replace("*", "").Replace(".pak", "");
+            string afterPakName = afterItem.PakNum.Replace("*", "").Replace(".pak", "");
+            
+            string beforeModFile = string.Format("i{0}.bml", beforeItem.ItemCode);
+            string afterModFile = string.Format("i{0}.bml", afterItem.ItemCode);
+            
+            string beforeIconFile = string.Format("u{0}.png", beforeItem.ItemCode);
+            string afterIconFile = string.Format("u{0}.png", afterItem.ItemCode);
+            
+            string beforePakDir = Path.Combine(currentDir, cookiename, "item" + beforePakName + "_pak");
+            string afterPakDir = Path.Combine(currentDir, cookiename, "item" + afterPakName + "_pak");
+            
+            string sourceModPath = Path.Combine(afterPakDir, afterModFile);
+            string destModPath = Path.Combine(beforePakDir, beforeModFile);
+            
+            string sourceIconPath = Path.Combine(afterPakDir.Replace("item", "icon"), afterIconFile);
+            string destIconPath = Path.Combine(beforePakDir.Replace("item", "icon"), beforeIconFile);
+            
+            if (File.Exists(sourceModPath))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(destModPath));
+                File.Copy(sourceModPath, destModPath, true);
+            }
+            
+            if (File.Exists(sourceIconPath))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(destIconPath));
+                File.Copy(sourceIconPath, destIconPath, true);
+            }
+            
+            string resourcesExePath = Path.Combine(currentDir, "pack", "resources.exe");
+            if (!File.Exists(resourcesExePath))
+            {
+                resourcesExePath = Path.Combine(Directory.GetParent(currentDir).Parent.Parent.FullName, "pack", "resources.exe");
+            }
+            
+            if (File.Exists(resourcesExePath))
+            {
+                string pakFile = string.IsNullOrEmpty(beforePakName) ? "item.pak" : string.Format("item{0}.pak", beforePakName);
+                string pakPath = Path.Combine(strInstallDirectory, pakFile);
+                
+                string cmd = string.Format("\"{0}\" -file2pak \"{1}\" \"{2}\"",
+                    resourcesExePath,
+                    beforePakDir,
+                    pakPath);
+                
+                conmon.RunCmd(cmd);
+                
+                string iconPakFile = string.IsNullOrEmpty(beforePakName) ? "icon.pak" : string.Format("icon{0}.pak", beforePakName);
+                string iconPakPath = Path.Combine(strInstallDirectory, iconPakFile);
+                string iconPakDir = beforePakDir.Replace("item", "icon");
+                
+                if (Directory.Exists(iconPakDir))
+                {
+                    cmd = string.Format("\"{0}\" -file2pak \"{1}\" \"{2}\"",
+                        resourcesExePath,
+                        iconPakDir,
+                        iconPakPath);
+                    
+                    conmon.RunCmd(cmd);
+                }
             }
         }
 
@@ -1413,7 +1525,6 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
-                // 显示加载状态
                 this.Dispatcher.Invoke(() =>
                 {
                     picLoding.Visibility = Visibility.Visible;
@@ -1421,169 +1532,106 @@ namespace FS服装搭配专家v1._0
                     labErrorMsg.Visibility = Visibility.Visible;
                 });
                 
-                // 检查服装列表是否为空
+                string cookiesDir = Path.Combine(Environment.CurrentDirectory, this.cookiename);
+                
+                if (Directory.Exists(cookiesDir))
+                {
+                    string[] pakFiles = Directory.GetFiles(cookiesDir, "icon*.pak");
+                    int totalPak = pakFiles.Length;
+                    int currentPak = 0;
+                    
+                    foreach (string pakFile in pakFiles)
+                    {
+                        currentPak++;
+                        string pakName = Path.GetFileNameWithoutExtension(pakFile);
+                        string iconDir = Path.Combine(cookiesDir, pakName.Replace(".", "_"));
+                        
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            labErrorMsg.Text = string.Format("正在解包 {0}... ({1}/{2})", pakName, currentPak, totalPak);
+                        });
+                        
+                        if (!Directory.Exists(iconDir) || Directory.GetFiles(iconDir, "*.png").Length == 0)
+                        {
+                            try
+                            {
+                                string cmd = "pack\\resources \"" + pakFile + "\" -byname .+\\.png";
+                                conmon.RunCmd(cmd);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("解包失败: " + ex.Message);
+                            }
+                        }
+                    }
+                }
+                
                 if (this.list == null || this.list.Count == 0)
                 {
                     throw new InvalidOperationException("服装列表为空，请先加载服装数据");
                 }
                 
-                // 获取唯一的PakNum列表
                 List<FS服装搭配专家v1._0.ItemshopM> distinctList = this.list.Distinct(new ItemshopMComparer()).ToList<FS服装搭配专家v1._0.ItemshopM>();
                 int totalCount = distinctList.Count;
                 int currentCount = 0;
-                
-                // 确保日志文件路径正确
-                string logPath = Path.Combine(Environment.CurrentDirectory, "debug.log");
-                Action<string> Log = (message) =>
-                {
-                    string logMessage = $"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] {message}";
-                    Console.WriteLine(logMessage);
-                    try
-                    {
-                        File.AppendAllText(logPath, logMessage + "\n");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("写入日志失败: " + ex.Message);
-                    }
-                };
-                
-                Log("开始加载图片，共 " + totalCount + " 个不同的icon pak文件");
                 
                 foreach (FS服装搭配专家v1._0.ItemshopM itemshopM in distinctList)
                 {
                     currentCount++;
                     
-                    // 更新加载状态
-                    this.Dispatcher.Invoke(() =>
+                    if (currentCount % 50 == 0)
                     {
-                        labErrorMsg.Text = string.Format("正在加载图片... {0}/{1}", currentCount, totalCount);
-                    });
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            labErrorMsg.Text = string.Format("检查服装图片... {0}/{1}", currentCount, totalCount);
+                        });
+                    }
                     
-                    string iconDir = Path.Combine(Environment.CurrentDirectory, this.cookiename, "icon" + itemshopM.PakNum.Replace(".", "_").Replace("*", ""));
-                    Log("检查icon目录: " + iconDir);
+                    string pakNum = itemshopM.PakNum.Replace("*", "");
+                    string iconDir = Path.Combine(Environment.CurrentDirectory, this.cookiename, "icon" + pakNum.Replace(".", "_"));
+                    string iconPakName = "icon" + pakNum;
                     
-                    if (!Directory.Exists(iconDir))
+                    if (!Directory.Exists(iconDir) || Directory.GetFiles(iconDir, "*.png").Length == 0)
                     {
-                        string iconPakName = "icon" + itemshopM.PakNum.Replace("*", "");
-                        Log("处理icon pak文件: " + iconPakName);
                         try
                         {
-                            // 构建源文件和目标文件路径
                             string sourcePath = Path.Combine(this.strInstallDirectory, iconPakName);
                             string destPath = Path.Combine(Environment.CurrentDirectory, this.cookiename, iconPakName);
                             
-                            Log("源文件路径: " + sourcePath);
-                            Log("目标文件路径: " + destPath);
-                            
-                            // 检查源文件是否存在
-                            if (File.Exists(sourcePath))
+                            if (File.Exists(sourcePath) && !File.Exists(destPath))
                             {
-                                // 确保目标目录存在
-                                string cookiesDir = Path.Combine(Environment.CurrentDirectory, this.cookiename);
                                 if (!Directory.Exists(cookiesDir))
                                 {
-                                    Log("创建cookies目录: " + cookiesDir);
                                     Directory.CreateDirectory(cookiesDir);
                                 }
                                 
-                                // 复制文件
-                                Log("复制文件: " + sourcePath + " -> " + destPath);
                                 File.Copy(sourcePath, destPath, true);
-                                Log("文件复制成功");
-                                
-                                // 提取图片
-                                if (File.Exists(destPath))
-                                {
-                                    Log("开始解包icon pak文件: " + destPath);
-                                    
-                                    // 构建resources.exe路径
-                                    string resourcesExePath = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "pack", "resources.exe");
-                                    if (!File.Exists(resourcesExePath))
-                                    {
-                                        resourcesExePath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "..", "..", "..", "pack", "resources.exe");
-                                    }
-                                    
-                                    if (File.Exists(resourcesExePath))
-                                    {
-                                        // 执行解包命令
-                                        ProcessStartInfo processStartInfo = new ProcessStartInfo();
-                                        processStartInfo.FileName = resourcesExePath;
-                                        processStartInfo.Arguments = $"\"{destPath}\" -byname .+\\.png";
-                                        processStartInfo.UseShellExecute = false;
-                                        processStartInfo.RedirectStandardInput = true;
-                                        processStartInfo.RedirectStandardOutput = true;
-                                        processStartInfo.RedirectStandardError = true;
-                                        processStartInfo.CreateNoWindow = true;
-                                        processStartInfo.WorkingDirectory = Environment.CurrentDirectory;
-                                        
-                                        Log("执行解包命令: " + processStartInfo.FileName + " " + processStartInfo.Arguments);
-                                        
-                                        Process process = Process.Start(processStartInfo);
-                                        string output = process.StandardOutput.ReadToEnd();
-                                        string error = process.StandardError.ReadToEnd();
-                                        process.WaitForExit();
-                                        int exitCode = process.ExitCode;
-                                        process.Close();
-                                        
-                                        Log("解包命令输出: " + output);
-                                        if (!string.IsNullOrEmpty(error))
-                                        {
-                                            Log("解包命令错误: " + error);
-                                        }
-                                        Log("解包命令执行完成，退出码: " + exitCode);
-                                    }
-                                    else
-                                    {
-                                        Log("resources.exe不存在: " + resourcesExePath);
-                                    }
-                                }
-                                else
-                                {
-                                    Log("复制后文件不存在: " + destPath);
-                                }
                             }
-                            else
+                            
+                            if (File.Exists(destPath))
                             {
-                                Log("图片文件不存在: " + sourcePath);
+                                string cmd = "pack\\resources \"" + destPath + "\" -byname .+\\.png";
+                                conmon.RunCmd(cmd);
                             }
                         }
                         catch (Exception ex)
                         {
-                            Log("加载图片失败: " + ex.Message);
-                            Log("堆栈跟踪: " + ex.StackTrace);
+                            Console.WriteLine("加载图片失败: " + ex.Message);
                         }
-                    }
-                    else
-                    {
-                        Log("icon目录已存在，跳过: " + iconDir);
                     }
                 }
                 
-                Log("图片加载完成，共处理 " + totalCount + " 个icon pak文件");
-                
-                // 加载完成
                 this.Dispatcher.Invoke(() =>
                 {
                     labErrorMsg.Text = "图片加载完成！";
                     labErrorMsg.Visibility = Visibility.Visible;
-                    
-                    // 显示完成消息
-                    MessageBox.Show("图片加载完成！", "完成", MessageBoxButton.OK, MessageBoxImage.Information);
-                    
-                    // 隐藏加载状态
                     picLoding.Visibility = Visibility.Collapsed;
                 });
             }
             catch (Exception ex)
             {
-                Console.WriteLine("加载图片失败: " + ex.Message);
-                Console.WriteLine("堆栈跟踪: " + ex.StackTrace);
-                
-                // 显示错误消息
                 this.Dispatcher.Invoke(() =>
                 {
-                    MessageBox.Show("加载图片失败: " + ex.Message, "错误", MessageBoxButton.OK, MessageBoxImage.Error);
                     labErrorMsg.Text = "加载图片失败: " + ex.Message;
                     labErrorMsg.Visibility = Visibility.Visible;
                     picLoding.Visibility = Visibility.Collapsed;

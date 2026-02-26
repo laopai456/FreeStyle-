@@ -774,7 +774,8 @@
                                             <Border x:Name="beforePanel" 
                                                     Background="Transparent" 
                                                     MinHeight="200">
-                                                <WrapPanel Orientation="Horizontal" 
+                                                <WrapPanel x:Name="beforeWrapPanel"
+                                                           Orientation="Horizontal" 
                                                            HorizontalAlignment="Left" 
                                                            VerticalAlignment="Top" 
                                                            ItemWidth="80" 
@@ -803,7 +804,8 @@
                                             <Border x:Name="afterPanel" 
                                                     Background="Transparent" 
                                                     MinHeight="200">
-                                                <WrapPanel Orientation="Horizontal" 
+                                                <WrapPanel x:Name="afterWrapPanel"
+                                                           Orientation="Horizontal" 
                                                            HorizontalAlignment="Left" 
                                                            VerticalAlignment="Top" 
                                                            ItemWidth="80" 

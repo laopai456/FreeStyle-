@@ -117,21 +117,25 @@ namespace FS服装搭配专家v1._0
         }
 
         // Token: 0x0600009A RID: 154 RVA: 0x0000ED0C File Offset: 0x0000CF0C
-        public static void RunCmd(string cmd)
+        public static void RunCmd(string str)
         {
             try
             {
-                ProcessStartInfo processStartInfo = new ProcessStartInfo();
-                processStartInfo.FileName = "cmd.exe";
-                processStartInfo.Arguments = "/c " + cmd;
-                processStartInfo.UseShellExecute = false;
-                processStartInfo.RedirectStandardInput = true;
-                processStartInfo.RedirectStandardOutput = true;
-                processStartInfo.RedirectStandardError = true;
-                processStartInfo.CreateNoWindow = true;
-                Process process = Process.Start(processStartInfo);
+                Process process = new Process();
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.RedirectStandardError = true;
+                process.StartInfo.CreateNoWindow = true;
+                process.Start();
+                process.StandardInput.WriteLine(str + "&exit");
+                process.StandardInput.AutoFlush = true;
+                process.StandardInput.WriteLine("exit");
+                string text = process.StandardOutput.ReadToEnd();
                 process.WaitForExit();
-                process.Close();
+                process.Kill();
+                process.Dispose();
             }
             catch (Exception ex)
             {
