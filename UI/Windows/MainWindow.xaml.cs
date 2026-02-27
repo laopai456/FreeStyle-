@@ -348,6 +348,8 @@ namespace FS服装搭配专家v1._0
                 return;
             }
             
+            UnpackItemPak(item.PakNum);
+            
             beforeItems.Add(item);
             UpdateBeforePanel();
             UpdatePairStatus();
@@ -365,12 +367,46 @@ namespace FS服装搭配专家v1._0
                 return;
             }
             
+            UnpackItemPak(item.PakNum);
+            
             afterItems.Add(item);
             UpdateAfterPanel();
             UpdatePairStatus();
             
             labErrorMsg.Text = string.Format("已添加 [{0}] 到变更后", item.ItemName);
             labErrorMsg.Visibility = Visibility.Visible;
+        }
+        
+        private void UnpackItemPak(string pakNum)
+        {
+            try
+            {
+                string pakName = "item" + pakNum.Replace("*", "");
+                string itemDir = Path.Combine(Environment.CurrentDirectory, cookiename, pakName.Replace(".", "_"));
+                
+                if (Directory.Exists(itemDir) && Directory.GetFiles(itemDir, "*.bml").Length > 0)
+                {
+                    return;
+                }
+                
+                string sourcePath = Path.Combine(strInstallDirectory, pakName);
+                string destPath = Path.Combine(Environment.CurrentDirectory, cookiename, pakName);
+                
+                if (File.Exists(sourcePath) && !File.Exists(destPath))
+                {
+                    File.Copy(sourcePath, destPath, true);
+                }
+                
+                if (File.Exists(destPath))
+                {
+                    string cmd = "pack\\resources \"" + destPath + "\" -all";
+                    conmon.RunCmd(cmd);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("解包item pak失败: " + ex.Message);
+            }
         }
 
         private void UpdateBeforePanel()
@@ -575,10 +611,12 @@ namespace FS服装搭配专家v1._0
                     return;
                 }
                 
-                string msg = string.Format("确认要将 {0} 件服装进行变更吗？\n注意：一定要先关闭游戏！", beforeItems.Count);
-                var result = MessageBox.Show(msg, "确认变更", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+                string msg = string.Format("确认要将 {0} 件服装进行变更吗？\n\n注意：一定要先关闭游戏！", beforeItems.Count);
+                var dialog = new ConfirmDialog(msg);
+                dialog.Owner = this;
+                dialog.ShowDialog();
                 
-                if (result != MessageBoxResult.OK)
+                if (!dialog.Result)
                 {
                     return;
                 }
@@ -643,25 +681,17 @@ namespace FS服装搭配专家v1._0
         
         private void ExecuteClothingChange(ItemshopM beforeItem, ItemshopM afterItem)
         {
-            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
-            
-            string beforePakName = beforeItem.PakNum.Replace("*", "").Replace(".pak", "");
-            string afterPakName = afterItem.PakNum.Replace("*", "").Replace(".pak", "");
+            string beforePakNum = beforeItem.PakNum.Replace("*", "").Replace(".pak", "");
+            string afterPakNum = afterItem.PakNum.Replace("*", "").Replace(".pak", "");
             
             string beforeModFile = string.Format("i{0}.bml", beforeItem.ItemCode);
             string afterModFile = string.Format("i{0}.bml", afterItem.ItemCode);
             
-            string beforeIconFile = string.Format("u{0}.png", beforeItem.ItemCode);
-            string afterIconFile = string.Format("u{0}.png", afterItem.ItemCode);
-            
-            string beforePakDir = Path.Combine(currentDir, cookiename, "item" + beforePakName + "_pak");
-            string afterPakDir = Path.Combine(currentDir, cookiename, "item" + afterPakName + "_pak");
+            string beforePakDir = Path.Combine(Environment.CurrentDirectory, cookiename, "item" + beforePakNum + "_pak");
+            string afterPakDir = Path.Combine(Environment.CurrentDirectory, cookiename, "item" + afterPakNum + "_pak");
             
             string sourceModPath = Path.Combine(afterPakDir, afterModFile);
             string destModPath = Path.Combine(beforePakDir, beforeModFile);
-            
-            string sourceIconPath = Path.Combine(afterPakDir.Replace("item", "icon"), afterIconFile);
-            string destIconPath = Path.Combine(beforePakDir.Replace("item", "icon"), beforeIconFile);
             
             if (File.Exists(sourceModPath))
             {
@@ -669,44 +699,11 @@ namespace FS服装搭配专家v1._0
                 File.Copy(sourceModPath, destModPath, true);
             }
             
-            if (File.Exists(sourceIconPath))
-            {
-                Directory.CreateDirectory(Path.GetDirectoryName(destIconPath));
-                File.Copy(sourceIconPath, destIconPath, true);
-            }
+            string beforePakName = string.IsNullOrEmpty(beforePakNum) ? "item.pak" : string.Format("item{0}.pak", beforePakNum);
+            string pakPath = Path.Combine(strInstallDirectory, beforePakName);
             
-            string resourcesExePath = Path.Combine(currentDir, "pack", "resources.exe");
-            if (!File.Exists(resourcesExePath))
-            {
-                resourcesExePath = Path.Combine(Directory.GetParent(currentDir).Parent.Parent.FullName, "pack", "resources.exe");
-            }
-            
-            if (File.Exists(resourcesExePath))
-            {
-                string pakFile = string.IsNullOrEmpty(beforePakName) ? "item.pak" : string.Format("item{0}.pak", beforePakName);
-                string pakPath = Path.Combine(strInstallDirectory, pakFile);
-                
-                string cmd = string.Format("\"{0}\" -file2pak \"{1}\" \"{2}\"",
-                    resourcesExePath,
-                    beforePakDir,
-                    pakPath);
-                
-                conmon.RunCmd(cmd);
-                
-                string iconPakFile = string.IsNullOrEmpty(beforePakName) ? "icon.pak" : string.Format("icon{0}.pak", beforePakName);
-                string iconPakPath = Path.Combine(strInstallDirectory, iconPakFile);
-                string iconPakDir = beforePakDir.Replace("item", "icon");
-                
-                if (Directory.Exists(iconPakDir))
-                {
-                    cmd = string.Format("\"{0}\" -file2pak \"{1}\" \"{2}\"",
-                        resourcesExePath,
-                        iconPakDir,
-                        iconPakPath);
-                    
-                    conmon.RunCmd(cmd);
-                }
-            }
+            string cmd = "pack\\resources -file2pak \"" + beforePakDir + "\" \"" + pakPath + "\"";
+            conmon.RunCmd(cmd);
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
