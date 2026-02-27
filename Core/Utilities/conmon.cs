@@ -128,6 +128,7 @@ namespace FS服装搭配专家v1._0
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.RedirectStandardError = true;
                 process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.Verb = "RunAs";
                 process.Start();
                 process.StandardInput.WriteLine(str + "&exit");
                 process.StandardInput.AutoFlush = true;

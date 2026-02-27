@@ -377,19 +377,12 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
-                if (beforeWrapPanel == null)
-                {
-                    File.AppendAllText("debug.log", "UpdateBeforePanel: beforeWrapPanel is null\n");
-                    return;
-                }
+                if (beforeWrapPanel == null) return;
                 
                 beforeWrapPanel.Children.Clear();
                 
                 foreach (var item in beforeItems)
                 {
-                    File.AppendAllText("debug.log", string.Format("UpdateBeforePanel: item.ImgPath = {0}\n", item.ImgPath));
-                    File.AppendAllText("debug.log", string.Format("UpdateBeforePanel: File.Exists = {0}\n", File.Exists(item.ImgPath)));
-                    
                     var border = new Border
                     {
                         Width = 70,
@@ -424,16 +417,10 @@ namespace FS服装搭配专家v1._0
                             bitmap.CacheOption = System.Windows.Media.Imaging.BitmapCacheOption.OnLoad;
                             bitmap.EndInit();
                             image.Source = bitmap;
-                            File.AppendAllText("debug.log", "UpdateBeforePanel: 图片加载成功\n");
                         }
-                        catch (Exception ex)
+                        catch
                         {
-                            File.AppendAllText("debug.log", string.Format("UpdateBeforePanel: 图片加载失败 - {0}\n", ex.Message));
                         }
-                    }
-                    else
-                    {
-                        File.AppendAllText("debug.log", "UpdateBeforePanel: 图片文件不存在\n");
                     }
                     
                     var tooltip = new ToolTip
@@ -462,7 +449,7 @@ namespace FS服装搭配专家v1._0
             }
             catch (Exception ex)
             {
-                File.AppendAllText("debug.log", string.Format("更新变更前面板失败: {0}\n", ex.Message));
+                Console.WriteLine("更新变更前面板失败: " + ex.Message);
             }
         }
 
@@ -860,67 +847,30 @@ namespace FS服装搭配专家v1._0
         // 加载服装数据
         public void GetNewItem()
         {
-            // 确保日志文件路径正确
-            string logPath = Path.Combine(Environment.CurrentDirectory, "debug.log");
-            Console.WriteLine("日志文件路径: " + logPath);
-            
-            // 清空旧日志
-            if (File.Exists(logPath))
-            {
-                Console.WriteLine("删除旧日志文件");
-                File.Delete(logPath);
-            }
-            
-            // 日志记录函数
-            Action<string> Log = (message) =>
-            {
-                string logMessage = $"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] {message}";
-                Console.WriteLine(logMessage);
-                try
-                {
-                    File.AppendAllText(logPath, logMessage + "\n");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("写入日志失败: " + ex.Message);
-                }
-            };
-            
-            Log("=== 开始加载服装数据 ===");
-            Log("当前工作目录: " + Environment.CurrentDirectory);
-            Log("应用程序基目录: " + AppDomain.CurrentDomain.BaseDirectory);
-            Log("开始加载服装数据");
+            Console.WriteLine("=== 开始加载服装数据 ===");
             
             try
             {
                 
-                // 使用Dispatcher.Invoke确保UI操作在主线程执行
                 this.Dispatcher.Invoke(() =>
                 {
-                    // 显示加载状态
                     picLoding.Visibility = Visibility.Visible;
                     labErrorMsg.Visibility = Visibility.Collapsed;
                     labErrorMsg.Text = "";
                 });
                 
-                // 检查是否已经加载过数据
                 if (this.list != null && this.list.Count > 0)
                 {
-                    Log("数据已加载，跳过加载步骤");
+                    Console.WriteLine("数据已加载，跳过加载步骤");
                     return;
                 }
                 
                 this.list = new List<ItemshopM>();
+                Console.WriteLine("创建服装列表成功");
                 
-                Log("创建服装列表成功，初始数量: " + this.list.Count);
-                
-                // 简化版本：只使用本地安装目录
-                Log("当前strInstallDirectory: " + this.strInstallDirectory);
-                
-                // 检查strInstallDirectory是否为空
                 if (string.IsNullOrEmpty(this.strInstallDirectory))
                 {
-                    Log("游戏目录为空，无法加载服装数据");
+                    Console.WriteLine("游戏目录为空，无法加载服装数据");
                     // 使用Dispatcher.Invoke确保UI操作在主线程执行
                     this.Dispatcher.Invoke(() =>
                     {
@@ -932,33 +882,23 @@ namespace FS服装搭配专家v1._0
                 }
                 
                 string sourceFileName = Path.Combine(this.strInstallDirectory, "item_text.pak");
-                Log("源文件路径: " + sourceFileName);
+                Console.WriteLine("源文件路径: " + sourceFileName);
                 
-                // 使用当前工作目录作为基准路径，确保路径一致
                 string currentDir = Environment.CurrentDirectory;
-                Log("当前工作目录: " + currentDir);
-                
-                // 统一使用当前工作目录下的cookies目录
                 string cookiesPath = Path.Combine(currentDir, this.cookiename);
-                Log("统一cookies目录路径: " + cookiesPath);
                 string pakPath = Path.Combine(cookiesPath, "item_text.pak");
-                Log("统一pak文件路径: " + pakPath);
                 string destFileName = pakPath;
-                Log("目标文件路径: " + destFileName);
                 
-                // 确保目标目录存在
                 if (!Directory.Exists(cookiesPath))
                 {
-                    Log("创建目标目录: " + cookiesPath);
+                    Console.WriteLine("创建目标目录: " + cookiesPath);
                     try
                     {
                         Directory.CreateDirectory(cookiesPath);
-                        Log("创建目录成功");
                     }
                     catch (Exception ex)
                     {
-                        Log("创建目录失败: " + ex.Message);
-                        // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                        Console.WriteLine("创建目录失败: " + ex.Message);
                         this.Dispatcher.Invoke(() =>
                         {
                             labErrorMsg.Text = "创建目录失败: " + ex.Message;
@@ -968,16 +908,10 @@ namespace FS服装搭配专家v1._0
                         return;
                     }
                 }
-                else
-                {
-                    Log("目标目录已存在");
-                }
                 
-                // 检查源文件是否存在
                 if (!File.Exists(sourceFileName))
                 {
-                    Log("源文件不存在: " + sourceFileName);
-                    // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                    Console.WriteLine("源文件不存在: " + sourceFileName);
                     this.Dispatcher.Invoke(() =>
                     {
                         labErrorMsg.Text = "源文件不存在: " + sourceFileName;
@@ -986,41 +920,31 @@ namespace FS服装搭配专家v1._0
                     });
                     return;
                 }
-                else
-                {
-                    Log("源文件存在，大小: " + new FileInfo(sourceFileName).Length + " 字节");
-                }
                 
-                // 检查cookies目录中是否已经有解包后的itemshop.txt文件
                 string itemshopPath = Path.Combine(cookiesPath, "item_text_pak", "itemshop.txt");
                 if (File.Exists(itemshopPath))
                 {
-                    Log("cookies目录中已有解包后的itemshop.txt文件，直接使用");
+                    Console.WriteLine("cookies目录中已有解包后的itemshop.txt文件，直接使用");
                 }
                 else
                 {
-                    // 复制item_text.pak文件到cookies目录
-                    Log("cookies目录中没有解包后的文件，开始复制item_text.pak");
                     try
                     {
                         File.Copy(sourceFileName, pakPath, true);
-                        Log("复制文件成功: " + sourceFileName + " -> " + pakPath);
-                        destFileName = pakPath; // 使用复制到cookies目录的文件
+                        Console.WriteLine("复制文件成功");
+                        destFileName = pakPath;
                     }
                     catch (Exception ex)
                     {
-                        Log("复制文件失败: " + ex.Message);
-                        Log("使用游戏目录中的文件作为备选");
-                        destFileName = sourceFileName; // 使用游戏目录中的文件作为备选
+                        Console.WriteLine("复制文件失败: " + ex.Message);
+                        destFileName = sourceFileName;
                     }
                 }
-                Log("使用的pak文件路径: " + destFileName);
+                Console.WriteLine("使用的pak文件路径: " + destFileName);
                 
-                // 验证文件是否存在
                 if (!File.Exists(destFileName))
                 {
-                    Log("文件不存在，无法解包: " + destFileName);
-                    // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                    Console.WriteLine("文件不存在，无法解包: " + destFileName);
                     this.Dispatcher.Invoke(() =>
                     {
                         labErrorMsg.Text = "文件不存在，无法解包: " + destFileName;
@@ -1029,21 +953,18 @@ namespace FS服装搭配专家v1._0
                     });
                     return;
                 }
-                Log("文件存在，开始解包");
+                Console.WriteLine("文件存在，开始解包");
                 
-                // 确保cookies目录存在
                 if (!Directory.Exists(cookiesPath))
                 {
-                    Log("创建cookies目录: " + cookiesPath);
+                    Console.WriteLine("创建cookies目录: " + cookiesPath);
                     try
                     {
                         Directory.CreateDirectory(cookiesPath);
-                        Log("创建cookies目录成功");
                     }
                     catch (Exception ex)
                     {
-                        Log("创建cookies目录失败: " + ex.Message);
-                        // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                        Console.WriteLine("创建cookies目录失败: " + ex.Message);
                         this.Dispatcher.Invoke(() =>
                         {
                             labErrorMsg.Text = "创建cookies目录失败: " + ex.Message;
@@ -1053,25 +974,18 @@ namespace FS服装搭配专家v1._0
                         return;
                     }
                 }
-                else
-                {
-                    Log("cookies目录已存在");
-                }
                 
-                // 检查resources.exe是否存在
                 string resourcesExePath = Path.Combine(currentDir, "..", "..", "..", "pack", "resources.exe");
-                Log("resources.exe路径: " + resourcesExePath);
+                Console.WriteLine("resources.exe路径: " + resourcesExePath);
                 
                 if (!File.Exists(resourcesExePath))
                 {
-                    // 尝试其他可能的路径
                     resourcesExePath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "..", "..", "..", "pack", "resources.exe");
-                    Log("尝试resources.exe路径: " + resourcesExePath);
+                    Console.WriteLine("尝试resources.exe路径: " + resourcesExePath);
                     
                     if (!File.Exists(resourcesExePath))
                     {
-                        Log("resources.exe不存在: " + resourcesExePath);
-                        // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                        Console.WriteLine("resources.exe不存在: " + resourcesExePath);
                         this.Dispatcher.Invoke(() =>
                         {
                             labErrorMsg.Text = "resources.exe不存在: " + resourcesExePath;
@@ -1081,110 +995,87 @@ namespace FS服装搭配专家v1._0
                         return;
                     }
                 }
-                Log("resources.exe存在");
+                Console.WriteLine("resources.exe存在");
                 
-                // 检查itemshop.txt文件是否已经存在
                 if (File.Exists(itemshopPath))
                 {
-                    Log("itemshop.txt文件已经存在，跳过解包步骤");
+                    Console.WriteLine("itemshop.txt文件已经存在，跳过解包步骤");
                 }
                 else
                 {
-                    // 执行解包命令
-                    Log("开始执行解包命令");
+                    Console.WriteLine("开始执行解包命令");
                     try
                     {
-                        Log("创建ProcessStartInfo");
                         ProcessStartInfo processStartInfo = new ProcessStartInfo();
                         processStartInfo.FileName = resourcesExePath;
                         processStartInfo.Arguments = $"\"{destFileName}\" -all";
-                        processStartInfo.UseShellExecute = true; // 使用ShellExecute，避免输出流阻塞
+                        processStartInfo.UseShellExecute = true;
                         processStartInfo.CreateNoWindow = true;
-                        processStartInfo.WorkingDirectory = currentDir; // 设置工作目录为当前工作目录
+                        processStartInfo.WorkingDirectory = currentDir;
                         
-                        Log("执行解包命令: " + processStartInfo.FileName + " " + processStartInfo.Arguments);
-                        Log("工作目录: " + processStartInfo.WorkingDirectory);
+                        Console.WriteLine("执行解包命令: " + processStartInfo.FileName + " " + processStartInfo.Arguments);
                         
-                        Log("启动进程");
                         Process process = Process.Start(processStartInfo);
-                        Log("进程启动成功，等待退出");
+                        Console.WriteLine("进程启动成功，等待退出");
                         
-                        // 等待进程结束，最多等待15秒
                         bool exited = process.WaitForExit(15000);
                         if (exited)
                         {
-                            int exitCode = process.ExitCode;
-                            Log("解包命令执行完成，退出码: " + exitCode);
+                            Console.WriteLine("解包命令执行完成，退出码: " + process.ExitCode);
                         }
                         else
                         {
-                            Log("解包命令执行超时，强制关闭进程");
+                            Console.WriteLine("解包命令执行超时，强制关闭进程");
                             process.Kill();
                         }
                         process.Close();
                         
-                        Log("解包命令处理完成");
+                        Console.WriteLine("解包命令处理完成");
                     }
                     catch (Exception ex)
                     {
-                        Log("执行解包命令失败: " + ex.Message);
-                        Log("堆栈跟踪: " + ex.StackTrace);
-                        // 即使解包命令执行失败，也继续尝试读取文件，因为可能已经成功解包
-                        // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                        Console.WriteLine("执行解包命令失败: " + ex.Message);
                         this.Dispatcher.Invoke(() =>
                         {
-                            labErrorMsg.Text = "执行解包命令时出现错误，但将继续尝试读取解包结果: " + ex.Message;
+                            labErrorMsg.Text = "执行解包命令时出现错误: " + ex.Message;
                             labErrorMsg.Visibility = Visibility.Visible;
                         });
                     }
                 }
                 
-                Log("解包命令执行完成，开始检查解包结果");
+                Console.WriteLine("解包命令执行完成，开始检查解包结果");
+                Console.WriteLine("检查解析后的文件: " + itemshopPath);
                 
-                // 检查解包结果
-                Log("检查解析后的文件: " + itemshopPath);
-                
-                // 检查cookies目录是否存在
                 if (!Directory.Exists(cookiesPath))
                 {
-                    Log("cookies目录不存在: " + cookiesPath);
+                    Console.WriteLine("cookies目录不存在: " + cookiesPath);
                 }
                 else
                 {
-                    Log("cookies目录存在");
-                    // 检查item_text_pak目录是否存在
+                    Console.WriteLine("cookies目录存在");
                     string itemTextPakPath = Path.Combine(cookiesPath, "item_text_pak");
                     if (!Directory.Exists(itemTextPakPath))
                     {
-                        Log("item_text_pak目录不存在: " + itemTextPakPath);
+                        Console.WriteLine("item_text_pak目录不存在: " + itemTextPakPath);
                     }
                     else
                     {
-                        Log("item_text_pak目录存在");
-                        // 列出item_text_pak目录中的文件
+                        Console.WriteLine("item_text_pak目录存在");
                         try
                         {
                             string[] files = Directory.GetFiles(itemTextPakPath);
-                            Log("item_text_pak目录中的文件数量: " + files.Length);
-                            foreach (string file in files)
-                            {
-                                Log("文件: " + Path.GetFileName(file));
-                            }
+                            Console.WriteLine("item_text_pak目录中的文件数量: " + files.Length);
                         }
                         catch (Exception ex)
                         {
-                            Log("列出文件失败: " + ex.Message);
+                            Console.WriteLine("列出文件失败: " + ex.Message);
                         }
                     }
                 }
                 
                 if (File.Exists(itemshopPath))
                 {
-                    Log("itemshop.txt文件存在，开始解析");
-                    Log("itemshop.txt文件大小: " + new FileInfo(itemshopPath).Length + " 字节");
-                    
                     int itemCount = 0;
-                    int lineCount = 0;
                     try
                     {
                         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
@@ -1193,19 +1084,15 @@ namespace FS服装搭配专家v1._0
                         {
                             string text;
                             while ((text = streamReader.ReadLine()) != null)
-                        {
-                            lineCount++;
-                            string text2 = text.ToString();
-                            Log($"解析第 {lineCount} 行: {text2.Substring(0, Math.Min(50, text2.Length))}...");
-                            
-                            if (text2.IndexOf("ItemCode") == -1)
                             {
-                                string[] array = text2.Split(new string[] { "\t" }, StringSplitOptions.None);
-                                Log($"分割后数组长度: {array.Length}");
+                                string text2 = text.ToString();
                                 
-                                if (array.Length >= 5)
+                                if (text2.IndexOf("ItemCode") == -1)
+                                {
+                                    string[] array = text2.Split(new string[] { "\t" }, StringSplitOptions.None);
+                                    
+                                    if (array.Length >= 5)
                                     {
-                                        Log($"数组元素: [0]={array[0]}, [1]={array[1]}, [2]={array[2]}, [3]={array[3]}");
                                         if (array[3] != "" && array[3] != "--")
                                         {
                                             this.list.Add(new ItemshopM
@@ -1228,16 +1115,10 @@ namespace FS服装搭配专家v1._0
                                                 Comment = array[4]
                                             });
                                             itemCount++;
-                                            Log($"添加服装成功: {array[3]}");
-                                        }
-                                        else
-                                        {
-                                            Log($"跳过空名称或--的服装: {array[3]}");
                                         }
                                     }
                                     else if (array.Length == 4)
                                     {
-                                        Log($"数组元素: [0]={array[0]}, [1]={array[1]}, [2]={array[2]}, [3]={array[3]}");
                                         if (array[3] != "" && array[3] != "--")
                                         {
                                             this.list.Add(new ItemshopM
@@ -1259,33 +1140,17 @@ namespace FS服装搭配专家v1._0
                                                 Comment = array[3]
                                             });
                                             itemCount++;
-                                            Log($"添加服装成功: {array[2]}");
-                                        }
-                                        else
-                                        {
-                                            Log($"跳过空名称或--的服装: {array[3]}");
                                         }
                                     }
-                                else
-                                {
-                                    Log($"跳过数组长度不足的行: {array.Length}");
                                 }
-                            }
-                            else
-                            {
-                                Log("跳过表头行");
-                            }
                             }
                         }
                         
-                        Log("解析完成，共加载 " + itemCount + " 件服装");
-                        Log("服装列表总数量: " + this.list.Count);
+                        Console.WriteLine("解析完成，共加载 " + itemCount + " 件服装");
                     }
                     catch (Exception ex)
                     {
-                        Log("解析文件失败: " + ex.Message);
-                        Log("堆栈跟踪: " + ex.StackTrace);
-                        Log("当前处理到第 " + lineCount + " 行");
+                        Console.WriteLine("解析文件失败: " + ex.Message);
                     }
                     
                     // 加载常用物品颜色配置
@@ -1293,7 +1158,6 @@ namespace FS服装搭配专家v1._0
                     try
                     {
                         string oftenitemcodePath = Path.Combine(Environment.CurrentDirectory, this.oftenitemcode);
-                        Log("加载常用物品颜色配置: " + oftenitemcodePath);
                         if (File.Exists(oftenitemcodePath))
                         {
                             StreamReader streamReader2 = new StreamReader(oftenitemcodePath, Encoding.Default);
@@ -1303,16 +1167,11 @@ namespace FS服装搭配专家v1._0
                                 colorList.Add(text3.ToString());
                             }
                             streamReader2.Close();
-                            Log("加载常用物品颜色配置成功，共 " + colorList.Count + " 条");
-                        }
-                        else
-                        {
-                            Log("常用物品颜色配置文件不存在: " + oftenitemcodePath);
                         }
                     }
                     catch (Exception ex)
                     {
-                        Log("加载常用物品颜色配置失败: " + ex.Message);
+                        Console.WriteLine("加载常用物品颜色配置失败: " + ex.Message);
                     }
                     
                     // 加载修改记录
@@ -1320,7 +1179,6 @@ namespace FS服装搭配专家v1._0
                     try
                     {
                         string dopaklogPath = Path.Combine(Environment.CurrentDirectory, "dopaklog.ini");
-                        Log("加载修改记录: " + dopaklogPath);
                         if (File.Exists(dopaklogPath))
                         {
                             StreamReader streamReader2 = new StreamReader(dopaklogPath, Encoding.Default);
@@ -1330,28 +1188,20 @@ namespace FS服装搭配专家v1._0
                                 modifyList.Add(text4.ToString());
                             }
                             streamReader2.Close();
-                            Log("加载修改记录成功，共 " + modifyList.Count + " 条");
-                        }
-                        else
-                        {
-                            Log("修改记录文件不存在: " + dopaklogPath);
                         }
                     }
                     catch (Exception ex)
                     {
-                        Log("加载修改记录失败: " + ex.Message);
+                        Console.WriteLine("加载修改记录失败: " + ex.Message);
                     }
                     
                     // 更新物品属性
-                    Log("更新物品属性");
                     foreach (ItemshopM item in this.list)
                     {
-                        // 设置背景颜色
                         item.RowBackColor = (from o in colorList
                                             where o.IndexOf(item.ItemCode) != -1
                                             select o).FirstOrDefault<string>();
                         
-                        // 设置修改后的代码
                         string text5 = (from o in modifyList
                                         where o.IndexOf(item.ItemCode + "#") != -1
                                         select o).FirstOrDefault<string>();
@@ -1365,37 +1215,14 @@ namespace FS服装搭配专家v1._0
                     }
                     
                     // 更新UI
-                    Log("更新UI，绑定服装数据到ListView");
-                    Log("服装列表数量: " + list.Count);
-                    Log("ListView控件是否为空: " + (lstClothing == null));
-                    
                     this.Dispatcher.Invoke(() =>
                     {
                         try
                         {
-                            Log("开始数据绑定");
-                            
-                            // 清空ListView
-                            lstClothing.Items.Clear();
-                            
-                            // 绑定服装数据到ListView
                             lstClothing.ItemsSource = null;
                             lstClothing.ItemsSource = list;
                             lstClothing.DisplayMemberPath = "ItemName";
                             
-                            Log("数据绑定完成，ListView项目数量: " + lstClothing.Items.Count);
-                            Log("ListView显示路径: " + lstClothing.DisplayMemberPath);
-                            
-                            // 测试：手动添加一个项目验证ListView是否正常
-                            if (list.Count == 0)
-                            {
-                                Log("服装列表为空，添加测试项目");
-                                list.Add(new ItemshopM { ItemName = "测试服装" });
-                                lstClothing.ItemsSource = list;
-                                Log("测试项目添加完成，ListView项目数量: " + lstClothing.Items.Count);
-                            }
-                            
-                            // 显示成功消息
                             labErrorMsg.Text = "服装数据加载成功，共 " + list.Count + " 件服装";
                             labErrorMsg.Visibility = Visibility.Visible;
                             
@@ -1403,8 +1230,7 @@ namespace FS服装搭配专家v1._0
                         }
                         catch (Exception ex)
                         {
-                            Log("UI更新失败: " + ex.Message);
-                            Log("堆栈跟踪: " + ex.StackTrace);
+                            Console.WriteLine("UI更新失败: " + ex.Message);
                             labErrorMsg.Text = "UI更新失败: " + ex.Message;
                             labErrorMsg.Visibility = Visibility.Visible;
                         }
@@ -1412,8 +1238,7 @@ namespace FS服装搭配专家v1._0
                 }
                 else
                 {
-                    Log("解析后的服装数据文件不存在: " + itemshopPath);
-                    // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                    Console.WriteLine("解析后的服装数据文件不存在: " + itemshopPath);
                     this.Dispatcher.Invoke(() =>
                     {
                         labErrorMsg.Text = "解析后的服装数据文件不存在: " + itemshopPath;
@@ -1427,25 +1252,9 @@ namespace FS服装搭配专家v1._0
             {
                 string errorMessage = "加载服装数据失败: " + ex.Message;
                 Console.WriteLine(errorMessage);
-                Console.WriteLine("堆栈跟踪: " + ex.StackTrace);
                 
-                // 写入日志
-                try
-                {
-                    string errorLogPath = Path.Combine(Environment.CurrentDirectory, "debug.log");
-                    string logMessage = $"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] {errorMessage}";
-                    string stackTraceMessage = $"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] 堆栈跟踪: {ex.StackTrace}";
-                    File.AppendAllText(errorLogPath, logMessage + "\n" + stackTraceMessage + "\n");
-                }
-                catch (Exception logEx)
-                {
-                    Console.WriteLine("写入错误日志失败: " + logEx.Message);
-                }
-                
-                // 使用Dispatcher.Invoke确保UI操作在主线程执行
                 this.Dispatcher.Invoke(() =>
                 {
-                    // 显示错误消息
                     MessageBox.Show(errorMessage, "错误", MessageBoxButton.OK, MessageBoxImage.Error);
                     
                     // 更新错误状态
@@ -1455,23 +1264,9 @@ namespace FS服装搭配专家v1._0
             }
             finally
             {
-                // 使用Dispatcher.Invoke确保UI操作在主线程执行
                 this.Dispatcher.Invoke(() =>
                 {
-                    // 隐藏加载状态
                     picLoding.Visibility = Visibility.Collapsed;
-                    
-                    // 写入日志
-                    try
-                    {
-                        string logPath = Path.Combine(Environment.CurrentDirectory, "debug.log");
-                        string logMessage = $"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] 加载流程完成，最终服装数量: {this.list.Count}";
-                        File.AppendAllText(logPath, logMessage + "\n");
-                    }
-                    catch (Exception logEx)
-                    {
-                        Console.WriteLine("写入完成日志失败: " + logEx.Message);
-                    }
                 });
             }
         }
@@ -1481,24 +1276,29 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
-                // 检查是否存在图片目录
-                DirectoryInfo directoryInfo = new DirectoryInfo(Environment.CurrentDirectory + "\\" + this.cookiename);
-                bool hasIconFiles = false;
+                string cookiesDir = Path.Combine(Environment.CurrentDirectory, this.cookiename);
                 
-                foreach (FileInfo fileInfo in directoryInfo.GetFiles())
+                if (!Directory.Exists(cookiesDir))
                 {
-                    if (fileInfo.Name.IndexOf("icon") != -1)
+                    Console.WriteLine("cookies目录不存在，无法检查图片");
+                    return;
+                }
+                
+                bool hasUnpackedIconDir = false;
+                string[] directories = Directory.GetDirectories(cookiesDir);
+                foreach (string dir in directories)
+                {
+                    string dirName = Path.GetFileName(dir);
+                    if (dirName.StartsWith("icon") && dirName.EndsWith("_pak"))
                     {
-                        hasIconFiles = true;
+                        hasUnpackedIconDir = true;
                         break;
                     }
                 }
                 
-                // 如果没有图片文件，自动加载图片
-                if (!hasIconFiles && this.list.Count > 0)
+                if (!hasUnpackedIconDir && this.list.Count > 0)
                 {
-                    Console.WriteLine("检测到没有图片文件，自动开始加载");
-                    // 使用Dispatcher.Invoke确保UI操作在主线程执行
+                    Console.WriteLine("检测到没有解包的icon目录，自动开始加载");
                     this.Dispatcher.Invoke(() =>
                     {
                         labErrorMsg.Text = "检测到没有图片文件，正在自动加载...";
@@ -1506,12 +1306,15 @@ namespace FS服装搭配专家v1._0
                         picLoding.Visibility = Visibility.Visible;
                     });
                     
-                    // 启动后台线程加载图片
                     bwLoadImg = new BackgroundWorker();
                     bwLoadImg.WorkerSupportsCancellation = true;
                     bwLoadImg.DoWork += bw_DoWorkAllIcon;
                     bwLoadImg.RunWorkerCompleted += bw_CompletedWorkAllIcon;
                     bwLoadImg.RunWorkerAsync();
+                }
+                else
+                {
+                    Console.WriteLine("已存在解包的icon目录，跳过自动加载");
                 }
             }
             catch (Exception ex)
@@ -1533,37 +1336,30 @@ namespace FS服装搭配专家v1._0
                 });
                 
                 string cookiesDir = Path.Combine(Environment.CurrentDirectory, this.cookiename);
+                string currentDir = Environment.CurrentDirectory;
                 
-                if (Directory.Exists(cookiesDir))
+                // 查找resources.exe
+                string resourcesExePath = Path.Combine(currentDir, "pack", "resources.exe");
+                if (!File.Exists(resourcesExePath))
                 {
-                    string[] pakFiles = Directory.GetFiles(cookiesDir, "icon*.pak");
-                    int totalPak = pakFiles.Length;
-                    int currentPak = 0;
-                    
-                    foreach (string pakFile in pakFiles)
+                    resourcesExePath = Path.Combine(currentDir, "..", "..", "..", "pack", "resources.exe");
+                }
+                if (!File.Exists(resourcesExePath))
+                {
+                    resourcesExePath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "..", "..", "..", "pack", "resources.exe");
+                }
+                
+                Console.WriteLine("resources.exe路径: " + resourcesExePath);
+                
+                if (!File.Exists(resourcesExePath))
+                {
+                    this.Dispatcher.Invoke(() =>
                     {
-                        currentPak++;
-                        string pakName = Path.GetFileNameWithoutExtension(pakFile);
-                        string iconDir = Path.Combine(cookiesDir, pakName.Replace(".", "_"));
-                        
-                        this.Dispatcher.Invoke(() =>
-                        {
-                            labErrorMsg.Text = string.Format("正在解包 {0}... ({1}/{2})", pakName, currentPak, totalPak);
-                        });
-                        
-                        if (!Directory.Exists(iconDir) || Directory.GetFiles(iconDir, "*.png").Length == 0)
-                        {
-                            try
-                            {
-                                string cmd = "pack\\resources \"" + pakFile + "\" -byname .+\\.png";
-                                conmon.RunCmd(cmd);
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine("解包失败: " + ex.Message);
-                            }
-                        }
-                    }
+                        labErrorMsg.Text = "找不到resources.exe: " + resourcesExePath;
+                        labErrorMsg.Visibility = Visibility.Visible;
+                        picLoding.Visibility = Visibility.Collapsed;
+                    });
+                    return;
                 }
                 
                 if (this.list == null || this.list.Count == 0)
@@ -1574,6 +1370,8 @@ namespace FS服装搭配专家v1._0
                 List<FS服装搭配专家v1._0.ItemshopM> distinctList = this.list.Distinct(new ItemshopMComparer()).ToList<FS服装搭配专家v1._0.ItemshopM>();
                 int totalCount = distinctList.Count;
                 int currentCount = 0;
+                int successCount = 0;
+                int skipCount = 0;
                 
                 foreach (FS服装搭配专家v1._0.ItemshopM itemshopM in distinctList)
                 {
@@ -1581,37 +1379,41 @@ namespace FS服装搭配专家v1._0
                     
                     if (currentCount % 50 == 0)
                     {
+                        int finalCurrentCount = currentCount;
                         this.Dispatcher.Invoke(() =>
                         {
-                            labErrorMsg.Text = string.Format("检查服装图片... {0}/{1}", currentCount, totalCount);
+                            labErrorMsg.Text = string.Format("正在解包图片... {0}/{1}", finalCurrentCount, totalCount);
                         });
                     }
                     
                     string pakNum = itemshopM.PakNum.Replace("*", "");
-                    string iconDir = Path.Combine(Environment.CurrentDirectory, this.cookiename, "icon" + pakNum.Replace(".", "_"));
+                    string iconDirName = "icon" + pakNum.Replace(".", "_");
+                    string iconDir = Path.Combine(cookiesDir, iconDirName);
                     string iconPakName = "icon" + pakNum;
                     
-                    if (!Directory.Exists(iconDir) || Directory.GetFiles(iconDir, "*.png").Length == 0)
+                    if (!Directory.Exists(iconDir))
                     {
                         try
                         {
                             string sourcePath = Path.Combine(this.strInstallDirectory, iconPakName);
-                            string destPath = Path.Combine(Environment.CurrentDirectory, this.cookiename, iconPakName);
+                            string destPath = Path.Combine(cookiesDir, iconPakName);
                             
-                            if (File.Exists(sourcePath) && !File.Exists(destPath))
+                            if (File.Exists(sourcePath))
                             {
-                                if (!Directory.Exists(cookiesDir))
+                                if (!File.Exists(destPath))
                                 {
-                                    Directory.CreateDirectory(cookiesDir);
+                                    File.Copy(sourcePath, destPath, true);
                                 }
                                 
-                                File.Copy(sourcePath, destPath, true);
-                            }
-                            
-                            if (File.Exists(destPath))
-                            {
+                                // 直接执行resources.exe解包
                                 string cmd = "pack\\resources \"" + destPath + "\" -byname .+\\.png";
                                 conmon.RunCmd(cmd);
+                                
+                                successCount++;
+                            }
+                            else
+                            {
+                                skipCount++;
                             }
                         }
                         catch (Exception ex)
@@ -1619,11 +1421,15 @@ namespace FS服装搭配专家v1._0
                             Console.WriteLine("加载图片失败: " + ex.Message);
                         }
                     }
+                    else
+                    {
+                        skipCount++;
+                    }
                 }
                 
                 this.Dispatcher.Invoke(() =>
                 {
-                    labErrorMsg.Text = "图片加载完成！";
+                    labErrorMsg.Text = string.Format("图片加载完成！成功: {0}, 跳过: {1}", successCount, skipCount);
                     labErrorMsg.Visibility = Visibility.Visible;
                     picLoding.Visibility = Visibility.Collapsed;
                 });
