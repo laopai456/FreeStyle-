@@ -1538,11 +1538,10 @@ namespace FS服装搭配专家v1._0
             {
                 Console.WriteLine("=== 开始初始化配置 ===");
                 
-                // 尝试从多个位置读取配置文件
                 string[] configPaths = new string[]
                 {
                     Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.ini"),
-                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "config.ini"), // 项目根目录
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "config.ini"),
                     Path.Combine(Environment.CurrentDirectory, "config.ini")
                 };
                 
@@ -1557,12 +1556,16 @@ namespace FS服装搭配专家v1._0
                         string text;
                         while ((text = streamReader.ReadLine()) != null)
                         {
-                            this.strInstallDirectory = text.ToString().Trim();
-                            Console.WriteLine("读取到游戏目录: " + this.strInstallDirectory);
+                            string line = text.Trim();
+                            if (line.StartsWith("InstallDirectory="))
+                            {
+                                this.strInstallDirectory = line.Substring("InstallDirectory=".Length);
+                                Console.WriteLine("读取到游戏目录: " + this.strInstallDirectory);
+                            }
                         }
                         streamReader.Close();
                         configFound = true;
-                        break; // 找到配置文件后退出循环
+                        break;
                     }
                     else
                     {

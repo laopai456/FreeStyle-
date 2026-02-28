@@ -8,7 +8,8 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        Topmost="True">
     <Window.Resources>
         <SolidColorBrush x:Key="CardBackgroundColor" Color="#F5F5F5" />
         <SolidColorBrush x:Key="CardBorderColor" Color="#E0E0E0" />
