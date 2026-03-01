@@ -872,15 +872,78 @@
                 <!-- 常用工具标签页 -->
                 <TabItem Header="常用工具" Style="{StaticResource GlassTabItem}">
                     <Grid Margin="20">
-                        <TextBlock Text="常用工具功能" 
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        
+                        <TextBlock Grid.Row="0"
+                                   Text="常用工具" 
                                    FontSize="18" 
                                    FontWeight="600" 
                                    Foreground="{StaticResource TitleTextColor}"
                                    Margin="0,0,0,24" />
-                        <TextBlock Text="常用工具功能将在此标签页中实现" 
-                                   FontSize="14" 
-                                   Foreground="{StaticResource BodyTextColor}" 
-                                   Margin="0,40,0,0" />
+                        
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <!-- 背景修改 -->
+                            <Border Background="#15FFFFFF"
+                                    BorderBrush="{StaticResource GlassBorderColor}"
+                                    BorderThickness="1"
+                                    CornerRadius="12"
+                                    Width="200"
+                                    Height="160"
+                                    Margin="0,0,24,0"
+                                    Cursor="Hand"
+                                    MouseLeftButtonDown="btnBgCrop_Click">
+                                <Grid>
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <TextBlock Text="🖼️"
+                                                   FontSize="48"
+                                                   HorizontalAlignment="Center"
+                                                   Margin="0,0,0,12" />
+                                        <TextBlock Text="背景修改"
+                                                   FontSize="16"
+                                                   FontWeight="600"
+                                                   Foreground="{StaticResource TextColor}"
+                                                   HorizontalAlignment="Center" />
+                                        <TextBlock Text="替换游戏背景图片"
+                                                   FontSize="12"
+                                                   Foreground="{StaticResource StatusTextColor}"
+                                                   HorizontalAlignment="Center"
+                                                   Margin="0,4,0,0" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                            
+                            <!-- 补充字节 -->
+                            <Border Background="#15FFFFFF"
+                                    BorderBrush="{StaticResource GlassBorderColor}"
+                                    BorderThickness="1"
+                                    CornerRadius="12"
+                                    Width="200"
+                                    Height="160"
+                                    Cursor="Hand"
+                                    MouseLeftButtonDown="btnFillBytes_Click">
+                                <Grid>
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <TextBlock Text="📦"
+                                                   FontSize="48"
+                                                   HorizontalAlignment="Center"
+                                                   Margin="0,0,0,12" />
+                                        <TextBlock Text="补充字节"
+                                                   FontSize="16"
+                                                   FontWeight="600"
+                                                   Foreground="{StaticResource TextColor}"
+                                                   HorizontalAlignment="Center" />
+                                        <TextBlock Text="补充PAK文件字节数"
+                                                   FontSize="12"
+                                                   Foreground="{StaticResource StatusTextColor}"
+                                                   HorizontalAlignment="Center"
+                                                   Margin="0,4,0,0" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
                     </Grid>
                 </TabItem>
             </TabControl>

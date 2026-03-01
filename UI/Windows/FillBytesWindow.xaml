@@ -1,0 +1,269 @@
+<Window x:Class="FS服装搭配专家v1._0.UI.Windows.FillBytesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="补充字节"
+        Height="550"
+        Width="700"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        Topmost="True">
+    <Window.Resources>
+        <SolidColorBrush x:Key="GlassCardColor" Color="#15FFFFFF" />
+        <SolidColorBrush x:Key="GlassBorderColor" Color="#4DFFFFFF" />
+        <SolidColorBrush x:Key="TextColor" Color="#FFFFFFFF" />
+        <SolidColorBrush x:Key="StatusTextColor" Color="#FFCCCCCC" />
+        <SolidColorBrush x:Key="ButtonGlassColor" Color="#25FFFFFF" />
+        
+        <Style x:Key="GlassButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource ButtonGlassColor}" />
+            <Setter Property="Foreground" Value="{StaticResource TextColor}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="{StaticResource GlassBorderColor}" />
+            <Setter Property="Padding" Value="14,8" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FontWeight" Value="500" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder" 
+                                CornerRadius="8" 
+                                Background="{TemplateBinding Background}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center" 
+                                              TextElement.Foreground="{TemplateBinding Foreground}" 
+                                              TextElement.FontWeight="{TemplateBinding FontWeight}"
+                                              TextElement.FontSize="{TemplateBinding FontSize}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="GlassTextBox" TargetType="TextBox">
+            <Setter Property="Background" Value="#25FFFFFF" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderBrush" Value="{StaticResource GlassBorderColor}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="CaretBrush" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Margin="8,6"
+                                          VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="GlassDataGrid" TargetType="DataGrid">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="{StaticResource GlassBorderColor}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="RowBackground" Value="#10FFFFFF" />
+            <Setter Property="AlternatingRowBackground" Value="#08FFFFFF" />
+            <Setter Property="GridLinesVisibility" Value="Horizontal" />
+            <Setter Property="HorizontalGridLinesBrush" Value="#20FFFFFF" />
+            <Setter Property="HeadersVisibility" Value="Column" />
+            <Setter Property="CanUserAddRows" Value="False" />
+            <Setter Property="CanUserDeleteRows" Value="False" />
+            <Setter Property="IsReadOnly" Value="True" />
+            <Setter Property="AutoGenerateColumns" Value="False" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="{StaticResource TextColor}" />
+        </Style>
+    </Window.Resources>
+    
+    <Border Background="#E5303050"
+            BorderBrush="{StaticResource GlassBorderColor}"
+            BorderThickness="1"
+            CornerRadius="16"
+            Margin="20">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="30"
+                              ShadowDepth="8"
+                              Opacity="0.3"
+                              Direction="270" />
+        </Border.Effect>
+        
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <!-- 标题栏 -->
+            <Grid Grid.Row="0" Margin="0,0,0,16">
+                <TextBlock Text="补充字节"
+                           FontSize="18"
+                           FontWeight="600"
+                           Foreground="{StaticResource TextColor}" />
+                <Button x:Name="btnClose"
+                        Content="✕"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Width="30"
+                        Height="30"
+                        Background="Transparent"
+                        Foreground="{StaticResource StatusTextColor}"
+                        BorderThickness="0"
+                        FontSize="14"
+                        Click="btnClose_Click" />
+            </Grid>
+            
+            <!-- 搜索区 -->
+            <Grid Grid.Row="1" Margin="0,0,0,12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                
+                <TextBox x:Name="txtSearch"
+                         Grid.Column="0"
+                         Style="{StaticResource GlassTextBox}"
+                         Height="36"
+                         Margin="0,0,8,0"
+                         TextChanged="txtSearch_TextChanged" />
+                
+                <Button x:Name="btnSearch"
+                        Grid.Column="1"
+                        Content="搜索"
+                        Style="{StaticResource GlassButton}"
+                        Height="36"
+                        MinWidth="60"
+                        Margin="0,0,8,0"
+                        Click="btnSearch_Click" />
+                
+                <Button x:Name="btnRefresh"
+                        Grid.Column="2"
+                        Content="刷新列表"
+                        Style="{StaticResource GlassButton}"
+                        Height="36"
+                        MinWidth="80"
+                        Click="btnRefresh_Click" />
+            </Grid>
+            
+            <!-- 文件列表 -->
+            <Border Grid.Row="2"
+                    Background="#15FFFFFF"
+                    BorderBrush="{StaticResource GlassBorderColor}"
+                    BorderThickness="1"
+                    CornerRadius="12"
+                    Padding="8">
+                <DataGrid x:Name="dgFiles"
+                          Style="{StaticResource GlassDataGrid}"
+                          SelectionMode="Single"
+                          SelectionChanged="dgFiles_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="文件名" Binding="{Binding FileName}" Width="*" />
+                        <DataGridTextColumn Header="当前大小" Binding="{Binding CurrentSize}" Width="100" />
+                        <DataGridTextColumn Header="原始大小" Binding="{Binding OriginalSize}" Width="100" />
+                        <DataGridTextColumn Header="目标大小" Binding="{Binding TargetSize}" Width="100" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+            
+            <!-- 设置区 -->
+            <Grid Grid.Row="3" Margin="0,12,0,12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Grid.Column="0"
+                           Text="目标字节数："
+                           FontSize="13"
+                           Foreground="{StaticResource StatusTextColor}"
+                           VerticalAlignment="Center"
+                           Margin="0,0,8,0" />
+                
+                <TextBox x:Name="txtTargetBytes"
+                         Grid.Column="1"
+                         Style="{StaticResource GlassTextBox}"
+                         Height="36"
+                         Text="0"
+                         Margin="0,0,12,0" />
+                
+                <TextBlock x:Name="txtOriginalBytes"
+                           Grid.Column="2"
+                           Text="原始: -"
+                           FontSize="12"
+                           Foreground="{StaticResource StatusTextColor}"
+                           VerticalAlignment="Center"
+                           Margin="0,0,12,0" />
+                
+                <CheckBox x:Name="chkAutoFill"
+                          Grid.Column="3"
+                          Content="自动填充"
+                          FontSize="13"
+                          Foreground="{StaticResource StatusTextColor}"
+                          VerticalAlignment="Center"
+                          IsChecked="True"
+                          Margin="0,0,12,0" />
+                
+                <Button x:Name="btnRescan"
+                        Grid.Column="4"
+                        Content="重新扫描"
+                        Style="{StaticResource GlassButton}"
+                        Height="36"
+                        MinWidth="90"
+                        Click="btnRescan_Click" />
+            </Grid>
+            
+            <!-- 状态栏 -->
+            <Border Grid.Row="4"
+                    Background="#10FFFFFF"
+                    BorderBrush="{StaticResource GlassBorderColor}"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="10,8"
+                    Margin="0,0,0,12">
+                <TextBlock x:Name="txtStatus"
+                           Text="状态: 准备就绪"
+                           FontSize="12"
+                           Foreground="{StaticResource StatusTextColor}" />
+            </Border>
+            
+            <!-- 底部按钮 -->
+            <StackPanel Grid.Row="5"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Button x:Name="btnFill"
+                        Content="补充字节"
+                        Style="{StaticResource GlassButton}"
+                        Height="36"
+                        MinWidth="100"
+                        Click="btnFill_Click"
+                        Margin="0,0,8,0" />
+                <Button x:Name="btnCancel"
+                        Content="关闭"
+                        Style="{StaticResource GlassButton}"
+                        Height="36"
+                        MinWidth="80"
+                        Click="btnCancel_Click" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

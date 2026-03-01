@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
+using FS服装搭配专家v1._0.UI.Windows;
 
 namespace FS服装搭配专家v1._0
 {
@@ -198,8 +199,21 @@ namespace FS服装搭配专家v1._0
         
         private void btnSkin_Click(object sender, RoutedEventArgs e)
         {
-            // 简单的换肤功能
             Console.WriteLine("换肤按钮点击");
+        }
+
+        private void btnBgCrop_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var window = new BgCropWindow(strInstallDirectory);
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void btnFillBytes_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var window = new FillBytesWindow(strInstallDirectory);
+            window.Owner = this;
+            window.ShowDialog();
         }
         
         private void ApplySkin(SolidColorBrush skinColor)
