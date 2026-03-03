@@ -25,8 +25,7 @@
             <Setter Property="Padding" Value="20,8" />
             <Setter Property="Margin" Value="8" />
             <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="FontWeight" Value="500" />
-            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value="600" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -38,8 +37,7 @@
                             <ContentPresenter HorizontalAlignment="Center"
                                               VerticalAlignment="Center"
                                               TextElement.Foreground="{TemplateBinding Foreground}"
-                                              TextElement.FontWeight="{TemplateBinding FontWeight}"
-                                              TextElement.FontSize="{TemplateBinding FontSize}" />
+                                              TextElement.FontWeight="{TemplateBinding FontWeight}" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -98,9 +96,14 @@
                             HorizontalAlignment="Center"
                             Margin="0,0,0,16">
                     <Button Content="取消" 
+                            Width="100"
+                            Height="40"
                             Style="{StaticResource GlassButton}"
-                            Click="Cancel_Click" />
+                            Click="Cancel_Click" 
+                            Margin="0,0,10,0" />
                     <Button Content="确定" 
+                            Width="100"
+                            Height="40"
                             Style="{StaticResource GlassButton}"
                             Click="Confirm_Click" />
                 </StackPanel>

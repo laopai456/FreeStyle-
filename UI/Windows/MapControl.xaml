@@ -21,6 +21,15 @@
             <GradientStop Color="#FFC58AF9" Offset="1" />
         </LinearGradientBrush>
         
+        <!-- 
+            玻璃拟态按钮样式 - GlassButton
+            用途：所有按钮的统一样式
+            圆角：8（与标签页一致）
+            
+            按钮规格：
+            - 设置类按钮（选择路径）：Height="36"
+            - 操作类按钮（应用地图）：Height="44" Width="160"
+        -->
         <Style x:Key="GlassButton" TargetType="Button">
             <Setter Property="Background" Value="{StaticResource ButtonGlassColor}" />
             <Setter Property="Foreground" Value="{StaticResource TextColor}" />
@@ -29,8 +38,7 @@
             <Setter Property="Padding" Value="14,8" />
             <Setter Property="Margin" Value="4" />
             <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="FontWeight" Value="500" />
-            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value="600" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -43,8 +51,7 @@
                                               HorizontalAlignment="Center" 
                                               VerticalAlignment="Center" 
                                               TextElement.Foreground="{TemplateBinding Foreground}" 
-                                              TextElement.FontWeight="{TemplateBinding FontWeight}"
-                                              TextElement.FontSize="{TemplateBinding FontSize}" />
+                                              TextElement.FontWeight="{TemplateBinding FontWeight}" />
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -160,19 +167,10 @@
                 <Button x:Name="btnBrowseLibrary"
                         Content="选择路径..."
                         Style="{StaticResource GlassButton}"
-                        Height="38"
+                        Height="36"
                         MinWidth="100"
                         FontSize="13"
                         Click="btnBrowseLibrary_Click" />
-                
-                <Button x:Name="btnRefreshLibrary"
-                        Content="刷新"
-                        Style="{StaticResource GlassButton}"
-                        Height="38"
-                        MinWidth="70"
-                        FontSize="13"
-                        Margin="10,0,0,0"
-                        Click="btnRefreshLibrary_Click" />
             </StackPanel>
         </Border>
         
@@ -278,8 +276,8 @@
                             Grid.Row="2"
                             Content="应用地图"
                             Style="{StaticResource GlassButton}"
-                            Height="36"
-                            MinWidth="100"
+                            Height="44"
+                            Width="160"
                             HorizontalAlignment="Center"
                             Click="btnApply_Click" />
                 </Grid>

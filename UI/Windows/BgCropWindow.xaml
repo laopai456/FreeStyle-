@@ -24,8 +24,7 @@
             <Setter Property="BorderBrush" Value="{StaticResource GlassBorderColor}" />
             <Setter Property="Padding" Value="14,8" />
             <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="FontWeight" Value="500" />
-            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontWeight" Value="600" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -37,8 +36,7 @@
                             <ContentPresenter HorizontalAlignment="Center" 
                                               VerticalAlignment="Center" 
                                               TextElement.Foreground="{TemplateBinding Foreground}" 
-                                              TextElement.FontWeight="{TemplateBinding FontWeight}"
-                                              TextElement.FontSize="{TemplateBinding FontSize}" />
+                                              TextElement.FontWeight="{TemplateBinding FontWeight}" />
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>

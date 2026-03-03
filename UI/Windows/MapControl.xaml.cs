@@ -191,14 +191,6 @@ namespace FS服装搭配专家v1._0.UI.Windows
             }
         }
 
-        private void btnRefreshLibrary_Click(object sender, RoutedEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(mapLibraryPath))
-            {
-                LoadMapsFromLibrary(mapLibraryPath);
-            }
-        }
-
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             FilterMaps();

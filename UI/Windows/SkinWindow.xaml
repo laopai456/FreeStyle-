@@ -58,7 +58,15 @@
             <Setter Property="Cursor" Value="Hand" />
         </Style>
         
-        <!-- 玻璃拟态按钮样式 -->
+        <!-- 
+            玻璃拟态按钮样式 - GlassButton
+            用途：所有按钮的统一样式
+            圆角：8（与标签页一致）
+            
+            按钮规格：
+            - 对话框按钮（应用、取消）：Height="40" Width="100"
+            - 关闭按钮：Height="32" Width="70"
+        -->
         <Style x:Key="GlassButton" TargetType="Button">
             <Setter Property="Background" Value="{StaticResource ButtonGlassColor}" />
             <Setter Property="Foreground" Value="{StaticResource TextColor}" />
@@ -72,7 +80,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="ButtonBorder" 
-                                CornerRadius="16" 
+                                CornerRadius="8" 
                                 Background="{TemplateBinding Background}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}">
@@ -238,8 +246,9 @@
                                 HorizontalAlignment="Right" 
                                 VerticalAlignment="Center">
                         <Button Content="关闭" 
-                                Width="60" 
-                                Style="{StaticResource WindowButton}" 
+                                Width="70" 
+                                Height="32"
+                                Style="{StaticResource GlassButton}" 
                                 Click="Close_Click" />
                     </StackPanel>
                 </Grid>
@@ -337,9 +346,14 @@
                             HorizontalAlignment="Center" 
                             VerticalAlignment="Center">
                     <Button Content="应用" 
+                            Width="100"
+                            Height="40"
                             Style="{StaticResource GlassButton}" 
-                            Click="Apply_Click" />
+                            Click="Apply_Click" 
+                            Margin="0,0,10,0" />
                     <Button Content="取消" 
+                            Width="100"
+                            Height="40"
                             Style="{StaticResource GlassButton}" 
                             Click="Cancel_Click" />
                 </StackPanel>

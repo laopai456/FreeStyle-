@@ -80,7 +80,16 @@
             <GradientStop Color="#FFC58AF9" Offset="1" />
         </LinearGradientBrush>
         
-        <!-- 玻璃拟态按钮样式 -->
+        <!-- 
+            玻璃拟态按钮样式 - GlassButton
+            用途：所有按钮的统一样式
+            圆角：8（与标签页一致）
+            
+            按钮规格：
+            - 设置类按钮（加载图片、选择路径）：Height="36"
+            - 操作类按钮（确认变更、清空所有、应用地图）：Height="44" Width="160"
+            - 对话框按钮（确定、取消、应用）：Height="40" Width="100"
+        -->
         <Style x:Key="GlassButton" TargetType="Button">
             <Setter Property="Background" Value="{StaticResource ButtonGlassColor}" />
             <Setter Property="Foreground" Value="{StaticResource TextColor}" />
@@ -94,7 +103,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="ButtonBorder" 
-                                CornerRadius="16" 
+                                CornerRadius="8" 
                                 Background="{TemplateBinding Background}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}">
@@ -682,7 +691,7 @@
                                         <Button x:Name="btnLoadImg" 
                                                 Grid.Column="1"
                                                 Content="📷 加载图片" 
-                                                Style="{StaticResource WindowButton}"
+                                                Style="{StaticResource GlassButton}"
                                                 Height="36"
                                                 Margin="8,0,0,0"
                                                 Click="btnLoadImg_Click" />
@@ -820,14 +829,14 @@
                                             Content="✅ 确认变更" 
                                             Style="{StaticResource GlassButton}" 
                                             Height="44" 
-                                            Width="200" 
+                                            Width="160" 
                                             Click="btnConfirm_Click" 
                                             Margin="0,0,10,0" />
                                     <Button x:Name="btnClear" 
                                             Content="🗑️ 清空所有" 
-                                            Style="{StaticResource WindowButton}" 
-                                            Height="40" 
-                                            Width="150" 
+                                            Style="{StaticResource GlassButton}" 
+                                            Height="44" 
+                                            Width="160" 
                                             Click="btnClear_Click" />
                                 </StackPanel>
                             </StackPanel>
