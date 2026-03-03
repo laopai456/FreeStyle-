@@ -10,6 +10,8 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
 using FS服装搭配专家v1._0.UI.Windows;
+using FS服装搭配专家v1._0.Core.Services;
+using FS服装搭配专家v1._0.Core.Models;
 
 namespace FS服装搭配专家v1._0
 {
@@ -68,9 +70,9 @@ namespace FS服装搭配专家v1._0
                 // 强制设置窗口属性
                 Console.WriteLine("设置窗口属性...");
                 this.Width = 1440;
-                this.Height = 1080;
+                this.Height = 768;
                 this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                this.WindowState = WindowState.Maximized;
+                this.WindowState = WindowState.Normal;
                 this.Visibility = Visibility.Visible;
                 
                 // 记录设置后的状态
@@ -96,6 +98,9 @@ namespace FS服装搭配专家v1._0
                 Console.WriteLine("初始化皮肤管理器...");
                 skinManager = new SkinManager();
                 Console.WriteLine("皮肤管理器初始化完成");
+                
+                // 应用保存的主题
+                ApplyCurrentTheme();
                 
                 // 初始化服装列表数据
                 Console.WriteLine("初始化服装列表数据...");
@@ -200,6 +205,26 @@ namespace FS服装搭配专家v1._0
         private void btnSkin_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("换肤按钮点击");
+            
+            var skinWindow = new SkinWindow(skinManager);
+            skinWindow.Owner = this;
+            skinWindow.ThemeApplied += OnThemeApplied;
+            skinWindow.ShowDialog();
+        }
+
+        private void OnThemeApplied(object? sender, SkinTheme theme)
+        {
+            ApplyCurrentTheme();
+        }
+
+        private void ApplyCurrentTheme()
+        {
+            if (skinManager?.CurrentTheme != null)
+            {
+                var applier = new ThemeApplier();
+                applier.ApplyThemeToWindow(this, skinManager.CurrentTheme);
+                Console.WriteLine($"已应用主题: {skinManager.CurrentTheme.Name}");
+            }
         }
 
         private void btnBgCrop_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)

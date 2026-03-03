@@ -2,42 +2,54 @@ using System;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using FS服装搭配专家v1._0.Core.Models;
+using FS服装搭配专家v1._0.Core.Services;
 
 namespace FS服装搭配专家v1._0
 {
     public partial class SkinWindow : Window
     {
         private SkinManager skinManager;
-        private SkinData selectedSkin;
+        private SkinTheme selectedTheme;
+        private ThemeApplier themeApplier;
 
-        public SkinWindow()
+        public event EventHandler<SkinTheme>? ThemeApplied;
+
+        public SkinWindow(SkinManager manager)
         {
             InitializeComponent();
-            skinManager = new SkinManager();
-            InitializeSkinList();
+            skinManager = manager;
+            themeApplier = new ThemeApplier();
+            InitializeThemeList();
         }
 
-        private void InitializeSkinList()
+        private void InitializeThemeList()
         {
-            // 绑定皮肤列表到ListBox
-            lstSkins.ItemsSource = skinManager.Skins;
+            lstSkins.ItemsSource = skinManager.Themes;
             
-            // 默认选择第一个皮肤
             if (lstSkins.Items.Count > 0)
             {
-                lstSkins.SelectedIndex = 0;
+                for (int i = 0; i < skinManager.Themes.Count; i++)
+                {
+                    if (skinManager.Themes[i].Id == skinManager.CurrentTheme?.Id)
+                    {
+                        lstSkins.SelectedIndex = i;
+                        break;
+                    }
+                }
+                
+                if (lstSkins.SelectedIndex < 0)
+                {
+                    lstSkins.SelectedIndex = 0;
+                }
             }
         }
 
         private void TitleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            // 开始拖动窗口
             if (this.WindowState == WindowState.Maximized)
             {
-                // 如果窗口是最大化状态，先恢复到正常状态
                 this.WindowState = WindowState.Normal;
-                
-                // 计算鼠标位置，使窗口在拖动时位置合理
                 var point = e.GetPosition(this);
                 this.Left = point.X;
                 this.Top = point.Y;
@@ -58,10 +70,10 @@ namespace FS服装搭配专家v1._0
 
         private void Apply_Click(object sender, RoutedEventArgs e)
         {
-            if (selectedSkin != null)
+            if (selectedTheme != null)
             {
-                // 应用选中的皮肤
-                ApplySkin(selectedSkin);
+                skinManager.ApplyTheme(selectedTheme);
+                ThemeApplied?.Invoke(this, selectedTheme);
                 this.Close();
             }
         }
@@ -70,50 +82,76 @@ namespace FS服装搭配专家v1._0
         {
             if (lstSkins.SelectedItem != null)
             {
-                selectedSkin = lstSkins.SelectedItem as SkinData;
-                if (selectedSkin != null)
+                selectedTheme = lstSkins.SelectedItem as SkinTheme;
+                if (selectedTheme != null)
                 {
-                    // 更新预览区域
-                    UpdatePreview(selectedSkin);
+                    UpdatePreview(selectedTheme);
                     
-                    // 更新皮肤信息
-                    txtSkinInfo.Text = $"皮肤名称: {selectedSkin.Name}\n" +
-                                      $"背景颜色: {selectedSkin.BackColor.ToString()}\n" +
-                                      $"按钮颜色: {selectedSkin.ButtonColor.ToString()}\n" +
-                                      $"边框颜色: {selectedSkin.BorderColor.ToString()}\n" +
-                                      $"文本颜色: {selectedSkin.TextColor.ToString()}";
+                    txtSkinInfo.Text = $"主题名称: {selectedTheme.Name}\n" +
+                                      $"作者: {selectedTheme.Author}\n" +
+                                      $"版本: {selectedTheme.Version}\n" +
+                                      $"描述: {selectedTheme.Description}";
                 }
             }
         }
 
-        private void UpdatePreview(SkinData skin)
+        private void UpdatePreview(SkinTheme theme)
         {
-            // 更新预览区域的背景颜色
-            previewGrid.Background = new SolidColorBrush(skin.BackColor);
+            previewGrid.Background = themeApplier.GetBackgroundBrush(theme.Styles.Window.Background);
             
-            // 更新预览区域的边框颜色
-            previewBorder.BorderBrush = new SolidColorBrush(skin.BorderColor);
+            previewBorder.BorderBrush = new SolidColorBrush(ParseColor(theme.Styles.Card.BorderColor));
             
-            // 更新预览文本颜色
             foreach (var child in previewGrid.Children)
             {
                 if (child is System.Windows.Controls.TextBlock textBlock)
                 {
-                    textBlock.Foreground = new SolidColorBrush(skin.TextColor);
+                    textBlock.Foreground = new SolidColorBrush(ParseColor(theme.Styles.Text.Primary));
                 }
             }
         }
 
-        private void ApplySkin(SkinData skin)
+        private Color ParseColor(string colorString)
         {
-            // 这里可以实现应用皮肤到整个应用程序的逻辑
-            // 例如，更新主窗口的颜色、控件的颜色等
-            
-            // 示例：更新主窗口的背景颜色
-            if (this.Owner is MainWindow mainWindow)
+            if (string.IsNullOrEmpty(colorString))
             {
-                // 这里可以添加具体的皮肤应用逻辑
-                Console.WriteLine($"应用皮肤: {skin.Name}");
+                return Colors.Transparent;
+            }
+
+            colorString = colorString.Trim();
+
+            if (colorString.ToLower() == "transparent")
+            {
+                return Colors.Transparent;
+            }
+
+            try
+            {
+                if (colorString.StartsWith("#"))
+                {
+                    string hex = colorString.Substring(1);
+                    
+                    if (hex.Length == 6)
+                    {
+                        return Color.FromRgb(
+                            Convert.ToByte(hex.Substring(0, 2), 16),
+                            Convert.ToByte(hex.Substring(2, 2), 16),
+                            Convert.ToByte(hex.Substring(4, 2), 16));
+                    }
+                    else if (hex.Length == 8)
+                    {
+                        return Color.FromArgb(
+                            Convert.ToByte(hex.Substring(0, 2), 16),
+                            Convert.ToByte(hex.Substring(2, 2), 16),
+                            Convert.ToByte(hex.Substring(4, 2), 16),
+                            Convert.ToByte(hex.Substring(6, 2), 16));
+                    }
+                }
+
+                return (Color)ColorConverter.ConvertFromString(colorString);
+            }
+            catch
+            {
+                return Colors.Transparent;
             }
         }
     }

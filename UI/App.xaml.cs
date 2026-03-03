@@ -49,12 +49,8 @@ namespace FS服装搭配专家v1._0
                 Console.WriteLine($"窗口位置初始值: {mainWindow.Left}, {mainWindow.Top}");
                 Console.WriteLine($"窗口大小初始值: {mainWindow.Width}, {mainWindow.Height}");
                 
-                // 强制设置窗口位置和大小，确保在屏幕可见区域
-                mainWindow.Left = 100;
-                mainWindow.Top = 100;
-                mainWindow.Width = 800;
-                mainWindow.Height = 600;
-                mainWindow.WindowStartupLocation = WindowStartupLocation.Manual;
+                // 窗口大小已在MainWindow中设置为1920x1080，这里只需确保居中显示
+                mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 mainWindow.Visibility = Visibility.Visible;
                 
                 Console.WriteLine($"窗口位置设置后: {mainWindow.Left}, {mainWindow.Top}");

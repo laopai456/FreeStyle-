@@ -11,6 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ApplicationDefinition Include="UI\App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="template\*.png" />
     <Resource Include="template\*.jpg" />
   </ItemGroup>

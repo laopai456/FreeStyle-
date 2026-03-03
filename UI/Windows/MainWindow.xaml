@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:FS服装搭配专家v1._0.UI.Windows"
         Title="FreeStyle"
-        Height="1080"
+        Height="768"
         Width="1440"
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized"
+        WindowState="Normal"
         WindowStyle="SingleBorderWindow"
         AllowsTransparency="False"
         Background="White"
@@ -55,21 +55,12 @@
         
         <!-- 主容器样式 - 优化后的玻璃拟态 -->
         <Style x:Key="MainContainer" TargetType="Border">
-            <Setter Property="Background" Value="{StaticResource GlassCardColor}" />
+            <Setter Property="Background" Value="Transparent" />
             <Setter Property="CornerRadius" Value="16" />
             <Setter Property="Margin" Value="10" />
-            <Setter Property="Padding" Value="24" />
-            <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="{StaticResource GlassHighlightColor}" />
-            <Setter Property="Effect">
-                <Setter.Value>
-                    <DropShadowEffect BlurRadius="40" 
-                                      ShadowDepth="12" 
-                                      Opacity="0.15" 
-                                      Direction="270" 
-                                      Color="#000000" />
-                </Setter.Value>
-            </Setter>
+            <Setter Property="Padding" Value="20" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderBrush" Value="Transparent" />
         </Style>
         
         <!-- 标题栏容器样式 -->
@@ -77,7 +68,7 @@
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="CornerRadius" Value="16" />
             <Setter Property="Margin" Value="0" />
-            <Setter Property="Padding" Value="20" />
+            <Setter Property="Padding" Value="0" />
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="BorderBrush" Value="Transparent" />
         </Style>
@@ -393,7 +384,7 @@
             <Setter Property="Background" Value="Transparent" /> 
             <Setter Property="BorderThickness" Value="0" /> 
             <Setter Property="Padding" Value="0" /> 
-            <Setter Property="Margin" Value="20" /> 
+            <Setter Property="Margin" Value="0" /> 
             <Setter Property="Template"> 
                 <Setter.Value> 
                     <ControlTemplate TargetType="TabControl"> 
@@ -528,51 +519,56 @@
                 </Grid.RowDefinitions>
             
             <!-- 顶部导航栏 -->
-            <Border Grid.Row="0" Style="{StaticResource TitleBarContainer}" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
-                <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                
-                <!-- 标题和图标 -->
-                <StackPanel Grid.Column="0" Orientation="Horizontal" 
-                            VerticalAlignment="Center" 
-                            HorizontalAlignment="Left">
-                    <TextBlock Text="FreeStyle" 
+            <Border Grid.Row="0" 
+                    Background="Transparent" 
+                    BorderBrush="Transparent" 
+                    BorderThickness="0" 
+                    MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+                <Grid Margin="20,15,20,15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- 标题 -->
+                    <TextBlock Grid.Column="0" 
+                               Text="FreeStyle" 
                                FontSize="16" 
                                FontWeight="Bold" 
                                Foreground="White"
                                VerticalAlignment="Center" 
-                               Margin="0,0,8,0" />
-                    <Button Name="btnSkin" 
-                            Width="24" 
-                            Height="24" 
-                            MinWidth="24" 
-                            MinHeight="24" 
-                            MaxWidth="24" 
-                            MaxHeight="24" 
+                               Margin="0,0,0,0" />
+                    
+                    <!-- 占位列 -->
+                    <Grid Grid.Column="1" />
+                    
+                    <!-- 右上角换肤按钮 -->
+                    <Button Grid.Column="2"
+                            Name="btnSkin" 
+                            Width="36" 
+                            Height="36" 
                             Click="btnSkin_Click"
                             Background="Transparent"
                             BorderBrush="Transparent"
                             BorderThickness="0"
                             Cursor="Hand"
-                            Padding="2"
-                            Margin="0,0,4,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center">
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Margin="0,0,0,0"
+                            ToolTip="换肤">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="ButtonBorder" 
-                                        CornerRadius="6" 
+                                        CornerRadius="10" 
                                         Background="Transparent"
                                         BorderThickness="1"
                                         BorderBrush="Transparent">
                                     <ContentPresenter x:Name="ContentPresenter" 
                                                       Content="{TemplateBinding Content}"
                                                       HorizontalAlignment="Center" 
-                                                      VerticalAlignment="Center" />
+                                                      VerticalAlignment="Center"
+                                                      Margin="4" />
                                     <VisualStateManager.VisualStateGroups>
                                         <VisualStateGroup x:Name="CommonStates">
                                             <VisualState x:Name="Normal" />
@@ -606,8 +602,7 @@
                             </ControlTemplate>
                         </Button.Template>
                         <Grid>
-                            <!-- 渐变背景 -->
-                            <Border Width="24" Height="24" CornerRadius="4">
+                            <Border Width="28" Height="28" CornerRadius="6">
                                 <Border.Background>
                                     <LinearGradientBrush x:Name="IconGradient" StartPoint="-1,-1" EndPoint="2,2">
                                         <GradientStop Color="#FF667EEA" Offset="0" />
@@ -615,7 +610,6 @@
                                         <GradientStop Color="#FFC58AF9" Offset="1" />
                                     </LinearGradientBrush>
                                 </Border.Background>
-                                <!-- 使用ImageBrush作为遮罩，确保只在图片非透明区域显示渐变 -->
                                 <Border.OpacityMask>
                                     <ImageBrush ImageSource="pack://application:,,,/template/vest-l.png" 
                                                Stretch="Uniform" 
@@ -645,30 +639,7 @@
                             </Border>
                         </Grid>
                     </Button>
-                </StackPanel>
-                
-                <!-- 占位列 -->
-                <Grid Grid.Column="1" />
-                
-                <!-- 窗口控制按钮 -->
-                <StackPanel Grid.Column="2" Orientation="Horizontal" 
-                            HorizontalAlignment="Right" 
-                            VerticalAlignment="Center" 
-                            Visibility="Hidden">
-                    <Button Content="最小化" 
-                            Width="70" 
-                            Style="{StaticResource WindowButton}" 
-                            Click="Minimize_Click" />
-                    <Button Content="最大化" 
-                            Width="70" 
-                            Style="{StaticResource WindowButton}" 
-                            Click="Maximize_Click" />
-                    <Button Content="关闭" 
-                            Width="70" 
-                            Style="{StaticResource WindowButton}" 
-                            Click="Close_Click" />
-                </StackPanel>
-            </Grid>
+                </Grid>
             </Border>
             
             <!-- 中间内容 -->
