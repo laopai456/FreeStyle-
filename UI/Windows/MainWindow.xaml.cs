@@ -223,6 +223,7 @@ namespace FS服装搭配专家v1._0
             {
                 var applier = new ThemeApplier();
                 applier.ApplyThemeToWindow(this, skinManager.CurrentTheme);
+                applier.ApplyThemeToUserControl(mapControl, skinManager.CurrentTheme);
                 Console.WriteLine($"已应用主题: {skinManager.CurrentTheme.Name}");
             }
         }

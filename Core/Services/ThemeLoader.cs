@@ -17,10 +17,9 @@ namespace FS服装搭配专家v1._0.Core.Services
 
         public ThemeLoader()
         {
-            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            string appFolder = Path.Combine(appDataPath, "FS服装搭配专家");
-            _skinsPath = Path.Combine(appFolder, SkinsFolderName);
-            _skinsConfigPath = Path.Combine(appFolder, SkinsConfigFileName);
+            string appPath = AppDomain.CurrentDomain.BaseDirectory;
+            _skinsPath = Path.Combine(appPath, "skins");
+            _skinsConfigPath = Path.Combine(appPath, "skins.json");
             
             EnsureDirectoriesExist();
         }
@@ -56,7 +55,7 @@ namespace FS服装搭配专家v1._0.Core.Services
                                     PropertyNameCaseInsensitive = true
                                 });
                                 
-                                if (theme != null && !string.IsNullOrEmpty(theme.Id))
+                                if (theme != null && !string.IsNullOrEmpty(theme.Id) && theme.Id != "default")
                                 {
                                     themes.Add(theme);
                                 }
@@ -182,6 +181,7 @@ namespace FS服装搭配专家v1._0.Core.Services
                     {
                         Background = "#15FFFFFF",
                         BorderColor = "#20FFFFFF",
+                        ContentPanelBackground = "#0DFFFFFF",
                         CornerRadius = 16,
                         Shadow = new ShadowStyle
                         {
@@ -228,6 +228,7 @@ namespace FS服装搭配专家v1._0.Core.Services
                         SelectedBackground = "#40FFFFFF",
                         HoverBackground = "#25FFFFFF",
                         BorderColor = "#20FFFFFF",
+                        SelectedForeground = "#FFFFFFFF",
                         CornerRadius = 8
                     },
                     TextBox = new TextBoxStyle
@@ -272,6 +273,7 @@ namespace FS服装搭配专家v1._0.Core.Services
                     {
                         Background = "#20FFFFFF",
                         BorderColor = "#40FFFFFF",
+                        ContentPanelBackground = "#1a1a2e",
                         CornerRadius = 16,
                         Shadow = new ShadowStyle
                         {
@@ -318,6 +320,7 @@ namespace FS服装搭配专家v1._0.Core.Services
                         SelectedBackground = "#50FFFFFF",
                         HoverBackground = "#30FFFFFF",
                         BorderColor = "#40FFFFFF",
+                        SelectedForeground = "#FFFFFFFF",
                         CornerRadius = 8
                     },
                     TextBox = new TextBoxStyle
@@ -340,7 +343,6 @@ namespace FS服装搭配专家v1._0.Core.Services
 
         public void EnsureDefaultThemesExist()
         {
-            SaveTheme(GetDefaultTheme());
             SaveTheme(GetDarkTheme());
         }
     }

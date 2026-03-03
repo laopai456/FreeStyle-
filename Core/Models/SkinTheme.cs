@@ -43,6 +43,7 @@ namespace FS服装搭配专家v1._0.Core.Models
     {
         public string Background { get; set; } = "#15FFFFFF";
         public string BorderColor { get; set; } = "#20FFFFFF";
+        public string ContentPanelBackground { get; set; } = "#0DFFFFFF";
         public double CornerRadius { get; set; } = 16;
         public ShadowStyle? Shadow { get; set; } = new ShadowStyle();
     }
@@ -89,6 +90,7 @@ namespace FS服装搭配专家v1._0.Core.Models
         public string SelectedBackground { get; set; } = "#40FFFFFF";
         public string HoverBackground { get; set; } = "#25FFFFFF";
         public string BorderColor { get; set; } = "#20FFFFFF";
+        public string SelectedForeground { get; set; } = "#FFFFFFFF";
         public double CornerRadius { get; set; } = 8;
     }
 

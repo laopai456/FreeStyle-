@@ -18,6 +18,13 @@ namespace FS服装搭配专家v1._0.Core.Services
             ApplyResources(window, theme);
         }
 
+        public void ApplyThemeToUserControl(UserControl userControl, SkinTheme theme)
+        {
+            if (userControl == null || theme == null) return;
+
+            ApplyResourcesToUserControl(userControl, theme);
+        }
+
         public void ApplyThemeToGrid(Grid grid, SkinTheme theme)
         {
             if (grid == null || theme == null) return;
@@ -86,6 +93,7 @@ namespace FS服装搭配专家v1._0.Core.Services
             resources["GlassBorderColor"] = CreateBrush(theme.Styles.Card.BorderColor);
             resources["GlassHighlightColor"] = CreateBrush(theme.Styles.Card.BorderColor);
             resources["GlassCardHoverColor"] = CreateBrush(theme.Styles.ListItem.HoverBackground);
+            resources["ContentPanelBackgroundColor"] = CreateBrush(theme.Styles.Card.ContentPanelBackground);
 
             resources["TextColor"] = CreateBrush(theme.Styles.Text.Primary);
             resources["PreviewTextColor"] = CreateBrush(theme.Styles.Text.Primary);
@@ -95,8 +103,47 @@ namespace FS服装搭配专家v1._0.Core.Services
 
             resources["ButtonGlassColor"] = CreateBrush(theme.Styles.Button.Background);
             resources["ButtonGlassPressedColor"] = CreateBrush(theme.Styles.Button.PressedBackground);
+            resources["ButtonForegroundColor"] = CreateBrush(theme.Styles.Button.Foreground);
+
+            resources["HoverBackgroundColor"] = CreateBrush(theme.Styles.Button.HoverBackground);
+            resources["PressedBackgroundColor"] = CreateBrush(theme.Styles.Button.PressedBackground);
+            resources["ListItemBackgroundColor"] = CreateBrush(theme.Styles.ListItem.Background);
+            resources["ListItemHoverBackgroundColor"] = CreateBrush(theme.Styles.ListItem.HoverBackground);
+            resources["ListItemSelectedBackgroundColor"] = CreateBrush(theme.Styles.ListItem.SelectedBackground);
+            resources["TabSelectedBackgroundColor"] = CreateBrush(theme.Styles.Tab.SelectedBackground);
+            resources["TabHoverBackgroundColor"] = CreateBrush(theme.Styles.Tab.HoverBackground);
+            resources["TabSelectedForegroundColor"] = CreateBrush(theme.Styles.Tab.SelectedForeground);
 
             UpdateAllVisualChildren(window, theme);
+        }
+
+        private void ApplyResourcesToUserControl(UserControl userControl, SkinTheme theme)
+        {
+            var resources = userControl.Resources;
+
+            resources["GlassCardColor"] = CreateBrush(theme.Styles.Card.Background);
+            resources["GlassBorderColor"] = CreateBrush(theme.Styles.Card.BorderColor);
+            resources["GlassHighlightColor"] = CreateBrush(theme.Styles.Card.BorderColor);
+            resources["GlassCardHoverColor"] = CreateBrush(theme.Styles.ListItem.HoverBackground);
+            resources["ContentPanelBackgroundColor"] = CreateBrush(theme.Styles.Card.ContentPanelBackground);
+
+            resources["TextColor"] = CreateBrush(theme.Styles.Text.Primary);
+            resources["PreviewTextColor"] = CreateBrush(theme.Styles.Text.Primary);
+            resources["StatusTextColor"] = CreateBrush(theme.Styles.Text.Secondary);
+            resources["TitleTextColor"] = CreateBrush(theme.Styles.Text.Title);
+            resources["BodyTextColor"] = CreateBrush(theme.Styles.Text.Body);
+
+            resources["ButtonGlassColor"] = CreateBrush(theme.Styles.Button.Background);
+            resources["ButtonGlassPressedColor"] = CreateBrush(theme.Styles.Button.PressedBackground);
+            resources["ButtonForegroundColor"] = CreateBrush(theme.Styles.Button.Foreground);
+
+            resources["HoverBackgroundColor"] = CreateBrush(theme.Styles.Button.HoverBackground);
+            resources["PressedBackgroundColor"] = CreateBrush(theme.Styles.Button.PressedBackground);
+            resources["ListItemBackgroundColor"] = CreateBrush(theme.Styles.ListItem.Background);
+            resources["ListItemHoverBackgroundColor"] = CreateBrush(theme.Styles.ListItem.HoverBackground);
+            resources["ListItemSelectedBackgroundColor"] = CreateBrush(theme.Styles.ListItem.SelectedBackground);
+
+            UpdateAllVisualChildren(userControl, theme);
         }
 
         private void UpdateAllVisualChildren(DependencyObject parent, SkinTheme theme)
@@ -184,7 +231,6 @@ namespace FS服装搭配专家v1._0.Core.Services
         private void UpdateButton(Button button, SkinTheme theme)
         {
             button.Background = CreateBrush(theme.Styles.Button.Background);
-            button.Foreground = CreateBrush(theme.Styles.Button.Foreground);
             button.BorderBrush = CreateBrush(theme.Styles.Button.BorderColor);
         }
 

@@ -14,6 +14,12 @@
         <SolidColorBrush x:Key="StatusTextColor" Color="#FFCCCCCC" />
         <SolidColorBrush x:Key="TitleTextColor" Color="#FFFFFFFF" />
         <SolidColorBrush x:Key="ButtonGlassColor" Color="#25FFFFFF" />
+        <SolidColorBrush x:Key="ButtonForegroundColor" Color="#FFFFFFFF" />
+        <SolidColorBrush x:Key="HoverBackgroundColor" Color="#40FFFFFF" />
+        <SolidColorBrush x:Key="PressedBackgroundColor" Color="#40FFFFFF" />
+        <SolidColorBrush x:Key="ListItemBackgroundColor" Color="#1AFFFFFF" />
+        <SolidColorBrush x:Key="ListItemHoverBackgroundColor" Color="#33FFFFFF" />
+        <SolidColorBrush x:Key="ListItemSelectedBackgroundColor" Color="#40FFFFFF" />
         
         <LinearGradientBrush x:Key="NeonGradient" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#FF667EEA" Offset="0" />
@@ -31,10 +37,10 @@
             - 操作类按钮（应用地图）：Height="44" Width="160"
         -->
         <Style x:Key="GlassButton" TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource ButtonGlassColor}" />
-            <Setter Property="Foreground" Value="{StaticResource TextColor}" />
+            <Setter Property="Background" Value="{DynamicResource ButtonGlassColor}" />
+            <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundColor}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="{StaticResource GlassHighlightColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource GlassHighlightColor}" />
             <Setter Property="Padding" Value="14,8" />
             <Setter Property="Margin" Value="4" />
             <Setter Property="Cursor" Value="Hand" />
@@ -60,8 +66,8 @@
         
         <Style x:Key="GlassTextBox" TargetType="TextBox">
             <Setter Property="Background" Value="#25FFFFFF" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="BorderBrush" Value="{StaticResource GlassBorderColor}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource GlassBorderColor}" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="FontSize" Value="13" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -94,8 +100,8 @@
             <Setter Property="ItemContainerStyle">
                 <Setter.Value>
                     <Style TargetType="ListBoxItem">
-                        <Setter Property="Background" Value="#1AFFFFFF" />
-                        <Setter Property="BorderBrush" Value="#33FFFFFF" />
+                        <Setter Property="Background" Value="{DynamicResource ListItemBackgroundColor}" />
+                        <Setter Property="BorderBrush" Value="{DynamicResource GlassBorderColor}" />
                         <Setter Property="BorderThickness" Value="1" />
                         <Setter Property="Margin" Value="2" />
                         <Setter Property="Padding" Value="10,8" />
@@ -113,11 +119,11 @@
                                     </Border>
                                     <ControlTemplate.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter TargetName="ItemBorder" Property="Background" Value="#33FFFFFF" />
+                                            <Setter TargetName="ItemBorder" Property="Background" Value="{DynamicResource ListItemHoverBackgroundColor}" />
                                         </Trigger>
                                         <Trigger Property="IsSelected" Value="True">
-                                            <Setter TargetName="ItemBorder" Property="Background" Value="#40FFFFFF" />
-                                            <Setter TargetName="ItemBorder" Property="BorderBrush" Value="#60FFFFFF" />
+                                            <Setter TargetName="ItemBorder" Property="Background" Value="{DynamicResource ListItemSelectedBackgroundColor}" />
+                                            <Setter TargetName="ItemBorder" Property="BorderBrush" Value="{DynamicResource GlassBorderColor}" />
                                         </Trigger>
                                     </ControlTemplate.Triggers>
                                 </ControlTemplate>
@@ -152,7 +158,7 @@
         <!-- 顶部：地图库路径设置 -->
         <Border Grid.Row="0"
                 Background="#15FFFFFF"
-                BorderBrush="{StaticResource GlassBorderColor}"
+                BorderBrush="{DynamicResource GlassBorderColor}"
                 BorderThickness="1"
                 CornerRadius="12"
                 Padding="16,12"
@@ -160,7 +166,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="地图库："
                            FontSize="14"
-                           Foreground="{StaticResource StatusTextColor}"
+                           Foreground="{DynamicResource StatusTextColor}"
                            VerticalAlignment="Center"
                            Margin="0,0,12,0" />
                 
@@ -184,7 +190,7 @@
             <!-- 左侧：地图列表 -->
             <Border Grid.Column="0"
                     Background="#15FFFFFF"
-                    BorderBrush="{StaticResource GlassBorderColor}"
+                    BorderBrush="{DynamicResource GlassBorderColor}"
                     BorderThickness="1"
                     CornerRadius="12"
                     Padding="10"
@@ -228,7 +234,7 @@
                             <DataTemplate>
                                 <TextBlock Text="{Binding MapName}"
                                            FontSize="13"
-                                           Foreground="{StaticResource TextColor}"
+                                           Foreground="{DynamicResource TextColor}"
                                            TextTrimming="CharacterEllipsis" />
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -239,7 +245,7 @@
             <!-- 右侧：预览区域 -->
             <Border Grid.Column="1"
                     Background="#15FFFFFF"
-                    BorderBrush="{StaticResource GlassBorderColor}"
+                    BorderBrush="{DynamicResource GlassBorderColor}"
                     BorderThickness="1"
                     CornerRadius="12"
                     Padding="12">
@@ -267,7 +273,7 @@
                                Text="请选择地图"
                                FontSize="14"
                                FontWeight="600"
-                               Foreground="{StaticResource TitleTextColor}"
+                               Foreground="{DynamicResource TitleTextColor}"
                                TextAlignment="Center"
                                Margin="0,0,0,12" />
                     
@@ -287,7 +293,7 @@
         <!-- 底部：状态栏 -->
         <Border Grid.Row="2"
                 Background="#10FFFFFF"
-                BorderBrush="{StaticResource GlassBorderColor}"
+                BorderBrush="{DynamicResource GlassBorderColor}"
                 BorderThickness="1"
                 CornerRadius="8"
                 Padding="10,6"
@@ -295,7 +301,7 @@
             <TextBlock x:Name="txtStatus"
                        Text="准备就绪"
                        FontSize="12"
-                       Foreground="{StaticResource StatusTextColor}" />
+                       Foreground="{DynamicResource StatusTextColor}" />
         </Border>
     </Grid>
 </UserControl>

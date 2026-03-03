@@ -1,0 +1,68 @@
+{
+  "id": "galaxy",
+  "name": "银河星空",
+  "author": "Developer",
+  "version": "1.0",
+  "description": "白灰底色配紫色按钮的冲突设计风格",
+  "styles": {
+    "window": {
+      "background": {
+        "type": "solid",
+        "colors": [
+          "#FFFFFF"
+        ],
+        "angle": 0,
+        "imagePath": null
+      }
+    },
+    "card": {
+      "background": "#F5F5F5",
+      "borderColor": "#E0E0E0",
+      "contentPanelBackground": "#F5F5F5",
+      "cornerRadius": 16,
+      "shadow": null
+    },
+    "button": {
+      "background": "#7E57C2",
+      "hoverBackground": "#9575CD",
+      "pressedBackground": "#5E35B1",
+      "borderColor": "#7E57C2",
+      "cornerRadius": 8,
+      "foreground": "#FFFFFFFF",
+      "shadow": null
+    },
+    "text": {
+      "primary": "#424242",
+      "secondary": "#757575",
+      "title": "#424242",
+      "body": "#424242"
+    },
+    "listItem": {
+      "background": "#F5F5F5",
+      "hoverBackground": "#E0E0E0",
+      "selectedBackground": "#E8E0F0",
+      "borderColor": "#E0E0E0",
+      "cornerRadius": 8
+    },
+    "tab": {
+      "background": "transparent",
+      "selectedBackground": "#7E57C2",
+      "hoverBackground": "#E8E0F0",
+      "borderColor": "#E0E0E0",
+      "selectedForeground": "#FFFFFFFF",
+      "cornerRadius": 8
+    },
+    "textBox": {
+      "background": "#FFFFFF",
+      "borderColor": "#E0E0E0",
+      "foreground": "#424242",
+      "cornerRadius": 8
+    },
+    "scrollBar": {
+      "background": "#F5F5F5",
+      "thumbColor": "#7E57C2",
+      "width": 6,
+      "cornerRadius": 3
+    }
+  }
+}

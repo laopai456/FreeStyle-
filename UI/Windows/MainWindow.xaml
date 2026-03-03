@@ -22,15 +22,25 @@
         <SolidColorBrush x:Key="PreviewTextColor" Color="#FFFFFFFF" /> <!-- 预览文本颜色 -->
         <SolidColorBrush x:Key="StatusTextColor" Color="#FFCCCCCC" /> <!-- 状态文本颜色 -->
         <SolidColorBrush x:Key="TitleTextColor" Color="#FFFFFFFF" /> <!-- 标题文本颜色 -->
-        <SolidColorBrush x:Key="ButtonGlassColor" Color="#25FFFFFF" /> <!-- 按钮玻璃颜色（更高透明度，形成层次） -->
+        <SolidColorBrush x:Key="ButtonGlassColor" Color="#25FFFFFF" /> <!-- 按钮玻璃颜色 -->
         <SolidColorBrush x:Key="ButtonGlassPressedColor" Color="#40FFFFFF" /> <!-- 按钮按下状态颜色 -->
+        <SolidColorBrush x:Key="ButtonForegroundColor" Color="#FFFFFFFF" /> <!-- 按钮字体颜色 -->
         <SolidColorBrush x:Key="BodyTextColor" Color="#E6FFFFFF" /> <!-- 正文文本颜色（提高可读性） -->
+        <SolidColorBrush x:Key="HoverBackgroundColor" Color="#40FFFFFF" /> <!-- 悬停背景颜色 -->
+        <SolidColorBrush x:Key="PressedBackgroundColor" Color="#40FFFFFF" /> <!-- 按下背景颜色 -->
+        <SolidColorBrush x:Key="ListItemBackgroundColor" Color="#1AFFFFFF" /> <!-- 列表项背景颜色 -->
+        <SolidColorBrush x:Key="ListItemHoverBackgroundColor" Color="#33FFFFFF" /> <!-- 列表项悬停背景颜色 -->
+        <SolidColorBrush x:Key="ListItemSelectedBackgroundColor" Color="#33FFFFFF" /> <!-- 列表项选中背景颜色 -->
+        <SolidColorBrush x:Key="TabSelectedBackgroundColor" Color="#40FFFFFF" /> <!-- 标签页选中背景颜色 -->
+        <SolidColorBrush x:Key="TabHoverBackgroundColor" Color="#25FFFFFF" /> <!-- 标签页悬停背景颜色 -->
+        <SolidColorBrush x:Key="TabSelectedForegroundColor" Color="#FFFFFFFF" /> <!-- 标签页选中文字颜色 -->
+        <SolidColorBrush x:Key="ContentPanelBackgroundColor" Color="#0DFFFFFF" /> <!-- 内容区域背景颜色 -->
         
         <!-- 玻璃拟态文本框样式 -->
         <Style x:Key="GlassTextBox" TargetType="TextBox">
             <Setter Property="Background" Value="#20FFFFFF" />
-            <Setter Property="Foreground" Value="{StaticResource TextColor}" />
-            <Setter Property="BorderBrush" Value="{StaticResource GlassBorderColor}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource GlassBorderColor}" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="FontSize" Value="14" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -91,10 +101,10 @@
             - 对话框按钮（确定、取消、应用）：Height="40" Width="100"
         -->
         <Style x:Key="GlassButton" TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource ButtonGlassColor}" />
-            <Setter Property="Foreground" Value="{StaticResource TextColor}" />
+            <Setter Property="Background" Value="{DynamicResource ButtonGlassColor}" />
+            <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundColor}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="{StaticResource GlassHighlightColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource GlassHighlightColor}" />
             <Setter Property="Padding" Value="18,10" />
             <Setter Property="Margin" Value="10" />
             <Setter Property="Cursor" Value="Hand" />
@@ -117,10 +127,10 @@
                                     <VisualState x:Name="Normal" />
                                     <VisualState x:Name="MouseOver">
                                         <Storyboard>
-                                            <ColorAnimation Storyboard.TargetName="ButtonBorder" 
-                                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
-                                                            To="#40FFFFFF" 
-                                                            Duration="0:0:0.2" />
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
+                                                                           Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{DynamicResource HoverBackgroundColor}" />
+                                            </ObjectAnimationUsingKeyFrames>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" 
                                                                            Storyboard.TargetProperty="(TextElement.Foreground)">
                                                 <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{StaticResource NeonGradient}" />
@@ -129,11 +139,10 @@
                                     </VisualState>
                                     <VisualState x:Name="Pressed">
                                         <Storyboard>
-                                            <ColorAnimation Storyboard.TargetName="ButtonBorder" 
-                                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
-                                                            To="#40FFFFFF" 
-                                                            Duration="0:0:0.1" />
-                                            <!-- 移除BorderThickness动画，因为Thickness类型不能直接用ObjectAnimationUsingKeyFrames -->
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
+                                                                           Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{DynamicResource PressedBackgroundColor}" />
+                                            </ObjectAnimationUsingKeyFrames>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
                                                                            Storyboard.TargetProperty="Effect">
                                                 <DiscreteObjectKeyFrame KeyTime="0:0:0.1">
@@ -171,10 +180,10 @@
         
         <!-- 窗口管理按钮样式 -->
         <Style x:Key="WindowButton" TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource ButtonGlassColor}" />
-            <Setter Property="Foreground" Value="{StaticResource TextColor}" />
+            <Setter Property="Background" Value="{DynamicResource ButtonGlassColor}" />
+            <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundColor}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="{StaticResource GlassHighlightColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource GlassHighlightColor}" />
             <Setter Property="Padding" Value="14,7" />
             <Setter Property="Margin" Value="6" />
             <Setter Property="Cursor" Value="Hand" />
@@ -199,10 +208,10 @@
                                     <VisualState x:Name="Normal" />
                                     <VisualState x:Name="MouseOver">
                                         <Storyboard>
-                                            <ColorAnimation Storyboard.TargetName="ButtonBorder" 
-                                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
-                                                            To="#40FFFFFF" 
-                                                            Duration="0:0:0.2" />
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
+                                                                           Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{DynamicResource HoverBackgroundColor}" />
+                                            </ObjectAnimationUsingKeyFrames>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" 
                                                                            Storyboard.TargetProperty="(TextElement.Foreground)">
                                                 <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{StaticResource NeonGradient}" />
@@ -211,11 +220,10 @@
                                     </VisualState>
                                     <VisualState x:Name="Pressed">
                                         <Storyboard>
-                                            <ColorAnimation Storyboard.TargetName="ButtonBorder" 
-                                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
-                                                            To="#40FFFFFF" 
-                                                            Duration="0:0:0.1" />
-                                            <!-- 移除BorderThickness动画，因为Thickness类型不能直接用ObjectAnimationUsingKeyFrames -->
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
+                                                                           Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{DynamicResource PressedBackgroundColor}" />
+                                            </ObjectAnimationUsingKeyFrames>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
                                                                            Storyboard.TargetProperty="Effect">
                                                 <DiscreteObjectKeyFrame KeyTime="0:0:0.1">
@@ -253,13 +261,13 @@
         
         <!-- 列表项样式 - 优化后的玻璃拟态 -->
         <Style x:Key="ListItemStyle" TargetType="Border">
-            <Setter Property="Background" Value="#1AFFFFFF" />
+            <Setter Property="Background" Value="{DynamicResource ListItemBackgroundColor}" />
             <Setter Property="CornerRadius" Value="12" />
             <Setter Property="Margin" Value="4,4,4,0" />
             <Setter Property="Padding" Value="12" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="#33FFFFFF" />
+            <Setter Property="BorderBrush" Value="{DynamicResource GlassBorderColor}" />
             <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect BlurRadius="8" 
@@ -271,20 +279,20 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#33FFFFFF" />
+                    <Setter Property="Background" Value="{DynamicResource ListItemHoverBackgroundColor}" />
                 </Trigger>
             </Style.Triggers>
         </Style>
         
         <!-- 选中列表项样式 - 优化后的玻璃拟态 -->
         <Style x:Key="ListItemSelectedStyle" TargetType="Border">
-            <Setter Property="Background" Value="#33FFFFFF" />
+            <Setter Property="Background" Value="{DynamicResource ListItemSelectedBackgroundColor}" />
             <Setter Property="CornerRadius" Value="12" />
             <Setter Property="Margin" Value="4,4,4,0" />
             <Setter Property="Padding" Value="12" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="#4DFFFFFF" />
+            <Setter Property="BorderBrush" Value="{DynamicResource GlassBorderColor}" />
             <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect BlurRadius="8" 
@@ -298,13 +306,13 @@
         
         <!-- 预览区域样式 - 优化后的玻璃拟态 -->
         <Style x:Key="PreviewStyle" TargetType="Border">
-            <Setter Property="Background" Value="{StaticResource GlassCardColor}" />
+            <Setter Property="Background" Value="{DynamicResource GlassCardColor}" />
             <Setter Property="CornerRadius" Value="16" />
             <Setter Property="Margin" Value="0,28,0,0" />
             <Setter Property="Padding" Value="24" />
             <Setter Property="Height" Value="400" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="{StaticResource GlassHighlightColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource GlassHighlightColor}" />
             <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect BlurRadius="32" 
@@ -405,18 +413,11 @@
                             <!-- 内容区域 --> 
                             <Border x:Name="ContentPanel" 
                                     Grid.Row="0" 
-                                    Background="#0DFFFFFF" 
-                                    BorderBrush="{StaticResource GlassBorderColor}" 
-                                    BorderThickness="1" 
+                                    Background="{DynamicResource ContentPanelBackgroundColor}" 
+                                    BorderBrush="Transparent" 
+                                    BorderThickness="0" 
                                     CornerRadius="16" 
                                     Margin="0,0,0,20"> 
-                                <Border.Effect> 
-                                    <DropShadowEffect BlurRadius="32" 
-                                                      ShadowDepth="8" 
-                                                      Opacity="0.1" 
-                                                      Direction="270" 
-                                                      Color="#000000" /> 
-                                </Border.Effect> 
                                 <Grid> 
                                     <Grid.RowDefinitions> 
                                         <RowDefinition Height="Auto" /> 
@@ -451,7 +452,7 @@
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="BorderBrush" Value="Transparent" />
             <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="Foreground" Value="{StaticResource TextColor}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
             <Setter Property="Padding" Value="12,8" />
             <Setter Property="Margin" Value="4,0,4,0" />
             <Setter Property="FontWeight" Value="600" />
@@ -479,11 +480,14 @@
                                               TextElement.FontSize="14"/>
                         </Border>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsSelected" Value="True">
-                                <Setter TargetName="TabBorder" Property="Background" Value="#40FFFFFF" />
-                                <Setter TargetName="TabBorder" Property="BorderBrush" Value="{StaticResource GlassHighlightColor}" />
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="True" />
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="TabBorder" Property="Background" Value="{DynamicResource TabSelectedBackgroundColor}" />
+                                <Setter TargetName="TabBorder" Property="BorderBrush" Value="{DynamicResource GlassHighlightColor}" />
                                 <Setter TargetName="TabBorder" Property="BorderThickness" Value="1" />
-                                <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{StaticResource TextColor}" />
+                                <Setter TargetName="ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource TabSelectedForegroundColor}" />
                                 <Setter TargetName="TabBorder" Property="Effect">
                                     <Setter.Value>
                                         <DropShadowEffect BlurRadius="4" 
@@ -493,12 +497,16 @@
                                                           Color="#000000" />
                                     </Setter.Value>
                                 </Setter>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="TabBorder" Property="Background" Value="#25FFFFFF" />
-                                <Setter TargetName="TabBorder" Property="BorderBrush" Value="{StaticResource GlassHighlightColor}" />
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="False" />
+                                    <Condition Property="IsMouseOver" Value="True" />
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="TabBorder" Property="Background" Value="{DynamicResource TabHoverBackgroundColor}" />
+                                <Setter TargetName="TabBorder" Property="BorderBrush" Value="{DynamicResource GlassHighlightColor}" />
                                 <Setter TargetName="TabBorder" Property="BorderThickness" Value="1" />
-                            </Trigger>
+                            </MultiTrigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -545,7 +553,7 @@
                                Text="FreeStyle" 
                                FontSize="16" 
                                FontWeight="Bold" 
-                               Foreground="White"
+                               Foreground="{DynamicResource TitleTextColor}"
                                VerticalAlignment="Center" 
                                Margin="0,0,0,0" />
                     
@@ -583,26 +591,26 @@
                                             <VisualState x:Name="Normal" />
                                             <VisualState x:Name="MouseOver">
                                                 <Storyboard>
-                                                    <ColorAnimation Storyboard.TargetName="ButtonBorder" 
-                                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
-                                                                    To="#40FFFFFF" 
-                                                                    Duration="0:0:0.2" />
-                                                    <ColorAnimation Storyboard.TargetName="ButtonBorder" 
-                                                                    Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" 
-                                                                    To="#60FFFFFF" 
-                                                                    Duration="0:0:0.2" />
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
+                                                                                   Storyboard.TargetProperty="Background">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{DynamicResource HoverBackgroundColor}" />
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
+                                                                                   Storyboard.TargetProperty="BorderBrush">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{DynamicResource GlassBorderColor}" />
+                                                    </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
                                             </VisualState>
                                             <VisualState x:Name="Pressed">
                                                 <Storyboard>
-                                                    <ColorAnimation Storyboard.TargetName="ButtonBorder" 
-                                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
-                                                                    To="#60FFFFFF" 
-                                                                    Duration="0:0:0.1" />
-                                                    <ColorAnimation Storyboard.TargetName="ButtonBorder" 
-                                                                    Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" 
-                                                                    To="#80FFFFFF" 
-                                                                    Duration="0:0:0.1" />
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
+                                                                                   Storyboard.TargetProperty="Background">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{DynamicResource PressedBackgroundColor}" />
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
+                                                                                   Storyboard.TargetProperty="BorderBrush">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{DynamicResource GlassBorderColor}" />
+                                                    </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
                                             </VisualState>
                                         </VisualStateGroup>
@@ -668,14 +676,14 @@
                                 <TextBlock Text="服装列表" 
                                            FontSize="18" 
                                            FontWeight="600" 
-                                           Foreground="{StaticResource TitleTextColor}" 
+                                           Foreground="{DynamicResource TitleTextColor}" 
                                            Margin="0,0,0,20" />
                                 
                                 <!-- 搜索区域 -->
                                 <StackPanel Orientation="Vertical" Margin="0,0,0,20">
                                     <TextBlock Text="🔍 搜索服装" 
                                                FontSize="14" 
-                                               Foreground="{StaticResource StatusTextColor}" 
+                                               Foreground="{DynamicResource StatusTextColor}" 
                                                Margin="0,0,0,8" />
                                     <Grid Margin="0,0,0,8">
                                         <Grid.ColumnDefinitions>
@@ -700,7 +708,7 @@
                                 
                                 <!-- 服装列表 -->
                                 <Border Background="#15FFFFFF" 
-                                        BorderBrush="{StaticResource GlassBorderColor}" 
+                                        BorderBrush="{DynamicResource GlassBorderColor}" 
                                         BorderThickness="1" 
                                         CornerRadius="12" 
                                         Padding="8" 
@@ -715,7 +723,7 @@
                                 <!-- 操作提示 -->
                                 <TextBlock Text="左键添加到变更前 | Ctrl+左键添加到变更后" 
                                            FontSize="11" 
-                                           Foreground="{StaticResource StatusTextColor}" 
+                                           Foreground="{DynamicResource StatusTextColor}" 
                                            Margin="0,12,0,0" 
                                            TextAlignment="Center" />
                                 
@@ -743,14 +751,14 @@
                                 <TextBlock Text="变更区域" 
                                            FontSize="18" 
                                            FontWeight="600" 
-                                           Foreground="{StaticResource TitleTextColor}" 
+                                           Foreground="{DynamicResource TitleTextColor}" 
                                            Margin="0,0,0,20" />
                                 
                                 <!-- 配对状态 -->
                                 <TextBlock x:Name="txtPairStatus" 
                                            Text="已配对 0 件服装" 
                                            FontSize="12" 
-                                           Foreground="{StaticResource StatusTextColor}" 
+                                           Foreground="{DynamicResource StatusTextColor}" 
                                            Margin="0,0,0,20" />
                                 
                                 <!-- 变更前和变更后区域 -->
@@ -763,7 +771,7 @@
                                     <!-- 变更前区域 -->
                                     <Border Grid.Column="0" 
                                             Background="#15FFFFFF" 
-                                            BorderBrush="{StaticResource GlassBorderColor}" 
+                                            BorderBrush="{DynamicResource GlassBorderColor}" 
                                             BorderThickness="1" 
                                             CornerRadius="12" 
                                             Padding="16" 
@@ -772,7 +780,7 @@
                                             <TextBlock Text="变更前" 
                                                        FontSize="14" 
                                                        FontWeight="600" 
-                                                       Foreground="{StaticResource TitleTextColor}" 
+                                                       Foreground="{DynamicResource TitleTextColor}" 
                                                        Margin="0,0,0,12" />
                                             <Border x:Name="beforePanel" 
                                                     Background="Transparent" 
@@ -793,7 +801,7 @@
                                     <!-- 变更后区域 -->
                                     <Border Grid.Column="1" 
                                             Background="#15FFFFFF" 
-                                            BorderBrush="{StaticResource GlassBorderColor}" 
+                                            BorderBrush="{DynamicResource GlassBorderColor}" 
                                             BorderThickness="1" 
                                             CornerRadius="12" 
                                             Padding="16" 
@@ -802,7 +810,7 @@
                                             <TextBlock Text="变更后" 
                                                        FontSize="14" 
                                                        FontWeight="600" 
-                                                       Foreground="{StaticResource TitleTextColor}" 
+                                                       Foreground="{DynamicResource TitleTextColor}" 
                                                        Margin="0,0,0,12" />
                                             <Border x:Name="afterPanel" 
                                                     Background="Transparent" 
@@ -861,13 +869,13 @@
                                    Text="常用工具" 
                                    FontSize="18" 
                                    FontWeight="600" 
-                                   Foreground="{StaticResource TitleTextColor}"
+                                   Foreground="{DynamicResource TitleTextColor}"
                                    Margin="0,0,0,24" />
                         
                         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
                             <!-- 背景修改 -->
                             <Border Background="#15FFFFFF"
-                                    BorderBrush="{StaticResource GlassBorderColor}"
+                                    BorderBrush="{DynamicResource GlassBorderColor}"
                                     BorderThickness="1"
                                     CornerRadius="12"
                                     Width="200"
@@ -884,11 +892,11 @@
                                         <TextBlock Text="背景修改"
                                                    FontSize="16"
                                                    FontWeight="600"
-                                                   Foreground="{StaticResource TextColor}"
+                                                   Foreground="{DynamicResource TextColor}"
                                                    HorizontalAlignment="Center" />
                                         <TextBlock Text="替换游戏背景图片"
                                                    FontSize="12"
-                                                   Foreground="{StaticResource StatusTextColor}"
+                                                   Foreground="{DynamicResource StatusTextColor}"
                                                    HorizontalAlignment="Center"
                                                    Margin="0,4,0,0" />
                                     </StackPanel>
@@ -897,7 +905,7 @@
                             
                             <!-- 补充字节 -->
                             <Border Background="#15FFFFFF"
-                                    BorderBrush="{StaticResource GlassBorderColor}"
+                                    BorderBrush="{DynamicResource GlassBorderColor}"
                                     BorderThickness="1"
                                     CornerRadius="12"
                                     Width="200"
@@ -913,11 +921,11 @@
                                         <TextBlock Text="补充字节"
                                                    FontSize="16"
                                                    FontWeight="600"
-                                                   Foreground="{StaticResource TextColor}"
+                                                   Foreground="{DynamicResource TextColor}"
                                                    HorizontalAlignment="Center" />
                                         <TextBlock Text="补充PAK文件字节数"
                                                    FontSize="12"
-                                                   Foreground="{StaticResource StatusTextColor}"
+                                                   Foreground="{DynamicResource StatusTextColor}"
                                                    HorizontalAlignment="Center"
                                                    Margin="0,4,0,0" />
                                     </StackPanel>
