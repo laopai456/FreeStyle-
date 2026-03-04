@@ -20,7 +20,7 @@
         <SolidColorBrush x:Key="GlassHighlightColor" Color="#20FFFFFF" /> <!-- 玻璃高光边框色，强化边缘切割感 -->
         <SolidColorBrush x:Key="TextColor" Color="#FFFFFFFF" /> <!-- 文本颜色 -->
         <SolidColorBrush x:Key="PreviewTextColor" Color="#FFFFFFFF" /> <!-- 预览文本颜色 -->
-        <SolidColorBrush x:Key="StatusTextColor" Color="#FFCCCCCC" /> <!-- 状态文本颜色 -->
+        <SolidColorBrush x:Key="StatusTextColor" Color="#FF999999" /> <!-- 状态文本颜色 -->
         <SolidColorBrush x:Key="TitleTextColor" Color="#FFFFFFFF" /> <!-- 标题文本颜色 -->
         <SolidColorBrush x:Key="ButtonGlassColor" Color="#25FFFFFF" /> <!-- 按钮玻璃颜色 -->
         <SolidColorBrush x:Key="ButtonGlassPressedColor" Color="#40FFFFFF" /> <!-- 按钮按下状态颜色 -->
@@ -131,10 +131,6 @@
                                                                            Storyboard.TargetProperty="Background">
                                                 <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{DynamicResource HoverBackgroundColor}" />
                                             </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" 
-                                                                           Storyboard.TargetProperty="(TextElement.Foreground)">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{StaticResource NeonGradient}" />
-                                            </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Pressed">
@@ -154,10 +150,6 @@
                                                                           Color="#000000" />
                                                     </DiscreteObjectKeyFrame.Value>
                                                 </DiscreteObjectKeyFrame>
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" 
-                                                                           Storyboard.TargetProperty="(TextElement.Foreground)">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{StaticResource NeonGradient}" />
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
@@ -212,10 +204,6 @@
                                                                            Storyboard.TargetProperty="Background">
                                                 <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{DynamicResource HoverBackgroundColor}" />
                                             </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" 
-                                                                           Storyboard.TargetProperty="(TextElement.Foreground)">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{StaticResource NeonGradient}" />
-                                            </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Pressed">
@@ -235,10 +223,6 @@
                                                                           Color="#000000" />
                                                     </DiscreteObjectKeyFrame.Value>
                                                 </DiscreteObjectKeyFrame>
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" 
-                                                                           Storyboard.TargetProperty="(TextElement.Foreground)">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{StaticResource NeonGradient}" />
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
@@ -619,7 +603,7 @@
                             </ControlTemplate>
                         </Button.Template>
                         <Grid>
-                            <Border Width="28" Height="28" CornerRadius="6">
+                            <Border Width="24" Height="24">
                                 <Border.Background>
                                     <LinearGradientBrush x:Name="IconGradient" StartPoint="-1,-1" EndPoint="2,2">
                                         <GradientStop Color="#FF667EEA" Offset="0" />
@@ -629,9 +613,7 @@
                                 </Border.Background>
                                 <Border.OpacityMask>
                                     <ImageBrush ImageSource="pack://application:,,,/template/vest-l.png" 
-                                               Stretch="Uniform" 
-                                               AlignmentX="Center" 
-                                               AlignmentY="Center" />
+                                               Stretch="Uniform" />
                                 </Border.OpacityMask>
                                 <Border.Triggers>
                                     <EventTrigger RoutedEvent="Border.Loaded">

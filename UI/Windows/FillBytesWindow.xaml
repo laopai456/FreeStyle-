@@ -14,7 +14,7 @@
         <SolidColorBrush x:Key="GlassCardColor" Color="#15FFFFFF" />
         <SolidColorBrush x:Key="GlassBorderColor" Color="#4DFFFFFF" />
         <SolidColorBrush x:Key="TextColor" Color="#FFFFFFFF" />
-        <SolidColorBrush x:Key="StatusTextColor" Color="#FFCCCCCC" />
+        <SolidColorBrush x:Key="StatusTextColor" Color="#FF999999" />
         <SolidColorBrush x:Key="ButtonGlassColor" Color="#25FFFFFF" />
         
         <Style x:Key="GlassButton" TargetType="Button">

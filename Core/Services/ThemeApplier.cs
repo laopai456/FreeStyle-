@@ -151,97 +151,8 @@ namespace FS服装搭配专家v1._0.Core.Services
             for (int i = 0; i < System.Windows.Media.VisualTreeHelper.GetChildrenCount(parent); i++)
             {
                 var child = System.Windows.Media.VisualTreeHelper.GetChild(parent, i);
-                
-                if (child is Border border)
-                {
-                    UpdateBorder(border, theme);
-                }
-                else if (child is TextBlock textBlock)
-                {
-                    UpdateTextBlock(textBlock, theme);
-                }
-                else if (child is TextBox textBox)
-                {
-                    UpdateTextBox(textBox, theme);
-                }
-                else if (child is Button button)
-                {
-                    UpdateButton(button, theme);
-                }
-                else if (child is ListBox listBox)
-                {
-                    UpdateListBox(listBox, theme);
-                }
-                else if (child is TabControl tabControl)
-                {
-                    UpdateTabControl(tabControl, theme);
-                }
-
                 UpdateAllVisualChildren(child, theme);
             }
-        }
-
-        private void UpdateBorder(Border border, SkinTheme theme)
-        {
-            var style = border.Style;
-            if (style != null)
-            {
-                string styleName = style.TargetType.Name;
-                if (styleName == "Border")
-                {
-                    if (border.Background is SolidColorBrush bgBrush)
-                    {
-                        var color = bgBrush.Color;
-                        if (IsSimilarColor(color, ParseColor("#15FFFFFF")))
-                        {
-                            border.Background = CreateBrush(theme.Styles.Card.Background);
-                        }
-                        else if (IsSimilarColor(color, ParseColor("#1AFFFFFF")))
-                        {
-                            border.Background = CreateBrush(theme.Styles.ListItem.Background);
-                        }
-                    }
-                }
-            }
-        }
-
-        private void UpdateTextBlock(TextBlock textBlock, SkinTheme theme)
-        {
-            if (textBlock.Foreground is SolidColorBrush fgBrush)
-            {
-                var color = fgBrush.Color;
-                if (IsSimilarColor(color, ParseColor("#FFFFFFFF")))
-                {
-                    textBlock.Foreground = CreateBrush(theme.Styles.Text.Primary);
-                }
-                else if (IsSimilarColor(color, ParseColor("#FFCCCCCC")))
-                {
-                    textBlock.Foreground = CreateBrush(theme.Styles.Text.Secondary);
-                }
-            }
-        }
-
-        private void UpdateTextBox(TextBox textBox, SkinTheme theme)
-        {
-            textBox.Background = CreateBrush(theme.Styles.TextBox.Background);
-            textBox.Foreground = CreateBrush(theme.Styles.TextBox.Foreground);
-            textBox.BorderBrush = CreateBrush(theme.Styles.TextBox.BorderColor);
-        }
-
-        private void UpdateButton(Button button, SkinTheme theme)
-        {
-            button.Background = CreateBrush(theme.Styles.Button.Background);
-            button.BorderBrush = CreateBrush(theme.Styles.Button.BorderColor);
-        }
-
-        private void UpdateListBox(ListBox listBox, SkinTheme theme)
-        {
-            listBox.Background = new SolidColorBrush(Colors.Transparent);
-        }
-
-        private void UpdateTabControl(TabControl tabControl, SkinTheme theme)
-        {
-            tabControl.Background = new SolidColorBrush(Colors.Transparent);
         }
 
         private SolidColorBrush CreateBrush(string colorString)
@@ -292,13 +203,6 @@ namespace FS服装搭配专家v1._0.Core.Services
             {
                 return Colors.Transparent;
             }
-        }
-
-        private bool IsSimilarColor(Color c1, Color c2, int tolerance = 10)
-        {
-            return Math.Abs(c1.R - c2.R) <= tolerance &&
-                   Math.Abs(c1.G - c2.G) <= tolerance &&
-                   Math.Abs(c1.B - c2.B) <= tolerance;
         }
 
         public Brush GetBackgroundBrush(BackgroundStyle bgStyle)

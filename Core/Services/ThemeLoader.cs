@@ -210,7 +210,7 @@ namespace FS服装搭配专家v1._0.Core.Services
                     Text = new TextStyle
                     {
                         Primary = "#FFFFFFFF",
-                        Secondary = "#FFCCCCCC",
+                        Secondary = "#FF666666",
                         Title = "#FFFFFFFF",
                         Body = "#E6FFFFFF"
                     },

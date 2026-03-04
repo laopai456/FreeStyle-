@@ -18,7 +18,7 @@
         <SolidColorBrush x:Key="GlassHighlightColor" Color="#20FFFFFF" />
         <SolidColorBrush x:Key="TextColor" Color="#FFFFFFFF" />
         <SolidColorBrush x:Key="TitleTextColor" Color="#FFFFFFFF" />
-        <SolidColorBrush x:Key="StatusTextColor" Color="#FFCCCCCC" />
+        <SolidColorBrush x:Key="StatusTextColor" Color="#FF999999" />
         <SolidColorBrush x:Key="ButtonGlassColor" Color="#25FFFFFF" />
         <SolidColorBrush x:Key="ButtonGlassPressedColor" Color="#40FFFFFF" />
         <SolidColorBrush x:Key="ButtonForegroundColor" Color="#FFFFFFFF" />
