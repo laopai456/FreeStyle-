@@ -380,15 +380,23 @@ namespace FS服装搭配专家v1._0
         private void lstClothing_Loaded(object sender, RoutedEventArgs e)
         {
             // 确保ListBox加载完成后滚动到顶部
+            ScrollListBoxToTop();
+        }
+        
+        private void ScrollListBoxToTop()
+        {
             if (lstClothing.Items.Count > 0)
             {
-                lstClothing.ScrollIntoView(lstClothing.Items[0]);
-                var scrollViewer = GetScrollViewer(lstClothing);
-                if (scrollViewer != null)
+                this.Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    scrollViewer.ScrollToTop();
-                    scrollViewer.ScrollToHome();
-                }
+                    lstClothing.ScrollIntoView(lstClothing.Items[0]);
+                    var scrollViewer = GetScrollViewer(lstClothing);
+                    if (scrollViewer != null)
+                    {
+                        scrollViewer.UpdateLayout();
+                        scrollViewer.ScrollToVerticalOffset(0);
+                    }
+                }), System.Windows.Threading.DispatcherPriority.Render);
             }
         }
 
@@ -1342,17 +1350,8 @@ namespace FS服装搭配专家v1._0
                     // 延迟滚动到顶部，确保ListBox已完成布局
                     this.Dispatcher.BeginInvoke(new Action(() =>
                     {
-                        if (lstClothing.Items.Count > 0)
-                        {
-                            lstClothing.ScrollIntoView(lstClothing.Items[0]);
-                            // 强制获取内部ScrollViewer并滚动到顶部
-                            var scrollViewer = GetScrollViewer(lstClothing);
-                            if (scrollViewer != null)
-                            {
-                                scrollViewer.ScrollToTop();
-                            }
-                        }
-                    }), System.Windows.Threading.DispatcherPriority.Loaded);
+                        ScrollListBoxToTop();
+                    }), System.Windows.Threading.DispatcherPriority.Render);
                 }
                 else
                 {

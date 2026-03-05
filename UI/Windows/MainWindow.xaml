@@ -308,96 +308,40 @@
             </Setter>
         </Style>
         
-        <!-- 滚动条样式 - 全新设计 -->
-        <Style x:Key="GlassScrollBar" TargetType="ScrollBar">
+        <!-- 简洁灰白滚动条样式 -->
+        <Style x:Key="SimpleGrayScrollBar" TargetType="ScrollBar">
             <Setter Property="Background" Value="Transparent" />
-            <Setter Property="BorderBrush" Value="Transparent" />
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="Width" Value="14" />
-            <Setter Property="MinWidth" Value="14" />
+            <Setter Property="Width" Value="8" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ScrollBar">
-                        <Grid x:Name="GridRoot" Width="14" Background="Transparent">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            
-                            <!-- 上箭头 -->
-                            <RepeatButton x:Name="DecreaseRepeat" 
-                                          Grid.Row="0"
-                                          Command="ScrollBar.LineUpCommand"
-                                          Width="14" Height="18"
-                                          Background="Transparent"
-                                          BorderBrush="Transparent">
-                                <Path x:Name="ArrowUp"
-                                      Data="M 0,8 L 7,2 L 14,8"
-                                      Stroke="#80FFFFFF"
-                                      StrokeThickness="2"
-                                      Stretch="Uniform"
-                                      Width="10" Height="10"/>
-                            </RepeatButton>
-                            
-                            <!-- 滚动轨道 -->
-                            <Border Grid.Row="1" 
-                                    Background="#10FFFFFF" 
-                                    CornerRadius="4"
-                                    Margin="2,0">
-                                <Track x:Name="PART_Track" 
-                                       VerticalAlignment="Stretch">
-                                    <Track.DecreaseRepeatButton>
-                                        <RepeatButton Command="ScrollBar.PageUpCommand" 
-                                                      Background="Transparent"
-                                                      BorderBrush="Transparent"/>
-                                    </Track.DecreaseRepeatButton>
-                                    <Track.Thumb>
-                                        <Thumb>
-                                            <Thumb.Template>
-                                                <ControlTemplate TargetType="Thumb">
-                                                    <Border Background="#90FFFFFF"
-                                                            BorderBrush="#40FFFFFF"
-                                                            BorderThickness="1"
-                                                            CornerRadius="4"
-                                                            Margin="0,1"/>
-                                                </ControlTemplate>
-                                            </Thumb.Template>
-                                        </Thumb>
-                                    </Track.Thumb>
-                                    <Track.IncreaseRepeatButton>
-                                        <RepeatButton Command="ScrollBar.PageDownCommand" 
-                                                      Background="Transparent"
-                                                      BorderBrush="Transparent"/>
-                                    </Track.IncreaseRepeatButton>
-                                </Track>
-                            </Border>
-                            
-                            <!-- 下箭头 -->
-                            <RepeatButton x:Name="IncreaseRepeat" 
-                                          Grid.Row="2"
-                                          Command="ScrollBar.LineDownCommand"
-                                          Width="14" Height="18"
-                                          Background="Transparent"
-                                          BorderBrush="Transparent">
-                                <Path x:Name="ArrowDown"
-                                      Data="M 0,2 L 7,8 L 14,2"
-                                      Stroke="#80FFFFFF"
-                                      StrokeThickness="2"
-                                      Stretch="Uniform"
-                                      Width="10" Height="10"/>
-                            </RepeatButton>
+                        <Grid Background="Transparent">
+                            <Border Background="#20FFFFFF" 
+                                    CornerRadius="4" 
+                                    Margin="2"/>
+                            <Track x:Name="PART_Track" 
+                                   IsDirectionReversed="True"
+                                   Margin="2">
+                                <Track.Thumb>
+                                    <Thumb>
+                                        <Thumb.Template>
+                                            <ControlTemplate TargetType="Thumb">
+                                                <Border Background="#80FFFFFF"
+                                                        CornerRadius="4"/>
+                                            </ControlTemplate>
+                                        </Thumb.Template>
+                                    </Thumb>
+                                </Track.Thumb>
+                            </Track>
                         </Grid>
-                        
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="ArrowUp" Property="Stroke" Value="#FFFFFFFF"/>
-                                <Setter TargetName="ArrowDown" Property="Stroke" Value="#FFFFFFFF"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#30FFFFFF"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
         
         <!-- 列表框样式 - 优化后的玻璃拟态 -->
@@ -414,7 +358,7 @@
                             <ScrollViewer x:Name="ScrollViewer" 
                                           Padding="{TemplateBinding Padding}">
                                 <ScrollViewer.Resources>
-                                    <Style TargetType="ScrollBar" BasedOn="{StaticResource GlassScrollBar}" />
+                                    <Style TargetType="ScrollBar" BasedOn="{StaticResource SimpleGrayScrollBar}" />
                                 </ScrollViewer.Resources>
                                 <ItemsPresenter />
                             </ScrollViewer>
