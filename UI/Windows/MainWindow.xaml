@@ -308,50 +308,93 @@
             </Setter>
         </Style>
         
-        <!-- 滚动条样式 - 玻璃拟态风格 -->
+        <!-- 滚动条样式 - 全新设计 -->
         <Style x:Key="GlassScrollBar" TargetType="ScrollBar">
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="BorderBrush" Value="Transparent" />
             <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="Width" Value="6" />
+            <Setter Property="Width" Value="14" />
+            <Setter Property="MinWidth" Value="14" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ScrollBar">
-                        <Grid Background="Transparent">
-                            <Track x:Name="PART_Track" Width="6">
-                                <Track.Resources>
-                                    <Style TargetType="Thumb">
-                                        <Setter Property="Background" Value="#4DFFFFFF" />
-                                        <Setter Property="BorderBrush" Value="Transparent" />
-                                        <Setter Property="BorderThickness" Value="0" />
-                                        <Setter Property="Template">
-                                            <Setter.Value>
+                        <Grid x:Name="GridRoot" Width="14" Background="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            
+                            <!-- 上箭头 -->
+                            <RepeatButton x:Name="DecreaseRepeat" 
+                                          Grid.Row="0"
+                                          Command="ScrollBar.LineUpCommand"
+                                          Width="14" Height="18"
+                                          Background="Transparent"
+                                          BorderBrush="Transparent">
+                                <Path x:Name="ArrowUp"
+                                      Data="M 0,8 L 7,2 L 14,8"
+                                      Stroke="#80FFFFFF"
+                                      StrokeThickness="2"
+                                      Stretch="Uniform"
+                                      Width="10" Height="10"/>
+                            </RepeatButton>
+                            
+                            <!-- 滚动轨道 -->
+                            <Border Grid.Row="1" 
+                                    Background="#10FFFFFF" 
+                                    CornerRadius="4"
+                                    Margin="2,0">
+                                <Track x:Name="PART_Track" 
+                                       VerticalAlignment="Stretch">
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton Command="ScrollBar.PageUpCommand" 
+                                                      Background="Transparent"
+                                                      BorderBrush="Transparent"/>
+                                    </Track.DecreaseRepeatButton>
+                                    <Track.Thumb>
+                                        <Thumb>
+                                            <Thumb.Template>
                                                 <ControlTemplate TargetType="Thumb">
-                                                    <Border Background="#4DFFFFFF" 
-                                                            BorderBrush="Transparent" 
-                                                            BorderThickness="0" 
-                                                            CornerRadius="3">
-                                                    </Border>
+                                                    <Border Background="#90FFFFFF"
+                                                            BorderBrush="#40FFFFFF"
+                                                            BorderThickness="1"
+                                                            CornerRadius="4"
+                                                            Margin="0,1"/>
                                                 </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Style>
-                                </Track.Resources>
-                                <Track.DecreaseRepeatButton>
-                                    <RepeatButton Command="ScrollBar.PageUpCommand" 
-                                                  Style="{x:Null}" 
-                                                  Background="Transparent" />
-                                </Track.DecreaseRepeatButton>
-                                <Track.Thumb>
-                                    <Thumb />
-                                </Track.Thumb>
-                                <Track.IncreaseRepeatButton>
-                                    <RepeatButton Command="ScrollBar.PageDownCommand" 
-                                                  Style="{x:Null}" 
-                                                  Background="Transparent" />
-                                </Track.IncreaseRepeatButton>
-                            </Track>
+                                            </Thumb.Template>
+                                        </Thumb>
+                                    </Track.Thumb>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton Command="ScrollBar.PageDownCommand" 
+                                                      Background="Transparent"
+                                                      BorderBrush="Transparent"/>
+                                    </Track.IncreaseRepeatButton>
+                                </Track>
+                            </Border>
+                            
+                            <!-- 下箭头 -->
+                            <RepeatButton x:Name="IncreaseRepeat" 
+                                          Grid.Row="2"
+                                          Command="ScrollBar.LineDownCommand"
+                                          Width="14" Height="18"
+                                          Background="Transparent"
+                                          BorderBrush="Transparent">
+                                <Path x:Name="ArrowDown"
+                                      Data="M 0,2 L 7,8 L 14,2"
+                                      Stroke="#80FFFFFF"
+                                      StrokeThickness="2"
+                                      Stretch="Uniform"
+                                      Width="10" Height="10"/>
+                            </RepeatButton>
                         </Grid>
+                        
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ArrowUp" Property="Stroke" Value="#FFFFFFFF"/>
+                                <Setter TargetName="ArrowDown" Property="Stroke" Value="#FFFFFFFF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -361,6 +404,7 @@
         <Style x:Key="GlassListBox" TargetType="ListBox">
             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
             <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBox">
@@ -653,16 +697,24 @@
                         
                         <!-- 左侧服装列表区域 -->
                         <Border Grid.Column="0" Padding="20" CornerRadius="16" Background="Transparent">
-                            <StackPanel Orientation="Vertical">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                
                                 <!-- 功能标题 -->
-                                <TextBlock Text="服装列表" 
+                                <TextBlock Grid.Row="0" Text="服装列表" 
                                            FontSize="18" 
                                            FontWeight="600" 
                                            Foreground="{DynamicResource TitleTextColor}" 
                                            Margin="0,0,0,20" />
                                 
                                 <!-- 搜索区域 -->
-                                <StackPanel Orientation="Vertical" Margin="0,0,0,20">
+                                <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,20">
                                     <TextBlock Text="🔍 搜索服装" 
                                                FontSize="14" 
                                                Foreground="{DynamicResource StatusTextColor}" 
@@ -689,28 +741,28 @@
                                 </StackPanel>
                                 
                                 <!-- 服装列表 -->
-                                <Border Background="#15FFFFFF" 
+                                <Border Grid.Row="2" Background="#15FFFFFF" 
                                         BorderBrush="{DynamicResource GlassBorderColor}" 
                                         BorderThickness="1" 
                                         CornerRadius="12" 
-                                        Padding="8" 
-                                        Height="400">
+                                        Padding="8"
+                                        MinHeight="200">
                                     <ListBox x:Name="lstClothing" 
                                              Style="{StaticResource GlassListBox}" 
-                                             SelectionChanged="lstClothing_SelectionChanged">
-                                        <!-- 列表项将通过数据绑定动态生成 -->
+                                             SelectionChanged="lstClothing_SelectionChanged"
+                                             Loaded="lstClothing_Loaded">
                                     </ListBox>
                                 </Border>
                                 
                                 <!-- 操作提示 -->
-                                <TextBlock Text="左键添加到变更前 | Ctrl+左键添加到变更后" 
+                                <TextBlock Grid.Row="3" Text="左键添加到变更前 | Ctrl+左键添加到变更后" 
                                            FontSize="11" 
                                            Foreground="{DynamicResource StatusTextColor}" 
                                            Margin="0,12,0,0" 
                                            TextAlignment="Center" />
                                 
                                 <!-- 状态信息 -->
-                                <StackPanel Orientation="Vertical" Margin="0,12,0,0">
+                                <StackPanel Grid.Row="4" Orientation="Vertical" Margin="0,12,0,0">
                                     <TextBlock x:Name="labErrorMsg" 
                                                Text="" 
                                                FontSize="12" 
@@ -723,28 +775,35 @@
                                            Height="24" 
                                            Visibility="Collapsed" />
                                 </StackPanel>
-                            </StackPanel>
+                            </Grid>
                         </Border>
                         
                         <!-- 右侧变更区域 -->
                         <Border Grid.Column="1" Padding="20" CornerRadius="16" Background="Transparent">
-                            <StackPanel Orientation="Vertical">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                
                                 <!-- 变更区域标题 -->
-                                <TextBlock Text="变更区域" 
+                                <TextBlock Grid.Row="0" Text="变更区域" 
                                            FontSize="18" 
                                            FontWeight="600" 
                                            Foreground="{DynamicResource TitleTextColor}" 
                                            Margin="0,0,0,20" />
                                 
                                 <!-- 配对状态 -->
-                                <TextBlock x:Name="txtPairStatus" 
+                                <TextBlock Grid.Row="1" x:Name="txtPairStatus" 
                                            Text="已配对 0 件服装" 
                                            FontSize="12" 
                                            Foreground="{DynamicResource StatusTextColor}" 
                                            Margin="0,0,0,20" />
                                 
                                 <!-- 变更前和变更后区域 -->
-                                <Grid Margin="0,0,0,20">
+                                <Grid Grid.Row="2" Margin="0,0,0,20">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
@@ -767,15 +826,17 @@
                                             <Border x:Name="beforePanel" 
                                                     Background="Transparent" 
                                                     MinHeight="200">
-                                                <WrapPanel x:Name="beforeWrapPanel"
-                                                           Orientation="Horizontal" 
-                                                           HorizontalAlignment="Left" 
-                                                           VerticalAlignment="Top" 
-                                                           ItemWidth="80" 
-                                                           ItemHeight="80" 
-                                                           Margin="0">
-                                                    <!-- 变更前图标将动态添加 -->
-                                                </WrapPanel>
+                                                <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                                                              HorizontalScrollBarVisibility="Disabled">
+                                                    <WrapPanel x:Name="beforeWrapPanel"
+                                                               Orientation="Horizontal" 
+                                                               HorizontalAlignment="Left" 
+                                                               VerticalAlignment="Top" 
+                                                               ItemWidth="80" 
+                                                               ItemHeight="80" 
+                                                               Margin="0">
+                                                    </WrapPanel>
+                                                </ScrollViewer>
                                             </Border>
                                         </StackPanel>
                                     </Border>
@@ -797,22 +858,24 @@
                                             <Border x:Name="afterPanel" 
                                                     Background="Transparent" 
                                                     MinHeight="200">
-                                                <WrapPanel x:Name="afterWrapPanel"
-                                                           Orientation="Horizontal" 
-                                                           HorizontalAlignment="Left" 
-                                                           VerticalAlignment="Top" 
-                                                           ItemWidth="80" 
-                                                           ItemHeight="80" 
-                                                           Margin="0">
-                                                    <!-- 变更后图标将动态添加 -->
-                                                </WrapPanel>
+                                                <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                                                              HorizontalScrollBarVisibility="Disabled">
+                                                    <WrapPanel x:Name="afterWrapPanel"
+                                                               Orientation="Horizontal" 
+                                                               HorizontalAlignment="Left" 
+                                                               VerticalAlignment="Top" 
+                                                               ItemWidth="80" 
+                                                               ItemHeight="80" 
+                                                               Margin="0">
+                                                    </WrapPanel>
+                                                </ScrollViewer>
                                             </Border>
                                         </StackPanel>
                                     </Border>
                                 </Grid>
                                 
                                 <!-- 操作按钮 -->
-                                <StackPanel Orientation="Horizontal" 
+                                <StackPanel Grid.Row="3" Orientation="Horizontal" 
                                             HorizontalAlignment="Center" 
                                             Margin="0,0,0,20">
                                     <Button x:Name="btnConfirm" 
@@ -829,7 +892,7 @@
                                             Width="160" 
                                             Click="btnClear_Click" />
                                 </StackPanel>
-                            </StackPanel>
+                            </Grid>
                         </Border>
                     </Grid>
                 </TabItem>

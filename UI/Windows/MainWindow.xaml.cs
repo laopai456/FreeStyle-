@@ -323,6 +323,18 @@ namespace FS服装搭配专家v1._0
                     {
                         lstClothing.ItemsSource = this.list;
                     });
+                    this.Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        if (lstClothing.Items.Count > 0)
+                        {
+                            lstClothing.ScrollIntoView(lstClothing.Items[0]);
+                            var scrollViewer = GetScrollViewer(lstClothing);
+                            if (scrollViewer != null)
+                            {
+                                scrollViewer.ScrollToTop();
+                            }
+                        }
+                    }), System.Windows.Threading.DispatcherPriority.Loaded);
                     return;
                 }
                 
@@ -341,6 +353,18 @@ namespace FS服装搭配专家v1._0
                     labErrorMsg.Text = string.Format("找到 {0} 个结果", filteredList.Count);
                     labErrorMsg.Visibility = Visibility.Visible;
                 });
+                this.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    if (lstClothing.Items.Count > 0)
+                    {
+                        lstClothing.ScrollIntoView(lstClothing.Items[0]);
+                        var scrollViewer = GetScrollViewer(lstClothing);
+                        if (scrollViewer != null)
+                        {
+                            scrollViewer.ScrollToTop();
+                        }
+                    }
+                }), System.Windows.Threading.DispatcherPriority.Loaded);
             }
             catch (Exception ex)
             {
@@ -350,6 +374,21 @@ namespace FS服装搭配专家v1._0
                     labErrorMsg.Text = "搜索失败: " + ex.Message;
                     labErrorMsg.Visibility = Visibility.Visible;
                 });
+            }
+        }
+
+        private void lstClothing_Loaded(object sender, RoutedEventArgs e)
+        {
+            // 确保ListBox加载完成后滚动到顶部
+            if (lstClothing.Items.Count > 0)
+            {
+                lstClothing.ScrollIntoView(lstClothing.Items[0]);
+                var scrollViewer = GetScrollViewer(lstClothing);
+                if (scrollViewer != null)
+                {
+                    scrollViewer.ScrollToTop();
+                    scrollViewer.ScrollToHome();
+                }
             }
         }
 
@@ -771,7 +810,6 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
-                // 显示加载提示
                 this.Dispatcher.Invoke(() =>
                 {
                     labErrorMsg.Text = "正在准备加载图片...请稍候";
@@ -779,7 +817,6 @@ namespace FS服装搭配专家v1._0
                     picLoding.Visibility = Visibility.Visible;
                 });
                 
-                // 启动后台线程加载图片
                 bwLoadImg = new BackgroundWorker();
                 bwLoadImg.WorkerSupportsCancellation = true;
                 bwLoadImg.DoWork += bw_DoWorkAllIcon;
@@ -959,16 +996,29 @@ namespace FS服装搭配专家v1._0
                 }
                 
                 string itemshopPath = Path.Combine(cookiesPath, "item_text_pak", "itemshop.txt");
-                if (File.Exists(itemshopPath))
+                
+                bool needUnpackItemText = false;
+                
+                DateTime sourceTime = File.GetLastWriteTime(sourceFileName);
+                DateTime destTime = File.Exists(pakPath) ? File.GetLastWriteTime(pakPath) : DateTime.MinValue;
+                
+                if (!File.Exists(itemshopPath))
                 {
-                    Console.WriteLine("cookies目录中已有解包后的itemshop.txt文件，直接使用");
+                    needUnpackItemText = true;
+                    Console.WriteLine("itemshop.txt不存在，需要解包");
                 }
-                else
+                else if (sourceTime > destTime)
+                {
+                    needUnpackItemText = true;
+                    Console.WriteLine("游戏目录的item_text.pak已更新，需要重新解包");
+                }
+                
+                if (needUnpackItemText)
                 {
                     try
                     {
                         File.Copy(sourceFileName, pakPath, true);
-                        Console.WriteLine("复制文件成功");
+                        Console.WriteLine("复制item_text.pak成功");
                         destFileName = pakPath;
                     }
                     catch (Exception ex)
@@ -976,6 +1026,10 @@ namespace FS服装搭配专家v1._0
                         Console.WriteLine("复制文件失败: " + ex.Message);
                         destFileName = sourceFileName;
                     }
+                }
+                else
+                {
+                    Console.WriteLine("itemshop.txt已存在且未更新，直接使用");
                 }
                 Console.WriteLine("使用的pak文件路径: " + destFileName);
                 
@@ -1034,15 +1088,25 @@ namespace FS服装搭配专家v1._0
                 }
                 Console.WriteLine("resources.exe存在");
                 
-                if (File.Exists(itemshopPath))
+                if (!needUnpackItemText)
                 {
-                    Console.WriteLine("itemshop.txt文件已经存在，跳过解包步骤");
+                    Console.WriteLine("itemshop.txt已存在且未更新，跳过解包步骤");
                 }
                 else
                 {
                     Console.WriteLine("开始执行解包命令");
                     try
                     {
+                        if (Directory.Exists(Path.Combine(cookiesPath, "item_text_pak")))
+                        {
+                            try
+                            {
+                                Directory.Delete(Path.Combine(cookiesPath, "item_text_pak"), true);
+                                Console.WriteLine("删除旧的item_text_pak目录");
+                            }
+                            catch { }
+                        }
+                        
                         ProcessStartInfo processStartInfo = new ProcessStartInfo();
                         processStartInfo.FileName = resourcesExePath;
                         processStartInfo.Arguments = $"\"{destFileName}\" -all";
@@ -1256,6 +1320,8 @@ namespace FS服装搭配专家v1._0
                     {
                         try
                         {
+                            // 反转列表顺序，让最新的服装显示在顶部
+                            list.Reverse();
                             lstClothing.ItemsSource = null;
                             lstClothing.ItemsSource = list;
                             lstClothing.DisplayMemberPath = "ItemName";
@@ -1272,6 +1338,21 @@ namespace FS服装搭配专家v1._0
                             labErrorMsg.Visibility = Visibility.Visible;
                         }
                     });
+                    
+                    // 延迟滚动到顶部，确保ListBox已完成布局
+                    this.Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        if (lstClothing.Items.Count > 0)
+                        {
+                            lstClothing.ScrollIntoView(lstClothing.Items[0]);
+                            // 强制获取内部ScrollViewer并滚动到顶部
+                            var scrollViewer = GetScrollViewer(lstClothing);
+                            if (scrollViewer != null)
+                            {
+                                scrollViewer.ScrollToTop();
+                            }
+                        }
+                    }), System.Windows.Threading.DispatcherPriority.Loaded);
                 }
                 else
                 {
@@ -1428,45 +1509,41 @@ namespace FS服装搭配专家v1._0
                     string iconDir = Path.Combine(cookiesDir, iconDirName);
                     string iconPakName = "icon" + pakNum;
                     
-                    if (!Directory.Exists(iconDir))
-                    {
-                        try
-                        {
-                            string sourcePath = Path.Combine(this.strInstallDirectory, iconPakName);
-                            string destPath = Path.Combine(cookiesDir, iconPakName);
-                            
-                            if (File.Exists(sourcePath))
-                            {
-                                if (!File.Exists(destPath))
-                                {
-                                    File.Copy(sourcePath, destPath, true);
-                                }
-                                
-                                // 直接执行resources.exe解包
-                                string cmd = "pack\\resources \"" + destPath + "\" -byname .+\\.png";
-                                conmon.RunCmd(cmd);
-                                
-                                successCount++;
-                            }
-                            else
-                            {
-                                skipCount++;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine("加载图片失败: " + ex.Message);
-                        }
-                    }
-                    else
+                    // 只检查目录是否存在，不存在才解包
+                    if (Directory.Exists(iconDir))
                     {
                         skipCount++;
+                        continue;
+                    }
+                    
+                    string sourcePath = Path.Combine(this.strInstallDirectory, iconPakName);
+                    string destPath = Path.Combine(cookiesDir, iconPakName);
+                    
+                    try
+                    {
+                        if (File.Exists(sourcePath))
+                        {
+                            File.Copy(sourcePath, destPath, true);
+                            
+                            string cmd = "pack\\resources \"" + destPath + "\" -byname .+\\.png";
+                            conmon.RunCmd(cmd);
+                            
+                            successCount++;
+                        }
+                        else
+                        {
+                            skipCount++;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("加载图片失败: " + ex.Message);
                     }
                 }
                 
                 this.Dispatcher.Invoke(() =>
                 {
-                    labErrorMsg.Text = string.Format("图片加载完成！成功: {0}, 跳过: {1}", successCount, skipCount);
+                    labErrorMsg.Text = string.Format("图片加载完成！新加载: {0}, 跳过: {1}", successCount, skipCount);
                     labErrorMsg.Visibility = Visibility.Visible;
                     picLoding.Visibility = Visibility.Collapsed;
                 });
@@ -1743,6 +1820,26 @@ namespace FS服装搭配专家v1._0
         private void bw_DoWorkAllIcon(object sender, DoWorkEventArgs e)
         {
             LoadImages();
+        }
+
+        private ScrollViewer? GetScrollViewer(DependencyObject parent)
+        {
+            if (parent == null) return null;
+
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+                if (child is ScrollViewer scrollViewer)
+                {
+                    return scrollViewer;
+                }
+                var result = GetScrollViewer(child);
+                if (result != null)
+                {
+                    return result;
+                }
+            }
+            return null;
         }
 
         private void bw_CompletedWorkAllIcon(object sender, RunWorkerCompletedEventArgs e)
