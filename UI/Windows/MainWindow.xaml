@@ -705,7 +705,7 @@
                                 </Grid.RowDefinitions>
                                 
                                 <!-- 功能标题 -->
-                                <TextBlock Grid.Row="0" Text="服装列表" 
+                                <TextBlock Grid.Row="0" Text="服装与特效列表" 
                                            FontSize="18" 
                                            FontWeight="600" 
                                            Foreground="{DynamicResource TitleTextColor}" 
@@ -713,7 +713,7 @@
                                 
                                 <!-- 搜索区域 -->
                                 <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,20">
-                                    <TextBlock Text="🔍 搜索服装" 
+                                    <TextBlock Text="🔍 搜索服装或特效" 
                                                FontSize="14" 
                                                Foreground="{DynamicResource StatusTextColor}" 
                                                Margin="0,0,0,8" />
@@ -726,7 +726,7 @@
                                                  Grid.Column="0"
                                                  Style="{StaticResource GlassTextBox}"
                                                  Height="36" 
-                                                 ToolTip="输入服装名称进行搜索" 
+                                                 ToolTip="输入服装名称或特效进行搜索" 
                                                  TextChanged="txtSearch_TextChanged" />
                                         <Button x:Name="btnLoadImg" 
                                                 Grid.Column="1"
@@ -738,22 +738,68 @@
                                     </Grid>
                                 </StackPanel>
                                 
-                                <!-- 服装列表 -->
-                                <Border Grid.Row="2" Background="#15FFFFFF" 
-                                        BorderBrush="{DynamicResource GlassBorderColor}" 
-                                        BorderThickness="1" 
-                                        CornerRadius="12" 
-                                        Padding="8"
-                                        MinHeight="200">
-                                    <ListBox x:Name="lstClothing" 
-                                             Style="{StaticResource GlassListBox}" 
-                                             SelectionChanged="lstClothing_SelectionChanged"
-                                             Loaded="lstClothing_Loaded">
-                                    </ListBox>
-                                </Border>
+                                <!-- 服装列表和特效列表并排 -->
+                                <Grid Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="12" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <!-- 左侧：服装列表 -->
+                                    <Border Grid.Column="0" Background="#15FFFFFF" 
+                                            BorderBrush="{DynamicResource GlassBorderColor}" 
+                                            BorderThickness="1" 
+                                            CornerRadius="12" 
+                                            Padding="8"
+                                            MinHeight="200">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Row="0" Text="服装列表" 
+                                                       FontSize="14" 
+                                                       FontWeight="600"
+                                                       Foreground="{DynamicResource TitleTextColor}" 
+                                                       Margin="0,0,0,8" />
+                                            <ListBox x:Name="lstClothing" 
+                                                     Grid.Row="1"
+                                                     Style="{StaticResource GlassListBox}" 
+                                                     SelectionChanged="lstClothing_SelectionChanged"
+                                                     Loaded="lstClothing_Loaded">
+                                            </ListBox>
+                                        </Grid>
+                                    </Border>
+                                    
+                                    <!-- 右侧：特效列表 -->
+                                    <Border Grid.Column="2" Background="#15FFFFFF" 
+                                            BorderBrush="{DynamicResource GlassBorderColor}" 
+                                            BorderThickness="1" 
+                                            CornerRadius="12" 
+                                            Padding="8"
+                                            MinHeight="200">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Row="0" Text="特效列表" 
+                                                       FontSize="14" 
+                                                       FontWeight="600"
+                                                       Foreground="{DynamicResource TitleTextColor}" 
+                                                       Margin="0,0,0,8" />
+                                            <ListBox x:Name="lstEffect" 
+                                                     Grid.Row="1"
+                                                     Style="{StaticResource GlassListBox}" 
+                                                     SelectionChanged="lstEffect_SelectionChanged">
+                                            </ListBox>
+                                        </Grid>
+                                    </Border>
+                                </Grid>
                                 
                                 <!-- 操作提示 -->
-                                <TextBlock Grid.Row="3" Text="左键添加到变更前 | Ctrl+左键添加到变更后" 
+                                <TextBlock Grid.Row="3" Text="左键添加到变更前 | Ctrl+左键添加到变更后 | Alt+左键选中特效" 
                                            FontSize="11" 
                                            Foreground="{DynamicResource StatusTextColor}" 
                                            Margin="0,12,0,0" 

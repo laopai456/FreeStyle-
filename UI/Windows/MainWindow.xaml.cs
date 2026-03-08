@@ -52,6 +52,10 @@ namespace FS服装搭配专家v1._0
         // 变更前和变更后的服装列表
         private List<ItemshopM> beforeItems = new List<ItemshopM>();
         private List<ItemshopM> afterItems = new List<ItemshopM>();
+        
+        // 特效列表
+        private List<ItemshopM> effectList = new List<ItemshopM>();
+        private ItemshopM selectedEffect = null;
 
         // 后台工作线程
         private BackgroundWorker bwMain;
@@ -359,6 +363,7 @@ namespace FS服装搭配专家v1._0
                     this.Dispatcher.Invoke(() =>
                     {
                         lstClothing.ItemsSource = this.list;
+                        lstEffect.ItemsSource = this.effectList;
                     });
                     sw.Stop();
                     Console.WriteLine($"[性能] Search - 重置列表: {sw.ElapsedMilliseconds}ms");
@@ -377,7 +382,8 @@ namespace FS服装搭配专家v1._0
                     return;
                 }
                 
-                var filteredList = this.list.Where(item =>
+                // 同时搜索服装和特效
+                var filteredClothingList = this.list.Where(item =>
                     (item.ItemCode != null && item.ItemCode.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
                     (item.PakNum != null && item.PakNum.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
                     (item.EffectCode != null && item.EffectCode.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
@@ -386,14 +392,21 @@ namespace FS服装搭配专家v1._0
                     (item.ItemType != null && item.ItemType.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
                 ).ToList();
                 
+                var filteredEffectList = this.effectList.Where(item =>
+                    (item.ItemCode != null && item.ItemCode.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                    (item.EffectCode != null && item.EffectCode.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                    (item.ItemName != null && item.ItemName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
+                ).ToList();
+                
                 sw.Stop();
-                Console.WriteLine($"[性能] Search - 过滤列表({this.list.Count}条 -> {filteredList.Count}条): {sw.ElapsedMilliseconds}ms");
+                Console.WriteLine($"[性能] Search - 过滤列表(服装: {this.list.Count} -> {filteredClothingList.Count}, 特效: {this.effectList.Count} -> {filteredEffectList.Count}): {sw.ElapsedMilliseconds}ms");
                 sw.Restart();
                 
                 this.Dispatcher.Invoke(() =>
                 {
-                    lstClothing.ItemsSource = filteredList;
-                    labErrorMsg.Text = string.Format("找到 {0} 个结果", filteredList.Count);
+                    lstClothing.ItemsSource = filteredClothingList;
+                    lstEffect.ItemsSource = filteredEffectList;
+                    labErrorMsg.Text = string.Format("找到服装 {0} 个，特效 {1} 个", filteredClothingList.Count, filteredEffectList.Count);
                     labErrorMsg.Visibility = Visibility.Visible;
                 });
                 
@@ -460,6 +473,11 @@ namespace FS服装搭配专家v1._0
                 {
                     AddToAfterList(selectedItem);
                 }
+                else if (Keyboard.Modifiers == ModifierKeys.Alt)
+                {
+                    // Alt+左键：选中变更后服装（用于特效添加）
+                    SelectAfterItemForEffect(selectedItem);
+                }
                 else
                 {
                     AddToBeforeList(selectedItem);
@@ -469,6 +487,72 @@ namespace FS服装搭配专家v1._0
             {
                 Console.WriteLine("选择服装失败: " + ex.Message);
                 labErrorMsg.Text = "选择服装失败: " + ex.Message;
+                labErrorMsg.Visibility = Visibility.Visible;
+            }
+        }
+        
+        private void lstEffect_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                if (lstEffect.SelectedItem == null) return;
+                
+                ItemshopM selectedEffectItem = lstEffect.SelectedItem as ItemshopM;
+                if (selectedEffectItem == null) return;
+                
+                selectedEffect = selectedEffectItem;
+                
+                // 提取特效代码
+                string effectCode = selectedEffectItem.EffectCode;
+                if (effectCode.StartsWith("特效代码:"))
+                {
+                    effectCode = effectCode.Replace("特效代码:", "");
+                }
+                
+                Console.WriteLine($"选中特效: {selectedEffectItem.ItemName}, 特效代码: {effectCode}");
+                labErrorMsg.Text = $"已选中特效: {selectedEffectItem.ItemName} (代码: {effectCode})";
+                labErrorMsg.Visibility = Visibility.Visible;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("选择特效失败: " + ex.Message);
+                labErrorMsg.Text = "选择特效失败: " + ex.Message;
+                labErrorMsg.Visibility = Visibility.Visible;
+            }
+        }
+        
+        private void SelectAfterItemForEffect(ItemshopM item)
+        {
+            // 检查是否已在变更后列表中
+            var existingItem = afterItems.FirstOrDefault(x => x.ItemCode == item.ItemCode);
+            if (existingItem == null)
+            {
+                // 如果不在变更后列表，先添加
+                AddToAfterList(item);
+                existingItem = afterItems.FirstOrDefault(x => x.ItemCode == item.ItemCode);
+            }
+            
+            if (selectedEffect != null)
+            {
+                // 提取特效代码
+                string effectCode = selectedEffect.EffectCode;
+                if (effectCode.StartsWith("特效代码:"))
+                {
+                    effectCode = effectCode.Replace("特效代码:", "");
+                }
+                
+                // 更新变更后服装的特效代码
+                existingItem.EffectCode = "特效代码:" + effectCode;
+                
+                Console.WriteLine($"已将特效 {selectedEffect.ItemName} (代码: {effectCode}) 添加到服装 {item.ItemName}");
+                labErrorMsg.Text = $"已将特效 [{selectedEffect.ItemName}] 添加到服装 [{item.ItemName}]";
+                labErrorMsg.Visibility = Visibility.Visible;
+                
+                UpdateAfterPanel();
+            }
+            else
+            {
+                labErrorMsg.Text = "请先在特效列表中选择一个特效";
                 labErrorMsg.Visibility = Visibility.Visible;
             }
         }
@@ -856,6 +940,69 @@ namespace FS服装搭配专家v1._0
             Console.WriteLine($"执行命令: {cmd}");
             conmon.RunCmd(cmd);
             Console.WriteLine("命令执行完成");
+            
+            // 处理特效写入 itemshop.txt
+            string afterEffectCode = "";
+            if (afterItem.EffectCode != null && afterItem.EffectCode != "无" && afterItem.EffectCode.StartsWith("特效代码:"))
+            {
+                afterEffectCode = afterItem.EffectCode.Replace("特效代码:", "");
+            }
+            
+            if (!string.IsNullOrEmpty(afterEffectCode))
+            {
+                Console.WriteLine($"开始处理特效写入: afterEffectCode: {afterEffectCode}");
+                
+                string itemshopPath = Path.Combine(Environment.CurrentDirectory, cookiename, "item_text_pak", "itemshop.txt");
+                Console.WriteLine($"itemshop.txt 路径: {itemshopPath}");
+                
+                if (File.Exists(itemshopPath))
+                {
+                    try
+                    {
+                        Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+                        var lines = File.ReadAllLines(itemshopPath, Encoding.GetEncoding("GB2312"));
+                        bool found = false;
+                        
+                        for (int i = 0; i < lines.Length; i++)
+                        {
+                            if (lines[i].StartsWith(beforeItem.ItemCode + "\t"))
+                            {
+                                string[] parts = lines[i].Split('\t');
+                                if (parts.Length >= 3)
+                                {
+                                    parts[2] = afterEffectCode;
+                                    lines[i] = string.Join("\t", parts);
+                                    found = true;
+                                    Console.WriteLine($"已更新第 {i + 1} 行的特效代码为: {afterEffectCode}");
+                                    break;
+                                }
+                            }
+                        }
+                        
+                        if (found)
+                        {
+                            File.WriteAllLines(itemshopPath, lines, Encoding.GetEncoding("GB2312"));
+                            Console.WriteLine("itemshop.txt 已保存");
+                            
+                            // 重新打包 item_text.pak
+                            string itemTextPakPath = Path.Combine(strInstallDirectory, "item_text.pak");
+                            string packTextCmd = "pack\\resources -file2pak \"" + Path.Combine(Environment.CurrentDirectory, cookiename, "item_text_pak") + "\" \"" + itemTextPakPath + "\"";
+                            Console.WriteLine($"重新打包 item_text.pak: {packTextCmd}");
+                            conmon.RunCmd(packTextCmd);
+                            Console.WriteLine("item_text.pak 打包完成");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"未找到服装代码 {beforeItem.ItemCode} 在 itemshop.txt");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"写入特效失败: {ex.Message}");
+                    }
+                }
+            }
+            
             Console.WriteLine("=== 服装变更结束 ===");
         }
 
@@ -1418,10 +1565,16 @@ namespace FS服装搭配专家v1._0
                             lstClothing.ItemsSource = list;
                             lstClothing.DisplayMemberPath = "ItemName";
                             
+                            // 加载特效列表（筛选有特效的服装）
+                            effectList = list.Where(item => item.EffectCode != "无" && !string.IsNullOrEmpty(item.EffectCode)).ToList();
+                            lstEffect.ItemsSource = null;
+                            lstEffect.ItemsSource = effectList;
+                            lstEffect.DisplayMemberPath = "ItemName";
+                            
                             sw.Stop();
                             Console.WriteLine($"[性能] GetNewItem - 更新UI绑定: {sw.ElapsedMilliseconds}ms");
                             
-                            labErrorMsg.Text = "服装数据加载成功，共 " + list.Count + " 件服装";
+                            labErrorMsg.Text = "服装数据加载成功，共 " + list.Count + " 件服装，其中 " + effectList.Count + " 件有特效";
                             labErrorMsg.Visibility = Visibility.Visible;
                             
                             CheckAndLoadImages();
