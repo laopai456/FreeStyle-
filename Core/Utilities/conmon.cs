@@ -121,6 +121,7 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
+                Console.WriteLine($"[RunCmd] 准备执行命令: {str}");
                 Process process = new Process();
                 process.StartInfo.FileName = "cmd.exe";
                 process.StartInfo.UseShellExecute = false;
@@ -129,16 +130,22 @@ namespace FS服装搭配专家v1._0
                 process.StartInfo.RedirectStandardError = true;
                 process.StartInfo.CreateNoWindow = true;
                 process.Start();
+                Console.WriteLine("[RunCmd] 进程已启动");
                 process.StandardInput.WriteLine(str + "&exit");
                 process.StandardInput.AutoFlush = true;
                 process.StandardInput.WriteLine("exit");
+                Console.WriteLine("[RunCmd] 命令已发送，等待输出...");
                 string text = process.StandardOutput.ReadToEnd();
+                Console.WriteLine($"[RunCmd] 命令输出: {text}");
                 process.WaitForExit();
+                Console.WriteLine($"[RunCmd] 进程退出码: {process.ExitCode}");
                 process.Kill();
                 process.Dispose();
+                Console.WriteLine("[RunCmd] 执行完成");
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"[RunCmd] 执行出错: {ex.Message}");
             }
         }
 

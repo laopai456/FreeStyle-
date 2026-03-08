@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.IO;
 using System.Linq;
 using System.Diagnostics;
@@ -9,6 +10,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Runtime.InteropServices;
 using FS服装搭配专家v1._0.UI.Windows;
 using FS服装搭配专家v1._0.Core.Services;
 using FS服装搭配专家v1._0.Core.Models;
@@ -55,6 +57,10 @@ namespace FS服装搭配专家v1._0
         private BackgroundWorker bwMain;
         private BackgroundWorker bwLoadImg;
         private BackgroundWorker bwLast;
+        
+        // 性能监控
+        private Stopwatch perfStopwatch = new Stopwatch();
+        private Dictionary<string, long> perfCounters = new Dictionary<string, long>();
 
         public MainWindow()
         {
@@ -66,6 +72,9 @@ namespace FS服装搭配专家v1._0
                 Console.WriteLine("开始InitializeComponent()...");
                 InitializeComponent();
                 Console.WriteLine("InitializeComponent()完成");
+                
+                // 初始化控制台开关状态
+                UpdateConsoleToggleState();
                 
                 // 强制设置窗口属性
                 Console.WriteLine("设置窗口属性...");
@@ -202,6 +211,29 @@ namespace FS服装搭配专家v1._0
             Console.WriteLine($"切换到皮肤 {currentSkinIndex + 1}");
         }
         
+        private void ConsoleToggle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Program.ToggleConsole();
+            UpdateConsoleToggleState();
+        }
+        
+        private void UpdateConsoleToggleState()
+        {
+            bool isOn = App.ConsoleVisible;
+            var grid = ConsoleToggleGrid;
+            var onStoryboard = grid.Resources["ToggleOnStoryboard"] as Storyboard;
+            var offStoryboard = grid.Resources["ToggleOffStoryboard"] as Storyboard;
+            
+            if (isOn && onStoryboard != null)
+            {
+                onStoryboard.Begin();
+            }
+            else if (!isOn && offStoryboard != null)
+            {
+                offStoryboard.Begin();
+            }
+        }
+        
         private void btnSkin_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("换肤按钮点击");
@@ -302,6 +334,7 @@ namespace FS服装搭配专家v1._0
 
         private void Search()
         {
+            var sw = Stopwatch.StartNew();
             try
             {
                 string searchText = "";
@@ -311,6 +344,10 @@ namespace FS服装搭配专家v1._0
                     labErrorMsg.Text = "";
                     searchText = txtSearch.Text.Trim();
                 });
+                
+                sw.Stop();
+                Console.WriteLine($"[性能] Search - 获取搜索文本: {sw.ElapsedMilliseconds}ms");
+                sw.Restart();
                 
                 if (this.list == null || this.list.Count == 0)
                 {
@@ -323,6 +360,8 @@ namespace FS服装搭配专家v1._0
                     {
                         lstClothing.ItemsSource = this.list;
                     });
+                    sw.Stop();
+                    Console.WriteLine($"[性能] Search - 重置列表: {sw.ElapsedMilliseconds}ms");
                     this.Dispatcher.BeginInvoke(new Action(() =>
                     {
                         if (lstClothing.Items.Count > 0)
@@ -347,12 +386,20 @@ namespace FS服装搭配专家v1._0
                     (item.ItemType != null && item.ItemType.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
                 ).ToList();
                 
+                sw.Stop();
+                Console.WriteLine($"[性能] Search - 过滤列表({this.list.Count}条 -> {filteredList.Count}条): {sw.ElapsedMilliseconds}ms");
+                sw.Restart();
+                
                 this.Dispatcher.Invoke(() =>
                 {
                     lstClothing.ItemsSource = filteredList;
                     labErrorMsg.Text = string.Format("找到 {0} 个结果", filteredList.Count);
                     labErrorMsg.Visibility = Visibility.Visible;
                 });
+                
+                sw.Stop();
+                Console.WriteLine($"[性能] Search - 更新UI: {sw.ElapsedMilliseconds}ms");
+                
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     if (lstClothing.Items.Count > 0)
@@ -768,29 +815,48 @@ namespace FS服装搭配专家v1._0
         
         private void ExecuteClothingChange(ItemshopM beforeItem, ItemshopM afterItem)
         {
+            Console.WriteLine("=== 开始执行服装变更 ===");
+            
             string beforePakNum = beforeItem.PakNum.Replace("*", "").Replace(".pak", "");
             string afterPakNum = afterItem.PakNum.Replace("*", "").Replace(".pak", "");
+            Console.WriteLine($"变更前PakNum: {beforePakNum}, 变更后PakNum: {afterPakNum}");
             
             string beforeModFile = string.Format("i{0}.bml", beforeItem.ItemCode);
             string afterModFile = string.Format("i{0}.bml", afterItem.ItemCode);
+            Console.WriteLine($"变更前模型文件: {beforeModFile}, 变更后模型文件: {afterModFile}");
             
             string beforePakDir = Path.Combine(Environment.CurrentDirectory, cookiename, "item" + beforePakNum + "_pak");
             string afterPakDir = Path.Combine(Environment.CurrentDirectory, cookiename, "item" + afterPakNum + "_pak");
+            Console.WriteLine($"变更前目录: {beforePakDir}");
+            Console.WriteLine($"变更后目录: {afterPakDir}");
             
             string sourceModPath = Path.Combine(afterPakDir, afterModFile);
             string destModPath = Path.Combine(beforePakDir, beforeModFile);
+            Console.WriteLine($"源模型路径: {sourceModPath}");
+            Console.WriteLine($"目标模型路径: {destModPath}");
             
+            Console.WriteLine($"检查源文件是否存在: {File.Exists(sourceModPath)}");
             if (File.Exists(sourceModPath))
             {
+                Console.WriteLine("源文件存在，开始复制...");
                 Directory.CreateDirectory(Path.GetDirectoryName(destModPath));
                 File.Copy(sourceModPath, destModPath, true);
+                Console.WriteLine($"复制完成: {sourceModPath} -> {destModPath}");
+            }
+            else
+            {
+                Console.WriteLine($"警告: 源文件不存在: {sourceModPath}");
             }
             
             string beforePakName = string.IsNullOrEmpty(beforePakNum) ? "item.pak" : string.Format("item{0}.pak", beforePakNum);
             string pakPath = Path.Combine(strInstallDirectory, beforePakName);
+            Console.WriteLine($"目标pak路径: {pakPath}");
             
             string cmd = "pack\\resources -file2pak \"" + beforePakDir + "\" \"" + pakPath + "\"";
+            Console.WriteLine($"执行命令: {cmd}");
             conmon.RunCmd(cmd);
+            Console.WriteLine("命令执行完成");
+            Console.WriteLine("=== 服装变更结束 ===");
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
@@ -929,6 +995,7 @@ namespace FS服装搭配专家v1._0
         // 加载服装数据
         public void GetNewItem()
         {
+            var totalSw = Stopwatch.StartNew();
             Console.WriteLine("=== 开始加载服装数据 ===");
             
             try
@@ -947,6 +1014,7 @@ namespace FS服装搭配专家v1._0
                     return;
                 }
                 
+                var sw = Stopwatch.StartNew();
                 this.list = new List<ItemshopM>();
                 Console.WriteLine("创建服装列表成功");
                 
@@ -970,6 +1038,10 @@ namespace FS服装搭配专家v1._0
                 string cookiesPath = Path.Combine(currentDir, this.cookiename);
                 string pakPath = Path.Combine(cookiesPath, "item_text.pak");
                 string destFileName = pakPath;
+                
+                sw.Stop();
+                Console.WriteLine($"[性能] GetNewItem - 初始化路径: {sw.ElapsedMilliseconds}ms");
+                sw.Restart();
                 
                 if (!Directory.Exists(cookiesPath))
                 {
@@ -1184,6 +1256,10 @@ namespace FS服装搭配专家v1._0
                 
                 if (File.Exists(itemshopPath))
                 {
+                    sw.Stop();
+                    Console.WriteLine($"[性能] GetNewItem - 准备解析文件: {sw.ElapsedMilliseconds}ms");
+                    sw.Restart();
+                    
                     int itemCount = 0;
                     try
                     {
@@ -1255,6 +1331,10 @@ namespace FS服装搭配专家v1._0
                             }
                         }
                         
+                        sw.Stop();
+                        Console.WriteLine($"[性能] GetNewItem - 解析文件({itemCount}条): {sw.ElapsedMilliseconds}ms");
+                        sw.Restart();
+                        
                         Console.WriteLine("解析完成，共加载 " + itemCount + " 件服装");
                     }
                     catch (Exception ex)
@@ -1323,6 +1403,10 @@ namespace FS服装搭配专家v1._0
                         }
                     }
                     
+                    sw.Stop();
+                    Console.WriteLine($"[性能] GetNewItem - 加载配置和处理属性: {sw.ElapsedMilliseconds}ms");
+                    sw.Restart();
+                    
                     // 更新UI
                     this.Dispatcher.Invoke(() =>
                     {
@@ -1333,6 +1417,9 @@ namespace FS服装搭配专家v1._0
                             lstClothing.ItemsSource = null;
                             lstClothing.ItemsSource = list;
                             lstClothing.DisplayMemberPath = "ItemName";
+                            
+                            sw.Stop();
+                            Console.WriteLine($"[性能] GetNewItem - 更新UI绑定: {sw.ElapsedMilliseconds}ms");
                             
                             labErrorMsg.Text = "服装数据加载成功，共 " + list.Count + " 件服装";
                             labErrorMsg.Visibility = Visibility.Visible;
@@ -1346,6 +1433,9 @@ namespace FS服装搭配专家v1._0
                             labErrorMsg.Visibility = Visibility.Visible;
                         }
                     });
+                    
+                    totalSw.Stop();
+                    Console.WriteLine($"[性能] GetNewItem - 总耗时: {totalSw.ElapsedMilliseconds}ms");
                     
                     // 延迟滚动到顶部，确保ListBox已完成布局
                     this.Dispatcher.BeginInvoke(new Action(() =>

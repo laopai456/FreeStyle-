@@ -520,32 +520,85 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     
-                    <!-- 标题 -->
-                    <TextBlock Grid.Column="0" 
-                               Text="FreeStyle" 
-                               FontSize="16" 
-                               FontWeight="Bold" 
-                               Foreground="{DynamicResource TitleTextColor}"
-                               VerticalAlignment="Center" 
-                               Margin="0,0,0,0" />
+                    <!-- 标题和控制台开关 -->
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                        <TextBlock Text="FreeStyle" 
+                                   FontSize="16" 
+                                   FontWeight="Bold" 
+                                   Foreground="{DynamicResource TitleTextColor}"
+                                   VerticalAlignment="Center" />
+                        
+                        <!-- 控制台滑动开关 -->
+                        <Grid Name="ConsoleToggleGrid" 
+                              Width="32" 
+                              Height="16" 
+                              Margin="10,0,0,0"
+                              Cursor="Hand"
+                              MouseLeftButtonDown="ConsoleToggle_MouseLeftButtonDown"
+                              ToolTip="控制台开关">
+                            <Grid.Resources>
+                                <Storyboard x:Key="ToggleOnStoryboard">
+                                    <ThicknessAnimation Storyboard.TargetName="ToggleThumb" 
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="15,1,1,1" 
+                                                        Duration="0:0:0.15" />
+                                    <ColorAnimation Storyboard.TargetName="ToggleTrack" 
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="#4CAF50" 
+                                                    Duration="0:0:0.15" />
+                                </Storyboard>
+                                <Storyboard x:Key="ToggleOffStoryboard">
+                                    <ThicknessAnimation Storyboard.TargetName="ToggleThumb" 
+                                                        Storyboard.TargetProperty="Margin"
+                                                        To="1,1,15,1" 
+                                                        Duration="0:0:0.15" />
+                                    <ColorAnimation Storyboard.TargetName="ToggleTrack" 
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="#888888" 
+                                                    Duration="0:0:0.15" />
+                                </Storyboard>
+                            </Grid.Resources>
+                            <!-- 轨道背景 -->
+                            <Border x:Name="ToggleTrack" 
+                                    CornerRadius="8" 
+                                    Background="#888888"
+                                    BorderThickness="1"
+                                    BorderBrush="#666666" />
+                            <!-- 滑块 -->
+                            <Border x:Name="ToggleThumb" 
+                                    CornerRadius="6" 
+                                    Background="White"
+                                    Width="14"
+                                    Height="14"
+                                    Margin="1,1,15,1"
+                                    HorizontalAlignment="Left"
+                                    BorderThickness="1"
+                                    BorderBrush="#CCCCCC">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="1" ShadowDepth="0.5" Opacity="0.3" Direction="270" />
+                                </Border.Effect>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
                     
                     <!-- 占位列 -->
                     <Grid Grid.Column="1" />
                     
-                    <!-- 右上角换肤按钮 -->
-                    <Button Grid.Column="2"
-                            Name="btnSkin" 
-                            Width="36" 
-                            Height="36" 
-                            Click="btnSkin_Click"
-                            Background="Transparent"
-                            BorderBrush="Transparent"
-                            BorderThickness="0"
-                            Cursor="Hand"
-                            HorizontalAlignment="Right"
-                            VerticalAlignment="Center"
-                            Margin="0,0,0,0"
-                            ToolTip="换肤">
+                    <!-- 右上角按钮组 -->
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                        
+                        <!-- 换肤按钮 -->
+                        <Button Name="btnSkin" 
+                                Width="36" 
+                                Height="36" 
+                                Click="btnSkin_Click"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                VerticalAlignment="Center"
+                                Margin="0,0,0,0"
+                                ToolTip="换肤">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="ButtonBorder" 
@@ -626,6 +679,7 @@
                             </Border>
                         </Grid>
                     </Button>
+                    </StackPanel>
                 </Grid>
             </Border>
             

@@ -8,10 +8,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>icon\favicon.ico</ApplicationIcon>
+    <StartupObject>FS服装搭配专家v1._0.Program</StartupObject>
+    <EnableDefaultPageItems>false</EnableDefaultPageItems>
   </PropertyGroup>
 
   <ItemGroup>
-    <ApplicationDefinition Include="UI\App.xaml" />
+    <Page Include="UI\App.xaml" />
+    <Page Include="UI\Windows\*.xaml" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Windows.Controls;
 using System.Text;
+using System.Runtime.InteropServices;
 
 namespace FS服装搭配专家v1._0
 {
@@ -12,8 +13,17 @@ namespace FS服装搭配专家v1._0
     /// </summary>
     public partial class App : Application
     {
+        [DllImport("kernel32.dll")]
+        private static extern IntPtr GetConsoleWindow();
+        [DllImport("user32.dll")]
+        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        private const int SW_HIDE = 0;
+        private const int SW_SHOW = 5;
+        
         public static string UserSelectedTeam { get; set; }
         public static string UserSelectedTeamLogoPath { get; set; }
+        
+        public static bool ConsoleVisible { get; set; } = false;
         
         protected override void OnStartup(StartupEventArgs e)
         {
