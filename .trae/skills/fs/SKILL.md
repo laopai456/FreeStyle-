@@ -1,6 +1,7 @@
 ---
 name: "fs"
 description: "FS服装搭配专家 UI开发助手，自动检测项目位置。当用户需要修改WPF界面、主题系统、字体样式、颜色配置时调用此技能。"
+auto_load: true
 ---
 
 # FS服装搭配专家 UI 开发助手

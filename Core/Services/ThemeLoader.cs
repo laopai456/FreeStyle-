@@ -179,9 +179,9 @@ namespace FS服装搭配专家v1._0.Core.Services
                     },
                     Card = new CardStyle
                     {
-                        Background = "#CCFFFFFF",
+                        Background = "#66FFFFFF",
                         BorderColor = "#20FFFFFF",
-                        ContentPanelBackground = "#0DFFFFFF",
+                        ContentPanelBackground = "#1AFFFFFF",
                         CornerRadius = 16,
                         Shadow = new ShadowStyle
                         {
@@ -193,7 +193,7 @@ namespace FS服装搭配专家v1._0.Core.Services
                     },
                     Button = new ButtonStyle
                     {
-                        Background = "#CCFFFFFF",
+                        Background = "#66FFFFFF",
                         HoverBackground = "#40FFFFFF",
                         PressedBackground = "#40FFFFFF",
                         BorderColor = "#20FFFFFF",
@@ -271,9 +271,9 @@ namespace FS服装搭配专家v1._0.Core.Services
                     },
                     Card = new CardStyle
                     {
-                        Background = "Transparent",
+                        Background = "#40FFFFFF",
                         BorderColor = "#20FFFFFF",
-                        ContentPanelBackground = "#10FFFFFF",
+                        ContentPanelBackground = "#20FFFFFF",
                         CornerRadius = 16,
                         Shadow = new ShadowStyle
                         {
@@ -285,7 +285,7 @@ namespace FS服装搭配专家v1._0.Core.Services
                     },
                     Button = new ButtonStyle
                     {
-                        Background = "#20FFFFFF",
+                        Background = "#40FFFFFF",
                         HoverBackground = "#35FFFFFF",
                         PressedBackground = "#45FFFFFF",
                         BorderColor = "#30FFFFFF",
@@ -310,26 +310,26 @@ namespace FS服装搭配专家v1._0.Core.Services
                     },
                     ListItem = new ListItemStyle
                     {
-                        Background = "#15FFFFFF",
-                        HoverBackground = "#25FFFFFF",
-                        SelectedBackground = "#30FFFFFF",
-                        BorderColor = "#25FFFFFF",
+                        Background = "#25FFFFFF",
+                        HoverBackground = "#35FFFFFF",
+                        SelectedBackground = "#40FFFFFF",
+                        BorderColor = "#35FFFFFF",
                         CornerRadius = 12,
                         Foreground = "#FFFFFFFF"
                     },
                     Tab = new TabStyle
                     {
                         Background = "transparent",
-                        SelectedBackground = "#30FFFFFF",
-                        HoverBackground = "#20FFFFFF",
-                        BorderColor = "#25FFFFFF",
+                        SelectedBackground = "#40FFFFFF",
+                        HoverBackground = "#30FFFFFF",
+                        BorderColor = "#35FFFFFF",
                         SelectedForeground = "#FFFFFFFF",
                         CornerRadius = 8
                     },
                     TextBox = new TextBoxStyle
                     {
-                        Background = "#15FFFFFF",
-                        BorderColor = "#30FFFFFF",
+                        Background = "#25FFFFFF",
+                        BorderColor = "#40FFFFFF",
                         Foreground = "#FFFFFFFF",
                         CornerRadius = 8
                     },

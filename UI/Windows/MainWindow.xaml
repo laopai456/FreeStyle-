@@ -10,7 +10,7 @@
         WindowStyle="SingleBorderWindow"
         AllowsTransparency="False"
         Background="White"
-        Topmost="True"
+        Topmost="False"
         ShowInTaskbar="True">
     <Window.Resources>
         <!-- 颜色资源 - 优化后的玻璃拟态风格 -->

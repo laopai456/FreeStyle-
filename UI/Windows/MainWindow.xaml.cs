@@ -1375,8 +1375,11 @@ namespace FS服装搭配专家v1._0
                         ProcessStartInfo processStartInfo = new ProcessStartInfo();
                         processStartInfo.FileName = resourcesExePath;
                         processStartInfo.Arguments = $"\"{destFileName}\" -all";
-                        processStartInfo.UseShellExecute = true;
+                        processStartInfo.UseShellExecute = false;
                         processStartInfo.CreateNoWindow = true;
+                        processStartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                        processStartInfo.RedirectStandardOutput = true;
+                        processStartInfo.RedirectStandardError = true;
                         processStartInfo.WorkingDirectory = currentDir;
                         
                         Console.WriteLine("执行解包命令: " + processStartInfo.FileName + " " + processStartInfo.Arguments);
