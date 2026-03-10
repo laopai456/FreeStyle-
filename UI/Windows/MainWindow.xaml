@@ -737,14 +737,6 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 
-                                <!-- 功能标题 -->
-                                <TextBlock Grid.Row="0" Text="服装与特效列表" 
-                                           FontSize="18" 
-                                           FontFamily="{DynamicResource ThemeFontFamily}"
-                                           FontWeight="{DynamicResource ThemeFontWeight}"
-                                           Foreground="{DynamicResource TitleTextColor}" 
-                                           Margin="0,0,0,20" />
-                                
                                 <!-- 搜索区域 -->
                                 <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,20">
                                     <TextBlock Text="🔍 搜索服装或特效" 
@@ -792,8 +784,8 @@
                                                 <RowDefinition Height="Auto" />
                                                 <RowDefinition Height="*" />
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Row="0" Text="服装列表" 
-                                                       FontSize="14" 
+                                            <TextBlock Grid.Row="0" Text="👕 服装列表" 
+                                                       FontSize="15" 
                                                        FontFamily="{DynamicResource ThemeFontFamily}"
                                                        FontWeight="{DynamicResource ThemeFontWeight}"
                                                        Foreground="{DynamicResource TitleTextColor}" 
@@ -803,6 +795,16 @@
                                                      Style="{StaticResource GlassListBox}" 
                                                      SelectionChanged="lstClothing_SelectionChanged"
                                                      Loaded="lstClothing_Loaded">
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding ItemName}"
+                                                                   FontSize="15"
+                                                                   FontFamily="{DynamicResource ThemeFontFamily}"
+                                                                   FontWeight="{DynamicResource ThemeFontWeight}"
+                                                                   Foreground="{DynamicResource ListItemForegroundColor}"
+                                                                   TextTrimming="CharacterEllipsis" />
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
                                             </ListBox>
                                         </Grid>
                                     </Border>
@@ -819,8 +821,8 @@
                                                 <RowDefinition Height="Auto" />
                                                 <RowDefinition Height="*" />
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Row="0" Text="特效列表" 
-                                                       FontSize="14" 
+                                            <TextBlock Grid.Row="0" Text="✨ 特效列表" 
+                                                       FontSize="15" 
                                                        FontFamily="{DynamicResource ThemeFontFamily}"
                                                        FontWeight="{DynamicResource ThemeFontWeight}"
                                                        Foreground="{DynamicResource TitleTextColor}" 
@@ -829,6 +831,16 @@
                                                      Grid.Row="1"
                                                      Style="{StaticResource GlassListBox}" 
                                                      SelectionChanged="lstEffect_SelectionChanged">
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding ItemName}"
+                                                                   FontSize="15"
+                                                                   FontFamily="{DynamicResource ThemeFontFamily}"
+                                                                   FontWeight="{DynamicResource ThemeFontWeight}"
+                                                                   Foreground="{DynamicResource ListItemForegroundColor}"
+                                                                   TextTrimming="CharacterEllipsis" />
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
                                             </ListBox>
                                         </Grid>
                                     </Border>

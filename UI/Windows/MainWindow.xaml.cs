@@ -1608,13 +1608,11 @@ namespace FS服装搭配专家v1._0
                             list.Reverse();
                             lstClothing.ItemsSource = null;
                             lstClothing.ItemsSource = list;
-                            lstClothing.DisplayMemberPath = "ItemName";
                             
                             // 加载特效列表（筛选有特效的服装）
                             effectList = list.Where(item => item.EffectCode != "无" && !string.IsNullOrEmpty(item.EffectCode)).ToList();
                             lstEffect.ItemsSource = null;
                             lstEffect.ItemsSource = effectList;
-                            lstEffect.DisplayMemberPath = "ItemName";
                             
                             sw.Stop();
                             Console.WriteLine($"[性能] GetNewItem - 更新UI绑定: {sw.ElapsedMilliseconds}ms");

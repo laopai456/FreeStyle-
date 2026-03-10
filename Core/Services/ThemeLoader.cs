@@ -271,66 +271,66 @@ namespace FS服装搭配专家v1._0.Core.Services
                     },
                     Card = new CardStyle
                     {
-                        Background = "#8CFFFFFF",
-                        BorderColor = "#8CFFFFFF",
-                        ContentPanelBackground = "#8CFFFFFF",
+                        Background = "Transparent",
+                        BorderColor = "#20FFFFFF",
+                        ContentPanelBackground = "#10FFFFFF",
                         CornerRadius = 16,
                         Shadow = new ShadowStyle
                         {
                             BlurRadius = 30,
                             ShadowDepth = 8,
-                            Opacity = 0.8,
+                            Opacity = 0.3,
                             Color = "#6DD5FA"
                         }
                     },
                     Button = new ButtonStyle
                     {
-                        Background = "#30FFFFFF",
-                        HoverBackground = "#50FFFFFF",
-                        PressedBackground = "#60FFFFFF",
-                        BorderColor = "#40FFFFFF",
+                        Background = "#20FFFFFF",
+                        HoverBackground = "#35FFFFFF",
+                        PressedBackground = "#45FFFFFF",
+                        BorderColor = "#30FFFFFF",
                         CornerRadius = 16,
-                        Foreground = "#E6000000",
+                        Foreground = "#FFFFFFFF",
                         Shadow = new ShadowStyle
                         {
                             BlurRadius = 20,
                             ShadowDepth = 4,
                             Opacity = 0.2,
-                            Color = "#667EEA"
+                            Color = "#6DD5FA"
                         }
                     },
                     Text = new TextStyle
                     {
-                        Primary = "#E6000000",
-                        Secondary = "#B0000000",
-                        Title = "#E6000000",
-                        Body = "#E0000000",
+                        Primary = "#FFFFFFFF",
+                        Secondary = "#B0FFFFFF",
+                        Title = "#FFFFFFFF",
+                        Body = "#E0FFFFFF",
                         FontFamily = "Source Han Sans SC",
                         FontWeight = "Bold"
                     },
                     ListItem = new ListItemStyle
                     {
-                        Background = "#25FFFFFF",
-                        HoverBackground = "#40FFFFFF",
-                        SelectedBackground = "#50FFFFFF",
-                        BorderColor = "#40FFFFFF",
+                        Background = "#15FFFFFF",
+                        HoverBackground = "#25FFFFFF",
+                        SelectedBackground = "#30FFFFFF",
+                        BorderColor = "#25FFFFFF",
                         CornerRadius = 12,
-                        Foreground = "#E6000000"
+                        Foreground = "#FFFFFFFF"
                     },
                     Tab = new TabStyle
                     {
                         Background = "transparent",
-                        SelectedBackground = "#50FFFFFF",
-                        HoverBackground = "#30FFFFFF",
-                        BorderColor = "#40FFFFFF",
-                        SelectedForeground = "#E6000000",
+                        SelectedBackground = "#30FFFFFF",
+                        HoverBackground = "#20FFFFFF",
+                        BorderColor = "#25FFFFFF",
+                        SelectedForeground = "#FFFFFFFF",
                         CornerRadius = 8
                     },
                     TextBox = new TextBoxStyle
                     {
-                        Background = "#25FFFFFF",
-                        BorderColor = "#50FFFFFF",
-                        Foreground = "#E6000000",
+                        Background = "#15FFFFFF",
+                        BorderColor = "#30FFFFFF",
+                        Foreground = "#FFFFFFFF",
                         CornerRadius = 8
                     },
                     ScrollBar = new ScrollBarStyle
