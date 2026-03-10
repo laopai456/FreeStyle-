@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using FS服装搭配专家v1._0.Core.Config;
 
 namespace FS服装搭配专家v1._0.UI.Windows
 {
@@ -11,8 +12,6 @@ namespace FS服装搭配专家v1._0.UI.Windows
     {
         private string gameDirectory = string.Empty;
         private List<PakFileInfo> allFiles = new List<PakFileInfo>();
-        private string referenceBytesPath = string.Empty;
-        private string pakSizesPath = string.Empty;
         private Dictionary<string, long> originalPakSizes = new Dictionary<string, long>();
 
         public FillBytesWindow()
@@ -28,31 +27,8 @@ namespace FS服装搭配专家v1._0.UI.Windows
 
         private void InitializeConfig()
         {
-            referenceBytesPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "reference_bytes.txt");
-            pakSizesPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "pak_sizes.txt");
+            gameDirectory = ConfigService.Instance.GameInstallDirectory;
             
-            string configPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.ini");
-            if (File.Exists(configPath))
-            {
-                try
-                {
-                    string[] lines = File.ReadAllLines(configPath);
-                    foreach (string line in lines)
-                    {
-                        string trimmedLine = line.Trim();
-                        if (trimmedLine.StartsWith("InstallDirectory="))
-                        {
-                            gameDirectory = trimmedLine.Substring("InstallDirectory=".Length);
-                            break;
-                        }
-                    }
-                }
-                catch
-                {
-                }
-            }
-
-            LoadReferenceBytes();
             LoadOriginalPakSizes();
             
             if (originalPakSizes.Count == 0)
@@ -63,63 +39,14 @@ namespace FS服装搭配专家v1._0.UI.Windows
             LoadFiles();
         }
 
-        private void LoadReferenceBytes()
-        {
-            if (File.Exists(referenceBytesPath))
-            {
-                try
-                {
-                    string bytesStr = File.ReadAllText(referenceBytesPath).Trim();
-                    if (!string.IsNullOrEmpty(bytesStr))
-                    {
-                        txtTargetBytes.Text = bytesStr;
-                    }
-                }
-                catch
-                {
-                }
-            }
-        }
-
-        private void SaveReferenceBytes()
-        {
-            try
-            {
-                File.WriteAllText(referenceBytesPath, txtTargetBytes.Text);
-            }
-            catch
-            {
-            }
-        }
-
         private void LoadOriginalPakSizes()
         {
             originalPakSizes.Clear();
             
-            if (File.Exists(pakSizesPath))
+            var pakSizes = ConfigService.Instance.PakSizes;
+            foreach (var kvp in pakSizes)
             {
-                try
-                {
-                    string[] lines = File.ReadAllLines(pakSizesPath);
-                    foreach (string line in lines)
-                    {
-                        string trimmedLine = line.Trim();
-                        if (string.IsNullOrEmpty(trimmedLine) || !trimmedLine.Contains("="))
-                            continue;
-                        
-                        int eqIndex = trimmedLine.IndexOf('=');
-                        string fileName = trimmedLine.Substring(0, eqIndex).Trim();
-                        string sizeStr = trimmedLine.Substring(eqIndex + 1).Trim();
-                        
-                        if (long.TryParse(sizeStr, out long size))
-                        {
-                            originalPakSizes[fileName] = size;
-                        }
-                    }
-                }
-                catch
-                {
-                }
+                originalPakSizes[kvp.Key] = kvp.Value;
             }
         }
 
@@ -133,17 +60,30 @@ namespace FS服装搭配专家v1._0.UI.Windows
             try
             {
                 string[] pakFiles = Directory.GetFiles(gameDirectory, "*.pak", SearchOption.TopDirectoryOnly);
-                List<string> lines = new List<string>();
 
                 foreach (string file in pakFiles)
                 {
                     string fileName = Path.GetFileName(file);
                     FileInfo fi = new FileInfo(file);
                     originalPakSizes[fileName] = fi.Length;
-                    lines.Add($"{fileName}={fi.Length}");
+                    ConfigService.Instance.SetPakSize(fileName, fi.Length);
                 }
+            }
+            catch
+            {
+            }
+        }
 
-                File.WriteAllLines(pakSizesPath, lines);
+        private void SaveReferenceBytes()
+        {
+            try
+            {
+                string bytesStr = txtTargetBytes.Text.Replace(",", "").Replace("，", "").Trim();
+                if (!string.IsNullOrEmpty(bytesStr) && long.TryParse(bytesStr, out long bytes))
+                {
+                    ConfigService.Instance.Config.Data.ReferenceBytes["default"] = bytesStr;
+                    ConfigService.Instance.SaveConfig();
+                }
             }
             catch
             {

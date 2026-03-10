@@ -17,15 +17,14 @@
         <SolidColorBrush x:Key="StatusTextColor" Color="#FF999999" />
         <SolidColorBrush x:Key="ButtonGlassColor" Color="#25FFFFFF" />
         
-        <!-- 字体资源 -->
         <FontFamily x:Key="ThemeFontFamily">Microsoft YaHei</FontFamily>
         <FontWeight x:Key="ThemeFontWeight">Normal</FontWeight>
         
         <Style x:Key="GlassButton" TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource ButtonGlassColor}" />
-            <Setter Property="Foreground" Value="{StaticResource TextColor}" />
+            <Setter Property="Background" Value="{DynamicResource ButtonGlassColor}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="{StaticResource GlassBorderColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource GlassBorderColor}" />
             <Setter Property="Padding" Value="14,8" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="FontFamily" Value="{DynamicResource ThemeFontFamily}" />
@@ -49,9 +48,9 @@
         </Style>
         
         <Style x:Key="GlassTextBox" TargetType="TextBox">
-            <Setter Property="Background" Value="#25FFFFFF" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="BorderBrush" Value="{StaticResource GlassBorderColor}" />
+            <Setter Property="Background" Value="{DynamicResource GlassCardColor}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource GlassBorderColor}" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="FontSize" Value="13" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -75,7 +74,7 @@
         
         <Style x:Key="GlassDataGrid" TargetType="DataGrid">
             <Setter Property="Background" Value="Transparent" />
-            <Setter Property="BorderBrush" Value="{StaticResource GlassBorderColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource GlassBorderColor}" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="RowBackground" Value="#10FFFFFF" />
             <Setter Property="AlternatingRowBackground" Value="#08FFFFFF" />
@@ -87,12 +86,12 @@
             <Setter Property="IsReadOnly" Value="True" />
             <Setter Property="AutoGenerateColumns" Value="False" />
             <Setter Property="FontSize" Value="12" />
-            <Setter Property="Foreground" Value="{StaticResource TextColor}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
         </Style>
     </Window.Resources>
     
-    <Border Background="#E5303050"
-            BorderBrush="{StaticResource GlassBorderColor}"
+    <Border Background="{DynamicResource GlassCardColor}"
+            BorderBrush="{DynamicResource GlassBorderColor}"
             BorderThickness="1"
             CornerRadius="16"
             Margin="20">
@@ -119,7 +118,7 @@
                            FontSize="18"
                            FontFamily="{DynamicResource ThemeFontFamily}"
                            FontWeight="{DynamicResource ThemeFontWeight}"
-                           Foreground="{StaticResource TextColor}" />
+                           Foreground="{DynamicResource TextColor}" />
                 <Button x:Name="btnClose"
                         Content="✕"
                         HorizontalAlignment="Right"
@@ -127,7 +126,7 @@
                         Width="30"
                         Height="30"
                         Background="Transparent"
-                        Foreground="{StaticResource StatusTextColor}"
+                        Foreground="{DynamicResource StatusTextColor}"
                         BorderThickness="0"
                         FontSize="14"
                         Click="btnClose_Click" />
@@ -168,8 +167,8 @@
             
             <!-- 文件列表 -->
             <Border Grid.Row="2"
-                    Background="#15FFFFFF"
-                    BorderBrush="{StaticResource GlassBorderColor}"
+                    Background="{DynamicResource GlassCardColor}"
+                    BorderBrush="{DynamicResource GlassBorderColor}"
                     BorderThickness="1"
                     CornerRadius="12"
                     Padding="8">
@@ -199,7 +198,7 @@
                 <TextBlock Grid.Column="0"
                            Text="目标字节数："
                            FontSize="13"
-                           Foreground="{StaticResource StatusTextColor}"
+                           Foreground="{DynamicResource StatusTextColor}"
                            VerticalAlignment="Center"
                            Margin="0,0,8,0" />
                 
@@ -214,7 +213,7 @@
                            Grid.Column="2"
                            Text="原始: -"
                            FontSize="12"
-                           Foreground="{StaticResource StatusTextColor}"
+                           Foreground="{DynamicResource StatusTextColor}"
                            VerticalAlignment="Center"
                            Margin="0,0,12,0" />
                 
@@ -222,7 +221,7 @@
                           Grid.Column="3"
                           Content="自动填充"
                           FontSize="13"
-                          Foreground="{StaticResource StatusTextColor}"
+                          Foreground="{DynamicResource StatusTextColor}"
                           VerticalAlignment="Center"
                           IsChecked="True"
                           Margin="0,0,12,0" />
@@ -238,8 +237,8 @@
             
             <!-- 状态栏 -->
             <Border Grid.Row="4"
-                    Background="#10FFFFFF"
-                    BorderBrush="{StaticResource GlassBorderColor}"
+                    Background="{DynamicResource GlassCardColor}"
+                    BorderBrush="{DynamicResource GlassBorderColor}"
                     BorderThickness="1"
                     CornerRadius="8"
                     Padding="10,8"
@@ -247,7 +246,7 @@
                 <TextBlock x:Name="txtStatus"
                            Text="状态: 准备就绪"
                            FontSize="12"
-                           Foreground="{StaticResource StatusTextColor}" />
+                           Foreground="{DynamicResource StatusTextColor}" />
             </Border>
             
             <!-- 底部按钮 -->

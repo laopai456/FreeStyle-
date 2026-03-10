@@ -5,12 +5,12 @@ using System.Text;
 using System.Text.Json;
 using FS服装搭配专家v1._0.Core.Models;
 using FS服装搭配专家v1._0.Core.Services;
+using FS服装搭配专家v1._0.Core.Config;
 
 namespace FS服装搭配专家v1._0
 {
     public class SkinManager
     {
-        private const string CurrentSkinConfigFile = "current_skin.ini";
         private readonly ThemeLoader _themeLoader;
         private List<SkinTheme> _themes;
         private SkinTheme _currentTheme;
@@ -33,7 +33,7 @@ namespace FS服装搭配专家v1._0
 
             _themes = _themeLoader.LoadAllThemes();
 
-            string savedThemeId = LoadCurrentThemeId();
+            string savedThemeId = ConfigService.Instance.CurrentTheme;
             if (!string.IsNullOrEmpty(savedThemeId))
             {
                 _currentTheme = _themes.Find(t => t.Id == savedThemeId) ?? _themes[0];
@@ -50,7 +50,7 @@ namespace FS服装搭配专家v1._0
             if (theme != null)
             {
                 _currentTheme = theme;
-                SaveCurrentThemeId(themeId);
+                ConfigService.Instance.CurrentTheme = themeId;
                 ThemeChanged?.Invoke(this, EventArgs.Empty);
             }
         }
@@ -60,38 +60,12 @@ namespace FS服装搭配专家v1._0
             if (theme != null)
             {
                 _currentTheme = theme;
-                SaveCurrentThemeId(theme.Id);
+                ConfigService.Instance.CurrentTheme = theme.Id;
                 ThemeChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
         public event EventHandler? ThemeChanged;
-
-        private string LoadCurrentThemeId()
-        {
-            try
-            {
-                if (File.Exists(CurrentSkinConfigFile))
-                {
-                    return File.ReadAllText(CurrentSkinConfigFile).Trim();
-                }
-            }
-            catch
-            {
-            }
-            return string.Empty;
-        }
-
-        private void SaveCurrentThemeId(string themeId)
-        {
-            try
-            {
-                File.WriteAllText(CurrentSkinConfigFile, themeId);
-            }
-            catch
-            {
-            }
-        }
 
         public SkinTheme GetThemeById(string themeId)
         {

@@ -17,15 +17,14 @@
         <SolidColorBrush x:Key="ButtonBackgroundColor" Color="#E0E0E0" />
         <SolidColorBrush x:Key="ButtonHoverColor" Color="#D0D0D0" />
         
-        <!-- 字体资源 -->
         <FontFamily x:Key="ThemeFontFamily">Microsoft YaHei</FontFamily>
         <FontWeight x:Key="ThemeFontWeight">Normal</FontWeight>
         
         <Style x:Key="GlassButton" TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource ButtonBackgroundColor}" />
-            <Setter Property="Foreground" Value="{StaticResource TextColor}" />
+            <Setter Property="Background" Value="{DynamicResource ButtonBackgroundColor}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="{StaticResource CardBorderColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource CardBorderColor}" />
             <Setter Property="Padding" Value="20,8" />
             <Setter Property="Margin" Value="8" />
             <Setter Property="Cursor" Value="Hand" />
@@ -46,7 +45,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource ButtonHoverColor}" />
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="{DynamicResource ButtonHoverColor}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -63,11 +62,11 @@
             </LinearGradientBrush>
         </Grid.Background>
         
-        <Border Background="{StaticResource CardBackgroundColor}"
+        <Border Background="{DynamicResource CardBackgroundColor}"
                 CornerRadius="16"
                 Margin="20"
                 BorderThickness="2"
-                BorderBrush="{StaticResource CardBorderColor}">
+                BorderBrush="{DynamicResource CardBorderColor}">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="10"
                                   ShadowDepth="3"
@@ -91,7 +90,7 @@
                                FontSize="14"
                                FontFamily="{DynamicResource ThemeFontFamily}"
                                FontWeight="{DynamicResource ThemeFontWeight}"
-                               Foreground="{StaticResource TextColor}"
+                               Foreground="{DynamicResource TextColor}"
                                TextWrapping="Wrap"
                                TextAlignment="Center"
                                MaxWidth="450" />

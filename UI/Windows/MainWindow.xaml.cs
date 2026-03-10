@@ -14,6 +14,7 @@ using System.Runtime.InteropServices;
 using FS服装搭配专家v1._0.UI.Windows;
 using FS服装搭配专家v1._0.Core.Services;
 using FS服装搭配专家v1._0.Core.Models;
+using FS服装搭配专家v1._0.Core.Config;
 
 namespace FS服装搭配专家v1._0
 {
@@ -33,8 +34,8 @@ namespace FS服装搭配专家v1._0
 
         // 核心变量
         private List<FS服装搭配专家v1._0.ItemshopM> list = new List<FS服装搭配专家v1._0.ItemshopM>();
-        private string cookiename = "cookies";
-        private string oftenitemcode = "oftenitemcode.ini";
+        private string cookiename = AppConfig.Directories.Cookies;
+        private string oftenitemcode = AppConfig.Files.OftenItemCode;
         private string strInstallDirectory = "";
         private string pakIconNum = "";
         private string pngItemCode = "";
@@ -898,7 +899,7 @@ namespace FS服装搭配专家v1._0
                             afterItem.ItemCode,
                             DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                         
-                        File.AppendAllText("dopaklog.ini", logEntry, Encoding.Default);
+                        File.AppendAllText(AppConfig.Files.DopakLog, logEntry, Encoding.Default);
                         
                         successCount++;
                     }
@@ -1023,7 +1024,7 @@ namespace FS服装搭配专家v1._0
                             Console.WriteLine("itemshop.txt 已保存");
                             
                             // 重新打包 item_text.pak
-                            string itemTextPakPath = Path.Combine(strInstallDirectory, "item_text.pak");
+                            string itemTextPakPath = Path.Combine(strInstallDirectory, AppConfig.Files.ItemTextPak);
                             string packTextCmd = "pack\\resources -file2pak \"" + Path.Combine(Environment.CurrentDirectory, cookiename, "item_text_pak") + "\" \"" + itemTextPakPath + "\"";
                             Console.WriteLine($"重新打包 item_text.pak: {packTextCmd}");
                             conmon.RunCmd(packTextCmd);
@@ -1218,14 +1219,14 @@ namespace FS服装搭配专家v1._0
                     return;
                 }
                 
-                string sourceFileName = Path.Combine(this.strInstallDirectory, "item_text.pak");
+                string sourceFileName = Path.Combine(this.strInstallDirectory, AppConfig.Files.ItemTextPak);
                 Console.WriteLine("源文件路径: " + sourceFileName);
                 
                 UpdateLoadingStatus("正在检查游戏目录文件...");
                 
                 string currentDir = Environment.CurrentDirectory;
                 string cookiesPath = Path.Combine(currentDir, this.cookiename);
-                string pakPath = Path.Combine(cookiesPath, "item_text.pak");
+                string pakPath = Path.Combine(cookiesPath, AppConfig.Files.ItemTextPak);
                 string destFileName = pakPath;
                 
                 sw.Stop();
@@ -1336,7 +1337,7 @@ namespace FS服装搭配专家v1._0
                     }
                 }
                 
-                string resourcesExePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "pack", "resources.exe");
+                string resourcesExePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AppConfig.Directories.Pack, AppConfig.Files.ResourcesExe);
                 Console.WriteLine("resources.exe路径: " + resourcesExePath);
                 
                 if (!File.Exists(resourcesExePath))
@@ -1556,7 +1557,7 @@ namespace FS服装搭配专家v1._0
                     List<string> modifyList = new List<string>();
                     try
                     {
-                        string dopaklogPath = Path.Combine(Environment.CurrentDirectory, "dopaklog.ini");
+                        string dopaklogPath = Path.Combine(Environment.CurrentDirectory, AppConfig.Files.DopakLog);
                         if (File.Exists(dopaklogPath))
                         {
                             StreamReader streamReader2 = new StreamReader(dopaklogPath, Encoding.Default);
@@ -1755,7 +1756,7 @@ namespace FS服装搭配专家v1._0
                 string cookiesDir = Path.Combine(Environment.CurrentDirectory, this.cookiename);
                 
                 // 查找resources.exe
-                string resourcesExePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "pack", "resources.exe");
+                string resourcesExePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AppConfig.Directories.Pack, AppConfig.Files.ResourcesExe);
                 
                 Console.WriteLine("resources.exe路径: " + resourcesExePath);
                 
@@ -1946,50 +1947,16 @@ namespace FS服装搭配专家v1._0
             {
                 Console.WriteLine("=== 开始初始化配置 ===");
                 
-                string[] configPaths = new string[]
-                {
-                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.ini"),
-                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "config.ini"),
-                    Path.Combine(Environment.CurrentDirectory, "config.ini")
-                };
+                this.strInstallDirectory = ConfigService.Instance.GameInstallDirectory;
+                Console.WriteLine("从 ConfigService 读取游戏目录: " + this.strInstallDirectory);
                 
-                bool configFound = false;
-                foreach (string configPath in configPaths)
-                {
-                    Console.WriteLine("尝试读取配置文件: " + configPath);
-                    if (File.Exists(configPath))
-                    {
-                        Console.WriteLine("配置文件存在");
-                        StreamReader streamReader = new StreamReader(configPath, Encoding.Default);
-                        string text;
-                        while ((text = streamReader.ReadLine()) != null)
-                        {
-                            string line = text.Trim();
-                            if (line.StartsWith("InstallDirectory="))
-                            {
-                                this.strInstallDirectory = line.Substring("InstallDirectory=".Length);
-                                Console.WriteLine("读取到游戏目录: " + this.strInstallDirectory);
-                            }
-                        }
-                        streamReader.Close();
-                        configFound = true;
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("配置文件不存在: " + configPath);
-                    }
-                }
-                
-                // 检查路径是否为空
                 if (string.IsNullOrEmpty(this.strInstallDirectory))
                 {
                     Console.WriteLine("游戏目录为空");
                     
-                    // 显示错误消息
                     this.Dispatcher.Invoke(() =>
                     {
-                        labErrorMsg.Text = "请先设置游戏安装目录。\n在config.ini文件中添加游戏目录路径。";
+                        labErrorMsg.Text = "请先设置游戏安装目录。\n在 app.config.json 文件中添加游戏目录路径。";
                         labErrorMsg.Visibility = Visibility.Visible;
                     });
                 }
@@ -1997,12 +1964,10 @@ namespace FS服装搭配专家v1._0
                 {
                     Console.WriteLine("游戏目录: " + this.strInstallDirectory);
                     
-                    // 检查游戏目录是否存在
                     if (!Directory.Exists(this.strInstallDirectory))
                     {
                         Console.WriteLine("游戏目录不存在: " + this.strInstallDirectory);
                         
-                        // 显示错误消息
                         this.Dispatcher.Invoke(() =>
                         {
                             labErrorMsg.Text = "游戏目录不存在: " + this.strInstallDirectory;
@@ -2011,13 +1976,11 @@ namespace FS服装搭配专家v1._0
                     }
                     else
                     {
-                        // 检查item_text.pak文件是否存在
-                        string itemTextPakPath = Path.Combine(this.strInstallDirectory, "item_text.pak");
+                        string itemTextPakPath = Path.Combine(this.strInstallDirectory, AppConfig.Files.ItemTextPak);
                         if (!File.Exists(itemTextPakPath))
                         {
                             Console.WriteLine("item_text.pak文件不存在: " + itemTextPakPath);
                             
-                            // 显示错误消息
                             this.Dispatcher.Invoke(() =>
                             {
                                 labErrorMsg.Text = "item_text.pak文件不存在: " + itemTextPakPath;
