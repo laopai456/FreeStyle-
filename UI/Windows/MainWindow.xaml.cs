@@ -260,8 +260,46 @@ namespace FS服装搭配专家v1._0
                 var applier = new ThemeApplier();
                 applier.ApplyThemeToWindow(this, skinManager.CurrentTheme);
                 applier.ApplyThemeToUserControl(mapControl, skinManager.CurrentTheme);
+                
+                ApplyVideoBackground(skinManager.CurrentTheme);
+                
                 Console.WriteLine($"已应用主题: {skinManager.CurrentTheme.Name}");
             }
+        }
+
+        private void ApplyVideoBackground(SkinTheme theme)
+        {
+            var applier = new ThemeApplier();
+            var bgStyle = theme.Styles.Window.Background;
+            
+            if (applier.IsVideoBackground(bgStyle))
+            {
+                string? videoPath = applier.GetVideoPath(bgStyle);
+                if (!string.IsNullOrEmpty(videoPath) && File.Exists(videoPath))
+                {
+                    VideoBackground.Source = new Uri(videoPath);
+                    VideoBackground.Visibility = Visibility.Visible;
+                    VideoBackground.Volume = bgStyle.Volume;
+                    VideoBackground.Play();
+                    Console.WriteLine($"播放视频背景: {videoPath}");
+                }
+                else
+                {
+                    Console.WriteLine($"视频文件不存在: {videoPath}");
+                    VideoBackground.Visibility = Visibility.Collapsed;
+                }
+            }
+            else
+            {
+                VideoBackground.Stop();
+                VideoBackground.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void VideoBackground_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            VideoBackground.Position = TimeSpan.Zero;
+            VideoBackground.Play();
         }
 
         private void btnBgCrop_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -1153,6 +1191,8 @@ namespace FS服装搭配专家v1._0
                     picLoding.Visibility = Visibility.Visible;
                     labErrorMsg.Visibility = Visibility.Collapsed;
                     labErrorMsg.Text = "";
+                    labLoadingStatus.Visibility = Visibility.Visible;
+                    labLoadingStatus.Text = "正在初始化...";
                 });
                 
                 if (this.list != null && this.list.Count > 0)
@@ -1180,6 +1220,8 @@ namespace FS服装搭配专家v1._0
                 
                 string sourceFileName = Path.Combine(this.strInstallDirectory, "item_text.pak");
                 Console.WriteLine("源文件路径: " + sourceFileName);
+                
+                UpdateLoadingStatus("正在检查游戏目录文件...");
                 
                 string currentDir = Environment.CurrentDirectory;
                 string cookiesPath = Path.Combine(currentDir, this.cookiename);
@@ -1244,6 +1286,7 @@ namespace FS服装搭配专家v1._0
                 {
                     try
                     {
+                        UpdateLoadingStatus("正在复制 item_text.pak...");
                         File.Copy(sourceFileName, pakPath, true);
                         Console.WriteLine("复制item_text.pak成功");
                         destFileName = pakPath;
@@ -1322,6 +1365,7 @@ namespace FS服装搭配专家v1._0
                 else
                 {
                     Console.WriteLine("开始执行解包命令");
+                    UpdateLoadingStatus("正在解包 item_text.pak...");
                     try
                     {
                         if (Directory.Exists(Path.Combine(cookiesPath, "item_text_pak")))
@@ -1373,6 +1417,7 @@ namespace FS服装搭配专家v1._0
                 
                 Console.WriteLine("解包命令执行完成，开始检查解包结果");
                 Console.WriteLine("检查解析后的文件: " + itemshopPath);
+                UpdateLoadingStatus("正在解析服装数据...");
                 
                 if (!Directory.Exists(cookiesPath))
                 {
@@ -1576,6 +1621,19 @@ namespace FS服装搭配专家v1._0
                             
                             labErrorMsg.Text = "服装数据加载成功，共 " + list.Count + " 件服装，其中 " + effectList.Count + " 件有特效";
                             labErrorMsg.Visibility = Visibility.Visible;
+                            labLoadingStatus.Text = "加载完成！";
+                            labLoadingStatus.Visibility = Visibility.Visible;
+                            picLoding.Visibility = Visibility.Collapsed;
+                            
+                            var timer = new System.Windows.Threading.DispatcherTimer();
+                            timer.Interval = TimeSpan.FromSeconds(2);
+                            timer.Tick += (s, e) =>
+                            {
+                                labErrorMsg.Visibility = Visibility.Collapsed;
+                                labLoadingStatus.Visibility = Visibility.Collapsed;
+                                timer.Stop();
+                            };
+                            timer.Start();
                             
                             CheckAndLoadImages();
                         }
@@ -1691,8 +1749,9 @@ namespace FS服装搭配专家v1._0
                 this.Dispatcher.Invoke(() =>
                 {
                     picLoding.Visibility = Visibility.Visible;
-                    labErrorMsg.Text = "正在加载图片...";
-                    labErrorMsg.Visibility = Visibility.Visible;
+                    labLoadingStatus.Text = "正在加载图片...";
+                    labLoadingStatus.Visibility = Visibility.Visible;
+                    labErrorMsg.Visibility = Visibility.Collapsed;
                 });
                 
                 string cookiesDir = Path.Combine(Environment.CurrentDirectory, this.cookiename);
@@ -1718,6 +1777,7 @@ namespace FS服装搭配专家v1._0
                         labErrorMsg.Text = "找不到resources.exe: " + resourcesExePath;
                         labErrorMsg.Visibility = Visibility.Visible;
                         picLoding.Visibility = Visibility.Collapsed;
+                        labLoadingStatus.Visibility = Visibility.Collapsed;
                     });
                     return;
                 }
@@ -1742,7 +1802,7 @@ namespace FS服装搭配专家v1._0
                         int finalCurrentCount = currentCount;
                         this.Dispatcher.Invoke(() =>
                         {
-                            labErrorMsg.Text = string.Format("正在解包图片... {0}/{1}", finalCurrentCount, totalCount);
+                            labLoadingStatus.Text = string.Format("正在解包图片... {0}/{1}", finalCurrentCount, totalCount);
                         });
                     }
                     
@@ -2017,19 +2077,19 @@ namespace FS服装搭配专家v1._0
             {
                 Console.WriteLine("=== 开始加载服装数据 ===");
                 
-                // 记录当前工作目录
+                UpdateLoadingStatus("正在初始化配置...");
                 Console.WriteLine("当前工作目录: " + Environment.CurrentDirectory);
                 
-                // 初始化配置
                 Console.WriteLine("开始初始化配置...");
                 InitializeConfig();
                 Console.WriteLine("配置初始化完成，游戏目录: " + this.strInstallDirectory);
                 
-                // 加载服装数据
+                UpdateLoadingStatus("正在加载服装数据...");
                 Console.WriteLine("开始加载服装数据...");
                 GetNewItem();
                 Console.WriteLine("服装数据加载完成，共加载 " + this.list.Count + " 件服装");
                 
+                UpdateLoadingStatus("加载完成！");
                 Console.WriteLine("=== 服装数据加载流程完成 ===");
             }
             catch (Exception ex)
@@ -2037,14 +2097,24 @@ namespace FS服装搭配专家v1._0
                 Console.WriteLine("加载服装数据时出错: " + ex.Message);
                 Console.WriteLine("堆栈跟踪: " + ex.StackTrace);
                 
-                // 显示错误消息
                 this.Dispatcher.Invoke(() =>
                 {
                     labErrorMsg.Text = "加载服装数据时出错: " + ex.Message;
                     labErrorMsg.Visibility = Visibility.Visible;
                     picLoding.Visibility = Visibility.Collapsed;
+                    labLoadingStatus.Visibility = Visibility.Collapsed;
                 });
             }
+        }
+
+        private void UpdateLoadingStatus(string status)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                labLoadingStatus.Text = status;
+                labLoadingStatus.Visibility = Visibility.Visible;
+            });
+            Console.WriteLine("[状态] " + status);
         }
 
         private void bwMain_CompletedLoadList(object sender, RunWorkerCompletedEventArgs e)
@@ -2094,6 +2164,12 @@ namespace FS服装搭配专家v1._0
             {
                 bwLoadImg.Dispose();
             }
+            
+            this.Dispatcher.Invoke(() =>
+            {
+                picLoding.Visibility = Visibility.Collapsed;
+                labLoadingStatus.Visibility = Visibility.Collapsed;
+            });
         }
     }
 }

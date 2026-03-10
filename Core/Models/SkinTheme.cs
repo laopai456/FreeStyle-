@@ -37,6 +37,8 @@ namespace FS服装搭配专家v1._0.Core.Models
         public List<string> Colors { get; set; } = new List<string> { "#6a85b6", "#bac8e0", "#f0c9e8" };
         public double Angle { get; set; } = 135;
         public string? ImagePath { get; set; }
+        public string? VideoPath { get; set; }
+        public double Volume { get; set; } = 0;
     }
 
     public class CardStyle

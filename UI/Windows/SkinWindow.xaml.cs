@@ -20,24 +20,65 @@ namespace FS服装搭配专家v1._0
             InitializeComponent();
             skinManager = manager;
             themeApplier = new ThemeApplier();
-            ApplyCurrentThemeFont();
+            ApplyCurrentTheme();
             InitializeThemeList();
         }
 
-        private void ApplyCurrentThemeFont()
+        private void ApplyCurrentTheme()
         {
             if (skinManager.CurrentTheme != null)
             {
                 var theme = skinManager.CurrentTheme;
                 
+                themeApplier.ApplyThemeToWindow(this, theme);
+                
                 if (!string.IsNullOrEmpty(theme.Styles.Text.FontFamily))
                 {
                     Resources["ThemeFontFamily"] = new FontFamily(theme.Styles.Text.FontFamily);
+                }
+                else
+                {
+                    Resources["ThemeFontFamily"] = new FontFamily("Microsoft YaHei");
                 }
                 
                 if (!string.IsNullOrEmpty(theme.Styles.Text.FontWeight))
                 {
                     Resources["ThemeFontWeight"] = ParseFontWeight(theme.Styles.Text.FontWeight);
+                }
+                else
+                {
+                    Resources["ThemeFontWeight"] = FontWeights.Normal;
+                }
+                
+                if (theme.Id == "dark")
+                {
+                    Resources["GlassCardColor"] = new SolidColorBrush(Color.FromRgb(0x1A, 0x1A, 0x2E));
+                    Resources["TextColor"] = new SolidColorBrush(Colors.White);
+                    Resources["TitleTextColor"] = new SolidColorBrush(Color.FromRgb(0x6D, 0xD5, 0xFA));
+                    Resources["StatusTextColor"] = new SolidColorBrush(Color.FromRgb(0xB0, 0xB0, 0xB0));
+                    Resources["GlassBorderColor"] = new SolidColorBrush(Color.FromRgb(0x40, 0x40, 0x60));
+                    Resources["GlassHighlightColor"] = new SolidColorBrush(Color.FromRgb(0x50, 0x50, 0x70));
+                    Resources["ButtonForegroundColor"] = new SolidColorBrush(Colors.White);
+                }
+                else if (theme.Id == "galaxy")
+                {
+                    Resources["GlassCardColor"] = new SolidColorBrush(Colors.White);
+                    Resources["TextColor"] = new SolidColorBrush(Color.FromRgb(0x42, 0x42, 0x42));
+                    Resources["TitleTextColor"] = new SolidColorBrush(Color.FromRgb(0x42, 0x42, 0x42));
+                    Resources["StatusTextColor"] = new SolidColorBrush(Color.FromRgb(0x75, 0x75, 0x75));
+                    Resources["GlassBorderColor"] = new SolidColorBrush(Color.FromRgb(0xE0, 0xE0, 0xE0));
+                    Resources["GlassHighlightColor"] = new SolidColorBrush(Color.FromRgb(0xD0, 0xD0, 0xD0));
+                    Resources["ButtonForegroundColor"] = new SolidColorBrush(Colors.White);
+                }
+                else
+                {
+                    Resources["GlassCardColor"] = new SolidColorBrush(Color.FromRgb(0xF5, 0xF5, 0xF8));
+                    Resources["TextColor"] = new SolidColorBrush(Color.FromRgb(0x33, 0x33, 0x33));
+                    Resources["TitleTextColor"] = new SolidColorBrush(Color.FromRgb(0x33, 0x33, 0x33));
+                    Resources["StatusTextColor"] = new SolidColorBrush(Color.FromRgb(0x75, 0x75, 0x75));
+                    Resources["GlassBorderColor"] = new SolidColorBrush(Color.FromRgb(0xE0, 0xE0, 0xE0));
+                    Resources["GlassHighlightColor"] = new SolidColorBrush(Color.FromRgb(0xD0, 0xD0, 0xD0));
+                    Resources["ButtonForegroundColor"] = new SolidColorBrush(Colors.White);
                 }
             }
         }
@@ -135,7 +176,22 @@ namespace FS服装搭配专家v1._0
 
         private void UpdatePreview(SkinTheme theme)
         {
-            previewGrid.Background = themeApplier.GetBackgroundBrush(theme.Styles.Window.Background);
+            if (theme.Styles.Window.Background.Type?.ToLower() == "video")
+            {
+                var gradient = new LinearGradientBrush
+                {
+                    StartPoint = new Point(0, 0),
+                    EndPoint = new Point(1, 1)
+                };
+                gradient.GradientStops.Add(new GradientStop(Color.FromRgb(0x1A, 0x1A, 0x2E), 0));
+                gradient.GradientStops.Add(new GradientStop(Color.FromRgb(0x16, 0x21, 0x3E), 0.5));
+                gradient.GradientStops.Add(new GradientStop(Color.FromRgb(0x0F, 0x34, 0x60), 1));
+                previewGrid.Background = gradient;
+            }
+            else
+            {
+                previewGrid.Background = themeApplier.GetBackgroundBrush(theme.Styles.Window.Background);
+            }
             
             previewBorder.BorderBrush = new SolidColorBrush(ParseColor(theme.Styles.Card.BorderColor));
             

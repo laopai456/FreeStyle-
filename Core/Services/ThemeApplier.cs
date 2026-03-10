@@ -82,7 +82,26 @@ namespace FS服装搭配专家v1._0.Core.Services
                         grid.Background = brush;
                     }
                     break;
+
+                case "video":
+                    grid.Background = new SolidColorBrush(Colors.Transparent);
+                    break;
             }
+        }
+
+        public bool IsVideoBackground(BackgroundStyle bgStyle)
+        {
+            return bgStyle?.Type?.ToLower() == "video";
+        }
+
+        public string? GetVideoPath(BackgroundStyle bgStyle)
+        {
+            if (IsVideoBackground(bgStyle) && !string.IsNullOrEmpty(bgStyle.VideoPath))
+            {
+                string videosDir = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "videos");
+                return System.IO.Path.Combine(videosDir, bgStyle.VideoPath);
+            }
+            return null;
         }
 
         private void ApplyResources(Window window, SkinTheme theme)

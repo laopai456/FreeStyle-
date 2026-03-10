@@ -520,6 +520,14 @@
             </LinearGradientBrush>
         </Grid.Background>
         
+        <!-- 视频背景层 -->
+        <MediaElement x:Name="VideoBackground" 
+                      Stretch="UniformToFill" 
+                      MediaEnded="VideoBackground_MediaEnded"
+                      LoadedBehavior="Manual"
+                      UnloadedBehavior="Stop"
+                      Visibility="Collapsed" />
+        
         <!-- 窗口拖动区域 -->
         <Grid Background="Transparent" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown" />
         
@@ -847,6 +855,15 @@
                                                Foreground="#FFFF6B6B" 
                                                Visibility="Collapsed" 
                                                Margin="0,0,0,8" />
+                                    <TextBlock x:Name="labLoadingStatus" 
+                                               Text="" 
+                                               FontSize="11" 
+                                               FontFamily="{DynamicResource ThemeFontFamily}"
+                                               Foreground="{DynamicResource StatusTextColor}" 
+                                               Visibility="Collapsed" 
+                                               Margin="0,0,0,8"
+                                               TextWrapping="Wrap"
+                                               TextAlignment="Center" />
                                     <Image x:Name="picLoding" 
                                            Source="" 
                                            Width="24" 

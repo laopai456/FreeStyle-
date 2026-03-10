@@ -264,23 +264,23 @@ namespace FS服装搭配专家v1._0.Core.Services
                     {
                         Background = new BackgroundStyle
                         {
-                            Type = "gradient",
-                            Colors = new List<string> { "#1a1a2e", "#16213e", "#0f3460" },
-                            Angle = 135
+                            Type = "video",
+                            VideoPath = "dark-background.mp4",
+                            Volume = 0
                         }
                     },
                     Card = new CardStyle
                     {
-                        Background = "#20FFFFFF",
-                        BorderColor = "#40FFFFFF",
-                        ContentPanelBackground = "#1a1a2e",
+                        Background = "#40FFFFFF",
+                        BorderColor = "#50FFFFFF",
+                        ContentPanelBackground = "#20FFFFFF",
                         CornerRadius = 16,
                         Shadow = new ShadowStyle
                         {
-                            BlurRadius = 40,
-                            ShadowDepth = 12,
-                            Opacity = 0.3,
-                            Color = "#000000"
+                            BlurRadius = 60,
+                            ShadowDepth = 0,
+                            Opacity = 0.5,
+                            Color = "#6DD5FA"
                         }
                     },
                     Button = new ButtonStyle
