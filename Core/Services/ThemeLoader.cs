@@ -179,7 +179,7 @@ namespace FS服装搭配专家v1._0.Core.Services
                     },
                     Card = new CardStyle
                     {
-                        Background = "#15FFFFFF",
+                        Background = "#CCFFFFFF",
                         BorderColor = "#20FFFFFF",
                         ContentPanelBackground = "#0DFFFFFF",
                         CornerRadius = 16,
@@ -193,12 +193,12 @@ namespace FS服装搭配专家v1._0.Core.Services
                     },
                     Button = new ButtonStyle
                     {
-                        Background = "#25FFFFFF",
+                        Background = "#CCFFFFFF",
                         HoverBackground = "#40FFFFFF",
                         PressedBackground = "#40FFFFFF",
                         BorderColor = "#20FFFFFF",
                         CornerRadius = 16,
-                        Foreground = "#FFFFFFFF",
+                        Foreground = "#FF333333",
                         Shadow = new ShadowStyle
                         {
                             BlurRadius = 16,

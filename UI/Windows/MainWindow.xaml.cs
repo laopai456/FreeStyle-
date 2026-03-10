@@ -1336,25 +1336,19 @@ namespace FS服装搭配专家v1._0
                     }
                 }
                 
-                string resourcesExePath = Path.Combine(currentDir, "..", "..", "..", "pack", "resources.exe");
+                string resourcesExePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "pack", "resources.exe");
                 Console.WriteLine("resources.exe路径: " + resourcesExePath);
                 
                 if (!File.Exists(resourcesExePath))
                 {
-                    resourcesExePath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "..", "..", "..", "pack", "resources.exe");
-                    Console.WriteLine("尝试resources.exe路径: " + resourcesExePath);
-                    
-                    if (!File.Exists(resourcesExePath))
+                    Console.WriteLine("resources.exe不存在: " + resourcesExePath);
+                    this.Dispatcher.Invoke(() =>
                     {
-                        Console.WriteLine("resources.exe不存在: " + resourcesExePath);
-                        this.Dispatcher.Invoke(() =>
-                        {
-                            labErrorMsg.Text = "resources.exe不存在: " + resourcesExePath;
-                            labErrorMsg.Visibility = Visibility.Visible;
-                            picLoding.Visibility = Visibility.Collapsed;
-                        });
-                        return;
-                    }
+                        labErrorMsg.Text = "resources.exe不存在，请确保pack目录下有resources.exe";
+                        labErrorMsg.Visibility = Visibility.Visible;
+                        picLoding.Visibility = Visibility.Collapsed;
+                    });
+                    return;
                 }
                 Console.WriteLine("resources.exe存在");
                 
@@ -1700,21 +1694,24 @@ namespace FS服装搭配专家v1._0
                     return;
                 }
                 
-                bool hasUnpackedIconDir = false;
+                bool hasUnpackedIconFiles = false;
                 string[] directories = Directory.GetDirectories(cookiesDir);
                 foreach (string dir in directories)
                 {
                     string dirName = Path.GetFileName(dir);
                     if (dirName.StartsWith("icon") && dirName.EndsWith("_pak"))
                     {
-                        hasUnpackedIconDir = true;
-                        break;
+                        if (Directory.GetFiles(dir).Length > 0)
+                        {
+                            hasUnpackedIconFiles = true;
+                            break;
+                        }
                     }
                 }
                 
-                if (!hasUnpackedIconDir && this.list.Count > 0)
+                if (!hasUnpackedIconFiles && this.list.Count > 0)
                 {
-                    Console.WriteLine("检测到没有解包的icon目录，自动开始加载");
+                    Console.WriteLine("检测到没有图片文件，自动开始加载");
                     this.Dispatcher.Invoke(() =>
                     {
                         labErrorMsg.Text = "检测到没有图片文件，正在自动加载...";
@@ -1730,7 +1727,7 @@ namespace FS服装搭配专家v1._0
                 }
                 else
                 {
-                    Console.WriteLine("已存在解包的icon目录，跳过自动加载");
+                    Console.WriteLine("已存在解包的icon文件，跳过自动加载");
                 }
             }
             catch (Exception ex)
@@ -1753,18 +1750,9 @@ namespace FS服装搭配专家v1._0
                 });
                 
                 string cookiesDir = Path.Combine(Environment.CurrentDirectory, this.cookiename);
-                string currentDir = Environment.CurrentDirectory;
                 
                 // 查找resources.exe
-                string resourcesExePath = Path.Combine(currentDir, "pack", "resources.exe");
-                if (!File.Exists(resourcesExePath))
-                {
-                    resourcesExePath = Path.Combine(currentDir, "..", "..", "..", "pack", "resources.exe");
-                }
-                if (!File.Exists(resourcesExePath))
-                {
-                    resourcesExePath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "..", "..", "..", "pack", "resources.exe");
-                }
+                string resourcesExePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "pack", "resources.exe");
                 
                 Console.WriteLine("resources.exe路径: " + resourcesExePath);
                 
@@ -1772,7 +1760,7 @@ namespace FS服装搭配专家v1._0
                 {
                     this.Dispatcher.Invoke(() =>
                     {
-                        labErrorMsg.Text = "找不到resources.exe: " + resourcesExePath;
+                        labErrorMsg.Text = "找不到resources.exe，请确保pack目录下有resources.exe";
                         labErrorMsg.Visibility = Visibility.Visible;
                         picLoding.Visibility = Visibility.Collapsed;
                         labLoadingStatus.Visibility = Visibility.Collapsed;
@@ -1809,8 +1797,8 @@ namespace FS服装搭配专家v1._0
                     string iconDir = Path.Combine(cookiesDir, iconDirName);
                     string iconPakName = "icon" + pakNum;
                     
-                    // 只检查目录是否存在，不存在才解包
-                    if (Directory.Exists(iconDir))
+                    // 检查目录是否存在且有文件
+                    if (Directory.Exists(iconDir) && Directory.GetFiles(iconDir).Length > 0)
                     {
                         skipCount++;
                         continue;

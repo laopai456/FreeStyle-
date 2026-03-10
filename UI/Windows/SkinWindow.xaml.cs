@@ -52,13 +52,16 @@ namespace FS服装搭配专家v1._0
                 
                 if (theme.Id == "dark")
                 {
-                    Resources["GlassCardColor"] = new SolidColorBrush(Color.FromRgb(0x1A, 0x1A, 0x2E));
+                    Resources["GlassCardColor"] = new SolidColorBrush(Color.FromArgb(0x33, 0x1A, 0x1A, 0x2E));
                     Resources["TextColor"] = new SolidColorBrush(Colors.White);
                     Resources["TitleTextColor"] = new SolidColorBrush(Color.FromRgb(0x6D, 0xD5, 0xFA));
                     Resources["StatusTextColor"] = new SolidColorBrush(Color.FromRgb(0xB0, 0xB0, 0xB0));
                     Resources["GlassBorderColor"] = new SolidColorBrush(Color.FromRgb(0x40, 0x40, 0x60));
                     Resources["GlassHighlightColor"] = new SolidColorBrush(Color.FromRgb(0x50, 0x50, 0x70));
                     Resources["ButtonForegroundColor"] = new SolidColorBrush(Colors.White);
+                    Resources["ButtonGlassColor"] = new SolidColorBrush(Color.FromArgb(0x60, 0x40, 0x40, 0x60));
+                    Resources["HoverBackgroundColor"] = new SolidColorBrush(Color.FromArgb(0x80, 0x50, 0x50, 0x70));
+                    Resources["PressedBackgroundColor"] = new SolidColorBrush(Color.FromArgb(0x99, 0x60, 0x60, 0x80));
                 }
                 else if (theme.Id == "galaxy")
                 {
@@ -72,13 +75,14 @@ namespace FS服装搭配专家v1._0
                 }
                 else
                 {
-                    Resources["GlassCardColor"] = new SolidColorBrush(Color.FromRgb(0xF5, 0xF5, 0xF8));
+                    Resources["GlassCardColor"] = new SolidColorBrush(Color.FromArgb(0xCC, 0xFF, 0xFF, 0xFF));
                     Resources["TextColor"] = new SolidColorBrush(Color.FromRgb(0x33, 0x33, 0x33));
                     Resources["TitleTextColor"] = new SolidColorBrush(Color.FromRgb(0x33, 0x33, 0x33));
                     Resources["StatusTextColor"] = new SolidColorBrush(Color.FromRgb(0x75, 0x75, 0x75));
                     Resources["GlassBorderColor"] = new SolidColorBrush(Color.FromRgb(0xE0, 0xE0, 0xE0));
                     Resources["GlassHighlightColor"] = new SolidColorBrush(Color.FromRgb(0xD0, 0xD0, 0xD0));
-                    Resources["ButtonForegroundColor"] = new SolidColorBrush(Colors.White);
+                    Resources["ButtonForegroundColor"] = new SolidColorBrush(Color.FromRgb(0x33, 0x33, 0x33));
+                    Resources["ButtonGlassColor"] = new SolidColorBrush(Color.FromArgb(0xCC, 0xFF, 0xFF, 0xFF));
                 }
             }
         }

@@ -12,7 +12,7 @@
         Background="Transparent">
     <Window.Resources>
         <!-- 颜色资源 -->
-        <SolidColorBrush x:Key="GlassCardColor" Color="#15FFFFFF" />
+        <SolidColorBrush x:Key="GlassCardColor" Color="#33FFFFFF" />
         <SolidColorBrush x:Key="GlassCardHoverColor" Color="#40FFFFFF" />
         <SolidColorBrush x:Key="GlassBorderColor" Color="#4DFFFFFF" />
         <SolidColorBrush x:Key="GlassHighlightColor" Color="#20FFFFFF" />
@@ -100,39 +100,18 @@
                                               HorizontalAlignment="Center" 
                                               VerticalAlignment="Center" 
                                               TextElement.Foreground="{TemplateBinding Foreground}" 
+                                              TextElement.FontFamily="{TemplateBinding FontFamily}"
                                               TextElement.FontWeight="{TemplateBinding FontWeight}" />
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="Normal" />
-                                    <VisualState x:Name="MouseOver">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
-                                                                           Storyboard.TargetProperty="Background">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{DynamicResource HoverBackgroundColor}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Pressed">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
-                                                                           Storyboard.TargetProperty="Background">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{DynamicResource PressedBackgroundColor}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
                         </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="{DynamicResource HoverBackgroundColor}" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="{DynamicResource PressedBackgroundColor}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Effect">
-                <Setter.Value>
-                    <DropShadowEffect BlurRadius="16" 
-                                      ShadowDepth="4" 
-                                      Opacity="0.1" 
-                                      Direction="270" 
-                                      Color="#000000" />
                 </Setter.Value>
             </Setter>
         </Style>
@@ -147,6 +126,8 @@
             <Setter Property="Margin" Value="6" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="MinWidth" Value="60" />
+            <Setter Property="FontFamily" Value="{DynamicResource ThemeFontFamily}" />
+            <Setter Property="FontWeight" Value="{DynamicResource ThemeFontWeight}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -161,39 +142,18 @@
                                               VerticalAlignment="Center" 
                                               TextElement.Foreground="{TemplateBinding Foreground}"
                                               TextElement.FontSize="12"
-                                              TextElement.FontWeight="Medium" />
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="Normal" />
-                                    <VisualState x:Name="MouseOver">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
-                                                                           Storyboard.TargetProperty="Background">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{DynamicResource HoverBackgroundColor}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Pressed">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
-                                                                           Storyboard.TargetProperty="Background">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{DynamicResource PressedBackgroundColor}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
+                                              TextElement.FontFamily="{TemplateBinding FontFamily}"
+                                              TextElement.FontWeight="{TemplateBinding FontWeight}" />
                         </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="{DynamicResource HoverBackgroundColor}" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="{DynamicResource PressedBackgroundColor}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Effect">
-                <Setter.Value>
-                    <DropShadowEffect BlurRadius="8" 
-                                      ShadowDepth="2" 
-                                      Opacity="0.1" 
-                                      Direction="270" 
-                                      Color="#000000" />
                 </Setter.Value>
             </Setter>
         </Style>
