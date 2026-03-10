@@ -28,6 +28,10 @@
         <SolidColorBrush x:Key="ListItemBackgroundColor" Color="#1AFFFFFF" />
         <SolidColorBrush x:Key="ListItemHoverBackgroundColor" Color="#33FFFFFF" />
         
+        <!-- 字体资源 -->
+        <FontFamily x:Key="ThemeFontFamily">Microsoft YaHei</FontFamily>
+        <FontWeight x:Key="ThemeFontWeight">Normal</FontWeight>
+        
         <!-- 主容器样式 -->
         <Style x:Key="MainContainer" TargetType="Border">
             <Setter Property="Background" Value="{DynamicResource GlassCardColor}" />
@@ -82,7 +86,8 @@
             <Setter Property="Padding" Value="18,10" />
             <Setter Property="Margin" Value="10" />
             <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="FontWeight" Value="600" />
+            <Setter Property="FontFamily" Value="{DynamicResource ThemeFontFamily}" />
+            <Setter Property="FontWeight" Value="{DynamicResource ThemeFontWeight}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -242,22 +247,21 @@
             <Border Grid.Row="0" Style="{StaticResource TitleBarContainer}" 
                     Background="Transparent" 
                     MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
-                <Grid Height="40">
+                <Grid Height="50">
                     <TextBlock Text="皮肤设置" 
                                FontSize="18" 
-                               FontWeight="Bold" 
+                               FontFamily="{DynamicResource ThemeFontFamily}"
+                               FontWeight="{DynamicResource ThemeFontWeight}"
                                Foreground="{DynamicResource TitleTextColor}"
                                VerticalAlignment="Center" 
                                HorizontalAlignment="Left" />
-                    <StackPanel Orientation="Horizontal" 
-                                HorizontalAlignment="Right" 
-                                VerticalAlignment="Center">
-                        <Button Content="关闭" 
-                                Width="70" 
-                                Height="32"
-                                Style="{StaticResource GlassButton}" 
-                                Click="Close_Click" />
-                    </StackPanel>
+                    <Button Content="关闭" 
+                            Width="70" 
+                            Height="32"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource GlassButton}" 
+                            Click="Close_Click" />
                 </Grid>
             </Border>
             
@@ -273,7 +277,8 @@
                     <Grid>
                         <TextBlock Text="可用皮肤" 
                                    FontSize="16" 
-                                   FontWeight="600" 
+                                   FontFamily="{DynamicResource ThemeFontFamily}"
+                                   FontWeight="{DynamicResource ThemeFontWeight}"
                                    Foreground="{DynamicResource TextColor}"
                                    Margin="0,0,0,16" />
                         <ListBox x:Name="lstSkins" 
@@ -286,7 +291,8 @@
                                     <Border Style="{StaticResource SkinItemStyle}">
                                         <TextBlock Text="{Binding Name}" 
                                                    FontSize="14" 
-                                                   FontWeight="Medium" 
+                                                   FontFamily="{DynamicResource ThemeFontFamily}"
+                                                   FontWeight="{DynamicResource ThemeFontWeight}"
                                                    Foreground="{DynamicResource TextColor}" />
                                     </Border>
                                 </DataTemplate>
@@ -319,7 +325,8 @@
                         
                         <TextBlock Grid.Row="0" Text="皮肤预览" 
                                    FontSize="16" 
-                                   FontWeight="600" 
+                                   FontFamily="{DynamicResource ThemeFontFamily}"
+                                   FontWeight="{DynamicResource ThemeFontWeight}"
                                    Foreground="{DynamicResource TextColor}"
                                    Margin="0,0,0,16" />
                         

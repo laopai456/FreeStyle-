@@ -15,6 +15,10 @@
         <SolidColorBrush x:Key="ButtonGlassColor" Color="#25FFFFFF" />
         <SolidColorBrush x:Key="ButtonGlassHoverColor" Color="#40FFFFFF" />
         
+        <!-- 字体资源 -->
+        <FontFamily x:Key="ThemeFontFamily">Microsoft YaHei</FontFamily>
+        <FontWeight x:Key="ThemeFontWeight">Normal</FontWeight>
+        
         <!-- 主容器样式 -->
         <Style x:Key="MainContainer" TargetType="Border">
             <Setter Property="Background" Value="{StaticResource GlassCardColor}" />
@@ -43,7 +47,8 @@
             <Setter Property="Padding" Value="16,8" />
             <Setter Property="Margin" Value="8" />
             <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="FontWeight" Value="600" />
+            <Setter Property="FontFamily" Value="{DynamicResource ThemeFontFamily}" />
+            <Setter Property="FontWeight" Value="{DynamicResource ThemeFontWeight}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -116,7 +121,8 @@
                 <Grid Grid.Row="0">
                     <TextBlock Text="选择你的NBA主队" 
                                FontSize="24" 
-                               FontWeight="Bold" 
+                               FontFamily="{DynamicResource ThemeFontFamily}"
+                               FontWeight="{DynamicResource ThemeFontWeight}"
                                Foreground="{StaticResource TitleTextColor}"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center" />

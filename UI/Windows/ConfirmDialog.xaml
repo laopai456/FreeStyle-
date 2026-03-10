@@ -17,6 +17,10 @@
         <SolidColorBrush x:Key="ButtonBackgroundColor" Color="#E0E0E0" />
         <SolidColorBrush x:Key="ButtonHoverColor" Color="#D0D0D0" />
         
+        <!-- 字体资源 -->
+        <FontFamily x:Key="ThemeFontFamily">Microsoft YaHei</FontFamily>
+        <FontWeight x:Key="ThemeFontWeight">Normal</FontWeight>
+        
         <Style x:Key="GlassButton" TargetType="Button">
             <Setter Property="Background" Value="{StaticResource ButtonBackgroundColor}" />
             <Setter Property="Foreground" Value="{StaticResource TextColor}" />
@@ -25,7 +29,8 @@
             <Setter Property="Padding" Value="20,8" />
             <Setter Property="Margin" Value="8" />
             <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="FontWeight" Value="600" />
+            <Setter Property="FontFamily" Value="{DynamicResource ThemeFontFamily}" />
+            <Setter Property="FontWeight" Value="{DynamicResource ThemeFontWeight}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -84,7 +89,8 @@
                     <TextBlock x:Name="MessageText"
                                Text="确认执行此操作吗？"
                                FontSize="14"
-                               FontWeight="Normal"
+                               FontFamily="{DynamicResource ThemeFontFamily}"
+                               FontWeight="{DynamicResource ThemeFontWeight}"
                                Foreground="{StaticResource TextColor}"
                                TextWrapping="Wrap"
                                TextAlignment="Center"

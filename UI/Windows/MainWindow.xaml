@@ -35,6 +35,11 @@
         <SolidColorBrush x:Key="TabHoverBackgroundColor" Color="#25FFFFFF" /> <!-- 标签页悬停背景颜色 -->
         <SolidColorBrush x:Key="TabSelectedForegroundColor" Color="#FFFFFFFF" /> <!-- 标签页选中文字颜色 -->
         <SolidColorBrush x:Key="ContentPanelBackgroundColor" Color="#0DFFFFFF" /> <!-- 内容区域背景颜色 -->
+        <SolidColorBrush x:Key="ListItemForegroundColor" Color="#FFFFFFFF" /> <!-- 列表项文字颜色 -->
+        
+        <!-- 字体资源 -->
+        <FontFamily x:Key="ThemeFontFamily">Microsoft YaHei</FontFamily>
+        <FontWeight x:Key="ThemeFontWeight">Normal</FontWeight>
         
         <!-- 玻璃拟态文本框样式 -->
         <Style x:Key="GlassTextBox" TargetType="TextBox">
@@ -43,6 +48,8 @@
             <Setter Property="BorderBrush" Value="{DynamicResource GlassBorderColor}" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="{DynamicResource ThemeFontFamily}" />
+            <Setter Property="FontWeight" Value="{DynamicResource ThemeFontWeight}" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
             <Setter Property="CaretBrush" Value="White" />
             <Setter Property="SelectionBrush" Value="#40FFFFFF" />
@@ -108,7 +115,8 @@
             <Setter Property="Padding" Value="18,10" />
             <Setter Property="Margin" Value="10" />
             <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="FontWeight" Value="600" />
+            <Setter Property="FontFamily" Value="{DynamicResource ThemeFontFamily}" />
+            <Setter Property="FontWeight" Value="{DynamicResource ThemeFontWeight}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -349,6 +357,7 @@
             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
             <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
             <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+            <Setter Property="Foreground" Value="{DynamicResource ListItemForegroundColor}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBox">
@@ -364,6 +373,20 @@
                             </ScrollViewer>
                         </Border>
                     </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Foreground" Value="{DynamicResource ListItemForegroundColor}" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <ContentPresenter />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
                 </Setter.Value>
             </Setter>
         </Style>
@@ -427,7 +450,8 @@
             <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
             <Setter Property="Padding" Value="12,8" />
             <Setter Property="Margin" Value="4,0,4,0" />
-            <Setter Property="FontWeight" Value="600" />
+            <Setter Property="FontFamily" Value="{DynamicResource ThemeFontFamily}" />
+            <Setter Property="FontWeight" Value="{DynamicResource ThemeFontWeight}" />
             <Setter Property="MinWidth" Value="80" />
             <Setter Property="Height" Value="36" />
             <Setter Property="Template">
@@ -524,7 +548,8 @@
                     <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
                         <TextBlock Text="FreeStyle" 
                                    FontSize="16" 
-                                   FontWeight="Bold" 
+                                   FontFamily="{DynamicResource ThemeFontFamily}"
+                                   FontWeight="{DynamicResource ThemeFontWeight}"
                                    Foreground="{DynamicResource TitleTextColor}"
                                    VerticalAlignment="Center" />
                         
@@ -707,7 +732,8 @@
                                 <!-- 功能标题 -->
                                 <TextBlock Grid.Row="0" Text="服装与特效列表" 
                                            FontSize="18" 
-                                           FontWeight="600" 
+                                           FontFamily="{DynamicResource ThemeFontFamily}"
+                                           FontWeight="{DynamicResource ThemeFontWeight}"
                                            Foreground="{DynamicResource TitleTextColor}" 
                                            Margin="0,0,0,20" />
                                 
@@ -760,7 +786,8 @@
                                             </Grid.RowDefinitions>
                                             <TextBlock Grid.Row="0" Text="服装列表" 
                                                        FontSize="14" 
-                                                       FontWeight="600"
+                                                       FontFamily="{DynamicResource ThemeFontFamily}"
+                                                       FontWeight="{DynamicResource ThemeFontWeight}"
                                                        Foreground="{DynamicResource TitleTextColor}" 
                                                        Margin="0,0,0,8" />
                                             <ListBox x:Name="lstClothing" 
@@ -786,7 +813,8 @@
                                             </Grid.RowDefinitions>
                                             <TextBlock Grid.Row="0" Text="特效列表" 
                                                        FontSize="14" 
-                                                       FontWeight="600"
+                                                       FontFamily="{DynamicResource ThemeFontFamily}"
+                                                       FontWeight="{DynamicResource ThemeFontWeight}"
                                                        Foreground="{DynamicResource TitleTextColor}" 
                                                        Margin="0,0,0,8" />
                                             <ListBox x:Name="lstEffect" 
@@ -799,11 +827,17 @@
                                 </Grid>
                                 
                                 <!-- 操作提示 -->
-                                <TextBlock Grid.Row="3" Text="左键添加到变更前 | Ctrl+左键添加到变更后 | Alt+左键选中特效" 
-                                           FontSize="11" 
-                                           Foreground="{DynamicResource StatusTextColor}" 
-                                           Margin="0,12,0,0" 
-                                           TextAlignment="Center" />
+                                <StackPanel Grid.Row="3" Margin="0,12,0,0">
+                                    <TextBlock Text="服装操作：左键添加到变更前 | Ctrl+左键添加到变更后" 
+                                               FontSize="11" 
+                                               Foreground="{DynamicResource StatusTextColor}" 
+                                               TextAlignment="Center" />
+                                    <TextBlock Text="特效操作：先选特效，再Alt+左键点击服装即可添加" 
+                                               FontSize="11" 
+                                               Foreground="{DynamicResource StatusTextColor}" 
+                                               TextAlignment="Center"
+                                               Margin="0,4,0,0" />
+                                </StackPanel>
                                 
                                 <!-- 状态信息 -->
                                 <StackPanel Grid.Row="4" Orientation="Vertical" Margin="0,12,0,0">
@@ -835,7 +869,8 @@
                                 <!-- 变更区域标题 -->
                                 <TextBlock Grid.Row="0" Text="变更区域" 
                                            FontSize="18" 
-                                           FontWeight="600" 
+                                           FontFamily="{DynamicResource ThemeFontFamily}"
+                                           FontWeight="{DynamicResource ThemeFontWeight}"
                                            Foreground="{DynamicResource TitleTextColor}" 
                                            Margin="0,0,0,20" />
                                 
@@ -864,7 +899,8 @@
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text="变更前" 
                                                        FontSize="14" 
-                                                       FontWeight="600" 
+                                                       FontFamily="{DynamicResource ThemeFontFamily}"
+                                                       FontWeight="{DynamicResource ThemeFontWeight}"
                                                        Foreground="{DynamicResource TitleTextColor}" 
                                                        Margin="0,0,0,12" />
                                             <Border x:Name="beforePanel" 
@@ -896,7 +932,8 @@
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text="变更后" 
                                                        FontSize="14" 
-                                                       FontWeight="600" 
+                                                       FontFamily="{DynamicResource ThemeFontFamily}"
+                                                       FontWeight="{DynamicResource ThemeFontWeight}"
                                                        Foreground="{DynamicResource TitleTextColor}" 
                                                        Margin="0,0,0,12" />
                                             <Border x:Name="afterPanel" 
@@ -957,7 +994,8 @@
                         <TextBlock Grid.Row="0"
                                    Text="常用工具" 
                                    FontSize="18" 
-                                   FontWeight="600" 
+                                   FontFamily="{DynamicResource ThemeFontFamily}"
+                                   FontWeight="{DynamicResource ThemeFontWeight}"
                                    Foreground="{DynamicResource TitleTextColor}"
                                    Margin="0,0,0,24" />
                         

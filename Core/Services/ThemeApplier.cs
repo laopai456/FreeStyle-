@@ -101,6 +101,33 @@ namespace FS服装搭配专家v1._0.Core.Services
             resources["TitleTextColor"] = CreateBrush(theme.Styles.Text.Title);
             resources["BodyTextColor"] = CreateBrush(theme.Styles.Text.Body);
 
+            if (!string.IsNullOrEmpty(theme.Styles.Text.FontFamily))
+            {
+                resources["ThemeFontFamily"] = new FontFamily(theme.Styles.Text.FontFamily);
+            }
+            else
+            {
+                resources["ThemeFontFamily"] = new FontFamily("Microsoft YaHei");
+            }
+
+            if (!string.IsNullOrEmpty(theme.Styles.Text.FontWeight))
+            {
+                resources["ThemeFontWeight"] = ParseFontWeight(theme.Styles.Text.FontWeight);
+            }
+            else
+            {
+                resources["ThemeFontWeight"] = FontWeights.Normal;
+            }
+
+            if (!string.IsNullOrEmpty(theme.Styles.ListItem.Foreground))
+            {
+                resources["ListItemForegroundColor"] = CreateBrush(theme.Styles.ListItem.Foreground);
+            }
+            else
+            {
+                resources["ListItemForegroundColor"] = CreateBrush(theme.Styles.Text.Primary);
+            }
+
             resources["ButtonGlassColor"] = CreateBrush(theme.Styles.Button.Background);
             resources["ButtonGlassPressedColor"] = CreateBrush(theme.Styles.Button.PressedBackground);
             resources["ButtonForegroundColor"] = CreateBrush(theme.Styles.Button.Foreground);
@@ -132,6 +159,33 @@ namespace FS服装搭配专家v1._0.Core.Services
             resources["StatusTextColor"] = CreateBrush(theme.Styles.Text.Secondary);
             resources["TitleTextColor"] = CreateBrush(theme.Styles.Text.Title);
             resources["BodyTextColor"] = CreateBrush(theme.Styles.Text.Body);
+
+            if (!string.IsNullOrEmpty(theme.Styles.Text.FontFamily))
+            {
+                resources["ThemeFontFamily"] = new FontFamily(theme.Styles.Text.FontFamily);
+            }
+            else
+            {
+                resources["ThemeFontFamily"] = new FontFamily("Microsoft YaHei");
+            }
+
+            if (!string.IsNullOrEmpty(theme.Styles.Text.FontWeight))
+            {
+                resources["ThemeFontWeight"] = ParseFontWeight(theme.Styles.Text.FontWeight);
+            }
+            else
+            {
+                resources["ThemeFontWeight"] = FontWeights.Normal;
+            }
+
+            if (!string.IsNullOrEmpty(theme.Styles.ListItem.Foreground))
+            {
+                resources["ListItemForegroundColor"] = CreateBrush(theme.Styles.ListItem.Foreground);
+            }
+            else
+            {
+                resources["ListItemForegroundColor"] = CreateBrush(theme.Styles.Text.Primary);
+            }
 
             resources["ButtonGlassColor"] = CreateBrush(theme.Styles.Button.Background);
             resources["ButtonGlassPressedColor"] = CreateBrush(theme.Styles.Button.PressedBackground);
@@ -261,6 +315,25 @@ namespace FS服装搭配专家v1._0.Core.Services
                 Opacity = shadow.Opacity,
                 Direction = 270,
                 Color = ParseColor(shadow.Color)
+            };
+        }
+
+        private FontWeight ParseFontWeight(string weight)
+        {
+            return weight?.ToLower() switch
+            {
+                "thin" => FontWeights.Thin,
+                "extralight" => FontWeights.ExtraLight,
+                "light" => FontWeights.Light,
+                "normal" => FontWeights.Normal,
+                "medium" => FontWeights.Medium,
+                "semibold" => FontWeights.SemiBold,
+                "bold" => FontWeights.Bold,
+                "extrabold" => FontWeights.ExtraBold,
+                "black" => FontWeights.Black,
+                "ultralight" => FontWeights.UltraLight,
+                "ultrabold" => FontWeights.UltraBold,
+                _ => FontWeights.Normal
             };
         }
     }

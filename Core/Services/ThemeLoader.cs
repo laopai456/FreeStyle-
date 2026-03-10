@@ -304,7 +304,9 @@ namespace FS服装搭配专家v1._0.Core.Services
                         Primary = "#FFFFFFFF",
                         Secondary = "#B0FFFFFF",
                         Title = "#FF6DD5FA",
-                        Body = "#E0FFFFFF"
+                        Body = "#E0FFFFFF",
+                        FontFamily = "Source Han Sans SC",
+                        FontWeight = "Light"
                     },
                     ListItem = new ListItemStyle
                     {
@@ -312,7 +314,8 @@ namespace FS服装搭配专家v1._0.Core.Services
                         HoverBackground = "#40FFFFFF",
                         SelectedBackground = "#50FFFFFF",
                         BorderColor = "#40FFFFFF",
-                        CornerRadius = 12
+                        CornerRadius = 12,
+                        Foreground = "#FFFFFFFF"
                     },
                     Tab = new TabStyle
                     {

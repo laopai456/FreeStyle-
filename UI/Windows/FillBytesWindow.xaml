@@ -17,6 +17,10 @@
         <SolidColorBrush x:Key="StatusTextColor" Color="#FF999999" />
         <SolidColorBrush x:Key="ButtonGlassColor" Color="#25FFFFFF" />
         
+        <!-- 字体资源 -->
+        <FontFamily x:Key="ThemeFontFamily">Microsoft YaHei</FontFamily>
+        <FontWeight x:Key="ThemeFontWeight">Normal</FontWeight>
+        
         <Style x:Key="GlassButton" TargetType="Button">
             <Setter Property="Background" Value="{StaticResource ButtonGlassColor}" />
             <Setter Property="Foreground" Value="{StaticResource TextColor}" />
@@ -24,7 +28,8 @@
             <Setter Property="BorderBrush" Value="{StaticResource GlassBorderColor}" />
             <Setter Property="Padding" Value="14,8" />
             <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="FontWeight" Value="600" />
+            <Setter Property="FontFamily" Value="{DynamicResource ThemeFontFamily}" />
+            <Setter Property="FontWeight" Value="{DynamicResource ThemeFontWeight}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -112,7 +117,8 @@
             <Grid Grid.Row="0" Margin="0,0,0,16">
                 <TextBlock Text="补充字节"
                            FontSize="18"
-                           FontWeight="600"
+                           FontFamily="{DynamicResource ThemeFontFamily}"
+                           FontWeight="{DynamicResource ThemeFontWeight}"
                            Foreground="{StaticResource TextColor}" />
                 <Button x:Name="btnClose"
                         Content="✕"

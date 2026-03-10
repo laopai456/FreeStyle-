@@ -20,6 +20,11 @@
         <SolidColorBrush x:Key="ListItemBackgroundColor" Color="#1AFFFFFF" />
         <SolidColorBrush x:Key="ListItemHoverBackgroundColor" Color="#33FFFFFF" />
         <SolidColorBrush x:Key="ListItemSelectedBackgroundColor" Color="#40FFFFFF" />
+        <SolidColorBrush x:Key="ListItemForegroundColor" Color="#FFFFFFFF" />
+        
+        <!-- 字体资源 -->
+        <FontFamily x:Key="ThemeFontFamily">Microsoft YaHei</FontFamily>
+        <FontWeight x:Key="ThemeFontWeight">Normal</FontWeight>
         
         <LinearGradientBrush x:Key="NeonGradient" StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#FF667EEA" Offset="0" />
@@ -44,7 +49,8 @@
             <Setter Property="Padding" Value="14,8" />
             <Setter Property="Margin" Value="4" />
             <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="FontWeight" Value="600" />
+            <Setter Property="FontFamily" Value="{DynamicResource ThemeFontFamily}" />
+            <Setter Property="FontWeight" Value="{DynamicResource ThemeFontWeight}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -70,6 +76,8 @@
             <Setter Property="BorderBrush" Value="{DynamicResource GlassBorderColor}" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontFamily" Value="{DynamicResource ThemeFontFamily}" />
+            <Setter Property="FontWeight" Value="{DynamicResource ThemeFontWeight}" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="CaretBrush" Value="White" />
@@ -95,6 +103,7 @@
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="BorderBrush" Value="Transparent" />
             <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Foreground" Value="{DynamicResource ListItemForegroundColor}" />
             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
             <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
             <Setter Property="ItemContainerStyle">
@@ -106,6 +115,7 @@
                         <Setter Property="Margin" Value="2" />
                         <Setter Property="Padding" Value="10,8" />
                         <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Foreground" Value="{DynamicResource ListItemForegroundColor}" />
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="ListBoxItem">
@@ -166,6 +176,8 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="地图库："
                            FontSize="14"
+                           FontFamily="{DynamicResource ThemeFontFamily}"
+                           FontWeight="{DynamicResource ThemeFontWeight}"
                            Foreground="{DynamicResource StatusTextColor}"
                            VerticalAlignment="Center"
                            Margin="0,0,12,0" />
@@ -234,7 +246,9 @@
                             <DataTemplate>
                                 <TextBlock Text="{Binding MapName}"
                                            FontSize="13"
-                                           Foreground="{DynamicResource TextColor}"
+                                           FontFamily="{DynamicResource ThemeFontFamily}"
+                                           FontWeight="{DynamicResource ThemeFontWeight}"
+                                           Foreground="{DynamicResource ListItemForegroundColor}"
                                            TextTrimming="CharacterEllipsis" />
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -272,7 +286,8 @@
                                Grid.Row="1"
                                Text="请选择地图"
                                FontSize="14"
-                               FontWeight="600"
+                               FontFamily="{DynamicResource ThemeFontFamily}"
+                               FontWeight="{DynamicResource ThemeFontWeight}"
                                Foreground="{DynamicResource TitleTextColor}"
                                TextAlignment="Center"
                                Margin="0,0,0,12" />
@@ -301,6 +316,8 @@
             <TextBlock x:Name="txtStatus"
                        Text="准备就绪"
                        FontSize="12"
+                       FontFamily="{DynamicResource ThemeFontFamily}"
+                       FontWeight="{DynamicResource ThemeFontWeight}"
                        Foreground="{DynamicResource StatusTextColor}" />
         </Border>
     </Grid>

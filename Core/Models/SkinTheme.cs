@@ -73,6 +73,8 @@ namespace FS服装搭配专家v1._0.Core.Models
         public string Secondary { get; set; } = "#FFCCCCCC";
         public string Title { get; set; } = "#FFFFFFFF";
         public string Body { get; set; } = "#E6FFFFFF";
+        public string? FontFamily { get; set; }
+        public string? FontWeight { get; set; }
     }
 
     public class ListItemStyle
@@ -82,6 +84,7 @@ namespace FS服装搭配专家v1._0.Core.Models
         public string SelectedBackground { get; set; } = "#33FFFFFF";
         public string BorderColor { get; set; } = "#33FFFFFF";
         public double CornerRadius { get; set; } = 12;
+        public string? Foreground { get; set; }
     }
 
     public class TabStyle

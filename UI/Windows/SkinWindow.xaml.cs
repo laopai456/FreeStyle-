@@ -20,7 +20,45 @@ namespace FS服装搭配专家v1._0
             InitializeComponent();
             skinManager = manager;
             themeApplier = new ThemeApplier();
+            ApplyCurrentThemeFont();
             InitializeThemeList();
+        }
+
+        private void ApplyCurrentThemeFont()
+        {
+            if (skinManager.CurrentTheme != null)
+            {
+                var theme = skinManager.CurrentTheme;
+                
+                if (!string.IsNullOrEmpty(theme.Styles.Text.FontFamily))
+                {
+                    Resources["ThemeFontFamily"] = new FontFamily(theme.Styles.Text.FontFamily);
+                }
+                
+                if (!string.IsNullOrEmpty(theme.Styles.Text.FontWeight))
+                {
+                    Resources["ThemeFontWeight"] = ParseFontWeight(theme.Styles.Text.FontWeight);
+                }
+            }
+        }
+
+        private FontWeight ParseFontWeight(string weight)
+        {
+            return weight?.ToLower() switch
+            {
+                "thin" => FontWeights.Thin,
+                "extralight" => FontWeights.ExtraLight,
+                "light" => FontWeights.Light,
+                "normal" => FontWeights.Normal,
+                "medium" => FontWeights.Medium,
+                "semibold" => FontWeights.SemiBold,
+                "bold" => FontWeights.Bold,
+                "extrabold" => FontWeights.ExtraBold,
+                "black" => FontWeights.Black,
+                "ultralight" => FontWeights.UltraLight,
+                "ultrabold" => FontWeights.UltraBold,
+                _ => FontWeights.Normal
+            };
         }
 
         private void InitializeThemeList()
