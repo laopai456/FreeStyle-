@@ -307,11 +307,11 @@
             <Setter Property="BorderBrush" Value="{DynamicResource GlassHighlightColor}" />
             <Setter Property="Effect">
                 <Setter.Value>
-                    <DropShadowEffect BlurRadius="32" 
-                                      ShadowDepth="10" 
-                                      Opacity="0.12" 
+                    <DropShadowEffect BlurRadius="40" 
+                                      ShadowDepth="0" 
+                                      Opacity="0.6" 
                                       Direction="270" 
-                                      Color="#000000" />
+                                      Color="#6DD5FA" />
                 </Setter.Value>
             </Setter>
         </Style>

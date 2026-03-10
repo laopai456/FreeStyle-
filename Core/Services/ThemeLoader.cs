@@ -271,15 +271,15 @@ namespace FS服装搭配专家v1._0.Core.Services
                     },
                     Card = new CardStyle
                     {
-                        Background = "#40FFFFFF",
-                        BorderColor = "#50FFFFFF",
-                        ContentPanelBackground = "#20FFFFFF",
+                        Background = "#8CFFFFFF",
+                        BorderColor = "#8CFFFFFF",
+                        ContentPanelBackground = "#8CFFFFFF",
                         CornerRadius = 16,
                         Shadow = new ShadowStyle
                         {
-                            BlurRadius = 60,
-                            ShadowDepth = 0,
-                            Opacity = 0.5,
+                            BlurRadius = 30,
+                            ShadowDepth = 8,
+                            Opacity = 0.8,
                             Color = "#6DD5FA"
                         }
                     },
@@ -290,7 +290,7 @@ namespace FS服装搭配专家v1._0.Core.Services
                         PressedBackground = "#60FFFFFF",
                         BorderColor = "#40FFFFFF",
                         CornerRadius = 16,
-                        Foreground = "#FFFFFFFF",
+                        Foreground = "#E6000000",
                         Shadow = new ShadowStyle
                         {
                             BlurRadius = 20,
@@ -301,12 +301,12 @@ namespace FS服装搭配专家v1._0.Core.Services
                     },
                     Text = new TextStyle
                     {
-                        Primary = "#FFFFFFFF",
-                        Secondary = "#B0FFFFFF",
-                        Title = "#FF6DD5FA",
-                        Body = "#E0FFFFFF",
+                        Primary = "#E6000000",
+                        Secondary = "#B0000000",
+                        Title = "#E6000000",
+                        Body = "#E0000000",
                         FontFamily = "Source Han Sans SC",
-                        FontWeight = "Light"
+                        FontWeight = "Bold"
                     },
                     ListItem = new ListItemStyle
                     {
@@ -315,7 +315,7 @@ namespace FS服装搭配专家v1._0.Core.Services
                         SelectedBackground = "#50FFFFFF",
                         BorderColor = "#40FFFFFF",
                         CornerRadius = 12,
-                        Foreground = "#FFFFFFFF"
+                        Foreground = "#E6000000"
                     },
                     Tab = new TabStyle
                     {
@@ -323,14 +323,14 @@ namespace FS服装搭配专家v1._0.Core.Services
                         SelectedBackground = "#50FFFFFF",
                         HoverBackground = "#30FFFFFF",
                         BorderColor = "#40FFFFFF",
-                        SelectedForeground = "#FFFFFFFF",
+                        SelectedForeground = "#E6000000",
                         CornerRadius = 8
                     },
                     TextBox = new TextBoxStyle
                     {
                         Background = "#25FFFFFF",
                         BorderColor = "#50FFFFFF",
-                        Foreground = "#FFFFFFFF",
+                        Foreground = "#E6000000",
                         CornerRadius = 8
                     },
                     ScrollBar = new ScrollBarStyle
