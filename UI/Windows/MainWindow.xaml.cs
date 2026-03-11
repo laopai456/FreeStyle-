@@ -86,6 +86,12 @@ namespace FS服装搭配专家v1._0
                 InitializeComponent();
                 Console.WriteLine("InitializeComponent()完成");
                 
+                // 从配置文件加载窗口尺寸
+                LoadWindowSize();
+                
+                // 注册窗口尺寸变化事件
+                this.SizeChanged += MainWindow_SizeChanged;
+                
                 // 初始化控制台开关状态
                 UpdateConsoleToggleState();
                 
@@ -2210,6 +2216,46 @@ namespace FS服装搭配专家v1._0
                 picLoding.Visibility = Visibility.Collapsed;
                 labLoadingStatus.Visibility = Visibility.Collapsed;
             });
+        }
+
+        /// <summary>
+        /// 从配置文件加载窗口尺寸
+        /// </summary>
+        private void LoadWindowSize()
+        {
+            try
+            {
+                var configService = Core.Config.ConfigService.Instance;
+                this.Width = configService.MainWindowWidth;
+                this.Height = configService.MainWindowHeight;
+                Console.WriteLine($"[MainWindow] 从配置文件加载窗口尺寸: {Width}x{Height}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[MainWindow] 加载窗口尺寸失败: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// 窗口尺寸变化事件处理
+        /// </summary>
+        private void MainWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            try
+            {
+                // 只在窗口正常状态下保存尺寸
+                if (this.WindowState == WindowState.Normal)
+                {
+                    var configService = Core.Config.ConfigService.Instance;
+                    configService.MainWindowWidth = this.ActualWidth;
+                    configService.MainWindowHeight = this.ActualHeight;
+                    Console.WriteLine($"[MainWindow] 窗口尺寸已保存: {ActualWidth}x{ActualHeight}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[MainWindow] 保存窗口尺寸失败: {ex.Message}");
+            }
         }
     }
 }

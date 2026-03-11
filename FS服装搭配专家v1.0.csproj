@@ -15,6 +15,8 @@
   <ItemGroup>
     <Page Include="UI\App.xaml" />
     <Page Include="UI\Windows\*.xaml" />
+    <Page Include="UI\Resources\Styles.xaml" />
+    <Page Include="UI\Resources\Strings.xaml" />
   </ItemGroup>
 
   <ItemGroup>

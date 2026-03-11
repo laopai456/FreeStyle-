@@ -18,10 +18,12 @@ namespace FS服装搭配专家v1._0
         public SkinWindow(SkinManager manager)
         {
             InitializeComponent();
+            LoadWindowSize();
             skinManager = manager;
             themeApplier = new ThemeApplier();
             ApplyCurrentTheme();
             InitializeThemeList();
+            this.SizeChanged += SkinWindow_SizeChanged;
         }
 
         private void ApplyCurrentTheme()
@@ -250,6 +252,43 @@ namespace FS服装搭配专家v1._0
             catch
             {
                 return Colors.Transparent;
+            }
+        }
+
+        /// <summary>
+        /// 从配置文件加载窗口尺寸
+        /// </summary>
+        private void LoadWindowSize()
+        {
+            try
+            {
+                var configService = Core.Config.ConfigService.Instance;
+                this.Width = configService.SkinWindowWidth;
+                this.Height = configService.SkinWindowHeight;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[SkinWindow] 加载窗口尺寸失败: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// 窗口尺寸变化事件处理
+        /// </summary>
+        private void SkinWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            try
+            {
+                if (this.WindowState == WindowState.Normal)
+                {
+                    var configService = Core.Config.ConfigService.Instance;
+                    configService.SkinWindowWidth = this.ActualWidth;
+                    configService.SkinWindowHeight = this.ActualHeight;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[SkinWindow] 保存窗口尺寸失败: {ex.Message}");
             }
         }
     }

@@ -21,11 +21,13 @@ namespace FS服装搭配专家v1._0
         {
             Console.WriteLine("TeamSelectionWindow构造函数开始");
             InitializeComponent();
+            LoadWindowSize();
             Console.WriteLine("InitializeComponent完成");
             teamLogos = new Dictionary<string, string>();
             Console.WriteLine("开始加载球队logo");
             LoadTeamLogos();
             Console.WriteLine("加载球队logo完成");
+            this.SizeChanged += TeamSelectionWindow_SizeChanged;
         }
         
         private void LoadTeamLogos()
@@ -231,6 +233,43 @@ namespace FS服装搭配专家v1._0
             else
             {
                 MessageBox.Show("请选择一个球队", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        /// <summary>
+        /// 从配置文件加载窗口尺寸
+        /// </summary>
+        private void LoadWindowSize()
+        {
+            try
+            {
+                var configService = Core.Config.ConfigService.Instance;
+                this.Width = configService.TeamSelectionWindowWidth;
+                this.Height = configService.TeamSelectionWindowHeight;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[TeamSelectionWindow] 加载窗口尺寸失败: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// 窗口尺寸变化事件处理
+        /// </summary>
+        private void TeamSelectionWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            try
+            {
+                if (this.WindowState == WindowState.Normal)
+                {
+                    var configService = Core.Config.ConfigService.Instance;
+                    configService.TeamSelectionWindowWidth = this.ActualWidth;
+                    configService.TeamSelectionWindowHeight = this.ActualHeight;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[TeamSelectionWindow] 保存窗口尺寸失败: {ex.Message}");
             }
         }
     }

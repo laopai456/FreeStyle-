@@ -220,7 +220,7 @@ namespace FS服装搭配专家v1._0
         public static string ToSimplified(string source)
         {
             string text = new string(' ', source.Length);
-            int num = LCMapString(2048, 33554432, source, source.Length, text, source.Length);
+            int num = LCMapString(Win32.Constants.LOCALE_SYSTEM_DEFAULT, Win32.Constants.LCMAP_SIMPLIFIED_CHINESE, source, source.Length, text, source.Length);
             return text;
         }
 
@@ -310,13 +310,6 @@ namespace FS服装搭配专家v1._0
             }
         }
 
-        // Token: 0x0400011A RID: 282
-        private const int LOCALE_SYSTEM_DEFAULT = 2048;
 
-        // Token: 0x0400011B RID: 283
-        private const int LCMAP_SIMPLIFIED_CHINESE = 33554432;
-
-        // Token: 0x0400011C RID: 284
-        private const int LCMAP_TRADITIONAL_CHINESE = 67108864;
     }
 }

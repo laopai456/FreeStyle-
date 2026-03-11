@@ -9,9 +9,25 @@ namespace FS服装搭配专家v1._0
 {
     namespace Debugger
     {
+        // 日志级别枚举
+        public enum LogLevel
+        {
+            Debug,
+            Info,
+            Warning,
+            Error,
+            Critical
+        }
+
         // Token: 0x02000010 RID: 16
         public class OperationDebugger
         {
+            // 当前日志级别
+            public static LogLevel CurrentLogLevel { get; set; } = LogLevel.Info;
+
+            // 日志保留天数
+            private static int LogRetentionDays { get; set; } = 7;
+
             // Token: 0x0600008A RID: 138 RVA: 0x0000E820 File Offset: 0x0000CA20
             public static void Initialize()
             {
@@ -19,6 +35,8 @@ namespace FS服装搭配专家v1._0
                 {
                     Directory.CreateDirectory(Environment.CurrentDirectory + @"\logs");
                 }
+                // 清理旧日志
+                CleanupOldLogs();
             }
 
             // Token: 0x0600008B RID: 139 RVA: 0x0000E86C File Offset: 0x0000CA6C
@@ -118,9 +136,40 @@ namespace FS服装搭配专家v1._0
                 }));
             }
 
-            // Token: 0x06000094 RID: 148 RVA: 0x0000EAA8 File Offset: 0x0000CCA8
-            private static void Log(string message)
+            // 清理旧日志文件
+            private static void CleanupOldLogs()
             {
+                try
+                {
+                    string logDirectory = Environment.CurrentDirectory + @"\logs";
+                    if (Directory.Exists(logDirectory))
+                    {
+                        var logFiles = Directory.GetFiles(logDirectory, "debug_*.txt");
+                        foreach (var file in logFiles)
+                        {
+                            FileInfo fileInfo = new FileInfo(file);
+                            if (fileInfo.LastWriteTime < DateTime.Now.AddDays(-LogRetentionDays))
+                            {
+                                fileInfo.Delete();
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // 避免清理日志时的错误影响主程序
+                }
+            }
+
+            // Token: 0x06000094 RID: 148 RVA: 0x0000EAA8 File Offset: 0x0000CCA8
+            private static void Log(LogLevel level, string message)
+            {
+                // 根据当前日志级别过滤
+                if (level < CurrentLogLevel)
+                {
+                    return;
+                }
+
                 string text = Environment.CurrentDirectory + @"\logs\debug_" + DateTime.Now.ToString("yyyyMMdd") + ".txt";
                 try
                 {
@@ -129,7 +178,9 @@ namespace FS服装搭配专家v1._0
                         streamWriter.WriteLine(string.Concat(new string[]
                         {
                             DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"),
-                            " ",
+                            " [",
+                            level.ToString().ToUpper(),
+                            "] ",
                             message
                         }));
                     }
@@ -137,6 +188,12 @@ namespace FS服装搭配专家v1._0
                 catch (Exception ex)
                 {
                 }
+            }
+
+            // 重载Log方法，保持向后兼容
+            private static void Log(string message)
+            {
+                Log(LogLevel.Info, message);
             }
         }
     }

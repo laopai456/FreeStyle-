@@ -33,11 +33,35 @@ namespace FS服装搭配专家v1._0.Core.Config
         [JsonPropertyName("consoleVisible")]
         public bool ConsoleVisible { get; set; } = false;
 
-        [JsonPropertyName("windowWidth")]
-        public double WindowWidth { get; set; } = 1440;
+        [JsonPropertyName("mainWindowWidth")]
+        public double MainWindowWidth { get; set; } = 1440;
 
-        [JsonPropertyName("windowHeight")]
-        public double WindowHeight { get; set; } = 768;
+        [JsonPropertyName("mainWindowHeight")]
+        public double MainWindowHeight { get; set; } = 768;
+
+        [JsonPropertyName("bgCropWindowWidth")]
+        public double BgCropWindowWidth { get; set; } = 800;
+
+        [JsonPropertyName("bgCropWindowHeight")]
+        public double BgCropWindowHeight { get; set; } = 600;
+
+        [JsonPropertyName("fillBytesWindowWidth")]
+        public double FillBytesWindowWidth { get; set; } = 800;
+
+        [JsonPropertyName("fillBytesWindowHeight")]
+        public double FillBytesWindowHeight { get; set; } = 600;
+
+        [JsonPropertyName("skinWindowWidth")]
+        public double SkinWindowWidth { get; set; } = 600;
+
+        [JsonPropertyName("skinWindowHeight")]
+        public double SkinWindowHeight { get; set; } = 400;
+
+        [JsonPropertyName("teamSelectionWindowWidth")]
+        public double TeamSelectionWindowWidth { get; set; } = 800;
+
+        [JsonPropertyName("teamSelectionWindowHeight")]
+        public double TeamSelectionWindowHeight { get; set; } = 600;
     }
 
     public class DataConfig

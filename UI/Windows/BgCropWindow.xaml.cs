@@ -30,8 +30,10 @@ namespace FS服装搭配专家v1._0.UI.Windows
         public BgCropWindow()
         {
             InitializeComponent();
+            LoadWindowSize();
             LoadConfig();
             InitBgTypeComboBox();
+            this.SizeChanged += BgCropWindow_SizeChanged;
         }
 
         public BgCropWindow(string gameDir) : this()
@@ -279,6 +281,43 @@ namespace FS服装搭配专家v1._0.UI.Windows
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        /// <summary>
+        /// 从配置文件加载窗口尺寸
+        /// </summary>
+        private void LoadWindowSize()
+        {
+            try
+            {
+                var configService = Core.Config.ConfigService.Instance;
+                this.Width = configService.BgCropWindowWidth;
+                this.Height = configService.BgCropWindowHeight;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[BgCropWindow] 加载窗口尺寸失败: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// 窗口尺寸变化事件处理
+        /// </summary>
+        private void BgCropWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            try
+            {
+                if (this.WindowState == WindowState.Normal)
+                {
+                    var configService = Core.Config.ConfigService.Instance;
+                    configService.BgCropWindowWidth = this.ActualWidth;
+                    configService.BgCropWindowHeight = this.ActualHeight;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[BgCropWindow] 保存窗口尺寸失败: {ex.Message}");
+            }
         }
     }
 

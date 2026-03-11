@@ -17,7 +17,9 @@ namespace FS服装搭配专家v1._0.UI.Windows
         public FillBytesWindow()
         {
             InitializeComponent();
+            LoadWindowSize();
             InitializeConfig();
+            this.SizeChanged += FillBytesWindow_SizeChanged;
         }
 
         public FillBytesWindow(string gameDir) : this()
@@ -320,6 +322,43 @@ namespace FS服装搭配专家v1._0.UI.Windows
         {
             SaveReferenceBytes();
             this.Close();
+        }
+
+        /// <summary>
+        /// 从配置文件加载窗口尺寸
+        /// </summary>
+        private void LoadWindowSize()
+        {
+            try
+            {
+                var configService = ConfigService.Instance;
+                this.Width = configService.FillBytesWindowWidth;
+                this.Height = configService.FillBytesWindowHeight;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[FillBytesWindow] 加载窗口尺寸失败: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// 窗口尺寸变化事件处理
+        /// </summary>
+        private void FillBytesWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            try
+            {
+                if (this.WindowState == WindowState.Normal)
+                {
+                    var configService = ConfigService.Instance;
+                    configService.FillBytesWindowWidth = this.ActualWidth;
+                    configService.FillBytesWindowHeight = this.ActualHeight;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[FillBytesWindow] 保存窗口尺寸失败: {ex.Message}");
+            }
         }
     }
 

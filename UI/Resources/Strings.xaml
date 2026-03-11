@@ -1,0 +1,43 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- 通用提示文本 -->
+    <sys:String x:Key="Message_ConfirmExit">确定要退出程序吗？</sys:String>
+    <sys:String x:Key="Message_OperationSuccess">操作成功！</sys:String>
+    <sys:String x:Key="Message_OperationFailed">操作失败！</sys:String>
+    <sys:String x:Key="Message_FileNotFound">文件不存在！</sys:String>
+    <sys:String x:Key="Message_InvalidInput">输入无效！</sys:String>
+    
+    <!-- 主窗口提示文本 -->
+    <sys:String x:Key="MainWindow_Title">FS服装搭配专家</sys:String>
+    <sys:String x:Key="MainWindow_Loading">加载中...</sys:String>
+    <sys:String x:Key="MainWindow_Ready">准备就绪</sys:String>
+    
+    <!-- 背景裁剪窗口提示文本 -->
+    <sys:String x:Key="BgCropWindow_Title">背景裁剪</sys:String>
+    <sys:String x:Key="BgCropWindow_SelectImage">请选择图片</sys:String>
+    <sys:String x:Key="BgCropWindow_CropSuccess">裁剪成功！</sys:String>
+    
+    <!-- 填充字节窗口提示文本 -->
+    <sys:String x:Key="FillBytesWindow_Title">填充字节</sys:String>
+    <sys:String x:Key="FillBytesWindow_SelectFile">请选择文件</sys:String>
+    <sys:String x:Key="FillBytesWindow_FillSuccess">填充成功！</sys:String>
+    
+    <!-- 皮肤窗口提示文本 -->
+    <sys:String x:Key="SkinWindow_Title">皮肤设置</sys:String>
+    <sys:String x:Key="SkinWindow_SelectTheme">请选择主题</sys:String>
+    <sys:String x:Key="SkinWindow_ThemeApplied">主题应用成功！</sys:String>
+    
+    <!-- 团队选择窗口提示文本 -->
+    <sys:String x:Key="TeamSelectionWindow_Title">选择团队</sys:String>
+    <sys:String x:Key="TeamSelectionWindow_SelectTeam">请选择一个团队</sys:String>
+    <sys:String x:Key="TeamSelectionWindow_ConfirmSelection">确认选择</sys:String>
+    
+    <!-- 错误消息 -->
+    <sys:String x:Key="Error_LoadFailed">加载失败！</sys:String>
+    <sys:String x:Key="Error_SaveFailed">保存失败！</sys:String>
+    <sys:String x:Key="Error_InvalidFile">无效的文件！</sys:String>
+    <sys:String x:Key="Error_NetworkError">网络错误！</sys:String>
+    
+</ResourceDictionary>

@@ -240,22 +240,102 @@ namespace FS服装搭配专家v1._0.Core.Config
             }
         }
 
-        public double WindowWidth
+        public double MainWindowWidth
         {
-            get => _config.UI.WindowWidth;
+            get => _config.UI.MainWindowWidth;
             set
             {
-                _config.UI.WindowWidth = value;
+                _config.UI.MainWindowWidth = value;
                 SaveConfig();
             }
         }
 
-        public double WindowHeight
+        public double MainWindowHeight
         {
-            get => _config.UI.WindowHeight;
+            get => _config.UI.MainWindowHeight;
             set
             {
-                _config.UI.WindowHeight = value;
+                _config.UI.MainWindowHeight = value;
+                SaveConfig();
+            }
+        }
+
+        public double BgCropWindowWidth
+        {
+            get => _config.UI.BgCropWindowWidth;
+            set
+            {
+                _config.UI.BgCropWindowWidth = value;
+                SaveConfig();
+            }
+        }
+
+        public double BgCropWindowHeight
+        {
+            get => _config.UI.BgCropWindowHeight;
+            set
+            {
+                _config.UI.BgCropWindowHeight = value;
+                SaveConfig();
+            }
+        }
+
+        public double FillBytesWindowWidth
+        {
+            get => _config.UI.FillBytesWindowWidth;
+            set
+            {
+                _config.UI.FillBytesWindowWidth = value;
+                SaveConfig();
+            }
+        }
+
+        public double FillBytesWindowHeight
+        {
+            get => _config.UI.FillBytesWindowHeight;
+            set
+            {
+                _config.UI.FillBytesWindowHeight = value;
+                SaveConfig();
+            }
+        }
+
+        public double SkinWindowWidth
+        {
+            get => _config.UI.SkinWindowWidth;
+            set
+            {
+                _config.UI.SkinWindowWidth = value;
+                SaveConfig();
+            }
+        }
+
+        public double SkinWindowHeight
+        {
+            get => _config.UI.SkinWindowHeight;
+            set
+            {
+                _config.UI.SkinWindowHeight = value;
+                SaveConfig();
+            }
+        }
+
+        public double TeamSelectionWindowWidth
+        {
+            get => _config.UI.TeamSelectionWindowWidth;
+            set
+            {
+                _config.UI.TeamSelectionWindowWidth = value;
+                SaveConfig();
+            }
+        }
+
+        public double TeamSelectionWindowHeight
+        {
+            get => _config.UI.TeamSelectionWindowHeight;
+            set
+            {
+                _config.UI.TeamSelectionWindowHeight = value;
                 SaveConfig();
             }
         }
