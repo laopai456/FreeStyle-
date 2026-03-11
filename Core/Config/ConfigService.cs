@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using Microsoft.Win32;
 
 namespace FS服装搭配专家v1._0.Core.Config
 {
@@ -13,6 +14,17 @@ namespace FS服装搭配专家v1._0.Core.Config
 
         private readonly string _configPath;
         private AppConfiguration _config;
+
+        private static readonly string[] CommonGamePaths = new[]
+        {
+            @"C:\Program Files (x86)\T2CN\街头篮球",
+            @"C:\Program Files\T2CN\街头篮球",
+            @"D:\T2CN\街头篮球",
+            @"D:\Program Files (x86)\T2CN\街头篮球",
+            @"E:\T2CN\街头篮球",
+            @"E:\Program Files (x86)\T2CN\街头篮球",
+            @"F:\T2CN\街头篮球",
+        };
 
         public static ConfigService Instance
         {
@@ -263,6 +275,94 @@ namespace FS服装搭配专家v1._0.Core.Config
                 return size;
             }
             return null;
+        }
+
+        public bool IsValidGamePath(string path)
+        {
+            if (string.IsNullOrEmpty(path) || !Directory.Exists(path))
+                return false;
+            
+            string itemTextPak = Path.Combine(path, AppConfig.Files.ItemTextPak);
+            return File.Exists(itemTextPak);
+        }
+
+        public string? AutoDetectGamePath()
+        {
+            foreach (var path in CommonGamePaths)
+            {
+                if (IsValidGamePath(path))
+                {
+                    Console.WriteLine($"[ConfigService] 自动检测到游戏目录: {path}");
+                    return path;
+                }
+            }
+
+            string? registryPath = DetectFromRegistry();
+            if (!string.IsNullOrEmpty(registryPath) && IsValidGamePath(registryPath))
+            {
+                Console.WriteLine($"[ConfigService] 从注册表检测到游戏目录: {registryPath}");
+                return registryPath;
+            }
+
+            Console.WriteLine("[ConfigService] 未自动检测到游戏目录");
+            return null;
+        }
+
+        private string? DetectFromRegistry()
+        {
+            try
+            {
+                string[] registryPaths = new[]
+                {
+                    @"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall",
+                    @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"
+                };
+
+                foreach (var regPath in registryPaths)
+                {
+                    using (var key = Registry.LocalMachine.OpenSubKey(regPath))
+                    {
+                        if (key == null) continue;
+
+                        foreach (var subKeyName in key.GetSubKeyNames())
+                        {
+                            using (var subKey = key.OpenSubKey(subKeyName))
+                            {
+                                if (subKey == null) continue;
+
+                                string? displayName = subKey.GetValue("DisplayName") as string;
+                                string? installLocation = subKey.GetValue("InstallLocation") as string;
+
+                                if (!string.IsNullOrEmpty(displayName) && 
+                                    displayName.Contains("街头篮球") &&
+                                    !string.IsNullOrEmpty(installLocation))
+                                {
+                                    return installLocation;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[ConfigService] 注册表检测失败: {ex.Message}");
+            }
+
+            return null;
+        }
+
+        public void SetGameInstallDirectory(string path)
+        {
+            _config.Game.InstallDirectory = path;
+            SaveConfig();
+            Console.WriteLine($"[ConfigService] 游戏目录已设置: {path}");
+        }
+
+        public bool NeedsGamePathSetup()
+        {
+            return string.IsNullOrEmpty(_config.Game.InstallDirectory) || 
+                   !IsValidGamePath(_config.Game.InstallDirectory);
         }
     }
 }

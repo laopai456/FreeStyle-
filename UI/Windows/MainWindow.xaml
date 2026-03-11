@@ -620,6 +620,65 @@
                     <!-- 右上角按钮组 -->
                     <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
                         
+                        <!-- 设置按钮 -->
+                        <Button Name="btnSettings" 
+                                Width="36" 
+                                Height="36" 
+                                Click="btnSettings_Click"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                VerticalAlignment="Center"
+                                Margin="0,0,8,0"
+                                ToolTip="设置游戏目录">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="ButtonBorder" 
+                                        CornerRadius="10" 
+                                        Background="Transparent"
+                                        BorderThickness="1"
+                                        BorderBrush="Transparent">
+                                    <ContentPresenter x:Name="ContentPresenter" 
+                                                      Content="{TemplateBinding Content}"
+                                                      HorizontalAlignment="Center" 
+                                                      VerticalAlignment="Center"
+                                                      Margin="4" />
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal" />
+                                            <VisualState x:Name="MouseOver">
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
+                                                                                   Storyboard.TargetProperty="Background">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{DynamicResource HoverBackgroundColor}" />
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
+                                                                                   Storyboard.TargetProperty="BorderBrush">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{DynamicResource GlassBorderColor}" />
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
+                                                                                   Storyboard.TargetProperty="Background">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{DynamicResource PressedBackgroundColor}" />
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder" 
+                                                                                   Storyboard.TargetProperty="BorderBrush">
+                                                        <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{DynamicResource GlassBorderColor}" />
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <TextBlock Text="⚙" FontSize="18" Foreground="{DynamicResource TextColor}" />
+                    </Button>
+                        
                         <!-- 换肤按钮 -->
                         <Button Name="btnSkin" 
                                 Width="36" 

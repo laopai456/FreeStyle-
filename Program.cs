@@ -1,6 +1,8 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading;
 using FS服装搭配专家v1._0.Core.Config;
 
 namespace FS服装搭配专家v1._0
@@ -18,9 +20,24 @@ namespace FS服装搭配专家v1._0
         private const int SW_HIDE = 0;
         private const int SW_SHOW = 5;
         
+        private static Mutex? _mutex;
+        
         [STAThread]
         public static void Main(string[] args)
         {
+            bool createdNew;
+            _mutex = new Mutex(true, "FS服装搭配专家v1.0_SingleInstance", out createdNew);
+            
+            if (!createdNew)
+            {
+                System.Windows.MessageBox.Show(
+                    "程序已经在运行中！\n\n请检查任务栏或系统托盘。",
+                    "程序已运行",
+                    System.Windows.MessageBoxButton.OK,
+                    System.Windows.MessageBoxImage.Warning);
+                return;
+            }
+            
             bool consoleVisible = ConfigService.Instance.ConsoleVisible;
             
             if (consoleVisible)

@@ -11,6 +11,7 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Runtime.InteropServices;
+using Microsoft.Win32;
 using FS服装搭配专家v1._0.UI.Windows;
 using FS服装搭配专家v1._0.Core.Services;
 using FS服装搭配专家v1._0.Core.Models;
@@ -1950,17 +1951,52 @@ namespace FS服装搭配专家v1._0
                 this.strInstallDirectory = ConfigService.Instance.GameInstallDirectory;
                 Console.WriteLine("从 ConfigService 读取游戏目录: " + this.strInstallDirectory);
                 
-                if (string.IsNullOrEmpty(this.strInstallDirectory))
+                bool needsSetup = ConfigService.Instance.NeedsGamePathSetup();
+                
+                if (needsSetup)
                 {
-                    Console.WriteLine("游戏目录为空");
+                    Console.WriteLine("游戏目录需要设置");
+                    bool pathSet = false;
                     
-                    this.Dispatcher.Invoke(() =>
+                    string? detectedPath = ConfigService.Instance.AutoDetectGamePath();
+                    
+                    if (!string.IsNullOrEmpty(detectedPath))
                     {
-                        labErrorMsg.Text = "请先设置游戏安装目录。\n在 app.config.json 文件中添加游戏目录路径。";
-                        labErrorMsg.Visibility = Visibility.Visible;
-                    });
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            var result = MessageBox.Show(
+                                $"检测到游戏安装目录：\n{detectedPath}\n\n是否使用此路径？",
+                                "游戏目录检测",
+                                MessageBoxButton.YesNo,
+                                MessageBoxImage.Question);
+                            
+                            if (result == MessageBoxResult.Yes)
+                            {
+                                this.strInstallDirectory = detectedPath;
+                                ConfigService.Instance.SetGameInstallDirectory(detectedPath);
+                                pathSet = true;
+                                Console.WriteLine("用户确认使用检测到的路径: " + detectedPath);
+                            }
+                        });
+                    }
+                    
+                    if (!pathSet)
+                    {
+                        pathSet = ShowFolderDialog();
+                    }
+                    
+                    if (!pathSet)
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            labErrorMsg.Text = "请选择游戏安装目录后重新启动程序。";
+                            labErrorMsg.Visibility = Visibility.Visible;
+                        });
+                        return;
+                    }
                 }
-                else
+                
+                if (!string.IsNullOrEmpty(this.strInstallDirectory))
                 {
                     Console.WriteLine("游戏目录: " + this.strInstallDirectory);
                     
@@ -1993,7 +2029,6 @@ namespace FS服装搭配专家v1._0
                         }
                     }
                 }
-                // 不检查路径有效性，因为用户确认路径正确
                 
                 // 创建必要的目录
                 if (!Directory.Exists(this.cookiename))
@@ -2020,6 +2055,54 @@ namespace FS服装搭配专家v1._0
                     labErrorMsg.Visibility = Visibility.Visible;
                 });
             }
+        }
+
+        private bool ShowFolderDialog()
+        {
+            bool result = false;
+            
+            this.Dispatcher.Invoke(() =>
+            {
+                var dialog = new OpenFolderDialog
+                {
+                    Title = "请选择街头篮球游戏安装目录",
+                    InitialDirectory = @"C:\Program Files (x86)"
+                };
+                
+                if (dialog.ShowDialog() == true)
+                {
+                    string selectedPath = dialog.FolderName;
+                    
+                    if (ConfigService.Instance.IsValidGamePath(selectedPath))
+                    {
+                        this.strInstallDirectory = selectedPath;
+                        ConfigService.Instance.SetGameInstallDirectory(selectedPath);
+                        labErrorMsg.Visibility = Visibility.Collapsed;
+                        result = true;
+                        Console.WriteLine("用户选择的游戏目录: " + selectedPath);
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "所选目录不是有效的游戏安装目录。\n请选择包含 item_text.pak 文件的目录。",
+                            "路径无效",
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Warning);
+                        result = ShowFolderDialog();
+                    }
+                }
+                else
+                {
+                    result = false;
+                }
+            });
+            
+            return result;
+        }
+
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+            ShowFolderDialog();
         }
 
         // 后台工作线程方法
