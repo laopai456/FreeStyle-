@@ -28,11 +28,34 @@
     <sys:Double x:Key="Padding_Large">16</sys:Double>
     
     <!-- 字体大小 -->
+    <sys:Double x:Key="FontSize_Tiny">11</sys:Double>
     <sys:Double x:Key="FontSize_Small">12</sys:Double>
     <sys:Double x:Key="FontSize_Normal">14</sys:Double>
     <sys:Double x:Key="FontSize_Medium">15</sys:Double>
     <sys:Double x:Key="FontSize_Large">16</sys:Double>
     <sys:Double x:Key="FontSize_Title">18</sys:Double>
+    <sys:Double x:Key="FontSize_Header">24</sys:Double>
+    <sys:Double x:Key="FontSize_Display">48</sys:Double>
+    
+    <!-- 图标尺寸 -->
+    <sys:Double x:Key="IconSize_Tiny">14</sys:Double>
+    <sys:Double x:Key="IconSize_Small">16</sys:Double>
+    <sys:Double x:Key="IconSize_Medium">24</sys:Double>
+    <sys:Double x:Key="IconSize_Large">32</sys:Double>
+    <sys:Double x:Key="IconSize_XLarge">48</sys:Double>
+    
+    <!-- 列表项尺寸 -->
+    <sys:Double x:Key="ListItemHeight">36</sys:Double>
+    <sys:Double x:Key="ListItemIconSize">80</sys:Double>
+    
+    <!-- 标题栏尺寸 -->
+    <sys:Double x:Key="TitleBarHeight">50</sys:Double>
+    <sys:Double x:Key="TitleBarIconSize">18</sys:Double>
+    
+    <!-- 开关控件尺寸 -->
+    <sys:Double x:Key="ToggleSwitchTrackWidth">32</sys:Double>
+    <sys:Double x:Key="ToggleSwitchTrackHeight">16</sys:Double>
+    <sys:Double x:Key="ToggleSwitchThumbSize">14</sys:Double>
     
     <!-- 玻璃拟态文本框样式 -->
     <Style x:Key="GlassTextBox" TargetType="TextBox">

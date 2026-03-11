@@ -201,7 +201,7 @@
                                               HorizontalAlignment="Center" 
                                               VerticalAlignment="Center" 
                                               TextElement.Foreground="{TemplateBinding Foreground}"
-                                              TextElement.FontSize="12"
+                                              TextElement.FontSize="{StaticResource FontSize_Small}"
                                               TextElement.FontWeight="Medium" />
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="CommonStates">
@@ -475,7 +475,7 @@
                                               VerticalAlignment="Center"
                                               TextElement.Foreground="{TemplateBinding Foreground}"
                                               TextElement.FontWeight="{TemplateBinding FontWeight}"
-                                              TextElement.FontSize="14"/>
+                                              TextElement.FontSize="{StaticResource FontSize_Normal}"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <MultiTrigger>
@@ -557,7 +557,7 @@
                     <!-- 标题和控制台开关 -->
                     <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
                         <TextBlock Text="FreeStyle" 
-                                   FontSize="16" 
+                                   FontSize="{StaticResource FontSize_Large}" 
                                    FontFamily="{DynamicResource ThemeFontFamily}"
                                    FontWeight="{DynamicResource ThemeFontWeight}"
                                    Foreground="{DynamicResource TitleTextColor}"
@@ -678,7 +678,7 @@
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
-                        <TextBlock Text="⚙" FontSize="18" Foreground="{DynamicResource TextColor}" />
+                        <TextBlock Text="⚙" FontSize="{StaticResource FontSize_Title}" Foreground="{DynamicResource TextColor}" />
                     </Button>
                         
                         <!-- 换肤按钮 -->
@@ -801,7 +801,7 @@
                                 <!-- 搜索区域 -->
                                 <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,20">
                                     <TextBlock Text="🔍 搜索服装或特效" 
-                                               FontSize="14" 
+                                               FontSize="{StaticResource FontSize_Normal}" 
                                                Foreground="{DynamicResource StatusTextColor}" 
                                                Margin="0,0,0,8" />
                                     <Grid Margin="0,0,0,8">
@@ -846,7 +846,7 @@
                                                 <RowDefinition Height="*" />
                                             </Grid.RowDefinitions>
                                             <TextBlock Grid.Row="0" Text="👕 服装列表" 
-                                                       FontSize="15" 
+                                                       FontSize="{StaticResource FontSize_Medium}" 
                                                        FontFamily="{DynamicResource ThemeFontFamily}"
                                                        FontWeight="{DynamicResource ThemeFontWeight}"
                                                        Foreground="{DynamicResource TitleTextColor}" 
@@ -859,7 +859,7 @@
                                                 <ListBox.ItemTemplate>
                                                     <DataTemplate>
                                                         <TextBlock Text="{Binding ItemName}"
-                                                                   FontSize="15"
+                                                                   FontSize="{StaticResource FontSize_Medium}"
                                                                    FontFamily="{DynamicResource ThemeFontFamily}"
                                                                    FontWeight="{DynamicResource ThemeFontWeight}"
                                                                    Foreground="{DynamicResource ListItemForegroundColor}"
@@ -883,7 +883,7 @@
                                                 <RowDefinition Height="*" />
                                             </Grid.RowDefinitions>
                                             <TextBlock Grid.Row="0" Text="✨ 特效列表" 
-                                                       FontSize="15" 
+                                                       FontSize="{StaticResource FontSize_Medium}" 
                                                        FontFamily="{DynamicResource ThemeFontFamily}"
                                                        FontWeight="{DynamicResource ThemeFontWeight}"
                                                        Foreground="{DynamicResource TitleTextColor}" 
@@ -895,7 +895,7 @@
                                                 <ListBox.ItemTemplate>
                                                     <DataTemplate>
                                                         <TextBlock Text="{Binding ItemName}"
-                                                                   FontSize="15"
+                                                                   FontSize="{StaticResource FontSize_Medium}"
                                                                    FontFamily="{DynamicResource ThemeFontFamily}"
                                                                    FontWeight="{DynamicResource ThemeFontWeight}"
                                                                    Foreground="{DynamicResource ListItemForegroundColor}"
@@ -910,11 +910,11 @@
                                 <!-- 操作提示 -->
                                 <StackPanel Grid.Row="3" Margin="0,12,0,0">
                                     <TextBlock Text="服装操作：左键添加到变更前 | Ctrl+左键添加到变更后" 
-                                               FontSize="11" 
+                                               FontSize="{StaticResource FontSize_Tiny}" 
                                                Foreground="{DynamicResource StatusTextColor}" 
                                                TextAlignment="Center" />
                                     <TextBlock Text="特效操作：先选特效，再Alt+左键点击服装即可添加" 
-                                               FontSize="11" 
+                                               FontSize="{StaticResource FontSize_Tiny}" 
                                                Foreground="{DynamicResource StatusTextColor}" 
                                                TextAlignment="Center"
                                                Margin="0,4,0,0" />
@@ -924,13 +924,13 @@
                                 <StackPanel Grid.Row="4" Orientation="Vertical" Margin="0,12,0,0">
                                     <TextBlock x:Name="labErrorMsg" 
                                                Text="" 
-                                               FontSize="12" 
+                                               FontSize="{StaticResource FontSize_Small}" 
                                                Foreground="#FFFF6B6B" 
                                                Visibility="Collapsed" 
                                                Margin="0,0,0,8" />
                                     <TextBlock x:Name="labLoadingStatus" 
                                                Text="" 
-                                               FontSize="11" 
+                                               FontSize="{StaticResource FontSize_Tiny}" 
                                                FontFamily="{DynamicResource ThemeFontFamily}"
                                                Foreground="{DynamicResource StatusTextColor}" 
                                                Visibility="Collapsed" 
@@ -958,7 +958,7 @@
                                 
                                 <!-- 变更区域标题 -->
                                 <TextBlock Grid.Row="0" Text="变更区域" 
-                                           FontSize="18" 
+                                           FontSize="{StaticResource FontSize_Title}"
                                            FontFamily="{DynamicResource ThemeFontFamily}"
                                            FontWeight="{DynamicResource ThemeFontWeight}"
                                            Foreground="{DynamicResource TitleTextColor}" 
@@ -967,7 +967,7 @@
                                 <!-- 配对状态 -->
                                 <TextBlock Grid.Row="1" x:Name="txtPairStatus" 
                                            Text="已配对 0 件服装" 
-                                           FontSize="12" 
+                                           FontSize="{StaticResource FontSize_Small}" 
                                            Foreground="{DynamicResource StatusTextColor}" 
                                            Margin="0,0,0,20" />
                                 
@@ -988,7 +988,7 @@
                                             Margin="0,0,10,0">
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text="变更前" 
-                                                       FontSize="14" 
+                                                       FontSize="{StaticResource FontSize_Normal}" 
                                                        FontFamily="{DynamicResource ThemeFontFamily}"
                                                        FontWeight="{DynamicResource ThemeFontWeight}"
                                                        Foreground="{DynamicResource TitleTextColor}" 
@@ -1021,7 +1021,7 @@
                                             Margin="10,0,0,0">
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text="变更后" 
-                                                       FontSize="14" 
+                                                       FontSize="{StaticResource FontSize_Normal}" 
                                                        FontFamily="{DynamicResource ThemeFontFamily}"
                                                        FontWeight="{DynamicResource ThemeFontWeight}"
                                                        Foreground="{DynamicResource TitleTextColor}" 
@@ -1083,7 +1083,7 @@
                         
                         <TextBlock Grid.Row="0"
                                    Text="常用工具" 
-                                   FontSize="18" 
+                                   FontSize="{StaticResource FontSize_Title}" 
                                    FontFamily="{DynamicResource ThemeFontFamily}"
                                    FontWeight="{DynamicResource ThemeFontWeight}"
                                    Foreground="{DynamicResource TitleTextColor}"
@@ -1103,16 +1103,16 @@
                                 <Grid>
                                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                                         <TextBlock Text="🖼️"
-                                                   FontSize="48"
+                                                   FontSize="{StaticResource FontSize_Display}"
                                                    HorizontalAlignment="Center"
                                                    Margin="0,0,0,12" />
                                         <TextBlock Text="背景修改"
-                                                   FontSize="16"
+                                                   FontSize="{StaticResource FontSize_Large}"
                                                    FontWeight="600"
                                                    Foreground="{DynamicResource TextColor}"
                                                    HorizontalAlignment="Center" />
                                         <TextBlock Text="替换游戏背景图片"
-                                                   FontSize="12"
+                                                   FontSize="{StaticResource FontSize_Small}"
                                                    Foreground="{DynamicResource StatusTextColor}"
                                                    HorizontalAlignment="Center"
                                                    Margin="0,4,0,0" />
@@ -1132,16 +1132,16 @@
                                 <Grid>
                                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                                         <TextBlock Text="📦"
-                                                   FontSize="48"
+                                                   FontSize="{StaticResource FontSize_Display}"
                                                    HorizontalAlignment="Center"
                                                    Margin="0,0,0,12" />
                                         <TextBlock Text="补充字节"
-                                                   FontSize="16"
+                                                   FontSize="{StaticResource FontSize_Large}"
                                                    FontWeight="600"
                                                    Foreground="{DynamicResource TextColor}"
                                                    HorizontalAlignment="Center" />
                                         <TextBlock Text="补充PAK文件字节数"
-                                                   FontSize="12"
+                                                   FontSize="{StaticResource FontSize_Small}"
                                                    Foreground="{DynamicResource StatusTextColor}"
                                                    HorizontalAlignment="Center"
                                                    Margin="0,4,0,0" />
