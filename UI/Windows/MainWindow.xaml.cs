@@ -11,6 +11,8 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Runtime.InteropServices;
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.Win32;
 using FS服装搭配专家v1._0.UI.Windows;
 using FS服装搭配专家v1._0.Core.Services;
@@ -64,6 +66,11 @@ namespace FS服装搭配专家v1._0
         private BackgroundWorker bwLoadImg;
         private BackgroundWorker bwLast;
         
+        // 搜索优化
+        private System.Windows.Threading.DispatcherTimer? _searchDebounceTimer;
+        private CancellationTokenSource? _searchCts;
+        private readonly object _searchLock = new object();
+
         // 性能监控
         private Stopwatch perfStopwatch = new Stopwatch();
         private Dictionary<string, long> perfCounters = new Dictionary<string, long>();
@@ -372,26 +379,40 @@ namespace FS服装搭配专家v1._0
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // 实时搜索功能
-            Search();
+            if (_searchDebounceTimer == null)
+            {
+                _searchDebounceTimer = new System.Windows.Threading.DispatcherTimer();
+                _searchDebounceTimer.Interval = TimeSpan.FromMilliseconds(200);
+                _searchDebounceTimer.Tick += async (s, args) =>
+                {
+                    _searchDebounceTimer.Stop();
+                    await SearchAsync();
+                };
+            }
+            
+            _searchDebounceTimer.Stop();
+            _searchDebounceTimer.Start();
         }
 
-        private void Search()
+        private async Task SearchAsync()
         {
-            var sw = Stopwatch.StartNew();
+            lock (_searchLock)
+            {
+                _searchCts?.Cancel();
+                _searchCts = new CancellationTokenSource();
+            }
+            
+            var token = _searchCts.Token;
+            
             try
             {
                 string searchText = "";
-                this.Dispatcher.Invoke(() =>
+                await this.Dispatcher.InvokeAsync(() =>
                 {
                     labErrorMsg.Visibility = Visibility.Collapsed;
                     labErrorMsg.Text = "";
                     searchText = txtSearch.Text.Trim();
                 });
-                
-                sw.Stop();
-                Console.WriteLine($"[性能] Search - 获取搜索文本: {sw.ElapsedMilliseconds}ms");
-                sw.Restart();
                 
                 if (this.list == null || this.list.Count == 0)
                 {
@@ -400,81 +421,65 @@ namespace FS服装搭配专家v1._0
                 
                 if (string.IsNullOrEmpty(searchText))
                 {
-                    this.Dispatcher.Invoke(() =>
+                    await this.Dispatcher.InvokeAsync(() =>
                     {
                         lstClothing.ItemsSource = this.list;
                         lstEffect.ItemsSource = this.effectList;
                     });
-                    sw.Stop();
-                    Console.WriteLine($"[性能] Search - 重置列表: {sw.ElapsedMilliseconds}ms");
-                    this.Dispatcher.BeginInvoke(new Action(() =>
-                    {
-                        if (lstClothing.Items.Count > 0)
-                        {
-                            lstClothing.ScrollIntoView(lstClothing.Items[0]);
-                            var scrollViewer = GetScrollViewer(lstClothing);
-                            if (scrollViewer != null)
-                            {
-                                scrollViewer.ScrollToTop();
-                            }
-                        }
-                    }), System.Windows.Threading.DispatcherPriority.Loaded);
                     return;
                 }
                 
-                // 同时搜索服装和特效
-                var filteredClothingList = this.list.Where(item =>
-                    (item.ItemCode != null && item.ItemCode.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
-                    (item.PakNum != null && item.PakNum.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
-                    (item.EffectCode != null && item.EffectCode.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
-                    (item.ItemName != null && item.ItemName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
-                    (item.Comment != null && item.Comment.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
-                    (item.ItemType != null && item.ItemType.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
-                ).ToList();
+                var filteredClothingList = await Task.Run(() =>
+                {
+                    return this.list.Where(item =>
+                        (item.ItemCode != null && item.ItemCode.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                        (item.PakNum != null && item.PakNum.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                        (item.EffectCode != null && item.EffectCode.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                        (item.ItemName != null && item.ItemName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                        (item.Comment != null && item.Comment.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                        (item.ItemType != null && item.ItemType.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
+                    ).ToList();
+                }, token);
                 
-                var filteredEffectList = this.effectList.Where(item =>
-                    (item.ItemCode != null && item.ItemCode.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
-                    (item.EffectCode != null && item.EffectCode.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
-                    (item.ItemName != null && item.ItemName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
-                ).ToList();
+                var filteredEffectList = await Task.Run(() =>
+                {
+                    return this.effectList.Where(item =>
+                        (item.ItemCode != null && item.ItemCode.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                        (item.EffectCode != null && item.EffectCode.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                        (item.ItemName != null && item.ItemName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
+                    ).ToList();
+                }, token);
                 
-                sw.Stop();
-                Console.WriteLine($"[性能] Search - 过滤列表(服装: {this.list.Count} -> {filteredClothingList.Count}, 特效: {this.effectList.Count} -> {filteredEffectList.Count}): {sw.ElapsedMilliseconds}ms");
-                sw.Restart();
+                if (token.IsCancellationRequested)
+                {
+                    return;
+                }
                 
-                this.Dispatcher.Invoke(() =>
+                await this.Dispatcher.InvokeAsync(() =>
                 {
                     lstClothing.ItemsSource = filteredClothingList;
                     lstEffect.ItemsSource = filteredEffectList;
                     labErrorMsg.Text = string.Format("找到服装 {0} 个，特效 {1} 个", filteredClothingList.Count, filteredEffectList.Count);
                     labErrorMsg.Visibility = Visibility.Visible;
                 });
-                
-                sw.Stop();
-                Console.WriteLine($"[性能] Search - 更新UI: {sw.ElapsedMilliseconds}ms");
-                
-                this.Dispatcher.BeginInvoke(new Action(() =>
-                {
-                    if (lstClothing.Items.Count > 0)
-                    {
-                        lstClothing.ScrollIntoView(lstClothing.Items[0]);
-                        var scrollViewer = GetScrollViewer(lstClothing);
-                        if (scrollViewer != null)
-                        {
-                            scrollViewer.ScrollToTop();
-                        }
-                    }
-                }), System.Windows.Threading.DispatcherPriority.Loaded);
+            }
+            catch (OperationCanceledException)
+            {
             }
             catch (Exception ex)
             {
                 Console.WriteLine("搜索失败: " + ex.Message);
-                this.Dispatcher.Invoke(() =>
+                await this.Dispatcher.InvokeAsync(() =>
                 {
                     labErrorMsg.Text = "搜索失败: " + ex.Message;
                     labErrorMsg.Visibility = Visibility.Visible;
                 });
             }
+        }
+
+        private void Search()
+        {
+            _ = SearchAsync();
         }
 
         private void lstClothing_Loaded(object sender, RoutedEventArgs e)
