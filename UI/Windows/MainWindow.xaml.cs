@@ -74,6 +74,10 @@ namespace FS服装搭配专家v1._0
         // 性能监控
         private Stopwatch perfStopwatch = new Stopwatch();
         private Dictionary<string, long> perfCounters = new Dictionary<string, long>();
+        
+        // 加载动画
+        private Storyboard _bounceStoryboard;
+        private bool _isAnimationPlaying = false;
 
         public MainWindow()
         {
@@ -228,6 +232,35 @@ namespace FS服装搭配专家v1._0
             }
             
             Console.WriteLine($"切换到皮肤 {currentSkinIndex + 1}");
+        }
+        
+        private void StartLoadingAnimation()
+        {
+            if (_isAnimationPlaying) return;
+            
+            Dispatcher.Invoke(() =>
+            {
+                loadingAnimationGrid.Visibility = Visibility.Visible;
+                _bounceStoryboard = loadingAnimationGrid.Resources["BounceAnimation"] as Storyboard;
+                if (_bounceStoryboard != null)
+                {
+                    _isAnimationPlaying = true;
+                    _bounceStoryboard.Begin();
+                }
+            });
+        }
+        
+        private void StopLoadingAnimation()
+        {
+            Dispatcher.Invoke(() =>
+            {
+                if (_bounceStoryboard != null && _isAnimationPlaying)
+                {
+                    _bounceStoryboard.Stop();
+                    _isAnimationPlaying = false;
+                }
+                loadingAnimationGrid.Visibility = Visibility.Collapsed;
+            });
         }
         
         private void ConsoleToggle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -1091,7 +1124,6 @@ namespace FS服装搭配专家v1._0
                 {
                     labErrorMsg.Text = "正在准备加载图片...请稍候";
                     labErrorMsg.Visibility = Visibility.Visible;
-                    picLoding.Visibility = Visibility.Visible;
                 });
                 
                 bwLoadImg = new BackgroundWorker();
@@ -1107,7 +1139,6 @@ namespace FS服装搭配专家v1._0
                 {
                     labErrorMsg.Text = "加载图片失败: " + ex.Message;
                     labErrorMsg.Visibility = Visibility.Visible;
-                    picLoding.Visibility = Visibility.Collapsed;
                 });
             }
         }
@@ -1181,12 +1212,12 @@ namespace FS服装搭配专家v1._0
             bwMain.DoWork += bwMain_DoLoadList;
             bwMain.RunWorkerCompleted += bwMain_CompletedLoadList;
             
-            // 显示初始化状态
+            // 显示初始化状态和动画
             this.Dispatcher.Invoke(() =>
             {
                 labErrorMsg.Text = "正在初始化服装数据...";
                 labErrorMsg.Visibility = Visibility.Visible;
-                picLoding.Visibility = Visibility.Visible;
+                StartLoadingAnimation();
             });
             
             Console.WriteLine("开始后台线程加载服装数据...");
@@ -1206,7 +1237,6 @@ namespace FS服装搭配专家v1._0
                 
                 this.Dispatcher.Invoke(() =>
                 {
-                    picLoding.Visibility = Visibility.Visible;
                     labErrorMsg.Visibility = Visibility.Collapsed;
                     labErrorMsg.Text = "";
                     labLoadingStatus.Visibility = Visibility.Visible;
@@ -1231,7 +1261,6 @@ namespace FS服装搭配专家v1._0
                     {
                         labErrorMsg.Text = "游戏目录为空，请在config.ini文件中设置游戏目录路径";
                         labErrorMsg.Visibility = Visibility.Visible;
-                        picLoding.Visibility = Visibility.Collapsed;
                     });
                     return;
                 }
@@ -1264,7 +1293,6 @@ namespace FS服装搭配专家v1._0
                         {
                             labErrorMsg.Text = "创建目录失败: " + ex.Message;
                             labErrorMsg.Visibility = Visibility.Visible;
-                            picLoding.Visibility = Visibility.Collapsed;
                         });
                         return;
                     }
@@ -1277,7 +1305,6 @@ namespace FS服装搭配专家v1._0
                     {
                         labErrorMsg.Text = "源文件不存在: " + sourceFileName;
                         labErrorMsg.Visibility = Visibility.Visible;
-                        picLoding.Visibility = Visibility.Collapsed;
                     });
                     return;
                 }
@@ -1328,7 +1355,6 @@ namespace FS服装搭配专家v1._0
                     {
                         labErrorMsg.Text = "文件不存在，无法解包: " + destFileName;
                         labErrorMsg.Visibility = Visibility.Visible;
-                        picLoding.Visibility = Visibility.Collapsed;
                     });
                     return;
                 }
@@ -1348,7 +1374,6 @@ namespace FS服装搭配专家v1._0
                         {
                             labErrorMsg.Text = "创建cookies目录失败: " + ex.Message;
                             labErrorMsg.Visibility = Visibility.Visible;
-                            picLoding.Visibility = Visibility.Collapsed;
                         });
                         return;
                     }
@@ -1364,7 +1389,6 @@ namespace FS服装搭配专家v1._0
                     {
                         labErrorMsg.Text = "resources.exe不存在，请确保pack目录下有resources.exe";
                         labErrorMsg.Visibility = Visibility.Visible;
-                        picLoding.Visibility = Visibility.Collapsed;
                     });
                     return;
                 }
@@ -1636,7 +1660,6 @@ namespace FS服装搭配专家v1._0
                             labErrorMsg.Visibility = Visibility.Visible;
                             labLoadingStatus.Text = "加载完成！";
                             labLoadingStatus.Visibility = Visibility.Visible;
-                            picLoding.Visibility = Visibility.Collapsed;
                             
                             var timer = new System.Windows.Threading.DispatcherTimer();
                             timer.Interval = TimeSpan.FromSeconds(2);
@@ -1674,7 +1697,6 @@ namespace FS服装搭配专家v1._0
                     {
                         labErrorMsg.Text = "解析后的服装数据文件不存在: " + itemshopPath;
                         labErrorMsg.Visibility = Visibility.Visible;
-                        picLoding.Visibility = Visibility.Collapsed;
                     });
                     return;
                 }
@@ -1695,10 +1717,6 @@ namespace FS服装搭配专家v1._0
             }
             finally
             {
-                this.Dispatcher.Invoke(() =>
-                {
-                    picLoding.Visibility = Visibility.Collapsed;
-                });
             }
         }
         
@@ -1737,7 +1755,6 @@ namespace FS服装搭配专家v1._0
                     {
                         labErrorMsg.Text = "检测到没有图片文件，正在自动加载...";
                         labErrorMsg.Visibility = Visibility.Visible;
-                        picLoding.Visibility = Visibility.Visible;
                     });
                     
                     bwLoadImg = new BackgroundWorker();
@@ -1764,7 +1781,6 @@ namespace FS服装搭配专家v1._0
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    picLoding.Visibility = Visibility.Visible;
                     labLoadingStatus.Text = "正在加载图片...";
                     labLoadingStatus.Visibility = Visibility.Visible;
                     labErrorMsg.Visibility = Visibility.Collapsed;
@@ -1783,7 +1799,6 @@ namespace FS服装搭配专家v1._0
                     {
                         labErrorMsg.Text = "找不到resources.exe，请确保pack目录下有resources.exe";
                         labErrorMsg.Visibility = Visibility.Visible;
-                        picLoding.Visibility = Visibility.Collapsed;
                         labLoadingStatus.Visibility = Visibility.Collapsed;
                     });
                     return;
@@ -1854,7 +1869,6 @@ namespace FS服装搭配专家v1._0
                 {
                     labErrorMsg.Text = string.Format("图片加载完成！新加载: {0}, 跳过: {1}", successCount, skipCount);
                     labErrorMsg.Visibility = Visibility.Visible;
-                    picLoding.Visibility = Visibility.Collapsed;
                 });
             }
             catch (Exception ex)
@@ -1863,7 +1877,6 @@ namespace FS服装搭配专家v1._0
                 {
                     labErrorMsg.Text = "加载图片失败: " + ex.Message;
                     labErrorMsg.Visibility = Visibility.Visible;
-                    picLoding.Visibility = Visibility.Collapsed;
                 });
             }
         }
@@ -2152,7 +2165,6 @@ namespace FS服装搭配专家v1._0
                 {
                     labErrorMsg.Text = "加载服装数据时出错: " + ex.Message;
                     labErrorMsg.Visibility = Visibility.Visible;
-                    picLoding.Visibility = Visibility.Collapsed;
                     labLoadingStatus.Visibility = Visibility.Collapsed;
                 });
             }
@@ -2170,6 +2182,8 @@ namespace FS服装搭配专家v1._0
 
         private void bwMain_CompletedLoadList(object sender, RunWorkerCompletedEventArgs e)
         {
+            StopLoadingAnimation();
+            
             if (e.Error != null)
             {
                 MessageBox.Show("加载数据失败: " + e.Error.Message);
@@ -2218,7 +2232,6 @@ namespace FS服装搭配专家v1._0
             
             this.Dispatcher.Invoke(() =>
             {
-                picLoding.Visibility = Visibility.Collapsed;
                 labLoadingStatus.Visibility = Visibility.Collapsed;
             });
         }

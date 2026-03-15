@@ -937,11 +937,131 @@
                                                Margin="0,0,0,8"
                                                TextWrapping="Wrap"
                                                TextAlignment="Center" />
-                                    <Image x:Name="picLoding" 
-                                           Source="" 
-                                           Width="24" 
-                                           Height="24" 
-                                           Visibility="Collapsed" />
+                                    
+                                    <!-- 篮球弹跳加载动画 -->
+                                    <Grid x:Name="loadingAnimationGrid" 
+                                          Visibility="Collapsed" 
+                                          Height="120">
+                                        <Grid.Resources>
+                                            <!-- 弹跳动画 - 模拟重力加速度 + 旋转 -->
+                                            <Storyboard x:Key="BounceAnimation" 
+                                                        RepeatBehavior="Forever">
+                                                <!-- 旋转动画 -->
+                                                <DoubleAnimation Storyboard.TargetName="ballRotate"
+                                                                 Storyboard.TargetProperty="Angle"
+                                                                 From="0" To="720" 
+                                                                 Duration="0:0:3.0" />
+                                                
+                                                <!-- 第一次下落：0.5秒 -->
+                                                <DoubleAnimation Storyboard.TargetName="ballTranslate"
+                                                                 Storyboard.TargetProperty="Y"
+                                                                 From="-60" To="40" 
+                                                                 Duration="0:0:0.5">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <QuadraticEase EasingMode="EaseIn" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                                <!-- 第一次弹起 -->
+                                                <DoubleAnimation Storyboard.TargetName="ballTranslate"
+                                                                 Storyboard.TargetProperty="Y"
+                                                                 From="40" To="-25" 
+                                                                 BeginTime="0:0:0.5"
+                                                                 Duration="0:0:0.35">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <QuadraticEase EasingMode="EaseOut" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                                <!-- 第二次下落 -->
+                                                <DoubleAnimation Storyboard.TargetName="ballTranslate"
+                                                                 Storyboard.TargetProperty="Y"
+                                                                 From="-25" To="40" 
+                                                                 BeginTime="0:0:0.85"
+                                                                 Duration="0:0:0.35">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <QuadraticEase EasingMode="EaseIn" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                                <!-- 第二次弹起 -->
+                                                <DoubleAnimation Storyboard.TargetName="ballTranslate"
+                                                                 Storyboard.TargetProperty="Y"
+                                                                 From="40" To="-12" 
+                                                                 BeginTime="0:0:1.2"
+                                                                 Duration="0:0:0.25">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <QuadraticEase EasingMode="EaseOut" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                                <!-- 第三次下落 -->
+                                                <DoubleAnimation Storyboard.TargetName="ballTranslate"
+                                                                 Storyboard.TargetProperty="Y"
+                                                                 From="-12" To="40" 
+                                                                 BeginTime="0:0:1.45"
+                                                                 Duration="0:0:0.25">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <QuadraticEase EasingMode="EaseIn" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                                <!-- 第三次弹起 -->
+                                                <DoubleAnimation Storyboard.TargetName="ballTranslate"
+                                                                 Storyboard.TargetProperty="Y"
+                                                                 From="40" To="-5" 
+                                                                 BeginTime="0:0:1.7"
+                                                                 Duration="0:0:0.18">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <QuadraticEase EasingMode="EaseOut" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                                <!-- 第四次下落 -->
+                                                <DoubleAnimation Storyboard.TargetName="ballTranslate"
+                                                                 Storyboard.TargetProperty="Y"
+                                                                 From="-5" To="40" 
+                                                                 BeginTime="0:0:1.88"
+                                                                 Duration="0:0:0.18">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <QuadraticEase EasingMode="EaseIn" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                                <!-- 余震 -->
+                                                <DoubleAnimation Storyboard.TargetName="ballTranslate"
+                                                                 Storyboard.TargetProperty="Y"
+                                                                 From="40" To="35" 
+                                                                 BeginTime="0:0:2.06"
+                                                                 Duration="0:0:0.08">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <QuadraticEase EasingMode="EaseOut" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                                <DoubleAnimation Storyboard.TargetName="ballTranslate"
+                                                                 Storyboard.TargetProperty="Y"
+                                                                 From="35" To="40" 
+                                                                 BeginTime="0:0:2.14"
+                                                                 Duration="0:0:0.06">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <QuadraticEase EasingMode="EaseIn" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                                <!-- 静止 -->
+                                                <DoubleAnimation Storyboard.TargetName="ballTranslate"
+                                                                 Storyboard.TargetProperty="Y"
+                                                                 From="40" To="40" 
+                                                                 BeginTime="0:0:2.2"
+                                                                 Duration="0:0:0.8" />
+                                            </Storyboard>
+                                        </Grid.Resources>
+                                        
+                                        <Image x:Name="bouncingBall"
+                                               Source="/icon/favicon.ico"
+                                               Width="48"
+                                               Height="48"
+                                               RenderTransformOrigin="0.5,0.5">
+                                            <Image.RenderTransform>
+                                                <TransformGroup>
+                                                    <RotateTransform x:Name="ballRotate" Angle="0" />
+                                                    <TranslateTransform x:Name="ballTranslate" Y="-60" />
+                                                </TransformGroup>
+                                            </Image.RenderTransform>
+                                        </Image>
+                                    </Grid>
                                 </StackPanel>
                             </Grid>
                         </Border>

@@ -22,6 +22,7 @@
   <ItemGroup>
     <Resource Include="template\*.png" />
     <Resource Include="template\*.jpg" />
+    <Resource Include="icon\*.ico" />
   </ItemGroup>
 
   <ItemGroup>
