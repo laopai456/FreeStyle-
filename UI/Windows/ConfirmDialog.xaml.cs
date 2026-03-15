@@ -9,7 +9,6 @@ namespace FS服装搭配专家v1._0
         public ConfirmDialog(string message)
         {
             InitializeComponent();
-            MessageText.Text = message;
             Result = false;
         }
 

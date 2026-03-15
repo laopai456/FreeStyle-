@@ -882,7 +882,12 @@ namespace FS服装搭配专家v1._0
                 
                 string msg = string.Format("确认要将 {0} 件服装进行变更吗？\n\n注意：一定要先关闭游戏！", beforeItems.Count);
                 var dialog = new ConfirmDialog(msg);
-                dialog.Owner = this;
+                
+                // 定位在确认变更按钮下方
+                var buttonPos = btnConfirm.PointToScreen(new Point(0, btnConfirm.ActualHeight));
+                dialog.Left = buttonPos.X;
+                dialog.Top = buttonPos.Y + 4;
+                
                 dialog.ShowDialog();
                 
                 if (!dialog.Result)
