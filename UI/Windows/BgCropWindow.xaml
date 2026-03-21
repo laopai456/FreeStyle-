@@ -11,20 +11,12 @@
         ResizeMode="NoResize"
         Topmost="False">
     <Window.Resources>
-        <SolidColorBrush x:Key="GlassCardColor" Color="#15FFFFFF" />
-        <SolidColorBrush x:Key="GlassBorderColor" Color="#4DFFFFFF" />
-        <SolidColorBrush x:Key="TextColor" Color="#FFFFFFFF" />
-        <SolidColorBrush x:Key="StatusTextColor" Color="#FF999999" />
-        <SolidColorBrush x:Key="ButtonGlassColor" Color="#25FFFFFF" />
-        
-        <FontFamily x:Key="ThemeFontFamily">Microsoft YaHei</FontFamily>
-        <FontWeight x:Key="ThemeFontWeight">Normal</FontWeight>
-        
+        <!-- 按钮样式 -->
         <Style x:Key="GlassButton" TargetType="Button">
             <Setter Property="Background" Value="{DynamicResource ButtonGlassColor}" />
-            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
+            <Setter Property="Foreground" Value="{DynamicResource ToolWindowTextColor}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="{DynamicResource GlassBorderColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource ToolWindowBorderColor}" />
             <Setter Property="Padding" Value="14,8" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="FontFamily" Value="{DynamicResource ThemeFontFamily}" />
@@ -48,17 +40,17 @@
         </Style>
         
         <Style x:Key="GlassComboBox" TargetType="ComboBox">
-            <Setter Property="Background" Value="{DynamicResource GlassCardColor}" />
-            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource GlassBorderColor}" />
+            <Setter Property="Background" Value="{DynamicResource ToolWindowCardColor}" />
+            <Setter Property="Foreground" Value="{DynamicResource ToolWindowTextColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource ToolWindowBorderColor}" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="Padding" Value="8,6" />
             <Setter Property="FontSize" Value="13" />
         </Style>
     </Window.Resources>
     
-    <Border Background="{DynamicResource GlassCardColor}"
-            BorderBrush="{DynamicResource GlassBorderColor}"
+    <Border Background="{DynamicResource ToolWindowCardColor}"
+            BorderBrush="{DynamicResource ToolWindowBorderColor}"
             BorderThickness="1"
             CornerRadius="16"
             Margin="20">
@@ -83,7 +75,7 @@
                            FontSize="18"
                            FontFamily="{DynamicResource ThemeFontFamily}"
                            FontWeight="{DynamicResource ThemeFontWeight}"
-                           Foreground="{DynamicResource TextColor}" />
+                           Foreground="{DynamicResource ToolWindowTextColor}" />
                 <Button x:Name="btnClose"
                         Content="✕"
                         HorizontalAlignment="Right"
@@ -91,7 +83,7 @@
                         Width="30"
                         Height="30"
                         Background="Transparent"
-                        Foreground="{DynamicResource StatusTextColor}"
+                        Foreground="{DynamicResource ToolWindowStatusTextColor}"
                         BorderThickness="0"
                         FontSize="14"
                         Click="btnClose_Click" />
@@ -106,8 +98,8 @@
                 
                 <!-- 左侧：图片预览 -->
                 <Border Grid.Column="0"
-                        Background="{DynamicResource GlassCardColor}"
-                        BorderBrush="{DynamicResource GlassBorderColor}"
+                        Background="{DynamicResource ToolWindowCardColor}"
+                        BorderBrush="{DynamicResource ToolWindowBorderColor}"
                         BorderThickness="1"
                         CornerRadius="12"
                         Padding="12"
@@ -120,7 +112,7 @@
                         <TextBlock x:Name="txtPreviewPlaceholder"
                                    Text="请选择图片"
                                    FontSize="14"
-                                   Foreground="{DynamicResource StatusTextColor}"
+                                   Foreground="{DynamicResource ToolWindowStatusTextColor}"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center" />
                     </Grid>
@@ -133,7 +125,7 @@
                                FontSize="14"
                                FontFamily="{DynamicResource ThemeFontFamily}"
                                FontWeight="{DynamicResource ThemeFontWeight}"
-                               Foreground="{DynamicResource TextColor}"
+                               Foreground="{DynamicResource ToolWindowTextColor}"
                                Margin="0,0,0,8" />
                     
                     <Button x:Name="btnBrowse"
@@ -148,7 +140,7 @@
                                FontSize="14"
                                FontFamily="{DynamicResource ThemeFontFamily}"
                                FontWeight="{DynamicResource ThemeFontWeight}"
-                               Foreground="{StaticResource TextColor}"
+                               Foreground="{DynamicResource ToolWindowTextColor}"
                                Margin="0,0,0,8" />
                     
                     <ComboBox x:Name="cmbBgType"
@@ -158,13 +150,13 @@
                               Margin="0,0,0,16" />
                     
                     <!-- 说明 -->
-                    <Border Background="{DynamicResource GlassCardColor}"
+                    <Border Background="{DynamicResource ToolWindowCardColor}"
                             CornerRadius="8"
                             Padding="12"
                             Margin="0,0,0,16">
                         <TextBlock TextWrapping="Wrap"
                                    FontSize="12"
-                                   Foreground="{DynamicResource StatusTextColor}">
+                                   Foreground="{DynamicResource ToolWindowStatusTextColor}">
                             <Run Text="说明：" FontWeight="600" />
                             <LineBreak />
                             <Run Text="1. 选择一张图片（建议1366x768或等比例）" />
@@ -181,7 +173,7 @@
                     <TextBlock x:Name="txtImageInfo"
                                Text=""
                                FontSize="12"
-                               Foreground="{DynamicResource StatusTextColor}"
+                               Foreground="{DynamicResource ToolWindowStatusTextColor}"
                                TextWrapping="Wrap"
                                Margin="0,0,0,8" />
                 </StackPanel>
@@ -189,8 +181,8 @@
             
             <!-- 状态栏 -->
             <Border Grid.Row="2"
-                    Background="{DynamicResource GlassCardColor}"
-                    BorderBrush="{DynamicResource GlassBorderColor}"
+                    Background="{DynamicResource ToolWindowCardColor}"
+                    BorderBrush="{DynamicResource ToolWindowBorderColor}"
                     BorderThickness="1"
                     CornerRadius="8"
                     Padding="10,8"
@@ -198,7 +190,7 @@
                 <TextBlock x:Name="txtStatus"
                            Text="状态: 准备就绪"
                            FontSize="12"
-                           Foreground="{DynamicResource StatusTextColor}" />
+                           Foreground="{DynamicResource ToolWindowStatusTextColor}" />
             </Border>
             
             <!-- 底部按钮 -->

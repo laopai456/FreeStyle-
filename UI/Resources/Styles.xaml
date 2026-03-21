@@ -2,7 +2,60 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     
-    <!-- 尺寸常量 -->
+    <!-- ========== 统一颜色资源 ========== -->
+    <!-- 卡片背景色 - 50% 透明白色 -->
+    <SolidColorBrush x:Key="GlassCardColor" Color="#80FFFFFF" />
+    <!-- 工具卡片背景色 - 不透明浅灰 -->
+    <SolidColorBrush x:Key="ToolCardColor" Color="#F0F0F0" />
+    <!-- 卡片边框色 -->
+    <SolidColorBrush x:Key="GlassBorderColor" Color="#4DFFFFFF" />
+    <!-- 高光边框色 -->
+    <SolidColorBrush x:Key="GlassHighlightColor" Color="#20FFFFFF" />
+    <!-- 文字颜色 -->
+    <SolidColorBrush x:Key="TextColor" Color="#FFFFFFFF" />
+    <!-- 状态文字颜色 -->
+    <SolidColorBrush x:Key="StatusTextColor" Color="#FF999999" />
+    <!-- 标题文字颜色 -->
+    <SolidColorBrush x:Key="TitleTextColor" Color="#FFFFFFFF" />
+    <!-- 按钮玻璃颜色 -->
+    <SolidColorBrush x:Key="ButtonGlassColor" Color="#25FFFFFF" />
+    <!-- 按钮前景色 -->
+    <SolidColorBrush x:Key="ButtonForegroundColor" Color="#FFFFFFFF" />
+    <!-- 悬停背景色 -->
+    <SolidColorBrush x:Key="HoverBackgroundColor" Color="#40FFFFFF" />
+    <!-- 按下背景色 -->
+    <SolidColorBrush x:Key="PressedBackgroundColor" Color="#60FFFFFF" />
+    <!-- 内容面板背景色 -->
+    <SolidColorBrush x:Key="ContentPanelBackgroundColor" Color="#15FFFFFF" />
+    <!-- 标签页悬停背景色 -->
+    <SolidColorBrush x:Key="TabHoverBackgroundColor" Color="#20FFFFFF" />
+    <!-- 标签页选中背景色 -->
+    <SolidColorBrush x:Key="TabSelectedBackgroundColor" Color="#30FFFFFF" />
+    <!-- 标签页选中前景色 -->
+    <SolidColorBrush x:Key="TabSelectedForegroundColor" Color="#FFFFFFFF" />
+    <!-- 列表项背景色 -->
+    <SolidColorBrush x:Key="ListItemBackgroundColor" Color="#10FFFFFF" />
+    <!-- 列表项悬停背景色 -->
+    <SolidColorBrush x:Key="ListItemHoverBackgroundColor" Color="#25FFFFFF" />
+    <!-- 列表项前景色 -->
+    <SolidColorBrush x:Key="ListItemForegroundColor" Color="#FFFFFFFF" />
+    <!-- 预览文字颜色 -->
+    <SolidColorBrush x:Key="PreviewTextColor" Color="#FFFFFFFF" />
+    <!-- 卡片悬停色 -->
+    <SolidColorBrush x:Key="GlassCardHoverColor" Color="#40FFFFFF" />
+    
+    <!-- 工具窗口颜色（浅色背景用） -->
+    <SolidColorBrush x:Key="ToolWindowCardColor" Color="#F0F0F0" />
+    <SolidColorBrush x:Key="ToolWindowBorderColor" Color="#4D000000" />
+    <SolidColorBrush x:Key="ToolWindowTextColor" Color="#FF333333" />
+    <SolidColorBrush x:Key="ToolWindowStatusTextColor" Color="#FF666666" />
+    <SolidColorBrush x:Key="ToolWindowButtonColor" Color="#E0E0E0" />
+    
+    <!-- 字体资源 -->
+    <FontFamily x:Key="ThemeFontFamily">Microsoft YaHei</FontFamily>
+    <FontWeight x:Key="ThemeFontWeight">Normal</FontWeight>
+    
+    <!-- ========== 尺寸常量 ========== -->
     <sys:Double x:Key="ButtonHeight_Small">32</sys:Double>
     <sys:Double x:Key="ButtonHeight_Medium">36</sys:Double>
     <sys:Double x:Key="ButtonHeight_Large">44</sys:Double>
