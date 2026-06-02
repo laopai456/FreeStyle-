@@ -1,0 +1,38 @@
+[19:01:40] === ReadFile Buffer 替换v2 === PID:17236 ===
+[19:01:40] 策略: Python读数据→base64→send给JS→Memory.copy替换
+[19:01:40] 目标: i50125461_FN.smd → i50125711_FN.smd
+[19:01:40] 日志: D:\py\反编译\FreeStyle\apollo_dump\readfile_replace_20260529_190140.txt
+[19:01:41]   ReadFile buffer替换v2就绪 (Python送数据). 等待数据加载后进房间.
+[19:01:41]   发送目标数据到JS...
+[19:01:41]   Header: C:\tmp\sskf\sskf_50125711_header.bin (684 chars b64)
+[19:01:41]   Mesh: C:\tmp\sskf\sskf_50125711_mesh.bin (359672 chars b64)
+[19:01:41]   数据已发送: header(684) + mesh(6 chunks)
+[19:01:41]   [JS错误] TypeError: not a function
+[19:01:42]   状态: dataLoaded=False
+[19:01:42] 
+[19:01:42] 数据已加载, 进房间触发角色加载。
+[19:01:42] 命令: status | quit
+[19:01:42] 
+[19:02:36]   [SSKF #1] "c800.smd" (512B)
+[19:02:36]   [SSKF #2] "c800.smd" (78848B)
+[19:02:36]   [SSKF #3] "c801.smd" (512B)
+[19:02:36]   [SSKF #4] "c801.smd" (80896B)
+[19:02:36]   [SSKF #5] "i50421031_FN.smd" (512B)
+[19:02:36]   [SSKF #6] "i50421031_FN.smd" (51712B)
+[19:02:36]   [SSKF #7] "i50421031_FN_upp01.smd" (512B)
+[19:02:36]   [SSKF #8] "i50421031_FN_upp01.smd" (60928B)
+[19:02:36]   [SSKF #9] "i50519561_FN.smd" (512B)
+[19:02:36]   [SSKF #10] "i50519561_FN.smd" (94208B)
+[19:02:36]   [SSKF #11] "i50519561_F_low01.smd" (512B)
+[19:02:36]   [SSKF #12] "i50519561_F_low01.smd" (16384B)
+[19:02:36]   [SSKF #13] "i50623371_F.smd" (512B)
+[19:02:36]   [SSKF #14] "i50623371_F.smd" (118272B)
+[19:02:36]   [SSKF #15] "i50914461_F.smd" (512B)
+[19:02:36]   [SSKF #16] "i50914461_F.smd" (15872B)
+[19:02:36]   [SSKF #17] "i51514521_F.smd" (512B)
+[19:02:36]   [SSKF #18] "i51514521_F.smd" (41472B)
+[19:02:36]   [SSKF #19] "i50125461_FN.smd" (512B)
+[19:02:36]   [目标SSKF] "i50125461_FN.smd" (512B)
+[19:02:36]   [SSKF #20] "i50125461_FN.smd" (100864B)
+[19:02:36]   [目标SSKF] "i50125461_FN.smd" (100864B)
+[19:02:52]   {"totalSSKF":36,"patches":0,"state":"idle","dataLoaded":false}

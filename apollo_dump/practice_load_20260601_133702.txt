@@ -1,0 +1,315 @@
+[13:37:02.424] === Practice Load Tracer === PID:4488 ===
+[13:37:02.425] SRC: 50125461  DST: 50125711
+[13:37:02.425] 目标: 追踪练习场加载路径
+[13:37:02.425] 日志: D:\py\反编译\FreeStyle\apollo_dump\practice_load_20260601_133702.txt
+[13:37:02.425] 
+[13:37:03.645]   [setup] sprintf hook ready
+[13:37:03.646]   [setup] CreateFileA/W hooks ready
+[13:37:03.646]   [setup] ReadFile hook ready
+[13:37:03.646]   [setup] silence detector started (5s threshold)
+[13:37:03.646]   Practice load tracer ready
+[13:37:03.646] 
+[13:37:03.646] 测试流程:
+[13:37:03.646] 1. 进房间 → 观察 sprintf 和文件访问
+[13:37:03.646] 2. 进练习场 → 关键：看有没有新的文件访问
+[13:37:03.646] 3. 观察 phase 变化（5秒无 sprintf 自动切换到 PRACTICE）
+[13:37:03.646] 
+[13:37:03.646] 命令: status | scan | phase <name> | quit
+[13:37:03.646] 
+[13:37:16.870] [sprintf] #1 ic=800 phase=INJECTED
+[13:37:16.870] 
+[13:37:16.870] [PHASE] INJECTED -> ROOM_LOAD
+[13:37:16.870] 
+[13:37:16.870] [sprintf] #2 ic=801 phase=ROOM_LOAD
+[13:37:16.871] [sprintf] #3 ic=50421031 phase=ROOM_LOAD
+[13:37:16.871] [sprintf] #4 ic=50519561 phase=ROOM_LOAD
+[13:37:16.872] [sprintf] #5 ic=50623371 phase=ROOM_LOAD
+[13:37:16.872] [sprintf] #6 ic=50914721 phase=ROOM_LOAD
+[13:37:16.874] [sprintf] #7 ic=51514521 phase=ROOM_LOAD
+[13:37:16.874] [sprintf] #8 ic=50125461 <== SRC phase=ROOM_LOAD
+[13:37:16.876] [sprintf] #9 ic=51616261 phase=ROOM_LOAD
+[13:37:16.876] [sprintf] #10 ic=51213111 phase=ROOM_LOAD
+[13:37:16.877] [read] #1 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.877] [read] #2 type=SMD bytes=78848 phase=ROOM_LOAD
+[13:37:16.880] [read] #3 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.881] [read] #4 type=SMD bytes=80896 phase=ROOM_LOAD
+[13:37:16.881] [read] #5 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.881] [read] #6 type=SMD bytes=51712 phase=ROOM_LOAD
+[13:37:16.886] [read] #7 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.886] [read] #8 type=SMD bytes=60928 phase=ROOM_LOAD
+[13:37:16.886] [read] #9 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.886] [read] #10 type=SMD bytes=94208 phase=ROOM_LOAD
+[13:37:16.899] [read] #11 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.899] [read] #12 type=SMD bytes=16384 phase=ROOM_LOAD
+[13:37:16.901] [read] #13 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.902] [read] #14 type=SMD bytes=118272 phase=ROOM_LOAD
+[13:37:16.909] [read] #15 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.909] [read] #16 type=SMD bytes=15872 phase=ROOM_LOAD
+[13:37:16.915] [read] #17 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.915] [read] #18 type=SMD bytes=41472 phase=ROOM_LOAD
+[13:37:16.922] [read] #19 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.922] [read] #20 type=SMD bytes=100864 phase=ROOM_LOAD
+[13:37:16.929] [read] #21 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.929] [read] #22 type=SMD bytes=37888 phase=ROOM_LOAD
+[13:37:16.931] [read] #23 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.931] [read] #24 type=SMD bytes=53760 phase=ROOM_LOAD
+[13:37:16.949] [read] #25 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.949] [read] #26 type=SMD bytes=5120 phase=ROOM_LOAD
+[13:37:16.954] [read] #27 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.954] [read] #28 type=SMD bytes=1536 phase=ROOM_LOAD
+[13:37:16.954] [read] #29 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.955] [read] #30 type=SMD bytes=1536 phase=ROOM_LOAD
+[13:37:16.956] [read] #31 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.957] [read] #32 type=SMD bytes=19456 phase=ROOM_LOAD
+[13:37:16.966] [read] #33 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.967] [read] #34 type=SMD bytes=19456 phase=ROOM_LOAD
+[13:37:16.977] [read] #35 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:16.978] [read] #36 type=SMD bytes=24576 phase=ROOM_LOAD
+[13:37:21.745] [sprintf] #11 ic=800 phase=ROOM_LOAD
+[13:37:21.745] [sprintf] #12 ic=801 phase=ROOM_LOAD
+[13:37:21.746] [sprintf] #13 ic=50421031 phase=ROOM_LOAD
+[13:37:21.746] [sprintf] #14 ic=50519561 phase=ROOM_LOAD
+[13:37:21.746] [sprintf] #15 ic=50623371 phase=ROOM_LOAD
+[13:37:21.747] [sprintf] #16 ic=50914721 phase=ROOM_LOAD
+[13:37:21.748] [sprintf] #17 ic=51514521 phase=ROOM_LOAD
+[13:37:21.748] [sprintf] #18 ic=50125461 <== SRC phase=ROOM_LOAD
+[13:37:21.749] [sprintf] #19 ic=51616261 phase=ROOM_LOAD
+[13:37:21.749] [sprintf] #20 ic=51213111 phase=ROOM_LOAD
+[13:37:21.750] [read] #37 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.750] [read] #38 type=SMD bytes=78848 phase=ROOM_LOAD
+[13:37:21.752] [read] #39 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.752] [read] #40 type=SMD bytes=80896 phase=ROOM_LOAD
+[13:37:21.752] [read] #41 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.752] [read] #42 type=SMD bytes=51712 phase=ROOM_LOAD
+[13:37:21.759] [read] #43 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.759] [read] #44 type=SMD bytes=60928 phase=ROOM_LOAD
+[13:37:21.759] [read] #45 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.759] [read] #46 type=SMD bytes=94208 phase=ROOM_LOAD
+[13:37:21.772] [read] #47 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.772] [read] #48 type=SMD bytes=16384 phase=ROOM_LOAD
+[13:37:21.773] [read] #49 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.773] [read] #50 type=SMD bytes=118272 phase=ROOM_LOAD
+[13:37:21.781] [read] #51 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.781] [read] #52 type=SMD bytes=15872 phase=ROOM_LOAD
+[13:37:21.785] [read] #53 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.787] [read] #54 type=SMD bytes=41472 phase=ROOM_LOAD
+[13:37:21.793] [read] #55 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.793] [read] #56 type=SMD bytes=100864 phase=ROOM_LOAD
+[13:37:21.800] [read] #57 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.800] [read] #58 type=SMD bytes=37888 phase=ROOM_LOAD
+[13:37:21.803] [read] #59 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.803] [read] #60 type=SMD bytes=53760 phase=ROOM_LOAD
+[13:37:21.817] [read] #61 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.817] [read] #62 type=SMD bytes=5120 phase=ROOM_LOAD
+[13:37:21.821] [read] #63 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.821] [read] #64 type=SMD bytes=1536 phase=ROOM_LOAD
+[13:37:21.822] [read] #65 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.822] [read] #66 type=SMD bytes=1536 phase=ROOM_LOAD
+[13:37:21.824] [read] #67 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.824] [read] #68 type=SMD bytes=19456 phase=ROOM_LOAD
+[13:37:21.835] [read] #69 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.835] [read] #70 type=SMD bytes=19456 phase=ROOM_LOAD
+[13:37:21.845] [read] #71 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.845] [read] #72 type=SMD bytes=24576 phase=ROOM_LOAD
+[13:37:21.850] [sprintf] #21 ic=800 phase=ROOM_LOAD
+[13:37:21.851] [sprintf] #22 ic=801 phase=ROOM_LOAD
+[13:37:21.851] [sprintf] #23 ic=50421031 phase=ROOM_LOAD
+[13:37:21.852] [sprintf] #24 ic=50519561 phase=ROOM_LOAD
+[13:37:21.852] [sprintf] #25 ic=50623371 phase=ROOM_LOAD
+[13:37:21.852] [sprintf] #26 ic=50914721 phase=ROOM_LOAD
+[13:37:21.854] [sprintf] #27 ic=51514521 phase=ROOM_LOAD
+[13:37:21.854] [sprintf] #28 ic=50125461 <== SRC phase=ROOM_LOAD
+[13:37:21.855] [sprintf] #29 ic=51616261 phase=ROOM_LOAD
+[13:37:21.855] [sprintf] #30 ic=51213111 phase=ROOM_LOAD
+[13:37:21.857] [read] #73 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.857] [read] #74 type=SMD bytes=78848 phase=ROOM_LOAD
+[13:37:21.860] [read] #75 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.860] [read] #76 type=SMD bytes=80896 phase=ROOM_LOAD
+[13:37:21.861] [read] #77 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.861] [read] #78 type=SMD bytes=51712 phase=ROOM_LOAD
+[13:37:21.866] [read] #79 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.866] [read] #80 type=SMD bytes=60928 phase=ROOM_LOAD
+[13:37:21.866] [read] #81 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.866] [read] #82 type=SMD bytes=94208 phase=ROOM_LOAD
+[13:37:21.880] [read] #83 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.880] [read] #84 type=SMD bytes=16384 phase=ROOM_LOAD
+[13:37:21.882] [read] #85 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.882] [read] #86 type=SMD bytes=118272 phase=ROOM_LOAD
+[13:37:21.889] [read] #87 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.890] [read] #88 type=SMD bytes=15872 phase=ROOM_LOAD
+[13:37:21.894] [read] #89 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.894] [read] #90 type=SMD bytes=41472 phase=ROOM_LOAD
+[13:37:21.902] [read] #91 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.903] [read] #92 type=SMD bytes=100864 phase=ROOM_LOAD
+[13:37:21.910] [read] #93 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.910] [read] #94 type=SMD bytes=37888 phase=ROOM_LOAD
+[13:37:21.911] [read] #95 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.912] [read] #96 type=SMD bytes=53760 phase=ROOM_LOAD
+[13:37:21.928] [sprintf] #31 ic=800 phase=ROOM_LOAD
+[13:37:21.928] [sprintf] #32 ic=801 phase=ROOM_LOAD
+[13:37:21.929] [sprintf] #33 ic=50421031 phase=ROOM_LOAD
+[13:37:21.929] [sprintf] #34 ic=50519561 phase=ROOM_LOAD
+[13:37:21.930] [sprintf] #35 ic=50623371 phase=ROOM_LOAD
+[13:37:21.930] [sprintf] #36 ic=50914721 phase=ROOM_LOAD
+[13:37:21.930] [sprintf] #37 ic=51514521 phase=ROOM_LOAD
+[13:37:21.930] [sprintf] #38 ic=50125461 <== SRC phase=ROOM_LOAD
+[13:37:21.932] [sprintf] #39 ic=51616261 phase=ROOM_LOAD
+[13:37:21.933] [sprintf] #40 ic=51213111 phase=ROOM_LOAD
+[13:37:21.935] [read] #97 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.935] [read] #98 type=SMD bytes=78848 phase=ROOM_LOAD
+[13:37:21.938] [read] #99 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.938] [read] #100 type=SMD bytes=80896 phase=ROOM_LOAD
+[13:37:21.938] [read] #101 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.939] [read] #102 type=SMD bytes=51712 phase=ROOM_LOAD
+[13:37:21.944] [read] #103 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.944] [read] #104 type=SMD bytes=60928 phase=ROOM_LOAD
+[13:37:21.944] [read] #105 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.944] [read] #106 type=SMD bytes=94208 phase=ROOM_LOAD
+[13:37:21.958] [read] #107 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.958] [read] #108 type=SMD bytes=16384 phase=ROOM_LOAD
+[13:37:21.960] [read] #109 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.960] [read] #110 type=SMD bytes=118272 phase=ROOM_LOAD
+[13:37:21.969] [read] #111 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.969] [read] #112 type=SMD bytes=15872 phase=ROOM_LOAD
+[13:37:21.975] [read] #113 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.975] [read] #114 type=SMD bytes=41472 phase=ROOM_LOAD
+[13:37:21.983] [read] #115 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.983] [read] #116 type=SMD bytes=100864 phase=ROOM_LOAD
+[13:37:21.989] [read] #117 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.989] [read] #118 type=SMD bytes=37888 phase=ROOM_LOAD
+[13:37:21.992] [read] #119 type=SMD bytes=512 phase=ROOM_LOAD
+[13:37:21.992] [read] #120 type=SMD bytes=53760 phase=ROOM_LOAD
+[13:37:27.656] 
+[13:37:27.656] [PHASE] ROOM_LOAD -> PRACTICE
+[13:37:27.656] 
+[13:37:29.534] [scan] new addresses: ['0x210a8ef0', '0x256aef9c', '0x25c4d93c', '0x25fad500', '0x25fadd48', '0x286bf1a0', '0x4d4757d4', '0x4d5804b0', '0x4d580550', '0x4d588f40', '0x4d5891c0', '0x4ecf2a80', '0x789bb954', '0x83c4f000', '0x8476a18a'] phase=PRACTICE
+[13:37:33.176] [read] #121 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.176] [read] #122 type=SMD bytes=8192 phase=PRACTICE
+[13:37:33.196] [read] #123 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.196] [read] #124 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.210] [read] #125 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.210] [read] #126 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.213] [read] #127 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.215] [read] #128 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.218] [read] #129 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.218] [read] #130 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.221] [read] #131 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.221] [read] #132 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.227] [read] #133 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.227] [read] #134 type=SMD bytes=4608 phase=PRACTICE
+[13:37:33.231] [read] #135 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.231] [read] #136 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.236] [read] #137 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.236] [read] #138 type=SMD bytes=4096 phase=PRACTICE
+[13:37:33.313] [read] #139 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.313] [read] #140 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.314] [read] #141 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.314] [read] #142 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.315] [read] #143 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.315] [read] #144 type=SMD bytes=8704 phase=PRACTICE
+[13:37:33.320] [read] #145 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.320] [read] #146 type=SMD bytes=34816 phase=PRACTICE
+[13:37:33.372] [read] #147 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.372] [read] #148 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.373] [read] #149 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.373] [read] #150 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.374] [read] #151 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.374] [read] #152 type=SMD bytes=4608 phase=PRACTICE
+[13:37:33.374] [read] #153 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.374] [read] #154 type=SMD bytes=4608 phase=PRACTICE
+[13:37:33.382] [read] #155 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.382] [read] #156 type=SMD bytes=4608 phase=PRACTICE
+[13:37:33.392] [read] #157 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.392] [read] #158 type=SMD bytes=4096 phase=PRACTICE
+[13:37:33.402] [read] #159 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.402] [read] #160 type=SMD bytes=4608 phase=PRACTICE
+[13:37:33.402] [read] #161 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.402] [read] #162 type=SMD bytes=4608 phase=PRACTICE
+[13:37:33.402] [read] #163 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.402] [read] #164 type=SMD bytes=4096 phase=PRACTICE
+[13:37:33.404] [read] #165 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.404] [read] #166 type=SMD bytes=4096 phase=PRACTICE
+[13:37:33.404] [read] #167 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.404] [read] #168 type=SMD bytes=4096 phase=PRACTICE
+[13:37:33.415] [read] #169 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.415] [read] #170 type=SMD bytes=78848 phase=PRACTICE
+[13:37:33.415] [read] #171 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.415] [read] #172 type=SMD bytes=80896 phase=PRACTICE
+[13:37:33.418] [read] #173 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.418] [read] #174 type=SMD bytes=51712 phase=PRACTICE
+[13:37:33.418] [read] #175 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.418] [read] #176 type=SMD bytes=60928 phase=PRACTICE
+[13:37:33.419] [read] #177 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.419] [read] #178 type=SMD bytes=94208 phase=PRACTICE
+[13:37:33.419] [read] #179 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.419] [read] #180 type=SMD bytes=16384 phase=PRACTICE
+[13:37:33.420] [read] #181 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.420] [read] #182 type=SMD bytes=118272 phase=PRACTICE
+[13:37:33.422] [read] #183 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.422] [read] #184 type=SMD bytes=15872 phase=PRACTICE
+[13:37:33.423] [read] #185 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.423] [read] #186 type=SMD bytes=41472 phase=PRACTICE
+[13:37:33.423] [read] #187 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.423] [read] #188 type=SMD bytes=100864 phase=PRACTICE
+[13:37:33.424] [read] #189 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.424] [read] #190 type=SMD bytes=37888 phase=PRACTICE
+[13:37:33.425] [read] #191 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.425] [read] #192 type=SMD bytes=53760 phase=PRACTICE
+[13:37:33.426] [read] #193 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.426] [read] #194 type=SMD bytes=105472 phase=PRACTICE
+[13:37:33.437] [read] #195 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.437] [read] #196 type=SMD bytes=62976 phase=PRACTICE
+[13:37:33.440] [read] #197 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.440] [read] #198 type=SMD bytes=47104 phase=PRACTICE
+[13:37:33.450] [read] #199 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.450] [read] #200 type=SMD bytes=89600 phase=PRACTICE
+[13:37:33.450] [read] #201 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.450] [read] #202 type=SMD bytes=74752 phase=PRACTICE
+[13:37:33.454] [read] #203 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.454] [read] #204 type=SMD bytes=42496 phase=PRACTICE
+[13:37:33.455] [read] #205 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.455] [read] #206 type=SMD bytes=45056 phase=PRACTICE
+[13:37:33.457] [read] #207 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.457] [read] #208 type=SMD bytes=38912 phase=PRACTICE
+[13:37:33.534] [read] #209 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.534] [read] #210 type=SMD bytes=487936 phase=PRACTICE
+[13:37:33.569] [read] #211 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.569] [read] #212 type=SMD bytes=81920 phase=PRACTICE
+[13:37:33.575] [read] #213 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.575] [read] #214 type=SMD bytes=79872 phase=PRACTICE
+[13:37:33.575] [read] #215 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.575] [read] #216 type=SMD bytes=80896 phase=PRACTICE
+[13:37:33.580] [read] #217 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.580] [read] #218 type=SMD bytes=247296 phase=PRACTICE
+[13:37:33.580] [read] #219 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.580] [read] #220 type=SMD bytes=25600 phase=PRACTICE
+[13:37:33.582] [read] #221 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.582] [read] #222 type=SMD bytes=25600 phase=PRACTICE
+[13:37:33.585] [read] #223 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.585] [read] #224 type=SMD bytes=25088 phase=PRACTICE
+[13:37:33.593] [read] #225 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.593] [read] #226 type=SMD bytes=25088 phase=PRACTICE
+[13:37:33.602] [read] #227 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.602] [read] #228 type=SMD bytes=62464 phase=PRACTICE
+[13:37:33.625] [read] #229 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.625] [read] #230 type=SMD bytes=62464 phase=PRACTICE
+[13:37:33.821] [read] #231 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.821] [read] #232 type=SMD bytes=5120 phase=PRACTICE
+[13:37:33.839] [read] #233 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.839] [read] #234 type=SMD bytes=12288 phase=PRACTICE
+[13:37:33.848] [read] #235 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.849] [read] #236 type=SMD bytes=12288 phase=PRACTICE
+[13:37:33.849] [read] #237 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.849] [read] #238 type=SMD bytes=12288 phase=PRACTICE
+[13:37:33.858] [read] #239 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.858] [read] #240 type=SMD bytes=1536 phase=PRACTICE
+[13:37:33.859] [read] #241 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.859] [read] #242 type=SMD bytes=1536 phase=PRACTICE
+[13:37:33.862] [read] #243 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.862] [read] #244 type=SMD bytes=19456 phase=PRACTICE
+[13:37:33.872] [read] #245 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.872] [read] #246 type=SMD bytes=19456 phase=PRACTICE
+[13:37:33.883] [read] #247 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.883] [read] #248 type=SMD bytes=24576 phase=PRACTICE
+[13:37:33.899] [read] #249 type=SMD bytes=512 phase=PRACTICE
+[13:37:33.899] [read] #250 type=SMD bytes=2560 phase=PRACTICE

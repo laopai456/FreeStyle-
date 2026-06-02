@@ -1,0 +1,11 @@
+
+=== frida_capture_plaintext loading ===
+Arch pointer size: 4
+CryptEncrypt @ 0x76c571a0 (arch: x86)
+CryptEncrypt hooked ✓
+BCryptEncrypt @ 0x738c5ad0
+BCryptEncrypt hooked ✓
+WSASendTo hooked ✓
+WSASend hooked ✓
+=== READY — waiting for game crypto calls... ===
+(Login to game and operate to trigger UDP)

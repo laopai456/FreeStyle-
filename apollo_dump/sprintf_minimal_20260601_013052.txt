@@ -1,0 +1,69 @@
+[01:30:52] === 最小化 sprintf 替换测试 === PID:11112 ===
+[01:30:52] 替换: 50125461(美丽梦想发型,静态) → 50125691(黑金热血发型,静态)
+[01:30:52] 特点: 只 hook 系统DLL，不加游戏.text hook
+[01:30:52] 日志: D:\py\反编译\FreeStyle\apollo_dump\sprintf_minimal_20260601_013052.txt
+[01:30:53]   [步骤] JS开始执行
+[01:30:53]   [步骤] MSVCR100 sprintf=0x7ae16051
+[01:30:53]   最小化 sprintf 替换就绪: 50125461 → 50125691
+[01:30:53] 
+[01:30:53] 测试流程:
+[01:30:53] 1. 进房间 → 观察发型是否为黑金热血
+[01:30:53] 2. 进练习场 → 观察发型是否保持
+[01:30:53] 3. 退出练习场 → 观察发型是否恢复
+[01:30:53] 
+[01:30:53] 命令: status | quit
+[01:30:56]   [sprintf] #1 fmt="customize\item\c%d.xml" IC=800
+[01:30:56]   [sprintf] #2 fmt="customize\item\c%d.xml" IC=801
+[01:30:56]   [sprintf] #3 fmt="customize\item\i%d.xml" IC=50421031
+[01:30:56]   [sprintf] #4 fmt="customize\item\i%d.xml" IC=50519561
+[01:30:56]   [sprintf] #5 fmt="customize\item\i%d.xml" IC=50623371
+[01:30:56]   [sprintf] #6 fmt="customize\item\i%d.xml" IC=50914721
+[01:30:56]   [sprintf] #7 fmt="customize\item\i%d.xml" IC=51514521
+[01:30:56]   [sprintf] #8 fmt="customize\item\i%d.xml" IC=50125461
+[01:30:56]   [替换!] #1 50125461→50125691 → i50125691.xml
+[01:30:56]   [sprintf] #9 fmt="customize\item\i%d.xml" IC=51616261
+[01:30:56]   [sprintf] #10 fmt="customize\item\i%d.xml" IC=51213111
+[01:31:15]   [sprintf] #11 fmt="customize\item\c%d.xml" IC=800
+[01:31:15]   [sprintf] #12 fmt="customize\item\c%d.xml" IC=801
+[01:31:15]   [sprintf] #13 fmt="customize\item\i%d.xml" IC=50421031
+[01:31:15]   [sprintf] #14 fmt="customize\item\i%d.xml" IC=50519561
+[01:31:15]   [sprintf] #15 fmt="customize\item\i%d.xml" IC=50623371
+[01:31:15]   [sprintf] #16 fmt="customize\item\i%d.xml" IC=50914721
+[01:31:15]   [sprintf] #17 fmt="customize\item\i%d.xml" IC=51514521
+[01:31:15]   [sprintf] #18 fmt="customize\item\i%d.xml" IC=50125461
+[01:31:15]   [替换!] #2 50125461→50125691 → i50125691.xml
+[01:31:15]   [sprintf] #19 fmt="customize\item\i%d.xml" IC=51616261
+[01:31:15]   [sprintf] #20 fmt="customize\item\i%d.xml" IC=51213111
+[01:31:16]   [sprintf] #21 fmt="customize\item\c%d.xml" IC=800
+[01:31:16]   [sprintf] #22 fmt="customize\item\c%d.xml" IC=801
+[01:31:16]   [sprintf] #23 fmt="customize\item\i%d.xml" IC=50421031
+[01:31:16]   [sprintf] #24 fmt="customize\item\i%d.xml" IC=50519561
+[01:31:16]   [sprintf] #25 fmt="customize\item\i%d.xml" IC=50623371
+[01:31:16]   [sprintf] #26 fmt="customize\item\i%d.xml" IC=50914721
+[01:31:16]   [sprintf] #27 fmt="customize\item\i%d.xml" IC=51514521
+[01:31:16]   [sprintf] #28 fmt="customize\item\i%d.xml" IC=50125461
+[01:31:16]   [替换!] #3 50125461→50125691 → i50125691.xml
+[01:31:16]   [sprintf] #29 fmt="customize\item\i%d.xml" IC=51616261
+[01:31:16]   [sprintf] #30 fmt="customize\item\i%d.xml" IC=51213111
+[01:31:16]   [sprintf] #31 fmt="customize\item\c%d.xml" IC=800
+[01:31:16]   [sprintf] #32 fmt="customize\item\c%d.xml" IC=801
+[01:31:16]   [sprintf] #33 fmt="customize\item\i%d.xml" IC=50421031
+[01:31:16]   [sprintf] #34 fmt="customize\item\i%d.xml" IC=50519561
+[01:31:16]   [sprintf] #35 fmt="customize\item\i%d.xml" IC=50623371
+[01:31:16]   [sprintf] #36 fmt="customize\item\i%d.xml" IC=50914721
+[01:31:16]   [sprintf] #37 fmt="customize\item\i%d.xml" IC=51514521
+[01:31:16]   [sprintf] #38 fmt="customize\item\i%d.xml" IC=50125461
+[01:31:16]   [替换!] #4 50125461→50125691 → i50125691.xml
+[01:31:16]   [sprintf] #39 fmt="customize\item\i%d.xml" IC=51616261
+[01:31:16]   [sprintf] #40 fmt="customize\item\i%d.xml" IC=51213111
+[01:31:45]   [sprintf] #41 fmt="customize\item\c%d.xml" IC=800
+[01:31:45]   [sprintf] #42 fmt="customize\item\c%d.xml" IC=801
+[01:31:45]   [sprintf] #43 fmt="customize\item\i%d.xml" IC=50421031
+[01:31:45]   [sprintf] #44 fmt="customize\item\i%d.xml" IC=50519561
+[01:31:45]   [sprintf] #45 fmt="customize\item\i%d.xml" IC=50623371
+[01:31:45]   [sprintf] #46 fmt="customize\item\i%d.xml" IC=50914721
+[01:31:45]   [sprintf] #47 fmt="customize\item\i%d.xml" IC=51514521
+[01:31:45]   [sprintf] #48 fmt="customize\item\i%d.xml" IC=50125461
+[01:31:45]   [替换!] #5 50125461→50125691 → i50125691.xml
+[01:31:45]   [sprintf] #49 fmt="customize\item\i%d.xml" IC=51616261
+[01:31:45]   [sprintf] #50 fmt="customize\item\i%d.xml" IC=51213111

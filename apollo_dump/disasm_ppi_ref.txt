@@ -1,0 +1,202 @@
+Function start: 0x2371b00
+
+  0x2371b00: push     ebp
+  0x2371b01: mov      ebp, esp
+  0x2371b03: push     -1
+  0x2371b05: push     0x264c331
+  0x2371b0a: mov      eax, dword ptr fs:[0]
+  0x2371b10: push     eax
+  0x2371b11: sub      esp, 0xcc
+  0x2371b17: mov      eax, dword ptr [0x2a1ba28]
+  0x2371b1c: xor      eax, ebp
+  0x2371b1e: push     eax
+  0x2371b1f: lea      eax, [ebp - 0xc]
+  0x2371b22: mov      dword ptr fs:[0], eax
+  0x2371b28: mov      dword ptr [ebp - 0xc4], ecx
+  0x2371b2e: mov      dword ptr [ebp - 4], 0
+  0x2371b35: mov      dword ptr [ebp - 0x14], 0
+  0x2371b3c: lea      eax, [ebp - 0x10]
+  0x2371b3f: mov      dword ptr [ebp - 0x94], eax
+  0x2371b45: mov      ecx, dword ptr [ebp - 0x94]
+  0x2371b4b: mov      dword ptr [ecx], 0
+  0x2371b51: mov      byte ptr [ebp - 4], 1
+  0x2371b55: push     0x284e36c
+  0x2371b5a: lea      edx, [ebp - 0x64]
+  0x2371b5d: push     edx
+  0x2371b5e: lea      ecx, [ebp + 8]
+  0x2371b61: call     0xe8aa00 [CALL]
+  0x2371b66: mov      byte ptr [ebp - 4], 2
+  0x2371b6a: mov      eax, dword ptr [0x2a95520]
+  0x2371b6f: mov      ecx, dword ptr [eax + 0x160]
+  0x2371b75: mov      dword ptr [ebp - 0x14], ecx
+  0x2371b78: mov      edx, dword ptr [ebp - 0x60]
+  0x2371b7b: mov      dword ptr [ebp - 0x98], edx
+  0x2371b81: cmp      dword ptr [ebp - 0x98], 0
+  0x2371b88: je       0x2371b95
+  0x2371b8a: mov      eax, dword ptr [ebp - 0x64]
+  0x2371b8d: mov      dword ptr [ebp - 0xc8], eax
+  0x2371b93: jmp      0x2371b9f
+  0x2371b95: mov      dword ptr [ebp - 0xc8], 0x286aecc
+  0x2371b9f: mov      ecx, dword ptr [ebp - 0xc8]
+  0x2371ba5: push     ecx
+  0x2371ba6: lea      ecx, [ebp - 0x6c]
+  0x2371ba9: call     0x21d8840 [CALL]
+  0x2371bae: mov      dword ptr [ebp - 0xcc], eax
+  0x2371bb4: mov      edx, dword ptr [ebp - 0xcc]
+  0x2371bba: mov      eax, dword ptr [edx]
+  0x2371bbc: mov      dword ptr [ebp - 0x10], eax
+  0x2371bbf: lea      ecx, [ebp - 0x48]
+  0x2371bc2: call     0x21def60 [CALL]
+  0x2371bc7: mov      byte ptr [ebp - 4], 3
+  0x2371bcb: mov      ecx, dword ptr [0x2a95520]
+  0x2371bd1: mov      dword ptr [ebp - 0x9c], ecx
+  0x2371bd7: mov      edx, dword ptr [ebp - 0x9c]
+  0x2371bdd: add      edx, 0x16c
+  0x2371be3: mov      dword ptr [ebp - 0xa0], edx
+  0x2371be9: mov      eax, dword ptr [ebp - 0xa0]
+  0x2371bef: mov      ecx, dword ptr [ebp - 0xa0]
+  0x2371bf5: mov      edx, dword ptr [eax + 4]
+  0x2371bf8: sub      edx, dword ptr [ecx]
+  0x2371bfa: sar      edx, 2
+  0x2371bfd: test     edx, edx
+  0x2371bff: ja       0x2371c75
+  0x2371c01: push     1
+  0x2371c03: mov      eax, dword ptr [ebp - 0x10]
+  0x2371c06: push     eax
+  0x2371c07: mov      ecx, dword ptr [ebp - 0x14]
+  0x2371c0a: push     ecx
+  0x2371c0b: lea      ecx, [ebp - 0x48]
+  0x2371c0e: call     0x21df240 [CALL]
+  0x2371c13: test     eax, eax
+  0x2371c15: jne      0x2371c70
+  0x2371c17: mov      dword ptr [ebp - 0x70], 0
+  0x2371c1e: mov      byte ptr [ebp - 4], 2
+  0x2371c22: lea      ecx, [ebp - 0x48]
+  0x2371c25: call     0x21defe0 [CALL]
+  0x2371c2a: mov      byte ptr [ebp - 4], 4
+  0x2371c2e: push     0
+  0x2371c30: lea      ecx, [ebp - 0x64]
+  0x2371c33: call     0x4391c0 [CALL]
+  0x2371c38: mov      byte ptr [ebp - 4], 1
+  0x2371c3c: lea      ecx, [ebp - 0x64]
+  0x2371c3f: call     0x439160 [CALL]
+  0x2371c44: mov      byte ptr [ebp - 4], 0
+  0x2371c48: mov      dword ptr [ebp - 4], 5
+  0x2371c4f: push     0
+  0x2371c51: lea      ecx, [ebp + 8]
+  0x2371c54: call     0x4391c0 [CALL]
+  0x2371c59: mov      dword ptr [ebp - 4], 0xffffffff
+  0x2371c60: lea      ecx, [ebp + 8]
+  0x2371c63: call     0x439160 [CALL]
+  0x2371c68: mov      eax, dword ptr [ebp - 0x70]
+  0x2371c6b: jmp      0x2371f13
+  0x2371c70: jmp      0x2371d99
+  0x2371c75: mov      dword ptr [ebp - 0x68], 0
+  0x2371c7c: jmp      0x2371c87
+  0x2371c7e: mov      edx, dword ptr [ebp - 0x68]
+  0x2371c81: add      edx, 1
+  0x2371c84: mov      dword ptr [ebp - 0x68], edx
+  0x2371c87: mov      eax, dword ptr [0x2a95520]
+  0x2371c8c: mov      dword ptr [ebp - 0xa4], eax
+  0x2371c92: mov      ecx, dword ptr [ebp - 0xa4]
+  0x2371c98: add      ecx, 0x16c
+  0x2371c9e: mov      dword ptr [ebp - 0xa8], ecx
+  0x2371ca4: mov      edx, dword ptr [ebp - 0xa8]
+  0x2371caa: mov      eax, dword ptr [ebp - 0xa8]
+  0x2371cb0: mov      ecx, dword ptr [edx + 4]
+  0x2371cb3: sub      ecx, dword ptr [eax]
+  0x2371cb5: sar      ecx, 2
+  0x2371cb8: cmp      dword ptr [ebp - 0x68], ecx
+  0x2371cbb: jae      0x2371d99
+  0x2371cc1: mov      edx, dword ptr [0x2a95520]
+  0x2371cc7: mov      dword ptr [ebp - 0xac], edx
+  0x2371ccd: mov      eax, dword ptr [ebp - 0xac]
+  0x2371cd3: mov      ecx, dword ptr [eax + 0x16c]
+  0x2371cd9: mov      edx, dword ptr [ebp - 0x68]
+  0x2371cdc: mov      eax, dword ptr [ecx + edx*4]
+  0x2371cdf: mov      dword ptr [ebp - 0x14], eax
+  0x2371ce2: push     1
+  0x2371ce4: mov      ecx, dword ptr [ebp - 0x10]
+  0x2371ce7: push     ecx
+  0x2371ce8: mov      edx, dword ptr [ebp - 0x14]
+  0x2371ceb: push     edx
+  0x2371cec: lea      ecx, [ebp - 0x48]
+  0x2371cef: call     0x21df240 [CALL]
+  0x2371cf4: test     eax, eax
+  0x2371cf6: je       0x2371d02
+  0x2371cf8: jmp      0x2371d99
+  0x2371cfd: jmp      0x2371d94
+  0x2371d02: mov      eax, dword ptr [0x2a95520]
+  0x2371d07: mov      dword ptr [ebp - 0xb0], eax
+  0x2371d0d: mov      ecx, dword ptr [ebp - 0xb0]
+  0x2371d13: add      ecx, 0x16c
+  0x2371d19: mov      dword ptr [ebp - 0xb4], ecx
+  0x2371d1f: mov      edx, dword ptr [ebp - 0xb4]
+  0x2371d25: mov      eax, dword ptr [ebp - 0xb4]
+  0x2371d2b: mov      ecx, dword ptr [edx + 4]
+  0x2371d2e: sub      ecx, dword ptr [eax]
+  0x2371d30: sar      ecx, 2
+  0x2371d33: sub      ecx, 1
+  0x2371d36: cmp      dword ptr [ebp - 0x68], ecx
+  0x2371d39: jne      0x2371d94
+  0x2371d3b: mov      dword ptr [ebp - 0x74], 0
+  0x2371d42: mov      byte ptr [ebp - 4], 2
+  0x2371d46: lea      ecx, [ebp - 0x48]
+  0x2371d49: call     0x21defe0 [CALL]
+  0x2371d4e: mov      byte ptr [ebp - 4], 6
+  0x2371d52: push     0
+  0x2371d54: lea      ecx, [ebp - 0x64]
+  0x2371d57: call     0x4391c0 [CALL]
+  0x2371d5c: mov      byte ptr [ebp - 4], 1
+  0x2371d60: lea      ecx, [ebp - 0x64]
+  0x2371d63: call     0x439160 [CALL]
+  0x2371d68: mov      byte ptr [ebp - 4], 0
+  0x2371d6c: mov      dword ptr [ebp - 4], 7
+  0x2371d73: push     0
+  0x2371d75: lea      ecx, [ebp + 8]
+  0x2371d78: call     0x4391c0 [CALL]
+  0x2371d7d: mov      dword ptr [ebp - 4], 0xffffffff
+  0x2371d84: lea      ecx, [ebp + 8]
+  0x2371d87: call     0x439160 [CALL]
+  0x2371d8c: mov      eax, dword ptr [ebp - 0x74]
+  0x2371d8f: jmp      0x2371f13
+  0x2371d94: jmp      0x2371c7e
+  0x2371d99: push     0x2b4
+  0x2371d9e: call     0x24be564 [CALL]
+  0x2371da3: add      esp, 4
+  0x2371da6: mov      dword ptr [ebp - 0x7c], eax
+  0x2371da9: mov      byte ptr [ebp - 4], 8
+  0x2371dad: cmp      dword ptr [ebp - 0x7c], 0
+  0x2371db1: je       0x2371dc3
+  0x2371db3: mov      ecx, dword ptr [ebp - 0x7c]
+  0x2371db6: call     0x23607b0 [CALL]
+  0x2371dbb: mov      dword ptr [ebp - 0xd0], eax
+  0x2371dc1: jmp      0x2371dcd
+  0x2371dc3: mov      dword ptr [ebp - 0xd0], 0
+  0x2371dcd: mov      edx, dword ptr [ebp - 0xd0]
+  0x2371dd3: mov      dword ptr [ebp - 0x78], edx
+  0x2371dd6: mov      byte ptr [ebp - 4], 3
+  0x2371dda: mov      eax, dword ptr [ebp - 0x78]
+  0x2371ddd: mov      dword ptr [ebp - 0x58], eax
+  0x2371de0: cmp      dword ptr [ebp - 0x58], 0
+  0x2371de4: jne      0x2371e3f
+  0x2371de6: mov      dword ptr [ebp - 0x80], 0
+  0x2371ded: mov      byte ptr [ebp - 4], 2
+  0x2371df1: lea      ecx, [ebp - 0x48]
+  0x2371df4: call     0x21defe0 [CALL]
+  0x2371df9: mov      byte ptr [ebp - 4], 9
+  0x2371dfd: push     0
+  0x2371dff: lea      ecx, [ebp - 0x64]
+  0x2371e02: call     0x4391c0 [CALL]
+  0x2371e07: mov      byte ptr [ebp - 4], 1
+  0x2371e0b: lea      ecx, [ebp - 0x64]
+  0x2371e0e: call     0x439160 [CALL]
+  0x2371e13: mov      byte ptr [ebp - 4], 0
+  0x2371e17: mov      dword ptr [ebp - 4], 0xa
+  0x2371e1e: push     0
+  0x2371e20: lea      ecx, [ebp + 8]
+  0x2371e23: call     0x4391c0 [CALL]
+  0x2371e28: mov      dword ptr [ebp - 4], 0xffffffff
+  0x2371e2f: lea      ecx, [ebp + 8]
+  0x2371e32: call     0x439160 [CALL]
+  0x2371e37: mov      eax, dword ptr [ebp - 0x80]

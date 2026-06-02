@@ -1,0 +1,377 @@
+Disasm 0x23c6570 — 375 instructions
+
+  0x23c6570: push     ebp
+  0x23c6571: mov      ebp, esp
+  0x23c6573: sub      esp, 0x50
+  0x23c6576: mov      dword ptr [ebp - 0x50], ecx
+  0x23c6579: mov      dword ptr [ebp - 4], 0
+  0x23c6580: mov      eax, dword ptr [ebp - 0x50]
+  0x23c6583: cmp      dword ptr [eax + 4], 0
+  0x23c6587: je       0x23c6711
+  0x23c658d: mov      ecx, dword ptr [ebp - 0x50]
+  0x23c6590: cmp      dword ptr [ecx + 8], 0
+  0x23c6594: je       0x23c6711
+  0x23c659a: mov      edx, dword ptr [ebp - 0x50]
+  0x23c659d: mov      eax, dword ptr [edx + 4]
+  0x23c65a0: mov      dword ptr [ebp - 0x28], eax
+  0x23c65a3: mov      ecx, dword ptr [ebp - 0x28]
+  0x23c65a6: mov      edx, dword ptr [ecx]
+  0x23c65a8: mov      dword ptr [ebp - 0x24], edx
+  0x23c65ab: mov      eax, dword ptr [ebp - 0x28]
+  0x23c65ae: push     eax
+  0x23c65af: mov      ecx, dword ptr [ebp - 0x24]
+  0x23c65b2: push     ecx
+  0x23c65b3: lea      ecx, [ebp - 0x20]
+  0x23c65b6: call     0x23ca7f0 [CALL]
+  0x23c65bb: mov      edx, dword ptr [ebp - 0x20]
+  0x23c65be: mov      dword ptr [ebp - 8], edx
+  0x23c65c1: mov      eax, dword ptr [ebp - 0x50]
+  0x23c65c4: mov      ecx, dword ptr [eax + 4]
+  0x23c65c7: mov      dword ptr [ebp - 0x38], ecx
+  0x23c65ca: mov      edx, dword ptr [ebp - 0x38]
+  0x23c65cd: mov      eax, dword ptr [edx]
+  0x23c65cf: mov      dword ptr [ebp - 0x30], eax
+  0x23c65d2: mov      ecx, dword ptr [ebp - 0x30]
+  0x23c65d5: mov      edx, dword ptr [ecx]
+  0x23c65d7: mov      dword ptr [ebp - 0x34], edx
+  0x23c65da: mov      eax, dword ptr [ebp - 0x34]
+  0x23c65dd: mov      dword ptr [ebp - 0x2c], eax
+  0x23c65e0: mov      ecx, dword ptr [ebp - 0x2c]
+  0x23c65e3: mov      dword ptr [ebp - 0xc], ecx
+  0x23c65e6: mov      edx, dword ptr [ebp - 8]
+  0x23c65e9: mov      dword ptr [ebp - 0x10], edx
+  0x23c65ec: jmp      0x23c6603 [JMP]
+  0x23c65ee: mov      eax, dword ptr [ebp - 0x10]
+  0x23c65f1: mov      dword ptr [ebp - 0x3c], eax
+  0x23c65f4: mov      ecx, dword ptr [ebp - 0x10]
+  0x23c65f7: mov      edx, dword ptr [ecx + 4]
+  0x23c65fa: mov      dword ptr [ebp - 0x10], edx
+  0x23c65fd: mov      eax, dword ptr [ebp - 0x3c]
+  0x23c6600: mov      dword ptr [ebp - 0x1c], eax
+  0x23c6603: mov      ecx, dword ptr [ebp - 0x10]
+  0x23c6606: mov      dword ptr [ebp - 0x40], ecx
+  0x23c6609: mov      edx, dword ptr [ebp - 0xc]
+  0x23c660c: xor      eax, eax
+  0x23c660e: cmp      edx, dword ptr [ebp - 0x40]
+  0x23c6611: sete     al
+  0x23c6614: movzx    ecx, al
+  0x23c6617: neg      ecx
+  0x23c6619: sbb      ecx, ecx
+  0x23c661b: add      ecx, 1
+  0x23c661e: movzx    edx, cl
+  0x23c6621: test     edx, edx
+  0x23c6623: je       0x23c6711
+  0x23c6629: mov      eax, dword ptr [ebp - 0x10]
+  0x23c662c: mov      dword ptr [ebp - 0x44], eax
+  0x23c662f: mov      ecx, dword ptr [ebp - 0x44]
+  0x23c6632: mov      edx, dword ptr [ecx + 4]
+  0x23c6635: mov      dword ptr [ebp - 0x44], edx
+  0x23c6638: mov      eax, dword ptr [ebp - 0x44]
+  0x23c663b: mov      ecx, dword ptr [eax + 8]
+  0x23c663e: mov      dword ptr [ebp - 0x14], ecx
+  0x23c6641: cmp      dword ptr [ebp - 0x14], 0
+  0x23c6645: je       0x23c670c
+  0x23c664b: mov      edx, dword ptr [ebp - 0x14]
+  0x23c664e: mov      eax, dword ptr [edx + 0x44]
+  0x23c6651: mov      dword ptr [ebp - 0x48], eax
+  0x23c6654: cmp      dword ptr [ebp - 0x48], 0
+  0x23c6658: je       0x23c670c
+  0x23c665e: mov      ecx, dword ptr [ebp - 0x14]
+  0x23c6661: mov      edx, dword ptr [ecx + 0x40]
+  0x23c6664: mov      dword ptr [ebp - 0x4c], edx
+  0x23c6667: cmp      dword ptr [ebp - 0x4c], 0
+  0x23c666b: je       0x23c670c
+  0x23c6671: mov      eax, dword ptr [ebp - 0x14]
+  0x23c6674: mov      edx, dword ptr [eax]
+  0x23c6676: mov      ecx, dword ptr [ebp - 0x14]
+  0x23c6679: mov      eax, dword ptr [edx + 0xcc]
+  0x23c667f: call     eax [CALL]
+  0x23c6681: cmp      eax, 1
+  0x23c6684: jne      0x23c66dc
+  0x23c6686: push     0
+  0x23c6688: push     0x29eb670
+  0x23c668d: push     0x29eb2ac
+  0x23c6692: push     0
+  0x23c6694: mov      ecx, dword ptr [ebp - 0x14]
+  0x23c6697: push     ecx
+  0x23c6698: call     0x24be7c2 [CALL]
+  0x23c669d: add      esp, 0x14
+  0x23c66a0: mov      dword ptr [ebp - 0x18], eax
+  0x23c66a3: push     ecx
+  0x23c66a4: fld      dword ptr [ebp + 0x10]
+  0x23c66a7: fstp     dword ptr [esp]
+  0x23c66aa: push     ecx
+  0x23c66ab: fld      dword ptr [ebp + 0xc]
+  0x23c66ae: fstp     dword ptr [esp]
+  0x23c66b1: push     ecx
+  0x23c66b2: fld      dword ptr [ebp + 8]
+  0x23c66b5: fstp     dword ptr [esp]
+  0x23c66b8: mov      edx, dword ptr [ebp - 0x50]
+  0x23c66bb: push     edx
+  0x23c66bc: mov      eax, dword ptr [ebp - 0x18]
+  0x23c66bf: mov      edx, dword ptr [eax]
+  0x23c66c1: mov      ecx, dword ptr [ebp - 0x18]
+  0x23c66c4: mov      eax, dword ptr [edx + 0xd8]
+  0x23c66ca: call     eax [CALL]
+  0x23c66cc: cmp      eax, 1
+  0x23c66cf: jne      0x23c66da
+  0x23c66d1: mov      dword ptr [ebp - 4], 1
+  0x23c66d8: jmp      0x23c6711 [JMP]
+  0x23c66da: jmp      0x23c670c [JMP]
+  0x23c66dc: push     0
+  0x23c66de: push     ecx
+  0x23c66df: fld      dword ptr [ebp + 0x10]
+  0x23c66e2: fstp     dword ptr [esp]
+  0x23c66e5: push     ecx
+  0x23c66e6: fld      dword ptr [ebp + 0xc]
+  0x23c66e9: fstp     dword ptr [esp]
+  0x23c66ec: push     ecx
+  0x23c66ed: fld      dword ptr [ebp + 8]
+  0x23c66f0: fstp     dword ptr [esp]
+  0x23c66f3: mov      ecx, dword ptr [ebp - 0x14]
+  0x23c66f6: push     ecx
+  0x23c66f7: mov      ecx, dword ptr [ebp - 0x50]
+  0x23c66fa: call     0x23c6740 [CALL]
+  0x23c66ff: test     eax, eax
+  0x23c6701: je       0x23c670c
+  0x23c6703: mov      dword ptr [ebp - 4], 1
+  0x23c670a: jmp      0x23c6711 [JMP]
+  0x23c670c: jmp      0x23c65ee [JMP]
+  0x23c6711: cmp      dword ptr [ebp - 4], 0
+  0x23c6715: jne      0x23c6721
+  0x23c6717: mov      edx, dword ptr [ebp - 0x50]
+  0x23c671a: mov      dword ptr [edx + 0x2c], 0
+  0x23c6721: push     0x34
+  0x23c6723: push     0
+  0x23c6725: mov      eax, dword ptr [ebp - 0x50]
+  0x23c6728: add      eax, 0x3c
+  0x23c672b: push     eax
+  0x23c672c: call     0x24be5b8 [CALL]
+  0x23c6731: add      esp, 0xc
+  0x23c6734: mov      eax, dword ptr [ebp - 4]
+  0x23c6737: mov      esp, ebp
+  0x23c6739: pop      ebp
+  0x23c673a: ret      0xc [RET]
+  0x23c673d: int3     
+  0x23c673e: int3     
+  0x23c673f: int3     
+  0x23c6740: push     ebp
+  0x23c6741: mov      ebp, esp
+  0x23c6743: sub      esp, 0x50
+  0x23c6746: mov      eax, dword ptr [0x2a1ba28]
+  0x23c674b: xor      eax, ebp
+  0x23c674d: mov      dword ptr [ebp - 4], eax
+  0x23c6750: mov      dword ptr [ebp - 0x4c], ecx
+  0x23c6753: mov      ecx, dword ptr [ebp + 8]
+  0x23c6756: call     0x23d6c30 [CALL]
+  0x23c675b: cmp      eax, 8
+  0x23c675e: jne      0x23c6767
+  0x23c6760: xor      eax, eax
+  0x23c6762: jmp      0x23c69b1 [JMP]
+  0x23c6767: mov      ecx, dword ptr [ebp + 8]
+  0x23c676a: call     0x23d6c30 [CALL]
+  0x23c676f: test     eax, eax
+  0x23c6771: jne      0x23c677a
+  0x23c6773: xor      eax, eax
+  0x23c6775: jmp      0x23c69b1 [JMP]
+  0x23c677a: mov      ecx, dword ptr [ebp + 8]
+  0x23c677d: call     0x23d6c30 [CALL]
+  0x23c6782: cmp      eax, 0xb
+  0x23c6785: jne      0x23c678e
+  0x23c6787: xor      eax, eax
+  0x23c6789: jmp      0x23c69b1 [JMP]
+  0x23c678e: mov      ecx, dword ptr [ebp + 8]
+  0x23c6791: call     0x23d6c30 [CALL]
+  0x23c6796: cmp      eax, 0x12
+  0x23c6799: jne      0x23c67a2
+  0x23c679b: xor      eax, eax
+  0x23c679d: jmp      0x23c69b1 [JMP]
+  0x23c67a2: mov      ecx, dword ptr [ebp + 8]
+  0x23c67a5: call     0x23d6c30 [CALL]
+  0x23c67aa: cmp      eax, 0xa
+  0x23c67ad: jne      0x23c67b6
+  0x23c67af: xor      eax, eax
+  0x23c67b1: jmp      0x23c69b1 [JMP]
+  0x23c67b6: push     0x35
+  0x23c67b8: lea      eax, [ebp - 0x3c]
+  0x23c67bb: push     eax
+  0x23c67bc: mov      ecx, dword ptr [ebp + 8]
+  0x23c67bf: call     0x23d6ba0 [CALL]
+  0x23c67c4: mov      ecx, dword ptr [ebp + 8]
+  0x23c67c7: call     0x23d6c30 [CALL]
+  0x23c67cc: cmp      eax, 9
+  0x23c67cf: je       0x23c67db
+  0x23c67d1: cmp      dword ptr [ebp + 0x18], 0
+  0x23c67d5: jne      0x23c69af
+  0x23c67db: lea      ecx, [ebp - 0x3c]
+  0x23c67de: push     ecx
+  0x23c67df: mov      edx, dword ptr [ebp - 0x4c]
+  0x23c67e2: add      edx, 0x3c
+  0x23c67e5: push     edx
+  0x23c67e6: call     0x24be5c4 [CALL]
+  0x23c67eb: add      esp, 8
+  0x23c67ee: test     eax, eax
+  0x23c67f0: je       0x23c67f9
+  0x23c67f2: xor      eax, eax
+  0x23c67f4: jmp      0x23c69b1 [JMP]
+  0x23c67f9: push     ecx
+  0x23c67fa: fld      dword ptr [ebp + 0x14]
+  0x23c67fd: fstp     dword ptr [esp]
+  0x23c6800: push     ecx
+  0x23c6801: fld      dword ptr [ebp + 0x10]
+  0x23c6804: fstp     dword ptr [esp]
+  0x23c6807: push     ecx
+  0x23c6808: fld      dword ptr [ebp + 0xc]
+  0x23c680b: fstp     dword ptr [esp]
+  0x23c680e: mov      eax, dword ptr [ebp + 8]
+  0x23c6811: mov      edx, dword ptr [eax]
+  0x23c6813: mov      ecx, dword ptr [ebp + 8]
+  0x23c6816: mov      eax, dword ptr [edx + 0xc]
+  0x23c6819: call     eax [CALL]
+  0x23c681b: test     eax, eax
+  0x23c681d: je       0x23c6971
+  0x23c6823: mov      ecx, dword ptr [ebp + 8]
+  0x23c6826: call     0x23d6c30 [CALL]
+  0x23c682b: mov      dword ptr [ebp - 0x40], eax
+  0x23c682e: mov      ecx, dword ptr [ebp - 0x40]
+  0x23c6831: mov      dword ptr [ebp - 0x50], ecx
+  0x23c6834: mov      edx, dword ptr [ebp - 0x50]
+  0x23c6837: sub      edx, 1
+  0x23c683a: mov      dword ptr [ebp - 0x50], edx
+  0x23c683d: cmp      dword ptr [ebp - 0x50], 0x13
+  0x23c6841: ja       0x23c695f
+  0x23c6847: mov      eax, dword ptr [ebp - 0x50]
+  0x23c684a: movzx    ecx, byte ptr [eax + 0x23c69f4]
+  0x23c6851: jmp      dword ptr [ecx*4 + 0x23c69c4]
+  0x23c6858: mov      edx, dword ptr [ebp + 8]
+  0x23c685b: push     edx
+  0x23c685c: lea      eax, [ebp - 0x3c]
+  0x23c685f: push     eax
+  0x23c6860: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c6863: mov      edx, dword ptr [ecx]
+  0x23c6865: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c6868: mov      eax, dword ptr [edx + 0x68]
+  0x23c686b: call     eax [CALL]
+  0x23c686d: jmp      0x23c695f [JMP]
+  0x23c6872: mov      ecx, dword ptr [ebp + 8]
+  0x23c6875: push     ecx
+  0x23c6876: lea      edx, [ebp - 0x3c]
+  0x23c6879: push     edx
+  0x23c687a: mov      eax, dword ptr [ebp - 0x4c]
+  0x23c687d: mov      edx, dword ptr [eax]
+  0x23c687f: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c6882: mov      eax, dword ptr [edx + 0x6c]
+  0x23c6885: call     eax [CALL]
+  0x23c6887: jmp      0x23c695f [JMP]
+  0x23c688c: mov      ecx, dword ptr [ebp + 8]
+  0x23c688f: push     ecx
+  0x23c6890: lea      edx, [ebp - 0x3c]
+  0x23c6893: push     edx
+  0x23c6894: mov      eax, dword ptr [ebp - 0x4c]
+  0x23c6897: mov      edx, dword ptr [eax]
+  0x23c6899: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c689c: mov      eax, dword ptr [edx + 0x70]
+  0x23c689f: call     eax [CALL]
+  0x23c68a1: jmp      0x23c695f [JMP]
+  0x23c68a6: mov      ecx, dword ptr [ebp + 8]
+  0x23c68a9: push     ecx
+  0x23c68aa: lea      edx, [ebp - 0x3c]
+  0x23c68ad: push     edx
+  0x23c68ae: mov      eax, dword ptr [ebp - 0x4c]
+  0x23c68b1: mov      edx, dword ptr [eax]
+  0x23c68b3: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c68b6: mov      eax, dword ptr [edx + 0x74]
+  0x23c68b9: call     eax [CALL]
+  0x23c68bb: jmp      0x23c695f [JMP]
+  0x23c68c0: mov      ecx, dword ptr [ebp + 8]
+  0x23c68c3: push     ecx
+  0x23c68c4: lea      edx, [ebp - 0x3c]
+  0x23c68c7: push     edx
+  0x23c68c8: mov      eax, dword ptr [ebp - 0x4c]
+  0x23c68cb: mov      edx, dword ptr [eax]
+  0x23c68cd: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c68d0: mov      eax, dword ptr [edx + 0x64]
+  0x23c68d3: call     eax [CALL]
+  0x23c68d5: jmp      0x23c695f [JMP]
+  0x23c68da: mov      ecx, dword ptr [ebp + 8]
+  0x23c68dd: push     ecx
+  0x23c68de: lea      edx, [ebp - 0x3c]
+  0x23c68e1: push     edx
+  0x23c68e2: mov      eax, dword ptr [ebp - 0x4c]
+  0x23c68e5: mov      edx, dword ptr [eax]
+  0x23c68e7: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c68ea: mov      eax, dword ptr [edx + 0xa8]
+  0x23c68f0: call     eax [CALL]
+  0x23c68f2: jmp      0x23c695f [JMP]
+  0x23c68f4: mov      ecx, dword ptr [ebp + 8]
+  0x23c68f7: push     ecx
+  0x23c68f8: lea      edx, [ebp - 0x3c]
+  0x23c68fb: push     edx
+  0x23c68fc: mov      eax, dword ptr [ebp - 0x4c]
+  0x23c68ff: mov      edx, dword ptr [eax]
+  0x23c6901: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c6904: mov      eax, dword ptr [edx + 0xac]
+  0x23c690a: call     eax [CALL]
+  0x23c690c: jmp      0x23c695f [JMP]
+  0x23c690e: xor      eax, eax
+  0x23c6910: jmp      0x23c69b1 [JMP]
+  0x23c6915: jmp      0x23c695f [JMP]
+  0x23c6917: mov      ecx, dword ptr [ebp + 8]
+  0x23c691a: push     ecx
+  0x23c691b: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c691e: call     0x23c8900 [CALL]
+  0x23c6923: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c6926: call     0x23c8490 [CALL]
+  0x23c692b: jmp      0x23c695f [JMP]
+  0x23c692d: mov      edx, dword ptr [ebp + 8]
+  0x23c6930: push     edx
+  0x23c6931: lea      eax, [ebp - 0x3c]
+  0x23c6934: push     eax
+  0x23c6935: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c6938: mov      edx, dword ptr [ecx]
+  0x23c693a: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c693d: mov      eax, dword ptr [edx + 0x84]
+  0x23c6943: call     eax [CALL]
+  0x23c6945: jmp      0x23c695f [JMP]
+  0x23c6947: mov      ecx, dword ptr [ebp + 8]
+  0x23c694a: push     ecx
+  0x23c694b: lea      edx, [ebp - 0x3c]
+  0x23c694e: push     edx
+  0x23c694f: mov      eax, dword ptr [ebp - 0x4c]
+  0x23c6952: mov      edx, dword ptr [eax]
+  0x23c6954: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c6957: mov      eax, dword ptr [edx + 0xb8]
+  0x23c695d: call     eax [CALL]
+  0x23c695f: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c6962: mov      edx, dword ptr [ebp + 8]
+  0x23c6965: mov      dword ptr [ecx + 0x2c], edx
+  0x23c6968: mov      eax, 1
+  0x23c696d: jmp      0x23c69b1 [JMP]
+  0x23c696f: jmp      0x23c69af [JMP]
+  0x23c6971: mov      ecx, dword ptr [ebp + 8]
+  0x23c6974: call     0x23d6c30 [CALL]
+  0x23c6979: mov      dword ptr [ebp - 0x44], eax
+  0x23c697c: cmp      dword ptr [ebp - 0x44], 4
+  0x23c6980: jne      0x23c69af
+  0x23c6982: mov      eax, dword ptr [ebp + 8]
+  0x23c6985: mov      edx, dword ptr [eax]
+  0x23c6987: mov      ecx, dword ptr [ebp + 8]
+  0x23c698a: mov      eax, dword ptr [edx + 0xa0]
+  0x23c6990: call     eax [CALL]
+  0x23c6992: mov      dword ptr [ebp - 0x48], eax
+  0x23c6995: cmp      dword ptr [ebp - 0x48], 1
+  0x23c6999: jne      0x23c69af
+  0x23c699b: mov      ecx, dword ptr [ebp + 8]
+  0x23c699e: push     ecx
+  0x23c699f: mov      edx, dword ptr [ebp - 0x4c]
+  0x23c69a2: mov      eax, dword ptr [edx]
+  0x23c69a4: mov      ecx, dword ptr [ebp - 0x4c]
+  0x23c69a7: mov      edx, dword ptr [eax + 0xcc]
+  0x23c69ad: call     edx [CALL]
+  0x23c69af: xor      eax, eax
+  0x23c69b1: mov      ecx, dword ptr [ebp - 4]
+  0x23c69b4: xor      ecx, ebp
+  0x23c69b6: call     0x24be4f2 [CALL]
+  0x23c69bb: mov      esp, ebp
+  0x23c69bd: pop      ebp
+  0x23c69be: ret      0x14 [RET]

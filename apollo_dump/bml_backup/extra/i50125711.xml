@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<root>
+   <channel>1</channel>
+   <character type="1">
+      <object>
+         <type>normal</type>
+         <mesh>res768\i50125711_fn.smd</mesh>
+         <texture>res768\i50125711.png</texture>
+      </object>
+   </character>
+   <character type="2">
+      <object>
+         <type>normal</type>
+         <mesh>res768\i50125711_fn.smd</mesh>
+         <texture>res768\i50125711.png</texture>
+      </object>
+   </character>
+   <character type="3">
+      <object>
+         <type>normal</type>
+         <mesh>res768\i50125711_fn.smd</mesh>
+         <texture>res768\i50125711.png</texture>
+      </object>
+   </character>
+   <character type="4">
+      <object>
+         <type>normal</type>
+         <mesh>res768\i50125711_fn.smd</mesh>
+         <texture>res768\i50125711.png</texture>
+      </object>
+   </character>
+   <character type="5">
+      <object>
+         <type>normal</type>
+         <mesh>res768\i50125711_fn.smd</mesh>
+         <texture>res768\i50125711.png</texture>
+      </object>
+   </character>
+   <character type="6">
+      <object>
+         <type>normal</type>
+         <mesh>res768\i50125711_fn.smd</mesh>
+         <texture>res768\i50125711.png</texture>
+      </object>
+   </character>
+</root>

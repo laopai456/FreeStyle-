@@ -1,0 +1,104 @@
+[00:54:19.040] === Practice sprintf Trace ===
+[00:54:19.040] PID: 23304
+[00:54:19.041] SRC: 50125461 美丽梦想(静态, pak767)
+[00:54:19.041] DST: 50125711 紫色超赛(动态, pak768)
+[00:54:19.041] Log: D:\py\反编译\FreeStyle\apollo_dump\practice_trace_20260601_005419.txt
+[00:54:19.041] 
+[00:54:19.835]   [setup] sprintf hook (monitor, no replace)
+[00:54:19.836]   [setup] CreateFileA/W hooks ready
+[00:54:19.836]   [setup] LoadItemFile hook DISABLED (triggers Apollo)
+[00:54:19.836]   [ready]
+[00:54:19.836] 
+[00:54:19.836] 流程:
+[00:54:19.836]   1. 进房间 → 观察 sprintf 和 LoadItemFile
+[00:54:19.836]   2. 进练习场 → 关键：看有没有新的 sprintf/LoadItemFile
+[00:54:19.836]   3. 如果没有 → 说明练习场根本不走 sprintf 路径
+[00:54:19.836] 
+[00:54:19.836] 命令:
+[00:54:19.836]   ctx <addr>         读取地址上下文
+[00:54:19.836]   watch <addr>       监控地址变化
+[00:54:19.837]   watchall           监控已知12个地址
+[00:54:19.837]   probe              读取12个地址当前值
+[00:54:19.837]   history            查看所有 sprintf 调用历史
+[00:54:19.837]   quit
+[00:54:19.837] 
+[00:54:20.246] [sprintf] #1 ic=800 ret=0x1ee23b6 (FreeStyle.exe+0x1ae23b6)
+[00:54:20.246]     obj read err: Error: access violation accessing 0xc54d4884
+[00:54:20.246] [sprintf] #2 ic=801 ret=0x1ee248f (FreeStyle.exe+0x1ae248f)
+[00:54:20.247]     obj read err: Error: access violation accessing 0xc54d4884
+[00:54:20.248] [sprintf] #3 ic=50421031 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:20.248]     obj read err: Error: access violation accessing 0xc54d4884
+[00:54:20.249] [sprintf] #4 ic=50519561 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:20.249]     obj read err: Error: access violation accessing 0xc54d4884
+[00:54:20.249] [sprintf] #5 ic=50623371 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:20.250]     obj read err: Error: access violation accessing 0xc54d4884
+[00:54:20.250] [sprintf] #6 ic=50914721 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:20.250]     obj read err: Error: access violation accessing 0xc54d4884
+[00:54:20.251] [sprintf] #7 ic=51514521 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:20.251]     obj read err: Error: access violation accessing 0xc54d4884
+[00:54:20.251] [sprintf] #8 ic=50125461 <== SRC ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:20.253]     obj read err: Error: access violation accessing 0xc54d4884
+[00:54:20.253] [sprintf] #9 ic=51616261 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:20.253]     obj read err: Error: access violation accessing 0xc54d4884
+[00:54:20.254] [sprintf] #10 ic=51213111 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:20.254]     obj read err: Error: access violation accessing 0xc54d4884
+[00:54:27.840] [sprintf] #11 ic=800 ret=0x1ee23b6 (FreeStyle.exe+0x1ae23b6)
+[00:54:27.840]     obj read err: Error: access violation accessing 0x164
+[00:54:27.841] [sprintf] #12 ic=801 ret=0x1ee248f (FreeStyle.exe+0x1ae248f)
+[00:54:27.841]     obj read err: Error: access violation accessing 0x164
+[00:54:27.841] [sprintf] #13 ic=50421031 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.841]     obj read err: Error: access violation accessing 0x164
+[00:54:27.842] [sprintf] #14 ic=50519561 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.842]     obj read err: Error: access violation accessing 0x164
+[00:54:27.843] [sprintf] #15 ic=50623371 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.843]     obj read err: Error: access violation accessing 0x164
+[00:54:27.844] [sprintf] #16 ic=50914721 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.844]     obj read err: Error: access violation accessing 0x164
+[00:54:27.844] [sprintf] #17 ic=51514521 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.844]     obj read err: Error: access violation accessing 0x164
+[00:54:27.846] [sprintf] #18 ic=50125461 <== SRC ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.846]     obj read err: Error: access violation accessing 0x164
+[00:54:27.846] [sprintf] #19 ic=51616261 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.846]     obj read err: Error: access violation accessing 0x164
+[00:54:27.847] [sprintf] #20 ic=51213111 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.847]     obj read err: Error: access violation accessing 0x164
+[00:54:27.958] [sprintf] #21 ic=800 ret=0x1ee23b6 (FreeStyle.exe+0x1ae23b6)
+[00:54:27.958]     obj read err: Error: access violation accessing 0x164
+[00:54:27.958] [sprintf] #22 ic=801 ret=0x1ee248f (FreeStyle.exe+0x1ae248f)
+[00:54:27.958]     obj read err: Error: access violation accessing 0x164
+[00:54:27.959] [sprintf] #23 ic=50421031 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.959]     obj read err: Error: access violation accessing 0x164
+[00:54:27.959] [sprintf] #24 ic=50519561 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.960]     obj read err: Error: access violation accessing 0x164
+[00:54:27.960] [sprintf] #25 ic=50623371 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.960]     obj read err: Error: access violation accessing 0x164
+[00:54:27.961] [sprintf] #26 ic=50914721 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.961]     obj read err: Error: access violation accessing 0x164
+[00:54:27.961] [sprintf] #27 ic=51514521 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.961]     obj read err: Error: access violation accessing 0x164
+[00:54:27.963] [sprintf] #28 ic=50125461 <== SRC ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.963]     obj read err: Error: access violation accessing 0x164
+[00:54:27.963] [sprintf] #29 ic=51616261 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.963]     obj read err: Error: access violation accessing 0x164
+[00:54:27.964] [sprintf] #30 ic=51213111 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:27.964]     obj read err: Error: access violation accessing 0x164
+[00:54:28.043] [sprintf] #31 ic=800 ret=0x1ee23b6 (FreeStyle.exe+0x1ae23b6)
+[00:54:28.043]     obj read err: Error: access violation accessing 0x164
+[00:54:28.044] [sprintf] #32 ic=801 ret=0x1ee248f (FreeStyle.exe+0x1ae248f)
+[00:54:28.044]     obj read err: Error: access violation accessing 0x164
+[00:54:28.045] [sprintf] #33 ic=50421031 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:28.045]     obj read err: Error: access violation accessing 0x164
+[00:54:28.045] [sprintf] #34 ic=50519561 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:28.046]     obj read err: Error: access violation accessing 0x164
+[00:54:28.046] [sprintf] #35 ic=50623371 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:28.046]     obj read err: Error: access violation accessing 0x164
+[00:54:28.047] [sprintf] #36 ic=50914721 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:28.047]     obj read err: Error: access violation accessing 0x164
+[00:54:28.047] [sprintf] #37 ic=51514521 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:28.047]     obj read err: Error: access violation accessing 0x164
+[00:54:28.048] [sprintf] #38 ic=50125461 <== SRC ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:28.048]     obj read err: Error: access violation accessing 0x164
+[00:54:28.049] [sprintf] #39 ic=51616261 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:28.049]     obj read err: Error: access violation accessing 0x164
+[00:54:28.049] [sprintf] #40 ic=51213111 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563)
+[00:54:28.049]     obj read err: Error: access violation accessing 0x164

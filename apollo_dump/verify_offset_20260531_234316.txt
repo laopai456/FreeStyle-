@@ -1,0 +1,27 @@
+[23:43:16.245] === Verify ItemCode Offset ===
+[23:43:16.245] PID: 14024
+[23:43:16.245] SRC: 50125461  DST: 50125711
+[23:43:16.245] Target: [outer+0x164]+0x7DC
+[23:43:16.245] Log: D:\py\反编译\FreeStyle\apollo_dump\verify_offset_20260531_234316.txt
+[23:43:16.245] 
+[23:43:17.460]   [setup] sprintf hook ready
+[23:43:17.461]   [setup] offset monitor started (500ms)
+[23:43:17.461]   [setup] practice function hook @ 0x173C601
+[23:43:17.461]   [ready] SRC=50125461 DST=50125711
+[23:43:17.461] 
+[23:43:17.461] Instructions:
+[23:43:17.461]   1. Enter room -> check if offset matches sprintf ic
+[23:43:17.461]   2. Enter practice -> watch for OFFSET CHANGE
+[23:43:17.461]   3. Exit practice -> watch for OFFSET CHANGE
+[23:43:17.461] 
+[23:43:17.461] Commands: status | quit
+[23:43:17.461] 
+[23:43:21.483] 
+[23:43:21.483] [practice hook] itemCode=0 phase=INJECTED
+[23:43:21.483]     outer=0xa298730 subObj=0x84296868
+[23:43:21.484] 
+[23:43:21.484] [phase] INJECTED -> ROOM_LOAD
+[23:43:21.484] 
+[23:43:21.485] 
+[23:43:21.485] [phase] ROOM_LOAD -> PRACTICE_LOAD
+[23:43:21.485] 

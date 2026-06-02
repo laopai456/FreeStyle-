@@ -1,0 +1,45 @@
+[18:18:32] === AcquireSMD 替换 === PID:19100 ===
+[18:18:32] 50125461(美丽梦想 pak767) → 50125711(紫色超赛 pak768)
+[18:18:32] Hook: 调用者 0x1EEBA30, 替换 this+0x10 的SMD文件名
+[18:18:32] 日志: D:\py\反编译\FreeStyle\apollo_dump\acquire_replace_20260529_181832.txt
+[18:18:33]   AcquireSMD替换hook就绪. 进房间.
+[18:18:33] 
+[18:18:33] 进房间触发角色加载。
+[18:18:33] 命令: status | quit
+[18:18:33] 
+[18:18:39]   [SSKF #1] size=512 flag=0x0
+[18:18:39]   [SSKF #2] size=78848 flag=0x0
+[18:18:39]   [SSKF #3] size=512 flag=0x0
+[18:18:39]   [SSKF #4] size=80896 flag=0x0
+[18:18:39]   [SSKF #5] size=512 flag=0x0
+[18:18:39]   [SSKF #6] size=51712 flag=0x0
+[18:18:39]   [SSKF #7] size=512 flag=0x0
+[18:18:39]   [SSKF #8] size=60928 flag=0x0
+[18:18:39]   [SSKF #9] size=512 flag=0x0
+[18:18:39]   [SSKF #10] size=94208 flag=0x0
+[18:18:39]   [SSKF #11] size=512 flag=0x0
+[18:18:39]   [SSKF #12] size=16384 flag=0x0
+[18:18:39]   [SSKF #13] size=512 flag=0x0
+[18:18:39]   [SSKF #14] size=118272 flag=0x0
+[18:18:39]   [SSKF #15] size=512 flag=0x0
+[18:18:39]   [SSKF #16] size=15872 flag=0x0
+[18:18:39]   [SSKF #17] size=512 flag=0x0
+[18:18:39]   [SSKF #18] size=41472 flag=0x0
+[18:18:39]   [SSKF #19] size=512 flag=0x0
+[18:18:39]   [SSKF #20] size=100864 flag=0x0
+[18:18:39]   [SSKF #21] size=512 flag=0x0
+[18:18:39]   [SSKF #22] size=37888 flag=0x0
+[18:18:39]   [SSKF #23] size=512 flag=0x0
+[18:18:39]   [SSKF #24] size=53760 flag=0x0
+[18:18:39]   [SSKF #25] size=512 flag=0x0
+[18:18:39]   [SSKF #26] size=5120 flag=0x0
+[18:18:39]   [SSKF #27] size=512 flag=0x0
+[18:18:39]   [SSKF #28] size=1536 flag=0x0
+[18:18:39]   [SSKF #29] size=512 flag=0x0
+[18:18:39]   [SSKF #30] size=1536 flag=0x0
+[18:18:39]   [SSKF #31] size=512 flag=0x0
+[18:18:39]   [SSKF #32] size=19456 flag=0x0
+[18:18:39]   [SSKF #33] size=512 flag=0x0
+[18:18:39]   [SSKF #34] size=19456 flag=0x0
+[18:18:39]   [SSKF #35] size=512 flag=0x0
+[18:18:39]   [SSKF #36] size=24576 flag=0x0

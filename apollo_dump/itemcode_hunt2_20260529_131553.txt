@@ -1,0 +1,17 @@
+[13:15:53] === Phase 4v2: EBP链搜索ItemCode === PID:16132 ===
+[13:15:53] 日志: D:\py\反编译\FreeStyle\apollo_dump\itemcode_hunt2_20260529_131553.txt
+[13:15:54]   EBP链搜索器ready. 进房间触发角色加载.
+[13:15:54] 
+[13:15:54] Hook已激活。进房间触发角色加载。
+[13:15:54] 命令: quit
+[13:15:54] 
+[13:15:56]   [#1] ecx=0x87a6ebb8
+[13:15:56]   未找到ItemCode
+[13:15:56]   [#2] ecx=0x87a6b288
+[13:15:56]   未找到ItemCode
+[13:15:56]   [#3] ecx=0x87a69f78
+[13:15:56]   未找到ItemCode
+[13:15:58]   [#4] ecx=0x865be280
+[13:15:58]   !!! 找到 1 处:
+[13:15:58]     depth=4 INT_VIA_PTR: frame[ebp+-b8]->ptr+50 ret=RVA:0x1723e84
+[13:15:58]       addr=0x49e5b650

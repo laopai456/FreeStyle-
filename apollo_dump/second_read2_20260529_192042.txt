@@ -1,0 +1,22 @@
+[19:20:42] === 第二次读取替换v2 === PID:17236 ===
+[19:20:42] 策略: msvcrt fopen/fread 读目标文件, 替换第二次ReadFile buffer
+[19:20:42] 日志: D:\py\反编译\FreeStyle\apollo_dump\second_read2_20260529_192042.txt
+[19:20:43]   [步骤] JS开始执行
+[19:20:43]   [步骤] CRT: msvcrt.dll base=0x75aa0000
+[19:20:43]   [步骤] fopen=0x75b16cf0 fread=0x75b1c4e0 fseek=0x75b1c780 ftell=0x75b1ca30 fclose=0x75b1b5d0
+[19:20:43]   [步骤] NativeFunction全部构造OK
+[19:20:43]   [步骤] 路径alloc OK, 准备fopen
+[19:20:43]   [步骤] fopen返回: 0x75b59660 isNull=false
+[19:20:43]   [步骤] 文件大小: 270264
+[19:20:43]   [步骤] alloc 100864B OK: 0x25a70008
+[19:20:43]   [步骤] fread返回: 100864
+[19:20:43]   目标加载: 100864B (文件270264B) magic=SSKF name=i50125711_FN.smd
+[19:20:43]   [步骤] 文件加载完毕, targetSize=100864
+[19:20:43]   [JS错误] TypeError: not a function
+[19:20:43]     行号: 113
+[19:20:43]     堆栈: TypeError: not a function
+    at <eval> (/script1.js:113)
+[19:20:43] 
+[19:20:43] 进房间触发角色加载。
+[19:20:43] 命令: status | quit
+[19:20:43] 

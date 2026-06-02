@@ -1,0 +1,2994 @@
+================================================================================
+  PE32 Import Analysis Tool
+================================================================================
+
+[*] Loaded: FreeStyle.exe
+    Size: 42,982,416 bytes
+
+================================================================================
+  SECTION LAYOUT
+================================================================================
+Name         VirtAddr   VirtSize    RawAddr    RawSize
+--------------------------------------------------
+.text      0x00001000 0x0280B000 0x00000400 0x0280B000
+Apollo     0x0280C000 0x00008000 0x0280B400 0x00006C00
+Apollo     0x02814000 0x000E8000 0x02812000 0x000E7800
+Apollo     0x028FC000 0x00001000 0x028F9800 0x00001000
+
+================================================================================
+  IMAGE BASE & ENTRY POINT
+================================================================================
+    ImageBase:      0x00400000
+    EntryPoint RVA: 0x028F507F (Apollo)
+
+================================================================================
+  IMPORT DIRECTORY ANALYSIS
+================================================================================
+
+--- DSETUP.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  Ordinal_11                              11 0x0268F094    .text
+
+--- mss32.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  _AIL_close_digital_driver@4              0 0x0268FAF8    .text
+  _AIL_shutdown@0                          0 0x0268FAFC    .text
+  _AIL_set_stream_ms_position@8            0 0x0268FB00    .text
+  _AIL_stream_ms_position@12               0 0x0268FB04    .text
+  _AIL_stream_status@4                     0 0x0268FB08    .text
+  _AIL_quick_set_ms_position@8             0 0x0268FB0C    .text
+  _AIL_set_stream_position@8               0 0x0268FB10    .text
+  _AIL_start_stream@4                      0 0x0268FB14    .text
+  _AIL_file_write@12                       0 0x0268FB18    .text
+  _AIL_set_stream_volume_levels@12         0 0x0268FB1C    .text
+  _AIL_quick_set_volume@12                 0 0x0268FB20    .text
+  _AIL_quick_halt@4                        0 0x0268FB24    .text
+  _AIL_quick_play@8                        0 0x0268FB28    .text
+  _AIL_quick_status@4                      0 0x0268FB2C    .text
+  _AIL_quick_unload@4                      0 0x0268FB30    .text
+  _AIL_close_stream@4                      0 0x0268FB34    .text
+  _AIL_open_stream@12                      0 0x0268FB38    .text
+  _AIL_startup@0                           0 0x0268FB3C    .text
+  _AIL_open_digital_driver@16              0 0x0268FB40    .text
+  _AIL_quick_startup@20                    0 0x0268FB44    .text
+  _AIL_set_redist_directory@4              0 0x0268FB48    .text
+  _AIL_quick_load@4                        0 0x0268FB4C    .text
+  _AIL_quick_load_mem@8                    0 0x0268FB50    .text
+  _AIL_quick_shutdown@0                    0 0x0268FB54    .text
+
+--- WS2_32.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  connect                                  4 0x0268F93C    .text
+  accept                                   1 0x0268F940    .text
+  WSASendTo                                0 0x0268F944    .text
+  WSARecvFrom                              0 0x0268F948    .text
+  shutdown                                22 0x0268F94C    .text
+  WSASocketA                               0 0x0268F950    .text
+  WSAConnect                               0 0x0268F954    .text
+  ioctlsocket                             10 0x0268F958    .text
+  socket                                  23 0x0268F95C    .text
+  send                                    19 0x0268F960    .text
+  recvfrom                                17 0x0268F964    .text
+  WSAEventSelect                           0 0x0268F968    .text
+  WSACreateEvent                           0 0x0268F96C    .text
+  WSACloseEvent                            0 0x0268F970    .text
+  WSAEnumNetworkEvents                     0 0x0268F974    .text
+  WSAWaitForMultipleEvents                 0 0x0268F978    .text
+  gethostbyname                           52 0x0268F97C    .text
+  ntohs                                   15 0x0268F980    .text
+  setsockopt                              21 0x0268F984    .text
+  bind                                     2 0x0268F988    .text
+  listen                                  13 0x0268F98C    .text
+  closesocket                              3 0x0268F990    .text
+  gethostbyaddr                           51 0x0268F994    .text
+  ntohl                                   14 0x0268F998    .text
+  htonl                                    8 0x0268F99C    .text
+  select                                  18 0x0268F9A0    .text
+  __WSAFDIsSet                           151 0x0268F9A4    .text
+  recv                                    16 0x0268F9A8    .text
+  WSAGetLastError                        111 0x0268F9AC    .text
+  gethostname                             57 0x0268F9B0    .text
+  getsockname                              6 0x0268F9B4    .text
+  htons                                    9 0x0268F9B8    .text
+  inet_addr                               11 0x0268F9BC    .text
+  sendto                                  20 0x0268F9C0    .text
+  WSARecv                                  0 0x0268F9C4    .text
+  WSAStartup                             115 0x0268F9C8    .text
+  WSACleanup                             116 0x0268F9CC    .text
+  inet_ntoa                               12 0x0268F9D0    .text
+  WSASetLastError                        112 0x0268F9D4    .text
+  WSAIoctl                                 0 0x0268F9D8    .text
+  getsockopt                               7 0x0268F9DC    .text
+  getpeername                              5 0x0268F9E0    .text
+  freeaddrinfo                             0 0x0268F9E4    .text
+  getaddrinfo                              0 0x0268F9E8    .text
+  WSASend                                  0 0x0268F9EC    .text
+
+--- DINPUT8.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  DirectInput8Create                       0 0x0268F08C    .text
+
+--- d3dx9_30.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  D3DXMatrixRotationZ                      0 0x0268F9FC    .text
+  D3DXVec4Transform                        0 0x0268FA00    .text
+  D3DXMatrixRotationY                      0 0x0268FA04    .text
+  D3DXMatrixPerspectiveFovLH               0 0x0268FA08    .text
+  D3DXSaveSurfaceToFileInMemory            0 0x0268FA0C    .text
+  D3DXVec2Normalize                        0 0x0268FA10    .text
+  D3DXCreateFontA                          0 0x0268FA14    .text
+  D3DXCreateSprite                         0 0x0268FA18    .text
+  D3DXQuaternionRotationMatrix             0 0x0268FA1C    .text
+  D3DXMatrixOrthoLH                        0 0x0268FA20    .text
+  D3DXCreateTextureFromFileExA             0 0x0268FA24    .text
+  D3DXLoadSurfaceFromSurface               0 0x0268FA28    .text
+  D3DXMatrixPerspectiveLH                  0 0x0268FA2C    .text
+  D3DXMatrixMultiplyTranspose              0 0x0268FA30    .text
+  D3DXVec4Normalize                        0 0x0268FA34    .text
+  D3DXMatrixTranspose                      0 0x0268FA38    .text
+  D3DXAssembleShaderFromFileA              0 0x0268FA3C    .text
+  D3DXSaveSurfaceToFileA                   0 0x0268FA40    .text
+  D3DXMatrixLookAtLH                       0 0x0268FA44    .text
+  D3DXMatrixInverse                        0 0x0268FA48    .text
+  D3DXPlaneFromPointNormal                 0 0x0268FA4C    .text
+  D3DXCreateTexture                        0 0x0268FA50    .text
+  D3DXVec3TransformCoord                   0 0x0268FA54    .text
+  D3DXVec3Unproject                        0 0x0268FA58    .text
+  D3DXVec3Normalize                        0 0x0268FA5C    .text
+  D3DXIntersectTri                         0 0x0268FA60    .text
+  D3DXCreateTextureFromFileA               0 0x0268FA64    .text
+  D3DXMatrixMultiply                       0 0x0268FA68    .text
+  D3DXMatrixScaling                        0 0x0268FA6C    .text
+  D3DXPlaneFromPoints                      0 0x0268FA70    .text
+  D3DXVec3Transform                        0 0x0268FA74    .text
+  D3DXCreateTextureFromFileInMemoryEx      0 0x0268FA78    .text
+  D3DXVec3Project                          0 0x0268FA7C    .text
+  D3DXMatrixTranslation                    0 0x0268FA80    .text
+  D3DXMatrixRotationYawPitchRoll           0 0x0268FA84    .text
+  D3DXVec2TransformCoord                   0 0x0268FA88    .text
+  D3DXQuaternionSlerp                      0 0x0268FA8C    .text
+  D3DXQuaternionNormalize                  0 0x0268FA90    .text
+  D3DXMatrixRotationQuaternion             0 0x0268FA94    .text
+  D3DXMatrixRotationX                      0 0x0268FA98    .text
+  D3DXPlaneIntersectLine                   0 0x0268FA9C    .text
+  D3DXGetImageInfoFromFileInMemory         0 0x0268FAA0    .text
+
+--- WINMM.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  timeEndPeriod                            0 0x0268F8E8    .text
+  timeBeginPeriod                          0 0x0268F8EC    .text
+  timeGetTime                              0 0x0268F8F0    .text
+
+--- IMM32.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  ImmSetConversionStatus                   0 0x0268F0E8    .text
+  ImmGetContext                            0 0x0268F0EC    .text
+  ImmGetIMEFileNameA                       0 0x0268F0F0    .text
+  ImmGetOpenStatus                         0 0x0268F0F4    .text
+  ImmGetConversionStatus                   0 0x0268F0F8    .text
+  ImmIsIME                                 0 0x0268F0FC    .text
+  ImmNotifyIME                             0 0x0268F100    .text
+  ImmGetCompositionStringW                 0 0x0268F104    .text
+  ImmGetCandidateListW                     0 0x0268F108    .text
+  ImmSetOpenStatus                         0 0x0268F10C    .text
+  ImmAssociateContext                      0 0x0268F110    .text
+  ImmGetDescriptionA                       0 0x0268F114    .text
+  ImmReleaseContext                        0 0x0268F118    .text
+
+--- VERSION.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  GetFileVersionInfoSizeA                  0 0x0268F884    .text
+  GetFileVersionInfoA                      0 0x0268F888    .text
+  VerQueryValueA                           0 0x0268F88C    .text
+
+--- gdiplus.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  GdipGetImageEncoders                     0 0x0268FAA8    .text
+  GdipSaveImageToStream                    0 0x0268FAAC    .text
+  GdipImageSelectActiveFrame               0 0x0268FAB0    .text
+  GdipGetPropertyItem                      0 0x0268FAB4    .text
+  GdipGetImageHeight                       0 0x0268FAB8    .text
+  GdipFree                                 0 0x0268FABC    .text
+  GdipGetImageWidth                        0 0x0268FAC0    .text
+  GdipGetPropertyItemSize                  0 0x0268FAC4    .text
+  GdipImageGetFrameCount                   0 0x0268FAC8    .text
+  GdipImageGetFrameDimensionsList          0 0x0268FACC    .text
+  GdipImageGetFrameDimensionsCount         0 0x0268FAD0    .text
+  GdiplusShutdown                          0 0x0268FAD4    .text
+  GdiplusStartup                           0 0x0268FAD8    .text
+  GdipLoadImageFromStream                  0 0x0268FADC    .text
+  GdipCloneImage                           0 0x0268FAE0    .text
+  GdipDisposeImage                         0 0x0268FAE4    .text
+  GdipLoadImageFromStreamICM               0 0x0268FAE8    .text
+  GdipAlloc                                0 0x0268FAEC    .text
+  GdipGetImageEncodersSize                 0 0x0268FAF0    .text
+
+--- SHLWAPI.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  PathFileExistsA                          0 0x0268F794    .text
+  PathFindFileNameA                        0 0x0268F798    .text
+  PathRemoveExtensionA                     0 0x0268F79C    .text
+
+--- KERNEL32.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  DecodePointer                            0 0x0268F128    .text
+  lstrlenA                                 0 0x0268F12C    .text
+  ReadProcessMemory                        0 0x0268F130    .text
+  SetFileTime                              0 0x0268F134    .text
+  LocalFileTimeToFileTime                  0 0x0268F138    .text
+  ReadFile                                 0 0x0268F13C    .text
+  GetFileAttributesA                       0 0x0268F140    .text
+  SystemTimeToFileTime                     0 0x0268F144    .text
+  SetFilePointer                           0 0x0268F148    .text
+  CreateThread                             0 0x0268F14C    .text
+  GetNativeSystemInfo                      0 0x0268F150    .text
+  VerSetConditionMask                      0 0x0268F154    .text
+  VerifyVersionInfoA                       0 0x0268F158    .text
+  GlobalMemoryStatus                       0 0x0268F15C    .text
+  RemoveDirectoryA                         0 0x0268F160    .text
+  HeapDestroy                              0 0x0268F164    .text
+  HeapFree                                 0 0x0268F168    .text
+  HeapAlloc                                0 0x0268F16C    .text
+  EncodePointer                            0 0x0268F170    .text
+  HeapReAlloc                              0 0x0268F174    .text
+  HeapSize                                 0 0x0268F178    .text
+  GetProcessHeap                           0 0x0268F17C    .text
+  InitializeCriticalSectionAndSpinCount      0 0x0268F180    .text
+  HeapSetInformation                       0 0x0268F184    .text
+  InterlockedDecrement                     0 0x0268F188    .text
+  GetTickCount                             0 0x0268F18C    .text
+  InitializeCriticalSection                0 0x0268F190    .text
+  DeleteCriticalSection                    0 0x0268F194    .text
+  SetThreadPriority                        0 0x0268F198    .text
+  CloseHandle                              0 0x0268F19C    .text
+  WaitForSingleObject                      0 0x0268F1A0    .text
+  Sleep                                    0 0x0268F1A4    .text
+  InterlockedExchange                      0 0x0268F1A8    .text
+  LeaveCriticalSection                     0 0x0268F1AC    .text
+  EnterCriticalSection                     0 0x0268F1B0    .text
+  InterlockedIncrement                     0 0x0268F1B4    .text
+  GlobalUnlock                             0 0x0268F1B8    .text
+  GlobalLock                               0 0x0268F1BC    .text
+  GlobalAlloc                              0 0x0268F1C0    .text
+  IsBadWritePtr                            0 0x0268F1C4    .text
+  GlobalFree                               0 0x0268F1C8    .text
+  WideCharToMultiByte                      0 0x0268F1CC    .text
+  GetProcAddress                           0 0x0268F1D0    .text
+  LoadLibraryA                             0 0x0268F1D4    .text
+  GetStartupInfoW                          0 0x0268F1D8    .text
+  GetLastError                             0 0x0268F1DC    .text
+  OutputDebugStringA                       0 0x0268F1E0    .text
+  GetSystemTime                            0 0x0268F1E4    .text
+  MultiByteToWideChar                      0 0x0268F1E8    .text
+  GetLocalTime                             0 0x0268F1EC    .text
+  QueryPerformanceCounter                  0 0x0268F1F0    .text
+  lstrlenW                                 0 0x0268F1F4    .text
+  FindResourceExW                          0 0x0268F1F8    .text
+  SizeofResource                           0 0x0268F1FC    .text
+  LockResource                             0 0x0268F200    .text
+  LoadResource                             0 0x0268F204    .text
+  FindResourceW                            0 0x0268F208    .text
+  lstrcmpiW                                0 0x0268F20C    .text
+  lstrcmpA                                 0 0x0268F210    .text
+  DeleteFileA                              0 0x0268F214    .text
+  SetCurrentDirectoryA                     0 0x0268F218    .text
+  GetCurrentDirectoryA                     0 0x0268F21C    .text
+  TerminateProcess                         0 0x0268F220    .text
+  GetCurrentProcess                        0 0x0268F224    .text
+  SetFileAttributesA                       0 0x0268F228    .text
+  FindNextFileA                            0 0x0268F22C    .text
+  FindClose                                0 0x0268F230    .text
+  FindFirstFileA                           0 0x0268F234    .text
+  GetPrivateProfileStringA                 0 0x0268F238    .text
+  TerminateThread                          0 0x0268F23C    .text
+  GetExitCodeThread                        0 0x0268F240    .text
+  GetTempPathA                             0 0x0268F244    .text
+  WriteFile                                0 0x0268F248    .text
+  CreateFileA                              0 0x0268F24C    .text
+  CreateDirectoryA                         0 0x0268F250    .text
+  Process32Next                            0 0x0268F254    .text
+  OpenProcess                              0 0x0268F258    .text
+  Process32First                           0 0x0268F25C    .text
+  CreateToolhelp32Snapshot                 0 0x0268F260    .text
+  GetSystemDirectoryA                      0 0x0268F264    .text
+  GetCommandLineA                          0 0x0268F268    .text
+  GetCurrentProcessId                      0 0x0268F26C    .text
+  RaiseException                           0 0x0268F270    .text
+  ReleaseMutex                             0 0x0268F274    .text
+  CreateMutexA                             0 0x0268F278    .text
+  IsDBCSLeadByte                           0 0x0268F27C    .text
+  UnhandledExceptionFilter                 0 0x0268F280    .text
+  GetSystemInfo                            0 0x0268F284    .text
+  GetVersionExA                            0 0x0268F288    .text
+  FreeLibrary                              0 0x0268F28C    .text
+  CreateEventA                             0 0x0268F290    .text
+  SetEvent                                 0 0x0268F294    .text
+  GetModuleFileNameA                       0 0x0268F298    .text
+  ResetEvent                               0 0x0268F29C    .text
+  GetWindowsDirectoryA                     0 0x0268F2A0    .text
+  SetUnhandledExceptionFilter              0 0x0268F2A4    .text
+  VirtualQuery                             0 0x0268F2A8    .text
+  GetCurrentThreadId                       0 0x0268F2AC    .text
+  SetLastError                             0 0x0268F2B0    .text
+  QueryPerformanceFrequency                0 0x0268F2B4    .text
+  GetThreadTimes                           0 0x0268F2B8    .text
+  GetCurrentThread                         0 0x0268F2BC    .text
+  GlobalSize                               0 0x0268F2C0    .text
+  InterlockedCompareExchange               0 0x0268F2C4    .text
+  CompareStringA                           0 0x0268F2C8    .text
+  GlobalMemoryStatusEx                     0 0x0268F2CC    .text
+  MulDiv                                   0 0x0268F2D0    .text
+  FormatMessageA                           0 0x0268F2D4    .text
+  GetExitCodeProcess                       0 0x0268F2D8    .text
+  WaitForMultipleObjects                   0 0x0268F2DC    .text
+  CreateProcessA                           0 0x0268F2E0    .text
+  SetWaitableTimer                         0 0x0268F2E4    .text
+  CreateWaitableTimerA                     0 0x0268F2E8    .text
+  LocalFree                                0 0x0268F2EC    .text
+  IsDebuggerPresent                        0 0x0268F2F0    .text
+  IsProcessorFeaturePresent                0 0x0268F2F4    .text
+  GetSystemTimeAsFileTime                  0 0x0268F2F8    .text
+  SleepEx                                  0 0x0268F2FC    .text
+  PeekNamedPipe                            0 0x0268F300    .text
+  GetFileType                              0 0x0268F304    .text
+  GetStdHandle                             0 0x0268F308    .text
+  ExpandEnvironmentStringsA                0 0x0268F30C    .text
+  GetModuleHandleA                         0 0x0268F310    .text
+  GetLocaleInfoA                           0 0x0268F314    .text
+
+--- USER32.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  MessageBoxA                              0 0x0268F7A4    .text
+  OpenClipboard                            0 0x0268F7A8    .text
+  EmptyClipboard                           0 0x0268F7AC    .text
+  SetClipboardData                         0 0x0268F7B0    .text
+  ShowWindow                               0 0x0268F7B4    .text
+  DefWindowProcA                           0 0x0268F7B8    .text
+  UpdateWindow                             0 0x0268F7BC    .text
+  CreateWindowExA                          0 0x0268F7C0    .text
+  SetWindowPos                             0 0x0268F7C4    .text
+  GetSystemMetrics                         0 0x0268F7C8    .text
+  ScreenToClient                           0 0x0268F7CC    .text
+  GetCursorPos                             0 0x0268F7D0    .text
+  ShowCursor                               0 0x0268F7D4    .text
+  PtInRect                                 0 0x0268F7D8    .text
+  SetRect                                  0 0x0268F7DC    .text
+  DestroyWindow                            0 0x0268F7E0    .text
+  RegisterClassExA                         0 0x0268F7E4    .text
+  GetKeyState                              0 0x0268F7E8    .text
+  ReleaseDC                                0 0x0268F7EC    .text
+  PrintWindow                              0 0x0268F7F0    .text
+  GetAsyncKeyState                         0 0x0268F7F4    .text
+  FindWindowA                              0 0x0268F7F8    .text
+  GetKeyboardLayout                        0 0x0268F7FC    .text
+  SetFocus                                 0 0x0268F800    .text
+  IsWindow                                 0 0x0268F804    .text
+  GetFocus                                 0 0x0268F808    .text
+  PeekMessageA                             0 0x0268F80C    .text
+  SetActiveWindow                          0 0x0268F810    .text
+  TranslateMessage                         0 0x0268F814    .text
+  DispatchMessageA                         0 0x0268F818    .text
+  LoadCursorA                              0 0x0268F81C    .text
+  LoadIconA                                0 0x0268F820    .text
+  BeginPaint                               0 0x0268F824    .text
+  EndPaint                                 0 0x0268F828    .text
+  SystemParametersInfoA                    0 0x0268F82C    .text
+  SetWindowsHookExA                        0 0x0268F830    .text
+  UnhookWindowsHookEx                      0 0x0268F834    .text
+  CallNextHookEx                           0 0x0268F838    .text
+  BringWindowToTop                         0 0x0268F83C    .text
+  GetWindowLongA                           0 0x0268F840    .text
+  SetWindowLongA                           0 0x0268F844    .text
+  InvalidateRect                           0 0x0268F848    .text
+  SetCursor                                0 0x0268F84C    .text
+  SetTimer                                 0 0x0268F850    .text
+  KillTimer                                0 0x0268F854    .text
+  SendMessageA                             0 0x0268F858    .text
+  GetClientRect                            0 0x0268F85C    .text
+  MessageBoxIndirectA                      0 0x0268F860    .text
+  SetWindowTextA                           0 0x0268F864    .text
+  GetClipboardData                         0 0x0268F868    .text
+  wsprintfA                                0 0x0268F86C    .text
+  PostQuitMessage                          0 0x0268F870    .text
+  IntersectRect                            0 0x0268F874    .text
+  PostMessageA                             0 0x0268F878    .text
+  CloseClipboard                           0 0x0268F87C    .text
+
+--- GDI32.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  CreateCompatibleDC                       0 0x0268F0A4    .text
+  DeleteDC                                 0 0x0268F0A8    .text
+  DeleteObject                             0 0x0268F0AC    .text
+  CreateFontA                              0 0x0268F0B0    .text
+  GetTextExtentPoint32A                    0 0x0268F0B4    .text
+  SetBkColor                               0 0x0268F0B8    .text
+  CreateFontIndirectA                      0 0x0268F0BC    .text
+  GetDeviceCaps                            0 0x0268F0C0    .text
+  CreateDIBSection                         0 0x0268F0C4    .text
+  RemoveFontResourceA                      0 0x0268F0C8    .text
+  AddFontResourceA                         0 0x0268F0CC    .text
+  ExtTextOutA                              0 0x0268F0D0    .text
+  SetTextColor                             0 0x0268F0D4    .text
+  SelectObject                             0 0x0268F0D8    .text
+  PatBlt                                   0 0x0268F0DC    .text
+  GetTextExtentPoint32W                    0 0x0268F0E0    .text
+
+--- COMDLG32.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  GetOpenFileNameA                         0 0x0268F07C    .text
+
+--- ADVAPI32.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  RegCreateKeyExA                          0 0x0268F000    .text
+  AdjustTokenPrivileges                    0 0x0268F004    .text
+  CryptImportKey                           0 0x0268F008    .text
+  CryptDestroyHash                         0 0x0268F00C    .text
+  CryptGetHashParam                        0 0x0268F010    .text
+  CryptHashData                            0 0x0268F014    .text
+  CryptCreateHash                          0 0x0268F018    .text
+  RegSetValueExA                           0 0x0268F01C    .text
+  RegDeleteValueA                          0 0x0268F020    .text
+  CryptDestroyKey                          0 0x0268F024    .text
+  OpenThreadToken                          0 0x0268F028    .text
+  CryptGenRandom                           0 0x0268F02C    .text
+  CryptAcquireContextA                     0 0x0268F030    .text
+  CryptReleaseContext                      0 0x0268F034    .text
+  RegOpenKeyExA                            0 0x0268F038    .text
+  RegQueryValueExA                         0 0x0268F03C    .text
+  RegCloseKey                              0 0x0268F040    .text
+  LookupPrivilegeValueA                    0 0x0268F044    .text
+  OpenProcessToken                         0 0x0268F048    .text
+  CryptEncrypt                             0 0x0268F04C    .text
+
+--- SHELL32.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  DragAcceptFiles                          0 0x0268F77C    .text
+  ShellExecuteA                            0 0x0268F780    .text
+  SHGetFolderPathA                         0 0x0268F784    .text
+  DragQueryFileA                           0 0x0268F788    .text
+  ShellExecuteExA                          0 0x0268F78C    .text
+
+--- ole32.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  CoCreateInstance                         0 0x0268FB5C    .text
+  CoUninitialize                           0 0x0268FB60    .text
+  CoInitializeEx                           0 0x0268FB64    .text
+  CoInitialize                             0 0x0268FB68    .text
+  GetHGlobalFromStream                     0 0x0268FB6C    .text
+  StringFromGUID2                          0 0x0268FB70    .text
+  CreateStreamOnHGlobal                    0 0x0268FB74    .text
+  CoTaskMemFree                            0 0x0268FB78    .text
+  CoCreateGuid                             0 0x0268FB7C    .text
+  OleRun                                   0 0x0268FB80    .text
+
+--- OLEAUT32.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  VariantChangeType                       12 0x0268F740    .text
+  VariantInit                              8 0x0268F744    .text
+  SysFreeString                            6 0x0268F748    .text
+  VariantCopy                             10 0x0268F74C    .text
+  SysAllocStringByteLen                  150 0x0268F750    .text
+  SysAllocString                           2 0x0268F754    .text
+  SysStringLen                             7 0x0268F758    .text
+  CreateErrorInfo                        202 0x0268F75C    .text
+  SetErrorInfo                           201 0x0268F760    .text
+  GetErrorInfo                           200 0x0268F764    .text
+  VariantClear                             9 0x0268F768    .text
+  SysStringByteLen                       149 0x0268F76C    .text
+
+--- WININET.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  InternetReadFile                         0 0x0268F8BC    .text
+  InternetReadFileExA                      0 0x0268F8C0    .text
+  InternetCloseHandle                      0 0x0268F8C4    .text
+  InternetSetOptionA                       0 0x0268F8C8    .text
+  InternetOpenUrlA                         0 0x0268F8CC    .text
+  HttpSendRequestA                         0 0x0268F8D0    .text
+  HttpOpenRequestA                         0 0x0268F8D4    .text
+  InternetSetStatusCallback                0 0x0268F8D8    .text
+  InternetConnectA                         0 0x0268F8DC    .text
+  InternetOpenA                            0 0x0268F8E0    .text
+
+--- BugTrap.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  BT_SetActivityType                       0 0x0268F054    .text
+  BT_SetDumpType                           0 0x0268F058    .text
+  BT_SetFlags                              0 0x0268F05C    .text
+  BT_SetPostErrHandler                     0 0x0268F060    .text
+  BT_SetPreErrHandler                      0 0x0268F064    .text
+  BT_SetSupportServer                      0 0x0268F068    .text
+  BT_SetAppVersion                         0 0x0268F06C    .text
+  BT_SetAppName                            0 0x0268F070    .text
+  BT_InstallSehFilter                      0 0x0268F074    .text
+
+--- WINHTTP.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  WinHttpCloseHandle                       0 0x0268F894    .text
+  WinHttpReadData                          0 0x0268F898    .text
+  WinHttpReceiveResponse                   0 0x0268F89C    .text
+  WinHttpSendRequest                       0 0x0268F8A0    .text
+  WinHttpOpenRequest                       0 0x0268F8A4    .text
+  WinHttpSetOption                         0 0x0268F8A8    .text
+  WinHttpConnect                           0 0x0268F8AC    .text
+  WinHttpSetTimeouts                       0 0x0268F8B0    .text
+  WinHttpOpen                              0 0x0268F8B4    .text
+
+--- MSVCR100.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  _acmdln                                  0 0x0268F31C    .text
+  _ismbblead                               0 0x0268F320    .text
+  _XcptFilter                              0 0x0268F324    .text
+  _exit                                    0 0x0268F328    .text
+  _cexit                                   0 0x0268F32C    .text
+  __getmainargs                            0 0x0268F330    .text
+  _amsg_exit                               0 0x0268F334    .text
+  __clean_type_info_names_internal         0 0x0268F338    .text
+  ?_name_internal_method@type_info@@QBEPBDPAU__type_info_node@@@Z      0 0x0268F33C    .text
+  _onexit                                  0 0x0268F340    .text
+  _lock                                    0 0x0268F344    .text
+  __dllonexit                              0 0x0268F348    .text
+  _unlock                                  0 0x0268F34C    .text
+  ?terminate@@YAXXZ                        0 0x0268F350    .text
+  _wcsupr                                  0 0x0268F354    .text
+  _fcloseall                               0 0x0268F358    .text
+  _ultoa                                   0 0x0268F35C    .text
+  _strnicmp                                0 0x0268F360    .text
+  _strlwr                                  0 0x0268F364    .text
+  _recalloc                                0 0x0268F368    .text
+  _malloc_crt                              0 0x0268F36C    .text
+  _free_locale                             0 0x0268F370    .text
+  _ui64toa_s                               0 0x0268F374    .text
+  _create_locale                           0 0x0268F378    .text
+  ?_set_new_handler@@YAP6AHI@ZP6AHI@Z@Z      0 0x0268F37C    .text
+  _wfsopen                                 0 0x0268F380    .text
+  _fsopen                                  0 0x0268F384    .text
+  ___mb_cur_max_l_func                     0 0x0268F388    .text
+  rand_s                                   0 0x0268F38C    .text
+  __uncaught_exception                     0 0x0268F390    .text
+  _calloc_crt                              0 0x0268F394    .text
+  ___lc_handle_func                        0 0x0268F398    .text
+  ___lc_codepage_func                      0 0x0268F39C    .text
+  __pctype_func                            0 0x0268F3A0    .text
+  __crtLCMapStringA                        0 0x0268F3A4    .text
+  setlocale                                0 0x0268F3A8    .text
+  calloc                                   0 0x0268F3AC    .text
+  _access                                  0 0x0268F3B0    .text
+  _ftime64                                 0 0x0268F3B4    .text
+  _mbsrchr                                 0 0x0268F3B8    .text
+  _mbsnbcpy                                0 0x0268F3BC    .text
+  _ismbcalnum                              0 0x0268F3C0    .text
+  _mbscmp                                  0 0x0268F3C4    .text
+  ?before@type_info@@QBEHABV1@@Z           0 0x0268F3C8    .text
+  exit                                     0 0x0268F3CC    .text
+  longjmp                                  0 0x0268F3D0    .text
+  _initterm                                0 0x0268F3D4    .text
+  _initterm_e                              0 0x0268F3D8    .text
+  _configthreadlocale                      0 0x0268F3DC    .text
+  __setusermatherr                         0 0x0268F3E0    .text
+  _commode                                 0 0x0268F3E4    .text
+  _fmode                                   0 0x0268F3E8    .text
+  __set_app_type                           0 0x0268F3EC    .text
+  _except_handler4_common                  0 0x0268F3F0    .text
+  _crt_debugger_hook                       0 0x0268F3F4    .text
+  _lseeki64                                0 0x0268F3F8    .text
+  ?_type_info_dtor_internal_method@type_info@@QAEXXZ      0 0x0268F3FC    .text
+  _invoke_watson                           0 0x0268F400    .text
+  _controlfp_s                             0 0x0268F404    .text
+  _fstat64                                 0 0x0268F408    .text
+  _getpid                                  0 0x0268F40C    .text
+  _stat64                                  0 0x0268F410    .text
+  __sys_nerr                               0 0x0268F414    .text
+  _strtoi64                                0 0x0268F418    .text
+  _mbspbrk                                 0 0x0268F41C    .text
+  _read                                    0 0x0268F420    .text
+  _write                                   0 0x0268F424    .text
+  _close                                   0 0x0268F428    .text
+  _open                                    0 0x0268F42C    .text
+  _setjmp3                                 0 0x0268F430    .text
+  _CIexp                                   0 0x0268F434    .text
+  strcoll                                  0 0x0268F438    .text
+  strtod                                   0 0x0268F43C    .text
+  getenv                                   0 0x0268F440    .text
+  strtoul                                  0 0x0268F444    .text
+  isxdigit                                 0 0x0268F448    .text
+  strpbrk                                  0 0x0268F44C    .text
+  islower                                  0 0x0268F450    .text
+  iscntrl                                  0 0x0268F454    .text
+  isupper                                  0 0x0268F458    .text
+  ispunct                                  0 0x0268F45C    .text
+  frexp                                    0 0x0268F460    .text
+  getc                                     0 0x0268F464    .text
+  isprint                                  0 0x0268F468    .text
+  _errno                                   0 0x0268F46C    .text
+  __iob_func                               0 0x0268F470    .text
+  strerror                                 0 0x0268F474    .text
+  div                                      0 0x0268F478    .text
+  _itoa                                    0 0x0268F47C    .text
+  putchar                                  0 0x0268F480    .text
+  fputs                                    0 0x0268F484    .text
+  printf                                   0 0x0268F488    .text
+  _stricmp                                 0 0x0268F48C    .text
+  abort                                    0 0x0268F490    .text
+  perror                                   0 0x0268F494    .text
+  _except_handler3                         0 0x0268F498    .text
+  strnlen                                  0 0x0268F49C    .text
+  _mbsicmp                                 0 0x0268F4A0    .text
+  iswdigit                                 0 0x0268F4A4    .text
+  towlower                                 0 0x0268F4A8    .text
+  wcscmp                                   0 0x0268F4AC    .text
+  toupper                                  0 0x0268F4B0    .text
+  _CIlog                                   0 0x0268F4B4    .text
+  _CIpow                                   0 0x0268F4B8    .text
+  _invalid_parameter_noinfo_noreturn       0 0x0268F4BC    .text
+  mbstowcs_s                               0 0x0268F4C0    .text
+  wcstombs_s                               0 0x0268F4C4    .text
+  ??0exception@std@@QAE@ABQBDH@Z           0 0x0268F4C8    .text
+  ??9type_info@@QBE_NABV0@@Z               0 0x0268F4CC    .text
+  _splitpath                               0 0x0268F4D0    .text
+  _CIlog10                                 0 0x0268F4D4    .text
+  _CIsqrt                                  0 0x0268F4D8    .text
+  _CIfmod                                  0 0x0268F4DC    .text
+  _CIatan2                                 0 0x0268F4E0    .text
+  _CIatan                                  0 0x0268F4E4    .text
+  _CIacos                                  0 0x0268F4E8    .text
+  _CIasin                                  0 0x0268F4EC    .text
+  _CItan                                   0 0x0268F4F0    .text
+  _CIcos                                   0 0x0268F4F4    .text
+  strtol                                   0 0x0268F4F8    .text
+  _strtime                                 0 0x0268F4FC    .text
+  _getcwd                                  0 0x0268F500    .text
+  _vsnprintf                               0 0x0268F504    .text
+  _gcvt                                    0 0x0268F508    .text
+  _isnan                                   0 0x0268F50C    .text
+  atan                                     0 0x0268F510    .text
+  fmod                                     0 0x0268F514    .text
+  _aligned_malloc                          0 0x0268F518    .text
+  _aligned_free                            0 0x0268F51C    .text
+  realloc                                  0 0x0268F520    .text
+  ??3@YAXPAX@Z                             0 0x0268F524    .text
+  __CxxFrameHandler3                       0 0x0268F528    .text
+  sscanf_s                                 0 0x0268F52C    .text
+  ??2@YAPAXI@Z                             0 0x0268F530    .text
+  memcpy                                   0 0x0268F534    .text
+  ??_V@YAXPAX@Z                            0 0x0268F538    .text
+  memcpy_s                                 0 0x0268F53C    .text
+  fabs                                     0 0x0268F540    .text
+  _CxxThrowException                       0 0x0268F544    .text
+  vsprintf_s                               0 0x0268F548    .text
+  ??0exception@std@@QAE@ABQBD@Z            0 0x0268F54C    .text
+  ?what@exception@std@@UBEPBDXZ            0 0x0268F550    .text
+  ??0exception@std@@QAE@ABV01@@Z           0 0x0268F554    .text
+  ??1exception@std@@UAE@XZ                 0 0x0268F558    .text
+  strlen                                   0 0x0268F55C    .text
+  sprintf                                  0 0x0268F560    .text
+  memset                                   0 0x0268F564    .text
+  memmove                                  0 0x0268F568    .text
+  strcmp                                   0 0x0268F56C    .text
+  fclose                                   0 0x0268F570    .text
+  fopen                                    0 0x0268F574    .text
+  rand                                     0 0x0268F578    .text
+  __RTDynamicCast                          0 0x0268F57C    .text
+  memcmp                                   0 0x0268F580    .text
+  _purecall                                0 0x0268F584    .text
+  abs                                      0 0x0268F588    .text
+  strncpy_s                                0 0x0268F58C    .text
+  _localtime64                             0 0x0268F590    .text
+  sin                                      0 0x0268F594    .text
+  cos                                      0 0x0268F598    .text
+  sprintf_s                                0 0x0268F59C    .text
+  strcpy_s                                 0 0x0268F5A0    .text
+  strcat_s                                 0 0x0268F5A4    .text
+  tolower                                  0 0x0268F5A8    .text
+  memchr                                   0 0x0268F5AC    .text
+  _beginthreadex                           0 0x0268F5B0    .text
+  ceil                                     0 0x0268F5B4    .text
+  strcpy                                   0 0x0268F5B8    .text
+  sscanf                                   0 0x0268F5BC    .text
+  strncmp                                  0 0x0268F5C0    .text
+  strncpy                                  0 0x0268F5C4    .text
+  atoi                                     0 0x0268F5C8    .text
+  wcstombs                                 0 0x0268F5CC    .text
+  strcat                                   0 0x0268F5D0    .text
+  _vswprintf                               0 0x0268F5D4    .text
+  strtok                                   0 0x0268F5D8    .text
+  srand                                    0 0x0268F5DC    .text
+  _time64                                  0 0x0268F5E0    .text
+  strstr                                   0 0x0268F5E4    .text
+  log                                      0 0x0268F5E8    .text
+  ldiv                                     0 0x0268F5EC    .text
+  ??0exception@std@@QAE@XZ                 0 0x0268F5F0    .text
+  sqrt                                     0 0x0268F5F4    .text
+  _vscprintf                               0 0x0268F5F8    .text
+  strtok_s                                 0 0x0268F5FC    .text
+  _atoi64                                  0 0x0268F600    .text
+  strchr                                   0 0x0268F604    .text
+  strncat                                  0 0x0268F608    .text
+  atan2                                    0 0x0268F60C    .text
+  ??0bad_cast@std@@QAE@PBD@Z               0 0x0268F610    .text
+  ??1bad_cast@std@@UAE@XZ                  0 0x0268F614    .text
+  ??0bad_cast@std@@QAE@ABV01@@Z            0 0x0268F618    .text
+  free                                     0 0x0268F61C    .text
+  _mktime64                                0 0x0268F620    .text
+  _difftime64                              0 0x0268F624    .text
+  floor                                    0 0x0268F628    .text
+  _localtime64_s                           0 0x0268F62C    .text
+  pow                                      0 0x0268F630    .text
+  strcspn                                  0 0x0268F634    .text
+  localeconv                               0 0x0268F638    .text
+  memmove_s                                0 0x0268F63C    .text
+  isdigit                                  0 0x0268F640    .text
+  _gmtime64                                0 0x0268F644    .text
+  acos                                     0 0x0268F648    .text
+  wcslen                                   0 0x0268F64C    .text
+  _mbsinc                                  0 0x0268F650    .text
+  _ismbcspace                              0 0x0268F654    .text
+  malloc                                   0 0x0268F658    .text
+  strrchr                                  0 0x0268F65C    .text
+  _findclose                               0 0x0268F660    .text
+  _findnext64i32                           0 0x0268F664    .text
+  _findfirst64i32                          0 0x0268F668    .text
+  clock                                    0 0x0268F66C    .text
+  _mbsstr                                  0 0x0268F670    .text
+  atol                                     0 0x0268F674    .text
+  fgets                                    0 0x0268F678    .text
+  _mkdir                                   0 0x0268F67C    .text
+  remove                                   0 0x0268F680    .text
+  atof                                     0 0x0268F684    .text
+  fseek                                    0 0x0268F688    .text
+  fread                                    0 0x0268F68C    .text
+  _wcslwr_s                                0 0x0268F690    .text
+  wcscpy                                   0 0x0268F694    .text
+  fwrite                                   0 0x0268F698    .text
+  fgetc                                    0 0x0268F69C    .text
+  feof                                     0 0x0268F6A0    .text
+  _endthreadex                             0 0x0268F6A4    .text
+  fscanf                                   0 0x0268F6A8    .text
+  vswprintf_s                              0 0x0268F6AC    .text
+  qsort                                    0 0x0268F6B0    .text
+  _chdir                                   0 0x0268F6B4    .text
+  signal                                   0 0x0268F6B8    .text
+  _set_purecall_handler                    0 0x0268F6BC    .text
+  _set_invalid_parameter_handler           0 0x0268F6C0    .text
+  _set_abort_behavior                      0 0x0268F6C4    .text
+  wcscpy_s                                 0 0x0268F6C8    .text
+  _lock_file                               0 0x0268F6CC    .text
+  _unlock_file                             0 0x0268F6D0    .text
+  fputc                                    0 0x0268F6D4    .text
+  ungetc                                   0 0x0268F6D8    .text
+  fgetpos                                  0 0x0268F6DC    .text
+  _fseeki64                                0 0x0268F6E0    .text
+  fsetpos                                  0 0x0268F6E4    .text
+  setvbuf                                  0 0x0268F6E8    .text
+  fflush                                   0 0x0268F6EC    .text
+  rename                                   0 0x0268F6F0    .text
+  ftell                                    0 0x0268F6F4    .text
+  fopen_s                                  0 0x0268F6F8    .text
+  ferror                                   0 0x0268F6FC    .text
+  fprintf                                  0 0x0268F700    .text
+  _vsnprintf_s                             0 0x0268F704    .text
+  isalpha                                  0 0x0268F708    .text
+  isalnum                                  0 0x0268F70C    .text
+  isspace                                  0 0x0268F710    .text
+  exp                                      0 0x0268F714    .text
+  ldexp                                    0 0x0268F718    .text
+  ??8type_info@@QBE_NABV0@@Z               0 0x0268F71C    .text
+  vsprintf                                 0 0x0268F720    .text
+  tan                                      0 0x0268F724    .text
+  asin                                     0 0x0268F728    .text
+  strncat_s                                0 0x0268F72C    .text
+  _CIsin                                   0 0x0268F730    .text
+
+--- RPCRT4.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  UuidFromStringA                          0 0x0268F774    .text
+
+--- d3d9.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  Direct3DCreate9                          0 0x0268F9F4    .text
+
+--- MiniZip.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  ?Zip@@YAHPBDHPAPBD@Z                     0 0x0268F738    .text
+
+--- ErrorReport.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  SendErrorReport                          0 0x0268F09C    .text
+
+--- IPHLPAPI.DLL ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  GetAdaptersInfo                          0 0x0268F120    .text
+
+--- DDRAW.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  DirectDrawCreateEx                       0 0x0268F084    .text
+
+--- WLDAP32.dll ---
+  Func Name                            Ord    IAT RVA  IAT Sec
+  Ordinal_200                            200 0x0268F8F8    .text
+  Ordinal_26                              26 0x0268F8FC    .text
+  Ordinal_50                              50 0x0268F900    .text
+  Ordinal_143                            143 0x0268F904    .text
+  Ordinal_211                            211 0x0268F908    .text
+  Ordinal_22                              22 0x0268F90C    .text
+  Ordinal_35                              35 0x0268F910    .text
+  Ordinal_79                              79 0x0268F914    .text
+  Ordinal_33                              33 0x0268F918    .text
+  Ordinal_301                            301 0x0268F91C    .text
+  Ordinal_27                              27 0x0268F920    .text
+  Ordinal_41                              41 0x0268F924    .text
+  Ordinal_46                              46 0x0268F928    .text
+  Ordinal_30                              30 0x0268F92C    .text
+  Ordinal_32                              32 0x0268F930    .text
+  Ordinal_60                              60 0x0268F934    .text
+
+================================================================================
+  THUNK STUBS (jmp [IAT_entry]) — .text stubs calling into IAT
+================================================================================
+
+  (No jmp [IAT] thunk stubs found — possibly __declspec(dllimport) used directly)
+
+================================================================================
+  HIGHLIGHTED FUNCTIONS (network / crypto)
+================================================================================
+  [ ] WS2_32.dll!WSASendTo
+      IAT RVA:  0x0268F944 (.text)
+      Thunk:    (not found in executable sections — likely dllimport)
+  [ ] WS2_32.dll!WSARecvFrom
+      IAT RVA:  0x0268F948 (.text)
+      Thunk:    (not found in executable sections — likely dllimport)
+  [ ] WS2_32.dll!recvfrom
+      IAT RVA:  0x0268F964 (.text)
+      Thunk:    (not found in executable sections — likely dllimport)
+  [ ] WS2_32.dll!sendto
+      IAT RVA:  0x0268F9C0 (.text)
+      Thunk:    (not found in executable sections — likely dllimport)
+  [ ] WS2_32.dll!WSARecv
+      IAT RVA:  0x0268F9C4 (.text)
+      Thunk:    (not found in executable sections — likely dllimport)
+  [ ] WS2_32.dll!WSASend
+      IAT RVA:  0x0268F9EC (.text)
+      Thunk:    (not found in executable sections — likely dllimport)
+  [ ] ADVAPI32.dll!CryptImportKey
+      IAT RVA:  0x0268F008 (.text)
+      Thunk:    (not found in executable sections — likely dllimport)
+  [ ] ADVAPI32.dll!CryptHashData
+      IAT RVA:  0x0268F014 (.text)
+      Thunk:    (not found in executable sections — likely dllimport)
+  [ ] ADVAPI32.dll!CryptCreateHash
+      IAT RVA:  0x0268F018 (.text)
+      Thunk:    (not found in executable sections — likely dllimport)
+  [ ] ADVAPI32.dll!CryptGenRandom
+      IAT RVA:  0x0268F02C (.text)
+      Thunk:    (not found in executable sections — likely dllimport)
+  [ ] ADVAPI32.dll!CryptAcquireContextA
+      IAT RVA:  0x0268F030 (.text)
+      Thunk:    (not found in executable sections — likely dllimport)
+  [ ] ADVAPI32.dll!CryptEncrypt
+      IAT RVA:  0x0268F04C (.text)
+      Thunk:    (not found in executable sections — likely dllimport)
+
+================================================================================
+  AES S-BOX PATTERN: 63 7C 77 7B
+================================================================================
+  Found 1 occurrence(s):
+
+  [0] file offset=0x024422F8  RVA=0x02442EF8  section=.text
+      context: 63 7C 77 7B F2 6B 6F C5 30 01 67 2B FE D7 AB 76
+
+================================================================================
+  907F PATTERN: 90 7F
+================================================================================
+  Found 689 occurrence(s):
+
+  [0] file offset=0x0001BF13  RVA=0x0001CB13  section=.text
+      context: 92 69 EC 25 90 7F ED 70 67 F0 E5 E7
+                           ^^^^
+  [1] file offset=0x0001D219  RVA=0x0001DE19  section=.text
+      context: AA BB E4 72 90 7F 82 79 65 DB 7B 78
+                           ^^^^
+  [2] file offset=0x00024DD8  RVA=0x000259D8  section=.text
+      context: A3 5E 59 ED 90 7F 53 2E B7 BD 6C 84
+                           ^^^^
+  [3] file offset=0x000349E6  RVA=0x000355E6  section=.text
+      context: C2 1B 8C E7 90 7F E0 3A 0E D3 7F DB
+                           ^^^^
+  [4] file offset=0x00036D55  RVA=0x00037955  section=.text
+      context: F6 28 11 64 90 7F BB D6 F3 A0 EA E6
+                           ^^^^
+  [5] file offset=0x00038DFD  RVA=0x000399FD  section=.text
+      context: 13 81 82 9E 90 7F 94 C8 01 1F C4 FC
+                           ^^^^
+  [6] file offset=0x00048AC7  RVA=0x000496C7  section=.text
+      context: 3D AA 18 BD 90 7F D3 51 06 7D 5D 52
+                           ^^^^
+  [7] file offset=0x00049BFF  RVA=0x0004A7FF  section=.text
+      context: 93 0D 2E 30 90 7F 0F A4 34 77 CF EE
+                           ^^^^
+  [8] file offset=0x0005C61C  RVA=0x0005D21C  section=.text
+      context: C7 71 F1 CB 90 7F 23 A4 FD 00 5C 8D
+                           ^^^^
+  [9] file offset=0x00064523  RVA=0x00065123  section=.text
+      context: 82 5C 03 1F 90 7F BC D3 8D 86 DE 14
+                           ^^^^
+  [10] file offset=0x000753DD  RVA=0x00075FDD  section=.text
+      context: 63 BE 2B 40 90 7F 9E C7 F6 8E 81 55
+                           ^^^^
+  [11] file offset=0x0007FA3D  RVA=0x0008063D  section=.text
+      context: 54 35 A6 42 90 7F 49 E7 EC 40 D9 4B
+                           ^^^^
+  [12] file offset=0x00082833  RVA=0x00083433  section=.text
+      context: B9 D7 59 8C 90 7F F3 A0 A9 64 31 EB
+                           ^^^^
+  [13] file offset=0x00097B7D  RVA=0x0009877D  section=.text
+      context: 9A 48 AE A0 90 7F B8 EB B4 12 E1 3B
+                           ^^^^
+  [14] file offset=0x0009CE99  RVA=0x0009DA99  section=.text
+      context: E6 2D 29 4A 90 7F 1E FC 34 6D 3F AC
+                           ^^^^
+  [15] file offset=0x0009E442  RVA=0x0009F042  section=.text
+      context: 72 6E 3C 94 90 7F 45 E9 E7 38 29 0F
+                           ^^^^
+  [16] file offset=0x000A2135  RVA=0x000A2D35  section=.text
+      context: 8D 60 13 00 90 7F F1 15 BF A0 02 7E
+                           ^^^^
+  [17] file offset=0x000AA617  RVA=0x000AB217  section=.text
+      context: B1 C3 CB 0F 90 7F 17 64 5E 9A 18 FD
+                           ^^^^
+  [18] file offset=0x000BD397  RVA=0x000BDF97  section=.text
+      context: 74 2F E5 8A 90 7F 30 2F BA 9F 1F 4F
+                           ^^^^
+  [19] file offset=0x000C5D4D  RVA=0x000C694D  section=.text
+      context: 3B F2 54 25 90 7F FE EE 50 C7 5E A8
+                           ^^^^
+  [20] file offset=0x000D0369  RVA=0x000D0F69  section=.text
+      context: 86 B6 D3 C9 90 7F 18 51 5C 67 66 F9
+                           ^^^^
+  [21] file offset=0x000E71A6  RVA=0x000E7DA6  section=.text
+      context: 97 87 86 A3 90 7F 02 55 3A F8 AA E6
+                           ^^^^
+  [22] file offset=0x001093A1  RVA=0x00109FA1  section=.text
+      context: 7E 6B BC 03 90 7F DB 3D D3 35 9A 77
+                           ^^^^
+  [23] file offset=0x0010EE52  RVA=0x0010FA52  section=.text
+      context: F4 23 8F AC 90 7F 13 78 14 85 1A FB
+                           ^^^^
+  [24] file offset=0x00115764  RVA=0x00116364  section=.text
+      context: 74 AA 81 DA 90 7F D3 86 A3 82 ED 30
+                           ^^^^
+  [25] file offset=0x001171A6  RVA=0x00117DA6  section=.text
+      context: FF EF 4D 4F 90 7F 36 A5 35 31 71 D6
+                           ^^^^
+  [26] file offset=0x0013EFE0  RVA=0x0013FBE0  section=.text
+      context: 66 65 26 54 90 7F 4E CF 61 9F 99 E0
+                           ^^^^
+  [27] file offset=0x00145B79  RVA=0x00146779  section=.text
+      context: 42 5D 78 7C 90 7F 37 90 08 0A 31 99
+                           ^^^^
+  [28] file offset=0x0014603D  RVA=0x00146C3D  section=.text
+      context: D4 C0 EF 99 90 7F 4A 38 A0 87 08 E3
+                           ^^^^
+  [29] file offset=0x00147434  RVA=0x00148034  section=.text
+      context: 3D 1B 04 71 90 7F 93 B0 C9 50 40 4A
+                           ^^^^
+  [30] file offset=0x0014CF81  RVA=0x0014DB81  section=.text
+      context: 79 C9 63 16 90 7F 39 7E 29 E6 46 38
+                           ^^^^
+  [31] file offset=0x00175F52  RVA=0x00176B52  section=.text
+      context: 56 57 3E FC 90 7F 8E CB 64 12 AF 5E
+                           ^^^^
+  [32] file offset=0x001A1C77  RVA=0x001A2877  section=.text
+      context: 72 FE 4A 5C 90 7F DF B3 B4 FA 80 63
+                           ^^^^
+  [33] file offset=0x001C048F  RVA=0x001C108F  section=.text
+      context: FD B8 E2 1B 90 7F 75 11 73 63 E5 F0
+                           ^^^^
+  [34] file offset=0x001C7BAE  RVA=0x001C87AE  section=.text
+      context: C7 0B C7 AE 90 7F 5C 25 35 03 F4 CF
+                           ^^^^
+  [35] file offset=0x001CE262  RVA=0x001CEE62  section=.text
+      context: 32 81 72 6D 90 7F FD 24 F8 9A 81 E9
+                           ^^^^
+  [36] file offset=0x001CEE9D  RVA=0x001CFA9D  section=.text
+      context: 6D 68 22 B4 90 7F 1F AA 9B CE 41 38
+                           ^^^^
+  [37] file offset=0x001D3269  RVA=0x001D3E69  section=.text
+      context: 0B 50 0F DE 90 7F E6 9D 92 05 9A B6
+                           ^^^^
+  [38] file offset=0x001E24B5  RVA=0x001E30B5  section=.text
+      context: 21 D1 33 C4 90 7F F6 A9 2B 68 60 1A
+                           ^^^^
+  [39] file offset=0x00226C69  RVA=0x00227869  section=.text
+      context: 8C 35 95 82 90 7F 9F 50 DE 49 8D EC
+                           ^^^^
+  [40] file offset=0x0022DCF0  RVA=0x0022E8F0  section=.text
+      context: DC C5 C1 CE 90 7F EB F0 4B 02 39 BA
+                           ^^^^
+  [41] file offset=0x002301C2  RVA=0x00230DC2  section=.text
+      context: 85 39 99 69 90 7F 13 60 7F C3 5D 12
+                           ^^^^
+  [42] file offset=0x0023B97A  RVA=0x0023C57A  section=.text
+      context: AC 98 F4 33 90 7F D5 C0 E5 07 BA 51
+                           ^^^^
+  [43] file offset=0x00252072  RVA=0x00252C72  section=.text
+      context: 5B CC 1E F2 90 7F 92 CA D0 F5 DB 73
+                           ^^^^
+  [44] file offset=0x00252ECF  RVA=0x00253ACF  section=.text
+      context: 4D BE 55 5D 90 7F 16 12 10 0B 85 DA
+                           ^^^^
+  [45] file offset=0x002629E5  RVA=0x002635E5  section=.text
+      context: 29 15 70 BD 90 7F 6C 62 63 47 21 D7
+                           ^^^^
+  [46] file offset=0x002657CF  RVA=0x002663CF  section=.text
+      context: DD 04 DE F4 90 7F A7 80 85 A4 8C 39
+                           ^^^^
+  [47] file offset=0x002670C3  RVA=0x00267CC3  section=.text
+      context: 6C A0 82 D6 90 7F 6F F0 19 CA 99 B0
+                           ^^^^
+  [48] file offset=0x0029146A  RVA=0x0029206A  section=.text
+      context: 5D 83 EC 02 90 7F A5 55 6B AA E2 EA
+                           ^^^^
+  [49] file offset=0x002A180F  RVA=0x002A240F  section=.text
+      context: EF 43 F4 9C 90 7F 1E 05 7B E8 B7 CA
+                           ^^^^
+  [50] file offset=0x002A6764  RVA=0x002A7364  section=.text
+      context: 4B 74 29 48 90 7F 5D A3 CF BA 67 22
+                           ^^^^
+  [51] file offset=0x002A8F20  RVA=0x002A9B20  section=.text
+      context: D6 B5 49 4C 90 7F 19 72 2A 23 72 2B
+                           ^^^^
+  [52] file offset=0x002A9D4D  RVA=0x002AA94D  section=.text
+      context: EF 54 35 E9 90 7F 6F 1E FF EF EB 3B
+                           ^^^^
+  [53] file offset=0x002B602A  RVA=0x002B6C2A  section=.text
+      context: 4E CE 2E E7 90 7F 14 FA E2 0C 3E D3
+                           ^^^^
+  [54] file offset=0x002C28E9  RVA=0x002C34E9  section=.text
+      context: 53 68 A6 77 90 7F 83 DD 31 61 34 D0
+                           ^^^^
+  [55] file offset=0x002DE19F  RVA=0x002DED9F  section=.text
+      context: 4E 2E 3A 30 90 7F 54 D9 43 AC F3 25
+                           ^^^^
+  [56] file offset=0x002FE2AE  RVA=0x002FEEAE  section=.text
+      context: 3B BC 01 7A 90 7F 82 43 67 E8 F3 E3
+                           ^^^^
+  [57] file offset=0x00315FD2  RVA=0x00316BD2  section=.text
+      context: 4A 96 60 D9 90 7F 60 98 D7 01 95 1F
+                           ^^^^
+  [58] file offset=0x0031703E  RVA=0x00317C3E  section=.text
+      context: 7C E7 80 C2 90 7F 5D 11 87 3E B5 64
+                           ^^^^
+  [59] file offset=0x00318CA7  RVA=0x003198A7  section=.text
+      context: 39 16 A9 65 90 7F 20 AA C5 82 EA 47
+                           ^^^^
+  [60] file offset=0x0031FC66  RVA=0x00320866  section=.text
+      context: 4B BC 2D DE 90 7F 11 C1 B7 A0 17 2D
+                           ^^^^
+  [61] file offset=0x0034448D  RVA=0x0034508D  section=.text
+      context: 29 E8 7C 2E 90 7F 82 F9 AB 35 94 60
+                           ^^^^
+  [62] file offset=0x00350889  RVA=0x00351489  section=.text
+      context: 44 1C AC 7C 90 7F 89 B8 79 03 C3 DF
+                           ^^^^
+  [63] file offset=0x0035FE92  RVA=0x00360A92  section=.text
+      context: 04 C9 2A 74 90 7F 26 B3 DD 30 A7 E8
+                           ^^^^
+  [64] file offset=0x0036DCA7  RVA=0x0036E8A7  section=.text
+      context: 75 B4 A1 3D 90 7F DA 8B 1C ED 2D 72
+                           ^^^^
+  [65] file offset=0x00392FFE  RVA=0x00393BFE  section=.text
+      context: E6 0B 1D 56 90 7F BE 1E 69 23 1D 64
+                           ^^^^
+  [66] file offset=0x0039B74C  RVA=0x0039C34C  section=.text
+      context: 55 9D 97 5F 90 7F 07 67 16 5B AF 20
+                           ^^^^
+  [67] file offset=0x003A61D2  RVA=0x003A6DD2  section=.text
+      context: 9F FA 3E 04 90 7F 75 09 C5 B1 29 FA
+                           ^^^^
+  [68] file offset=0x003B02A1  RVA=0x003B0EA1  section=.text
+      context: 6B BD 3A B4 90 7F 45 23 0D A3 0E CB
+                           ^^^^
+  [69] file offset=0x003C25C9  RVA=0x003C31C9  section=.text
+      context: 29 39 AF EB 90 7F 96 FD 03 EC 74 A0
+                           ^^^^
+  [70] file offset=0x003C6371  RVA=0x003C6F71  section=.text
+      context: 37 17 84 FA 90 7F 4D 9C 89 00 A2 10
+                           ^^^^
+  [71] file offset=0x003C7961  RVA=0x003C8561  section=.text
+      context: 23 D1 48 D6 90 7F F2 87 26 B4 BF 43
+                           ^^^^
+  [72] file offset=0x003D649F  RVA=0x003D709F  section=.text
+      context: 31 18 A6 C0 90 7F E3 C2 EE DA A9 C4
+                           ^^^^
+  [73] file offset=0x0040E5AD  RVA=0x0040F1AD  section=.text
+      context: FA 06 90 3C 90 7F E9 0C 51 5F A1 C0
+                           ^^^^
+  [74] file offset=0x0045223B  RVA=0x00452E3B  section=.text
+      context: A1 5D 05 CE 90 7F 1A BF 9E 52 BC 7C
+                           ^^^^
+  [75] file offset=0x004681DE  RVA=0x00468DDE  section=.text
+      context: 50 84 A7 81 90 7F 5B B8 22 D7 E6 75
+                           ^^^^
+  [76] file offset=0x004715D7  RVA=0x004721D7  section=.text
+      context: 3E C3 60 2B 90 7F 85 49 DB 86 74 03
+                           ^^^^
+  [77] file offset=0x004827B4  RVA=0x004833B4  section=.text
+      context: 29 72 46 51 90 7F 9E A5 F3 F6 BE E3
+                           ^^^^
+  [78] file offset=0x0048C9CE  RVA=0x0048D5CE  section=.text
+      context: E4 A3 93 E4 90 7F 6E 97 BA 10 82 CC
+                           ^^^^
+  [79] file offset=0x004AD8FD  RVA=0x004AE4FD  section=.text
+      context: FC 5B 02 21 90 7F E1 E8 DE E8 3C 45
+                           ^^^^
+  [80] file offset=0x004DB7B3  RVA=0x004DC3B3  section=.text
+      context: 2E D4 8B 3C 90 7F 71 CF 74 C1 BD BC
+                           ^^^^
+  [81] file offset=0x00509EE2  RVA=0x0050AAE2  section=.text
+      context: 90 88 6D 9D 90 7F F8 A2 45 7F 98 0D
+                           ^^^^
+  [82] file offset=0x005136C2  RVA=0x005142C2  section=.text
+      context: DF 5C 45 46 90 7F C0 BC B5 4B 7D C8
+                           ^^^^
+  [83] file offset=0x0052AEC9  RVA=0x0052BAC9  section=.text
+      context: DF 5A E7 34 90 7F C3 2A 5C BE 72 8B
+                           ^^^^
+  [84] file offset=0x00530F94  RVA=0x00531B94  section=.text
+      context: 7D 7B 49 D0 90 7F 99 78 F7 72 1E 71
+                           ^^^^
+  [85] file offset=0x00555499  RVA=0x00556099  section=.text
+      context: 1B 85 9E 01 90 7F B7 A0 6B A3 32 C1
+                           ^^^^
+  [86] file offset=0x0055CF2C  RVA=0x0055DB2C  section=.text
+      context: F3 E8 5C 25 90 7F 7C E3 5E 5F 3A 3C
+                           ^^^^
+  [87] file offset=0x00573683  RVA=0x00574283  section=.text
+      context: 4F 81 8D E4 90 7F BE 7B 41 E6 96 61
+                           ^^^^
+  [88] file offset=0x00578CE9  RVA=0x005798E9  section=.text
+      context: 88 9B 93 EA 90 7F FD 37 1E B8 41 20
+                           ^^^^
+  [89] file offset=0x00580B02  RVA=0x00581702  section=.text
+      context: 5E 51 1D 9A 90 7F 64 52 60 48 DF 2C
+                           ^^^^
+  [90] file offset=0x005903FB  RVA=0x00590FFB  section=.text
+      context: DB CE 86 0D 90 7F B1 C5 0E ED 84 5F
+                           ^^^^
+  [91] file offset=0x00593F38  RVA=0x00594B38  section=.text
+      context: C9 CA 30 95 90 7F 1A DF B3 DF EB 29
+                           ^^^^
+  [92] file offset=0x005998C2  RVA=0x0059A4C2  section=.text
+      context: 68 29 E4 4D 90 7F 9B 2C 01 54 D2 AC
+                           ^^^^
+  [93] file offset=0x005AD861  RVA=0x005AE461  section=.text
+      context: 2B 60 A5 5E 90 7F 58 E2 87 16 EA 41
+                           ^^^^
+  [94] file offset=0x005B7FB2  RVA=0x005B8BB2  section=.text
+      context: 31 8E DE 41 90 7F 5C 90 CB 6D 04 2C
+                           ^^^^
+  [95] file offset=0x005D827F  RVA=0x005D8E7F  section=.text
+      context: DD AD BD 37 90 7F B1 F0 6A 92 64 A4
+                           ^^^^
+  [96] file offset=0x005E34AE  RVA=0x005E40AE  section=.text
+      context: 44 DB 28 D5 90 7F 47 8D 05 F1 0D DE
+                           ^^^^
+  [97] file offset=0x005E87A2  RVA=0x005E93A2  section=.text
+      context: C7 7D DC 6D 90 7F 87 8D 8E 60 68 54
+                           ^^^^
+  [98] file offset=0x005E909C  RVA=0x005E9C9C  section=.text
+      context: 1C D1 79 92 90 7F 26 DF A8 44 C4 A7
+                           ^^^^
+  [99] file offset=0x006126F8  RVA=0x006132F8  section=.text
+      context: DB C9 88 68 90 7F 6A 38 90 EE 1D 5B
+                           ^^^^
+  [100] file offset=0x00633FA7  RVA=0x00634BA7  section=.text
+      context: 7C 69 51 EB 90 7F 0C 84 12 66 4A E4
+                           ^^^^
+  [101] file offset=0x00643A08  RVA=0x00644608  section=.text
+      context: F0 9A A9 D5 90 7F FF B0 27 4E 69 67
+                           ^^^^
+  [102] file offset=0x0066F7C5  RVA=0x006703C5  section=.text
+      context: 51 BF 21 A2 90 7F 9A CA BA 74 59 B2
+                           ^^^^
+  [103] file offset=0x00675737  RVA=0x00676337  section=.text
+      context: 02 A1 9B F4 90 7F BE 4A 5A 54 43 AB
+                           ^^^^
+  [104] file offset=0x00696E6C  RVA=0x00697A6C  section=.text
+      context: A4 30 BB 6D 90 7F 1F C3 46 A4 EA FA
+                           ^^^^
+  [105] file offset=0x00698368  RVA=0x00698F68  section=.text
+      context: D3 38 2B 18 90 7F B7 7A 15 5B 84 FE
+                           ^^^^
+  [106] file offset=0x0069B9E1  RVA=0x0069C5E1  section=.text
+      context: 3E 5F CB 3C 90 7F 3A 81 5D F3 C9 DF
+                           ^^^^
+  [107] file offset=0x006A28D3  RVA=0x006A34D3  section=.text
+      context: 31 CE 35 58 90 7F 61 7B BD B3 52 A2
+                           ^^^^
+  [108] file offset=0x006CCA6A  RVA=0x006CD66A  section=.text
+      context: 08 F3 32 39 90 7F 00 A3 60 69 B7 F9
+                           ^^^^
+  [109] file offset=0x006CF194  RVA=0x006CFD94  section=.text
+      context: 76 1C FE 3B 90 7F 87 FE CA 3A 67 B4
+                           ^^^^
+  [110] file offset=0x006E16AB  RVA=0x006E22AB  section=.text
+      context: A0 52 9A C1 90 7F C7 87 BD 9D 1E 0A
+                           ^^^^
+  [111] file offset=0x006FE840  RVA=0x006FF440  section=.text
+      context: 3A 5C E3 DB 90 7F 1A 37 29 93 7C AA
+                           ^^^^
+  [112] file offset=0x0071DFE0  RVA=0x0071EBE0  section=.text
+      context: A3 E2 EF 89 90 7F 56 32 4E 6F A2 FF
+                           ^^^^
+  [113] file offset=0x0071FDFE  RVA=0x007209FE  section=.text
+      context: 7E 67 35 97 90 7F 1A 1C 2D 1E 0D 56
+                           ^^^^
+  [114] file offset=0x00721EA2  RVA=0x00722AA2  section=.text
+      context: FB 9B 69 29 90 7F BC D4 A1 B3 FA 7B
+                           ^^^^
+  [115] file offset=0x007279A5  RVA=0x007285A5  section=.text
+      context: 1E 1D D6 65 90 7F C3 9D DB 1F E6 9E
+                           ^^^^
+  [116] file offset=0x00728465  RVA=0x00729065  section=.text
+      context: 83 03 0D 0C 90 7F 87 2C 6A A8 3E FE
+                           ^^^^
+  [117] file offset=0x00734FD1  RVA=0x00735BD1  section=.text
+      context: E2 42 33 3B 90 7F 67 C0 C0 69 77 3A
+                           ^^^^
+  [118] file offset=0x0073C8F3  RVA=0x0073D4F3  section=.text
+      context: 87 63 62 4F 90 7F A8 9C 82 4C DD 5C
+                           ^^^^
+  [119] file offset=0x00745C48  RVA=0x00746848  section=.text
+      context: 27 9D F4 35 90 7F 17 CC F9 7D D3 4C
+                           ^^^^
+  [120] file offset=0x007672F4  RVA=0x00767EF4  section=.text
+      context: 07 13 6C E8 90 7F 96 D7 EB 4E 67 C1
+                           ^^^^
+  [121] file offset=0x0077B17B  RVA=0x0077BD7B  section=.text
+      context: 9A 3D 0B 5E 90 7F 8D FF 28 49 07 66
+                           ^^^^
+  [122] file offset=0x0078E950  RVA=0x0078F550  section=.text
+      context: 20 7C 55 D9 90 7F 3A AB 2C 63 80 52
+                           ^^^^
+  [123] file offset=0x0078F547  RVA=0x00790147  section=.text
+      context: 54 AC 77 6B 90 7F D5 52 58 08 EC 0B
+                           ^^^^
+  [124] file offset=0x00790586  RVA=0x00791186  section=.text
+      context: 16 C6 BB 97 90 7F D7 91 05 A6 FA 89
+                           ^^^^
+  [125] file offset=0x0079E581  RVA=0x0079F181  section=.text
+      context: 31 9D F3 0F 90 7F 1C E4 2D A8 B3 37
+                           ^^^^
+  [126] file offset=0x007AE62B  RVA=0x007AF22B  section=.text
+      context: 46 BB 99 52 90 7F EB 4E 16 A2 F0 B5
+                           ^^^^
+  [127] file offset=0x007BC756  RVA=0x007BD356  section=.text
+      context: 5B DF D4 36 90 7F C8 0A 15 9A C9 64
+                           ^^^^
+  [128] file offset=0x007D51A1  RVA=0x007D5DA1  section=.text
+      context: 07 50 14 5A 90 7F 25 04 88 DD 81 F5
+                           ^^^^
+  [129] file offset=0x007FFF78  RVA=0x00800B78  section=.text
+      context: CB F2 22 1C 90 7F 57 8D AC A8 3F BD
+                           ^^^^
+  [130] file offset=0x00802CC4  RVA=0x008038C4  section=.text
+      context: C4 32 83 69 90 7F AA 52 7E F1 25 05
+                           ^^^^
+  [131] file offset=0x00807375  RVA=0x00807F75  section=.text
+      context: 12 3D 28 B2 90 7F 15 62 1D 2C 02 C4
+                           ^^^^
+  [132] file offset=0x00809200  RVA=0x00809E00  section=.text
+      context: B8 D1 73 A7 90 7F B1 94 32 57 7A 75
+                           ^^^^
+  [133] file offset=0x00815407  RVA=0x00816007  section=.text
+      context: 15 34 42 A3 90 7F D3 02 AC 98 01 5B
+                           ^^^^
+  [134] file offset=0x0081E3F4  RVA=0x0081EFF4  section=.text
+      context: A2 A2 F4 81 90 7F 3E 00 6D 42 16 65
+                           ^^^^
+  [135] file offset=0x0082341E  RVA=0x0082401E  section=.text
+      context: 77 8F F5 A9 90 7F EB E5 D1 11 C7 7D
+                           ^^^^
+  [136] file offset=0x00828B67  RVA=0x00829767  section=.text
+      context: BB 5F B1 9E 90 7F C6 6A 7D 8A 42 45
+                           ^^^^
+  [137] file offset=0x0082DFCD  RVA=0x0082EBCD  section=.text
+      context: 39 5E 23 E1 90 7F 34 15 E9 95 37 17
+                           ^^^^
+  [138] file offset=0x00876895  RVA=0x00877495  section=.text
+      context: 24 FC FB 5C 90 7F D2 55 D0 CE 21 8B
+                           ^^^^
+  [139] file offset=0x0088C189  RVA=0x0088CD89  section=.text
+      context: 73 0A 9B F3 90 7F C4 1D 10 89 7F 1B
+                           ^^^^
+  [140] file offset=0x0088E561  RVA=0x0088F161  section=.text
+      context: 89 F5 97 84 90 7F 76 77 29 12 0A A7
+                           ^^^^
+  [141] file offset=0x00890658  RVA=0x00891258  section=.text
+      context: 01 C5 75 AB 90 7F 4A F1 0E 06 7F F1
+                           ^^^^
+  [142] file offset=0x008ADC2F  RVA=0x008AE82F  section=.text
+      context: 92 76 1D 80 90 7F 40 C2 6C 03 88 E7
+                           ^^^^
+  [143] file offset=0x008B6C06  RVA=0x008B7806  section=.text
+      context: FF FE 48 B0 90 7F 63 48 E2 D3 E0 6C
+                           ^^^^
+  [144] file offset=0x008C0A94  RVA=0x008C1694  section=.text
+      context: 6A F2 26 06 90 7F 72 C9 79 8C 88 3E
+                           ^^^^
+  [145] file offset=0x008D022F  RVA=0x008D0E2F  section=.text
+      context: E3 70 DC A4 90 7F 0D 09 66 07 7C 99
+                           ^^^^
+  [146] file offset=0x008D6D7F  RVA=0x008D797F  section=.text
+      context: 87 28 76 1D 90 7F B7 2B B7 57 10 66
+                           ^^^^
+  [147] file offset=0x009040EE  RVA=0x00904CEE  section=.text
+      context: 49 95 4C D8 90 7F C8 93 74 CA 77 36
+                           ^^^^
+  [148] file offset=0x00908894  RVA=0x00909494  section=.text
+      context: D6 A8 4F DE 90 7F 64 73 E3 28 7E 52
+                           ^^^^
+  [149] file offset=0x0091F98F  RVA=0x0092058F  section=.text
+      context: 59 BB 68 C3 90 7F 9B 96 65 14 E8 8E
+                           ^^^^
+  [150] file offset=0x00921878  RVA=0x00922478  section=.text
+      context: EC 55 33 7C 90 7F 80 E3 07 0C 52 70
+                           ^^^^
+  [151] file offset=0x00928225  RVA=0x00928E25  section=.text
+      context: 7E 7B 7E CD 90 7F BE 37 09 F6 0E 35
+                           ^^^^
+  [152] file offset=0x0093E619  RVA=0x0093F219  section=.text
+      context: E6 65 38 E3 90 7F A2 E4 E4 BE C4 C7
+                           ^^^^
+  [153] file offset=0x00963B57  RVA=0x00964757  section=.text
+      context: 07 4B C3 92 90 7F BE CB 47 E1 63 FD
+                           ^^^^
+  [154] file offset=0x00972D6E  RVA=0x0097396E  section=.text
+      context: 82 1B 41 2E 90 7F 80 FF 95 1A DC 90
+                           ^^^^
+  [155] file offset=0x0098E02F  RVA=0x0098EC2F  section=.text
+      context: 96 86 9D E4 90 7F 80 A9 59 86 11 2C
+                           ^^^^
+  [156] file offset=0x009965A7  RVA=0x009971A7  section=.text
+      context: E9 E9 26 55 90 7F D2 CC 9E C4 75 5F
+                           ^^^^
+  [157] file offset=0x0099926E  RVA=0x00999E6E  section=.text
+      context: 77 AB E3 55 90 7F 4D B9 2A E2 E7 32
+                           ^^^^
+  [158] file offset=0x0099BDB9  RVA=0x0099C9B9  section=.text
+      context: 6A DF E0 3D 90 7F 07 D1 DB 6F 20 9F
+                           ^^^^
+  [159] file offset=0x009B6C59  RVA=0x009B7859  section=.text
+      context: 5D C6 20 CD 90 7F 8A DD 54 37 7F EE
+                           ^^^^
+  [160] file offset=0x009BE8DB  RVA=0x009BF4DB  section=.text
+      context: C0 BD EC C8 90 7F 42 D5 C3 62 20 AF
+                           ^^^^
+  [161] file offset=0x00A0FB8E  RVA=0x00A1078E  section=.text
+      context: 04 FB C9 83 90 7F 82 3F 62 D5 8E 30
+                           ^^^^
+  [162] file offset=0x00A187CD  RVA=0x00A193CD  section=.text
+      context: E7 9F F9 48 90 7F CD C4 49 8D A1 D3
+                           ^^^^
+  [163] file offset=0x00A23AEE  RVA=0x00A246EE  section=.text
+      context: 47 0C 75 6A 90 7F C7 F4 2A DB 69 CB
+                           ^^^^
+  [164] file offset=0x00A259C6  RVA=0x00A265C6  section=.text
+      context: 46 48 72 E1 90 7F E1 F7 6F CC 4C D2
+                           ^^^^
+  [165] file offset=0x00A28DD1  RVA=0x00A299D1  section=.text
+      context: 11 5A A4 73 90 7F 7F F3 30 08 9B CB
+                           ^^^^
+  [166] file offset=0x00A4CD73  RVA=0x00A4D973  section=.text
+      context: 4E AC F8 82 90 7F 97 F4 E7 DE 36 54
+                           ^^^^
+  [167] file offset=0x00A4CFC9  RVA=0x00A4DBC9  section=.text
+      context: 1D 0F A0 BB 90 7F 49 FD AD B4 53 C6
+                           ^^^^
+  [168] file offset=0x00A4D89F  RVA=0x00A4E49F  section=.text
+      context: 18 A1 E2 C8 90 7F 04 B3 89 5A AA 86
+                           ^^^^
+  [169] file offset=0x00A7254B  RVA=0x00A7314B  section=.text
+      context: 90 09 49 C7 90 7F C0 2B A2 C8 B9 94
+                           ^^^^
+  [170] file offset=0x00ABA254  RVA=0x00ABAE54  section=.text
+      context: E9 44 DB AD 90 7F C2 D0 AC C5 AD 95
+                           ^^^^
+  [171] file offset=0x00AD9D86  RVA=0x00ADA986  section=.text
+      context: B8 FF 1D 4F 90 7F A2 A7 AC 00 BD D3
+                           ^^^^
+  [172] file offset=0x00AD9F80  RVA=0x00ADAB80  section=.text
+      context: 0D B5 78 6C 90 7F F5 DD D2 67 7F 44
+                           ^^^^
+  [173] file offset=0x00AE8CB5  RVA=0x00AE98B5  section=.text
+      context: 2A EA 67 82 90 7F CD 9F AA 8D 23 F1
+                           ^^^^
+  [174] file offset=0x00AEAFF1  RVA=0x00AEBBF1  section=.text
+      context: 0C 48 FC 87 90 7F 4B 33 9B 90 D7 C0
+                           ^^^^
+  [175] file offset=0x00B042BB  RVA=0x00B04EBB  section=.text
+      context: 8E 7B 76 B4 90 7F 08 1F 5E 4F 23 42
+                           ^^^^
+  [176] file offset=0x00B05554  RVA=0x00B06154  section=.text
+      context: 87 08 7D CE 90 7F 87 49 F4 30 66 97
+                           ^^^^
+  [177] file offset=0x00B1D7BE  RVA=0x00B1E3BE  section=.text
+      context: B6 1B CC 15 90 7F BB F7 46 8C 28 A0
+                           ^^^^
+  [178] file offset=0x00B3C353  RVA=0x00B3CF53  section=.text
+      context: C3 89 6D 34 90 7F 11 4C B4 DD 4C 32
+                           ^^^^
+  [179] file offset=0x00B5AB96  RVA=0x00B5B796  section=.text
+      context: 3E 8E 4A F6 90 7F E0 C2 BB B3 81 C8
+                           ^^^^
+  [180] file offset=0x00B6A1B1  RVA=0x00B6ADB1  section=.text
+      context: 54 C7 AF B5 90 7F 44 34 BA 37 FD EA
+                           ^^^^
+  [181] file offset=0x00B6D6B3  RVA=0x00B6E2B3  section=.text
+      context: C4 D5 42 D8 90 7F 6F AB ED 6C F4 DB
+                           ^^^^
+  [182] file offset=0x00B791B2  RVA=0x00B79DB2  section=.text
+      context: 81 54 72 8C 90 7F 20 6D 27 B8 91 AA
+                           ^^^^
+  [183] file offset=0x00B831F5  RVA=0x00B83DF5  section=.text
+      context: 2E 62 62 DA 90 7F 2C 7F DC CC E9 E6
+                           ^^^^
+  [184] file offset=0x00B8C717  RVA=0x00B8D317  section=.text
+      context: CD 98 F4 78 90 7F B2 3D F5 31 42 D4
+                           ^^^^
+  [185] file offset=0x00B8E063  RVA=0x00B8EC63  section=.text
+      context: 7D 7D FB 40 90 7F 6B 5D EF ED D6 33
+                           ^^^^
+  [186] file offset=0x00B939F6  RVA=0x00B945F6  section=.text
+      context: 33 DD 42 3B 90 7F A9 DD AD B8 91 CE
+                           ^^^^
+  [187] file offset=0x00BAEF4D  RVA=0x00BAFB4D  section=.text
+      context: EB 60 54 DC 90 7F A4 BF 33 D3 3C 53
+                           ^^^^
+  [188] file offset=0x00BBB8E6  RVA=0x00BBC4E6  section=.text
+      context: F1 CF DD 90 90 7F D8 FC FB 9D B0 FC
+                           ^^^^
+  [189] file offset=0x00BCD01E  RVA=0x00BCDC1E  section=.text
+      context: 80 3C 5E 51 90 7F F1 5F A5 8C 9C 26
+                           ^^^^
+  [190] file offset=0x00BCD853  RVA=0x00BCE453  section=.text
+      context: 1C 08 FA 36 90 7F C8 D0 4F F6 B7 A0
+                           ^^^^
+  [191] file offset=0x00BD7273  RVA=0x00BD7E73  section=.text
+      context: A9 84 C6 A7 90 7F CD B5 DE 98 DC 5B
+                           ^^^^
+  [192] file offset=0x00BE1075  RVA=0x00BE1C75  section=.text
+      context: 7C 53 A2 37 90 7F A6 28 3A FD 0C C5
+                           ^^^^
+  [193] file offset=0x00BEBC67  RVA=0x00BEC867  section=.text
+      context: A6 7A A9 F5 90 7F 3C 1F 0B B5 4B D7
+                           ^^^^
+  [194] file offset=0x00BF58CE  RVA=0x00BF64CE  section=.text
+      context: E0 04 EF 00 90 7F B6 15 AD 94 22 AF
+                           ^^^^
+  [195] file offset=0x00C1C8B5  RVA=0x00C1D4B5  section=.text
+      context: 9F DD ED 0B 90 7F 68 A6 A5 DC 2C 63
+                           ^^^^
+  [196] file offset=0x00C2BA54  RVA=0x00C2C654  section=.text
+      context: DC BC E7 FC 90 7F C1 4C 7B 9C 07 D6
+                           ^^^^
+  [197] file offset=0x00C2E9D5  RVA=0x00C2F5D5  section=.text
+      context: EF 28 F0 E6 90 7F 3F 85 51 9C 48 3F
+                           ^^^^
+  [198] file offset=0x00C437B0  RVA=0x00C443B0  section=.text
+      context: C4 58 FA 52 90 7F 50 3C 5C 49 D3 32
+                           ^^^^
+  [199] file offset=0x00C51088  RVA=0x00C51C88  section=.text
+      context: 14 79 0B 2E 90 7F B7 B2 84 92 68 11
+                           ^^^^
+  [200] file offset=0x00C5D2BA  RVA=0x00C5DEBA  section=.text
+      context: F1 76 A5 09 90 7F 6C 40 AA 43 00 E9
+                           ^^^^
+  [201] file offset=0x00C6A9C8  RVA=0x00C6B5C8  section=.text
+      context: 53 C0 9C 78 90 7F AA 4B 16 C8 08 20
+                           ^^^^
+  [202] file offset=0x00C801FC  RVA=0x00C80DFC  section=.text
+      context: 7E 37 CC F7 90 7F CC 96 A0 B9 6D B9
+                           ^^^^
+  [203] file offset=0x00C8235D  RVA=0x00C82F5D  section=.text
+      context: 0A 4B 9D 97 90 7F A6 D8 01 02 90 62
+                           ^^^^
+  [204] file offset=0x00C8472E  RVA=0x00C8532E  section=.text
+      context: BE D0 80 BF 90 7F C7 2D 3A CF 4E 2A
+                           ^^^^
+  [205] file offset=0x00CADC3F  RVA=0x00CAE83F  section=.text
+      context: C1 60 50 C6 90 7F 5C 3F BA 0B 63 55
+                           ^^^^
+  [206] file offset=0x00CAE2EC  RVA=0x00CAEEEC  section=.text
+      context: 6A B8 EE 92 90 7F 6D A8 2F 27 13 91
+                           ^^^^
+  [207] file offset=0x00CB2F06  RVA=0x00CB3B06  section=.text
+      context: AB 80 A5 8C 90 7F D7 5D 60 C3 42 CE
+                           ^^^^
+  [208] file offset=0x00CBF885  RVA=0x00CC0485  section=.text
+      context: 4C 19 18 F2 90 7F D0 0D 62 F2 7D 8A
+                           ^^^^
+  [209] file offset=0x00CC57C4  RVA=0x00CC63C4  section=.text
+      context: 05 BE D0 AA 90 7F 0E 3D 36 10 28 3C
+                           ^^^^
+  [210] file offset=0x00CDD12F  RVA=0x00CDDD2F  section=.text
+      context: 9E 13 8B 72 90 7F 2B 3E F2 C7 BF 01
+                           ^^^^
+  [211] file offset=0x00CE3DF7  RVA=0x00CE49F7  section=.text
+      context: 2D FB DC 52 90 7F F9 A8 78 E2 1E E6
+                           ^^^^
+  [212] file offset=0x00CE970D  RVA=0x00CEA30D  section=.text
+      context: 6A 4D C1 F3 90 7F 5E CA 1B 2F 12 8D
+                           ^^^^
+  [213] file offset=0x00CEB6F0  RVA=0x00CEC2F0  section=.text
+      context: AD 85 86 B5 90 7F 7E 9F 99 FC 1B 52
+                           ^^^^
+  [214] file offset=0x00CF8185  RVA=0x00CF8D85  section=.text
+      context: 49 9E A0 6D 90 7F E4 C5 44 EC 0B F1
+                           ^^^^
+  [215] file offset=0x00D02AFE  RVA=0x00D036FE  section=.text
+      context: 33 86 4E 92 90 7F BA 65 A1 E4 E6 B4
+                           ^^^^
+  [216] file offset=0x00D04E4A  RVA=0x00D05A4A  section=.text
+      context: 61 61 59 FA 90 7F 9A 19 4A EB E4 A6
+                           ^^^^
+  [217] file offset=0x00D0C3B8  RVA=0x00D0CFB8  section=.text
+      context: EC DD 48 95 90 7F 57 7D C2 AF DB C2
+                           ^^^^
+  [218] file offset=0x00D1D3EC  RVA=0x00D1DFEC  section=.text
+      context: B5 AD F2 99 90 7F EB F3 C9 9A 29 E6
+                           ^^^^
+  [219] file offset=0x00D2350F  RVA=0x00D2410F  section=.text
+      context: BF F3 AE C2 90 7F 48 A1 49 46 7D 74
+                           ^^^^
+  [220] file offset=0x00D2D27C  RVA=0x00D2DE7C  section=.text
+      context: 6C 57 0B 7B 90 7F 1E E8 20 BE F3 DC
+                           ^^^^
+  [221] file offset=0x00D4F434  RVA=0x00D50034  section=.text
+      context: 05 6E 85 67 90 7F 42 65 F2 21 25 5E
+                           ^^^^
+  [222] file offset=0x00D50D72  RVA=0x00D51972  section=.text
+      context: 88 C8 4B 56 90 7F 5C 92 CA BD 4F 73
+                           ^^^^
+  [223] file offset=0x00D555E5  RVA=0x00D561E5  section=.text
+      context: 35 72 C5 01 90 7F 8D EF 58 BC 30 0B
+                           ^^^^
+  [224] file offset=0x00D592FF  RVA=0x00D59EFF  section=.text
+      context: 3F 39 09 EB 90 7F FB C6 AA 95 4F C1
+                           ^^^^
+  [225] file offset=0x00D685CB  RVA=0x00D691CB  section=.text
+      context: 48 42 70 D5 90 7F 9B 08 CE CC F8 C5
+                           ^^^^
+  [226] file offset=0x00D6F238  RVA=0x00D6FE38  section=.text
+      context: C6 E4 07 2F 90 7F F4 37 1A B0 72 CC
+                           ^^^^
+  [227] file offset=0x00D9738A  RVA=0x00D97F8A  section=.text
+      context: 54 FD 65 3D 90 7F FC 9F 9D 8D 69 2C
+                           ^^^^
+  [228] file offset=0x00DCAE6F  RVA=0x00DCBA6F  section=.text
+      context: 51 C4 BE 34 90 7F 6E B0 FE 1E 08 02
+                           ^^^^
+  [229] file offset=0x00DCDAA4  RVA=0x00DCE6A4  section=.text
+      context: C2 E7 62 66 90 7F D4 3D 18 FE F7 1A
+                           ^^^^
+  [230] file offset=0x00DCE675  RVA=0x00DCF275  section=.text
+      context: 7D B0 1E EE 90 7F 91 C0 14 7B C3 56
+                           ^^^^
+  [231] file offset=0x00DDB677  RVA=0x00DDC277  section=.text
+      context: DD 93 29 40 90 7F 28 E2 E1 59 54 D5
+                           ^^^^
+  [232] file offset=0x00DDD9F1  RVA=0x00DDE5F1  section=.text
+      context: 78 0A BC 2C 90 7F D6 B8 EC 9C C7 F1
+                           ^^^^
+  [233] file offset=0x00E04254  RVA=0x00E04E54  section=.text
+      context: 55 7B EF C4 90 7F CA 31 A9 5C E7 C7
+                           ^^^^
+  [234] file offset=0x00E092E6  RVA=0x00E09EE6  section=.text
+      context: ED ED 18 A1 90 7F 99 99 F4 75 3A DB
+                           ^^^^
+  [235] file offset=0x00E27103  RVA=0x00E27D03  section=.text
+      context: 07 04 68 D3 90 7F 00 AC 78 1E 51 59
+                           ^^^^
+  [236] file offset=0x00E2C411  RVA=0x00E2D011  section=.text
+      context: 6E A8 B0 0B 90 7F 87 73 AC 3F 7B 05
+                           ^^^^
+  [237] file offset=0x00E3741E  RVA=0x00E3801E  section=.text
+      context: 74 BE 2D D0 90 7F F6 A1 F0 91 FA 8E
+                           ^^^^
+  [238] file offset=0x00E4D41F  RVA=0x00E4E01F  section=.text
+      context: F5 13 BB BF 90 7F D0 98 66 F6 FA 77
+                           ^^^^
+  [239] file offset=0x00E5F871  RVA=0x00E60471  section=.text
+      context: E8 53 8D 1D 90 7F CD 36 63 A8 E5 3C
+                           ^^^^
+  [240] file offset=0x00E796F7  RVA=0x00E7A2F7  section=.text
+      context: BE F4 B8 57 90 7F 2E 23 28 60 99 7F
+                           ^^^^
+  [241] file offset=0x00E94B78  RVA=0x00E95778  section=.text
+      context: A1 7E 87 A7 90 7F B5 95 0B 71 3E 23
+                           ^^^^
+  [242] file offset=0x00EBC35E  RVA=0x00EBCF5E  section=.text
+      context: E1 2E E8 D1 90 7F E5 1D B6 78 B9 1A
+                           ^^^^
+  [243] file offset=0x00EC36BD  RVA=0x00EC42BD  section=.text
+      context: 33 F4 37 EF 90 7F 27 B9 DB 92 3E AD
+                           ^^^^
+  [244] file offset=0x00ED6BC9  RVA=0x00ED77C9  section=.text
+      context: F5 76 35 F4 90 7F 54 EC B3 55 54 6F
+                           ^^^^
+  [245] file offset=0x00EED896  RVA=0x00EEE496  section=.text
+      context: 82 A6 FC F8 90 7F 92 45 0F 5C 1E DE
+                           ^^^^
+  [246] file offset=0x00EF69CB  RVA=0x00EF75CB  section=.text
+      context: B8 D2 78 AD 90 7F 2C 27 78 04 AE 06
+                           ^^^^
+  [247] file offset=0x00F04AC7  RVA=0x00F056C7  section=.text
+      context: 28 26 27 76 90 7F 7D B9 96 41 37 2B
+                           ^^^^
+  [248] file offset=0x00F26108  RVA=0x00F26D08  section=.text
+      context: 80 8A D0 A7 90 7F 13 E5 8B 2E 88 6A
+                           ^^^^
+  [249] file offset=0x00F26451  RVA=0x00F27051  section=.text
+      context: 33 68 13 54 90 7F BB 26 5B 5F 09 AE
+                           ^^^^
+  [250] file offset=0x00F421B5  RVA=0x00F42DB5  section=.text
+      context: F4 41 C3 2B 90 7F 43 CB 19 71 AB 83
+                           ^^^^
+  [251] file offset=0x00F47901  RVA=0x00F48501  section=.text
+      context: C5 72 AA A3 90 7F B4 37 6F DE 59 04
+                           ^^^^
+  [252] file offset=0x00F4E7BC  RVA=0x00F4F3BC  section=.text
+      context: EF 47 E7 32 90 7F 53 DF 7F DC A0 60
+                           ^^^^
+  [253] file offset=0x00F5184E  RVA=0x00F5244E  section=.text
+      context: D9 43 14 4D 90 7F 54 A5 E5 A2 CF 92
+                           ^^^^
+  [254] file offset=0x00F52444  RVA=0x00F53044  section=.text
+      context: 2E 65 05 71 90 7F 01 4E 94 E6 3F FE
+                           ^^^^
+  [255] file offset=0x00F66A17  RVA=0x00F67617  section=.text
+      context: 49 19 40 D6 90 7F DC 7E F3 2F 09 68
+                           ^^^^
+  [256] file offset=0x00F6AE1F  RVA=0x00F6BA1F  section=.text
+      context: 44 DB 25 E1 90 7F 3D 22 80 A6 6F A1
+                           ^^^^
+  [257] file offset=0x00F6CDCF  RVA=0x00F6D9CF  section=.text
+      context: E0 50 95 76 90 7F 28 F4 5F 1A 7C AA
+                           ^^^^
+  [258] file offset=0x00F78D08  RVA=0x00F79908  section=.text
+      context: 99 F3 A1 79 90 7F A2 EE 2B B4 D4 21
+                           ^^^^
+  [259] file offset=0x00F878A8  RVA=0x00F884A8  section=.text
+      context: F4 33 E9 FA 90 7F 78 EF FA E1 1C B7
+                           ^^^^
+  [260] file offset=0x00F8AB51  RVA=0x00F8B751  section=.text
+      context: 13 6E 56 A3 90 7F 55 D7 2A 5D 52 DD
+                           ^^^^
+  [261] file offset=0x00FAD01E  RVA=0x00FADC1E  section=.text
+      context: E7 55 F8 CA 90 7F 1F DF 0D B7 56 82
+                           ^^^^
+  [262] file offset=0x00FB9993  RVA=0x00FBA593  section=.text
+      context: E1 CD E9 9C 90 7F 79 4B 46 99 48 1D
+                           ^^^^
+  [263] file offset=0x00FC7D9B  RVA=0x00FC899B  section=.text
+      context: D2 7A 75 6F 90 7F C2 AF 91 61 DA 3E
+                           ^^^^
+  [264] file offset=0x00FC910D  RVA=0x00FC9D0D  section=.text
+      context: 91 85 23 78 90 7F 47 D0 99 88 70 8D
+                           ^^^^
+  [265] file offset=0x00FCEEC8  RVA=0x00FCFAC8  section=.text
+      context: F4 6A 8A 86 90 7F 58 0F D6 8C D8 5F
+                           ^^^^
+  [266] file offset=0x00FD623A  RVA=0x00FD6E3A  section=.text
+      context: 81 37 FA 91 90 7F 27 32 D9 16 01 A4
+                           ^^^^
+  [267] file offset=0x00FD6917  RVA=0x00FD7517  section=.text
+      context: 45 39 BB D3 90 7F 2F 8F 71 96 CD 5A
+                           ^^^^
+  [268] file offset=0x00FDB0F6  RVA=0x00FDBCF6  section=.text
+      context: FC 18 28 7F 90 7F A1 C3 6A FA 3C 22
+                           ^^^^
+  [269] file offset=0x00FE8E72  RVA=0x00FE9A72  section=.text
+      context: 57 2C AB CA 90 7F E8 B2 4E E8 60 04
+                           ^^^^
+  [270] file offset=0x010083B1  RVA=0x01008FB1  section=.text
+      context: ED 26 C3 44 90 7F 03 47 F9 DB 36 38
+                           ^^^^
+  [271] file offset=0x010377E2  RVA=0x010383E2  section=.text
+      context: BD 0C F8 97 90 7F 04 C4 3E BA 3E E8
+                           ^^^^
+  [272] file offset=0x010385F4  RVA=0x010391F4  section=.text
+      context: 58 23 48 A3 90 7F 8C B1 B1 E4 47 0C
+                           ^^^^
+  [273] file offset=0x0104E749  RVA=0x0104F349  section=.text
+      context: 08 B5 00 EB 90 7F 19 1D 64 0A 70 B5
+                           ^^^^
+  [274] file offset=0x01061605  RVA=0x01062205  section=.text
+      context: B1 B4 C5 14 90 7F 26 DB 1F FA F2 24
+                           ^^^^
+  [275] file offset=0x01062796  RVA=0x01063396  section=.text
+      context: 9A C8 88 F6 90 7F BE 1E DE D8 B5 2E
+                           ^^^^
+  [276] file offset=0x010741DC  RVA=0x01074DDC  section=.text
+      context: 42 55 79 8C 90 7F 0F B0 6A 5B 84 C0
+                           ^^^^
+  [277] file offset=0x01076B70  RVA=0x01077770  section=.text
+      context: 43 55 F5 A8 90 7F 91 C2 08 C1 08 C3
+                           ^^^^
+  [278] file offset=0x010946BF  RVA=0x010952BF  section=.text
+      context: 05 0B 65 3F 90 7F F2 01 C0 77 2A FC
+                           ^^^^
+  [279] file offset=0x010997A8  RVA=0x0109A3A8  section=.text
+      context: B5 01 C0 74 90 7F 7B 55 E0 48 A6 C9
+                           ^^^^
+  [280] file offset=0x010AD5BF  RVA=0x010AE1BF  section=.text
+      context: E4 C3 1A 2E 90 7F 60 CD EC 94 D1 90
+                           ^^^^
+  [281] file offset=0x010ADE86  RVA=0x010AEA86  section=.text
+      context: 32 71 B0 0F 90 7F 59 6C E5 68 68 B1
+                           ^^^^
+  [282] file offset=0x010C0EB2  RVA=0x010C1AB2  section=.text
+      context: 4D 91 4B B9 90 7F 15 50 6F 69 39 1E
+                           ^^^^
+  [283] file offset=0x010C6EA5  RVA=0x010C7AA5  section=.text
+      context: DA E8 B1 92 90 7F 22 5E A0 1A DB D8
+                           ^^^^
+  [284] file offset=0x010D2C4C  RVA=0x010D384C  section=.text
+      context: 10 67 17 90 90 7F EE 27 5F EB 23 BD
+                           ^^^^
+  [285] file offset=0x010EC85D  RVA=0x010ED45D  section=.text
+      context: 15 93 38 0D 90 7F F6 F7 3B CA 78 4A
+                           ^^^^
+  [286] file offset=0x010FCC4A  RVA=0x010FD84A  section=.text
+      context: E4 E7 76 84 90 7F 6E AD 67 88 D4 68
+                           ^^^^
+  [287] file offset=0x0110D963  RVA=0x0110E563  section=.text
+      context: 61 72 26 23 90 7F EC 0F 21 D8 5C 31
+                           ^^^^
+  [288] file offset=0x011184BA  RVA=0x011190BA  section=.text
+      context: 47 5C D6 AB 90 7F E3 55 22 78 1D 49
+                           ^^^^
+  [289] file offset=0x0113C316  RVA=0x0113CF16  section=.text
+      context: 0B 9A 83 BD 90 7F 96 E4 99 D5 66 2C
+                           ^^^^
+  [290] file offset=0x0113FC1E  RVA=0x0114081E  section=.text
+      context: D9 70 0A 3D 90 7F 4A 4F A3 EB 47 B9
+                           ^^^^
+  [291] file offset=0x01149DDF  RVA=0x0114A9DF  section=.text
+      context: 97 68 9F 22 90 7F AD 4E 5D E0 2C B0
+                           ^^^^
+  [292] file offset=0x0114D788  RVA=0x0114E388  section=.text
+      context: A0 FB 20 5C 90 7F 65 7D 54 FB 96 B2
+                           ^^^^
+  [293] file offset=0x0116274F  RVA=0x0116334F  section=.text
+      context: E7 14 0B 5A 90 7F D9 3E A4 A9 21 02
+                           ^^^^
+  [294] file offset=0x0116DBD7  RVA=0x0116E7D7  section=.text
+      context: E5 DE BF 85 90 7F DA D6 38 38 BB E0
+                           ^^^^
+  [295] file offset=0x0118D00F  RVA=0x0118DC0F  section=.text
+      context: 6B E5 17 78 90 7F 90 09 B1 79 D1 D6
+                           ^^^^
+  [296] file offset=0x0119091A  RVA=0x0119151A  section=.text
+      context: B7 10 AB AF 90 7F 1E 68 91 2E 33 88
+                           ^^^^
+  [297] file offset=0x011AB98C  RVA=0x011AC58C  section=.text
+      context: 86 D1 BF 8C 90 7F BB E1 B3 08 80 0E
+                           ^^^^
+  [298] file offset=0x011ABBBB  RVA=0x011AC7BB  section=.text
+      context: 0E A2 9B 7E 90 7F 88 26 0D A9 71 C5
+                           ^^^^
+  [299] file offset=0x011B2E6C  RVA=0x011B3A6C  section=.text
+      context: DD 38 AE 55 90 7F 8A D9 18 9B 6F F7
+                           ^^^^
+  [300] file offset=0x011CBE03  RVA=0x011CCA03  section=.text
+      context: 30 5F 16 97 90 7F 93 E6 07 5D AF 59
+                           ^^^^
+  [301] file offset=0x01211100  RVA=0x01211D00  section=.text
+      context: 75 F3 BE 68 90 7F DF 6B 4B 91 61 EB
+                           ^^^^
+  [302] file offset=0x01212FD2  RVA=0x01213BD2  section=.text
+      context: 1E E8 D2 D3 90 7F FA EE 89 2E 7A 95
+                           ^^^^
+  [303] file offset=0x01219774  RVA=0x0121A374  section=.text
+      context: 8B F0 EF 55 90 7F DC 3F 9D C7 68 52
+                           ^^^^
+  [304] file offset=0x01226D6A  RVA=0x0122796A  section=.text
+      context: 69 E3 ED 60 90 7F 85 67 79 52 DF 37
+                           ^^^^
+  [305] file offset=0x0125FDE4  RVA=0x012609E4  section=.text
+      context: 9D 8C DD A5 90 7F 05 5A 89 27 C7 08
+                           ^^^^
+  [306] file offset=0x0126C9A0  RVA=0x0126D5A0  section=.text
+      context: C8 BF FD 36 90 7F 6E 1A 8B 56 64 5E
+                           ^^^^
+  [307] file offset=0x01272673  RVA=0x01273273  section=.text
+      context: 2E 61 C5 0E 90 7F 27 2E BB 36 E0 DB
+                           ^^^^
+  [308] file offset=0x0128914B  RVA=0x01289D4B  section=.text
+      context: A3 5C EA 01 90 7F C4 71 24 81 1C 83
+                           ^^^^
+  [309] file offset=0x0128EB3E  RVA=0x0128F73E  section=.text
+      context: 12 3E 37 4F 90 7F E4 41 7A EC 32 06
+                           ^^^^
+  [310] file offset=0x01292481  RVA=0x01293081  section=.text
+      context: 79 E7 4A C5 90 7F 6B 54 83 A2 8A 4F
+                           ^^^^
+  [311] file offset=0x0129BEC6  RVA=0x0129CAC6  section=.text
+      context: A7 75 67 75 90 7F 4A DA BB D1 F3 4B
+                           ^^^^
+  [312] file offset=0x012AE1D1  RVA=0x012AEDD1  section=.text
+      context: E9 0E F9 D4 90 7F 55 E0 BB 2A 0D C2
+                           ^^^^
+  [313] file offset=0x012CE7F1  RVA=0x012CF3F1  section=.text
+      context: 28 6B A7 9E 90 7F BE 0E 47 A6 9C A2
+                           ^^^^
+  [314] file offset=0x012D295B  RVA=0x012D355B  section=.text
+      context: E7 30 44 A3 90 7F AA 96 CF A9 1F 47
+                           ^^^^
+  [315] file offset=0x012F367A  RVA=0x012F427A  section=.text
+      context: 83 2C CE 98 90 7F 82 C9 0E 71 8C 68
+                           ^^^^
+  [316] file offset=0x012FB5C2  RVA=0x012FC1C2  section=.text
+      context: B6 4C 5A 68 90 7F 2D 95 E0 92 00 4D
+                           ^^^^
+  [317] file offset=0x012FFDE1  RVA=0x013009E1  section=.text
+      context: 9D 0A F1 BE 90 7F 4B BC B0 AE 6B B0
+                           ^^^^
+  [318] file offset=0x013079F7  RVA=0x013085F7  section=.text
+      context: CB FC A1 60 90 7F 49 FD 72 85 0E 0A
+                           ^^^^
+  [319] file offset=0x01319015  RVA=0x01319C15  section=.text
+      context: C6 89 7A 68 90 7F 40 CA AA A1 A8 09
+                           ^^^^
+  [320] file offset=0x0133230A  RVA=0x01332F0A  section=.text
+      context: 15 2A DA 10 90 7F E3 65 DC 6E 12 23
+                           ^^^^
+  [321] file offset=0x0134EF80  RVA=0x0134FB80  section=.text
+      context: 7B 31 B4 04 90 7F 08 EB F5 E3 55 F1
+                           ^^^^
+  [322] file offset=0x0135DB37  RVA=0x0135E737  section=.text
+      context: 8C EA 4E 2C 90 7F 6F 54 1C E0 4A 07
+                           ^^^^
+  [323] file offset=0x0137A8D2  RVA=0x0137B4D2  section=.text
+      context: 0C B9 77 FC 90 7F 1A 63 CA FA 8B C1
+                           ^^^^
+  [324] file offset=0x0137AB10  RVA=0x0137B710  section=.text
+      context: 7A AC A8 AD 90 7F 0D 91 DA DD 03 87
+                           ^^^^
+  [325] file offset=0x0137B87D  RVA=0x0137C47D  section=.text
+      context: 6A EF B8 60 90 7F 32 E3 58 84 23 BA
+                           ^^^^
+  [326] file offset=0x013893D4  RVA=0x01389FD4  section=.text
+      context: E0 59 34 3E 90 7F AB 90 FD E5 61 E7
+                           ^^^^
+  [327] file offset=0x0138C2D7  RVA=0x0138CED7  section=.text
+      context: 69 27 2E 8C 90 7F 79 70 6D 14 D9 15
+                           ^^^^
+  [328] file offset=0x0139F90A  RVA=0x013A050A  section=.text
+      context: C2 8C E1 C2 90 7F 21 D3 43 49 98 0B
+                           ^^^^
+  [329] file offset=0x013A7156  RVA=0x013A7D56  section=.text
+      context: B2 B9 85 BF 90 7F 13 63 21 47 CE EE
+                           ^^^^
+  [330] file offset=0x013ABDD1  RVA=0x013AC9D1  section=.text
+      context: 1F 6C BE 7E 90 7F C4 33 78 91 D6 86
+                           ^^^^
+  [331] file offset=0x013AD16E  RVA=0x013ADD6E  section=.text
+      context: 0A D5 BF F6 90 7F E5 F7 39 FD 1F 35
+                           ^^^^
+  [332] file offset=0x013B45D9  RVA=0x013B51D9  section=.text
+      context: D0 03 39 57 90 7F E9 16 C2 74 8E C7
+                           ^^^^
+  [333] file offset=0x013B4E69  RVA=0x013B5A69  section=.text
+      context: 60 54 3B 49 90 7F F8 8B E9 32 34 C2
+                           ^^^^
+  [334] file offset=0x013BF50C  RVA=0x013C010C  section=.text
+      context: 51 A6 24 79 90 7F FB 2E 5B BC 15 5C
+                           ^^^^
+  [335] file offset=0x013C4C14  RVA=0x013C5814  section=.text
+      context: A2 15 7A B7 90 7F 9D 95 A8 E2 5D 43
+                           ^^^^
+  [336] file offset=0x013F9F43  RVA=0x013FAB43  section=.text
+      context: 19 FF FF 69 90 7F 7B 79 D7 97 2F 79
+                           ^^^^
+  [337] file offset=0x0140D764  RVA=0x0140E364  section=.text
+      context: C8 1B 3F A7 90 7F E1 C5 C2 75 EE 39
+                           ^^^^
+  [338] file offset=0x0140D8FC  RVA=0x0140E4FC  section=.text
+      context: 28 B7 A1 98 90 7F 68 96 D6 3D 26 A6
+                           ^^^^
+  [339] file offset=0x0141A797  RVA=0x0141B397  section=.text
+      context: 4F 46 6C 1E 90 7F 6D C2 33 74 4D 83
+                           ^^^^
+  [340] file offset=0x0142142A  RVA=0x0142202A  section=.text
+      context: C4 6A FA 71 90 7F BD 73 28 F2 CB 96
+                           ^^^^
+  [341] file offset=0x01447E6C  RVA=0x01448A6C  section=.text
+      context: 4E 1E CA 58 90 7F 14 DB C4 CA 00 11
+                           ^^^^
+  [342] file offset=0x0145F45B  RVA=0x0146005B  section=.text
+      context: CA 61 67 A1 90 7F 80 53 6C 60 05 CB
+                           ^^^^
+  [343] file offset=0x014612A1  RVA=0x01461EA1  section=.text
+      context: 89 C1 00 60 90 7F BC 6F 67 AB 4C 82
+                           ^^^^
+  [344] file offset=0x0146F67A  RVA=0x0147027A  section=.text
+      context: 16 BE 3C 3C 90 7F 97 28 8D F5 59 BA
+                           ^^^^
+  [345] file offset=0x014703C4  RVA=0x01470FC4  section=.text
+      context: 56 A5 76 FA 90 7F F0 A1 FB 1A 51 6B
+                           ^^^^
+  [346] file offset=0x01495695  RVA=0x01496295  section=.text
+      context: BA 0D 69 5B 90 7F 23 A7 61 7A 66 7D
+                           ^^^^
+  [347] file offset=0x0149EEFE  RVA=0x0149FAFE  section=.text
+      context: A0 FB 8A CC 90 7F 41 BF 49 BF A3 22
+                           ^^^^
+  [348] file offset=0x014A8ACB  RVA=0x014A96CB  section=.text
+      context: 82 C1 82 B0 90 7F 44 33 78 65 56 8A
+                           ^^^^
+  [349] file offset=0x014B1C9A  RVA=0x014B289A  section=.text
+      context: 8D 48 95 F2 90 7F 32 B1 12 46 74 10
+                           ^^^^
+  [350] file offset=0x014BFED0  RVA=0x014C0AD0  section=.text
+      context: 9E 1B F4 B6 90 7F 8F 63 84 E8 F5 CC
+                           ^^^^
+  [351] file offset=0x01510BB8  RVA=0x015117B8  section=.text
+      context: E6 5B 55 C3 90 7F CF 38 E9 5D 7C B8
+                           ^^^^
+  [352] file offset=0x015110E1  RVA=0x01511CE1  section=.text
+      context: 0B 2E C2 B8 90 7F 2A 4A A8 FA 35 D5
+                           ^^^^
+  [353] file offset=0x01515CC0  RVA=0x015168C0  section=.text
+      context: F8 4A 4B CF 90 7F 2D D0 19 8E 6F 1B
+                           ^^^^
+  [354] file offset=0x015343B5  RVA=0x01534FB5  section=.text
+      context: DB DD 58 56 90 7F 59 4B 40 57 C2 DA
+                           ^^^^
+  [355] file offset=0x015578B1  RVA=0x015584B1  section=.text
+      context: 4D 03 4E C4 90 7F 7D 6F 6A F4 63 DE
+                           ^^^^
+  [356] file offset=0x0155BFC0  RVA=0x0155CBC0  section=.text
+      context: CA 5E 58 FC 90 7F 73 24 B7 BC 34 F9
+                           ^^^^
+  [357] file offset=0x015719BF  RVA=0x015725BF  section=.text
+      context: CC 6A D9 DC 90 7F DD 72 86 A6 9E F7
+                           ^^^^
+  [358] file offset=0x01592042  RVA=0x01592C42  section=.text
+      context: C3 A1 AA DB 90 7F 81 30 81 DD 11 CF
+                           ^^^^
+  [359] file offset=0x01597257  RVA=0x01597E57  section=.text
+      context: C0 CC 44 87 90 7F B7 D7 EA 30 F3 E8
+                           ^^^^
+  [360] file offset=0x015A4080  RVA=0x015A4C80  section=.text
+      context: 05 71 73 5B 90 7F 79 BE 2F 56 D5 CB
+                           ^^^^
+  [361] file offset=0x015ACA2C  RVA=0x015AD62C  section=.text
+      context: 62 22 CD 65 90 7F F3 65 FE A4 FF 69
+                           ^^^^
+  [362] file offset=0x015ACB3E  RVA=0x015AD73E  section=.text
+      context: 24 EA C8 8B 90 7F 45 4A 67 2E B5 67
+                           ^^^^
+  [363] file offset=0x015B5C7B  RVA=0x015B687B  section=.text
+      context: 4A 6E 93 EE 90 7F AD 4F F6 FB A4 EF
+                           ^^^^
+  [364] file offset=0x015B7FEF  RVA=0x015B8BEF  section=.text
+      context: DF 5E A5 11 90 7F F1 E6 6E 49 76 B1
+                           ^^^^
+  [365] file offset=0x015B919E  RVA=0x015B9D9E  section=.text
+      context: 0A 48 0B A1 90 7F 48 4C 51 B8 A4 5E
+                           ^^^^
+  [366] file offset=0x015BA233  RVA=0x015BAE33  section=.text
+      context: 66 4A 56 D5 90 7F E7 0C 0C 73 B6 41
+                           ^^^^
+  [367] file offset=0x015D5C72  RVA=0x015D6872  section=.text
+      context: 99 8E C7 EE 90 7F A0 06 D7 61 EF C5
+                           ^^^^
+  [368] file offset=0x015F952B  RVA=0x015FA12B  section=.text
+      context: F6 10 A5 F2 90 7F 4D 6E 30 1F C9 A8
+                           ^^^^
+  [369] file offset=0x016057C4  RVA=0x016063C4  section=.text
+      context: 5B C5 47 56 90 7F 7A 42 AB BE BD B6
+                           ^^^^
+  [370] file offset=0x0160D47C  RVA=0x0160E07C  section=.text
+      context: ED FD 83 5B 90 7F 82 5D 8E D4 DA 4E
+                           ^^^^
+  [371] file offset=0x0161113A  RVA=0x01611D3A  section=.text
+      context: F7 39 BD 06 90 7F 0C 7F 51 B8 9B AD
+                           ^^^^
+  [372] file offset=0x01620FDF  RVA=0x01621BDF  section=.text
+      context: CB E7 53 31 90 7F A6 2F FE 4A F0 59
+                           ^^^^
+  [373] file offset=0x0163D17F  RVA=0x0163DD7F  section=.text
+      context: 8C 3F F9 F3 90 7F 38 D6 D9 A3 8C 48
+                           ^^^^
+  [374] file offset=0x0164A65F  RVA=0x0164B25F  section=.text
+      context: 54 11 29 34 90 7F 04 5E 10 2D 68 91
+                           ^^^^
+  [375] file offset=0x0166C65C  RVA=0x0166D25C  section=.text
+      context: AF 23 FE F8 90 7F 97 25 5C F7 CD E7
+                           ^^^^
+  [376] file offset=0x01679FD8  RVA=0x0167ABD8  section=.text
+      context: EA 1C 1A AB 90 7F B4 9F 20 CB 2A 11
+                           ^^^^
+  [377] file offset=0x01686079  RVA=0x01686C79  section=.text
+      context: 1A BC 83 DA 90 7F 19 0E EB 3C 33 B6
+                           ^^^^
+  [378] file offset=0x01691091  RVA=0x01691C91  section=.text
+      context: F8 D4 90 10 90 7F 18 77 36 43 12 89
+                           ^^^^
+  [379] file offset=0x016B6D24  RVA=0x016B7924  section=.text
+      context: 62 AC 9A 50 90 7F EF 03 B4 FF FF 59
+                           ^^^^
+  [380] file offset=0x016C6EB7  RVA=0x016C7AB7  section=.text
+      context: BF EF CB 9B 90 7F C2 22 2A 51 7E ED
+                           ^^^^
+  [381] file offset=0x016E8351  RVA=0x016E8F51  section=.text
+      context: F7 8B B9 56 90 7F 87 9B 5C 48 D5 EC
+                           ^^^^
+  [382] file offset=0x0170072A  RVA=0x0170132A  section=.text
+      context: 6E 56 B8 4B 90 7F EB 2A 72 F5 CC A3
+                           ^^^^
+  [383] file offset=0x01714F09  RVA=0x01715B09  section=.text
+      context: AC 51 10 AE 90 7F F9 66 DF 0C 0F 35
+                           ^^^^
+  [384] file offset=0x0171CD21  RVA=0x0171D921  section=.text
+      context: 05 70 A0 B5 90 7F CB 6B A4 40 14 91
+                           ^^^^
+  [385] file offset=0x01723EB8  RVA=0x01724AB8  section=.text
+      context: B3 27 62 A1 90 7F 4C 4C 3B 17 2B 78
+                           ^^^^
+  [386] file offset=0x0174302B  RVA=0x01743C2B  section=.text
+      context: EE E2 DA EE 90 7F 3B 34 B3 CA 89 97
+                           ^^^^
+  [387] file offset=0x01772C67  RVA=0x01773867  section=.text
+      context: BA F1 92 74 90 7F 12 50 5A A6 7C 16
+                           ^^^^
+  [388] file offset=0x0177D11C  RVA=0x0177DD1C  section=.text
+      context: 56 CB D8 BF 90 7F EE BF A6 E5 BA C4
+                           ^^^^
+  [389] file offset=0x0178A0E5  RVA=0x0178ACE5  section=.text
+      context: EB E6 71 87 90 7F 90 EE 16 4E A7 42
+                           ^^^^
+  [390] file offset=0x01797CBD  RVA=0x017988BD  section=.text
+      context: 1C 2C 6C 3D 90 7F A9 81 5B 38 8B CE
+                           ^^^^
+  [391] file offset=0x017A45F9  RVA=0x017A51F9  section=.text
+      context: AA C6 21 AF 90 7F 29 B1 9B F1 41 8E
+                           ^^^^
+  [392] file offset=0x017D2D11  RVA=0x017D3911  section=.text
+      context: 4F D3 A3 06 90 7F B1 E1 48 7C 0B FD
+                           ^^^^
+  [393] file offset=0x017D46CA  RVA=0x017D52CA  section=.text
+      context: 6F 45 A3 81 90 7F C0 65 79 1E 6F 6F
+                           ^^^^
+  [394] file offset=0x017E5277  RVA=0x017E5E77  section=.text
+      context: E4 69 76 F8 90 7F 8B 7E E5 26 CA B7
+                           ^^^^
+  [395] file offset=0x017ED01E  RVA=0x017EDC1E  section=.text
+      context: 4D 59 63 00 90 7F 03 D5 1A 35 68 41
+                           ^^^^
+  [396] file offset=0x017F0FD0  RVA=0x017F1BD0  section=.text
+      context: 74 EC 8C F5 90 7F B0 9A DA 43 9C 1D
+                           ^^^^
+  [397] file offset=0x017F3307  RVA=0x017F3F07  section=.text
+      context: FB 69 54 BC 90 7F 6B EC 09 F8 20 EF
+                           ^^^^
+  [398] file offset=0x017F7F44  RVA=0x017F8B44  section=.text
+      context: 70 DB 07 0C 90 7F AB 04 B1 BF 42 68
+                           ^^^^
+  [399] file offset=0x0180013A  RVA=0x01800D3A  section=.text
+      context: 92 69 5D 81 90 7F 19 F2 19 FB 48 91
+                           ^^^^
+  [400] file offset=0x01826A10  RVA=0x01827610  section=.text
+      context: A8 C9 19 AE 90 7F FC 22 73 90 0A 12
+                           ^^^^
+  [401] file offset=0x0182EEB2  RVA=0x0182FAB2  section=.text
+      context: 3B A4 08 60 90 7F 23 2B 97 E8 6F 4C
+                           ^^^^
+  [402] file offset=0x01843E03  RVA=0x01844A03  section=.text
+      context: 65 47 2E C6 90 7F 7F D2 AE 90 87 C7
+                           ^^^^
+  [403] file offset=0x0184BFA8  RVA=0x0184CBA8  section=.text
+      context: 3F BC 3D E7 90 7F 9A 00 AC 72 6D DD
+                           ^^^^
+  [404] file offset=0x0187AB4E  RVA=0x0187B74E  section=.text
+      context: 6D B5 83 4E 90 7F 6A CB CB F7 9B F8
+                           ^^^^
+  [405] file offset=0x0189407F  RVA=0x01894C7F  section=.text
+      context: E1 6F ED 42 90 7F 5B E1 DC 1E 2F D4
+                           ^^^^
+  [406] file offset=0x018AC7A6  RVA=0x018AD3A6  section=.text
+      context: 58 0D 4A A8 90 7F 99 4E A2 A1 5A EB
+                           ^^^^
+  [407] file offset=0x018B4039  RVA=0x018B4C39  section=.text
+      context: EE 9A A8 2C 90 7F 5D 34 09 68 A9 E7
+                           ^^^^
+  [408] file offset=0x018BAD84  RVA=0x018BB984  section=.text
+      context: 37 35 E0 CB 90 7F F1 12 B3 E4 5A 21
+                           ^^^^
+  [409] file offset=0x018BBA22  RVA=0x018BC622  section=.text
+      context: 79 96 1D 16 90 7F 47 AF 56 B3 43 8A
+                           ^^^^
+  [410] file offset=0x018C3410  RVA=0x018C4010  section=.text
+      context: C4 F2 17 58 90 7F 77 2E 69 4D 6E AC
+                           ^^^^
+  [411] file offset=0x018E7348  RVA=0x018E7F48  section=.text
+      context: 86 43 EF DD 90 7F 06 10 69 17 09 D6
+                           ^^^^
+  [412] file offset=0x018ECDF3  RVA=0x018ED9F3  section=.text
+      context: D4 9F D9 A0 90 7F 98 02 A4 A2 14 92
+                           ^^^^
+  [413] file offset=0x018F1057  RVA=0x018F1C57  section=.text
+      context: 05 1B 7F BF 90 7F 8D 36 29 E4 DD 49
+                           ^^^^
+  [414] file offset=0x01906CAA  RVA=0x019078AA  section=.text
+      context: 99 09 6F 76 90 7F FC EE FA 1A 1E 1D
+                           ^^^^
+  [415] file offset=0x019088E0  RVA=0x019094E0  section=.text
+      context: 60 8B 23 40 90 7F 88 CC C4 35 52 34
+                           ^^^^
+  [416] file offset=0x01922ECC  RVA=0x01923ACC  section=.text
+      context: 09 04 30 77 90 7F 4D E1 FB D3 F8 B8
+                           ^^^^
+  [417] file offset=0x01940A02  RVA=0x01941602  section=.text
+      context: 7B FC F5 5B 90 7F 70 C4 67 72 0E FB
+                           ^^^^
+  [418] file offset=0x0195B9D3  RVA=0x0195C5D3  section=.text
+      context: A6 7C 74 54 90 7F 22 1B 81 6C 8B 40
+                           ^^^^
+  [419] file offset=0x0196D09D  RVA=0x0196DC9D  section=.text
+      context: 5D BC 97 97 90 7F F2 85 F7 B1 DB 76
+                           ^^^^
+  [420] file offset=0x01970C54  RVA=0x01971854  section=.text
+      context: 8C 98 3E 09 90 7F 31 E9 7D ED 2C C9
+                           ^^^^
+  [421] file offset=0x0198769B  RVA=0x0198829B  section=.text
+      context: 4B EB E7 B4 90 7F 11 1A 89 03 77 29
+                           ^^^^
+  [422] file offset=0x01990DB1  RVA=0x019919B1  section=.text
+      context: EE 98 EF 9E 90 7F 43 4B CC 26 99 87
+                           ^^^^
+  [423] file offset=0x0199212F  RVA=0x01992D2F  section=.text
+      context: 0B 37 3C C2 90 7F C2 53 BB A4 74 5B
+                           ^^^^
+  [424] file offset=0x0199369F  RVA=0x0199429F  section=.text
+      context: 62 F2 8C 4A 90 7F B7 D7 5E 95 1A BA
+                           ^^^^
+  [425] file offset=0x0199F04E  RVA=0x0199FC4E  section=.text
+      context: 3D 54 D1 40 90 7F 3B F2 FF D2 E0 F8
+                           ^^^^
+  [426] file offset=0x019AAE79  RVA=0x019ABA79  section=.text
+      context: 4E A1 67 8E 90 7F A9 BD EA 40 EB 2C
+                           ^^^^
+  [427] file offset=0x019BBA75  RVA=0x019BC675  section=.text
+      context: 7F 8D 1D 38 90 7F DF C3 12 78 C0 47
+                           ^^^^
+  [428] file offset=0x019DC6DA  RVA=0x019DD2DA  section=.text
+      context: 78 8F DB 88 90 7F B8 9F 92 83 08 DF
+                           ^^^^
+  [429] file offset=0x019DEF1E  RVA=0x019DFB1E  section=.text
+      context: 2D 30 A2 D4 90 7F F3 15 4E 5C 88 7D
+                           ^^^^
+  [430] file offset=0x019E005F  RVA=0x019E0C5F  section=.text
+      context: E5 2B 69 0F 90 7F 87 0F D9 9E 67 9C
+                           ^^^^
+  [431] file offset=0x019F8EEC  RVA=0x019F9AEC  section=.text
+      context: EB C3 46 C5 90 7F 8B 11 94 2F 4D 6C
+                           ^^^^
+  [432] file offset=0x01A092A2  RVA=0x01A09EA2  section=.text
+      context: C4 57 79 F4 90 7F 06 EF F8 3A 71 33
+                           ^^^^
+  [433] file offset=0x01A374C6  RVA=0x01A380C6  section=.text
+      context: 70 D4 8F 1D 90 7F AF 14 EF 4E 74 16
+                           ^^^^
+  [434] file offset=0x01A412CD  RVA=0x01A41ECD  section=.text
+      context: AA E0 2F D5 90 7F F6 B7 83 3E 15 C9
+                           ^^^^
+  [435] file offset=0x01A4544E  RVA=0x01A4604E  section=.text
+      context: 21 A4 FD 7C 90 7F 74 71 13 77 33 D5
+                           ^^^^
+  [436] file offset=0x01A61E42  RVA=0x01A62A42  section=.text
+      context: 6C 92 39 05 90 7F 50 75 51 E6 88 30
+                           ^^^^
+  [437] file offset=0x01A7679E  RVA=0x01A7739E  section=.text
+      context: C5 87 BE A1 90 7F 3D 78 35 86 D5 58
+                           ^^^^
+  [438] file offset=0x01A8302F  RVA=0x01A83C2F  section=.text
+      context: F8 47 7E 2B 90 7F 50 9E B7 1F 4A BC
+                           ^^^^
+  [439] file offset=0x01AAB478  RVA=0x01AAC078  section=.text
+      context: 96 30 FB E0 90 7F 14 56 82 F4 F1 58
+                           ^^^^
+  [440] file offset=0x01AB479B  RVA=0x01AB539B  section=.text
+      context: B7 6F D3 F7 90 7F F5 3A E7 FF 70 DD
+                           ^^^^
+  [441] file offset=0x01ADC06E  RVA=0x01ADCC6E  section=.text
+      context: 7D 9C 46 40 90 7F 64 14 35 11 AE 21
+                           ^^^^
+  [442] file offset=0x01AF11C4  RVA=0x01AF1DC4  section=.text
+      context: F2 99 84 CA 90 7F 62 68 C0 45 6E C1
+                           ^^^^
+  [443] file offset=0x01AF8F27  RVA=0x01AF9B27  section=.text
+      context: 45 6D C6 14 90 7F D7 DC 47 99 C6 B1
+                           ^^^^
+  [444] file offset=0x01B055AB  RVA=0x01B061AB  section=.text
+      context: 95 EF 00 58 90 7F 15 F9 2F 45 74 A4
+                           ^^^^
+  [445] file offset=0x01B108AA  RVA=0x01B114AA  section=.text
+      context: D3 8D D9 CA 90 7F E6 A8 3C 37 CF BE
+                           ^^^^
+  [446] file offset=0x01B12DA3  RVA=0x01B139A3  section=.text
+      context: 32 E9 F9 0A 90 7F 6C 99 D1 61 A8 E3
+                           ^^^^
+  [447] file offset=0x01B136AB  RVA=0x01B142AB  section=.text
+      context: 48 15 53 36 90 7F 25 C0 0B E3 35 1F
+                           ^^^^
+  [448] file offset=0x01B1445F  RVA=0x01B1505F  section=.text
+      context: 9A 7B C5 BD 90 7F B6 E9 93 AC 57 F7
+                           ^^^^
+  [449] file offset=0x01B16890  RVA=0x01B17490  section=.text
+      context: B8 C1 44 6B 90 7F 2D 70 25 09 83 0B
+                           ^^^^
+  [450] file offset=0x01B1CFA1  RVA=0x01B1DBA1  section=.text
+      context: CF A8 7B 18 90 7F 82 D7 DA 7C 5E 89
+                           ^^^^
+  [451] file offset=0x01B23955  RVA=0x01B24555  section=.text
+      context: F6 CC 0C 1C 90 7F F9 67 BF B5 43 F8
+                           ^^^^
+  [452] file offset=0x01B287B6  RVA=0x01B293B6  section=.text
+      context: 6F 2B 26 A7 90 7F B5 37 24 1D 03 79
+                           ^^^^
+  [453] file offset=0x01B40EA0  RVA=0x01B41AA0  section=.text
+      context: E0 53 15 75 90 7F 26 FD 06 F1 A0 7A
+                           ^^^^
+  [454] file offset=0x01B43A6D  RVA=0x01B4466D  section=.text
+      context: 87 27 1D 38 90 7F 46 E1 47 C1 DC BD
+                           ^^^^
+  [455] file offset=0x01B58B2C  RVA=0x01B5972C  section=.text
+      context: ED A0 EF C4 90 7F 37 03 EA 92 3B 76
+                           ^^^^
+  [456] file offset=0x01B5B4AD  RVA=0x01B5C0AD  section=.text
+      context: 03 F9 A9 B5 90 7F F8 A1 00 B0 22 73
+                           ^^^^
+  [457] file offset=0x01B60C25  RVA=0x01B61825  section=.text
+      context: 2F 81 07 AB 90 7F 49 86 F9 93 76 2F
+                           ^^^^
+  [458] file offset=0x01B66EFA  RVA=0x01B67AFA  section=.text
+      context: D9 AF 47 3A 90 7F 8D EA B7 66 55 EB
+                           ^^^^
+  [459] file offset=0x01B70CA8  RVA=0x01B718A8  section=.text
+      context: 0B 93 39 2E 90 7F 3D 15 84 BD 8F 45
+                           ^^^^
+  [460] file offset=0x01B98589  RVA=0x01B99189  section=.text
+      context: 24 55 B4 7C 90 7F 39 75 54 DE 44 40
+                           ^^^^
+  [461] file offset=0x01BA1B4A  RVA=0x01BA274A  section=.text
+      context: 6D A5 65 F9 90 7F 60 95 27 B1 BB 24
+                           ^^^^
+  [462] file offset=0x01BBF71A  RVA=0x01BC031A  section=.text
+      context: 13 F8 9C 20 90 7F 91 78 4A C0 50 2C
+                           ^^^^
+  [463] file offset=0x01BD40B9  RVA=0x01BD4CB9  section=.text
+      context: 60 73 7C AB 90 7F A7 69 AC 6D 83 0B
+                           ^^^^
+  [464] file offset=0x01BD9625  RVA=0x01BDA225  section=.text
+      context: B4 69 0F DE 90 7F 97 B9 53 AE 88 57
+                           ^^^^
+  [465] file offset=0x01BE3702  RVA=0x01BE4302  section=.text
+      context: B3 E0 8B AE 90 7F 69 5A BD 20 C3 E8
+                           ^^^^
+  [466] file offset=0x01BE7D75  RVA=0x01BE8975  section=.text
+      context: 98 B6 B0 9F 90 7F 64 6D AA F8 E9 82
+                           ^^^^
+  [467] file offset=0x01BEEAB1  RVA=0x01BEF6B1  section=.text
+      context: 81 CD 5E BD 90 7F A5 CE 19 4D 17 2F
+                           ^^^^
+  [468] file offset=0x01BFCD3E  RVA=0x01BFD93E  section=.text
+      context: DF 0B 41 A8 90 7F 5A E8 FE 4C 52 86
+                           ^^^^
+  [469] file offset=0x01BFDD10  RVA=0x01BFE910  section=.text
+      context: 0C 7D 01 9B 90 7F 01 3E D1 D2 73 B3
+                           ^^^^
+  [470] file offset=0x01C06526  RVA=0x01C07126  section=.text
+      context: DD 0C 90 62 90 7F 2D 12 1B 92 75 6A
+                           ^^^^
+  [471] file offset=0x01C1E6CA  RVA=0x01C1F2CA  section=.text
+      context: CF 69 36 0B 90 7F A8 20 7D AC 0B 23
+                           ^^^^
+  [472] file offset=0x01C387FF  RVA=0x01C393FF  section=.text
+      context: C8 0D 85 49 90 7F AB 91 81 9C D9 6E
+                           ^^^^
+  [473] file offset=0x01C3CB19  RVA=0x01C3D719  section=.text
+      context: ED 1B 5B 20 90 7F E5 44 B4 B0 90 30
+                           ^^^^
+  [474] file offset=0x01C405EB  RVA=0x01C411EB  section=.text
+      context: FF 20 99 74 90 7F FD 04 07 6E 33 36
+                           ^^^^
+  [475] file offset=0x01C4DE42  RVA=0x01C4EA42  section=.text
+      context: 99 57 68 C5 90 7F 78 42 DA 04 99 03
+                           ^^^^
+  [476] file offset=0x01C7A8AC  RVA=0x01C7B4AC  section=.text
+      context: CB 79 B2 A6 90 7F F4 6D EB 60 7F 24
+                           ^^^^
+  [477] file offset=0x01C9878E  RVA=0x01C9938E  section=.text
+      context: AD B2 95 AD 90 7F B6 B0 5E 77 3E C4
+                           ^^^^
+  [478] file offset=0x01C9C6DB  RVA=0x01C9D2DB  section=.text
+      context: 2A C7 75 13 90 7F 15 37 DD 52 70 2B
+                           ^^^^
+  [479] file offset=0x01CA8AF2  RVA=0x01CA96F2  section=.text
+      context: 2C DD 61 D7 90 7F 1C AB FF C6 A9 75
+                           ^^^^
+  [480] file offset=0x01CAA648  RVA=0x01CAB248  section=.text
+      context: E3 8D 10 D9 90 7F 37 63 83 7B A3 48
+                           ^^^^
+  [481] file offset=0x01CBA3ED  RVA=0x01CBAFED  section=.text
+      context: 3A 56 F0 7A 90 7F C4 6C F4 48 00 AF
+                           ^^^^
+  [482] file offset=0x01CC54BC  RVA=0x01CC60BC  section=.text
+      context: 5C 7A ED B4 90 7F 15 D3 9F 3A E4 F0
+                           ^^^^
+  [483] file offset=0x01CE0BA5  RVA=0x01CE17A5  section=.text
+      context: 88 3D F6 85 90 7F F7 23 67 2F C6 98
+                           ^^^^
+  [484] file offset=0x01CF5E17  RVA=0x01CF6A17  section=.text
+      context: D8 C8 0C C0 90 7F 0E 11 55 97 A4 10
+                           ^^^^
+  [485] file offset=0x01CFB128  RVA=0x01CFBD28  section=.text
+      context: 69 67 E9 B4 90 7F CD F8 14 76 C9 3B
+                           ^^^^
+  [486] file offset=0x01D058DA  RVA=0x01D064DA  section=.text
+      context: 9E B3 9B E3 90 7F 98 72 02 FA EA 6A
+                           ^^^^
+  [487] file offset=0x01D0CFD1  RVA=0x01D0DBD1  section=.text
+      context: CF 2C 1B 1E 90 7F 20 4D 41 BF 3E 7B
+                           ^^^^
+  [488] file offset=0x01D170D2  RVA=0x01D17CD2  section=.text
+      context: F2 C8 88 8E 90 7F 63 FB F1 0E EC 14
+                           ^^^^
+  [489] file offset=0x01D248F5  RVA=0x01D254F5  section=.text
+      context: 01 CA D9 EC 90 7F 7D B7 79 91 E5 E8
+                           ^^^^
+  [490] file offset=0x01D4A00C  RVA=0x01D4AC0C  section=.text
+      context: B2 F6 95 54 90 7F D2 57 C0 AC 35 E8
+                           ^^^^
+  [491] file offset=0x01D585C3  RVA=0x01D591C3  section=.text
+      context: 09 25 15 C7 90 7F 7E 5C F9 F7 CC 94
+                           ^^^^
+  [492] file offset=0x01D68BCB  RVA=0x01D697CB  section=.text
+      context: BC 86 6C 83 90 7F A3 EF C1 13 A1 13
+                           ^^^^
+  [493] file offset=0x01D6F1F1  RVA=0x01D6FDF1  section=.text
+      context: 23 35 AF 55 90 7F 38 F1 B1 9C 0D 97
+                           ^^^^
+  [494] file offset=0x01D84556  RVA=0x01D85156  section=.text
+      context: 3E 39 9A C6 90 7F 77 F8 2D 32 F7 EA
+                           ^^^^
+  [495] file offset=0x01D98D50  RVA=0x01D99950  section=.text
+      context: CC 47 FB F7 90 7F 5A A7 E2 A0 0A 7D
+                           ^^^^
+  [496] file offset=0x01DAFC91  RVA=0x01DB0891  section=.text
+      context: 6A 2A E2 08 90 7F 1E 7C 7F 47 4E DE
+                           ^^^^
+  [497] file offset=0x01DBAC44  RVA=0x01DBB844  section=.text
+      context: EB 13 DA 1E 90 7F 87 72 C6 32 28 F1
+                           ^^^^
+  [498] file offset=0x01DBF9E0  RVA=0x01DC05E0  section=.text
+      context: E7 F3 42 D0 90 7F B1 EB A2 97 A8 C0
+                           ^^^^
+  [499] file offset=0x01DC605A  RVA=0x01DC6C5A  section=.text
+      context: 9D 2F 4F 33 90 7F A1 47 9B A9 23 5E
+                           ^^^^
+  [500] file offset=0x01DD5337  RVA=0x01DD5F37  section=.text
+      context: F7 D8 8F D5 90 7F 87 07 8A 35 3E 97
+                           ^^^^
+  [501] file offset=0x01DDC00C  RVA=0x01DDCC0C  section=.text
+      context: 26 92 00 45 90 7F 07 E2 08 14 11 C1
+                           ^^^^
+  [502] file offset=0x01DE2EB5  RVA=0x01DE3AB5  section=.text
+      context: F1 69 D6 82 90 7F D9 17 42 4F C2 CB
+                           ^^^^
+  [503] file offset=0x01DE3BE2  RVA=0x01DE47E2  section=.text
+      context: 82 F0 0E BE 90 7F AF 8D 3D 3C BC AC
+                           ^^^^
+  [504] file offset=0x01DE499F  RVA=0x01DE559F  section=.text
+      context: 1B AF 25 0A 90 7F 1D EE 16 8D 70 50
+                           ^^^^
+  [505] file offset=0x01DF7ADE  RVA=0x01DF86DE  section=.text
+      context: 9E D5 B1 E8 90 7F A9 D7 02 8D 38 84
+                           ^^^^
+  [506] file offset=0x01E03A67  RVA=0x01E04667  section=.text
+      context: 76 03 8A 87 90 7F 15 7C AF AF 8B 92
+                           ^^^^
+  [507] file offset=0x01E07E8F  RVA=0x01E08A8F  section=.text
+      context: 8F F6 78 DA 90 7F 05 85 8A D4 85 97
+                           ^^^^
+  [508] file offset=0x01E2D4E8  RVA=0x01E2E0E8  section=.text
+      context: B6 09 CC 35 90 7F 8C F8 C9 A5 5A 1A
+                           ^^^^
+  [509] file offset=0x01E495BD  RVA=0x01E4A1BD  section=.text
+      context: 8B 7E 35 50 90 7F B1 DA E3 71 D8 B0
+                           ^^^^
+  [510] file offset=0x01E52C50  RVA=0x01E53850  section=.text
+      context: AE FA AD 14 90 7F BF 49 AF 4F C0 B3
+                           ^^^^
+  [511] file offset=0x01E5C60D  RVA=0x01E5D20D  section=.text
+      context: AC D6 D2 7F 90 7F D5 6F 5C 87 F6 D1
+                           ^^^^
+  [512] file offset=0x01E6465B  RVA=0x01E6525B  section=.text
+      context: 44 2A 31 EC 90 7F EE 3E AB BD CE 4C
+                           ^^^^
+  [513] file offset=0x01E8A1F1  RVA=0x01E8ADF1  section=.text
+      context: FF 43 FD 6A 90 7F 73 3A 42 79 C2 DC
+                           ^^^^
+  [514] file offset=0x01E8C323  RVA=0x01E8CF23  section=.text
+      context: DB 9D 82 4E 90 7F B3 FF 6A A5 7C 2B
+                           ^^^^
+  [515] file offset=0x01E9AF0D  RVA=0x01E9BB0D  section=.text
+      context: E9 86 B3 D1 90 7F 0D FD 8C 96 CC 63
+                           ^^^^
+  [516] file offset=0x01EA2700  RVA=0x01EA3300  section=.text
+      context: 9A 3D A2 26 90 7F C1 8C D0 D8 34 9B
+                           ^^^^
+  [517] file offset=0x01EB1ED6  RVA=0x01EB2AD6  section=.text
+      context: E1 41 97 D2 90 7F 2D F7 47 24 7A D6
+                           ^^^^
+  [518] file offset=0x01EBBB48  RVA=0x01EBC748  section=.text
+      context: 9F CB 58 51 90 7F 6B F1 D4 E3 EA 86
+                           ^^^^
+  [519] file offset=0x01EE337B  RVA=0x01EE3F7B  section=.text
+      context: B4 D0 42 4F 90 7F F8 98 D8 C7 39 03
+                           ^^^^
+  [520] file offset=0x01EE7F83  RVA=0x01EE8B83  section=.text
+      context: 77 05 6B 30 90 7F 3C 11 B0 72 4D 0D
+                           ^^^^
+  [521] file offset=0x01F01989  RVA=0x01F02589  section=.text
+      context: 3E 66 6B 3E 90 7F 9A 4B E4 1C 76 DD
+                           ^^^^
+  [522] file offset=0x01F03000  RVA=0x01F03C00  section=.text
+      context: 8B 5A 1F F9 90 7F 48 15 43 13 96 87
+                           ^^^^
+  [523] file offset=0x01F39E89  RVA=0x01F3AA89  section=.text
+      context: 8D 83 E9 82 90 7F 9B A3 51 11 CF 24
+                           ^^^^
+  [524] file offset=0x01F7B07F  RVA=0x01F7BC7F  section=.text
+      context: 55 28 5A B5 90 7F C7 1E 5E CD 02 10
+                           ^^^^
+  [525] file offset=0x01F7BDBB  RVA=0x01F7C9BB  section=.text
+      context: 7C C3 80 21 90 7F 1D EB C9 13 23 32
+                           ^^^^
+  [526] file offset=0x01F7D6C0  RVA=0x01F7E2C0  section=.text
+      context: 12 69 33 68 90 7F 34 94 83 9D 85 0F
+                           ^^^^
+  [527] file offset=0x01F869AB  RVA=0x01F875AB  section=.text
+      context: 03 ED 40 67 90 7F C6 E4 E4 AF 24 08
+                           ^^^^
+  [528] file offset=0x01F87782  RVA=0x01F88382  section=.text
+      context: 5A 3D 7D C5 90 7F 44 E2 08 31 C1 F3
+                           ^^^^
+  [529] file offset=0x01F9B08A  RVA=0x01F9BC8A  section=.text
+      context: C2 27 5E 82 90 7F F2 1E D9 7B 9C 66
+                           ^^^^
+  [530] file offset=0x01F9E612  RVA=0x01F9F212  section=.text
+      context: 9A E0 9C FB 90 7F C6 EE 87 4D CF FA
+                           ^^^^
+  [531] file offset=0x01FA064E  RVA=0x01FA124E  section=.text
+      context: 76 74 A1 53 90 7F EB 2D 2E DD C5 83
+                           ^^^^
+  [532] file offset=0x01FB712C  RVA=0x01FB7D2C  section=.text
+      context: 78 A3 F5 63 90 7F D9 5D DF 2A 20 6A
+                           ^^^^
+  [533] file offset=0x01FC860A  RVA=0x01FC920A  section=.text
+      context: E9 51 BF 98 90 7F 14 62 E9 7C FE CE
+                           ^^^^
+  [534] file offset=0x01FE0C84  RVA=0x01FE1884  section=.text
+      context: FB 03 AA 0E 90 7F 80 DF 76 E6 85 08
+                           ^^^^
+  [535] file offset=0x01FF7760  RVA=0x01FF8360  section=.text
+      context: 7F EC 32 9C 90 7F D5 03 72 21 9F F6
+                           ^^^^
+  [536] file offset=0x02001778  RVA=0x02002378  section=.text
+      context: 65 5B D9 9C 90 7F 82 28 72 27 78 4A
+                           ^^^^
+  [537] file offset=0x020244A8  RVA=0x020250A8  section=.text
+      context: 1E F9 A9 E3 90 7F 2B A3 47 2C 3F 42
+                           ^^^^
+  [538] file offset=0x0202DBFC  RVA=0x0202E7FC  section=.text
+      context: EE 96 44 6D 90 7F 7F D7 52 5E DA 37
+                           ^^^^
+  [539] file offset=0x02039B5D  RVA=0x0203A75D  section=.text
+      context: 63 9A 9D C5 90 7F D1 E9 74 56 D8 6E
+                           ^^^^
+  [540] file offset=0x0208B94D  RVA=0x0208C54D  section=.text
+      context: 45 09 5A B8 90 7F AF 02 19 8B EB 1F
+                           ^^^^
+  [541] file offset=0x0208C944  RVA=0x0208D544  section=.text
+      context: D4 48 BB 8B 90 7F D2 88 77 99 D1 62
+                           ^^^^
+  [542] file offset=0x020950ED  RVA=0x02095CED  section=.text
+      context: 20 2A 6D FD 90 7F 7D D3 98 59 1B DC
+                           ^^^^
+  [543] file offset=0x0209A66F  RVA=0x0209B26F  section=.text
+      context: C3 EC BB F7 90 7F 83 32 6D 0E 50 37
+                           ^^^^
+  [544] file offset=0x020C6462  RVA=0x020C7062  section=.text
+      context: F2 85 E1 80 90 7F 4D 39 4B 08 49 94
+                           ^^^^
+  [545] file offset=0x020DABF3  RVA=0x020DB7F3  section=.text
+      context: C7 BD 93 1E 90 7F 1C 76 C9 EF 9C C0
+                           ^^^^
+  [546] file offset=0x020F19FD  RVA=0x020F25FD  section=.text
+      context: FE 74 34 B4 90 7F 60 21 14 EC 6A 15
+                           ^^^^
+  [547] file offset=0x0210B9C4  RVA=0x0210C5C4  section=.text
+      context: A8 5D 5E 20 90 7F 85 DA 68 74 11 16
+                           ^^^^
+  [548] file offset=0x0211D049  RVA=0x0211DC49  section=.text
+      context: 2A 8C C4 5B 90 7F 13 3B BE C8 E4 2C
+                           ^^^^
+  [549] file offset=0x0212497B  RVA=0x0212557B  section=.text
+      context: DD 1A BB 30 90 7F C9 67 15 57 27 E3
+                           ^^^^
+  [550] file offset=0x0212C5B8  RVA=0x0212D1B8  section=.text
+      context: 8F 79 C4 45 90 7F 4C 9A 4E F0 3D CB
+                           ^^^^
+  [551] file offset=0x02151D0E  RVA=0x0215290E  section=.text
+      context: 1A 3D 65 67 90 7F 71 66 88 BF B1 AD
+                           ^^^^
+  [552] file offset=0x0216C893  RVA=0x0216D493  section=.text
+      context: 49 BB 05 0A 90 7F A1 B2 E5 7A 5E 6F
+                           ^^^^
+  [553] file offset=0x0216D2E8  RVA=0x0216DEE8  section=.text
+      context: 2F 28 2F 98 90 7F A1 D9 36 BC 4A 17
+                           ^^^^
+  [554] file offset=0x0219BA4A  RVA=0x0219C64A  section=.text
+      context: 10 86 04 E0 90 7F 7A 58 F5 8C 34 B2
+                           ^^^^
+  [555] file offset=0x021A1CCB  RVA=0x021A28CB  section=.text
+      context: A8 8D 58 6B 90 7F 20 85 86 62 AC C5
+                           ^^^^
+  [556] file offset=0x021AF8BA  RVA=0x021B04BA  section=.text
+      context: 62 AA E7 FD 90 7F 1B 94 FA 58 49 9B
+                           ^^^^
+  [557] file offset=0x021B9ABB  RVA=0x021BA6BB  section=.text
+      context: C1 5C BB 76 90 7F C5 FA E2 41 AA 88
+                           ^^^^
+  [558] file offset=0x021C9ED0  RVA=0x021CAAD0  section=.text
+      context: B6 EC DC 24 90 7F A9 87 40 FF C2 23
+                           ^^^^
+  [559] file offset=0x021CCA3E  RVA=0x021CD63E  section=.text
+      context: 59 3C 65 2B 90 7F 59 C8 07 52 EC BC
+                           ^^^^
+  [560] file offset=0x021D55E0  RVA=0x021D61E0  section=.text
+      context: 9C F4 56 53 90 7F D5 18 36 56 A0 D4
+                           ^^^^
+  [561] file offset=0x021D682A  RVA=0x021D742A  section=.text
+      context: 81 7B B2 C8 90 7F 37 0C 6A 87 98 FB
+                           ^^^^
+  [562] file offset=0x021D6A18  RVA=0x021D7618  section=.text
+      context: 8D AC 03 24 90 7F BF DC 2B F8 33 D4
+                           ^^^^
+  [563] file offset=0x021DDB40  RVA=0x021DE740  section=.text
+      context: B3 34 6B 3C 90 7F 9F AA 73 6D B9 8D
+                           ^^^^
+  [564] file offset=0x021DE8B4  RVA=0x021DF4B4  section=.text
+      context: 6E 71 2B 87 90 7F AB E0 88 46 78 B4
+                           ^^^^
+  [565] file offset=0x021FC1AA  RVA=0x021FCDAA  section=.text
+      context: D2 BC 65 79 90 7F A0 65 29 07 B1 E4
+                           ^^^^
+  [566] file offset=0x0220C9B5  RVA=0x0220D5B5  section=.text
+      context: B2 A3 31 EB 90 7F 99 49 5E F8 53 6E
+                           ^^^^
+  [567] file offset=0x022177EC  RVA=0x022183EC  section=.text
+      context: 17 5F A2 61 90 7F B0 09 44 A0 68 1F
+                           ^^^^
+  [568] file offset=0x0221D85B  RVA=0x0221E45B  section=.text
+      context: 30 3C CE D4 90 7F F8 5E DF 98 1E 4A
+                           ^^^^
+  [569] file offset=0x0223458C  RVA=0x0223518C  section=.text
+      context: 80 19 AC 07 90 7F 2A 65 F8 4E 9B 60
+                           ^^^^
+  [570] file offset=0x0223E131  RVA=0x0223ED31  section=.text
+      context: D7 10 29 0F 90 7F DE C2 B0 BC 3D AC
+                           ^^^^
+  [571] file offset=0x022574B1  RVA=0x022580B1  section=.text
+      context: AC 08 4F ED 90 7F 11 CB 01 87 27 B2
+                           ^^^^
+  [572] file offset=0x022616A9  RVA=0x022622A9  section=.text
+      context: 32 DA F6 72 90 7F EE FE 07 9E D6 7A
+                           ^^^^
+  [573] file offset=0x022D3B9C  RVA=0x022D479C  section=.text
+      context: 90 8F 86 00 90 7F 86 00 A0 55 3C 02
+                           ^^^^
+  [574] file offset=0x022E5264  RVA=0x022E5E64  section=.text
+      context: 30 90 3C 02 90 7F 97 00 90 53 98 01
+                           ^^^^
+  [575] file offset=0x022EC104  RVA=0x022ECD04  section=.text
+      context: 00 7B 3C 02 90 7F 9C 00 30 90 3C 02
+                           ^^^^
+  [576] file offset=0x0237005C  RVA=0x02370C5C  section=.text
+      context: 20 ED 46 00 90 7F 1B 01 70 6E 1B 01
+                           ^^^^
+  [577] file offset=0x023A5AB4  RVA=0x023A66B4  section=.text
+      context: 70 7F 40 01 90 7F 40 01 40 68 8F 01
+                           ^^^^
+  [578] file offset=0x0243D00D  RVA=0x0243DC0D  section=.text
+      context: EE D9 2D 3F 90 7F E0 FD 62 60 4E 8C
+                           ^^^^
+  [579] file offset=0x0248738C  RVA=0x02487F8C  section=.text
+      context: F0 26 A0 02 90 7F 88 02 00 00 00 00
+                           ^^^^
+  [580] file offset=0x024873C4  RVA=0x02487FC4  section=.text
+      context: 40 00 00 00 90 7F 88 02 00 00 00 00
+                           ^^^^
+  [581] file offset=0x024B89BC  RVA=0x024B95BC  section=.text
+      context: FF FF FF FF 90 7F 52 02 FF FF FF FF
+                           ^^^^
+  [582] file offset=0x0250FE2C  RVA=0x02510A2C  section=.text
+      context: FF FF FF FF 90 7F 57 02 22 05 93 19
+                           ^^^^
+  [583] file offset=0x0253FB1C  RVA=0x0254071C  section=.text
+      context: FF FF FF FF 90 7F 5A 02 00 00 00 00
+                           ^^^^
+  [584] file offset=0x025473B0  RVA=0x02547FB0  section=.text
+      context: 03 00 00 00 90 7F 94 02 01 00 00 00
+                           ^^^^
+  [585] file offset=0x0256A69C  RVA=0x0256B29C  section=.text
+      context: 01 00 00 00 90 7F 5D 02 02 00 00 00
+                           ^^^^
+  [586] file offset=0x02586800  RVA=0x02587400  section=.text
+      context: FF FF FF FF 90 7F 5F 02 00 00 00 00
+                           ^^^^
+  [587] file offset=0x025FDA76  RVA=0x025FE676  section=.text
+      context: E4 4B 2D 83 90 7F 60 1F 8B 0B A2 D1
+                           ^^^^
+  [588] file offset=0x026136A3  RVA=0x026142A3  section=.text
+      context: 7D 16 9B E6 90 7F 0D E5 12 A7 EA 78
+                           ^^^^
+  [589] file offset=0x02617D2B  RVA=0x0261892B  section=.text
+      context: 9D 70 B7 65 90 7F 04 DF E8 6E DD 26
+                           ^^^^
+  [590] file offset=0x02630127  RVA=0x02630D27  section=.text
+      context: EC 3E 78 20 90 7F FE 07 8F 18 84 A5
+                           ^^^^
+  [591] file offset=0x02633DB8  RVA=0x026349B8  section=.text
+      context: 0E 51 30 DC 90 7F 7F C3 80 F4 10 7F
+                           ^^^^
+  [592] file offset=0x02653EFB  RVA=0x02654AFB  section=.text
+      context: 9A AB 01 E6 90 7F 2C 90 F7 E0 FF 6D
+                           ^^^^
+  [593] file offset=0x0266559C  RVA=0x0266619C  section=.text
+      context: A2 64 6C 7A 90 7F A1 97 24 2A A9 50
+                           ^^^^
+  [594] file offset=0x02671A94  RVA=0x02672694  section=.text
+      context: 6D A5 5C 8D 90 7F 84 39 CA 42 86 58
+                           ^^^^
+  [595] file offset=0x02675977  RVA=0x02676577  section=.text
+      context: 7C 53 06 96 90 7F 3E E5 9A AB EF 90
+                           ^^^^
+  [596] file offset=0x0268CC6D  RVA=0x0268D86D  section=.text
+      context: 93 89 FB 4A 90 7F 62 82 1A C6 89 BB
+                           ^^^^
+  [597] file offset=0x0268F4DF  RVA=0x026900DF  section=.text
+      context: 67 58 6D AC 90 7F 49 7B 4A D1 68 87
+                           ^^^^
+  [598] file offset=0x02693ACF  RVA=0x026946CF  section=.text
+      context: 37 F1 16 71 90 7F FA 23 7D 96 93 A5
+                           ^^^^
+  [599] file offset=0x026B8968  RVA=0x026B9568  section=.text
+      context: 15 90 06 61 90 7F D0 5A C8 AF 5A B8
+                           ^^^^
+  [600] file offset=0x026C05B8  RVA=0x026C11B8  section=.text
+      context: 15 90 06 61 90 7F 9A 10 86 E1 10 F2
+                           ^^^^
+  [601] file offset=0x026C2F28  RVA=0x026C3B28  section=.text
+      context: 15 90 06 61 90 7F 30 BA 28 4F BA 58
+                           ^^^^
+  [602] file offset=0x026C9672  RVA=0x026CA272  section=.text
+      context: 15 90 06 61 90 7F 14 9E 0C 6B A6 44
+                           ^^^^
+  [603] file offset=0x026DB528  RVA=0x026DC128  section=.text
+      context: 15 90 06 61 90 7F 57 E3 73 16 E5 01
+                           ^^^^
+  [604] file offset=0x026DD880  RVA=0x026DE480  section=.text
+      context: 15 90 06 61 90 7F 00 8A 18 7F 8A 68
+                           ^^^^
+  [605] file offset=0x026DE108  RVA=0x026DED08  section=.text
+      context: 15 90 06 61 90 7F D6 5C F2 95 64 86
+                           ^^^^
+  [606] file offset=0x026E78C4  RVA=0x026E84C4  section=.text
+      context: 15 90 06 61 90 7F 09 81 11 70 83 63
+                           ^^^^
+  [607] file offset=0x026F60F0  RVA=0x026F6CF0  section=.text
+      context: 15 90 06 61 90 7F C8 42 D0 B7 42 A0
+                           ^^^^
+  [608] file offset=0x026F7200  RVA=0x026F7E00  section=.text
+      context: 15 90 06 61 90 7F BB 37 A7 C2 31 DD
+                           ^^^^
+  [609] file offset=0x026FC444  RVA=0x026FD044  section=.text
+      context: 15 90 06 61 90 7F 06 8C 02 65 94 76
+                           ^^^^
+  [610] file offset=0x02702834  RVA=0x02703434  section=.text
+      context: 15 90 06 61 90 7F 68 E2 70 17 E2 00
+                           ^^^^
+  [611] file offset=0x02706DAC  RVA=0x027079AC  section=.text
+      context: 15 90 06 61 90 7F CE 44 DA BD 4C AE
+                           ^^^^
+  [612] file offset=0x027088CA  RVA=0x027094CA  section=.text
+      context: 15 90 06 61 90 7F F8 72 E0 87 72 90
+                           ^^^^
+  [613] file offset=0x02709C4A  RVA=0x0270A84A  section=.text
+      context: 15 90 06 61 90 7F 30 BA 28 4F BA 58
+                           ^^^^
+  [614] file offset=0x0270EC6C  RVA=0x0270F86C  section=.text
+      context: 15 90 06 61 90 7F 43 CF 5F 3A C9 35
+                           ^^^^
+  [615] file offset=0x02710124  RVA=0x02710D24  section=.text
+      context: 15 90 06 61 90 7F 3D B5 25 4C BF 5F
+                           ^^^^
+  [616] file offset=0x0271184C  RVA=0x0271244C  section=.text
+      context: 15 90 06 61 90 7F D1 59 C9 A8 5B BB
+                           ^^^^
+  [617] file offset=0x02713A6C  RVA=0x0271466C  section=.text
+      context: 15 90 06 61 90 7F F6 7C 12 75 84 66
+                           ^^^^
+  [618] file offset=0x02715FE6  RVA=0x02716BE6  section=.text
+      context: 15 90 06 61 90 7F 07 93 03 66 95 71
+                           ^^^^
+  [619] file offset=0x0271616C  RVA=0x02716D6C  section=.text
+      context: 15 90 06 61 90 7F 50 DA 48 2F DA 38
+                           ^^^^
+  [620] file offset=0x027186E6  RVA=0x027192E6  section=.text
+      context: 15 90 06 61 90 7F E7 73 E3 86 75 91
+                           ^^^^
+  [621] file offset=0x0271DD20  RVA=0x0271E920  section=.text
+      context: 15 90 06 61 90 7F CF 4B DB BE 4D A9
+                           ^^^^
+  [622] file offset=0x02726F12  RVA=0x02727B12  section=.text
+      context: 15 90 06 61 90 7F E5 6D FD 84 77 97
+                           ^^^^
+  [623] file offset=0x02728070  RVA=0x02728C70  section=.text
+      context: 15 90 06 61 90 7F 64 EE 7C 1B F6 14
+                           ^^^^
+  [624] file offset=0x0272CE22  RVA=0x0272DA22  section=.text
+      context: 15 90 06 61 90 7F 8B 07 97 F2 01 ED
+                           ^^^^
+  [625] file offset=0x027308F0  RVA=0x027314F0  section=.text
+      context: 15 90 06 61 90 7F B8 32 A0 C7 32 D0
+                           ^^^^
+  [626] file offset=0x0273445A  RVA=0x0273505A  section=.text
+      context: 15 90 06 61 90 7F D3 5F CF AA 59 85
+                           ^^^^
+  [627] file offset=0x027361E8  RVA=0x02736DE8  section=.text
+      context: 15 90 06 61 90 7F A2 28 BE D9 28 CA
+                           ^^^^
+  [628] file offset=0x02739A46  RVA=0x0273A646  section=.text
+      context: 15 90 06 61 90 7F 16 9C 32 55 A4 46
+                           ^^^^
+  [629] file offset=0x02740E0E  RVA=0x02741A0E  section=.text
+      context: 15 90 06 61 90 7F 27 B3 23 46 B5 51
+                           ^^^^
+  [630] file offset=0x0274333A  RVA=0x02743F3A  section=.text
+      context: 15 90 06 61 90 7F F2 78 EE 89 78 9A
+                           ^^^^
+  [631] file offset=0x02749298  RVA=0x02749E98  section=.text
+      context: 15 90 06 61 90 7F F9 71 E1 80 73 93
+                           ^^^^
+  [632] file offset=0x0274E356  RVA=0x0274EF56  section=.text
+      context: 15 90 06 61 90 7F 42 C8 5E 39 C8 2A
+                           ^^^^
+  [633] file offset=0x02750C78  RVA=0x02751878  section=.text
+      context: 15 90 06 61 90 7F 63 EF 7F 1A E9 15
+                           ^^^^
+  [634] file offset=0x0275A434  RVA=0x0275B034  section=.text
+      context: 15 90 06 61 90 7F 8F 0B 9B FE 0D E9
+                           ^^^^
+  [635] file offset=0x0276A50E  RVA=0x0276B10E  section=.text
+      context: 15 90 06 61 90 7F 98 12 80 E7 12 F0
+                           ^^^^
+  [636] file offset=0x0277C598  RVA=0x0277D198  section=.text
+      context: 15 90 06 61 90 7F EA 60 F6 91 60 82
+                           ^^^^
+  [637] file offset=0x02784236  RVA=0x02784E36  section=.text
+      context: 15 90 06 61 90 7F 8B 07 97 F2 01 ED
+                           ^^^^
+  [638] file offset=0x02784800  RVA=0x02785400  section=.text
+      context: 15 90 06 61 90 7F FD 75 E5 8C 7F 9F
+                           ^^^^
+  [639] file offset=0x02789084  RVA=0x02789C84  section=.text
+      context: 15 90 06 61 90 7F FB 77 E7 82 71 9D
+                           ^^^^
+  [640] file offset=0x0278F030  RVA=0x0278FC30  section=.text
+      context: 15 90 06 61 90 7F EA 60 F6 91 60 82
+                           ^^^^
+  [641] file offset=0x0279399E  RVA=0x0279459E  section=.text
+      context: 15 90 06 61 90 7F A8 22 B0 D7 22 C0
+                           ^^^^
+  [642] file offset=0x027949C4  RVA=0x027955C4  section=.text
+      context: 15 90 06 61 90 7F DD 55 C5 AC 5F BF
+                           ^^^^
+  [643] file offset=0x0279613A  RVA=0x02796D3A  section=.text
+      context: 15 90 06 61 90 7F D5 5D CD 94 67 87
+                           ^^^^
+  [644] file offset=0x0279EBDC  RVA=0x0279F7DC  section=.text
+      context: 15 90 06 61 90 7F 1E 94 0A 6D 9C 7E
+                           ^^^^
+  [645] file offset=0x027A12DC  RVA=0x027A1EDC  section=.text
+      context: 15 90 06 61 90 7F BB 37 A7 C2 31 DD
+                           ^^^^
+  [646] file offset=0x027A1C00  RVA=0x027A2800  section=.text
+      context: 15 90 06 61 90 7F 64 EE 7C 1B F6 14
+                           ^^^^
+  [647] file offset=0x027A5632  RVA=0x027A6232  section=.text
+      context: 15 90 06 61 90 7F 07 93 03 66 95 71
+                           ^^^^
+  [648] file offset=0x027A64D2  RVA=0x027A70D2  section=.text
+      context: 15 90 06 61 90 7F 47 D3 43 26 D5 31
+                           ^^^^
+  [649] file offset=0x027A8D0A  RVA=0x027A990A  section=.text
+      context: 15 90 06 61 90 7F 46 CC 42 25 D4 36
+                           ^^^^
+  [650] file offset=0x027B0BCA  RVA=0x027B17CA  section=.text
+      context: 15 90 06 61 90 7F 40 CA 58 3F CA 28
+                           ^^^^
+  [651] file offset=0x027B175E  RVA=0x027B235E  section=.text
+      context: 15 90 06 61 90 7F 51 D9 49 28 DB 3B
+                           ^^^^
+  [652] file offset=0x027B66E4  RVA=0x027B72E4  section=.text
+      context: 15 90 06 61 90 7F 32 B8 2E 49 B8 5A
+                           ^^^^
+  [653] file offset=0x027BB3FA  RVA=0x027BBFFA  section=.text
+      context: 15 90 06 61 90 7F CA 40 D6 B1 40 A2
+                           ^^^^
+  [654] file offset=0x027C3E4E  RVA=0x027C4A4E  section=.text
+      context: 15 90 06 61 90 7F 22 A8 3E 59 A8 4A
+                           ^^^^
+  [655] file offset=0x027C5132  RVA=0x027C5D32  section=.text
+      context: 15 90 06 61 90 7F 5E D4 4A 2D DC 3E
+                           ^^^^
+  [656] file offset=0x027C94D6  RVA=0x027CA0D6  section=.text
+      context: 15 90 06 61 90 7F 89 01 91 F0 03 E3
+                           ^^^^
+  [657] file offset=0x027CA4AE  RVA=0x027CB0AE  section=.text
+      context: 15 90 06 61 90 7F B7 43 D3 B6 45 A1
+                           ^^^^
+  [658] file offset=0x027CA8A4  RVA=0x027CB4A4  section=.text
+      context: 15 90 06 61 90 7F E0 6A F8 9F 6A 88
+                           ^^^^
+  [659] file offset=0x027CB300  RVA=0x027CBF00  section=.text
+      context: 15 90 06 61 90 7F 90 1A 88 EF 1A F8
+                           ^^^^
+  [660] file offset=0x027D3FC4  RVA=0x027D4BC4  section=.text
+      context: 15 90 06 61 90 7F 33 BF 2F 4A B9 25
+                           ^^^^
+  [661] file offset=0x027D45DC  RVA=0x027D51DC  section=.text
+      context: 15 90 06 61 90 7F 5C D6 44 23 DE 3C
+                           ^^^^
+  [662] file offset=0x027D4C90  RVA=0x027D5890  section=.text
+      context: 15 90 06 61 90 7F 09 81 11 70 83 63
+                           ^^^^
+  [663] file offset=0x027D9DEA  RVA=0x027DA9EA  section=.text
+      context: 15 90 06 61 90 7F 59 D1 41 20 D3 33
+                           ^^^^
+  [664] file offset=0x027DE278  RVA=0x027DEE78  section=.text
+      context: 15 90 06 61 90 7F E6 6C E2 85 74 96
+                           ^^^^
+  [665] file offset=0x027DF81A  RVA=0x027E041A  section=.text
+      context: 15 90 06 61 90 7F B5 3D AD B4 47 A7
+                           ^^^^
+  [666] file offset=0x027EB9E2  RVA=0x027EC5E2  section=.text
+      context: 15 90 06 61 90 7F 63 EF 7F 1A E9 15
+                           ^^^^
+  [667] file offset=0x027FDABA  RVA=0x027FE6BA  section=.text
+      context: 15 90 06 61 90 7F B3 3F AF CA 39 A5
+                           ^^^^
+  [668] file offset=0x027FE9F6  RVA=0x027FF5F6  section=.text
+      context: 15 90 06 61 90 7F 78 F2 60 07 F2 10
+                           ^^^^
+  [669] file offset=0x028028BA  RVA=0x028034BA  section=.text
+      context: 15 90 06 61 90 7F 68 E2 70 17 E2 00
+                           ^^^^
+  [670] file offset=0x028120CA  RVA=0x028140CA  section=Apollo
+      context: 15 90 06 61 90 7F 45 CD 5D 24 D7 37
+                           ^^^^
+  [671] file offset=0x028121B4  RVA=0x028141B4  section=Apollo
+      context: 15 90 06 61 90 7F 41 C9 59 38 CB 2B
+                           ^^^^
+  [672] file offset=0x02813B9A  RVA=0x02815B9A  section=Apollo
+      context: 15 90 06 61 90 7F E4 6E FC 9B 76 94
+                           ^^^^
+  [673] file offset=0x02814644  RVA=0x02816644  section=Apollo
+      context: 15 90 06 61 90 7F 2E A4 3A 5D AC 4E
+                           ^^^^
+  [674] file offset=0x0283828D  RVA=0x0283A28D  section=Apollo
+      context: 15 90 06 61 90 7F 28 A2 30 57 A2 40
+                           ^^^^
+  [675] file offset=0x0283AC24  RVA=0x0283CC24  section=Apollo
+      context: 15 90 06 61 90 7F AD 25 B5 DC 2F CF
+                           ^^^^
+  [676] file offset=0x02847C68  RVA=0x02849C68  section=Apollo
+      context: 15 90 06 61 90 7F BD 35 A5 CC 3F DF
+                           ^^^^
+  [677] file offset=0x0284C8AC  RVA=0x0284E8AC  section=Apollo
+      context: 15 90 06 61 90 7F 2E A0 ED 4E C2 04
+                           ^^^^
+  [678] file offset=0x02857457  RVA=0x02859457  section=Apollo
+      context: 7B EB 8E 7D 90 7F F6 64 03 FE 79 41
+                           ^^^^
+  [679] file offset=0x0285B52E  RVA=0x0285D52E  section=Apollo
+      context: 15 90 06 61 90 7F 75 FD 6D F4 07 E7
+                           ^^^^
+  [680] file offset=0x02884BEF  RVA=0x02886BEF  section=Apollo
+      context: 15 90 06 61 90 7F 26 C6 45 49 65 C6
+                           ^^^^
+  [681] file offset=0x0288BDB5  RVA=0x0288DDB5  section=Apollo
+      context: 15 90 06 61 90 7F 24 AE 3C 5B B6 54
+                           ^^^^
+  [682] file offset=0x02893AD8  RVA=0x02895AD8  section=Apollo
+      context: 2F 2A 46 E5 90 7F 1B 49 7A FB 4B 9F
+                           ^^^^
+  [683] file offset=0x028B2147  RVA=0x028B4147  section=Apollo
+      context: 53 38 E1 B7 90 7F 42 C6 D3 14 54 EE
+                           ^^^^
+  [684] file offset=0x028B331E  RVA=0x028B531E  section=Apollo
+      context: FC 91 54 F0 90 7F 16 2F 3F 8C D5 72
+                           ^^^^
+  [685] file offset=0x028BBABA  RVA=0x028BDABA  section=Apollo
+      context: 4C 8A B0 57 90 7F 8F CB 5B 95 15 0B
+                           ^^^^
+  [686] file offset=0x028CA7AF  RVA=0x028CC7AF  section=Apollo
+      context: F5 3D B7 69 90 7F 6B FD 14 AA 7A 30
+                           ^^^^
+  [687] file offset=0x028E5B4E  RVA=0x028E7B4E  section=Apollo
+      context: 3F E8 D0 78 90 7F 7E FE D4 76 75 A3
+                           ^^^^
+  [688] file offset=0x028F6457  RVA=0x028F8457  section=Apollo
+      context: 15 90 06 61 90 7F 51 D9 49 28 DB 3B
+                           ^^^^
+
+================================================================================
+  GHIDRA SUMMARY — To find callers, search for CALL instructions
+  targeting these thunk/IAT addresses:
+================================================================================
+
+  WS2_32.dll!WSASendTo:
+    CALL → [0x0268F944] (direct IAT ref in .text)
+
+  WS2_32.dll!WSARecvFrom:
+    CALL → [0x0268F948] (direct IAT ref in .text)
+
+  WS2_32.dll!recvfrom:
+    CALL → [0x0268F964] (direct IAT ref in .text)
+
+  WS2_32.dll!sendto:
+    CALL → [0x0268F9C0] (direct IAT ref in .text)
+
+  WS2_32.dll!WSARecv:
+    CALL → [0x0268F9C4] (direct IAT ref in .text)
+
+  WS2_32.dll!WSASend:
+    CALL → [0x0268F9EC] (direct IAT ref in .text)
+
+  ADVAPI32.dll!CryptImportKey:
+    CALL → [0x0268F008] (direct IAT ref in .text)
+
+  ADVAPI32.dll!CryptHashData:
+    CALL → [0x0268F014] (direct IAT ref in .text)
+
+  ADVAPI32.dll!CryptCreateHash:
+    CALL → [0x0268F018] (direct IAT ref in .text)
+
+  ADVAPI32.dll!CryptGenRandom:
+    CALL → [0x0268F02C] (direct IAT ref in .text)
+
+  ADVAPI32.dll!CryptAcquireContextA:
+    CALL → [0x0268F030] (direct IAT ref in .text)
+
+  ADVAPI32.dll!CryptEncrypt:
+    CALL → [0x0268F04C] (direct IAT ref in .text)
+
+================================================================================
+  ANALYSIS COMPLETE
+================================================================================

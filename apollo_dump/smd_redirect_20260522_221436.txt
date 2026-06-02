@@ -1,0 +1,34 @@
+Log: D:\py\反编译\FreeStyle\apollo_dump\smd_redirect_20260522_221436.txt
+Attaching to PID 24568...
+[*] SMD redirect v5 (addr cache) loaded.
+
+SMD redirect v3 ready. Commands:
+  r <src> <dst>  — redirect src to dst
+  l               — list rules
+  s               — stats
+  del <src>       — remove rule
+  clear           — clear all rules
+  reset           — clear seen files (re-scan)
+  Ctrl+C          — exit
+
+  FILE: c3000.smd  @0x8ee06020
+  FILE: i50123971_ms.smd  @0x5cee8020
+  FILE: i50421161_MT.smd  @0x5f2c1f98
+  FILE: i50421161_MT_upp01.smd  @0x47a47060
+  FILE: i50519681_MT.smd  @0x877b84f8
+  FILE: i50519681_M_low01.smd  @0x838abdb8
+  FILE: i50623611_M.smd  @0x8f2b7018
+  FILE: i51612121.smd  @0x8c0a0018
+  FILE: i51212851.smd  @0x838abdb8
+  FILE: i50914671_MT.smd  @0x6ebc7020
+  FILE: i51313301_MT.smd  @0x50696028
+  FILE: wind_plane_01.smd  @0x879f99e8
+  FILE: magic_sign_stream_07.smd  @0x84b04120
+  FILE: i50125711_ms.smd  @0x939b4018
+  FILE: SMD_2211_halo001.smd  @0x8765f010
+  RULE i50123971_ms.smd -> i50125711_ms.smd: wrote=1, cached=1
+[REDIRECT] i50123971_ms.smd -> i50125711_ms.smd
+  FILE: i50124381.smd  @0x47a47060
+[REDIRECT] i50123971_ms.smd -> i50125711_ms.smd
+
+Detaching...

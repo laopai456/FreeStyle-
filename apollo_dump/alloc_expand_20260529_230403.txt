@@ -1,0 +1,38 @@
+[23:04:03] === malloc扩展模式v4 === PID:18844 ===
+[23:04:03] 策略: malloc扩大 + MSVCR100 fread数据替换
+[23:04:03] 目标: i50125461_FN.smd(美丽梦想发型) → i50125711_FN.smd(紫色超赛发型)
+[23:04:03] 日志: D:\py\反编译\FreeStyle\apollo_dump\alloc_expand_20260529_230403.txt
+[23:04:04]   [步骤] JS开始执行
+[23:04:04]   [步骤] CRT函数OK
+[23:04:04]   目标加载: 270264B/270264B magic=SSKF name=i50125711_FN.smd
+[23:04:04]   [步骤] 目标文件加载完成
+[23:04:04]   [步骤] MSVCR100 malloc=0x500f0233
+[23:04:04]   [步骤] msvcrt malloc=0x75ae8290
+[23:04:04]   [步骤] MSVCR100 operator new=0x500f232b
+[23:04:04]   [步骤] MSVCR100 fread=0x50102c24
+[23:04:04]   v4就绪: malloc扩大+MSVCR100 fread数据替换
+[23:04:04] 
+[23:04:04] 进房间触发角色加载。
+[23:04:04] 命令: status | quit
+[23:04:04] 
+[23:04:09]   [SSKF #1] "c800.smd" read=512B req=512B buf=0x496ac660
+[23:04:09]   [SSKF #2] "c800.smd" read=78848B req=78848B buf=0x87e2a008
+[23:04:09]   [SSKF #3] "c801.smd" read=512B req=512B buf=0x496ac660
+[23:04:09]   [SSKF #4] "c801.smd" read=80896B req=80896B buf=0x87e2a008
+[23:04:09]   [SSKF #5] "i50421031_FN.smd" read=512B req=512B buf=0x496b0680
+[23:04:09]   [SSKF #6] "i50421031_FN.smd" read=51712B req=51712B buf=0x4895a018
+[23:04:09]   [SSKF #7] "i50421031_FN_upp01.smd" read=512B req=512B buf=0x496b0680
+[23:04:09]   [SSKF #8] "i50421031_FN_upp01.smd" read=60928B req=60928B buf=0x706b0008
+[23:04:09]   [SSKF #9] "i50519561_FN.smd" read=512B req=512B buf=0x496b1688
+[23:04:09]   [SSKF #10] "i50519561_FN.smd" read=94208B req=94208B buf=0x80d69008
+[23:04:09]   [SSKF #11] "i50519561_F_low01.smd" read=512B req=512B buf=0x496b1688
+[23:04:09]   [SSKF #12] "i50519561_F_low01.smd" read=16384B req=16384B buf=0x7edc0018
+[23:04:09]   [SSKF #13] "i50623371_F.smd" read=512B req=512B buf=0x496b1688
+[23:04:09]   [SSKF #14] "i50623371_F.smd" read=118272B req=118272B buf=0x8255d008
+[23:04:09]   [SSKF #15] "i50914461_F.smd" read=512B req=512B buf=0x496b1688
+[23:04:09]   [Header替换] → i50125711_FN.smd
+[23:04:09]   [malloc扩大] 101095B → 270264B (via MSVCR100 new)
+[23:04:09]   [malloc返回] buf=0x50f90048 size=270264
+[23:04:09]   [fread目标] buf=0x50f90048 req=101094B (size=1*count=101094)
+[23:04:09]   [ReadFile第二次] read=100864B req=100864B buf=0x50f90048
+[23:04:09]   [fread替换] 返回101094B→270264B buf=0x50f90048 name="i50125711_FN.smd"

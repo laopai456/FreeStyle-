@@ -1,0 +1,34 @@
+Log: D:\py\反编译\FreeStyle\apollo_dump\smd_redirect_20260522_233920.txt
+Attaching to PID 19260...
+[*] SMD v8 loaded (hFile-tracked).
+
+SMD redirect v8 (hFile-tracked byte stream). Commands:
+  cap <name>      — capture next load of this file
+  stop            — stop & save capture
+  caps            — list captured
+  r <src> <dst>   — redirect src body -> dst body
+  info <name>     — show captured size
+  l | s | clear   — list / stats / clear
+  Ctrl+C          — exit
+
+  FILE: c3000.smd  (?)
+  FILE: i50123971_ms.smd  (?)
+  FILE: i50421161_MT.smd  (?)
+  FILE: i50421161_MT_upp01.smd  (?)
+  FILE: i50519681_MT.smd  (?)
+  FILE: i50519681_M_low01.smd  (?)
+  FILE: i50623611_M.smd  (?)
+  FILE: i51612121.smd  (?)
+  FILE: i51212851.smd  (?)
+  FILE: i50914671_MT.smd  (?)
+  FILE: i51313301_MT.smd  (?)
+  FILE: wind_plane_01.smd  (?)
+  FILE: magic_sign_stream_07.smd  (?)
+  FILE: i50125711_ms.smd  (?)
+  [CAP] capturing: i50125711_ms.smd
+  FILE: SMD_2211_halo001.smd  (?)
+  [CAP] saved: i50125711_ms.smd = 2842112 bytes (25 chunks)
+  RULE i50123971_ms.smd -> i50125711_ms.smd
+[REDIRECT] i50123971_ms.smd -> i50125711_ms.smd
+
+Detaching...

@@ -1,0 +1,67 @@
+[18:49:34] === sprintf ItemCode替换 === PID:12824 ===
+[18:49:34] 替换: 50125461(美丽梦想发型) → 50125711(紫色超赛发型)
+[18:49:34] 前置: sc.exe stop ApolloProtect
+[18:49:34] 日志: D:\py\反编译\FreeStyle\apollo_dump\sprintf_replace_20260530_184934.txt
+[18:49:35]   [步骤] JS开始执行
+[18:49:35]   [步骤] MSVCR100 sprintf=0x66d96051
+[18:49:35]   sprintf替换就绪: 50125461 → 50125711 (含ReadFile+AcquireSMD诊断)
+[18:49:35] 
+[18:49:35] 进房间触发角色加载。观察是否显示紫色超赛发型。
+[18:49:35] 命令: status | quit
+[18:49:35] 
+[18:49:38]   [sprintf] #1 fmt="customize\item\c%d.xml" IC=800
+[18:49:38]   [sprintf] #2 fmt="customize\item\c%d.xml" IC=801
+[18:49:38]   [sprintf] #3 fmt="customize\item\i%d.xml" IC=50421031
+[18:49:38]   [sprintf] #4 fmt="customize\item\i%d.xml" IC=50519561
+[18:49:38]   [sprintf] #5 fmt="customize\item\i%d.xml" IC=50623371
+[18:49:38]   [sprintf] #6 fmt="customize\item\i%d.xml" IC=50914721
+[18:49:38]   [sprintf] #7 fmt="customize\item\i%d.xml" IC=51514521
+[18:49:38]   [sprintf] #8 fmt="customize\item\i%d.xml" IC=50125461
+[18:49:38]   [替换!] #1 50125461→50125711 → i50125711.xml
+[18:49:38]   [sprintf] #9 fmt="customize\item\i%d.xml" IC=51616261
+[18:49:38]   [sprintf] #10 fmt="customize\item\i%d.xml" IC=51213111
+[18:49:38]   [AcquireSMD] #1 path="res707\c800.smd
+[18:49:38]   [ReadFile] #1 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #2 name="SSKF" bytes=78848
+[18:49:38]   [AcquireSMD] #2 path="res707\c801.smd
+[18:49:38]   [ReadFile] #3 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #4 name="SSKF" bytes=80896
+[18:49:38]   [AcquireSMD] #3 path="Res767\i50421031_FN.smd
+[18:49:38]   [ReadFile] #5 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #6 name="SSKF" bytes=51712
+[18:49:38]   [AcquireSMD] #4 path="Res767\i50421031_FN_upp01.smd
+[18:49:38]   [ReadFile] #7 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #8 name="SSKF" bytes=60928
+[18:49:38]   [AcquireSMD] #5 path="res767\i50519561_FN.smd
+[18:49:38]   [ReadFile] #9 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #10 name="SSKF" bytes=94208
+[18:49:38]   [AcquireSMD] #6 path="res767\i50519561_F_low01.smd
+[18:49:38]   [ReadFile] #11 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #12 name="SSKF" bytes=16384
+[18:49:38]   [AcquireSMD] #7 path="res767\i50623371_F.smd
+[18:49:38]   [ReadFile] #13 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #14 name="SSKF" bytes=118272
+[18:49:38]   [AcquireSMD] #8 path="res767\i50914721_F.smd
+[18:49:38]   [ReadFile] #15 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #16 name="SSKF" bytes=15872
+[18:49:38]   [AcquireSMD] #9 path="res767\i51514521_F.smd
+[18:49:38]   [ReadFile] #17 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #18 name="SSKF" bytes=41472
+[18:49:38]   [AcquireSMD] #10 path="res767\i51616261_F.smd
+[18:49:38]   [ReadFile] #19 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #20 name="SSKF" bytes=37888
+[18:49:38]   [AcquireSMD] #11 path="res767\i51213111_FN.smd
+[18:49:38]   [ReadFile] #21 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #22 name="SSKF" bytes=53760
+[18:49:38]   [ReadFile] #23 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #24 name="SSKF" bytes=5120
+[18:49:38]   [ReadFile] #25 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #26 name="SSKF" bytes=1536
+[18:49:38]   [ReadFile] #27 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #28 name="SSKF" bytes=1536
+[18:49:38]   [ReadFile] #29 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #30 name="SSKF" bytes=19456
+[18:49:38]   [ReadFile] #31 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #32 name="SSKF" bytes=19456
+[18:49:38]   [ReadFile] #33 name="SSKF" bytes=512
+[18:49:38]   [ReadFile] #34 name="SSKF" bytes=24576

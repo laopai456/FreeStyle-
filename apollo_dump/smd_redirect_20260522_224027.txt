@@ -1,0 +1,77 @@
+Log: D:\py\反编译\FreeStyle\apollo_dump\smd_redirect_20260522_224027.txt
+Attaching to PID 24568...
+[*] SMD redirect v5 (addr cache) loaded.
+
+SMD redirect v3 ready. Commands:
+  r <src> <dst>  — redirect src to dst
+  l               — list rules
+  s               — stats
+  del <src>       — remove rule
+  clear           — clear all rules
+  reset           — clear seen files (re-scan)
+  Ctrl+C          — exit
+
+  DIAG SFullName* 0x196efc:
+    +0x0: <?<? o
+    +0x4: <? o
+    +0x8:  o
+    +0x18: 鑣
+    +0x1c: 餗d
+    +0x20: 
+    ptr0: 0x2a43c08 -> 
+    ptr4: 0x2a43c04 -> L?
+    ptr8: 0x196f20 -> 魋
+    ptrc: 0x0 -> null
+    sfn: 0x196efc
+  DIAG SFullName* 0x196924:
+    +0x0: `,Q
+    +0x4: 
+    +0x8: 
+    +0xc: ??
+    +0x14: 鴚J?
+    +0x18: !
+    +0x1c: !
+    ptr0: 0x511f2c60 -> wind_plane_01.smd
+    ptr4: 0x12 -> <err>
+    ptr8: 0x12 -> <err>
+    ptrc: 0x28403b4 -> 婿?愸@?
+    sfn: 0x196924
+  DIAG SFullName* 0x1976e4:
+    +0x0: <?<?w
+    +0x4: <?w
+    +0x8: w
+    +0x18: 衶
+    +0x1c: 餗d
+    +0x20: 
+    ptr0: 0x2a43c08 -> 
+    ptr4: 0x2a43c04 -> L?
+    ptr8: 0x197708 -> 躿
+    ptrc: 0x0 -> null
+    sfn: 0x1976e4
+  DIAG SFullName* 0x19710c:
+    +0x0: 椠筆
+    +0x4: 
+    +0x8: 
+    +0xc: ??
+    +0x14: 貀J?
+    +0x18: !
+    +0x1c: !
+    ptr0: 0x50b9fde8 -> wind_plane_01.smd
+    ptr4: 0x12 -> <err>
+    ptr8: 0x12 -> <err>
+    ptrc: 0x28403b4 -> 婿?愸@?
+    sfn: 0x19710c
+  DIAG SFullName* 0x19734c:
+    +0x0: 8&蝞
+    +0x4: 
+    +0x8: 
+    +0xc: ??
+    +0x18: 6
+    +0x1c: 6
+    ptr0: 0x6ece2638 -> SMD_2211_halo001.smd
+    ptr4: 0x15 -> <err>
+    ptr8: 0x15 -> <err>
+    ptrc: 0x28403b4 -> 婿?愸@?
+    sfn: 0x19734c
+
+Detaching...

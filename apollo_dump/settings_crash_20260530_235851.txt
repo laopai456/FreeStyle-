@@ -1,0 +1,743 @@
+[23:58:51.054] === 设置崩溃诊断 === PID:10576 ===
+[23:58:51.054] 日志: D:\py\反编译\FreeStyle\apollo_dump\settings_crash_20260530_235851.txt
+[23:58:51.054] 前提: sc.exe stop ApolloProtect 已执行
+[23:58:51.697]   [步骤] FreeStyle base=0x400000 size=42909696
+[23:58:51.697]   [步骤] d3d9 base=0x58100000
+[23:58:51.697]   [步骤] 异常处理器就绪
+[23:58:51.697]   [步骤] WriteFile hook OK
+[23:58:51.698]   [步骤] INI write hook OK
+[23:58:51.698]   [步骤] INI read hook OK
+[23:58:51.698]   [步骤] D3D9 Direct3DCreate9 hook OK
+[23:58:51.698]   [步骤] Window hooks OK
+[23:58:51.699]   [步骤] TerminateProcess hook OK
+[23:58:51.699]   {"t": "ready", "msg": "设置崩溃诊断就绪 — 改设置触发崩溃"}
+[23:58:51.699] 
+[23:58:51.699] 诊断就绪。改任何设置触发崩溃。
+[23:58:51.699] 命令: status | quit
+[23:58:52.723]   ★★★ 崩溃 #1 ★★★
+[23:58:52.723]     type=breakpoint addr=0x69557e4d
+[23:58:52.723]     模块=ApolloCT.Dll offset=0x557e4d
+[23:58:52.723]     EIP=0x69557e4d EAX=0x0 EBX=0x6590400
+[23:58:52.723]     ECX=0x6f6ffcc EDX=0x0
+[23:58:52.723]     ESP=0x6f6fee4 EBP=0x6f6ff58
+[23:58:52.724]     代码: 2d af dc b9 cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff 64 eb 7b 1e ed 00 86 00 96 f1 00 eb 
+[23:58:52.724]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=1
+[23:58:52.724]   ★★★ 崩溃 #2 ★★★
+[23:58:52.724]     type=breakpoint addr=0x694f3e32
+[23:58:52.724]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.724]     EIP=0x694f3e32 EAX=0x6f6ff4a EBX=0x8c91b3b
+[23:58:52.724]     ECX=0x3869764f EDX=0x1a530073
+[23:58:52.724]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:58:52.724]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.724]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=2
+[23:58:52.724]   ★★★ 崩溃 #3 ★★★
+[23:58:52.724]     type=breakpoint addr=0x694f3e32
+[23:58:52.724]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.724]     EIP=0x694f3e32 EAX=0x6f6ff52 EBX=0x8c91b5b
+[23:58:52.725]     ECX=0x1c69764f EDX=0x1a530073
+[23:58:52.725]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:58:52.725]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.725]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=3
+[23:58:52.725]   ★★★ 崩溃 #4 ★★★
+[23:58:52.725]     type=breakpoint addr=0x694f3e32
+[23:58:52.725]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.725]     EIP=0x694f3e32 EAX=0x6f6ff56 EBX=0x8c91bd3
+[23:58:52.725]     ECX=0x3869764f EDX=0x1a530073
+[23:58:52.725]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:58:52.725]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.725]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=4
+[23:58:52.726]   ★★★ 崩溃 #5 ★★★
+[23:58:52.726]     type=breakpoint addr=0x694f3e32
+[23:58:52.726]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.726]     EIP=0x694f3e32 EAX=0x6f6ff48 EBX=0x9d88d233
+[23:58:52.726]     ECX=0x3869764f EDX=0x1a50070
+[23:58:52.726]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:52.726]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.726]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=5
+[23:58:52.726]   ★★★ 崩溃 #6 ★★★
+[23:58:52.726]     type=breakpoint addr=0x694f3e32
+[23:58:52.726]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.726]     EIP=0x694f3e32 EAX=0x6f6ff49 EBX=0x9d88d242
+[23:58:52.726]     ECX=0x1c69764f EDX=0x1a50061
+[23:58:52.726]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:52.726]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.726]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=6
+[23:58:52.726]   ★★★ 崩溃 #7 ★★★
+[23:58:52.726]     type=breakpoint addr=0x694f3e32
+[23:58:52.726]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.726]     EIP=0x694f3e32 EAX=0x6f6ff4b EBX=0x9b9dd64b
+[23:58:52.726]     ECX=0x2469764f EDX=0x1a5002e
+[23:58:52.726]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:52.726]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.727]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=7
+[23:58:52.727]   ★★★ 崩溃 #8 ★★★
+[23:58:52.727]     type=breakpoint addr=0x694f3e32
+[23:58:52.727]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.727]     EIP=0x694f3e32 EAX=0x6f6ff4c EBX=0x9b9dd6cd
+[23:58:52.727]     ECX=0x3869764f EDX=0x1a50064
+[23:58:52.727]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:52.727]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.727]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=8
+[23:58:52.727]   ★★★ 崩溃 #9 ★★★
+[23:58:52.727]     type=breakpoint addr=0x694f3e32
+[23:58:52.727]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.727]     EIP=0x694f3e32 EAX=0x6f6ff4d EBX=0x9b9dd628
+[23:58:52.727]     ECX=0x2469764f EDX=0x1a5006c
+[23:58:52.727]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:52.727]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.727]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=9
+[23:58:52.727]   ★★★ 崩溃 #10 ★★★
+[23:58:52.727]     type=breakpoint addr=0x694f3e32
+[23:58:52.727]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.727]     EIP=0x694f3e32 EAX=0x6f6ff4e EBX=0x99b2d904
+[23:58:52.727]     ECX=0x469764f EDX=0x1a5006c
+[23:58:52.727]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:52.727]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.727]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=10
+[23:58:52.729]   ★★★ 崩溃 #11 ★★★
+[23:58:52.729]     type=breakpoint addr=0x694f3e32
+[23:58:52.729]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.729]     EIP=0x694f3e32 EAX=0x6f6ff4f EBX=0x97c7dc0f
+[23:58:52.729]     ECX=0x1c69764f EDX=0x1a50000
+[23:58:52.729]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:52.729]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.729]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=11
+[23:58:52.729]   ★★★ 崩溃 #12 ★★★
+[23:58:52.729]     type=breakpoint addr=0x694f3e32
+[23:58:52.729]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.729]     EIP=0x694f3e32 EAX=0x6f6ff50 EBX=0x97c7dc85
+[23:58:52.729]     ECX=0x3869764f EDX=0x1a50054
+[23:58:52.729]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:52.729]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.729]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=12
+[23:58:52.729]   ★★★ 崩溃 #13 ★★★
+[23:58:52.729]     type=breakpoint addr=0x694f3e32
+[23:58:52.729]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.729]     EIP=0x694f3e32 EAX=0x6f6ff51 EBX=0x97c7dc71
+[23:58:52.729]     ECX=0x469764f EDX=0x1a50065
+[23:58:52.729]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:52.729]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.730]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=13
+[23:58:52.730]   ★★★ 崩溃 #14 ★★★
+[23:58:52.730]     type=breakpoint addr=0x694f3e32
+[23:58:52.730]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.730]     EIP=0x694f3e32 EAX=0x6f6ff53 EBX=0x97c7dcb6
+[23:58:52.730]     ECX=0x1c69764f EDX=0x1a50074
+[23:58:52.730]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:52.730]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.730]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=14
+[23:58:52.730]   ★★★ 崩溃 #15 ★★★
+[23:58:52.730]     type=breakpoint addr=0x694f3e32
+[23:58:52.730]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.730]     EIP=0x694f3e32 EAX=0x6f6ff54 EBX=0x95dd1ed1
+[23:58:52.730]     ECX=0x3869764f EDX=0x1a50050
+[23:58:52.730]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:52.730]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.731]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=15
+[23:58:52.731]   ★★★ 崩溃 #16 ★★★
+[23:58:52.731]     type=breakpoint addr=0x694f3e32
+[23:58:52.731]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.731]     EIP=0x694f3e32 EAX=0x6f6ff55 EBX=0x95dd1ea4
+[23:58:52.731]     ECX=0x469764f EDX=0x1a50061
+[23:58:52.731]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:52.731]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.731]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=16
+[23:58:52.731]   ★★★ 崩溃 #17 ★★★
+[23:58:52.731]     type=breakpoint addr=0x694f3e32
+[23:58:52.731]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:52.731]     EIP=0x694f3e32 EAX=0x6f6ff57 EBX=0x95dd1e2d
+[23:58:52.731]     ECX=0x3869764f EDX=0x1a50000
+[23:58:52.731]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:52.731]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:52.731]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=17
+[23:58:54.669]   [WriteFile] #1 122B "[30:23:58:54:669][R][FreeStyle:10576:22248] CSPShareStateManager::UpdateDynamicS"
+[23:58:56.125]   [大块分配] #758011 1048608B
+[23:58:56.130]   [大块分配] #758136 1048608B
+[23:58:56.134]   [大块分配] #759053 1048608B
+[23:58:56.139]   [大块分配] #759212 1048608B
+[23:58:56.144]   [大块分配] #759647 1048608B
+[23:58:56.152]   [大块分配] #761521 1048608B
+[23:58:56.157]   [大块分配] #762062 1048608B
+[23:58:57.729]   ★★★ 崩溃 #18 ★★★
+[23:58:57.729]     type=breakpoint addr=0x69557e4d
+[23:58:57.729]     模块=ApolloCT.Dll offset=0x557e4d
+[23:58:57.729]     EIP=0x69557e4d EAX=0x0 EBX=0x6590400
+[23:58:57.729]     ECX=0x6f6ffcc EDX=0x0
+[23:58:57.729]     ESP=0x6f6fee4 EBP=0x6f6ff58
+[23:58:57.729]     代码: 2d af dc b9 cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff 64 eb 7b 1e ed 00 86 00 96 f1 00 eb 
+[23:58:57.729]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=18
+[23:58:57.730]   ★★★ 崩溃 #19 ★★★
+[23:58:57.730]     type=breakpoint addr=0x694f3e32
+[23:58:57.730]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.730]     EIP=0x694f3e32 EAX=0x6f6ff4a EBX=0x8c91b3b
+[23:58:57.730]     ECX=0x3869764f EDX=0x1a530073
+[23:58:57.730]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:58:57.730]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.730]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=19
+[23:58:57.730]   ★★★ 崩溃 #20 ★★★
+[23:58:57.730]     type=breakpoint addr=0x694f3e32
+[23:58:57.730]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.730]     EIP=0x694f3e32 EAX=0x6f6ff52 EBX=0x8c91b5b
+[23:58:57.730]     ECX=0x1c69764f EDX=0x1a530073
+[23:58:57.730]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:58:57.730]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.730]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=20
+[23:58:57.730]   ★★★ 崩溃 #21 ★★★
+[23:58:57.730]     type=breakpoint addr=0x694f3e32
+[23:58:57.730]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.730]     EIP=0x694f3e32 EAX=0x6f6ff56 EBX=0x8c91bd3
+[23:58:57.730]     ECX=0x3869764f EDX=0x1a530073
+[23:58:57.730]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:58:57.730]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.730]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=21
+[23:58:57.730]   ★★★ 崩溃 #22 ★★★
+[23:58:57.730]     type=breakpoint addr=0x694f3e32
+[23:58:57.730]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.730]     EIP=0x694f3e32 EAX=0x6f6ff48 EBX=0x9d88d233
+[23:58:57.730]     ECX=0x3869764f EDX=0x1a50070
+[23:58:57.731]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:57.731]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.731]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=22
+[23:58:57.731]   ★★★ 崩溃 #23 ★★★
+[23:58:57.731]     type=breakpoint addr=0x694f3e32
+[23:58:57.731]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.731]     EIP=0x694f3e32 EAX=0x6f6ff49 EBX=0x9d88d242
+[23:58:57.731]     ECX=0x1c69764f EDX=0x1a50061
+[23:58:57.731]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:57.731]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.731]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=23
+[23:58:57.732]   ★★★ 崩溃 #24 ★★★
+[23:58:57.732]     type=breakpoint addr=0x694f3e32
+[23:58:57.732]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.732]     EIP=0x694f3e32 EAX=0x6f6ff4b EBX=0x9b9dd64b
+[23:58:57.732]     ECX=0x2469764f EDX=0x1a5002e
+[23:58:57.732]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:57.732]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.732]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=24
+[23:58:57.732]   ★★★ 崩溃 #25 ★★★
+[23:58:57.732]     type=breakpoint addr=0x694f3e32
+[23:58:57.732]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.732]     EIP=0x694f3e32 EAX=0x6f6ff4c EBX=0x9b9dd6cd
+[23:58:57.732]     ECX=0x3869764f EDX=0x1a50064
+[23:58:57.732]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:57.732]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.732]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=25
+[23:58:57.732]   ★★★ 崩溃 #26 ★★★
+[23:58:57.732]     type=breakpoint addr=0x694f3e32
+[23:58:57.732]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.732]     EIP=0x694f3e32 EAX=0x6f6ff4d EBX=0x9b9dd628
+[23:58:57.733]     ECX=0x2469764f EDX=0x1a5006c
+[23:58:57.733]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:57.733]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.733]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=26
+[23:58:57.733]   ★★★ 崩溃 #27 ★★★
+[23:58:57.733]     type=breakpoint addr=0x694f3e32
+[23:58:57.733]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.733]     EIP=0x694f3e32 EAX=0x6f6ff4e EBX=0x99b2d904
+[23:58:57.733]     ECX=0x469764f EDX=0x1a5006c
+[23:58:57.733]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:57.733]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.733]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=27
+[23:58:57.733]   ★★★ 崩溃 #28 ★★★
+[23:58:57.733]     type=breakpoint addr=0x694f3e32
+[23:58:57.733]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.733]     EIP=0x694f3e32 EAX=0x6f6ff4f EBX=0x97c7dc0f
+[23:58:57.733]     ECX=0x1c69764f EDX=0x1a50000
+[23:58:57.733]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:57.733]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.733]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=28
+[23:58:57.733]   ★★★ 崩溃 #29 ★★★
+[23:58:57.733]     type=breakpoint addr=0x694f3e32
+[23:58:57.733]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.733]     EIP=0x694f3e32 EAX=0x6f6ff50 EBX=0x97c7dc85
+[23:58:57.733]     ECX=0x3869764f EDX=0x1a50054
+[23:58:57.733]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:57.735]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.735]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=29
+[23:58:57.735]   ★★★ 崩溃 #30 ★★★
+[23:58:57.735]     type=breakpoint addr=0x694f3e32
+[23:58:57.735]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.735]     EIP=0x694f3e32 EAX=0x6f6ff51 EBX=0x97c7dc71
+[23:58:57.735]     ECX=0x469764f EDX=0x1a50065
+[23:58:57.735]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:57.735]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.735]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=30
+[23:58:57.735]   ★★★ 崩溃 #31 ★★★
+[23:58:57.735]     type=breakpoint addr=0x694f3e32
+[23:58:57.735]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.735]     EIP=0x694f3e32 EAX=0x6f6ff53 EBX=0x97c7dcb6
+[23:58:57.735]     ECX=0x1c69764f EDX=0x1a50074
+[23:58:57.735]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:57.736]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.736]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=31
+[23:58:57.736]   ★★★ 崩溃 #32 ★★★
+[23:58:57.736]     type=breakpoint addr=0x694f3e32
+[23:58:57.736]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.736]     EIP=0x694f3e32 EAX=0x6f6ff54 EBX=0x95dd1ed1
+[23:58:57.736]     ECX=0x3869764f EDX=0x1a50050
+[23:58:57.736]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:57.736]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.736]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=32
+[23:58:57.736]   ★★★ 崩溃 #33 ★★★
+[23:58:57.736]     type=breakpoint addr=0x694f3e32
+[23:58:57.736]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.736]     EIP=0x694f3e32 EAX=0x6f6ff55 EBX=0x95dd1ea4
+[23:58:57.736]     ECX=0x469764f EDX=0x1a50061
+[23:58:57.736]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:57.736]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.736]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=33
+[23:58:57.736]   ★★★ 崩溃 #34 ★★★
+[23:58:57.736]     type=breakpoint addr=0x694f3e32
+[23:58:57.736]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:58:57.736]     EIP=0x694f3e32 EAX=0x6f6ff57 EBX=0x95dd1e2d
+[23:58:57.736]     ECX=0x3869764f EDX=0x1a50000
+[23:58:57.736]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:58:57.737]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:58:57.737]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=34
+[23:59:00.297]   [WriteFile] #2 4265B ""
+[23:59:00.297]   [WriteFile] #3 899B ""
+[23:59:00.300]   [WriteFile] #4 4203B ""
+[23:59:00.300]   [WriteFile] #5 3636B ""
+[23:59:00.310]   [大块分配] #1429727 1048608B
+[23:59:00.320]   [大块分配] #1429831 1048608B
+[23:59:00.327]   [大块分配] #1429918 1048608B
+[23:59:00.332]   [大块分配] #1430002 1048608B
+[23:59:00.341]   [大块分配] #1430169 1048608B
+[23:59:00.349]   [大块分配] #1430274 1048608B
+[23:59:00.356]   [大块分配] #1430362 1048608B
+[23:59:00.361]   [大块分配] #1430445 1048608B
+[23:59:02.334]   [大块分配] #1758778 1048608B
+[23:59:02.339]   [大块分配] #1758901 1048608B
+[23:59:02.343]   [大块分配] #1759817 1048608B
+[23:59:02.347]   [大块分配] #1759973 1048608B
+[23:59:02.352]   [大块分配] #1760408 1048608B
+[23:59:02.360]   [大块分配] #1762282 1048608B
+[23:59:02.364]   [大块分配] #1762822 1048608B
+[23:59:02.734]   ★★★ 崩溃 #35 ★★★
+[23:59:02.734]     type=breakpoint addr=0x69557e4d
+[23:59:02.734]     模块=ApolloCT.Dll offset=0x557e4d
+[23:59:02.734]     EIP=0x69557e4d EAX=0x0 EBX=0x6590400
+[23:59:02.734]     ECX=0x6f6ffcc EDX=0x0
+[23:59:02.734]     ESP=0x6f6fee4 EBP=0x6f6ff58
+[23:59:02.735]     代码: 2d af dc b9 cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff 64 eb 7b 1e ed 00 86 00 96 f1 00 eb 
+[23:59:02.735]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=35
+[23:59:02.735]   ★★★ 崩溃 #36 ★★★
+[23:59:02.735]     type=breakpoint addr=0x694f3e32
+[23:59:02.735]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.735]     EIP=0x694f3e32 EAX=0x6f6ff4a EBX=0x8c91b3b
+[23:59:02.735]     ECX=0x3869764f EDX=0x1a530073
+[23:59:02.735]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:59:02.735]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.735]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=36
+[23:59:02.735]   ★★★ 崩溃 #37 ★★★
+[23:59:02.736]     type=breakpoint addr=0x694f3e32
+[23:59:02.736]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.736]     EIP=0x694f3e32 EAX=0x6f6ff52 EBX=0x8c91b5b
+[23:59:02.736]     ECX=0x1c69764f EDX=0x1a530073
+[23:59:02.736]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:59:02.736]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.736]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=37
+[23:59:02.736]   ★★★ 崩溃 #38 ★★★
+[23:59:02.736]     type=breakpoint addr=0x694f3e32
+[23:59:02.736]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.736]     EIP=0x694f3e32 EAX=0x6f6ff56 EBX=0x8c91bd3
+[23:59:02.736]     ECX=0x3869764f EDX=0x1a530073
+[23:59:02.736]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:59:02.736]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.736]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=38
+[23:59:02.736]   ★★★ 崩溃 #39 ★★★
+[23:59:02.736]     type=breakpoint addr=0x694f3e32
+[23:59:02.736]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.736]     EIP=0x694f3e32 EAX=0x6f6ff48 EBX=0x9d88d233
+[23:59:02.736]     ECX=0x3869764f EDX=0x1a50070
+[23:59:02.737]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:02.737]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.741]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=39
+[23:59:02.741]   ★★★ 崩溃 #40 ★★★
+[23:59:02.741]     type=breakpoint addr=0x694f3e32
+[23:59:02.741]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.741]     EIP=0x694f3e32 EAX=0x6f6ff49 EBX=0x9d88d242
+[23:59:02.741]     ECX=0x1c69764f EDX=0x1a50061
+[23:59:02.741]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:02.741]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.741]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=40
+[23:59:02.741]   ★★★ 崩溃 #41 ★★★
+[23:59:02.741]     type=breakpoint addr=0x694f3e32
+[23:59:02.741]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.741]     EIP=0x694f3e32 EAX=0x6f6ff4b EBX=0x9b9dd64b
+[23:59:02.741]     ECX=0x2469764f EDX=0x1a5002e
+[23:59:02.741]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:02.742]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.742]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=41
+[23:59:02.742]   ★★★ 崩溃 #42 ★★★
+[23:59:02.742]     type=breakpoint addr=0x694f3e32
+[23:59:02.742]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.742]     EIP=0x694f3e32 EAX=0x6f6ff4c EBX=0x9b9dd6cd
+[23:59:02.742]     ECX=0x3869764f EDX=0x1a50064
+[23:59:02.742]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:02.742]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.742]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=42
+[23:59:02.742]   ★★★ 崩溃 #43 ★★★
+[23:59:02.742]     type=breakpoint addr=0x694f3e32
+[23:59:02.742]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.742]     EIP=0x694f3e32 EAX=0x6f6ff4d EBX=0x9b9dd628
+[23:59:02.742]     ECX=0x2469764f EDX=0x1a5006c
+[23:59:02.742]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:02.742]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.742]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=43
+[23:59:02.742]   ★★★ 崩溃 #44 ★★★
+[23:59:02.743]     type=breakpoint addr=0x694f3e32
+[23:59:02.743]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.743]     EIP=0x694f3e32 EAX=0x6f6ff4e EBX=0x99b2d904
+[23:59:02.743]     ECX=0x469764f EDX=0x1a5006c
+[23:59:02.743]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:02.743]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.743]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=44
+[23:59:02.743]   ★★★ 崩溃 #45 ★★★
+[23:59:02.743]     type=breakpoint addr=0x694f3e32
+[23:59:02.743]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.743]     EIP=0x694f3e32 EAX=0x6f6ff4f EBX=0x97c7dc0f
+[23:59:02.743]     ECX=0x1c69764f EDX=0x1a50000
+[23:59:02.743]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:02.743]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.743]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=45
+[23:59:02.743]   ★★★ 崩溃 #46 ★★★
+[23:59:02.743]     type=breakpoint addr=0x694f3e32
+[23:59:02.743]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.743]     EIP=0x694f3e32 EAX=0x6f6ff50 EBX=0x97c7dc85
+[23:59:02.743]     ECX=0x3869764f EDX=0x1a50054
+[23:59:02.743]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:02.744]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.744]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=46
+[23:59:02.744]   ★★★ 崩溃 #47 ★★★
+[23:59:02.744]     type=breakpoint addr=0x694f3e32
+[23:59:02.744]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.744]     EIP=0x694f3e32 EAX=0x6f6ff51 EBX=0x97c7dc71
+[23:59:02.744]     ECX=0x469764f EDX=0x1a50065
+[23:59:02.744]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:02.744]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.744]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=47
+[23:59:02.744]   ★★★ 崩溃 #48 ★★★
+[23:59:02.744]     type=breakpoint addr=0x694f3e32
+[23:59:02.744]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.744]     EIP=0x694f3e32 EAX=0x6f6ff53 EBX=0x97c7dcb6
+[23:59:02.744]     ECX=0x1c69764f EDX=0x1a50074
+[23:59:02.744]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:02.744]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.744]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=48
+[23:59:02.744]   ★★★ 崩溃 #49 ★★★
+[23:59:02.744]     type=breakpoint addr=0x694f3e32
+[23:59:02.744]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.744]     EIP=0x694f3e32 EAX=0x6f6ff54 EBX=0x95dd1ed1
+[23:59:02.745]     ECX=0x3869764f EDX=0x1a50050
+[23:59:02.745]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:02.745]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.745]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=49
+[23:59:02.745]   ★★★ 崩溃 #50 ★★★
+[23:59:02.745]     type=breakpoint addr=0x694f3e32
+[23:59:02.745]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.745]     EIP=0x694f3e32 EAX=0x6f6ff55 EBX=0x95dd1ea4
+[23:59:02.745]     ECX=0x469764f EDX=0x1a50061
+[23:59:02.745]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:02.745]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.745]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=50
+[23:59:02.745]   ★★★ 崩溃 #51 ★★★
+[23:59:02.745]     type=breakpoint addr=0x694f3e32
+[23:59:02.745]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:02.745]     EIP=0x694f3e32 EAX=0x6f6ff57 EBX=0x95dd1e2d
+[23:59:02.745]     ECX=0x3869764f EDX=0x1a50000
+[23:59:02.745]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:02.745]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:02.745]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=51
+[23:59:06.980]   ★★★ 崩溃 #52 ★★★
+[23:59:06.980]     type=system addr=0x76cc90e2
+[23:59:06.980]     模块=KERNELBASE.dll offset=0x1490e2
+[23:59:06.980]     EIP=0x76cc90e2 EAX=0x197198 EBX=0x0
+[23:59:06.980]     ECX=0x2 EDX=0x0
+[23:59:06.980]     ESP=0x197198 EBP=0x1971f0
+[23:59:06.980]     代码: 4c 34 db 76 8b 4c 24 54 33 cc e8 55 6d 00 00 8b e5 5d c2 10 00 6a 0f 58 eb ca 83 64 24 10 00 eb 
+[23:59:06.980]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=52
+[23:59:07.006]   [WriteFile] #6 76B "[30:23:59:07:005][E][FreeStyle:10576:16144] QueryShadowPlayDdiShimStatusIN
+"
+[23:59:07.007]   [WriteFile] #7 281B ""
+[23:59:07.007]   [WriteFile] #8 166B "[30:23:59:07:007][R][FreeStyle:10576:16144] CShadowPlayProxyShim::ShimCreateSess"
+[23:59:07.009]   [WriteFile] #9 303B ""
+[23:59:07.009]   [WriteFile] #10 87B "[30:23:59:07:007][R][FreeStyle:10576:16144] CreateSession_V2: Profilename = Free"
+[23:59:07.012]   [WriteFile] #11 78B "[30:23:59:07:012][R][FreeStyle:10576:16144] DdiDestroyDevice: OUT, res = 0x0
+"
+[23:59:07.013]   [WriteFile] #12 123B "[30:23:59:07:012][R][FreeStyle:10576:16144] DestroySession: CShadowPlayProxyShim"
+[23:59:07.013]   [WriteFile] #13 96B "[30:23:59:07:012][R][FreeStyle:10576:16144] CSPShareStateManager::Destroy: Destr"
+[23:59:07.013]   [WriteFile] #14 80B "[30:23:59:07:012][R][FreeStyle:10576:16144] CSPShareStateManager::Destroy: OUT
+"
+[23:59:07.013]   [WriteFile] #15 140B "[30:23:59:07:012][R][FreeStyle:10576:16144] CCursorCompose::RefreshDisplayMetric"
+[23:59:07.013]   [WriteFile] #16 140B "[30:23:59:07:012][R][FreeStyle:10576:16144] CCursorCompose::RefreshDisplayMetric"
+[23:59:07.013]   [WriteFile] #17 140B "[30:23:59:07:013][R][FreeStyle:10576:16144] CCursorCompose::RefreshDisplayMetric"
+[23:59:07.013]   [WriteFile] #18 95B "[30:23:59:07:013][R][FreeStyle:10576:16144] CShadowPlayProxyShim::DestroyNoDevic"
+[23:59:07.013]   [WriteFile] #19 91B "[30:23:59:07:013][R][FreeStyle:10576:16144] CShadowPlayProxyShim::ShimDestroySes"
+[23:59:07.013]   [FreeLibrary] #1 WINMM.dll
+[23:59:07.014]   [FreeLibrary] #2 USER32.dll
+[23:59:07.024]   [FreeLibrary] #3 nvldumd.dll
+[23:59:07.027]   ★★★ 崩溃 #53 ★★★
+[23:59:07.027]     type=system addr=0x76cc90e2
+[23:59:07.028]     模块=KERNELBASE.dll offset=0x1490e2
+[23:59:07.028]     EIP=0x76cc90e2 EAX=0x197198 EBX=0x0
+[23:59:07.028]     ECX=0x2 EDX=0x0
+[23:59:07.028]     ESP=0x197198 EBP=0x1971f0
+[23:59:07.028]     代码: 4c 34 db 76 8b 4c 24 54 33 cc e8 55 6d 00 00 8b e5 5d c2 10 00 6a 0f 58 eb ca 83 64 24 10 00 eb 
+[23:59:07.028]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=53
+[23:59:07.032]   [WriteFile] #20 4265B ""
+[23:59:07.032]   [WriteFile] #21 899B ""
+[23:59:07.033]   [WriteFile] #22 4203B ""
+[23:59:07.033]   [WriteFile] #23 3636B ""
+[23:59:07.043]   [大块分配] #2488385 1048608B
+[23:59:07.052]   [大块分配] #2488488 1048608B
+[23:59:07.061]   [大块分配] #2488576 1048608B
+[23:59:07.065]   [大块分配] #2488659 1048608B
+[23:59:07.073]   [大块分配] #2488826 1048608B
+[23:59:07.083]   [大块分配] #2488931 1048608B
+[23:59:07.090]   [大块分配] #2489021 1048608B
+[23:59:07.094]   [大块分配] #2489104 1048608B
+[23:59:07.107]   ★★★ 崩溃 #54 ★★★
+[23:59:07.107]     type=access-violation addr=0x5815eb13
+[23:59:07.107]     模块=d3d9.dll offset=0x5eb13
+[23:59:07.109]     EIP=0x5815eb13 EAX=0x1853cee0 EBX=0x0
+[23:59:07.109]     ECX=0x78 EDX=0x0
+[23:59:07.109]     ESP=0x19f664 EBP=0x19f68c
+[23:59:07.109]     代码: 85 c9 74 59 8b 41 08 8d 59 08 8b 78 0c 8b cf ff 15 5c d7 25 58 8b cb ff d7 8b 00 83 e8 65 0f 85 
+[23:59:07.109]     内存访问: addr=0x80 op=read
+[23:59:07.109]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=54
+[23:59:07.109]   [大块分配] #2490068 14745632B
+[23:59:07.132]   [WriteFile] #24 65536B ""
+[23:59:07.141]   [WriteFile] #25 65536B ""
+[23:59:07.152]   [WriteFile] #26 65536B ""
+[23:59:07.169]   [WriteFile] #27 37562B ""
+[23:59:07.314]   [WriteFile] #28 32B "(binary)"
+[23:59:07.314]   [WriteFile] #29 4B "(binary)"
+[23:59:07.314]   [WriteFile] #30 2B "(binary)"
+[23:59:07.349]   [FreeLibrary] #4 COMCTL32.dll
+[23:59:07.349]   [FreeLibrary] #5 COMCTL32.dll
+[23:59:07.349]   [FreeLibrary] #6 COMCTL32.dll
+[23:59:07.349]   [FreeLibrary] #7 COMCTL32.dll
+[23:59:07.349]   [FreeLibrary] #8 COMCTL32.dll
+[23:59:07.349]   [FreeLibrary] #9 COMCTL32.dll
+[23:59:07.351]   [SetWindowPos] #1 0x0 flags=0x37
+[23:59:07.352]   [SetWindowPos] #2 0x0 flags=0x3
+[23:59:07.396]   ★★★ 崩溃 #55 ★★★
+[23:59:07.396]     type=system addr=0x76cc90e2
+[23:59:07.396]     模块=KERNELBASE.dll offset=0x1490e2
+[23:59:07.396]     EIP=0x76cc90e2 EAX=0x19d990 EBX=0x0
+[23:59:07.396]     ECX=0x2 EDX=0x0
+[23:59:07.396]     ESP=0x19d990 EBP=0x19d9e8
+[23:59:07.396]     代码: 4c 34 db 76 8b 4c 24 54 33 cc e8 55 6d 00 00 8b e5 5d c2 10 00 6a 0f 58 eb ca 83 64 24 10 00 eb 
+[23:59:07.396]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=55
+[23:59:07.396]   [SetWindowPos] #3 386x333 flags=0x417
+[23:59:07.396]   [SetWindowPos] #4 686x-1 flags=0x15
+[23:59:07.399]   [ShowWindow] #1 cmd=1
+[23:59:07.491]   ★★★ 崩溃 #56 ★★★
+[23:59:07.491]     type=access-violation addr=0x30d183b
+[23:59:07.491]     模块=ErrorReport.dll offset=0x183b
+[23:59:07.491]     EIP=0x30d183b EAX=0x571bbe78 EBX=0xff00
+[23:59:07.491]     ECX=0x2f61 EDX=0xff00
+[23:59:07.491]     ESP=0x571bbe50 EBP=0x30d71c8
+[23:59:07.492]     代码: 8d 7c 07 02 f3 a5 8b cb 83 e1 03 f3 a4 66 01 10 5f 5e 5b c2 08 00 cc cc cc 66 8b 01 66 2d 08 00 
+[23:59:07.492]     内存访问: addr=0x571c0000 op=write
+[23:59:07.492]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=56
+[23:59:07.744]   ★★★ 崩溃 #57 ★★★
+[23:59:07.744]     type=breakpoint addr=0x69557e4d
+[23:59:07.744]     模块=ApolloCT.Dll offset=0x557e4d
+[23:59:07.744]     EIP=0x69557e4d EAX=0x0 EBX=0x6590400
+[23:59:07.744]     ECX=0x6f6ffcc EDX=0x0
+[23:59:07.744]     ESP=0x6f6fee4 EBP=0x6f6ff58
+[23:59:07.744]     代码: 2d af dc b9 cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff 64 eb 7b 1e ed 00 86 00 96 f1 00 eb 
+[23:59:07.744]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=57
+[23:59:07.745]   ★★★ 崩溃 #58 ★★★
+[23:59:07.745]     type=breakpoint addr=0x694f3e32
+[23:59:07.745]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.745]     EIP=0x694f3e32 EAX=0x6f6ff4a EBX=0x8c91b3b
+[23:59:07.745]     ECX=0x3869764f EDX=0x1a530073
+[23:59:07.745]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:59:07.745]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.745]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=58
+[23:59:07.745]   ★★★ 崩溃 #59 ★★★
+[23:59:07.745]     type=breakpoint addr=0x694f3e32
+[23:59:07.745]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.745]     EIP=0x694f3e32 EAX=0x6f6ff52 EBX=0x8c91b5b
+[23:59:07.745]     ECX=0x1c69764f EDX=0x1a530073
+[23:59:07.745]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:59:07.745]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.745]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=59
+[23:59:07.745]   ★★★ 崩溃 #60 ★★★
+[23:59:07.745]     type=breakpoint addr=0x694f3e32
+[23:59:07.745]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.745]     EIP=0x694f3e32 EAX=0x6f6ff56 EBX=0x8c91bd3
+[23:59:07.745]     ECX=0x3869764f EDX=0x1a530073
+[23:59:07.746]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:59:07.746]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.746]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=60
+[23:59:07.746]   ★★★ 崩溃 #61 ★★★
+[23:59:07.746]     type=breakpoint addr=0x694f3e32
+[23:59:07.746]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.746]     EIP=0x694f3e32 EAX=0x6f6ff48 EBX=0x9d88d233
+[23:59:07.746]     ECX=0x3869764f EDX=0x1a50070
+[23:59:07.746]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:07.746]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.746]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=61
+[23:59:07.746]   ★★★ 崩溃 #62 ★★★
+[23:59:07.746]     type=breakpoint addr=0x694f3e32
+[23:59:07.746]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.746]     EIP=0x694f3e32 EAX=0x6f6ff49 EBX=0x9d88d242
+[23:59:07.746]     ECX=0x1c69764f EDX=0x1a50061
+[23:59:07.746]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:07.746]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.747]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=62
+[23:59:07.747]   ★★★ 崩溃 #63 ★★★
+[23:59:07.747]     type=breakpoint addr=0x694f3e32
+[23:59:07.747]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.747]     EIP=0x694f3e32 EAX=0x6f6ff4b EBX=0x9b9dd64b
+[23:59:07.747]     ECX=0x2469764f EDX=0x1a5002e
+[23:59:07.747]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:07.747]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.747]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=63
+[23:59:07.747]   ★★★ 崩溃 #64 ★★★
+[23:59:07.747]     type=breakpoint addr=0x694f3e32
+[23:59:07.747]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.747]     EIP=0x694f3e32 EAX=0x6f6ff4c EBX=0x9b9dd6cd
+[23:59:07.747]     ECX=0x3869764f EDX=0x1a50064
+[23:59:07.747]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:07.747]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.747]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=64
+[23:59:07.747]   ★★★ 崩溃 #65 ★★★
+[23:59:07.747]     type=breakpoint addr=0x694f3e32
+[23:59:07.747]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.747]     EIP=0x694f3e32 EAX=0x6f6ff4d EBX=0x9b9dd628
+[23:59:07.747]     ECX=0x2469764f EDX=0x1a5006c
+[23:59:07.747]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:07.749]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.749]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=65
+[23:59:07.749]   ★★★ 崩溃 #66 ★★★
+[23:59:07.749]     type=breakpoint addr=0x694f3e32
+[23:59:07.749]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.749]     EIP=0x694f3e32 EAX=0x6f6ff4e EBX=0x99b2d904
+[23:59:07.749]     ECX=0x469764f EDX=0x1a5006c
+[23:59:07.749]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:07.749]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.749]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=66
+[23:59:07.749]   ★★★ 崩溃 #67 ★★★
+[23:59:07.749]     type=breakpoint addr=0x694f3e32
+[23:59:07.749]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.749]     EIP=0x694f3e32 EAX=0x6f6ff4f EBX=0x97c7dc0f
+[23:59:07.749]     ECX=0x1c69764f EDX=0x1a50000
+[23:59:07.749]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:07.749]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.749]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=67
+[23:59:07.749]   ★★★ 崩溃 #68 ★★★
+[23:59:07.749]     type=breakpoint addr=0x694f3e32
+[23:59:07.749]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.749]     EIP=0x694f3e32 EAX=0x6f6ff50 EBX=0x97c7dc85
+[23:59:07.749]     ECX=0x3869764f EDX=0x1a50054
+[23:59:07.749]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:07.750]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.750]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=68
+[23:59:07.750]   ★★★ 崩溃 #69 ★★★
+[23:59:07.750]     type=breakpoint addr=0x694f3e32
+[23:59:07.750]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.750]     EIP=0x694f3e32 EAX=0x6f6ff51 EBX=0x97c7dc71
+[23:59:07.750]     ECX=0x469764f EDX=0x1a50065
+[23:59:07.750]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:07.750]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.750]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=69
+[23:59:07.750]   ★★★ 崩溃 #70 ★★★
+[23:59:07.750]     type=breakpoint addr=0x694f3e32
+[23:59:07.750]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.750]     EIP=0x694f3e32 EAX=0x6f6ff53 EBX=0x97c7dcb6
+[23:59:07.750]     ECX=0x1c69764f EDX=0x1a50074
+[23:59:07.750]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:07.750]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.750]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=70
+[23:59:07.751]   ★★★ 崩溃 #71 ★★★
+[23:59:07.751]     type=breakpoint addr=0x694f3e32
+[23:59:07.751]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.751]     EIP=0x694f3e32 EAX=0x6f6ff54 EBX=0x95dd1ed1
+[23:59:07.751]     ECX=0x3869764f EDX=0x1a50050
+[23:59:07.751]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:07.751]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.751]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=71
+[23:59:07.751]   ★★★ 崩溃 #72 ★★★
+[23:59:07.751]     type=breakpoint addr=0x694f3e32
+[23:59:07.751]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.751]     EIP=0x694f3e32 EAX=0x6f6ff55 EBX=0x95dd1ea4
+[23:59:07.751]     ECX=0x469764f EDX=0x1a50061
+[23:59:07.751]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:07.751]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:07.751]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=72
+[23:59:07.751]   ★★★ 崩溃 #73 ★★★
+[23:59:07.751]     type=breakpoint addr=0x694f3e32
+[23:59:07.751]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:07.751]     EIP=0x694f3e32 EAX=0x6f6ff57 EBX=0x95dd1e2d
+[23:59:07.751]     ECX=0x3869764f EDX=0x1a50000
+[23:59:07.751]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:08.642]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:08.642]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=73
+[23:59:13.968]   ★★★ 崩溃 #74 ★★★
+[23:59:13.968]     type=breakpoint addr=0x69557e4d
+[23:59:13.968]     模块=ApolloCT.Dll offset=0x557e4d
+[23:59:13.968]     EIP=0x69557e4d EAX=0x0 EBX=0x6590400
+[23:59:13.968]     ECX=0x6f6ffcc EDX=0x0
+[23:59:13.968]     ESP=0x6f6fee4 EBP=0x6f6ff58
+[23:59:13.969]     代码: 2d af dc b9 cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff 64 eb 7b 1e ed 00 86 00 96 f1 00 eb 
+[23:59:13.969]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=74
+[23:59:13.969]   ★★★ 崩溃 #75 ★★★
+[23:59:13.969]     type=breakpoint addr=0x694f3e32
+[23:59:13.969]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:13.969]     EIP=0x694f3e32 EAX=0x6f6ff4a EBX=0x8c91b3b
+[23:59:13.969]     ECX=0x3869764f EDX=0x1a530073
+[23:59:13.969]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:59:13.969]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:13.969]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=75
+[23:59:13.970]   ★★★ 崩溃 #76 ★★★
+[23:59:13.970]     type=breakpoint addr=0x694f3e32
+[23:59:13.970]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:13.970]     EIP=0x694f3e32 EAX=0x6f6ff52 EBX=0x8c91b5b
+[23:59:13.970]     ECX=0x1c69764f EDX=0x1a530073
+[23:59:13.970]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:59:13.970]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:13.971]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=76
+[23:59:13.971]   ★★★ 崩溃 #77 ★★★
+[23:59:13.971]     type=breakpoint addr=0x694f3e32
+[23:59:13.971]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:13.971]     EIP=0x694f3e32 EAX=0x6f6ff56 EBX=0x8c91bd3
+[23:59:13.971]     ECX=0x3869764f EDX=0x1a530073
+[23:59:13.971]     ESP=0x6f6fe0c EBP=0x6f6ff44
+[23:59:13.971]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:13.972]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=77
+[23:59:13.973]   ★★★ 崩溃 #78 ★★★
+[23:59:13.973]     type=breakpoint addr=0x694f3e32
+[23:59:13.973]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:13.973]     EIP=0x694f3e32 EAX=0x6f6ff48 EBX=0x9d88d233
+[23:59:13.973]     ECX=0x3869764f EDX=0x1a50070
+[23:59:13.973]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:13.973]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:13.973]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=78
+[23:59:13.973]   ★★★ 崩溃 #79 ★★★
+[23:59:13.973]     type=breakpoint addr=0x694f3e32
+[23:59:13.973]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:13.973]     EIP=0x694f3e32 EAX=0x6f6ff49 EBX=0x9d88d242
+[23:59:13.973]     ECX=0x1c69764f EDX=0x1a50061
+[23:59:13.973]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:13.974]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:13.974]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=79
+[23:59:13.974]   ★★★ 崩溃 #80 ★★★
+[23:59:13.974]     type=breakpoint addr=0x694f3e32
+[23:59:13.974]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:13.974]     EIP=0x694f3e32 EAX=0x6f6ff4b EBX=0x9b9dd64b
+[23:59:13.974]     ECX=0x2469764f EDX=0x1a5002e
+[23:59:13.974]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:13.974]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 
+[23:59:13.974]     [状态] device=none resets=0 presents=0 CRT=0 CDS=0 crashes=80
+[23:59:13.974]   ★★★ 崩溃 #81 ★★★
+[23:59:13.974]     type=breakpoint addr=0x694f3e32
+[23:59:13.974]     模块=ApolloCT.Dll offset=0x4f3e32
+[23:59:13.974]     EIP=0x694f3e32 EAX=0x6f6ff4c EBX=0x9b9dd6cd
+[23:59:13.974]     ECX=0x3869764f EDX=0x1a50064
+[23:59:13.974]     ESP=0x6f6fe0c EBP=0x6f6ff40
+[23:59:13.974]     代码: 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 8a ef d3 e2 eb 64 11 90 06 61 90 7b 

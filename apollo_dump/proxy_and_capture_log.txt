@@ -1,0 +1,12 @@
+[17:10:12] ============================================================
+[17:10:12]   PROXY + CAPTURE — One-Click Login Protocol Capture
+[17:10:12] ============================================================
+[17:10:12]   Proxy: 127.0.0.1:23001
+[17:10:12]   Remote: ***.***.**.***:10005
+[17:10:12] 
+[17:10:12] Proxy listening on 127.0.0.1:23001 ✓
+[17:10:12] --- Kill old process ---
+[17:10:13] --- Launching FreeStyle.exe 127.0.0.1:23001 ---
+[17:10:13] Game PID=22484 handle=0x284
+[17:10:14] Searching for ApolloCT.dll...
+[17:10:24] WARN: ApolloCT.dll not found, trying MZ scan...

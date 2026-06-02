@@ -1,0 +1,126 @@
+[00:49:23.920] === Practice sprintf Trace ===
+[00:49:23.920] PID: 1672
+[00:49:23.921] SRC: 50125461 美丽梦想(静态, pak767)
+[00:49:23.921] DST: 50125711 紫色超赛(动态, pak768)
+[00:49:23.921] Log: D:\py\反编译\FreeStyle\apollo_dump\practice_trace_20260601_004923.txt
+[00:49:23.921] 
+[00:49:25.137]   [setup] sprintf hook (monitor, no replace)
+[00:49:25.137]   [setup] CreateFileA/W hooks ready
+[00:49:25.137]   [setup] LoadItemFile hook @ 0x5ACE1C0 (monitor)
+[00:49:25.139]   [ready]
+[00:49:25.139] 
+[00:49:25.139] 流程:
+[00:49:25.139]   1. 进房间 → 观察 sprintf 和 LoadItemFile
+[00:49:25.139]   2. 进练习场 → 关键：看有没有新的 sprintf/LoadItemFile
+[00:49:25.139]   3. 如果没有 → 说明练习场根本不走 sprintf 路径
+[00:49:25.139] 
+[00:49:25.139] 命令:
+[00:49:25.139]   ctx <addr>         读取地址上下文
+[00:49:25.139]   watch <addr>       监控地址变化
+[00:49:25.139]   watchall           监控已知12个地址
+[00:49:25.139]   probe              读取12个地址当前值
+[00:49:25.139]   history            查看所有 sprintf 调用历史
+[00:49:25.139]   quit
+[00:49:25.139] 
+[00:49:36.261] [LoadItemFile] params=['0x0', '0x6ce0e430', '0x2', '0x0'] nearIC=[] ret=0x10d542e
+[00:49:36.261]     [0] 0x10d542e(FreeStyle.exe+0xcd542e)
+[00:49:36.261]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.261]     [2] 0x7ae0c556(MSVCR100.dll+0x5c556)
+[00:49:36.261]     [3] 0x7ae0c600(MSVCR100.dll+0x5c600)
+[00:49:36.262]     [4] 0x75807ba9(KERNEL32.DLL+0x17ba9)
+[00:49:36.263] [LoadItemFile] params=['0x0', '0x6ce0e430', '0x2', '0x1'] nearIC=[] ret=0x10d5470
+[00:49:36.263]     [0] 0x10d5470(FreeStyle.exe+0xcd5470)
+[00:49:36.263]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.263]     [2] 0x7ae0c556(MSVCR100.dll+0x5c556)
+[00:49:36.263]     [3] 0x7ae0c600(MSVCR100.dll+0x5c600)
+[00:49:36.264]     [4] 0x75807ba9(KERNEL32.DLL+0x17ba9)
+[00:49:36.265] [LoadItemFile] params=['0x3015d27', '0x82c25c78', '0x4', '0x0'] nearIC=[] ret=0x10d55e2
+[00:49:36.265]     [0] 0x10d55e2(FreeStyle.exe+0xcd55e2)
+[00:49:36.265]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.265]     [2] 0x7ae0c556(MSVCR100.dll+0x5c556)
+[00:49:36.265]     [3] 0x7ae0c600(MSVCR100.dll+0x5c600)
+[00:49:36.265]     [4] 0x75807ba9(KERNEL32.DLL+0x17ba9)
+[00:49:36.267] [LoadItemFile] params=['0x302de09', '0x82c25c78', '0x8', '0x0'] nearIC=[] ret=0x10d55e2
+[00:49:36.267]     [0] 0x10d55e2(FreeStyle.exe+0xcd55e2)
+[00:49:36.267]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.267]     [2] 0x7ae0c556(MSVCR100.dll+0x5c556)
+[00:49:36.267]     [3] 0x7ae0c600(MSVCR100.dll+0x5c600)
+[00:49:36.267]     [4] 0x75807ba9(KERNEL32.DLL+0x17ba9)
+[00:49:36.268] [LoadItemFile] params=['0x304738b', '0x82c25c78', '0x10', '0x0'] nearIC=[] ret=0x10d55e2
+[00:49:36.270]     [0] 0x10d55e2(FreeStyle.exe+0xcd55e2)
+[00:49:36.270]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.270]     [2] 0x7ae0c556(MSVCR100.dll+0x5c556)
+[00:49:36.270]     [3] 0x7ae0c600(MSVCR100.dll+0x5c600)
+[00:49:36.270]     [4] 0x75807ba9(KERNEL32.DLL+0x17ba9)
+[00:49:36.272] [LoadItemFile] params=['0x308e5a1', '0x82c25c78', '0x400', '0x0'] nearIC=[] ret=0x10d55e2
+[00:49:36.272]     [0] 0x10d55e2(FreeStyle.exe+0xcd55e2)
+[00:49:36.272]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.272]     [2] 0x7ae0c556(MSVCR100.dll+0x5c556)
+[00:49:36.272]     [3] 0x7ae0c600(MSVCR100.dll+0x5c600)
+[00:49:36.272]     [4] 0x75807ba9(KERNEL32.DLL+0x17ba9)
+[00:49:36.274] [LoadItemFile] params=['0x3120c99', '0x82c25c78', '0x10000', '0x0'] nearIC=[] ret=0x10d55e2
+[00:49:36.274]     [0] 0x10d55e2(FreeStyle.exe+0xcd55e2)
+[00:49:36.275]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.275]     [2] 0x7ae0c556(MSVCR100.dll+0x5c556)
+[00:49:36.275]     [3] 0x7ae0c600(MSVCR100.dll+0x5c600)
+[00:49:36.275]     [4] 0x75807ba9(KERNEL32.DLL+0x17ba9)
+[00:49:36.276] [LoadItemFile] params=['0x2fcda95', '0x82c25c78', '0x1', '0x0'] nearIC=[] ret=0x10d55e2
+[00:49:36.276]     [0] 0x10d55e2(FreeStyle.exe+0xcd55e2)
+[00:49:36.276]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.277]     [2] 0x7ae0c556(MSVCR100.dll+0x5c556)
+[00:49:36.277]     [3] 0x7ae0c600(MSVCR100.dll+0x5c600)
+[00:49:36.277]     [4] 0x75807ba9(KERNEL32.DLL+0x17ba9)
+[00:49:36.279] [LoadItemFile] params=['0x3139a05', '0x82c25c78', '0x20000', '0x0'] nearIC=[] ret=0x10d55e2
+[00:49:36.279]     [0] 0x10d55e2(FreeStyle.exe+0xcd55e2)
+[00:49:36.279]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.279]     [2] 0x7ae0c556(MSVCR100.dll+0x5c556)
+[00:49:36.279]     [3] 0x7ae0c600(MSVCR100.dll+0x5c600)
+[00:49:36.279]     [4] 0x75807ba9(KERNEL32.DLL+0x17ba9)
+[00:49:36.281] [LoadItemFile] params=['0x30d7337', '0x82c25c78', '0xc000', '0x0'] nearIC=[] ret=0x10d55e2
+[00:49:36.281]     [0] 0x10d55e2(FreeStyle.exe+0xcd55e2)
+[00:49:36.281]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.281]     [2] 0x7ae0c556(MSVCR100.dll+0x5c556)
+[00:49:36.281]     [3] 0x7ae0c600(MSVCR100.dll+0x5c600)
+[00:49:36.281]     [4] 0x75807ba9(KERNEL32.DLL+0x17ba9)
+[00:49:36.284] [LoadItemFile] params=['0x2fcb515', '0x82c25c78', '0x1', '0x1'] nearIC=[] ret=0x10d57c5
+[00:49:36.284]     [0] 0x10d57c5(FreeStyle.exe+0xcd57c5)
+[00:49:36.284]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.284]     [2] 0x7ae0c556(MSVCR100.dll+0x5c556)
+[00:49:36.284]     [3] 0x7ae0c600(MSVCR100.dll+0x5c600)
+[00:49:36.284]     [4] 0x75807ba9(KERNEL32.DLL+0x17ba9)
+[00:49:36.286] [LoadItemFile] params=['0x2ffb6ed', '0x82c25c78', '0x1c', '0x1'] nearIC=[] ret=0x10d57c5
+[00:49:36.286]     [0] 0x10d57c5(FreeStyle.exe+0xcd57c5)
+[00:49:36.286]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.286]     [2] 0x7ae0c556(MSVCR100.dll+0x5c556)
+[00:49:36.286]     [3] 0x7ae0c600(MSVCR100.dll+0x5c600)
+[00:49:36.286]     [4] 0x75807ba9(KERNEL32.DLL+0x17ba9)
+[00:49:36.288] [LoadItemFile] params=['0x308d7b9', '0x82c25c78', '0x400', '0x1'] nearIC=[] ret=0x10d57c5
+[00:49:36.288]     [0] 0x10d57c5(FreeStyle.exe+0xcd57c5)
+[00:49:36.288]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.288]     [2] 0x7ae0c556(MSVCR100.dll+0x5c556)
+[00:49:36.288]     [3] 0x7ae0c600(MSVCR100.dll+0x5c600)
+[00:49:36.288]     [4] 0x75807ba9(KERNEL32.DLL+0x17ba9)
+[00:49:36.406] [LoadItemFile] params=['0x0', '0x7fc151b0', '0x0', '0x0'] nearIC=[] ret=0x1eef303
+[00:49:36.406]     [0] 0x1eef303(FreeStyle.exe+0x1aef303)
+[00:49:36.406]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.406]     [2] 0x21060ec(FreeStyle.exe+0x1d060ec)
+[00:49:36.406]     [3] 0x20b4ec1(FreeStyle.exe+0x1cb4ec1)
+[00:49:36.406]     [4] 0x10d6b07(FreeStyle.exe+0xcd6b07)
+[00:49:36.408] [LoadItemFile] params=['0x311fd49', '0x6ce11108', '0x0', '0x0'] nearIC=[] ret=0x1eef303
+[00:49:36.408]     [0] 0x1eef303(FreeStyle.exe+0x1aef303)
+[00:49:36.408]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.408]     [2] 0x21060ec(FreeStyle.exe+0x1d060ec)
+[00:49:36.408]     [3] 0x20b4ec1(FreeStyle.exe+0x1cb4ec1)
+[00:49:36.408]     [4] 0x10d6b07(FreeStyle.exe+0xcd6b07)
+[00:49:36.410] [LoadItemFile] params=['0x311fd5d', '0x6ce11108', '0x0', '0x0'] nearIC=[] ret=0x1eef303
+[00:49:36.410]     [0] 0x1eef303(FreeStyle.exe+0x1aef303)
+[00:49:36.410]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.410]     [2] 0x21060ec(FreeStyle.exe+0x1d060ec)
+[00:49:36.410]     [3] 0x20b4ec1(FreeStyle.exe+0x1cb4ec1)
+[00:49:36.410]     [4] 0x10d6b07(FreeStyle.exe+0xcd6b07)
+[00:49:36.413] [LoadItemFile] params=['0x311fd67', '0x6ce10de8', '0x0', '0x0'] nearIC=[] ret=0x1eef303
+[00:49:36.413]     [0] 0x1eef303(FreeStyle.exe+0x1aef303)
+[00:49:36.413]     [1] 0x1ece1c0(FreeStyle.exe+0x1ace1c0)
+[00:49:36.413]     [2] 0x21060ec(FreeStyle.exe+0x1d060ec)
+[00:49:36.413]     [3] 0x20b4ec1(FreeStyle.exe+0x1cb4ec1)
+[00:49:36.413]     [4] 0x10d6b07(FreeStyle.exe+0xcd6b07)

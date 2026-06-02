@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.Win32;
 
 namespace FS服装搭配专家v1._0.Core.Config
@@ -14,6 +16,8 @@ namespace FS服装搭配专家v1._0.Core.Config
 
         private readonly string _configPath;
         private AppConfiguration _config;
+        private Timer? _debounceTimer;
+        private readonly object _saveLock = new object();
 
         private static readonly string[] CommonGamePaths = new[]
         {
@@ -88,7 +92,7 @@ namespace FS服装搭配专家v1._0.Core.Config
             {
                 MigrateFromOldConfig(newConfig);
             }
-            SaveConfig();
+            SaveConfigImmediate();
             return newConfig;
         }
 
@@ -184,19 +188,41 @@ namespace FS服装搭配专家v1._0.Core.Config
 
         public void SaveConfig()
         {
-            try
+            if (_debounceTimer == null)
             {
-                var options = new JsonSerializerOptions
-                {
-                    WriteIndented = true,
-                    Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-                };
-                string json = JsonSerializer.Serialize(_config, options);
-                File.WriteAllText(_configPath, json, Encoding.UTF8);
+                _debounceTimer = new Timer(DebouncedSaveCallback, null, Timeout.Infinite, Timeout.Infinite);
             }
-            catch (Exception ex)
+            _debounceTimer.Change(200, Timeout.Infinite);
+        }
+
+        public void SaveConfigImmediate()
+        {
+            DoSave();
+        }
+
+        private void DebouncedSaveCallback(object? state)
+        {
+            DoSave();
+        }
+
+        private void DoSave()
+        {
+            lock (_saveLock)
             {
-                Console.WriteLine($"[ConfigService] 保存配置文件失败: {ex.Message}");
+                try
+                {
+                    var options = new JsonSerializerOptions
+                    {
+                        WriteIndented = true,
+                        Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                    };
+                    string json = JsonSerializer.Serialize(_config, options);
+                    File.WriteAllText(_configPath, json, Encoding.UTF8);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[ConfigService] 保存配置文件失败: {ex.Message}");
+                }
             }
         }
 
@@ -435,7 +461,7 @@ namespace FS服装搭配专家v1._0.Core.Config
         public void SetGameInstallDirectory(string path)
         {
             _config.Game.InstallDirectory = path;
-            SaveConfig();
+            SaveConfigImmediate();
             Console.WriteLine($"[ConfigService] 游戏目录已设置: {path}");
         }
 

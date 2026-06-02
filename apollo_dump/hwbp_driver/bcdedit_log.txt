@@ -1,0 +1,35 @@
+﻿操作成功完成。
+操作成功完成。
+
+Windows 启动管理器
+--------------------
+标识符                  {bootmgr}
+device                  partition=C:
+path                    \EFI\Microsoft\Boot\bootmgfw.efi
+description             Windows Boot Manager
+locale                  zh-CN
+inherit                 {globalsettings}
+default                 {default}
+resumeobject            {e03e8452-f2e6-11f0-a7a5-c1f6ea48f537}
+displayorder            {default}
+toolsdisplayorder       {memdiag}
+timeout                 30
+
+Windows 启动加载器
+-------------------
+标识符                  {default}
+device                  partition=C:
+path                    \Windows\system32\winload.efi
+description             Windows 11
+locale                  zh-CN
+inherit                 {bootloadersettings}
+nointegritychecks       Yes
+testsigning             Yes
+isolatedcontext         Yes
+allowedinmemorysettings 0x15000075
+osdevice                partition=C:
+systemroot              \Windows
+resumeobject            {e03e8452-f2e6-11f0-a7a5-c1f6ea48f537}
+nx                      OptIn
+bootmenupolicy          Standard
+DONE

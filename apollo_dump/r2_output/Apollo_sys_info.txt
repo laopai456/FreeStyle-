@@ -1,0 +1,60 @@
+arch     x86
+baddr    0x140000000
+binsz    -2
+bintype  pe
+bits     64
+canary   false
+injprot  false
+retguard false
+class    PE32+
+compiled Thu Feb  6 11:11:29 2025
+
+crypto   false
+endian   little
+havecode true
+hdr.csum 0x00240813
+laddr    0x0
+lang     c
+linenum  false
+lsyms    false
+machine  AMD 64
+nx       false
+os       native
+overlay  true
+cc       ms
+pic      false
+relocs   false
+signed   true
+sanitize false
+static   false
+stripped false
+uncaps   false
+subsys   Native
+va       true
+ntoskrnl.exe
+nth paddr vaddr bind type size lib name demangled
+-------------------------------------------------
+nth paddr           size vaddr           vsize perm flags          type name
+----------------------------------------------------------------------------
+0   0x00000400    0x1200 0x140001000    0x2000 -r-x 0x7ff868000020 ---- .text
+1   0x00001600     0x600 0x140003000    0x1000 -r-- 0x7ff848000040 ---- .rdata
+2   0x00001c00     0x400 0x140004000    0x1000 -rw- 0x7ff8c8000040 ---- .data
+3   0x00002000     0x200 0x140005000    0x1000 -r-- 0x7ff848000040 ---- .pdata
+4   0x00002200     0x400 0x140006000    0x1000 -r-x 0x7ff860000020 ---- INIT
+5   0x00002600  0x233a00 0x140007000  0x234000 -r-x 0x7ff868000020 ---- .UPX0
+6   0x00236000     0x200 0x14023b000    0x1000 -r-- 0x7ff842000040 ---- .reloc
+nth paddr      vaddr       len size section type  string
+--------------------------------------------------------
+0   0x0000169f 0x14000309f 5   6    .rdata  ascii 7Ym6~
+1   0x000016cb 0x1400030cb 5   7    .rdata  utf8  t?c賰R
+2   0x0000185d 0x14000325d 4   5    .rdata  ascii 9pox
+3   0x00001874 0x140003274 4   5    .rdata  ascii _Tzs
+4   0x00001880 0x140003280 7   8    .rdata  ascii c4}vo-\n
+5   0x0000189e 0x14000329e 4   5    .rdata  ascii R\r_r
+6   0x000018be 0x1400032be 4   5    .rdata  ascii fJUz
+7   0x000018e9 0x1400032e9 4   5    .rdata  ascii 2Q]t
+8   0x000018fb 0x1400032fb 6   7    .rdata  ascii 9\rS@w6
+9   0x0000193c 0x14000333c 4   5    .rdata  ascii v->.
+10  0x00001970 0x140003370 4   7    .rdata  utf8  迬W慰I
+11  0x00001cd8 0x1400040d8 8   9    .data   ascii
+12  0x00001d80 0x140004180 16  17   .data   ascii PPPPPPPPPPPPPPPP

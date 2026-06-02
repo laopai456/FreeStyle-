@@ -1,0 +1,18 @@
+[13:28:48] === 诊断 === PID:16724 ===
+[13:28:49]   Module: base=0x400000 size=0x28ec000
+[13:28:49]   DynamicCreate1: RVA=0x1e99730 abs=0x2299730 [OK]
+[13:28:49]     bytes: 55 8b ec 83 ec 0c 89 4d f4 8b 4d f4 e8 bf 17 00 
+[13:28:49]   DynamicCreate2: RVA=0x1ef27b0 abs=0x22f27b0 [OK]
+[13:28:49]     bytes: 55 8b ec 6a ff 68 38 55 64 02 64 a1 00 00 00 00 
+[13:28:49]   DynamicWrapper: RVA=0x1efa370 abs=0x22fa370 [OK]
+[13:28:49]     bytes: 55 8b ec 6a ff 68 d4 57 64 02 64 a1 00 00 00 00 
+[13:28:49]   诊断hook ready (最小hook, 只记数). 进房间测试.
+[13:28:49] 
+[13:28:49] 进房间测试。命令: count | quit
+[13:28:49] 
+[13:29:18]   [#1] DynamicCreate1 ecx=0x849555b0
+[13:29:25]   [#2] DynamicCreate1 ecx=0x8494ffe8
+[13:29:25]   [#3] DynamicCreate1 ecx=0x849555b0
+[13:29:25]   [#4] DynamicCreate1 ecx=0x84950970
+[13:29:27]   [#5] DynamicCreate1 ecx=0x883290d0
+[13:29:34]   调用次数: 5

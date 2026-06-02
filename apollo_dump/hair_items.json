@@ -1,0 +1,914 @@
+[
+  {
+    "code": 100001,
+    "pak": "1",
+    "effect": "",
+    "name": "爆炸头",
+    "comment": "表现你无穷魅力的方法就是来一个蓬松的发型.",
+    "category": "男发"
+  },
+  {
+    "code": 100101,
+    "pak": "1",
+    "effect": "",
+    "name": "瀑布长发",
+    "comment": "\"无论场内还是场外,都可以展现你霸气的长发发型.\"",
+    "category": "男发"
+  },
+  {
+    "code": 100201,
+    "pak": "1",
+    "effect": "",
+    "name": "莫西干发型",
+    "comment": "个性十足的黑人头型.",
+    "category": "男发"
+  },
+  {
+    "code": 100301,
+    "pak": "1",
+    "effect": "",
+    "name": "张扬",
+    "comment": "\"你的个性升华到发型时,剩下得只有打败对手了.\"",
+    "category": "男发"
+  },
+  {
+    "code": 100401,
+    "pak": "1",
+    "effect": "",
+    "name": "基本发型（男）",
+    "comment": "基本发型（男）",
+    "category": "男发"
+  },
+  {
+    "code": 100501,
+    "pak": "1",
+    "effect": "",
+    "name": "不羁",
+    "comment": "\"酷酷的,藐视一切\"",
+    "category": "男发"
+  },
+  {
+    "code": 100601,
+    "pak": "1",
+    "effect": "",
+    "name": "霸道",
+    "comment": "\"<警告>小心,别挡道.\"",
+    "category": "男发"
+  },
+  {
+    "code": 100701,
+    "pak": "1",
+    "effect": "",
+    "name": "热血络腮胡",
+    "comment": "\"如果你是热血澎湃的年轻人,那么就用热血络腮胡!\"",
+    "category": "男发"
+  },
+  {
+    "code": 100801,
+    "pak": "1",
+    "effect": "",
+    "name": "小平头",
+    "comment": "为啥人们总躲避我呢？",
+    "category": "男发"
+  },
+  {
+    "code": 100901,
+    "pak": "1",
+    "effect": "",
+    "name": "椰子树",
+    "comment": "我行我素",
+    "category": "男发"
+  },
+  {
+    "code": 101001,
+    "pak": "1",
+    "effect": "",
+    "name": "干练的短发",
+    "comment": "符合清秀外形的短发",
+    "category": "男发"
+  },
+  {
+    "code": 101101,
+    "pak": "1",
+    "effect": "",
+    "name": "小贝发型",
+    "comment": "贝克汉姆的酷酷头型",
+    "category": "男发"
+  },
+  {
+    "code": 101201,
+    "pak": "1",
+    "effect": "",
+    "name": "楔子平头",
+    "comment": "宁可头破血流也决不服输.",
+    "category": "男发"
+  },
+  {
+    "code": 101301,
+    "pak": "1",
+    "effect": "",
+    "name": "超赛亚头型",
+    "comment": "\"“超级赛亚人”的造型,一定把所有人都能惊呆！\"",
+    "category": "男发"
+  },
+  {
+    "code": 101401,
+    "pak": "1",
+    "effect": "",
+    "name": "印第安莫西干",
+    "comment": "\"看上去cool酷的打扮,不过不知道实力如何…\"",
+    "category": "男发"
+  },
+  {
+    "code": 101501,
+    "pak": "1",
+    "effect": "",
+    "name": "艳后发型",
+    "comment": "\"专门为模特设计的超酷发型,在球场上也一定吸引目光\"",
+    "category": "男发"
+  },
+  {
+    "code": 101601,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男发"
+  },
+  {
+    "code": 101701,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男发"
+  },
+  {
+    "code": 101801,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男发"
+  },
+  {
+    "code": 110001,
+    "pak": "1",
+    "effect": "",
+    "name": "街舞风遮阳帽",
+    "comment": "胜利的准备已经做好了.街舞爱好者专用帽.",
+    "category": "男头饰"
+  },
+  {
+    "code": 110101,
+    "pak": "1",
+    "effect": "",
+    "name": "遮阳帽",
+    "comment": "展现都市休闲风情",
+    "category": "男头饰"
+  },
+  {
+    "code": 110201,
+    "pak": "1",
+    "effect": "",
+    "name": "FS运动帽",
+    "comment": "做好胜利前的的准备工作.",
+    "category": "男头饰"
+  },
+  {
+    "code": 110301,
+    "pak": "1",
+    "effect": "",
+    "name": "时尚头带",
+    "comment": "风格酷酷的头带",
+    "category": "男头饰"
+  },
+  {
+    "code": 110401,
+    "pak": "1",
+    "effect": "",
+    "name": "耳麦",
+    "comment": "运球就是靠节奏.",
+    "category": "男头饰"
+  },
+  {
+    "code": 110501,
+    "pak": "1",
+    "effect": "",
+    "name": "FS耳麦",
+    "comment": "\"开始比赛了,Hiphop,街头篮球和Freestyle.\"",
+    "category": "男头饰"
+  },
+  {
+    "code": 110601,
+    "pak": "1",
+    "effect": "",
+    "name": "信念",
+    "comment": "街头篮球的精神.街头篮球的必备品.",
+    "category": "男头饰"
+  },
+  {
+    "code": 110701,
+    "pak": "1",
+    "effect": "",
+    "name": "FS运动帽特别版",
+    "comment": "戴帽子的另一种方法.",
+    "category": "男头饰"
+  },
+  {
+    "code": 110801,
+    "pak": "1",
+    "effect": "",
+    "name": "印第安休闲帽",
+    "comment": "真正的街头篮球爱好者应该可以接受这类物品.",
+    "category": "男头饰"
+  },
+  {
+    "code": 110901,
+    "pak": "1",
+    "effect": "",
+    "name": "渔夫帽",
+    "comment": "Hiphop风格的基础物品.",
+    "category": "男头饰"
+  },
+  {
+    "code": 111001,
+    "pak": "1",
+    "effect": "",
+    "name": "头带",
+    "comment": "气喘吁吁和汗流浃背还有头带.这才是真正的篮球人.",
+    "category": "男头饰"
+  },
+  {
+    "code": 111101,
+    "pak": "1",
+    "effect": "",
+    "name": "头绳",
+    "comment": "\"紧紧的头绳,发光的眼神.\"",
+    "category": "男头饰"
+  },
+  {
+    "code": 111201,
+    "pak": "1",
+    "effect": "",
+    "name": "酷酷遮阳帽",
+    "comment": "酷酷的发型和帽子.",
+    "category": "男头饰"
+  },
+  {
+    "code": 111301,
+    "pak": "1",
+    "effect": "",
+    "name": "复古南瓜帽",
+    "comment": "有时复古也是时尚.",
+    "category": "男头饰"
+  },
+  {
+    "code": 111401,
+    "pak": "1",
+    "effect": "",
+    "name": "印第安节日帽",
+    "comment": "有时候节日的气氛也能感染对手.",
+    "category": "男头饰"
+  },
+  {
+    "code": 111501,
+    "pak": "1",
+    "effect": "",
+    "name": "牛仔帽",
+    "comment": "多一条线能使你耀眼.",
+    "category": "男头饰"
+  },
+  {
+    "code": 111601,
+    "pak": "1",
+    "effect": "",
+    "name": "支配",
+    "comment": "可以决定比赛的头型.",
+    "category": "男头饰"
+  },
+  {
+    "code": 111701,
+    "pak": "1",
+    "effect": "",
+    "name": "头巾+帽子",
+    "comment": "时尚人的选择!",
+    "category": "男头饰"
+  },
+  {
+    "code": 111801,
+    "pak": "1",
+    "effect": "",
+    "name": "ROCKIT CAP",
+    "comment": "这个帽子是ROCK IT!!我的身体在 SHAKE IT !!",
+    "category": "男头饰"
+  },
+  {
+    "code": 111901,
+    "pak": "1",
+    "effect": "",
+    "name": "毛巾帽",
+    "comment": "能吸汗的新概念帽",
+    "category": "男头饰"
+  },
+  {
+    "code": 112001,
+    "pak": "1",
+    "effect": "",
+    "name": "登山帽",
+    "comment": "聪慧风格的登山帽",
+    "category": "男头饰"
+  },
+  {
+    "code": 112101,
+    "pak": "1",
+    "effect": "",
+    "name": "耳机&帽子&黑人头",
+    "comment": "\"时尚耳机和帽子,还有前卫的头型\"",
+    "category": "男头饰"
+  },
+  {
+    "code": 112201,
+    "pak": "1",
+    "effect": "",
+    "name": "防风镜I",
+    "comment": "都市有为青年.",
+    "category": "男头饰"
+  },
+  {
+    "code": 112301,
+    "pak": "1",
+    "effect": "",
+    "name": "猎帽(男)",
+    "comment": "\"悠闲,是种生活态度.\"",
+    "category": "男头饰"
+  },
+  {
+    "code": 112401,
+    "pak": "1",
+    "effect": "",
+    "name": "实用滑雪帽",
+    "comment": "\"把头整个裹起来,决不怕出汗,因为太帅了！！\"",
+    "category": "男头饰"
+  },
+  {
+    "code": 112501,
+    "pak": "1",
+    "effect": "",
+    "name": "圣诞帽",
+    "comment": "圣诞帽",
+    "category": "男头饰"
+  },
+  {
+    "code": 112601,
+    "pak": "1",
+    "effect": "",
+    "name": "圣诞帽",
+    "comment": "圣诞帽",
+    "category": "男头饰"
+  },
+  {
+    "code": 112701,
+    "pak": "1",
+    "effect": "",
+    "name": "雪人面具",
+    "comment": "雪人面具",
+    "category": "男头饰"
+  },
+  {
+    "code": 112801,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男头饰"
+  },
+  {
+    "code": 112901,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男头饰"
+  },
+  {
+    "code": 113001,
+    "pak": "1",
+    "effect": "",
+    "name": "FS头盔",
+    "comment": "戴好你的头盔！准备战斗！人间大炮……",
+    "category": "男头饰"
+  },
+  {
+    "code": 113101,
+    "pak": "1",
+    "effect": "",
+    "name": "FS头盔",
+    "comment": "戴好你的头盔！准备战斗！人间大炮……",
+    "category": "男头饰"
+  },
+  {
+    "code": 113201,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男头饰"
+  },
+  {
+    "code": 113301,
+    "pak": "1",
+    "effect": "",
+    "name": "霸王头",
+    "comment": "\"看上去威猛无敌的样子,令对手不寒而栗\"",
+    "category": "男头饰"
+  },
+  {
+    "code": 113401,
+    "pak": "1",
+    "effect": "",
+    "name": "长碎发",
+    "comment": "凌乱的碎发彰显不羁的性格",
+    "category": "男头饰"
+  },
+  {
+    "code": 113501,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男头饰"
+  },
+  {
+    "code": 113601,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男头饰"
+  },
+  {
+    "code": 113701,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男头饰"
+  },
+  {
+    "code": 113801,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男头饰"
+  },
+  {
+    "code": 113901,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男头饰"
+  },
+  {
+    "code": 114001,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男头饰"
+  },
+  {
+    "code": 114101,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男头饰"
+  },
+  {
+    "code": 114201,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男头饰"
+  },
+  {
+    "code": 114301,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男头饰"
+  },
+  {
+    "code": 114401,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男头饰"
+  },
+  {
+    "code": 125001,
+    "pak": "1",
+    "effect": "",
+    "name": "马尾辫",
+    "comment": "无需说明的可爱发型.",
+    "category": "女发"
+  },
+  {
+    "code": 125101,
+    "pak": "1",
+    "effect": "",
+    "name": "羊角辫",
+    "comment": "可爱的羊角辫.",
+    "category": "女发"
+  },
+  {
+    "code": 125201,
+    "pak": "1",
+    "effect": "",
+    "name": "碎发",
+    "comment": "精干的短发.",
+    "category": "女发"
+  },
+  {
+    "code": 125301,
+    "pak": "1",
+    "effect": "",
+    "name": "黑妹长发",
+    "comment": "长长的黑人头发.",
+    "category": "女发"
+  },
+  {
+    "code": 125401,
+    "pak": "1",
+    "effect": "",
+    "name": "黑妹扎辨",
+    "comment": "酷酷的扎辫头型.",
+    "category": "女发"
+  },
+  {
+    "code": 125501,
+    "pak": "1",
+    "effect": "",
+    "name": "黑妹短发",
+    "comment": "漂亮而干练的黑人发型.",
+    "category": "女发"
+  },
+  {
+    "code": 125601,
+    "pak": "1",
+    "effect": "",
+    "name": "基本发型（女）",
+    "comment": "基本发型（女）",
+    "category": "女发"
+  },
+  {
+    "code": 125701,
+    "pak": "1",
+    "effect": "",
+    "name": "公主发型",
+    "comment": "公主风格发型.",
+    "category": "女发"
+  },
+  {
+    "code": 125801,
+    "pak": "1",
+    "effect": "",
+    "name": "爆炸头",
+    "comment": "女孩子也可以有大胆的发型.",
+    "category": "女发"
+  },
+  {
+    "code": 125901,
+    "pak": "1",
+    "effect": "",
+    "name": "短漂发",
+    "comment": "柔和曲线的短发风格.",
+    "category": "女发"
+  },
+  {
+    "code": 126001,
+    "pak": "1",
+    "effect": "",
+    "name": "小淘气发型",
+    "comment": "小淘气丫头风格",
+    "category": "女发"
+  },
+  {
+    "code": 126101,
+    "pak": "1",
+    "effect": "",
+    "name": "蓬松发型",
+    "comment": "丰满而舒服的风格",
+    "category": "女发"
+  },
+  {
+    "code": 126201,
+    "pak": "1",
+    "effect": "",
+    "name": "文静的学生发型",
+    "comment": "文静的学生发型",
+    "category": "女发"
+  },
+  {
+    "code": 126301,
+    "pak": "1",
+    "effect": "",
+    "name": "时髦马尾辫",
+    "comment": "时髦的马尾辫",
+    "category": "女发"
+  },
+  {
+    "code": 126401,
+    "pak": "1",
+    "effect": "",
+    "name": "垂肩长辫",
+    "comment": "可爱的两条羊角辫",
+    "category": "女发"
+  },
+  {
+    "code": 126501,
+    "pak": "1",
+    "effect": "",
+    "name": "带发卡的长发",
+    "comment": "竟有如此柔顺的长发！用了什么洗发水？！",
+    "category": "女发"
+  },
+  {
+    "code": 126601,
+    "pak": "1",
+    "effect": "",
+    "name": "长碎发",
+    "comment": "凌乱的碎发彰显不羁的性格",
+    "category": "女发"
+  },
+  {
+    "code": 126701,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "女发"
+  },
+  {
+    "code": 126801,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "女发"
+  },
+  {
+    "code": 135001,
+    "pak": "1",
+    "effect": "",
+    "name": "FS休闲帽",
+    "comment": "个性十足的装扮.",
+    "category": "女头饰"
+  },
+  {
+    "code": 135101,
+    "pak": "1",
+    "effect": "",
+    "name": "FS遮阳帽",
+    "comment": "Freestyle女孩装扮的代表物品.",
+    "category": "女头饰"
+  },
+  {
+    "code": 135201,
+    "pak": "1",
+    "effect": "",
+    "name": "街舞风遮阳帽",
+    "comment": "咄咄逼人的女孩儿.",
+    "category": "女头饰"
+  },
+  {
+    "code": 135301,
+    "pak": "1",
+    "effect": "",
+    "name": "超快感耳麦",
+    "comment": "酷酷的装扮.",
+    "category": "女头饰"
+  },
+  {
+    "code": 135401,
+    "pak": "1",
+    "effect": "",
+    "name": "嘻哈头巾",
+    "comment": "戴2套头巾是街头人的时尚.",
+    "category": "女头饰"
+  },
+  {
+    "code": 135501,
+    "pak": "1",
+    "effect": "",
+    "name": "三角头巾",
+    "comment": "Hiphop女孩的基本装备.",
+    "category": "女头饰"
+  },
+  {
+    "code": 135601,
+    "pak": "1",
+    "effect": "",
+    "name": "简易遮阳帽",
+    "comment": "普通的遮阳帽.",
+    "category": "女头饰"
+  },
+  {
+    "code": 135701,
+    "pak": "1",
+    "effect": "",
+    "name": "踏青帽",
+    "comment": "春游时的装扮.",
+    "category": "女头饰"
+  },
+  {
+    "code": 135801,
+    "pak": "1",
+    "effect": "",
+    "name": "时尚头巾",
+    "comment": "\"用头巾轻轻隐藏黑人发型,显得更有个性.\"",
+    "category": "女头饰"
+  },
+  {
+    "code": 135901,
+    "pak": "1",
+    "effect": "",
+    "name": "淑女帽",
+    "comment": "甜美的发型",
+    "category": "女头饰"
+  },
+  {
+    "code": 136001,
+    "pak": "1",
+    "effect": "",
+    "name": "菠萝发型",
+    "comment": "为了和菠萝一样酸甜的比赛",
+    "category": "女头饰"
+  },
+  {
+    "code": 136101,
+    "pak": "1",
+    "effect": "",
+    "name": "打猎帽",
+    "comment": "可爱的羊角辫加上猎人帽",
+    "category": "女头饰"
+  },
+  {
+    "code": 136201,
+    "pak": "1",
+    "effect": "",
+    "name": "猎帽(女)",
+    "comment": "\"悠闲,是种生活态度.\"",
+    "category": "女头饰"
+  },
+  {
+    "code": 136301,
+    "pak": "1",
+    "effect": "",
+    "name": "前卫毛巾花头饰",
+    "comment": "还记得白羊肚头巾吗？女人也可以戴.",
+    "category": "女头饰"
+  },
+  {
+    "code": 136401,
+    "pak": "1",
+    "effect": "",
+    "name": "军装帽",
+    "comment": "当兵的mm也来打球！",
+    "category": "女头饰"
+  },
+  {
+    "code": 136501,
+    "pak": "1",
+    "effect": "",
+    "name": "圣诞帽",
+    "comment": "圣诞帽",
+    "category": "女头饰"
+  },
+  {
+    "code": 136601,
+    "pak": "1",
+    "effect": "",
+    "name": "圣诞帽",
+    "comment": "圣诞帽",
+    "category": "女头饰"
+  },
+  {
+    "code": 136701,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "女头饰"
+  },
+  {
+    "code": 136801,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "女头饰"
+  },
+  {
+    "code": 136901,
+    "pak": "1",
+    "effect": "",
+    "name": "贝雷帽+头巾",
+    "comment": "哇靠！这不是贝雷帽吗？",
+    "category": "女头饰"
+  },
+  {
+    "code": 137001,
+    "pak": "1",
+    "effect": "",
+    "name": "贝雷帽+头巾",
+    "comment": "哇靠！这不是贝雷帽吗？",
+    "category": "女头饰"
+  },
+  {
+    "code": 137101,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "女头饰"
+  },
+  {
+    "code": 137201,
+    "pak": "1",
+    "effect": "",
+    "name": "复古叠帽",
+    "comment": "带有西方古典风格的礼帽",
+    "category": "女头饰"
+  },
+  {
+    "code": 137301,
+    "pak": "1",
+    "effect": "",
+    "name": "简洁寸发",
+    "comment": "干练的发型才能在场上全力发挥啊",
+    "category": "女头饰"
+  },
+  {
+    "code": 137401,
+    "pak": "1",
+    "effect": "",
+    "name": "花边开帽",
+    "comment": "\"看上去有点奇怪的打扮,其实只有球场上的高手才敢这样另类\"",
+    "category": "女头饰"
+  },
+  {
+    "code": 137501,
+    "pak": "1",
+    "effect": "",
+    "name": "纯洁头带",
+    "comment": "\"纯洁淑女的造型,但是不能因此低估她们在场上必胜的信念啊\"",
+    "category": "女头饰"
+  },
+  {
+    "code": 137601,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "女头饰"
+  },
+  {
+    "code": 137701,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "女头饰"
+  },
+  {
+    "code": 137801,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "女头饰"
+  },
+  {
+    "code": 137901,
+    "pak": "1",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "女头饰"
+  },
+  {
+    "code": 114501,
+    "pak": "157",
+    "effect": "",
+    "name": "--",
+    "comment": "--",
+    "category": "男头饰"
+  }
+]

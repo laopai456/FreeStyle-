@@ -1,0 +1,152 @@
+'=== fcn.1400016b0 (DriverEntry helper 1) ==='
+            ; CALL XREF from fcn.140239970 @ 0x140239979(x)
+            ; CALL XREF from fcn.14023a18c @ 0x14023a1e9(x)
+            ; CALL XREF from fcn.14023a326 @ 0x14023a33b(x)
+            ; CALL XREF from fcn.14023a478 @ 0x14023a520(x)
+/ 26: fcn.1400016b0 (int64_t arg1);
+| `- args(rcx)
+|           0x1400016b0      50             push rax
+|           0x1400016b1      53             push rbx
+|           0x1400016b2      51             push rcx                   ; arg1
+|           0x1400016b3      b856430000     mov eax, 0x4356            ; 'VC'
+|           0x1400016b8      bb01000000     mov ebx, 1
+|           0x1400016bd      b956430000     mov ecx, 0x4356            ; 'VC'
+|           0x1400016c2      03d8           add ebx, eax
+|           0x1400016c4      03c8           add ecx, eax
+|           0x1400016c6      59             pop rcx
+|           0x1400016c7      5b             pop rbx
+|           0x1400016c8      58             pop rax
+\           0x1400016c9      c3             ret
+'=== fcn.1400016ca (DriverEntry helper 2) ==='
+            ; CALL XREF from fcn.140239970 @ 0x1402399da(x)
+            ; CALL XREF from fcn.14023a18c @ 0x14023a306(x)
+            ; CALL XREF from fcn.14023a326 @ 0x14023a469(x)
+            ; CALL XREF from fcn.14023a478 @ 0x14023a718(x)
+/ 26: fcn.1400016ca (int64_t arg1);
+| `- args(rcx)
+|           0x1400016ca      50             push rax
+|           0x1400016cb      53             push rbx
+|           0x1400016cc      51             push rcx                   ; arg1
+|           0x1400016cd      b856430000     mov eax, 0x4356            ; 'VC'
+|           0x1400016d2      bb02000000     mov ebx, 2
+|           0x1400016d7      b956430000     mov ecx, 0x4356            ; 'VC'
+|           0x1400016dc      03d8           add ebx, eax
+|           0x1400016de      03c8           add ecx, eax
+|           0x1400016e0      59             pop rcx
+|           0x1400016e1      5b             pop rbx
+|           0x1400016e2      58             pop rax
+\           0x1400016e3      c3             ret
+'=== fcn.140001d48 (possible IRP handler) ==='
+            ; CALL XREF from fcn.1402399e8 @ +0x3b7(x)
+/ 267: fcn.140001d48 (int64_t arg1, int64_t arg2, int64_t arg3);
+| `- args(rcx, rdx, r8) vars(9:sp[0x10..0x60])
+|           0x140001d48      4489442418     mov dword [var_18h], r8d   ; arg3
+|           ; CODE XREF from fcn.140001c4c @ +0xad(x)
+|           0x140001d4d      4889542410     mov qword [var_10h], rdx   ; arg2
+|           0x140001d52      48894c2408     mov qword [var_8h], rcx    ; arg1
+|           0x140001d57      4883ec58       sub rsp, 0x58
+|           0x140001d5b      48c7442440..   mov qword [var_40h], 0
+|           0x140001d64      c744243001..   mov dword [var_30h], 0xc0000001 ; [0xc0000001:4]=-1
+|           0x140001d6c      e8e3000000     call fcn.140001e54
+|           0x140001d71      0fb6c0         movzx eax, al
+|           0x140001d74      85c0           test eax, eax
+|       ,=< 0x140001d76      7407           je 0x140001d7f
+|       |   0x140001d78      33c0           xor eax, eax
+|      ,==< 0x140001d7a      e9cf000000     jmp 0x140001e4e
+|      ||   ; CODE XREF from fcn.140001d48 @ 0x140001d76(x)
+|      |`-> 0x140001d7f      488d542448     lea rdx, [var_48h]
+|      |    0x140001d84      488b4c2460     mov rcx, qword [var_8h]
+|      |    0x140001d89      ff15b9120000   call qword [sym.imp.ntoskrnl.exe_PsLookupProcessByProcessId] ; [0x140003048:8]=0x6202 reloc.ntoskrnl.exe_PsLookupProcessByProcessId
+|      |    0x140001d8f      85c0           test eax, eax
+|      |,=< 0x140001d91      7407           je 0x140001d9a
+|      ||   0x140001d93      33c0           xor eax, eax
+|     ,===< 0x140001d95      e9b4000000     jmp 0x140001e4e
+|     |||   ; CODE XREF from fcn.140001d48 @ 0x140001d91(x)
+|     ||`-> 0x140001d9a      488d542440     lea rdx, [var_40h]
+|     ||    0x140001d9f      488b4c2448     mov rcx, qword [var_48h]
+|     ||    0x140001da4      ff15ce120000   call qword [sym.imp.ntoskrnl.exe_PsReferenceProcessFilePointer] ; [0x140003078:8]=0x629a reloc.ntoskrnl.exe_PsReferenceProcessFilePointer
+|     ||    0x140001daa      89442430       mov dword [var_30h], eax
+|     ||    0x140001dae      837c243000     cmp dword [var_30h], 0
+|     ||,=< 0x140001db3      7412           je 0x140001dc7
+|     |||   0x140001db5      488b4c2448     mov rcx, qword [var_48h]
+|     |||   0x140001dba      ff1580120000   call qword [sym.imp.ntoskrnl.exe_ObfDereferenceObject] ; [0x140003040:8]=0x61ea reloc.ntoskrnl.exe_ObfDereferenceObject
+|     |||   0x140001dc0      33c0           xor eax, eax
+|    ,====< 0x140001dc2      e987000000     jmp 0x140001e4e
+|    ||||   ; CODE XREF from fcn.140001d48 @ 0x140001db3(x)
+|    |||`-> 0x140001dc7      48c7442438..   mov qword [var_38h], 0
+|    |||    0x140001dd0      488d542438     lea rdx, [var_38h]
+|    |||    0x140001dd5      488b4c2440     mov rcx, qword [var_40h]
+|    |||    0x140001dda      ff1590120000   call qword [sym.imp.ntoskrnl.exe_IoQueryFileDosDeviceName] ; [0x140003070:8]=0x627e reloc.ntoskrnl.exe_IoQueryFileDosDeviceName ; "~b"
+|    |||    0x140001de0      85c0           test eax, eax
+|    |||,=< 0x140001de2      741a           je 0x140001dfe
+|    ||||   0x140001de4      488b4c2440     mov rcx, qword [var_40h]
+|    ||||   0x140001de9      ff1551120000   call qword [sym.imp.ntoskrnl.exe_ObfDereferenceObject] ; [0x140003040:8]=0x61ea reloc.ntoskrnl.exe_ObfDereferenceObject
+|    ||||   0x140001def      488b4c2448     mov rcx, qword [var_48h]
+|    ||||   0x140001df4      ff1546120000   call qword [sym.imp.ntoskrnl.exe_ObfDereferenceObject] ; [0x140003040:8]=0x61ea reloc.ntoskrnl.exe_ObfDereferenceObject
+|    ||||   0x140001dfa      33c0           xor eax, eax
+|   ,=====< 0x140001dfc      eb50           jmp 0x140001e4e
+|   |||||   ; CODE XREF from fcn.140001d48 @ 0x140001de2(x)
+|   ||||`-> 0x140001dfe      488b442438     mov rax, qword [var_38h]
+|   ||||    0x140001e03      0fb700         movzx eax, word [rax]
+|   ||||    0x140001e06      89442420       mov dword [var_20h], eax
+|   ||||    0x140001e0a      488b442438     mov rax, qword [var_38h]
+|   ||||    0x140001e0f      4c8b4808       mov r9, qword [rax + 8]
+|   ||||    0x140001e13      4c8d442434     lea r8, [var_34h]
+|   ||||    0x140001e18      8b542470       mov edx, dword [var_18h]
+|   ||||    0x140001e1c      488b4c2468     mov rcx, qword [var_10h]
+|   ||||    0x140001e21      ff1541120000   call qword [sym.imp.ntoskrnl.exe_RtlUnicodeToMultiByteN] ; [0x140003068:8]=0x6264 reloc.ntoskrnl.exe_RtlUnicodeToMultiByteN ; "db"
+|   ||||    0x140001e27      33d2           xor edx, edx
+|   ||||    0x140001e29      488b4c2438     mov rcx, qword [var_38h]
+|   ||||    0x140001e2e      ff1524120000   call qword [sym.imp.ntoskrnl.exe_ExFreePoolWithTag] ; [0x140003058:8]=0x6238 reloc.ntoskrnl.exe_ExFreePoolWithTag ; "8b"
+|   ||||    0x140001e34      488b4c2440     mov rcx, qword [var_40h]
+|   ||||    0x140001e39      ff1501120000   call qword [sym.imp.ntoskrnl.exe_ObfDereferenceObject] ; [0x140003040:8]=0x61ea reloc.ntoskrnl.exe_ObfDereferenceObject
+|   ||||    0x140001e3f      488b4c2448     mov rcx, qword [var_48h]
+|   ||||    0x140001e44      ff15f6110000   call qword [sym.imp.ntoskrnl.exe_ObfDereferenceObject] ; [0x140003040:8]=0x61ea reloc.ntoskrnl.exe_ObfDereferenceObject
+|   ||||    0x140001e4a      8b442434       mov eax, dword [var_34h]
+|   ||||    ; CODE XREFS from fcn.140001d48 @ 0x140001d7a(x), 0x140001d95(x), 0x140001dc2(x), 0x140001dfc(x)
+|   ````--> 0x140001e4e      4883c458       add rsp, 0x58
+\           0x140001e52      c3             ret
+'=== fcn.140001986 ==='
+            ; CALL XREF from fcn.1402399e8 @ +0x40f(x)
+/ 140: fcn.140001986 (int64_t arg1);
+| `- args(rcx) vars(4:sp[0x30..0x48])
+|           0x140001986      4155           push r13
+|           0x140001988      49bd123f83..   movabs r13, 0xd1f39957b833f12
+|           0x140001992      6641f7d5       not r13w
+|           0x140001996      56             push rsi
+|           0x140001997      4e8d2ced96..   lea r13, [r13*8 - 0x16e5476a]
+|           0x14000199f      9c             pushfq
+|           0x1400019a0      4c8b6c2410     mov r13, qword [var_10h]
+|           0x1400019a5      48c7442410..   mov qword [var_10h], 0xffffffffbeff8cd3
+|           0x1400019ae      51             push rcx                   ; arg1
+|           0x1400019af      4155           push r13
+|           0x1400019b1      48be0985aa..   movabs rsi, 0xe02a33a06caa8509
+|           0x1400019bb      488bce         mov rcx, rsi
+|           0x1400019be      488b742418     mov rsi, qword [var_18h]
+|           0x1400019c3      488b4c2410     mov rcx, qword [var_10h_2]
+|           0x1400019c8      48894c2418     mov qword [var_18h], rcx
+|           0x1400019cd      488b4c2408     mov rcx, qword [var_8h]
+|           0x1400019d2      49bd8f0b29..   movabs r13, 0x1e06f98949290b8f
+|           0x1400019dc      4181ed2c4b..   sub r13d, 0xae984b2c
+|           0x1400019e3      41c1ed28       shr r13d, 0x28
+|           0x1400019e7      41c0e5a2       shl r13b, 0xa2
+|           0x1400019eb      4e8bacac00..   mov r13, qword [rsp + r13*4 - 0x26a4000]
+|       ,=< 0x1400019f3      0f821b000000   jb 0x140001a14
+|       |   0x1400019f9      293cbc         sub dword [rsp + rdi*4], edi
+|       |   0x1400019fc      06             invalid
+..
+      |||   ; CODE XREF from fcn.140001986 @ +0x8b(x)
+|      ||   ; CODE XREF from fcn.140001986 @ 0x1400019f3(x)
+|      |`-> 0x140001a14      0f88d9ffffff   js 0x1400019f3
+|      |    0x140001a1a      ff742410       push qword [var_8h]
+|      |    0x140001a1e      9d             popfq
+|      |    0x140001a1f      488d642418     lea rsp, [var_18h]
+\      |,=< 0x140001a24      e9571d0600     jmp fcn.140063780
+'=== fcn.14000101c ==='
+            ; CALL XREF from fcn.1402399e8 @ +0x307(x)
+/ 4: fcn.14000101c (int64_t arg1);
+| `- args(rcx)
+|           0x14000101c      4863c1         movsxd rax, ecx            ; arg1
+\           0x14000101f      c3             ret
+'=== fcn.140063780 ==='
+ERROR: Linear size differs too much from the bbsum, please use pdr instead

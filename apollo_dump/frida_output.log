@@ -1,0 +1,16 @@
+[+] CreateFileA hooked
+[+] DeviceIoControl hooked
+[+] SendInput hooked
+[+] connect hooked
+[+] send hooked
+[+] recv hooked
+[*] NtUserInjectKeyboardInput at 0x75545a00
+[*] NtUserSendInput at 0x75541830
+[MOD] ApolloCT.Dll base=0x69000000 size=7045120
+[MOD] DINPUT8.dll base=0x77d80000 size=229376
+[MOD] win32u.dll base=0x75540000 size=106496
+[MOD] gamesec.dll base=0x500d0000 size=32768
+[*] ALL HOOKS READY
+[RECV #1] len=8
+fe 00 ad 32 b0 00 8d 00 
+

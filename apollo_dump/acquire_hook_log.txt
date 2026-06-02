@@ -1,0 +1,210 @@
+=== acquire_hook log 2026-05-24 00:41:56 ===
+PID: 16820
+[*] .text: 0x401000 — 0x2c0c000 (40.0 MB)
+[*] Starting AcquireSMD hook initialization...
+[STEP 0] Installing VirtualQuery/Protect deception hooks...
+[STEP 0]   NtQueryVirtualMemory hooked
+[STEP 0]   NtProtectVirtualMemory hooked
+[STEP 0] Deception active.
+[STEP 0.5] Patching ApolloCT CRC checks...
+[STEP 0.5]   Patched ApolloCT+0x1a3c54
+[STEP 0.5]   Patched ApolloCT+0x1be222
+[STEP 0.5] CRC patch: 2/2
+[STEP 1] Hooking ReadFile to detect SSKF reads...
+[STEP 1] ReadFile hooked. Waiting for SSKF reads...
+
+[WAITING] All preparatory hooks installed. Trigger SMD loading in-game (equip item, enter shop).
+
+
+[+] SSKF READ #1 detected! (512 bytes, 9 frames)
+[*] Scanning stack from ESP=0x197254 for .smd string...
+[*] Stack scan: 15 match(es) found
+    [ESP+0x1c] deref+8 addr=0x77ff1078 str="c3000.smd"
+    [ESP+0x38] deref+8 addr=0x77ff1078 str="c3000.smd"
+    [ESP+0x7c] deref+8 addr=0x77ff1078 str="c3000.smd"
+    [ESP+0x244] deref addr=0x7f138d48 str="c3000.smd"
+    [ESP+0x25c] deref addr=0x7de35da0 str="res760/c3000.smd"
+    [ESP+0x264] deref addr=0x7de35f40 str="res760/c3000.smd"
+    [ESP+0x26c] deref addr=0x7de35f20 str="res760/c3000.smd"
+    [ESP+0x298] deref addr=0x7f138d00 str="c3000.smd"
+    [ESP+0x418] deref addr=0x7f138cd0 str="c3000.smd"
+    [ESP+0x42c] deref addr=0x7de35da0 str="res760/c3000.smd"
+    [ESP+0x57c] deref2 addr=0x197a8c→0x7f138bf8 str="c3000.smd"
+    [ESP+0x628] deref2 addr=0x1974ec→0x7f138d00 str="c3000.smd"
+    [ESP+0x674] deref addr=0x7f138bf8 str="c3000.smd"
+    [ESP+0x678] deref2 addr=0x197a8c→0x7f138bf8 str="c3000.smd"
+    [ESP+0x68c] deref2 addr=0x7ca70034→0x7de36720 str="res760\c3000.smd"
+    [#0] 0x21e2605  (RVA: +1de2605)
+    [#1] 0x22ec93e  (RVA: +1eec93e)
+    [#2] 0x22ebae3  (RVA: +1eebae3)
+    [#3] 0x1ed0aae  (RVA: +1ad0aae)
+    [#4] 0x1ee28cc  (RVA: +1ae28cc)
+    [#5] 0x1aeba6b  (RVA: +16eba6b)
+    [#6] 0x1aef136  (RVA: +16ef136)
+    [#7] 0x1add5d8  (RVA: +16dd5d8)
+    [#8] 0x18f6d15  (RVA: +14f6d15)
+
+[+] SSKF READ #2 detected! (126976 bytes, 10 frames)
+[*] Scanning stack from ESP=0x197264 for .smd string...
+[*] Stack scan: 22 match(es) found
+    [ESP+0x1c] deref+8 addr=0x80e4e008 str="c3000.smd"
+    [ESP+0x38] deref+8 addr=0x80e4e008 str="c3000.smd"
+    [ESP+0x7c] deref+8 addr=0x80e4e008 str="c3000.smd"
+    [ESP+0x98] deref+8 addr=0x80e4e008 str="c3000.smd"
+    [ESP+0xa8] deref+8 addr=0x80e4e008 str="c3000.smd"
+    [ESP+0xf0] deref+8 addr=0x80e4e008 str="c3000.smd"
+    [ESP+0x10c] deref+8 addr=0x80e4e008 str="c3000.smd"
+    [ESP+0x130] deref+8 addr=0x80e4e008 str="c3000.smd"
+    [ESP+0x234] deref addr=0x7f138d48 str="c3000.smd"
+    [ESP+0x24c] deref addr=0x7de35da0 str="res760/c3000.smd"
+    [ESP+0x254] deref addr=0x7de35f40 str="res760/c3000.smd"
+    [ESP+0x25c] deref addr=0x7de35f20 str="res760/c3000.smd"
+    [ESP+0x278] deref+8 addr=0x80e4e008 str="c3000.smd"
+    [ESP+0x288] deref addr=0x7f138d00 str="c3000.smd"
+    [ESP+0x318] deref+8 addr=0x80e4e008 str="c3000.smd"
+    [ESP+0x408] deref addr=0x7f138cd0 str="c3000.smd"
+    [ESP+0x41c] deref addr=0x7de35da0 str="res760/c3000.smd"
+    [ESP+0x56c] deref2 addr=0x197a8c→0x7f138bf8 str="c3000.smd"
+    [ESP+0x618] deref2 addr=0x1974ec→0x7f138d00 str="c3000.smd"
+    [ESP+0x664] deref addr=0x7f138bf8 str="c3000.smd"
+    [ESP+0x668] deref2 addr=0x197a8c→0x7f138bf8 str="c3000.smd"
+    [ESP+0x67c] deref2 addr=0x7ca70034→0x7de36720 str="res760\c3000.smd"
+    [#0] 0x21e2605  (RVA: +1de2605)
+    [#1] 0x22ecba7  (RVA: +1eecba7)
+    [#2] 0x22ebae3  (RVA: +1eebae3)
+    [#3] 0x1ed0aae  (RVA: +1ad0aae)
+    [#4] 0x1ee28cc  (RVA: +1ae28cc)
+    [#5] 0x1aeba6b  (RVA: +16eba6b)
+    [#6] 0x1aef136  (RVA: +16ef136)
+    [#7] 0x1add5d8  (RVA: +16dd5d8)
+    [#8] 0x18f6d15  (RVA: +14f6d15)
+    [#9] 0x1adcf16  (RVA: +16dcf16)
+
+[+] SSKF READ #3 detected! (512 bytes, 9 frames)
+    [#0] 0x21e2605  (RVA: +1de2605)
+    [#1] 0x22ec93e  (RVA: +1eec93e)
+    [#2] 0x22ebae3  (RVA: +1eebae3)
+    [#3] 0x1ed0aae  (RVA: +1ad0aae)
+    [#4] 0x1ee28cc  (RVA: +1ae28cc)
+    [#5] 0x1aeba6b  (RVA: +16eba6b)
+    [#6] 0x1aef136  (RVA: +16ef136)
+    [#7] 0x1add5d8  (RVA: +16dd5d8)
+    [#8] 0x18f6d15  (RVA: +14f6d15)
+
+[+] SSKF READ #4 detected! (148480 bytes, 10 frames)
+    [#0] 0x21e2605  (RVA: +1de2605)
+    [#1] 0x22ecba7  (RVA: +1eecba7)
+    [#2] 0x22ebae3  (RVA: +1eebae3)
+    [#3] 0x1ed0aae  (RVA: +1ad0aae)
+    [#4] 0x1ee28cc  (RVA: +1ae28cc)
+    [#5] 0x1aeba6b  (RVA: +16eba6b)
+    [#6] 0x1aef136  (RVA: +16ef136)
+    [#7] 0x1add5d8  (RVA: +16dd5d8)
+    [#8] 0x18f6d15  (RVA: +14f6d15)
+    [#9] 0x1adcf16  (RVA: +16dcf16)
+
+[+] SSKF READ #5 detected! (512 bytes, 9 frames)
+    [#0] 0x21e2605  (RVA: +1de2605)
+    [#1] 0x22ec93e  (RVA: +1eec93e)
+    [#2] 0x22ebae3  (RVA: +1eebae3)
+    [#3] 0x1ed0aae  (RVA: +1ad0aae)
+    [#4] 0x1ee28cc  (RVA: +1ae28cc)
+    [#5] 0x1aeba6b  (RVA: +16eba6b)
+    [#6] 0x1aef136  (RVA: +16ef136)
+    [#7] 0x1add5d8  (RVA: +16dd5d8)
+    [#8] 0x18f6d15  (RVA: +14f6d15)
+
+[*] Analyzing 5 SSKF capture(s)...
+[*] Direct callers with function entries: 11
+    [#0] ret=+1de2605 → entry=+1de25b0  (0x21e25b0)  hits=5 dist=85 [prologue]
+    [#1] ret=+1eec93e → entry=+1eec130  (0x22ec130)  hits=3 dist=2062 [prologue]
+    [#2] ret=+1eebae3 → entry=+1eeba30  (0x22eba30)  hits=5 dist=179 [prologue]
+    [#3] ret=+1ad0aae → entry=+1ad06b0  (0x1ed06b0)  hits=5 dist=1022 [prologue]
+    [#4] ret=+1ae28cc → entry=+1ae1f80  (0x1ee1f80)  hits=5 dist=2380 [prologue]
+    [#5] ret=+16eba6b → entry=+16e8e70  (0x1ae8e70)  hits=5 dist=11259 [prologue]
+    [#6] ret=+16ef136 → entry=+16ee240  (0x1aee240)  hits=5 dist=3830 [prologue]
+    [#7] ret=+16dd5d8 → entry=+16dd370  (0x1add370)  hits=5 dist=616 [prologue]
+    [#8] ret=+14f6d15 → entry=+14f67b0  (0x18f67b0)  hits=5 dist=1381 [prologue]
+    [#9] ret=+1eecba7 → entry=+1eec130  (0x22ec130)  hits=2 dist=2679 [prologue]
+    [#10] ret=+16dcf16 → entry=+16dcef0  (0x1adcef0)  hits=2 dist=38 [prologue]
+[*] Upper-level callers (skip direct ReadFile caller): 42
+    [#0] cap=1 level=1 ret=+1eec93e → entry=+1eec130  dist=2062
+    [#1] cap=1 level=2 ret=+1eebae3 → entry=+1eeba30  dist=179
+    [#2] cap=1 level=3 ret=+1ad0aae → entry=+1ad06b0  dist=1022
+    [#3] cap=1 level=4 ret=+1ae28cc → entry=+1ae1f80  dist=2380
+    [#4] cap=1 level=5 ret=+16eba6b → entry=+16e8e70  dist=11259
+    [#5] cap=1 level=6 ret=+16ef136 → entry=+16ee240  dist=3830
+    [#6] cap=1 level=7 ret=+16dd5d8 → entry=+16dd370  dist=616
+    [#7] cap=1 level=8 ret=+14f6d15 → entry=+14f67b0  dist=1381
+    [#8] cap=2 level=1 ret=+1eecba7 → entry=+1eec130  dist=2679
+    [#9] cap=2 level=2 ret=+1eebae3 → entry=+1eeba30  dist=179
+    [#10] cap=2 level=3 ret=+1ad0aae → entry=+1ad06b0  dist=1022
+    [#11] cap=2 level=4 ret=+1ae28cc → entry=+1ae1f80  dist=2380
+    [#12] cap=2 level=5 ret=+16eba6b → entry=+16e8e70  dist=11259
+    [#13] cap=2 level=6 ret=+16ef136 → entry=+16ee240  dist=3830
+    [#14] cap=2 level=7 ret=+16dd5d8 → entry=+16dd370  dist=616
+    [#15] cap=2 level=8 ret=+14f6d15 → entry=+14f67b0  dist=1381
+    [#16] cap=2 level=9 ret=+16dcf16 → entry=+16dcef0  dist=38
+    [#17] cap=3 level=1 ret=+1eec93e → entry=+1eec130  dist=2062
+    [#18] cap=3 level=2 ret=+1eebae3 → entry=+1eeba30  dist=179
+    [#19] cap=3 level=3 ret=+1ad0aae → entry=+1ad06b0  dist=1022
+    [#20] cap=3 level=4 ret=+1ae28cc → entry=+1ae1f80  dist=2380
+    [#21] cap=3 level=5 ret=+16eba6b → entry=+16e8e70  dist=11259
+    [#22] cap=3 level=6 ret=+16ef136 → entry=+16ee240  dist=3830
+    [#23] cap=3 level=7 ret=+16dd5d8 → entry=+16dd370  dist=616
+    [#24] cap=3 level=8 ret=+14f6d15 → entry=+14f67b0  dist=1381
+    [#25] cap=4 level=1 ret=+1eecba7 → entry=+1eec130  dist=2679
+    [#26] cap=4 level=2 ret=+1eebae3 → entry=+1eeba30  dist=179
+    [#27] cap=4 level=3 ret=+1ad0aae → entry=+1ad06b0  dist=1022
+    [#28] cap=4 level=4 ret=+1ae28cc → entry=+1ae1f80  dist=2380
+    [#29] cap=4 level=5 ret=+16eba6b → entry=+16e8e70  dist=11259
+    [#30] cap=4 level=6 ret=+16ef136 → entry=+16ee240  dist=3830
+    [#31] cap=4 level=7 ret=+16dd5d8 → entry=+16dd370  dist=616
+    [#32] cap=4 level=8 ret=+14f6d15 → entry=+14f67b0  dist=1381
+    [#33] cap=4 level=9 ret=+16dcf16 → entry=+16dcef0  dist=38
+    [#34] cap=5 level=1 ret=+1eec93e → entry=+1eec130  dist=2062
+    [#35] cap=5 level=2 ret=+1eebae3 → entry=+1eeba30  dist=179
+    [#36] cap=5 level=3 ret=+1ad0aae → entry=+1ad06b0  dist=1022
+    [#37] cap=5 level=4 ret=+1ae28cc → entry=+1ae1f80  dist=2380
+    [#38] cap=5 level=5 ret=+16eba6b → entry=+16e8e70  dist=11259
+    [#39] cap=5 level=6 ret=+16ef136 → entry=+16ee240  dist=3830
+    [#40] cap=5 level=7 ret=+16dd5d8 → entry=+16dd370  dist=616
+    [#41] cap=5 level=8 ret=+14f6d15 → entry=+14f67b0  dist=1381
+[*] Probe candidates: 9 (will try deepest first)
+    [probe #0] +16dcef0 (0x1adcef0) level=9 count=2
+    [probe #1] +14f67b0 (0x18f67b0) level=8 count=5
+    [probe #2] +16dd370 (0x1add370) level=7 count=5
+    [probe #3] +16ee240 (0x1aee240) level=6 count=5
+    [probe #4] +16e8e70 (0x1ae8e70) level=5 count=5
+    [probe #5] +1ae1f80 (0x1ee1f80) level=4 count=5
+    [probe #6] +1ad06b0 (0x1ed06b0) level=3 count=5
+    [probe #7] +1eeba30 (0x22eba30) level=2 count=5
+    [probe #8] +1eec130 (0x22ec130) level=1 count=5
+
+[PROBE] Trying #0: +16dcef0 (0x1adcef0) level=9
+    [protect] Page → rwx OK
+    [attach] Probe attached at 0x1adcef0
+[PROBE] ✗ #0 call #1 no SString
+[PROBE] ✗ #0 call #2 no SString
+[PROBE] ✗ #0 call #3 no SString
+    [protect] Page → rx restored
+
+[PROBE] Trying #1: +14f67b0 (0x18f67b0) level=8
+    [protect] Page → rwx OK
+    [attach] Probe attached at 0x18f67b0
+[PROBE] ✗ #1 call #1 no SString
+[PROBE] ✗ #1 call #2 no SString
+[PROBE] ✗ #1 call #3 no SString
+    [protect] Page → rx restored
+
+[PROBE] Trying #2: +16dd370 (0x1add370) level=7
+    [protect] Page → rwx OK
+    [attach] Probe attached at 0x1add370
+[PROBE] ✗ #2 call #1 no SString
+[PROBE] ✗ #2 call #2 no SString
+[PROBE] ✗ #2 call #3 no SString
+    [protect] Page → rx restored
+
+[PROBE] Trying #3: +16ee240 (0x1aee240) level=6
+    [protect] Page → rwx OK
+    [attach] Probe attached at 0x1aee240

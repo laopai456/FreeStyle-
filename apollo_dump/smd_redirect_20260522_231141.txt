@@ -1,0 +1,33 @@
+Log: D:\py\反编译\FreeStyle\apollo_dump\smd_redirect_20260522_231141.txt
+Attaching to PID 24568...
+[*] SMD v7 loaded.
+
+SMD redirect v7 (data capture). Commands:
+  cap <name>      — capture next load of this file
+  stop            — stop & save capture
+  caps            — list captured
+  r <src> <dst>   — redirect src -> dst
+  l | s | clear   — list / stats / clear
+  Ctrl+C          — exit
+
+  FILE: c3000.smd  (?)
+  FILE: i50125701_ms.smd  (?)
+  FILE: i50421161_MT.smd  (?)
+  FILE: i50421161_MT_upp01.smd  (?)
+  FILE: i50519681_MT.smd  (?)
+  FILE: i50519681_M_low01.smd  (?)
+  FILE: i50623611_M.smd  (?)
+  FILE: i51612121.smd  (?)
+  FILE: i51212851.smd  (?)
+  FILE: i50914671_MT.smd  (?)
+  FILE: i51313301_MT.smd  (?)
+  FILE: i50125711_ms.smd  (?)
+  FILE: i50421151_MT.smd  (?)
+  FILE: i50421151_M_upp01.smd  (?)
+  FILE: i50119441_M.smd  (?)
+  FILE: SMD_2209_lightning0002.smd  (?)
+  FILE: SMD_2209_lightning051.smd  (?)
+  FILE: i50125691_MS.smd  (?)
+  [CAP] capturing: i50125711_ms.smd
+
+Detaching...

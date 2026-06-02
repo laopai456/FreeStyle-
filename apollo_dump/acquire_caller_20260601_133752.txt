@@ -1,0 +1,152 @@
+[13:37:52.042] === AcquireSMD Caller Tracer === PID:4488 ===
+[13:37:52.042] SRC: 50125461  DST: 50125711
+[13:37:52.042] 策略: 采样模式，最多 50 次，限流 100ms/次
+[13:37:52.042] 风险: 游戏 .text hook，采样后建议立即 stop
+[13:37:52.042] 日志: D:\py\反编译\FreeStyle\apollo_dump\acquire_caller_20260601_133752.txt
+[13:37:52.042] 
+[13:37:53.255]   [setup] sprintf hook ready
+[13:37:53.256]   AcquireSMD caller tracer ready (sampling mode, max 50 samples)
+[13:37:53.256] 
+[13:37:53.256] 测试流程:
+[13:37:53.256] 1. 进房间 → 观察 AcquireSMD 调用栈
+[13:37:53.256] 2. 进练习场 → 关键：看 AcquireSMD 用的是哪个 ItemCode
+[13:37:53.256] 3. 如果看到 SRC_IC 的路径 → 调用栈会显示练习场专用路径
+[13:37:53.256] 4. 采样满 50 次或观察到关键信息后，建议 stop 或 quit
+[13:37:53.256] 
+[13:37:53.256] 命令: status | stop | quit
+[13:37:53.256] 
+[13:37:55.257]   [setup] AcquireSMD caller hook attached at 0x22eba30
+[13:38:02.059] [sprintf] #1 ic=800 phase=INJECTED
+[13:38:02.059] 
+[13:38:02.059] [PHASE] INJECTED -> ROOM_LOAD
+[13:38:02.059] 
+[13:38:02.059]   [setup] AcquireSMD hook ACTIVATED
+[13:38:02.059] [sprintf] #2 ic=801 phase=ROOM_LOAD
+[13:38:02.059] [sprintf] #3 ic=50421031 phase=ROOM_LOAD
+[13:38:02.060] [sprintf] #4 ic=50519561 phase=ROOM_LOAD
+[13:38:02.060] [sprintf] #5 ic=50623371 phase=ROOM_LOAD
+[13:38:02.061] [sprintf] #6 ic=50914721 phase=ROOM_LOAD
+[13:38:02.061] [sprintf] #7 ic=51514521 phase=ROOM_LOAD
+[13:38:02.062] [sprintf] #8 ic=50125461 <== SRC phase=ROOM_LOAD
+[13:38:02.062] [sprintf] #9 ic=51616261 phase=ROOM_LOAD
+[13:38:02.063] [sprintf] #10 ic=51213111 phase=ROOM_LOAD
+[13:38:02.250] [AcquireSMD] #1 (1/50) phase=ROOM_LOAD
+[13:38:02.250]        path: res707\c800.smd
+[13:38:02.250]        backtrace:
+[13:38:02.250]          [0] 0x1ed0aae(FreeStyle.exe+0x1ad0aae)
+[13:38:02.250]          [1] 0x22eba30(FreeStyle.exe+0x1eeba30)
+[13:38:02.250]          [2] 0x1ee28cc(FreeStyle.exe+0x1ae28cc)
+[13:38:02.250]          [3] 0x1b3c60c(FreeStyle.exe+0x173c60c)
+[13:38:02.250]          [4] 0x1b25986(FreeStyle.exe+0x1725986)
+[13:38:02.250]          [5] 0x18f6d15(FreeStyle.exe+0x14f6d15)
+[13:38:02.250]          [6] 0x1b23e84(FreeStyle.exe+0x1723e84)
+[13:38:02.250]          [7] 0x1844259(FreeStyle.exe+0x1444259)
+[13:38:02.250]          [8] 0x21d7b2d(FreeStyle.exe+0x1dd7b2d)
+[13:38:02.250]          [9] 0x18508bb(FreeStyle.exe+0x14508bb)
+[13:38:02.250]          [10] 0x2c923de(FreeStyle.exe+0x28923de)
+[13:38:02.250]          [11] 0x24bf002(FreeStyle.exe+0x20bf002)
+[13:38:02.250]          [12] 0x76087ba9(KERNEL32.DLL+0x17ba9)
+[13:38:02.250]          [13] 0x7771bd3b(ntdll.dll+0x6bd3b)
+[13:38:02.250]          [14] 0x7771bcbf(ntdll.dll+0x6bcbf)
+[13:38:02.261] [AcquireSMD] #2 (2/50) phase=ROOM_LOAD
+[13:38:02.261]        path: res707\c801.smd
+[13:38:02.261]        backtrace:
+[13:38:02.261]          [0] 0x1ed0aae(FreeStyle.exe+0x1ad0aae)
+[13:38:02.261]          [1] 0x22eba30(FreeStyle.exe+0x1eeba30)
+[13:38:02.261]          [2] 0x1ee28cc(FreeStyle.exe+0x1ae28cc)
+[13:38:02.261]          [3] 0x1b3c60c(FreeStyle.exe+0x173c60c)
+[13:38:02.262]          [4] 0x1b25986(FreeStyle.exe+0x1725986)
+[13:38:02.262]          [5] 0x18f6d15(FreeStyle.exe+0x14f6d15)
+[13:38:02.262]          [6] 0x1b23e84(FreeStyle.exe+0x1723e84)
+[13:38:02.262]          [7] 0x1844259(FreeStyle.exe+0x1444259)
+[13:38:02.262]          [8] 0x21d7b2d(FreeStyle.exe+0x1dd7b2d)
+[13:38:02.262]          [9] 0x18508bb(FreeStyle.exe+0x14508bb)
+[13:38:02.262]          [10] 0x2c923de(FreeStyle.exe+0x28923de)
+[13:38:02.262]          [11] 0x24bf002(FreeStyle.exe+0x20bf002)
+[13:38:02.262]          [12] 0x76087ba9(KERNEL32.DLL+0x17ba9)
+[13:38:02.262]          [13] 0x7771bd3b(ntdll.dll+0x6bd3b)
+[13:38:02.262]          [14] 0x7771bcbf(ntdll.dll+0x6bcbf)
+[13:38:10.115] [sprintf] #11 ic=800 phase=ROOM_LOAD
+[13:38:10.115] [sprintf] #12 ic=801 phase=ROOM_LOAD
+[13:38:10.115] [sprintf] #13 ic=50421031 phase=ROOM_LOAD
+[13:38:10.116] [sprintf] #14 ic=50519561 phase=ROOM_LOAD
+[13:38:10.117] [sprintf] #15 ic=50623371 phase=ROOM_LOAD
+[13:38:10.118] [sprintf] #16 ic=50914721 phase=ROOM_LOAD
+[13:38:10.118] [sprintf] #17 ic=51514521 phase=ROOM_LOAD
+[13:38:10.119] [sprintf] #18 ic=50125461 <== SRC phase=ROOM_LOAD
+[13:38:10.119] [sprintf] #19 ic=51616261 phase=ROOM_LOAD
+[13:38:10.120] [sprintf] #20 ic=51213111 phase=ROOM_LOAD
+[13:38:10.129] [AcquireSMD] #3 (3/50) phase=ROOM_LOAD
+[13:38:10.129]        path: res707\c800.smd
+[13:38:10.129]        backtrace:
+[13:38:10.129]          [0] 0x1ed0aae(FreeStyle.exe+0x1ad0aae)
+[13:38:10.129]          [1] 0x22eba30(FreeStyle.exe+0x1eeba30)
+[13:38:10.129]          [2] 0x1ee28cc(FreeStyle.exe+0x1ae28cc)
+[13:38:10.129]          [3] 0x1d2978d(FreeStyle.exe+0x192978d)
+[13:38:10.129]          [4] 0x19065d9(FreeStyle.exe+0x15065d9)
+[13:38:10.129]          [5] 0x1d1d1c3(FreeStyle.exe+0x191d1c3)
+[13:38:10.129]          [6] 0x18f6d15(FreeStyle.exe+0x14f6d15)
+[13:38:10.129]          [7] 0x1d19302(FreeStyle.exe+0x1919302)
+[13:38:10.129]          [8] 0x1844259(FreeStyle.exe+0x1444259)
+[13:38:10.129]          [9] 0x21d7b2d(FreeStyle.exe+0x1dd7b2d)
+[13:38:10.129]          [10] 0x18508bb(FreeStyle.exe+0x14508bb)
+[13:38:10.129]          [11] 0x2c923de(FreeStyle.exe+0x28923de)
+[13:38:10.129]          [12] 0x24bf002(FreeStyle.exe+0x20bf002)
+[13:38:10.129]          [13] 0x76087ba9(KERNEL32.DLL+0x17ba9)
+[13:38:10.129]          [14] 0x7771bd3b(ntdll.dll+0x6bd3b)
+[13:38:10.225] [sprintf] #21 ic=800 phase=ROOM_LOAD
+[13:38:10.225] [sprintf] #22 ic=801 phase=ROOM_LOAD
+[13:38:10.225] [sprintf] #23 ic=50421031 phase=ROOM_LOAD
+[13:38:10.227] [sprintf] #24 ic=50519561 phase=ROOM_LOAD
+[13:38:10.228] [sprintf] #25 ic=50623371 phase=ROOM_LOAD
+[13:38:10.228] [sprintf] #26 ic=50914721 phase=ROOM_LOAD
+[13:38:10.229] [sprintf] #27 ic=51514521 phase=ROOM_LOAD
+[13:38:10.230] [sprintf] #28 ic=50125461 <== SRC phase=ROOM_LOAD
+[13:38:10.230] [sprintf] #29 ic=51616261 phase=ROOM_LOAD
+[13:38:10.231] [sprintf] #30 ic=51213111 phase=ROOM_LOAD
+[13:38:10.239] [AcquireSMD] #4 (4/50) phase=ROOM_LOAD
+[13:38:10.239]        path: res707\c800.smd
+[13:38:10.239]        backtrace:
+[13:38:10.239]          [0] 0x1ed0aae(FreeStyle.exe+0x1ad0aae)
+[13:38:10.239]          [1] 0x22eba30(FreeStyle.exe+0x1eeba30)
+[13:38:10.239]          [2] 0x1ee28cc(FreeStyle.exe+0x1ae28cc)
+[13:38:10.239]          [3] 0x1d2978d(FreeStyle.exe+0x192978d)
+[13:38:10.239]          [4] 0x19065d9(FreeStyle.exe+0x15065d9)
+[13:38:10.240]          [5] 0x1d1d1c3(FreeStyle.exe+0x191d1c3)
+[13:38:10.240]          [6] 0x18f6d15(FreeStyle.exe+0x14f6d15)
+[13:38:10.240]          [7] 0x1d19302(FreeStyle.exe+0x1919302)
+[13:38:10.240]          [8] 0x1844259(FreeStyle.exe+0x1444259)
+[13:38:10.240]          [9] 0x21d7b2d(FreeStyle.exe+0x1dd7b2d)
+[13:38:10.240]          [10] 0x18508bb(FreeStyle.exe+0x14508bb)
+[13:38:10.240]          [11] 0x2c923de(FreeStyle.exe+0x28923de)
+[13:38:10.240]          [12] 0x24bf002(FreeStyle.exe+0x20bf002)
+[13:38:10.240]          [13] 0x76087ba9(KERNEL32.DLL+0x17ba9)
+[13:38:10.240]          [14] 0x7771bd3b(ntdll.dll+0x6bd3b)
+[13:38:10.307] [sprintf] #31 ic=800 phase=ROOM_LOAD
+[13:38:10.307] [sprintf] #32 ic=801 phase=ROOM_LOAD
+[13:38:10.308] [sprintf] #33 ic=50421031 phase=ROOM_LOAD
+[13:38:10.309] [sprintf] #34 ic=50519561 phase=ROOM_LOAD
+[13:38:10.310] [sprintf] #35 ic=50623371 phase=ROOM_LOAD
+[13:38:10.310] [sprintf] #36 ic=50914721 phase=ROOM_LOAD
+[13:38:10.311] [sprintf] #37 ic=51514521 phase=ROOM_LOAD
+[13:38:10.311] [sprintf] #38 ic=50125461 <== SRC phase=ROOM_LOAD
+[13:38:10.312] [sprintf] #39 ic=51616261 phase=ROOM_LOAD
+[13:38:10.313] [sprintf] #40 ic=51213111 phase=ROOM_LOAD
+[13:38:10.345] [AcquireSMD] #5 (5/50) phase=ROOM_LOAD
+[13:38:10.345]        path: res767\i50519561_F_low01.smd
+[13:38:10.345]        backtrace:
+[13:38:10.345]          [0] 0x1ed0aae(FreeStyle.exe+0x1ad0aae)
+[13:38:10.345]          [1] 0x22eba30(FreeStyle.exe+0x1eeba30)
+[13:38:10.345]          [2] 0x1ee28cc(FreeStyle.exe+0x1ae28cc)
+[13:38:10.345]          [3] 0x1d2978d(FreeStyle.exe+0x192978d)
+[13:38:10.345]          [4] 0x19065d9(FreeStyle.exe+0x15065d9)
+[13:38:10.345]          [5] 0x1d1d1c3(FreeStyle.exe+0x191d1c3)
+[13:38:10.345]          [6] 0x18f6d15(FreeStyle.exe+0x14f6d15)
+[13:38:10.345]          [7] 0x1d19302(FreeStyle.exe+0x1919302)
+[13:38:10.345]          [8] 0x1844259(FreeStyle.exe+0x1444259)
+[13:38:10.345]          [9] 0x21d7b2d(FreeStyle.exe+0x1dd7b2d)
+[13:38:10.345]          [10] 0x18508bb(FreeStyle.exe+0x14508bb)
+[13:38:10.345]          [11] 0x2c923de(FreeStyle.exe+0x28923de)
+[13:38:10.345]          [12] 0x24bf002(FreeStyle.exe+0x20bf002)
+[13:38:10.345]          [13] 0x76087ba9(KERNEL32.DLL+0x17ba9)
+[13:38:10.345]          [14] 0x7771bd3b(ntdll.dll+0x6bd3b)

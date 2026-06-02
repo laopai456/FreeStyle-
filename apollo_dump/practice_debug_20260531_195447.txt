@@ -1,0 +1,45 @@
+[19:54:47.401] === Practice Debug Script ===
+[19:54:47.401] PID: 25992
+[19:54:47.401] SRC: 50125461  DST: 50125711
+[19:54:47.401] Log: D:\py\反编译\FreeStyle\apollo_dump\practice_debug_20260531_195447.txt
+[19:54:47.401] 
+[19:54:48.198]   [setup] sprintf hook (monitor only)
+[19:54:48.198]   [setup] LoadItemFile hook DISABLED (would trigger Apollo)
+[19:54:48.198]   [setup] CreateFileA/W hooks
+[19:54:48.198]   [ready] SRC=50125461 DST=50125711
+[19:54:48.199] 
+[19:54:48.199] Instructions:
+[19:54:48.199]   1. Enter room -> observe sprintf/LoadItemFile
+[19:54:48.199]   2. Enter practice -> observe what ItemCode is used
+[19:54:48.199]   3. Exit practice -> observe changes
+[19:54:48.199] 
+[19:54:48.199] Commands: status | phase | quit
+[19:54:48.199] 
+[19:54:52.148] [sprintf] #1 ic=3001 fmt="customize\item\c%d.xml" ret=0x1ee23b6 (FreeStyle.exe+0x1ae23b6) phase=INJECTED
+[19:54:52.148] 
+[19:54:52.148] [phase] INJECTED -> ROOM_LOAD
+[19:54:52.148] 
+[19:54:52.148] [sprintf] #2 ic=50125461 <== SRC_IC fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=ROOM_LOAD
+[19:54:52.148] 
+[19:54:52.148] [phase] ROOM_LOAD -> PRACTICE_LOAD
+[19:54:52.148] 
+[19:54:52.148] [sprintf] #3 ic=50420791 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:54:52.149] [sprintf] #4 ic=50519331 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:54:52.149] [sprintf] #5 ic=50622961 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:54:52.149] [sprintf] #6 ic=51612121 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:54:52.150] [sprintf] #7 ic=51514321 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:54:52.150] [sprintf] #8 ic=51212851 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:54:52.150] [sprintf] #9 ic=50914671 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:54:52.151] [sprintf] #10 ic=51113901 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:54:52.151] [sprintf] #11 ic=51012781 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:55:00.256] [sprintf] #12 ic=3001 fmt="customize\item\c%d.xml" ret=0x1ee23b6 (FreeStyle.exe+0x1ae23b6) phase=PRACTICE_LOAD
+[19:55:00.256] [sprintf] #13 ic=50125461 <== SRC_IC fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:55:00.257] [sprintf] #14 ic=50420791 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:55:00.257] [sprintf] #15 ic=50519331 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:55:00.257] [sprintf] #16 ic=50622961 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:55:00.257] [sprintf] #17 ic=51612121 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:55:00.257] [sprintf] #18 ic=51514321 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:55:00.258] [sprintf] #19 ic=51212851 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:55:00.258] [sprintf] #20 ic=50914671 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:55:00.259] [sprintf] #21 ic=51113901 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD
+[19:55:00.259] [sprintf] #22 ic=51012781 fmt="customize\item\i%d.xml" ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) phase=PRACTICE_LOAD

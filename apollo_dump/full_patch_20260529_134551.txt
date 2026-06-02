@@ -1,0 +1,109 @@
+[13:45:51] === 全面内存替换 === PID:10276 ===
+[13:45:51] 50125461(美丽梦想 pak767) → 50125711(紫色超赛 pak768)
+[13:45:51] 日志: D:\py\反编译\FreeStyle\apollo_dump\full_patch_20260529_134551.txt
+[13:45:53]   堆区域: 4243 个
+[13:45:54]   [INT] 0x220ddef0 ctx: 0f 00 00 00 00 00 00 00 8f db fc 02 70 6f d7 28 fc 6f d7 28 fc 6f d7 28 
+[13:45:54]   [INT] 0x28544d58 ctx: a0 70 35 28 98 ed 34 28 8f db fc 02 4f 46 00 00 aa 0f 4f 49 00 30 05 88 
+[13:45:55]   [INT] 0x7b75b5c4 ctx: 00 00 00 00 00 00 00 00 8f db fc 02 ff ff ff ff ff ff ff ff ff ff ff ff 
+[13:45:55]   [INT] 0x7cab1dc8 ctx: 00 00 00 00 00 00 00 00 8f db fc 02 01 00 00 00 00 00 00 00 00 00 00 00 
+[13:45:55]   [INT] 0x7cab1fd0 ctx: 00 00 00 00 00 00 00 00 8f db fc 02 01 00 00 00 00 00 00 00 00 00 00 00 
+[13:45:55]   [INT] 0x7cab22a0 ctx: 00 00 00 00 00 00 00 00 8f db fc 02 01 00 00 00 00 00 00 00 00 00 00 00 
+[13:45:55]   [INT] 0x7e69e7d4 ctx: 00 00 00 00 00 00 00 00 8f db fc 02 f0 35 ce 6e 0a 00 00 00 0a 00 00 00 
+[13:45:55]   [INT] 0x805ce248 ctx: 00 00 00 00 00 00 00 00 8f db fc 02 01 00 00 00 00 00 00 00 00 00 00 00 
+[13:45:55]   [INT] 0x835d3ba0 ctx: 10 16 42 28 01 01 00 00 8f db fc 02 02 00 00 00 00 01 00 00 0e 00 00 00 
+[13:45:55]   [INT] 0x85eb8cca ctx: 10 00 00 00 00 00 00 00 8f db fc 02 01 00 00 00 00 01 00 00 00 00 00 00 
+[13:45:55]   [INT] 0x87f682b4 ctx: 00 00 00 00 00 00 00 00 8f db fc 02 ff ff ff ff ff ff ff ff ff ff ff ff 
+[13:45:55]   [INT] 0x8846b094 ctx: 00 00 00 00 00 00 00 00 8f db fc 02 ff ff ff ff ff ff ff ff ff ff ff ff 
+[13:45:55]   [INT] 0x88a0b74c ctx: 00 00 00 00 00 00 00 00 8f db fc 02 ff ff ff ff ff ff ff ff ff ff ff ff 
+[13:45:55]   INT替换: 13 处
+[13:45:56]   [ASCII] 0x220ddf04 before: "po?黲?黲?"
+[13:45:56]   [ASCII] 0x2854f590 before: "?MV颐堌鵗(X鮐(5012"
+[13:45:56]   [ASCII] 0x28b0cb97 before: "  <mesh>res767\i5012"
+[13:45:56]   [ASCII] 0x28b0cbca before: "texture>res767\i5012"
+[13:45:56]   [ASCII] 0x28d76f70 before: ""
+[13:45:56]   [ASCII] 0x49b93a89 before: "g"
+[13:45:57]   [ASCII] 0x6cef2151 before: ""
+[13:45:57]   [ASCII] 0x6cef21b1 before: ""
+[13:45:57]   [ASCII] 0x6cef2331 before: ""
+[13:45:57]   [ASCII] 0x6cef2371 before: ""
+[13:45:57]   [ASCII] 0x6cef2391 before: ""
+[13:45:57]   [ASCII] 0x6cef23b1 before: ""
+[13:45:57]   [ASCII] 0x6cef23d1 before: ""
+[13:45:57]   [ASCII] 0x6cef23f1 before: ""
+[13:45:57]   [ASCII] 0x6cef2491 before: ""
+[13:45:57]   [ASCII] 0x6cef2511 before: ""
+[13:45:57]   [ASCII] 0x6eafa9f1 before: "00.png"
+[13:45:57]   [ASCII] 0x6ecd1958 before: "/%G"
+[13:45:57]   [ASCII] 0x6ecd1cb8 before: "?"
+[13:45:57]   [ASCII] 0x6ece35f1 before: "d"
+[13:45:57]   [ASCII] 0x7a37ec2f before: ""
+[13:45:57]   [ASCII] 0x7b0cce3f before: ""
+[13:45:57]   [ASCII] 0x7b453a98 before: "W!訟"
+[13:45:57]   [ASCII] 0x7b453cf8 before: "?A"
+[13:45:57]   [ASCII] 0x7b459531 before: "md"
+[13:45:57]   [ASCII] 0x7b459551 before: ""
+[13:45:57]   [ASCII] 0x7b459651 before: ""
+[13:45:57]   [ASCII] 0x7b459671 before: ""
+[13:45:57]   [ASCII] 0x7b459691 before: "psd"
+[13:45:57]   [ASCII] 0x7b4597b1 before: ""
+[13:45:57]   [ASCII] 0x7b459911 before: ""
+[13:45:57]   [ASCII] 0x7b459991 before: ""
+[13:45:57]   [ASCII] 0x7b4599b1 before: ""
+[13:45:57]   [ASCII] 0x7b459ab1 before: ""
+[13:45:57]   [ASCII] 0x7bd92159 before: "L"
+[13:45:57]   [ASCII] 0x7bd92369 before: "L"
+[13:45:57]   [ASCII] 0x7bd92789 before: "L"
+[13:45:57]   [ASCII] 0x7bd927e1 before: "L"
+[13:45:57]   [ASCII] 0x7bd92839 before: "M"
+[13:45:57]   [ASCII] 0x7bd929f1 before: "－M"
+[13:45:57]   [ASCII] 0x7bdb2551 before: "?"
+[13:45:57]   [ASCII] 0x7bdb2d39 before: "?"
+[13:45:57]   [ASCII] 0x7d00d590 before: "稖`LT
+"
+[13:45:57]   [ASCII] 0x7d00d810 before: "?Lg"
+[13:45:57]   [ASCII] 0x80998c37 before: ""
+[13:45:57]   [ASCII] 0x8211c019 before: "統Y?"
+[13:45:57]   [ASCII] 0x8211ed41 before: ""
+[13:45:57]   ASCII替换: 47 处
+[13:45:57]   [UTF16] 0x76810f8
+[13:45:57]   [UTF16] 0x768115c
+[13:45:57]   [UTF16] 0x7681290
+[13:45:57]   [UTF16] 0x76812f6
+[13:45:57]   [UTF16] 0xe618e7a
+[13:45:57]   [UTF16] 0xe618ede
+[13:45:57]   [UTF16] 0xe619012
+[13:45:57]   [UTF16] 0xe619078
+[13:45:57]   [UTF16] 0xe924be6
+[13:45:57]   [UTF16] 0xe924c4a
+[13:45:57]   [UTF16] 0xe924d7e
+[13:45:57]   [UTF16] 0xe924de4
+[13:45:57]   [UTF16] 0xed0a580
+[13:45:57]   [UTF16] 0xed0a730
+[13:45:57]   [UTF16] 0xed0a770
+[13:45:57]   [UTF16] 0xed0a880
+[13:45:57]   [UTF16] 0xed0a8c0
+[13:45:57]   [UTF16] 0xed0a9d0
+[13:45:57]   [UTF16] 0xed0aa10
+[13:45:57]   [UTF16] 0xed0aa90
+[13:45:57]   [UTF16] 0xed0aad0
+[13:45:57]   [UTF16] 0xed0abe0
+[13:45:57]   [UTF16] 0xed0ac20
+[13:45:57]   [UTF16] 0xed0aca0
+[13:45:57]   [UTF16] 0xed0ace0
+[13:45:57]   [UTF16] 0xed0ad60
+[13:45:57]   [UTF16] 0xed0adb0
+[13:45:58]   UTF-16替换: 27 处
+[13:45:58]   [PAK路径] 0x28b0cb8f "esh>res767\i50125711_Fsc.smd</mesh>
+   "
+[13:45:58]   [PAK路径] 0x28b0cbc2 "ure>res767\i50125711_F.png</texture>
+  "
+[13:45:59]   PAK路径替换: 2 处
+[13:45:59] 
+[13:45:59] === 替换完成 ===
+[13:45:59]   INT:   13 处
+[13:45:59]   ASCII: 47 处
+[13:45:59]   UTF16: 27 处
+[13:45:59]   PAK:   2 处
+[13:45:59]   总计:  89 处
+[13:45:59] 
+[13:45:59] 现在可以进房间了。脚本将自动退出。

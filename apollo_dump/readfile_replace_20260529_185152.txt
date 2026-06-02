@@ -1,0 +1,30 @@
+[18:51:52] === ReadFile Buffer 替换 === PID:17236 ===
+[18:51:52] 策略: 替换SSKF header(512B) + mesh(尽量)
+[18:51:52] 目标: i50125461_FN.smd → i50125711_FN.smd
+[18:51:52] Header: 512B, Mesh: 269752B
+[18:51:52] 日志: D:\py\反编译\FreeStyle\apollo_dump\readfile_replace_20260529_185152.txt
+[18:51:53]   [错误] 读header文件失败: Error: No such file or directory
+[18:51:53]   [错误] 读mesh文件失败: Error: No such file or directory
+[18:51:53]   ReadFile buffer替换就绪. 进房间.
+[18:51:53] 
+[18:51:53] 进房间触发角色加载。
+[18:51:53] 命令: status | quit
+[18:51:53] 
+[18:52:08]   [SSKF #1] "c800.smd" (512B)
+[18:52:08]   [SSKF #2] "c800.smd" (78848B)
+[18:52:08]   [SSKF #3] "c801.smd" (512B)
+[18:52:08]   [SSKF #4] "c801.smd" (80896B)
+[18:52:08]   [SSKF #5] "i50421031_FN.smd" (512B)
+[18:52:08]   [SSKF #6] "i50421031_FN.smd" (51712B)
+[18:52:08]   [SSKF #7] "i50421031_FN_upp01.smd" (512B)
+[18:52:08]   [SSKF #8] "i50421031_FN_upp01.smd" (60928B)
+[18:52:08]   [SSKF #9] "i50519561_FN.smd" (512B)
+[18:52:08]   [SSKF #10] "i50519561_FN.smd" (94208B)
+[18:52:08]   [SSKF #11] "i50519561_F_low01.smd" (512B)
+[18:52:08]   [SSKF #12] "i50519561_F_low01.smd" (16384B)
+[18:52:08]   [SSKF #13] "i50623371_F.smd" (512B)
+[18:52:08]   [SSKF #14] "i50623371_F.smd" (118272B)
+[18:52:08]   [SSKF #15] "i50914461_F.smd" (512B)
+[18:52:08]   [目标SSKF] "i50125461_FN.smd" (512B)
+[18:52:08]   [目标SSKF] "i50125461_FN.smd" (100864B)
+[18:52:18]   {"totalSSKF":36,"patches":0,"state":"idle"}

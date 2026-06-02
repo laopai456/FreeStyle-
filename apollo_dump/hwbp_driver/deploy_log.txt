@@ -1,0 +1,16 @@
+﻿无法打开启动配置数据存储。
+找不到请求的系统设备。
+Root "受信任的根证书颁发机构"
+签名与公钥匹配
+证书 "HwBpDriverTest" 添加到存储。
+CertUtil: -addstore 命令成功完成。
+TrustedPublisher "受信任的发布者"
+签名与公钥匹配
+证书 "HwBpDriverTest" 添加到存储。
+CertUtil: -addstore 命令成功完成。
+[SC] OpenService 失败 1060:
+
+指定的服务未安装。
+
+[SC] CreateService 成功
+DONE

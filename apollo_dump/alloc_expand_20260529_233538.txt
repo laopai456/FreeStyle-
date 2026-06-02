@@ -1,0 +1,41 @@
+[23:35:38] === malloc扩展模式v4 === PID:14240 ===
+[23:35:38] 策略: malloc扩大 + MSVCR100 fread数据替换
+[23:35:38] 目标: i50125461_FN.smd(美丽梦想发型) → i50125711_FN.smd(紫色超赛发型)
+[23:35:38] 日志: D:\py\反编译\FreeStyle\apollo_dump\alloc_expand_20260529_233538.txt
+[23:35:39]   [步骤] JS开始执行
+[23:35:39]   [步骤] ApolloCT.Dll base=0x67f0000 size=7045120
+[23:35:39]   [步骤] ApolloCT异常接管已注册
+[23:35:39]   [步骤] CRT函数OK
+[23:35:39]   目标加载: 270264B/270264B magic=SSKF name=i50125711_FN.smd
+[23:35:39]   [步骤] 目标文件加载完成
+[23:35:39]   [步骤] MSVCR100 malloc=0x790a0233
+[23:35:39]   [步骤] msvcrt malloc=0x75ae8290
+[23:35:39]   [步骤] MSVCR100 operator new=0x790a232b
+[23:35:39]   [步骤] MSVCR100 fread=0x790b2c24
+[23:35:39]   v4就绪: malloc扩大+MSVCR100 fread数据替换
+[23:35:39] 
+[23:35:39] 进房间触发角色加载。
+[23:35:39] 命令: status | quit
+[23:35:39] 
+[23:35:44]   [错误] ExceptionHandler: Error: expected an integer
+[23:35:45]   [SSKF #1] "c800.smd" read=512B req=512B buf=0x4ea9d1c8
+[23:35:45]   [SSKF #2] "c800.smd" read=78848B req=78848B buf=0x8179a010
+[23:35:45]   [SSKF #3] "c801.smd" read=512B req=512B buf=0x4ea9d1c8
+[23:35:45]   [SSKF #4] "c801.smd" read=80896B req=80896B buf=0x8179a010
+[23:35:45]   [SSKF #5] "i50421031_FN.smd" read=512B req=512B buf=0x4ea9a1b0
+[23:35:45]   [SSKF #6] "i50421031_FN.smd" read=51712B req=51712B buf=0x4b1a8018
+[23:35:45]   [SSKF #7] "i50421031_FN_upp01.smd" read=512B req=512B buf=0x4ea9a1b0
+[23:35:45]   [SSKF #8] "i50421031_FN_upp01.smd" read=60928B req=60928B buf=0x7a9c7008
+[23:35:45]   [SSKF #9] "i50519561_FN.smd" read=512B req=512B buf=0x4ea9e1d0
+[23:35:45]   [SSKF #10] "i50519561_FN.smd" read=94208B req=94208B buf=0x8179a010
+[23:35:45]   [SSKF #11] "i50519561_F_low01.smd" read=512B req=512B buf=0x4ea9e1d0
+[23:35:45]   [SSKF #12] "i50519561_F_low01.smd" read=16384B req=16384B buf=0x4ad7a018
+[23:35:45]   [SSKF #13] "i50623371_F.smd" read=512B req=512B buf=0x4ea9e1d0
+[23:35:45]   [SSKF #14] "i50623371_F.smd" read=118272B req=118272B buf=0x87a54bc0
+[23:35:45]   [SSKF #15] "i50914461_F.smd" read=512B req=512B buf=0x4ea9e1d0
+[23:35:45]   [Header替换] → i50125711_FN.smd
+[23:35:45]   [malloc扩大] 101095B → 270264B (via MSVCR100 new)
+[23:35:45]   [malloc返回] buf=0x80f5d010 size=270264
+[23:35:45]   [fread目标] buf=0x80f5d010 req=101094B (size=1*count=101094)
+[23:35:45]   [ReadFile第二次] read=100864B req=100864B buf=0x80f5d010
+[23:35:45]   [fread替换] 返回101094B→270264B buf=0x80f5d010 name="i50125711_FN.smd"

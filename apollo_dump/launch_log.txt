@@ -1,0 +1,33 @@
+[20:10:29] ============================================================
+[20:10:29]   APOLLO Killer + Auto-Login (Keyboard Edition)
+[20:10:29] ============================================================
+[20:10:30] PID=30672 launched
+[20:10:31]   CRC#1 @ 0x691A3C54: orig=83ecfc
+[20:10:31]   CRC#2 @ 0x691BE222: orig=83ecd4
+[20:10:31]   CRC patched OK!
+[20:10:31] 
+[20:10:31] Starting Frida early (before DirectInput init)...
+[20:10:32]   Frida attach failed: [Errno 2] No such file or directory: 'D:\\py\\反编译\\FreeStyle\\frida_monitor.js'
+[20:10:32]   Frida all scripts loaded!
+[20:10:32] 
+[20:10:32] Waiting for login window...
+[20:10:38] Game window found (hwnd=0x00450C6C)
+[20:10:38] Waiting for loading screen to finish...
+[20:10:48]   ...loading (10s, stable=1s)
+[20:10:52] Screen stable 5s, loading done!
+[20:10:52] Waiting for login screen to appear...
+[20:10:55] 
+[20:10:55] ==================================================
+[20:10:55]   Pre-fill password
+[20:10:55] ==================================================
+[20:10:55]   Password filled: '880234dan'
+[20:10:55] 
+[20:10:55]   >>> 请在游戏窗口里手动点登录 <<<
+[20:10:55] Waiting for login to complete (15s)...
+[20:11:00]   ... waiting (OUT=0 IN=0)
+[20:11:05]   ... waiting (OUT=0 IN=0)
+[20:11:10]   ... waiting (OUT=0 IN=0)
+[20:11:10] 
+Captured: OUT=0 IN=0
+[20:11:10] Switching to interactive monitor UI...
+[20:11:10] Frida session not available, can't start UI

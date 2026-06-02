@@ -1,0 +1,80 @@
+[12:58:51] === Phase 3: 调用链追溯 === PID:19936 ===
+[12:58:51] 日志: D:\py\反编译\FreeStyle\apollo_dump\equip_trace_20260529_125851.txt
+[12:58:52]   Hooked DynamicCreate1 @ 0x2299730
+[12:58:52]   Hooked DynamicCreate2 @ 0x22f27b0
+[12:58:52]   Callstack tracer ready. Load character to capture call chain.
+[12:58:52] 
+[12:58:52] Hook已激活。触发角色加载（进房间/换频道）来捕获调用链。
+[12:58:52] 命令: save | quit
+[12:58:52] 
+[12:59:02]   [CALL] DynamicCreate1 ret=RVA:0x1efa3a0
+[12:59:02]     eax=0x198a70 stack[:8]=['0x22fa3a0', '0xa16027e5', '0x85a77088', '0x80f88f70', '0x0', '0x5bd', '0x0', '0x6ecce010']
+[12:59:02]     调用栈:
+[12:59:02]       #0 RVA:0x1efa3a0 8b 4d c4 e8 90 f3 f9 ff 
+[12:59:02]       #1 RVA:0x1e99730 d9 1d 0c 36 a1 02 5d c3 
+[12:59:02]       #2 RVA:0x1acc919 ff ff ff e8 57 da 42 00 
+[12:59:02]       #3 RVA:0x171975a 8b 4d b4 e8 86 31 3b 00 
+[12:59:02]       #4 RVA:0x171af60 93 ff ff e8 20 e6 ff ff 
+[12:59:02]       #5 RVA:0x14456cb 8b 82 54 01 00 00 ff d0 
+[12:59:02]       #6 RVA:0x1444186 8b 4d 98 e8 5a 13 00 00 
+[12:59:02]       #7 RVA:0x1dd7b2d 8b 4d f8 8b 42 0c ff d0 
+[12:59:02]       #8 RVA:0x14508bb 8b 4d f0 8b 42 14 ff d0 
+[12:59:02]       #9 RVA:0x28923de f1 b1 ad e8 92 e4 bb fe 
+[12:59:02]       #10 RVA:0x20bf002 00 40 00 e8 5e e5 3f ff 
+[12:59:02]       #11 RVA:0x76507ba9 ff 15 30 22 97 76 ff d6 
+[12:59:02]       #12 RVA:0x77a7bd3b f4 77 8b d7 33 c9 ff d6 
+[12:59:02]       #13 RVA:0x77a7bcbf 8b 4d 08 e8 51 00 00 00 
+[12:59:03]   [CALL] DynamicCreate1 ret=RVA:0x1efa3a0
+[12:59:03]     eax=0x19b940 stack[:8]=['0x22fa3a0', '0xa16014d5', '0x85a707b0', '0x82ced8c8', '0x82ced9e0', '0x64', '0x980699', '0x9f62330']
+[12:59:03]     调用栈:
+[12:59:03]       #0 RVA:0x1efa3a0 8b 4d c4 e8 90 f3 f9 ff 
+[12:59:03]       #1 RVA:0x1e99730 d9 1d 0c 36 a1 02 5d c3 
+[12:59:03]       #2 RVA:0x1acc919 ff ff ff e8 57 da 42 00 
+[12:59:03]       #3 RVA:0x17a688 df ff ff e8 58 22 95 01 
+[12:59:03]       #4 RVA:0x172bf9 de ff ff e8 b7 78 00 00 
+[12:59:03]       #5 RVA:0x14456cb 8b 82 54 01 00 00 ff d0 
+[12:59:03]       #6 RVA:0x1444186 8b 4d 98 e8 5a 13 00 00 
+[12:59:03]       #7 RVA:0x1dd7b2d 8b 4d f8 8b 42 0c ff d0 
+[12:59:03]       #8 RVA:0x14508bb 8b 4d f0 8b 42 14 ff d0 
+[12:59:03]       #9 RVA:0x28923de f1 b1 ad e8 92 e4 bb fe 
+[12:59:03]       #10 RVA:0x20bf002 00 40 00 e8 5e e5 3f ff 
+[12:59:03]       #11 RVA:0x76507ba9 ff 15 30 22 97 76 ff d6 
+[12:59:03]       #12 RVA:0x77a7bd3b f4 77 8b d7 33 c9 ff d6 
+[12:59:03]       #13 RVA:0x77a7bcbf 8b 4d 08 e8 51 00 00 00 
+[12:59:03]   [CALL] DynamicCreate1 ret=RVA:0x1efa3a0
+[12:59:03]     eax=0x19cf60 stack[:8]=['0x22fa3a0', '0xa16062f5', '0x85a77a10', '0x29e831ac', '0x19cf5c', '0xe528078', '0x40', '0xf06b490']
+[12:59:03]     调用栈:
+[12:59:03]       #0 RVA:0x1efa3a0 8b 4d c4 e8 90 f3 f9 ff 
+[12:59:03]       #1 RVA:0x1e99730 d9 1d 0c 36 a1 02 5d c3 
+[12:59:03]       #2 RVA:0x1acc919 ff ff ff e8 57 da 42 00 
+[12:59:03]       #3 RVA:0x1fe2bed 51 8b c8 e8 f3 9c ae ff 
+[12:59:03]       #4 RVA:0x1fae2d8 ff ff ff e8 08 48 03 00 
+[12:59:03]       #5 RVA:0x1f946e2 ff ff ff e8 1e 8a 01 00 
+[12:59:03]       #6 RVA:0x1f9514f fe ff ff e8 01 ee ff ff 
+[12:59:03]       #7 RVA:0x1f94c82 8b 4d d4 e8 3e 00 00 00 
+[12:59:03]       #8 RVA:0x1f94b26 ff ff ff e8 aa 00 00 00 
+[12:59:03]       #9 RVA:0x15880c7 8b 4d d0 e8 09 c9 a0 00 
+[12:59:03]       #10 RVA:0x17ab1a 8b 4d dc 8b 42 2c ff d0 
+[12:59:03]       #11 RVA:0x172e79 de ff ff e8 f7 7b 00 00 
+[12:59:03]       #12 RVA:0x14456cb 8b 82 54 01 00 00 ff d0 
+[12:59:03]       #13 RVA:0x1444186 8b 4d 98 e8 5a 13 00 00 
+[12:59:03]       #14 RVA:0x1dd7b2d 8b 4d f8 8b 42 0c ff d0 
+[12:59:05]   [CALL] DynamicCreate1 ret=RVA:0x1efa3a0
+[12:59:05]     eax=0x196584 stack[:8]=['0x22fa3a0', '0xa160c809', '0x86457158', '0x5690000', '0x0', '0x7dc', '0x19db00', '0x28c27d8c']
+[12:59:05]     调用栈:
+[12:59:05]       #0 RVA:0x1efa3a0 8b 4d c4 e8 90 f3 f9 ff 
+[12:59:05]       #1 RVA:0x1e99730 d9 1d 0c 36 a1 02 5d c3 
+[12:59:05]       #2 RVA:0x174fa39 f7 ff ff e8 37 a9 7a 00 
+[12:59:05]       #3 RVA:0x173c926 b8 ff ff e8 ba 25 01 00 
+[12:59:05]       #4 RVA:0x1725986 8b 4d d4 e8 1a 5e 01 00 
+[12:59:05]       #5 RVA:0x14f6d15 8b 82 5c 01 00 00 ff d0 
+[12:59:05]       #6 RVA:0x1723e84 fe ff ff e8 2c 29 dd ff 
+[12:59:05]       #7 RVA:0x1444259 8b 90 84 01 00 00 ff d2 
+[12:59:05]       #8 RVA:0x1dd7b2d 8b 4d f8 8b 42 0c ff d0 
+[12:59:05]       #9 RVA:0x14508bb 8b 4d f0 8b 42 14 ff d0 
+[12:59:05]       #10 RVA:0x28923de f1 b1 ad e8 92 e4 bb fe 
+[12:59:05]       #11 RVA:0x20bf002 00 40 00 e8 5e e5 3f ff 
+[12:59:05]       #12 RVA:0x76507ba9 ff 15 30 22 97 76 ff d6 
+[12:59:05]       #13 RVA:0x77a7bd3b f4 77 8b d7 33 c9 ff d6 
+[12:59:05]       #14 RVA:0x77a7bcbf 8b 4d 08 e8 51 00 00 00 
+[12:59:12] 调用链已保存: D:\py\反编译\FreeStyle\apollo_dump\equip_trace_20260529_125851.json

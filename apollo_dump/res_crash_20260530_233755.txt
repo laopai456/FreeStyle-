@@ -1,0 +1,121 @@
+[23:37:55.086] === 分辨率崩溃诊断 v2 === PID:20244 ===
+[23:37:55.086] D3D Device/Reset/Present + 资源 + 窗口 全监控
+[23:37:55.086] 日志: D:\py\反编译\FreeStyle\apollo_dump\res_crash_20260530_233755.txt
+[23:37:56.240]   [步骤] JS开始执行 v2
+[23:37:56.240]   [模块] FreeStyle.exe base=0x400000 size=42909696
+[23:37:56.240]   [模块] ntdll.dll base=0x77840000 size=1773568
+[23:37:56.240]   [模块] KERNEL32.DLL base=0x758d0000 size=983040
+[23:37:56.240]   [模块] msvcrt.dll base=0x77370000 size=802816
+[23:37:56.240]   [模块] d3d9.dll base=0x58100000 size=1511424
+[23:37:56.241]   [模块] MSVCR100.dll base=0x64dd0000 size=782336
+[23:37:56.241]   [模块] DDRAW.dll base=0x64ce0000 size=962560
+[23:37:56.241]   [模块] dxgi.dll base=0x70f90000 size=827392
+[23:37:56.241]   [模块] d3dx9_30.dll base=0x4c30000 size=2490368
+[23:37:56.241]   [模块] ErrorReport.dll base=0x4f60000 size=45056
+[23:37:56.241]   [模块] MSVCR71.dll base=0x7c360000 size=352256
+[23:37:56.241]   [模块] d3dx9_37.dll base=0x64920000 size=3895296
+[23:37:56.241]   [模块] d3d8.dll base=0x64860000 size=753664
+[23:37:56.241]   [模块] d3d8thk.dll base=0x733d0000 size=28672
+[23:37:56.242]   [模块] ApolloCT.Dll base=0x69000000 size=7045120
+[23:37:56.242]   [模块] nvd3dum.dll base=0xa310000 size=64577536
+[23:37:56.242]   [模块] D3DIM700.DLL base=0x63910000 size=413696
+[23:37:56.242]   [步骤] 异常处理器就绪
+[23:37:56.242]   [步骤] ChangeDisplaySettingsA hook OK
+[23:37:56.242]   [步骤] ChangeDisplaySettingsExA hook OK
+[23:37:56.242]   [步骤] D3D9 base hooks OK — 等待CreateDevice
+[23:37:56.242]   [步骤] D3D9 模块 base=0x58100000 size=1511424
+[23:37:56.242]   [步骤] SetWindowPos + MoveWindow hook OK
+[23:37:56.242]   [步骤] GetClientRect + GetWindowRect hook OK
+[23:37:56.242]   [步骤] ShowWindow hook OK
+[23:37:56.242]   [步骤] DestroyWindow hook OK
+[23:37:56.242]   [步骤] HeapFree hook OK (Reset后记录)
+[23:37:56.242]   [步骤] VirtualFree hook OK
+[23:37:56.242]   [步骤] D3D8 CreateDevice hook OK
+[23:37:56.242]   [步骤] D3D9 Direct3DCreate9 hook OK
+[23:37:56.244]   {"t": "ready", "msg": "分辨率崩溃诊断 v2 就绪 — D3D Device + 资源 + 窗口 全监控"}
+[23:37:56.244] 
+[23:37:56.244] 监控就绪。改分辨率触发崩溃。
+[23:37:56.244] 命令: status | quit
+[23:37:56.987]   [客户区] #1 1280x768
+[23:37:56.990]   [窗口矩形] #1 2560x1440
+[23:37:56.990]   [窗口矩形] #2 1286x797
+[23:37:56.990]   [客户区] #2 1280x768
+[23:37:56.995]   [窗口矩形] #3 2560x1440
+[23:37:56.995]   [窗口矩形] #4 1286x797
+[23:37:56.998]   [窗口矩形] #5 2560x1440
+[23:37:56.998]   [窗口矩形] #6 1286x797
+[23:37:56.999]   [客户区] #3 1280x768
+[23:37:57.003]   [窗口矩形] #7 2560x1440
+[23:37:57.003]   [窗口矩形] #8 1286x797
+[23:37:57.009]   [窗口矩形] #9 2560x1440
+[23:37:57.009]   [窗口矩形] #10 1286x797
+[23:37:57.013]   [窗口矩形] #11 2560x1440
+[23:37:57.013]   [窗口矩形] #12 1286x797
+[23:37:57.018]   [窗口矩形] #13 2560x1440
+[23:37:57.018]   [窗口矩形] #14 1286x797
+[23:37:57.024]   [窗口矩形] #15 2560x1440
+[23:37:57.024]   [窗口矩形] #16 1286x797
+[23:37:57.029]   [窗口矩形] #17 2560x1440
+[23:37:57.029]   [窗口矩形] #18 1286x797
+[23:37:57.032]   [窗口矩形] #19 2560x1440
+[23:37:57.032]   [窗口矩形] #20 1286x797
+[23:37:57.037]   [窗口矩形] #21 2560x1440
+[23:37:57.037]   [窗口矩形] #22 1286x797
+[23:37:57.041]   [窗口矩形] #23 2560x1440
+[23:37:57.041]   [窗口矩形] #24 1286x797
+[23:37:57.046]   [窗口矩形] #25 2560x1440
+[23:37:57.046]   [窗口矩形] #26 1286x797
+[23:37:57.051]   [窗口矩形] #27 2560x1440
+[23:37:57.051]   [窗口矩形] #28 1286x797
+[23:37:57.055]   [窗口矩形] #29 2560x1440
+[23:37:57.055]   [窗口矩形] #30 1286x797
+[23:37:57.186]   [客户区] #4 1280x768
+[23:38:00.093]   [JS错误] TypeError: not a function
+[23:38:00.094]   [JS错误] TypeError: not a function
+[23:38:00.095]   [JS错误] TypeError: not a function
+[23:38:00.095]   [JS错误] TypeError: not a function
+[23:38:00.096]   [JS错误] TypeError: not a function
+[23:38:00.096]   [JS错误] TypeError: not a function
+[23:38:00.097]   [JS错误] TypeError: not a function
+[23:38:00.097]   [JS错误] TypeError: not a function
+[23:38:00.097]   [JS错误] TypeError: not a function
+[23:38:00.098]   [JS错误] TypeError: not a function
+[23:38:00.098]   [JS错误] TypeError: not a function
+[23:38:00.098]   [JS错误] TypeError: not a function
+[23:38:00.099]   [JS错误] TypeError: not a function
+[23:38:00.099]   [JS错误] TypeError: not a function
+[23:38:00.099]   [JS错误] TypeError: not a function
+[23:38:00.100]   [JS错误] TypeError: not a function
+[23:38:00.100]   [JS错误] TypeError: not a function
+[23:38:02.921]   [VirtualFree] #1 addr=0xfb70000 size=0 type=0x8000
+[23:38:02.921]   [VirtualFree] #2 addr=0x21000000 size=0 type=0x8000
+[23:38:02.921]   [VirtualFree] #3 addr=0xf5c0000 size=0 type=0x8000
+[23:38:02.921]   [VirtualFree] #4 addr=0xfb90000 size=0 type=0x8000
+[23:38:02.921]   [VirtualFree] #5 addr=0xf5d0000 size=0 type=0x8000
+[23:38:02.921]   [VirtualFree] #6 addr=0xfff0000 size=0 type=0x8000
+[23:38:02.921]   [VirtualFree] #7 addr=0xf5b0000 size=0 type=0x8000
+[23:38:02.921]   [VirtualFree] #8 addr=0xfb80000 size=0 type=0x8000
+[23:38:02.922]   [VirtualFree] #9 addr=0xf410000 size=0 type=0x8000
+[23:38:02.923]   [VirtualFree] #10 addr=0x210d0000 size=0 type=0x8000
+[23:38:02.923]   [JS错误] TypeError: not a function
+[23:38:02.962]   [JS错误] TypeError: not a function
+[23:38:03.031]   [JS错误] TypeError: not a function
+[23:38:03.254]   [窗口位置] #1 0x0 @(0,0) flags=55 presents=0
+[23:38:03.255]   [窗口位置] #2 0x0 @(-1,0) flags=3 presents=0
+[23:38:03.301]   [JS错误] TypeError: not a function
+[23:38:03.302]   [窗口位置] #3 362x333 @(0,643) flags=1047 presents=0
+[23:38:03.302]   [窗口位置] #4 686x-1 @(0,1117) flags=21 presents=0
+[23:38:03.304]   [显示窗口] #1 cmd=1
+[23:38:03.309]   [客户区] #5 301x12
+[23:38:03.313]   [客户区] #6 301x12
+[23:38:03.396]   [客户区] #7 301x12
+[23:38:03.396]   [JS错误] TypeError: not a function
+[23:38:06.768]   [JS错误] TypeError: not a function
+[23:38:06.769]   [JS错误] TypeError: not a function
+[23:38:06.769]   [JS错误] TypeError: not a function
+[23:38:06.770]   [JS错误] TypeError: not a function
+[23:38:06.771]   [JS错误] TypeError: not a function
+[23:38:06.771]   [JS错误] TypeError: not a function
+[23:38:06.771]   [JS错误] TypeError: not a function
+[23:38:06.771]   [JS错误] TypeError: not a function
+[23:38:06.772]   [JS错误] TypeError: not a function

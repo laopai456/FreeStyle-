@@ -1,0 +1,8 @@
+﻿
+Microsoft DiskPart 版本 10.0.22621.1
+
+Copyright (C) Microsoft Corporation.
+在计算机上: DESKTOP-O0PC7BH
+
+DiskPart 无法打开或读取脚本文件。
+请确定你指定的文件是否存在。

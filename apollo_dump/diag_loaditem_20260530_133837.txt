@@ -1,0 +1,77 @@
+[13:38:37] === LoadItemFile诊断 === PID:23012 ===
+[13:38:37] 替换: 50125461(美丽梦想) → 50125711(紫色超赛)
+[13:38:37] 日志: D:\py\反编译\FreeStyle\apollo_dump\diag_loaditem_20260530_133837.txt
+[13:38:37]   [步骤] JS开始执行
+[13:38:37]   [步骤] LoadItemFile地址: 0x1ece1c0
+[13:38:37]   [代码] LoadItemFile:
+[13:38:37]     0x1ace1c0: 55 8b ec 6a ff 68 ee 59 60 02 64 a1 00 00 00 00 
+[13:38:37]     0x1ace1d0: 50 81 ec d4 06 00 00 a1 28 ba a1 02 33 c5 89 45 
+[13:38:37]     0x1ace1e0: 88 50 8d 45 f4 64 a3 00 00 00 00 89 8d 3c fa ff 
+[13:38:37]     0x1ace1f0: ff c7 85 58 fc ff ff 00 00 00 00 8b 85 3c fa ff 
+[13:38:37]     0x1ace200: ff 05 48 09 00 00 50 ff 15 b0 f1 68 02 8b 4d 0c 
+[13:38:37]     0x1ace210: 51 8d 4d 9c e8 c7 90 56 fe c7 45 fc 00 00 00 00 
+[13:38:37]     0x1ace220: 83 ec 0c 8b cc 89 a5 70 fd ff ff 8d 55 9c 52 e8 
+[13:38:37]     0x1ace230: 8c d2 56 fe 89 85 38 fa ff ff 8d 85 64 fd ff ff 
+[13:38:37]     0x1ace240: 50 e8 4a 2f 31 00 83 c4 10 89 85 34 fa ff ff 8b 
+[13:38:37]     0x1ace250: 8d 34 fa ff ff 89 8d 30 fa ff ff c6 45 fc 01 8b 
+[13:38:37]     0x1ace260: 95 30 fa ff ff 52 8d 4d 9c e8 42 dd 57 fe c6 45 
+[13:38:37]     0x1ace270: fc 02 6a 00 8d 8d 64 fd ff ff e8 41 af 56 fe c6 
+[13:38:37]     0x1ace280: 45 fc 00 8d 8d 64 fd ff ff e8 d2 ae 56 fe 83 ec 
+[13:38:37]     0x1ace290: 0c 8b cc 89 a5 60 fd ff ff 8d 45 9c 50 e8 1e d2 
+[13:38:37]     0x1ace2a0: 56 fe 89 85 2c fa ff ff 8d 8d 54 fd ff ff 51 e8 
+[13:38:37]     0x1ace2b0: ec 2f 31 00 83 c4 10 89 85 28 fa ff ff 8b 95 28 
+[13:38:37]   [代码] LoadItemFile+256:
+[13:38:37]     0x1ace2c0: fa ff ff 89 95 24 fa ff ff c6 45 fc 03 8b 85 24 
+[13:38:37]     0x1ace2d0: fa ff ff 50 8d 4d 9c e8 d4 dc 57 fe c6 45 fc 04 
+[13:38:37]     0x1ace2e0: 6a 00 8d 8d 54 fd ff ff e8 d3 ae 56 fe c6 45 fc 
+[13:38:37]     0x1ace2f0: 00 8d 8d 54 fd ff ff e8 64 ae 56 fe 8b 4d 14 51 
+[13:38:37]     0x1ace300: 8d 55 08 52 8b 8d 3c fa ff ff e8 21 fc ff ff 0f 
+[13:38:37]     0x1ace310: b6 c0 85 c0 74 41 c6 85 44 ff ff ff 00 6a 3f 6a 
+[13:38:37]     0x1ace320: 00 8d 8d 45 ff ff ff 51 e8 8b 02 5f 00 83 c4 0c 
+[13:38:37]     0x1ace330: 8b 55 08 52 68 68 ca 73 02 8d 85 44 ff ff ff 50 
+[13:38:37]     0x1ace340: e8 6d 02 5f 00 83 c4 0c 8d 8d 44 ff ff ff 51 8d 
+[13:38:37]     0x1ace350: 4d 9c e8 09 90 56 fe c7 45 d8 00 00 00 00 eb 09 
+[13:38:37]     0x1ace360: 8b 55 d8 83 c2 01 89 55 d8 8b 85 3c fa ff ff 8b 
+[13:38:37]     0x1ace370: 88 20 08 00 00 89 8d 0c fc ff ff 8b 55 d8 3b 95 
+[13:38:37]     0x1ace380: 0c fc ff ff 0f 8d 85 00 00 00 8b 45 d8 69 c0 1c 
+[13:38:37]     0x1ace390: 01 00 00 8b 8d 3c fa ff ff 03 81 1c 08 00 00 89 
+[13:38:37]     0x1ace3a0: 85 08 fc ff ff 8d 4d 9c e8 d3 cc 56 fe 50 8b 8d 
+[13:38:37]     0x1ace3b0: 08 fc ff ff 83 c1 04 e8 c4 cc 56 fe 50 e8 4e ad 
+[13:38:37]   [步骤] LoadItemFile入口hook已设置
+[13:38:37]   LoadItemFile诊断就绪
+[13:38:37] 
+[13:38:37] 进房间触发角色加载。
+[13:38:37] 命令: status | quit
+[13:38:37] 
+[13:38:41]   [LoadItemFile] iItemCode=0 szFilename="customize\item\c800.xml" ecx=0x854f0fe8
+[13:38:41]   [LoadItemFile栈] [0, 1682104, 2, 0, 3469066239, 128, 2048, 2236551144]
+[13:38:41]   [LoadItemFile] iItemCode=0 szFilename="customize\item\c801.xml" ecx=0x854f0fe8
+[13:38:41]   [LoadItemFile栈] [0, 1682104, 2, 1, 3469066239, 128, 2048, 2236551144]
+[13:38:41]   [LoadItemFile] iItemCode=50421031 szFilename="customize\item\i50421031.xml" ecx=0x854f0fe8
+[13:38:41]   [LoadItemFile栈] [50421031, 1682104, 0, 0, 3469066239, 128, 2048, 2236551144]
+[13:38:41]   [LoadItemFile] iItemCode=50519561 szFilename="customize\item\i50519561.xml" ecx=0x854f0fe8
+[13:38:41]   [LoadItemFile栈] [50519561, 1682104, 0, 0, 3469066239, 128, 2048, 2236551144]
+[13:38:41]   [LoadItemFile] iItemCode=50623371 szFilename="customize\item\i50623371.xml" ecx=0x854f0fe8
+[13:38:41]   [LoadItemFile栈] [50623371, 1682104, 0, 0, 3469066239, 128, 2048, 2236551144]
+[13:38:41]   [LoadItemFile] iItemCode=50914721 szFilename="customize\item\i50914721.xml" ecx=0x854f0fe8
+[13:38:41]   [LoadItemFile栈] [50914721, 1682104, 0, 0, 3469066239, 128, 2048, 2236551144]
+[13:38:41]   [LoadItemFile] iItemCode=51514521 szFilename="customize\item\i51514521.xml" ecx=0x854f0fe8
+[13:38:41]   [LoadItemFile栈] [51514521, 1682104, 0, 0, 3469066239, 128, 2048, 2236551144]
+[13:38:41]   [替换!] #1 ebp=0x19ab6c [ebp-0xD8]: 50125461→50125711 write_ok=True
+[13:38:41]   [LoadItemFile] iItemCode=50125711 szFilename="customize\item\i50125711.xml" ecx=0x854f0fe8
+[13:38:41]   [LoadItemFile栈] [50125711, 1682104, 0, 0, 3469066239, 128, 2048, 2236551144]
+[13:38:41]   [LoadItemFile] iItemCode=51616261 szFilename="customize\item\i51616261.xml" ecx=0x854f0fe8
+[13:38:41]   [LoadItemFile栈] [51616261, 1682104, 0, 0, 3469066239, 128, 2048, 2236551144]
+[13:38:41]   [LoadItemFile] iItemCode=51213111 szFilename="customize\item\i51213111.xml" ecx=0x854f0fe8
+[13:38:41]   [LoadItemFile栈] [51213111, 1682104, 0, 0, 3469066239, 128, 2048, 2236551144]
+[13:38:41]   [AcquireSMD] #1 path="res707\c800.smd"
+[13:38:41]   [AcquireSMD] #2 path="res707\c801.smd"
+[13:38:41]   [AcquireSMD] #3 path="Res767\i50421031_FN.smd"
+[13:38:41]   [AcquireSMD] #4 path="Res767\i50421031_FN_upp01.smd"
+[13:38:41]   [AcquireSMD] #5 path="res767\i50519561_FN.smd"
+[13:38:41]   [AcquireSMD] #6 path="res767\i50519561_F_low01.smd"
+[13:38:41]   [AcquireSMD] #7 path="res767\i50623371_F.smd"
+[13:38:41]   [AcquireSMD] #8 path="res767\i50914721_F.smd"
+[13:38:41]   [AcquireSMD] #9 path="res767\i51514521_F.smd"
+[13:38:41]   [AcquireSMD] #10 path="res767\i51616261_F.smd"
+[13:38:41]   [AcquireSMD] #11 path="res767\i51213111_FN.smd"

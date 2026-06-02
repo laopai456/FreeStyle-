@@ -1,0 +1,1236 @@
+=== DYNAMIC TRACE ===
+login, observe E0 call info + WSASend buffer
+
+  loaded, waiting 2s for module...
+  Frida ready: E0=0x24479d0
+
+=== WSASend packet #1 ===
+  buf: 0x1985c4 len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 8d f0 48 a8 
+01 00 00 00 00 00 00 00 0a 00 00 00 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x243886e [FreeStyle.exe+0x203886e]
+    #4 0x242fb10 [FreeStyle.exe+0x202fb10]
+    #5 0x1b71ae2 [FreeStyle.exe+0x1771ae2]
+    #6 0x1b7465b [FreeStyle.exe+0x177465b]
+    #7 0x1844529 [FreeStyle.exe+0x1444529]
+    #8 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #9 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #10 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #11 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #12 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #13 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #14 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #1 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #2 ===
+  buf: 0x19859c len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 b4 79 6a ca 
+02 00 00 00 00 00 00 00 0c 00 00 00 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x2439276 [FreeStyle.exe+0x2039276]
+    #4 0x24388d5 [FreeStyle.exe+0x20388d5]
+    #5 0x242fb10 [FreeStyle.exe+0x202fb10]
+    #6 0x1b71ae2 [FreeStyle.exe+0x1771ae2]
+    #7 0x1b7465b [FreeStyle.exe+0x177465b]
+    #8 0x1844529 [FreeStyle.exe+0x1444529]
+    #9 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #10 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #11 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #12 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #13 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #14 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #15 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #2 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #3 ===
+  buf: 0x1967d0 len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 0c d3 2f 17 
+03 00 00 00 cd cc 00 6c 55 00 36 66 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b7d785 [FreeStyle.exe+0x177d785]
+    #5 0x1b71cdf [FreeStyle.exe+0x1771cdf]
+    #6 0x1b7465b [FreeStyle.exe+0x177465b]
+    #7 0x1844529 [FreeStyle.exe+0x1444529]
+    #8 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #9 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #10 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #11 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #12 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #13 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #14 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #3 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #4 ===
+  buf: 0x1987f4 len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 c6 6b 2f 0e 
+04 00 00 00 f2 e2 00 6c 55 00 09 67 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b71f30 [FreeStyle.exe+0x1771f30]
+    #5 0x1b7465b [FreeStyle.exe+0x177465b]
+    #6 0x1844529 [FreeStyle.exe+0x1444529]
+    #7 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #8 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #9 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #10 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #11 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #12 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #13 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #4 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #5 ===
+  buf: 0x1987f4 len=51
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 7e c1 6a d3 
+05 00 00 00 f3 26 00 6c 55 00 58 7e ff c7 69 56 
+ce f7 58 78 cd f5 51 78 cc f3 47 64 ce c7 69 56 
+68 55 68 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b720d5 [FreeStyle.exe+0x17720d5]
+    #5 0x1b7465b [FreeStyle.exe+0x177465b]
+    #6 0x1844529 [FreeStyle.exe+0x1444529]
+    #7 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #8 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #9 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #10 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #11 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #12 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #13 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #5 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: cd f5 51 78
+  seq:     cc f3 47 64
+  enc8:    ce c7 69 56 68 55 68 00
+  dec8:    83 7f c1 02 25 ed c0 54
+
+=== WSASend packet #6 ===
+  buf: 0x198430 len=51
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 47 48 48 b1 
+06 00 00 00 f0 23 00 6c 55 00 58 7b 14 cc 69 56 
+31 fc 58 78 32 fe 51 78 33 f8 47 64 31 cc 69 56 
+6c 55 73 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b77780 [FreeStyle.exe+0x1777780]
+    #5 0x1b75354 [FreeStyle.exe+0x1775354]
+    #6 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #7 0x1b74591 [FreeStyle.exe+0x1774591]
+    #8 0x1844529 [FreeStyle.exe+0x1444529]
+    #9 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #10 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #11 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #12 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #13 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #14 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #15 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #6 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 32 fe 51 78
+  seq:     33 f8 47 64
+  enc8:    31 cc 69 56 6c 55 73 00
+  dec8:    7c 74 c1 02 21 ed db 54
+
+=== WSASend packet #7 ===
+  buf: 0x198430 len=51
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 ff e2 0d 6c 
+07 00 00 00 f1 3f 00 6c 55 00 58 67 2a d0 69 56 
+33 e0 58 78 30 e2 51 78 31 e4 47 64 33 d0 69 56 
+70 55 7f 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b77780 [FreeStyle.exe+0x1777780]
+    #5 0x1b75354 [FreeStyle.exe+0x1775354]
+    #6 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #7 0x1b74591 [FreeStyle.exe+0x1774591]
+    #8 0x1844529 [FreeStyle.exe+0x1444529]
+    #9 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #10 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #11 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #12 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #13 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #14 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #15 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #7 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 30 e2 51 78
+  seq:     31 e4 47 64
+  enc8:    33 d0 69 56 70 55 7f 00
+  dec8:    7e 68 c1 02 3d ed d7 54
+
+=== WSASend packet #8 ===
+  buf: 0x198430 len=51
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 d3 39 49 83 
+08 00 00 00 f6 3a 00 6c 55 00 58 62 39 d4 69 56 
+34 e4 58 78 37 e6 51 78 36 e0 47 64 34 d4 69 56 
+75 55 8c 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b77780 [FreeStyle.exe+0x1777780]
+    #5 0x1b75354 [FreeStyle.exe+0x1775354]
+    #6 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #7 0x1b74591 [FreeStyle.exe+0x1774591]
+    #8 0x1844529 [FreeStyle.exe+0x1444529]
+    #9 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #10 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #11 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #12 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #13 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #14 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #15 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #8 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 37 e6 51 78
+  seq:     36 e0 47 64
+  enc8:    34 d4 69 56 75 55 8c 00
+  dec8:    79 6c c1 02 38 ed 24 54
+
+=== WSASend packet #9 ===
+  buf: 0x198430 len=51
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 6b 93 0c 5e 
+09 00 00 00 f7 34 00 6c 55 00 58 6c 59 d8 69 56 
+38 e8 58 78 3b ea 51 78 3a ec 47 64 38 d8 69 56 
+7b 55 9a 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b77780 [FreeStyle.exe+0x1777780]
+    #5 0x1b75354 [FreeStyle.exe+0x1775354]
+    #6 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #7 0x1b74591 [FreeStyle.exe+0x1774591]
+    #8 0x1844529 [FreeStyle.exe+0x1444529]
+    #9 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #10 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #11 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #12 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #13 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #14 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #15 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #9 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 3b ea 51 78
+  seq:     3a ec 47 64
+  enc8:    38 d8 69 56 7b 55 9a 00
+  dec8:    75 60 c1 02 36 ed 32 54
+
+=== WSASend packet #10 ===
+  buf: 0x198430 len=51
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 52 1a 2e 3c 
+0a 00 00 00 f4 cd 00 6c 55 00 58 95 6a dc 69 56 
+3f ec 58 78 3c ee 51 78 3d e8 47 64 3f dc 69 56 
+82 55 a9 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b77780 [FreeStyle.exe+0x1777780]
+    #5 0x1b75354 [FreeStyle.exe+0x1775354]
+    #6 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #7 0x1b74591 [FreeStyle.exe+0x1774591]
+    #8 0x1844529 [FreeStyle.exe+0x1444529]
+    #9 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #10 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #11 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #12 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #13 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #14 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #15 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #10 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 3c ee 51 78
+  seq:     3d e8 47 64
+  enc8:    3f dc 69 56 82 55 a9 00
+  dec8:    72 64 c1 02 cf ed 01 54
+
+=== WSASend packet #11 ===
+  buf: 0x198430 len=51
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 ea b0 6b e1 
+0b 00 00 00 f5 c5 00 6c 55 00 58 9d 6c e0 69 56 
+25 d0 58 78 26 d2 51 78 27 d4 47 64 25 e0 69 56 
+8a 55 b9 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b77780 [FreeStyle.exe+0x1777780]
+    #5 0x1b75354 [FreeStyle.exe+0x1775354]
+    #6 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #7 0x1b74591 [FreeStyle.exe+0x1774591]
+    #8 0x1844529 [FreeStyle.exe+0x1444529]
+    #9 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #10 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #11 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #12 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #13 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #14 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #15 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #11 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 26 d2 51 78
+  seq:     27 d4 47 64
+  enc8:    25 e0 69 56 8a 55 b9 00
+  dec8:    68 58 c1 02 c7 ed 11 54
+
+=== WSASend packet #12 ===
+  buf: 0x198430 len=51
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 20 08 6b f8 
+0c 00 00 00 fa dc 00 6c 55 00 58 84 97 e4 69 56 
+2a d4 58 78 29 d6 51 78 28 d0 47 64 2a e4 69 56 
+93 55 ca 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b77780 [FreeStyle.exe+0x1777780]
+    #5 0x1b75354 [FreeStyle.exe+0x1775354]
+    #6 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #7 0x1b74591 [FreeStyle.exe+0x1774591]
+    #8 0x1844529 [FreeStyle.exe+0x1444529]
+    #9 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #10 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #11 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #12 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #13 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #14 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #15 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #12 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 29 d6 51 78
+  seq:     28 d0 47 64
+  enc8:    2a e4 69 56 93 55 ca 00
+  dec8:    67 5c c1 02 de ed 62 54
+
+=== WSASend packet #13 ===
+  buf: 0x198430 len=51
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 98 a2 2e 25 
+0d 00 00 00 fb d2 00 6c 55 00 58 8a 83 e8 69 56 
+12 d8 58 78 11 da 51 78 10 dc 47 64 12 e8 69 56 
+9d 55 dc 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b77780 [FreeStyle.exe+0x1777780]
+    #5 0x1b75354 [FreeStyle.exe+0x1775354]
+    #6 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #7 0x1b74591 [FreeStyle.exe+0x1774591]
+    #8 0x1844529 [FreeStyle.exe+0x1444529]
+    #9 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #10 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #11 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #12 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #13 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #14 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #15 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #13 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 11 da 51 78
+  seq:     10 dc 47 64
+  enc8:    12 e8 69 56 9d 55 dc 00
+  dec8:    5f 50 c1 02 d0 ed 74 54
+
+=== WSASend packet #14 ===
+  buf: 0x198430 len=51
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 a1 2b 0c 47 
+0e 00 00 00 f8 e7 00 6c 55 00 58 bf 98 ec 69 56 
+1d dc 58 78 1e de 51 78 1f d8 47 64 1d ec 69 56 
+a8 55 ef 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b77780 [FreeStyle.exe+0x1777780]
+    #5 0x1b75354 [FreeStyle.exe+0x1775354]
+    #6 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #7 0x1b74591 [FreeStyle.exe+0x1774591]
+    #8 0x1844529 [FreeStyle.exe+0x1444529]
+    #9 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #10 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #11 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #12 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #13 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #14 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #15 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #14 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 1e de 51 78
+  seq:     1f d8 47 64
+  enc8:    1d ec 69 56 a8 55 ef 00
+  dec8:    50 54 c1 02 e5 ed 47 54
+
+=== WSASend packet #15 ===
+  buf: 0x198430 len=51
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 19 81 49 9a 
+0f 00 00 00 f9 fb 00 6c 55 00 58 a3 f0 f0 69 56 
+07 c0 58 78 04 c2 51 78 05 c4 47 64 07 f0 69 56 
+b4 55 03 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b77780 [FreeStyle.exe+0x1777780]
+    #5 0x1b75354 [FreeStyle.exe+0x1775354]
+    #6 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #7 0x1b74591 [FreeStyle.exe+0x1774591]
+    #8 0x1844529 [FreeStyle.exe+0x1444529]
+    #9 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #10 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #11 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #12 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #13 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #14 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #15 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #15 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 04 c2 51 78
+  seq:     05 c4 47 64
+  enc8:    07 f0 69 56 b4 55 03 00
+  dec8:    4a 48 c1 02 f9 ed ab 54
+
+=== WSASend packet #16 ===
+  buf: 0x19a83c len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 08 eb 69 9c 
+10 00 00 00 fe e1 00 6c 55 00 1b c1 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x18f7102 [FreeStyle.exe+0x14f7102]
+    #5 0x1b74591 [FreeStyle.exe+0x1774591]
+    #6 0x1844529 [FreeStyle.exe+0x1444529]
+    #7 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #8 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #9 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #10 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #11 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #12 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #13 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #16 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #17 ===
+  buf: 0x19a83c len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 b0 41 2c 41 
+11 00 00 00 ff ef 00 6c 55 00 1b cf 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x18f7102 [FreeStyle.exe+0x14f7102]
+    #5 0x1b74591 [FreeStyle.exe+0x1774591]
+    #6 0x1844529 [FreeStyle.exe+0x1444529]
+    #7 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #8 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #9 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #10 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #11 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #12 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #13 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #17 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #18 ===
+  buf: 0x19a83c len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 89 c8 0e 23 
+12 00 00 00 fc fe 00 6c 55 00 1b de 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x18f7102 [FreeStyle.exe+0x14f7102]
+    #5 0x1b74591 [FreeStyle.exe+0x1774591]
+    #6 0x1844529 [FreeStyle.exe+0x1444529]
+    #7 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #8 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #9 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #10 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #11 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #12 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #13 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #18 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #19 ===
+  buf: 0x19a430 len=291
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 31 62 4b fe 
+13 00 00 00 fd 77 00 6c 54 00 6f e9 68 00 6a 56 
+29 31 52 61 2e 43 5a 60 5b 31 5b 63 58 44 5f 65 
+68 00 6a 56 68 00 6a 56 68 00 6a 56 68 00 6a 56 
+68 00 6a 56 68 00 6a 56 68 00 6a 56 68 00 6a 56 
+68 00 6a 56 68 00 6a 56 68 00 6a 56 68 00 6a 56 
+68 00 6a 56 68 00 6a 56 68 00 6a 56 68 00 6a 56 
+68 00 6a 56 68 00 07 6e 51 31 58 67 50 00 6a 56 
+68 00 6a 56 68 00 6a 56 68 00 6a 56 68 00 6a 56 
+68 00 6a 56 68 00 6a 56 68 00 6a 56 68 00 6a 6e 
+50 30 58 65 5c 64 0b 38 68 00 6a 56 68 00 6a 56 
+68 00 6a 56 68 00 6a 56 68 00 6a 56 68 00 6a 56 
+68 00 6a 56 68 00 6a 56 68 00 6a 56 68 00 6a 56 
+68 00 6a 56 68 00 6a 56 68 00 6a 56 68 00 6a 56 
+68 00 6a 56 68 00 6a 56 68 00 6a 56 68 00 6a 56 
+68 00 6a 56 68 00 6a 56 68 00 6a 56 68 00 6a 56 
+68 00 6a 56 68 00 5a 66 0d 32 5c 6f 5e 35 0b 6e 
+0b 35 5b 66 59 2e 58 64 50 2e 59 62 46 32 5b 56 
+ee 55 5d 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b73165 [FreeStyle.exe+0x1773165]
+    #5 0x1b7281a [FreeStyle.exe+0x177281a]
+    #6 0x1b71364 [FreeStyle.exe+0x1771364]
+    #7 0x23d066d [FreeStyle.exe+0x1fd066d]
+    #8 0x23c57ee [FreeStyle.exe+0x1fc57ee]
+    #9 0x2417d71 [FreeStyle.exe+0x2017d71]
+    #10 0x74d92bc3 [USER32.dll+0x32bc3]
+    #11 0x74d839b6 [USER32.dll+0x239b6]
+    #12 0x74d82275 [USER32.dll+0x22275]
+    #13 0x74df6a60 [USER32.dll+0x96a60]
+    #14 0x21cd007 [FreeStyle.exe+0x1dcd007]
+    #15 0x21d39f3 [FreeStyle.exe+0x1dd39f3]
+
+--- E0 CALL #19 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 2e 43 5a 60
+  seq:     5b 31 5b 63
+  enc8:    58 44 5f 65 68 00 6a 56
+  dec8:    15 fc f7 31 25 b8 c2 02
+
+=== WSASend packet #20 ===
+  buf: 0x197f38 len=61
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 fb da 4b e7 
+14 00 00 00 e2 9b 00 6c 55 00 0a de 77 04 6a 56 
+77 04 6a 56 77 04 6a 56 77 04 6a 56 77 04 6a 56 
+77 04 6a 56 77 04 6a 56 77 04 6a 56 46 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b7bda1 [FreeStyle.exe+0x177bda1]
+    #5 0x1b766d7 [FreeStyle.exe+0x17766d7]
+    #6 0x1b752fe [FreeStyle.exe+0x17752fe]
+    #7 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #8 0x1b74591 [FreeStyle.exe+0x1774591]
+    #9 0x1844529 [FreeStyle.exe+0x1444529]
+    #10 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #11 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #12 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #13 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #14 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #15 0x7708bd3b [ntdll.dll+0x6bd3b]
+
+--- E0 CALL #20 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 77 04 6a 56
+  seq:     77 04 6a 56
+  enc8:    77 04 6a 56 77 04 6a 56
+  dec8:    3a bc c2 02 3a bc c2 02
+
+=== WSASend packet #21 ===
+  buf: 0x197630 len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 43 70 0e 3a 
+15 00 00 00 e3 75 00 6c 56 00 0b 11 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b7b4b5 [FreeStyle.exe+0x177b4b5]
+    #5 0x1b78ba9 [FreeStyle.exe+0x1778ba9]
+    #6 0x1905595 [FreeStyle.exe+0x1505595]
+    #7 0x1b758eb [FreeStyle.exe+0x17758eb]
+    #8 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #9 0x1b74591 [FreeStyle.exe+0x1774591]
+    #10 0x1844529 [FreeStyle.exe+0x1444529]
+    #11 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #12 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #13 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #14 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #15 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+
+--- E0 CALL #21 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #22 ===
+  buf: 0x198620 len=29
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 7a f9 2c 58 
+16 00 00 00 e0 43 00 6c 56 00 0b 25 72 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1b7b5d5 [FreeStyle.exe+0x177b5d5]
+    #5 0x1b7b534 [FreeStyle.exe+0x177b534]
+    #6 0x1b757dc [FreeStyle.exe+0x17757dc]
+    #7 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #8 0x1b74591 [FreeStyle.exe+0x1774591]
+    #9 0x1844529 [FreeStyle.exe+0x1444529]
+    #10 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #11 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #12 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #13 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #14 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #15 0x7708bd3b [ntdll.dll+0x6bd3b]
+
+--- E0 CALL #22 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #23 ===
+  buf: 0x19858c len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 c2 53 69 85 
+17 00 00 00 e1 f4 00 6c 56 00 0a 38 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x14c37e5 [FreeStyle.exe+0x10c37e5]
+    #5 0x14c4011 [FreeStyle.exe+0x10c4011]
+    #6 0x18477b3 [FreeStyle.exe+0x14477b3]
+    #7 0x1b7b447 [FreeStyle.exe+0x177b447]
+    #8 0x1b7b65a [FreeStyle.exe+0x177b65a]
+    #9 0x1b7580e [FreeStyle.exe+0x177580e]
+    #10 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #11 0x1b74591 [FreeStyle.exe+0x1774591]
+    #12 0x1844529 [FreeStyle.exe+0x1444529]
+    #13 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #14 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #15 0x2c9e337 [FreeStyle.exe+0x289e337]
+
+--- E0 CALL #23 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #24 ===
+  buf: 0x196560 len=37
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 ee 88 2d 6a 
+18 00 00 00 e6 b4 00 6c 56 00 41 44 bd 1c 6a 56 
+bd ea 95 a9 5b 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x19c23e5 [FreeStyle.exe+0x15c23e5]
+    #5 0x19b1d9f [FreeStyle.exe+0x15b1d9f]
+    #6 0x184599b [FreeStyle.exe+0x144599b]
+    #7 0x1844456 [FreeStyle.exe+0x1444456]
+    #8 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #9 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #10 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #11 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #12 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #13 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #14 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #24 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 5b 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #25 ===
+  buf: 0x196574 len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 56 22 68 b7 
+19 00 00 00 e7 32 00 6c 56 00 42 63 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x19c87e5 [FreeStyle.exe+0x15c87e5]
+    #5 0x19b23c6 [FreeStyle.exe+0x15b23c6]
+    #6 0x184599b [FreeStyle.exe+0x144599b]
+    #7 0x1844456 [FreeStyle.exe+0x1444456]
+    #8 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #9 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #10 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #11 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #12 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #13 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #14 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #25 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #26 ===
+  buf: 0x196574 len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 6f ab 4a d5 
+1a 00 00 00 e4 0c 00 6c 56 00 76 7a 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x19c7ad5 [FreeStyle.exe+0x15c7ad5]
+    #5 0x19b261d [FreeStyle.exe+0x15b261d]
+    #6 0x184599b [FreeStyle.exe+0x144599b]
+    #7 0x1844456 [FreeStyle.exe+0x1444456]
+    #8 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #9 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #10 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #11 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #12 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #13 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #14 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #26 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #27 ===
+  buf: 0x196570 len=32
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 d7 01 0f 08 
+1b 00 00 00 e5 2c 00 6c 56 00 41 96 fc 20 6a 56 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1922aa6 [FreeStyle.exe+0x1522aa6]
+    #5 0x19b2628 [FreeStyle.exe+0x15b2628]
+    #6 0x184599b [FreeStyle.exe+0x144599b]
+    #7 0x1844456 [FreeStyle.exe+0x1444456]
+    #8 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #9 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #10 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #11 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #12 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #13 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #14 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #27 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #28 ===
+  buf: 0x196574 len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 1d b9 0f 11 
+1c 00 00 00 ea a8 00 6c 56 00 77 ab 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x19c8735 [FreeStyle.exe+0x15c8735]
+    #5 0x19b27bb [FreeStyle.exe+0x15b27bb]
+    #6 0x184599b [FreeStyle.exe+0x144599b]
+    #7 0x1844456 [FreeStyle.exe+0x1444456]
+    #8 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #9 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #10 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #11 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #12 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #13 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #14 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #28 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #29 ===
+  buf: 0x196574 len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 a5 13 4a cc 
+1d 00 00 00 eb a6 00 6c 56 00 0c c5 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x196cd45 [FreeStyle.exe+0x156cd45]
+    #5 0x19b2cdc [FreeStyle.exe+0x15b2cdc]
+    #6 0x184599b [FreeStyle.exe+0x144599b]
+    #7 0x1844456 [FreeStyle.exe+0x1444456]
+    #8 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #9 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #10 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #11 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #12 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #13 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #14 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #29 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #30 ===
+  buf: 0x196574 len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 9c 9a 68 ae 
+1e 00 00 00 e8 d0 00 6c 56 00 0c e0 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x19ceb45 [FreeStyle.exe+0x15ceb45]
+    #5 0x19b2cf2 [FreeStyle.exe+0x15b2cf2]
+    #6 0x184599b [FreeStyle.exe+0x144599b]
+    #7 0x1844456 [FreeStyle.exe+0x1444456]
+    #8 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #9 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #10 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #11 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #12 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #13 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #14 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #30 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #31 ===
+  buf: 0x196568 len=29
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 24 30 2d 73 
+1f 00 00 00 e9 fa 00 6c 56 00 08 fd 6f 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x1974865 [FreeStyle.exe+0x1574865]
+    #5 0x19b2f32 [FreeStyle.exe+0x15b2f32]
+    #6 0x184599b [FreeStyle.exe+0x144599b]
+    #7 0x1844456 [FreeStyle.exe+0x1444456]
+    #8 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #9 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #10 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #11 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #12 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #13 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #14 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #31 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #32 ===
+  buf: 0x19642c len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 be 4e 28 a2 
+20 00 00 00 ee 1b 00 6c 57 00 34 19 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x19cc985 [FreeStyle.exe+0x15cc985]
+    #5 0x19b408f [FreeStyle.exe+0x15b408f]
+    #6 0x19b33e9 [FreeStyle.exe+0x15b33e9]
+    #7 0x184599b [FreeStyle.exe+0x144599b]
+    #8 0x1844456 [FreeStyle.exe+0x1444456]
+    #9 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #10 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #11 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #12 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #13 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #14 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #15 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #32 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #33 ===
+  buf: 0x196574 len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 06 e4 6d 7f 
+21 00 00 00 ef 77 00 6c 57 00 31 37 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x19d0ed5 [FreeStyle.exe+0x15d0ed5]
+    #5 0x19b33ff [FreeStyle.exe+0x15b33ff]
+    #6 0x184599b [FreeStyle.exe+0x144599b]
+    #7 0x1844456 [FreeStyle.exe+0x1444456]
+    #8 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #9 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #10 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #11 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #12 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #13 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #14 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #33 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #34 ===
+  buf: 0x196574 len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 3f 6d 4f 1d 
+22 00 00 00 ec c0 00 6c 57 00 32 56 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x19d1135 [FreeStyle.exe+0x15d1135]
+    #5 0x19b340a [FreeStyle.exe+0x15b340a]
+    #6 0x184599b [FreeStyle.exe+0x144599b]
+    #7 0x1844456 [FreeStyle.exe+0x1444456]
+    #8 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #9 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #10 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #11 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #12 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #13 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #14 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #34 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #35 ===
+  buf: 0x196574 len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 87 c7 0a c0 
+23 00 00 00 ed 4e 00 6c 57 00 31 76 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x19d1255 [FreeStyle.exe+0x15d1255]
+    #5 0x19b3415 [FreeStyle.exe+0x15b3415]
+    #6 0x184599b [FreeStyle.exe+0x144599b]
+    #7 0x1844456 [FreeStyle.exe+0x1444456]
+    #8 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #9 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #10 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #11 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #12 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #13 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #14 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #35 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #36 ===
+  buf: 0x1963fc len=49
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 4d 7f 0a d9 
+24 00 00 00 12 44 00 6c 57 00 40 82 10 ba 95 a9 
+ef 4d 6a 56 ef bb 95 a9 10 45 6a 56 ef 44 6a 56 
+1e 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x19c2a6c [FreeStyle.exe+0x15c2a6c]
+    #5 0x19c295e [FreeStyle.exe+0x15c295e]
+    #6 0x19b94ec [FreeStyle.exe+0x15b94ec]
+    #7 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #8 0x19b8589 [FreeStyle.exe+0x15b8589]
+    #9 0x1844529 [FreeStyle.exe+0x1444529]
+    #10 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #11 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #12 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #13 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #14 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #15 0x7708bd3b [ntdll.dll+0x6bd3b]
+
+--- E0 CALL #36 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: ef bb 95 a9
+  seq:     10 45 6a 56
+  enc8:    ef 44 6a 56 1e 00 00 00
+  dec8:    a2 fc c2 02 53 b8 a8 54
+
+=== WSASend packet #37 ===
+  buf: 0x19a8f0 len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 f5 d5 4f 04 
+25 00 00 00 13 99 00 6c 57 00 19 b9 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x18f7102 [FreeStyle.exe+0x14f7102]
+    #5 0x19b8589 [FreeStyle.exe+0x15b8589]
+    #6 0x1844529 [FreeStyle.exe+0x1444529]
+    #7 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #8 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #9 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #10 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #11 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #12 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #13 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #37 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+=== WSASend packet #38 ===
+  buf: 0x197f60 len=47
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 cc 5c 6d 66 
+26 00 00 00 10 25 00 6c 57 00 4f cf 31 4e 6a 56 
+fb b3 b9 86 88 bf df a1 30 4e 6a 56 dc 57 e3 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x19cc5ab [FreeStyle.exe+0x15cc5ab]
+    #5 0x19caff1 [FreeStyle.exe+0x15caff1]
+    #6 0x19c38cc [FreeStyle.exe+0x15c38cc]
+    #7 0x19b9505 [FreeStyle.exe+0x15b9505]
+    #8 0x18f7015 [FreeStyle.exe+0x14f7015]
+    #9 0x19b8589 [FreeStyle.exe+0x15b8589]
+    #10 0x1844529 [FreeStyle.exe+0x1444529]
+    #11 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #12 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #13 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #14 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #15 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+
+--- E0 CALL #38 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 88 bf df a1
+  seq:     30 4e 6a 56
+  enc8:    dc 57 e3 00 00 00 00 00
+  dec8:    91 ef 4b 54 4d b8 a8 54
+
+=== WSASend packet #39 ===
+  buf: 0x19a8f0 len=28
+  hex:
+43 d5 8b 80 c4 74 8a db 00 01 7c 39 74 f6 28 bb 
+27 00 00 00 11 20 00 6c 58 00 16 00 
+
+  backtrace:
+    #0 0x24479fc [FreeStyle.exe+0x20479fc]
+    #1 0x766102b0 [WS2_32.dll+0x102b0]
+    #2 0x2438e19 [FreeStyle.exe+0x2038e19]
+    #3 0x242fb99 [FreeStyle.exe+0x202fb99]
+    #4 0x18f7102 [FreeStyle.exe+0x14f7102]
+    #5 0x19b8589 [FreeStyle.exe+0x15b8589]
+    #6 0x1844529 [FreeStyle.exe+0x1444529]
+    #7 0x21d7f2d [FreeStyle.exe+0x1dd7f2d]
+    #8 0x1850b8b [FreeStyle.exe+0x1450b8b]
+    #9 0x2c9e337 [FreeStyle.exe+0x289e337]
+    #10 0x24bf3b2 [FreeStyle.exe+0x20bf3b2]
+    #11 0x756b7ba9 [KERNEL32.DLL+0x17ba9]
+    #12 0x7708bd3b [ntdll.dll+0x6bd3b]
+    #13 0x7708bcbf [ntdll.dll+0x6bcbf]
+
+--- E0 CALL #39 ---
+  E0 called from: 0x2438e19 (FreeStyle.exe+0x2038e19)
+  field12: 00 00 00 00
+  seq:     00 00 00 00
+  enc8:    00 00 00 00 00 00 00 00
+  dec8:    4d b8 a8 54 4d b8 a8 54
+
+User stopped.
+
+Total: E0 calls=39 packets=39

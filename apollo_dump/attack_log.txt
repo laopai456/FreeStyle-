@@ -1,0 +1,28 @@
+[18:02:42] ============================================================
+[18:02:42]   APOLLO Killer v2 — Suspended Launch Attack
+[18:02:42] ============================================================
+[18:02:43] Killed existing FreeStyle.exe
+[18:02:43] Launching FreeStyle.exe SUSPENDED...
+[18:02:43] PID=15108  hProcess=0x328  hThread=0x564
+[18:02:43] Resuming main thread (DLL load begins)...
+[18:02:43] Waiting for ApolloCT.dll to map...
+[18:02:43] ApolloCT.dll is mapped! (waited 0.2s)
+[18:02:43] RACING: Patching CRC functions before they execute...
+[18:02:43]   CRC func 1 @ 0x691A3C54: orig=83ecfc
+[18:02:43]   [PATCHED] CRC func 1 → xor eax,eax; ret
+[18:02:43]   CRC func 2 @ 0x691BE222: orig=83ecd4
+[18:02:43]   [PATCHED] CRC func 2 → xor eax,eax; ret
+[18:02:43] 
+CRC patch result: 2/2 patched
+[18:02:43] Monitoring game status...
+[18:02:44]   Alive at t+1s (exit_code=STILL_ACTIVE)
+[18:02:49]   Alive at t+6s (exit_code=STILL_ACTIVE)
+[18:02:54]   Alive at t+11s (exit_code=STILL_ACTIVE)
+[18:02:56] Game exited with code 0 after 13s
+[18:02:56] 
+============================================================
+[18:02:56]   SUCCESS! APOLLO CRC functions patched!
+[18:02:56]   Game PID=15108 is yours now.
+[18:02:56]   Handle=0x328 — use for memory ops!
+[18:02:56] ============================================================
+[18:02:56] Handles closed. Script exit.

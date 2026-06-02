@@ -1,0 +1,150 @@
+[23:55:59.991] === Verify ItemCode Offset ===
+[23:55:59.993] PID: 28160
+[23:55:59.993] SRC: 50125461  DST: 50125711
+[23:55:59.993] Target: [outer+0x164]+0x7DC
+[23:55:59.993] Log: D:\py\反编译\FreeStyle\apollo_dump\verify_offset_20260531_235559.txt
+[23:55:59.993] 
+[23:56:00.779]   [setup] sprintf hook ready
+[23:56:00.779]   [setup] offset monitor started (500ms)
+[23:56:00.779]   [setup] practice function hook @ 0x173C601 (with auto-fix)
+[23:56:00.779]   [ready] SRC=50125461 DST=50125711
+[23:56:00.779] 
+[23:56:00.780] Instructions:
+[23:56:00.780]   1. Enter room -> check if offset matches sprintf ic
+[23:56:00.780]   2. Enter practice -> watch for OFFSET CHANGE
+[23:56:00.780]   3. Exit practice -> watch for OFFSET CHANGE
+[23:56:00.780] 
+[23:56:00.780] Commands: status | quit
+[23:56:00.781] 
+[23:56:03.604] 
+[23:56:03.604] [practice hook] itemCode=0 <== ZERO (fixing) -> FIXED to 50125711
+[23:56:03.604]     outer=0xa0e1ed8 subObj=0x849ed338
+[23:56:03.604] [sprintf] #1 ic=800 phase=INJECTED
+[23:56:03.604]     error: Error: access violation accessing 0xba7d0300
+[23:56:03.604] 
+[23:56:03.604] [phase] INJECTED -> ROOM_LOAD
+[23:56:03.604] 
+[23:56:03.604] [sprintf] #2 ic=801 phase=ROOM_LOAD
+[23:56:03.605]     error: Error: access violation accessing 0xba7d0300
+[23:56:03.605] 
+[23:56:03.605] [phase] ROOM_LOAD -> PRACTICE_LOAD
+[23:56:03.605] 
+[23:56:03.605] [sprintf] #3 ic=50421031 phase=PRACTICE_LOAD
+[23:56:03.605]     error: Error: access violation accessing 0xba7d0300
+[23:56:03.606] [sprintf] #4 ic=50519561 phase=PRACTICE_LOAD
+[23:56:03.606]     error: Error: access violation accessing 0xba7d0300
+[23:56:03.606] [sprintf] #5 ic=50623371 phase=PRACTICE_LOAD
+[23:56:03.606]     error: Error: access violation accessing 0xba7d0300
+[23:56:03.606] [sprintf] #6 ic=50914721 phase=PRACTICE_LOAD
+[23:56:03.607]     error: Error: access violation accessing 0xba7d0300
+[23:56:03.607] [sprintf] #7 ic=51514521 phase=PRACTICE_LOAD
+[23:56:03.607]     error: Error: access violation accessing 0xba7d0300
+[23:56:03.609] [sprintf] #8 ic=50125461 phase=PRACTICE_LOAD
+[23:56:03.609]     error: Error: access violation accessing 0xba7d0300
+[23:56:03.609] [sprintf] #9 ic=51616261 phase=PRACTICE_LOAD
+[23:56:03.609]     error: Error: access violation accessing 0xba7d0300
+[23:56:03.610] [sprintf] #10 ic=51213111 phase=PRACTICE_LOAD
+[23:56:03.610]     error: Error: access violation accessing 0xba7d0300
+[23:56:10.909] [sprintf] #11 ic=800 phase=PRACTICE_LOAD
+[23:56:10.909]     error: Error: access violation accessing 0x164
+[23:56:10.909] [sprintf] #12 ic=801 phase=PRACTICE_LOAD
+[23:56:10.909]     error: Error: access violation accessing 0x164
+[23:56:10.910] [sprintf] #13 ic=50421031 phase=PRACTICE_LOAD
+[23:56:10.910]     error: Error: access violation accessing 0x164
+[23:56:10.910] [sprintf] #14 ic=50519561 phase=PRACTICE_LOAD
+[23:56:10.910]     error: Error: access violation accessing 0x164
+[23:56:10.912] [sprintf] #15 ic=50623371 phase=PRACTICE_LOAD
+[23:56:10.912]     error: Error: access violation accessing 0x164
+[23:56:10.913] [sprintf] #16 ic=50914721 phase=PRACTICE_LOAD
+[23:56:10.913]     error: Error: access violation accessing 0x164
+[23:56:10.913] [sprintf] #17 ic=51514521 phase=PRACTICE_LOAD
+[23:56:10.914]     error: Error: access violation accessing 0x164
+[23:56:10.914] [sprintf] #18 ic=50125461 phase=PRACTICE_LOAD
+[23:56:10.914]     error: Error: access violation accessing 0x164
+[23:56:10.915] [sprintf] #19 ic=51616261 phase=PRACTICE_LOAD
+[23:56:10.915]     error: Error: access violation accessing 0x164
+[23:56:10.915] [sprintf] #20 ic=51213111 phase=PRACTICE_LOAD
+[23:56:10.915]     error: Error: access violation accessing 0x164
+[23:56:11.036] [sprintf] #21 ic=800 phase=PRACTICE_LOAD
+[23:56:11.036]     error: Error: access violation accessing 0x164
+[23:56:11.037] [sprintf] #22 ic=801 phase=PRACTICE_LOAD
+[23:56:11.037]     error: Error: access violation accessing 0x164
+[23:56:11.037] [sprintf] #23 ic=50421031 phase=PRACTICE_LOAD
+[23:56:11.037]     error: Error: access violation accessing 0x164
+[23:56:11.039] [sprintf] #24 ic=50519561 phase=PRACTICE_LOAD
+[23:56:11.039]     error: Error: access violation accessing 0x164
+[23:56:11.039] [sprintf] #25 ic=50623371 phase=PRACTICE_LOAD
+[23:56:11.039]     error: Error: access violation accessing 0x164
+[23:56:11.040] [sprintf] #26 ic=50914721 phase=PRACTICE_LOAD
+[23:56:11.040]     error: Error: access violation accessing 0x164
+[23:56:11.041] [sprintf] #27 ic=51514521 phase=PRACTICE_LOAD
+[23:56:11.041]     error: Error: access violation accessing 0x164
+[23:56:11.041] [sprintf] #28 ic=50125461 phase=PRACTICE_LOAD
+[23:56:11.041]     error: Error: access violation accessing 0x164
+[23:56:11.043] [sprintf] #29 ic=51616261 phase=PRACTICE_LOAD
+[23:56:11.043]     error: Error: access violation accessing 0x164
+[23:56:11.044] [sprintf] #30 ic=51213111 phase=PRACTICE_LOAD
+[23:56:11.044]     error: Error: access violation accessing 0x164
+[23:56:11.128] [sprintf] #31 ic=800 phase=PRACTICE_LOAD
+[23:56:11.128]     error: Error: access violation accessing 0x164
+[23:56:11.128] [sprintf] #32 ic=801 phase=PRACTICE_LOAD
+[23:56:11.128]     error: Error: access violation accessing 0x164
+[23:56:11.128] [sprintf] #33 ic=50421031 phase=PRACTICE_LOAD
+[23:56:11.130]     error: Error: access violation accessing 0x164
+[23:56:11.130] [sprintf] #34 ic=50519561 phase=PRACTICE_LOAD
+[23:56:11.130]     error: Error: access violation accessing 0x164
+[23:56:11.131] [sprintf] #35 ic=50623371 phase=PRACTICE_LOAD
+[23:56:11.131]     error: Error: access violation accessing 0x164
+[23:56:11.131] [sprintf] #36 ic=50914721 phase=PRACTICE_LOAD
+[23:56:11.131]     error: Error: access violation accessing 0x164
+[23:56:11.131] [sprintf] #37 ic=51514521 phase=PRACTICE_LOAD
+[23:56:11.131]     error: Error: access violation accessing 0x164
+[23:56:11.133] [sprintf] #38 ic=50125461 phase=PRACTICE_LOAD
+[23:56:11.133]     error: Error: access violation accessing 0x164
+[23:56:11.133] [sprintf] #39 ic=51616261 phase=PRACTICE_LOAD
+[23:56:11.133]     error: Error: access violation accessing 0x164
+[23:56:11.134] [sprintf] #40 ic=51213111 phase=PRACTICE_LOAD
+[23:56:11.134]     error: Error: access violation accessing 0x164
+[23:56:27.087] 
+[23:56:27.087] [practice hook] itemCode=0 <== ZERO (fixing) -> FIXED to 50125711
+[23:56:27.087]     outer=0xa0e1ed8 subObj=0x849ed338
+[23:56:27.087] [sprintf] #41 ic=800 phase=PRACTICE_LOAD
+[23:56:27.087]     error: Error: access violation accessing 0x7dc
+[23:56:27.087] [sprintf] #42 ic=801 phase=PRACTICE_LOAD
+[23:56:27.087]     error: Error: access violation accessing 0x7dc
+[23:56:27.087] [sprintf] #43 ic=50421031 phase=PRACTICE_LOAD
+[23:56:27.087]     error: Error: access violation accessing 0x7dc
+[23:56:27.088] [sprintf] #44 ic=50519561 phase=PRACTICE_LOAD
+[23:56:27.088]     error: Error: access violation accessing 0x7dc
+[23:56:27.089] [sprintf] #45 ic=50623371 phase=PRACTICE_LOAD
+[23:56:27.089]     error: Error: access violation accessing 0x7dc
+[23:56:27.089] [sprintf] #46 ic=50914721 phase=PRACTICE_LOAD
+[23:56:27.089]     error: Error: access violation accessing 0x7dc
+[23:56:27.090] [sprintf] #47 ic=51514521 phase=PRACTICE_LOAD
+[23:56:27.090]     error: Error: access violation accessing 0x7dc
+[23:56:27.090] [sprintf] #48 ic=50125461 phase=PRACTICE_LOAD
+[23:56:27.090]     error: Error: access violation accessing 0x7dc
+[23:56:27.091] [sprintf] #49 ic=51616261 phase=PRACTICE_LOAD
+[23:56:27.091]     error: Error: access violation accessing 0x7dc
+[23:56:27.092] [sprintf] #50 ic=51213111 phase=PRACTICE_LOAD
+[23:56:27.092]     error: Error: access violation accessing 0x7dc
+[23:56:29.675] [sprintf] #51 ic=800 phase=PRACTICE_LOAD
+[23:56:29.675]     error: Error: access violation accessing 0xffc006dc
+[23:56:29.675] [sprintf] #52 ic=801 phase=PRACTICE_LOAD
+[23:56:29.675]     error: Error: access violation accessing 0xffc006dc
+[23:56:29.675] [sprintf] #53 ic=50421031 phase=PRACTICE_LOAD
+[23:56:29.675]     error: Error: access violation accessing 0xffc006dc
+[23:56:29.676] [sprintf] #54 ic=50519561 phase=PRACTICE_LOAD
+[23:56:29.676]     error: Error: access violation accessing 0xffc006dc
+[23:56:29.677] [sprintf] #55 ic=50125461 phase=PRACTICE_LOAD
+[23:56:29.677]     error: Error: access violation accessing 0xffc006dc
+[23:56:29.678] [sprintf] #56 ic=51514521 phase=PRACTICE_LOAD
+[23:56:29.678]     error: Error: access violation accessing 0xffc006dc
+[23:56:29.678] [sprintf] #57 ic=50623371 phase=PRACTICE_LOAD
+[23:56:29.678]     error: Error: access violation accessing 0xffc006dc
+[23:56:29.679] [sprintf] #58 ic=50914721 phase=PRACTICE_LOAD
+[23:56:29.679]     error: Error: access violation accessing 0xffc006dc
+[23:56:29.680] [sprintf] #59 ic=51616261 phase=PRACTICE_LOAD
+[23:56:29.680]     error: Error: access violation accessing 0xffc006dc
+[23:56:29.680] [sprintf] #60 ic=51213111 phase=PRACTICE_LOAD
+[23:56:29.680]     error: Error: access violation accessing 0xffc006dc

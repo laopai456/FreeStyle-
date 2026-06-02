@@ -1,0 +1,422 @@
+
+========== Phase 1: Loaded Modules ==========
+  FreeStyle.exe  base=0x400000  size=42979328
+  ntdll.dll  base=0x77210000  size=1773568
+  KERNEL32.DLL  base=0x75d90000  size=983040
+  KERNELBASE.dll  base=0x76d40000  size=2572288
+  apphelp.dll  base=0x74df0000  size=679936
+  AcLayers.DLL  base=0x66250000  size=2695168
+  msvcrt.dll  base=0x75800000  size=802816
+  GDI32.dll  base=0x76a30000  size=143360
+  win32u.dll  base=0x757e0000  size=106496
+  gdi32full.dll  base=0x76760000  size=925696
+  msvcp_win.dll  base=0x76ca0000  size=495616
+  ucrtbase.dll  base=0x75a30000  size=1122304
+  USER32.dll  base=0x76a70000  size=1736704
+  SHLWAPI.dll  base=0x75b50000  size=307200
+  RPCRT4.dll  base=0x74f40000  size=761856
+  AcGenral.DLL  base=0x7afd0000  size=2498560
+  sechost.dll  base=0x75f40000  size=540672
+  ole32.dll  base=0x75c40000  size=1376256
+  combase.dll  base=0x764e0000  size=2605056
+  OLEAUT32.dll  base=0x74ea0000  size=638976
+  advapi32.dll  base=0x76c20000  size=512000
+  shcore.dll  base=0x75fd0000  size=790528
+  SHELL32.dll  base=0x75110000  size=6901760
+  UxTheme.dll  base=0x71840000  size=520192
+  WINMM.dll  base=0x727d0000  size=200704
+  samcli.dll  base=0x637c0000  size=90112
+  MSACM32.dll  base=0x67f00000  size=102400
+  VERSION.dll  base=0x74de0000  size=32768
+  USERENV.dll  base=0x74b20000  size=147456
+  dwmapi.dll  base=0x71740000  size=147456
+  urlmon.dll  base=0x70180000  size=1712128
+  WINSPOOL.DRV  base=0x647a0000  size=491520
+  ntmarta.dll  base=0x72070000  size=167936
+  MPR.dll  base=0x72810000  size=102400
+  SspiCli.dll  base=0x71fe0000  size=155648
+  iertutil.dll  base=0x70a30000  size=2326528
+  srvcli.dll  base=0x72790000  size=122880
+  netutils.dll  base=0x741a0000  size=45056
+  IMM32.DLL  base=0x757b0000  size=151552
+  WS2_32.dll  base=0x75940000  size=389120
+  COMDLG32.dll  base=0x75e80000  size=729088
+  mss32.dll  base=0x21100000  size=413696
+  WLDAP32.dll  base=0x758d0000  size=397312
+  DINPUT8.dll  base=0x66ba0000  size=229376
+  gdiplus.dll  base=0x733b0000  size=1495040
+  COMCTL32.dll  base=0x747b0000  size=593920
+  BugTrap.dll  base=0x10000000  size=290816
+  WININET.dll  base=0x741b0000  size=4751360
+  WINHTTP.dll  base=0x70660000  size=901120
+  MSVCR100.dll  base=0x65fe0000  size=782336
+  d3d9.dll  base=0x59010000  size=1511424
+  IPHLPAPI.DLL  base=0x732e0000  size=147456
+  DDRAW.dll  base=0x79ea0000  size=962560
+  dxcore.dll  base=0x70eb0000  size=184320
+  DCIMAN32.dll  base=0x67ef0000  size=28672
+  dxgi.dll  base=0x71770000  size=827392
+  DSETUP.dll  base=0x3040000  size=81920
+  MiniZip.dll  base=0x3060000  size=122880
+  d3dx9_30.dll  base=0x4cb0000  size=2490368
+  ErrorReport.dll  base=0x30a0000  size=45056
+  FSCI.dll  base=0x4f10000  size=761856
+  MFC71.DLL  base=0x7c140000  size=1073152
+  MSVCR71.dll  base=0x7c360000  size=352256
+  MSVCP71.dll  base=0x7c3c0000  size=507904
+  d3dx9_37.dll  base=0x78340000  size=3895296
+  D8WingLib.dll  base=0x3360000  size=188416
+  WingMan.dll  base=0x4fd0000  size=507904
+  D9WingLib.dll  base=0x5050000  size=208896
+  d3d8.dll  base=0x65c30000  size=753664
+  d3d8thk.dll  base=0x67070000  size=28672
+  MFC71CHS.DLL  base=0x5d360000  size=40960
+  inputhost.dll  base=0x6add0000  size=1355776
+  CoreMessaging.dll  base=0x58430000  size=839680
+  windows.storage.dll  base=0x73a90000  size=7245824
+  wintypes.dll  base=0x739c0000  size=815104
+  profapi.dll  base=0x739a0000  size=118784
+  bcryptPrimitives.dll  base=0x76fc0000  size=401408
+  CRYPTBASE.DLL  base=0x730d0000  size=45056
+  ondemandconnroutehelper.dll  base=0x707a0000  size=81920
+  kernel.appcore.dll  base=0x74a20000  size=77824
+  NSI.dll  base=0x769c0000  size=28672
+  mswsock.dll  base=0x70740000  size=331776
+  WINNSI.DLL  base=0x70650000  size=40960
+  ApolloCT.Dll  base=0x69000000  size=7045120
+  Secur32.dll  base=0x6fd20000  size=40960
+  gamesec.dll  base=0x6f0a0000  size=32768
+  VCRUNTIME140.dll  base=0x6adb0000  size=86016
+  nvldumd.dll  base=0x56d10000  size=638976
+  msasn1.dll  base=0x72710000  size=57344
+  cryptnet.dll  base=0x668f0000  size=159744
+  CRYPT32.dll  base=0x77090000  size=1060864
+  wldp.dll  base=0x6bb20000  size=278528
+  drvstore.dll  base=0x66e70000  size=1085440
+  devobj.dll  base=0x72760000  size=147456
+  cfgmgr32.dll  base=0x72720000  size=249856
+  wintrust.dll  base=0x769d0000  size=364544
+  imagehlp.dll  base=0x76d20000  size=110592
+  CRYPTSP.dll  base=0x71410000  size=86016
+  rsaenh.dll  base=0x70e60000  size=196608
+  bcrypt.dll  base=0x738c0000  size=106496
+  nvgpucomp32.dll  base=0x52e70000  size=65613824
+  NvMemMapStorage.dll  base=0x52d80000  size=970752
+  POWRPROF.dll  base=0x714b0000  size=282624
+  UMPDC.dll  base=0x71f80000  size=57344
+  nvd3dum.dll  base=0xa580000  size=63397888
+  directxdatabasehelper.dll  base=0x58150000  size=245760
+  clbcatq.dll  base=0x759a0000  size=532480
+  msxml3.dll  base=0x6ac50000  size=1409024
+  mlang.dll  base=0x6ac10000  size=217088
+  MSCTF.dll  base=0x75000000  size=1019904
+  textinputframework.dll  base=0x649b0000  size=1024000
+  DPAPI.DLL  base=0x68c40000  size=32768
+  schannel.dll  base=0x66ad0000  size=520192
+  ncrypt.dll  base=0x66800000  size=151552
+  NTASN1.dll  base=0x667d0000  size=163840
+  ncryptsslp.dll  base=0x667b0000  size=131072
+  HID.DLL  base=0x64790000  size=45056
+  SETUPAPI.DLL  base=0x760a0000  size=4444160
+  mssmp3.asi  base=0x26f00000  size=188416
+  mssvoice.asi  base=0x26400000  size=233472
+  mssa3d.m3d  base=0x22100000  size=139264
+  mssds3d.m3d  base=0x22300000  size=110592
+  mssdx7.m3d  base=0x22600000  size=126976
+  msseax.m3d  base=0xe5a0000  size=225280
+  mssrsx.m3d  base=0x22700000  size=425984
+  msssoft.m3d  base=0x22400000  size=102400
+  mssdsp.flt  base=0x24100000  size=131072
+  DSOUND.DLL  base=0x6ab90000  size=466944
+  winmmbase.dll  base=0x6ab70000  size=126976
+  ResampleDmo.DLL  base=0x6aad0000  size=626688
+  msdmo.dll  base=0x6c730000  size=36864
+  MMDevApi.dll  base=0x587d0000  size=507904
+  AUDIOSES.DLL  base=0x52550000  size=1613824
+  resourcepolicyclient.dll  base=0x6aac0000  size=65536
+  Windows.UI.dll  base=0x586c0000  size=1089536
+  avrt.dll  base=0x6aab0000  size=36864
+  nvspcap.dll  base=0x52c60000  size=1138688
+  gpapi.dll  base=0x6c0a0000  size=135168
+  nvppe.dll  base=0x52b20000  size=1310720
+  PSAPI.DLL  base=0x76a60000  size=24576
+  dhcpcsvc.DLL  base=0x727b0000  size=94208
+  usp10.dll  base=0x70d70000  size=94208
+  TextShaping.dll  base=0x64c00000  size=610304
+  quartz.dll  base=0x6a900000  size=1712128
+  qasf.dll  base=0x6a8d0000  size=147456
+  WMVCore.DLL  base=0x6a700000  size=1900544
+  WMASF.DLL  base=0x6a6b0000  size=266240
+  devenum.dll  base=0x6a690000  size=114688
+  D3DIM700.DLL  base=0x6a620000  size=413696
+  wmvdecod.dll  base=0x79f90000  size=2310144
+  mfperfhelper.dll  base=0x57b60000  size=1081344
+  MFPlat.DLL  base=0x57f30000  size=1662976
+  RTWorkQ.DLL  base=0x57f00000  size=184320
+  napinsp.dll  base=0x70610000  size=73728
+  pnrpnsp.dll  base=0x705f0000  size=90112
+  DNSAPI.dll  base=0x70530000  size=770048
+  winrnr.dll  base=0x70520000  size=57344
+  wshbth.dll  base=0x70500000  size=69632
+  nlansp_c.dll  base=0x704e0000  size=98304
+  fwpuclnt.dll  base=0x70340000  size=385024
+  rasadhlp.dll  base=0x70330000  size=32768
+  CoreUIComponents.dll  base=0x58190000  size=2691072
+  Netbios.dll  base=0x6a610000  size=40960
+  propsys.dll  base=0x6c420000  size=815104
+  Windows.FileExplorer.Common.dll  base=0x6c360000  size=524288
+
+--- Crypto-related modules ---
+  bcryptPrimitives.dll @ 0x76fc0000
+  CRYPTBASE.DLL @ 0x730d0000
+  cryptnet.dll @ 0x668f0000
+  CRYPT32.dll @ 0x77090000
+  CRYPTSP.dll @ 0x71410000
+  bcrypt.dll @ 0x738c0000
+  ncrypt.dll @ 0x66800000
+  ncryptsslp.dll @ 0x667b0000
+
+--- Game-related modules ---
+  FreeStyle.exe @ 0x400000
+  ApolloCT.Dll @ 0x69000000
+  gamesec.dll @ 0x6f0a0000
+
+========== Phase 2: FreeStyle.exe Imports ==========
+FreeStyle.exe base=0x400000 size=42979328
+
+--- Crypto-related imports (20) ---
+  D3DXAssembleShaderFromFileA (from d3dx9_30.dll) @ (null) type=function
+  ImmGetDescriptionA (from IMM32.dll) @ (null) type=function
+  HeapDestroy (from KERNEL32.dll) @ (null) type=function
+  DestroyWindow (from USER32.dll) @ (null) type=function
+  GetKeyState (from USER32.dll) @ (null) type=function
+  GetAsyncKeyState (from USER32.dll) @ (null) type=function
+  GetKeyboardLayout (from USER32.dll) @ (null) type=function
+  RegCreateKeyExA (from ADVAPI32.dll) @ (null) type=function
+  CryptImportKey (from ADVAPI32.dll) @ (null) type=function
+  CryptDestroyHash (from ADVAPI32.dll) @ (null) type=function
+  CryptGetHashParam (from ADVAPI32.dll) @ (null) type=function
+  CryptHashData (from ADVAPI32.dll) @ (null) type=function
+  CryptCreateHash (from ADVAPI32.dll) @ (null) type=function
+  CryptDestroyKey (from ADVAPI32.dll) @ (null) type=function
+  CryptGenRandom (from ADVAPI32.dll) @ (null) type=function
+  CryptAcquireContextA (from ADVAPI32.dll) @ (null) type=function
+  CryptReleaseContext (from ADVAPI32.dll) @ (null) type=function
+  RegOpenKeyExA (from ADVAPI32.dll) @ (null) type=function
+  RegCloseKey (from ADVAPI32.dll) @ (null) type=function
+  CryptEncrypt (from ADVAPI32.dll) @ (null) type=function
+
+  BCRYPT.DLL: NOT imported
+
+  CRYPT32.DLL: NOT imported
+
+  Imports from ADVAPI32.DLL (20):
+    RegCreateKeyExA @ (null)
+    AdjustTokenPrivileges @ (null)
+    CryptImportKey @ (null)
+    CryptDestroyHash @ (null)
+    CryptGetHashParam @ (null)
+    CryptHashData @ (null)
+    CryptCreateHash @ (null)
+    RegSetValueExA @ (null)
+    RegDeleteValueA @ (null)
+    CryptDestroyKey @ (null)
+    OpenThreadToken @ (null)
+    CryptGenRandom @ (null)
+    CryptAcquireContextA @ (null)
+    CryptReleaseContext @ (null)
+    RegOpenKeyExA @ (null)
+    RegQueryValueExA @ (null)
+    RegCloseKey @ (null)
+    LookupPrivilegeValueA @ (null)
+    OpenProcessToken @ (null)
+    CryptEncrypt @ (null)
+
+  NCRYPT.DLL: NOT imported
+
+  Imports from KERNEL32.DLL (124):
+    DecodePointer @ (null)
+    lstrlenA @ (null)
+    ReadProcessMemory @ (null)
+    SetFileTime @ (null)
+    LocalFileTimeToFileTime @ (null)
+    ReadFile @ (null)
+    GetFileAttributesA @ (null)
+    SystemTimeToFileTime @ (null)
+    SetFilePointer @ (null)
+    CreateThread @ (null)
+    GetNativeSystemInfo @ (null)
+    VerSetConditionMask @ (null)
+    VerifyVersionInfoA @ (null)
+    GlobalMemoryStatus @ (null)
+    RemoveDirectoryA @ (null)
+    HeapDestroy @ (null)
+    HeapFree @ (null)
+    HeapAlloc @ (null)
+    EncodePointer @ (null)
+    HeapReAlloc @ (null)
+    HeapSize @ (null)
+    GetProcessHeap @ (null)
+    InitializeCriticalSectionAndSpinCount @ (null)
+    HeapSetInformation @ (null)
+    InterlockedDecrement @ (null)
+    GetTickCount @ (null)
+    InitializeCriticalSection @ (null)
+    DeleteCriticalSection @ (null)
+    SetThreadPriority @ (null)
+    CloseHandle @ (null)
+    WaitForSingleObject @ (null)
+    Sleep @ (null)
+    InterlockedExchange @ (null)
+    LeaveCriticalSection @ (null)
+    EnterCriticalSection @ (null)
+    InterlockedIncrement @ (null)
+    GlobalUnlock @ (null)
+    GlobalLock @ (null)
+    GlobalAlloc @ (null)
+    IsBadWritePtr @ (null)
+    GlobalFree @ (null)
+    WideCharToMultiByte @ (null)
+    GetProcAddress @ (null)
+    LoadLibraryA @ (null)
+    GetStartupInfoW @ (null)
+    GetLastError @ (null)
+    OutputDebugStringA @ (null)
+    GetSystemTime @ (null)
+    MultiByteToWideChar @ (null)
+    GetLocalTime @ (null)
+    QueryPerformanceCounter @ (null)
+    lstrlenW @ (null)
+    FindResourceExW @ (null)
+    SizeofResource @ (null)
+    LockResource @ (null)
+    LoadResource @ (null)
+    FindResourceW @ (null)
+    lstrcmpiW @ (null)
+    lstrcmpA @ (null)
+    DeleteFileA @ (null)
+    SetCurrentDirectoryA @ (null)
+    GetCurrentDirectoryA @ (null)
+    TerminateProcess @ (null)
+    GetCurrentProcess @ (null)
+    SetFileAttributesA @ (null)
+    FindNextFileA @ (null)
+    FindClose @ (null)
+    FindFirstFileA @ (null)
+    GetPrivateProfileStringA @ (null)
+    TerminateThread @ (null)
+    GetExitCodeThread @ (null)
+    GetTempPathA @ (null)
+    WriteFile @ (null)
+    CreateFileA @ (null)
+    CreateDirectoryA @ (null)
+    Process32Next @ (null)
+    OpenProcess @ (null)
+    Process32First @ (null)
+    CreateToolhelp32Snapshot @ (null)
+    GetSystemDirectoryA @ (null)
+    GetCommandLineA @ (null)
+    GetCurrentProcessId @ (null)
+    RaiseException @ (null)
+    ReleaseMutex @ (null)
+    CreateMutexA @ (null)
+    IsDBCSLeadByte @ (null)
+    UnhandledExceptionFilter @ (null)
+    GetSystemInfo @ (null)
+    GetVersionExA @ (null)
+    FreeLibrary @ (null)
+    CreateEventA @ (null)
+    SetEvent @ (null)
+    GetModuleFileNameA @ (null)
+    ResetEvent @ (null)
+    GetWindowsDirectoryA @ (null)
+    SetUnhandledExceptionFilter @ (null)
+    VirtualQuery @ (null)
+    GetCurrentThreadId @ (null)
+    SetLastError @ (null)
+    QueryPerformanceFrequency @ (null)
+    GetThreadTimes @ (null)
+    GetCurrentThread @ (null)
+    GlobalSize @ (null)
+    InterlockedCompareExchange @ (null)
+    CompareStringA @ (null)
+    GlobalMemoryStatusEx @ (null)
+    MulDiv @ (null)
+    FormatMessageA @ (null)
+    GetExitCodeProcess @ (null)
+    WaitForMultipleObjects @ (null)
+    CreateProcessA @ (null)
+    SetWaitableTimer @ (null)
+    CreateWaitableTimerA @ (null)
+    LocalFree @ (null)
+    IsDebuggerPresent @ (null)
+    IsProcessorFeaturePresent @ (null)
+    GetSystemTimeAsFileTime @ (null)
+    SleepEx @ (null)
+    PeekNamedPipe @ (null)
+    GetFileType @ (null)
+    GetStdHandle @ (null)
+    ExpandEnvironmentStringsA @ (null)
+    GetModuleHandleA @ (null)
+    GetLocaleInfoA @ (null)
+
+  Imports from WS2_32.DLL (14):
+    WSASendTo @ (null)
+    WSARecvFrom @ (null)
+    WSASocketA @ (null)
+    WSAConnect @ (null)
+    WSAEventSelect @ (null)
+    WSACreateEvent @ (null)
+    WSACloseEvent @ (null)
+    WSAEnumNetworkEvents @ (null)
+    WSAWaitForMultipleEvents @ (null)
+    WSARecv @ (null)
+    WSAIoctl @ (null)
+    freeaddrinfo @ (null)
+    getaddrinfo @ (null)
+    WSASend @ (null)
+
+========== Phase 3: Crypto Constant Scans ==========
+  [FreeStyle.exe] AES S-box: 2 hits
+    @ +0x2442ef8 | 63 7c 77 7b f2 6b 6f c5 30 01 67 2b fe d7 ab 76 ca 82 c9 7d fa 59 47 f0 ad d4 a2 af 9c a4 72 c0 
+    @ +0x2617f18 | 63 7c 77 7b f2 6b 6f c5 30 01 67 2b fe d7 ab 76 ca 82 c9 7d fa 59 47 f0 ad d4 a2 af 9c a4 72 c0 
+  [FreeStyle.exe] AES InvS-box: 3 hits
+    @ +0x2442ff8 | 52 09 6a d5 30 36 a5 38 bf 40 a3 9e 81 f3 d7 fb 7c e3 39 82 9b 2f ff 87 34 8e 43 44 c4 de e9 cb 
+    @ +0x2618018 | 52 09 6a d5 30 36 a5 38 bf 40 a3 9e 81 f3 d7 fb 7c e3 39 82 9b 2f ff 87 34 8e 43 44 c4 de e9 cb 
+    @ +0x261a118 | 52 09 6a d5 30 36 a5 38 bf 40 a3 9e 81 f3 d7 fb 7c e3 39 82 9b 2f ff 87 34 8e 43 44 c4 de e9 cb 
+  [FreeStyle.exe] ChaCha constant: 0 hits
+  [FreeStyle.exe] BCrypt string: 0 hits
+  [FreeStyle.exe] UDP magic (907f): 254 hits
+    @ +0x220141 | ... 89 8d 94 7f ff ff c7 85 90 7f ff ff 00 00 00 00 eb 0f 8b 95 90 7f ff ff 83 c2 01 89 95 90 7f ff ...
+    @ +0x22014d | ... 00 00 00 00 eb 0f 8b 95 90 7f ff ff 83 c2 01 89 95 90 7f ff ff 8b 85 90 7f ff ff 3b 85 98 9f ff ...
+    @ +0x220156 | ... 7f ff ff 83 c2 01 89 95 90 7f ff ff 8b 85 90 7f ff ff 3b 85 98 9f ff ff 7d 38 6a 04 8b 8d f0 dd ...
+    @ +0x22015c | ... 89 95 90 7f ff ff 8b 85 90 7f ff ff 3b 85 98 9f ff ff 7d 38 6a 04 8b 8d f0 dd fe ff 8b 91 24 03 ...
+    @ +0x220178 | ... 8b 91 24 03 00 00 8b 85 90 7f ff ff 8d 0c 82 51 8b 95 94 7f ff ff 52 e8 94 e7 e9 01 83 c4 0c 8b ...
+  [ApolloCT.Dll] UDP magic (907f): 92 hits
+    @ +0x10db8 | ... 7d 04 f7 21 15 90 06 61 90 7f 7b f7 67 02 f1 1d da 57 c7 a2 51 b4 d6 5e cc ab 66 8d 33 ba 28 4f ...
+    @ +0x18392 | ... 76 11 e0 34 15 90 06 61 90 7f 7d f5 65 0c ff 1f e1 6a f8 9f 6a 81 e1 6f ff 9a 69 9c 31 b8 2e 49 ...
+    @ +0xacdb8 | ... 7d 04 f7 21 15 90 06 61 90 7f 7b f7 67 02 f1 1d da 57 c7 a2 51 b4 d6 5e cc ab 66 8d 33 ba 28 4f ...
+    @ +0xb4392 | ... 76 11 e0 34 15 90 06 61 90 7f 7d f5 65 0c ff 1f e1 6a f8 9f 6a 81 e1 6f ff 9a 69 9c 31 b8 2e 49 ...
+    @ +0x1aaa47 | ... 15 ff ff 66 0f bc d3 8d 90 7f 0c 6d fd 84 d7 68 f9 1c 9b 46 8b 15 74 93 01 00 f9 84 c0 f7 d0 0f ...
+
+========== Phase 4: Key Module Exports ==========
+  [FreeStyle.exe] total exports: 0, crypto-related: 0
+  [ApolloCT.Dll] total exports: 0, crypto-related: 0
+
+========== Phase 5: sendto Stack Trace ==========
+  sendto hooked for stack trace (max 5 packets)
+
+========== Phase 6: BCrypt Runtime Hooks ==========
+  BCrypt.dll loaded @ 0x738c0000
+  [BCrypt] BCryptEncrypt hooked
+  [BCrypt] BCryptDecrypt hooked
+  [BCrypt] BCryptGenerateSymmetricKey hooked
+  [BCrypt] BCryptSetProperty hooked
+  [BCrypt] BCryptCreateHash hooked
+  [BCrypt] BCryptHashData hooked
+  [BCrypt] BCryptFinishHash hooked
+  [BCrypt] BCryptGenRandom hooked
+
+========== RECON COMPLETE ==========
+Waiting for C2S UDP packets to trace...
+(Send some game actions to trigger UDP sends)

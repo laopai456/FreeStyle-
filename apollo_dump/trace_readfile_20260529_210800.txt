@@ -1,0 +1,20 @@
+[21:08:00] === ReadFile调用栈追踪 === PID:20560 ===
+[21:08:00] 日志: D:\py\反编译\FreeStyle\apollo_dump\trace_readfile_20260529_210800.txt
+[21:08:01]   ReadFile调用栈追踪就绪
+[21:08:01] 
+[21:08:01] 进房间触发角色加载。命令: quit
+[21:08:01] 
+[21:08:05]   [SSKF] "i50125461_FN.smd" req=512 read=512 buf=0x88c59188
+[21:08:05]   [SSKF] "i50125461_FN.smd" req=100864 read=100864 buf=0x5b70a008
+[21:08:06]   [BT] buf=0x5b70a008 size=100864 req=100864
+[21:08:06]     #0 0x500fabd5 (MSVCR100.dll+0x1abd5)
+[21:08:06]     #1 0x76d04660 (KERNELBASE.dll+0x144660)
+[21:08:06]     #2 0x500faca0 (MSVCR100.dll+0x1aca0)
+[21:08:06]     #3 0x50118caf (MSVCR100.dll+0x38caf)
+[21:08:06]     #4 0x50102be7 (MSVCR100.dll+0x22be7)
+[21:08:06]     #5 0x50102c3c (MSVCR100.dll+0x22c3c)
+[21:08:06]     #6 0x21e2605 (FreeStyle.exe+0x1de2605)
+[21:08:06]     #7 0x22ecba7 (FreeStyle.exe+0x1eecba7)
+[21:08:06]     #8 0x22ebae3 (FreeStyle.exe+0x1eebae3)
+[21:08:06]     #9 0x1ed0aae (FreeStyle.exe+0x1ad0aae)
+[21:08:06]   [BUF] 53 53 4b 46 01 00 00 00 69 35 30 31 32 35 34 36 31 5f 46 4e 2e 73 6d 64 00 00 00 00 00 00 00 00 

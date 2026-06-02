@@ -1,0 +1,99 @@
+[21:10:20.286] === ItemCode Field Monitor ===
+[21:10:20.286] PID: 20888
+[21:10:20.286] SRC: 50125461  DST: 50125711
+[21:10:20.286] Log: D:\py\反编译\FreeStyle\apollo_dump\itemcode_monitor_20260531_211020.txt
+[21:10:20.286] 
+[21:10:20.991]   [setup] sprintf hook ready
+[21:10:20.991]   [setup] object monitor started (500ms interval)
+[21:10:20.991]   [setup] CreateFileA/W hooks ready
+[21:10:20.991]   [ready] SRC=50125461 DST=50125711
+[21:10:20.991] 
+[21:10:20.991] Instructions:
+[21:10:20.991]   1. Enter room -> observe sprintf and objects
+[21:10:20.992]   2. Enter practice -> watch for FIELD CHANGE
+[21:10:20.992]   3. Exit practice -> watch for FIELD CHANGE
+[21:10:20.992] 
+[21:10:20.992] Commands: status | list | quit
+[21:10:20.992] 
+[21:10:25.504] [sprintf] #1 ic=3001 phase=INJECTED objects=2
+[21:10:25.504]     0x19b8b4+0x188 = 50125461
+[21:10:25.504]     0x19b8b4+0x188 = 50125461
+[21:10:25.504] 
+[21:10:25.504] [phase] INJECTED -> ROOM_LOAD
+[21:10:25.504] 
+[21:10:25.509] [sprintf] #2 ic=50125461 <== SRC_IC phase=ROOM_LOAD objects=12
+[21:10:25.509]     0x1939bc+0xf4 = 50125461
+[21:10:25.509]     0x1939c0+0xf0 = 50125461
+[21:10:25.509]     0x1939f8+0xb8 = 50125461
+[21:10:25.509] 
+[21:10:25.509] [phase] ROOM_LOAD -> PRACTICE_LOAD
+[21:10:25.509] 
+[21:10:25.515] [sprintf] #3 ic=50420791 phase=PRACTICE_LOAD objects=2
+[21:10:25.516]     0x19b8b4+0x188 = 50125461
+[21:10:25.516]     0x19b8b4+0x188 = 50125461
+[21:10:25.520] [sprintf] #4 ic=50519331 phase=PRACTICE_LOAD objects=2
+[21:10:25.520]     0x19b8b4+0x188 = 50125461
+[21:10:25.521]     0x19b8b4+0x188 = 50125461
+[21:10:25.526] [sprintf] #5 ic=50622961 phase=PRACTICE_LOAD objects=2
+[21:10:25.526]     0x19b8b4+0x188 = 50125461
+[21:10:25.526]     0x19b8b4+0x188 = 50125461
+[21:10:25.530] [sprintf] #6 ic=51612121 phase=PRACTICE_LOAD objects=2
+[21:10:25.530]     0x19b8b4+0x188 = 50125461
+[21:10:25.530]     0x19b8b4+0x188 = 50125461
+[21:10:25.536] [sprintf] #7 ic=51514321 phase=PRACTICE_LOAD objects=2
+[21:10:25.536]     0x19b8b4+0x188 = 50125461
+[21:10:25.536]     0x19b8b4+0x188 = 50125461
+[21:10:25.541] [sprintf] #8 ic=51212851 phase=PRACTICE_LOAD objects=2
+[21:10:25.541]     0x19b8b4+0x188 = 50125461
+[21:10:25.541]     0x19b8b4+0x188 = 50125461
+[21:10:25.547] [sprintf] #9 ic=50914671 phase=PRACTICE_LOAD objects=2
+[21:10:25.547]     0x19b8b4+0x188 = 50125461
+[21:10:25.547]     0x19b8b4+0x188 = 50125461
+[21:10:25.553] [sprintf] #10 ic=51113901 phase=PRACTICE_LOAD objects=2
+[21:10:25.553]     0x19b8b4+0x188 = 50125461
+[21:10:25.553]     0x19b8b4+0x188 = 50125461
+[21:10:25.558] [sprintf] #11 ic=51012781 phase=PRACTICE_LOAD objects=2
+[21:10:25.558]     0x19b8b4+0x188 = 50125461
+[21:10:25.558]     0x19b8b4+0x188 = 50125461
+[21:10:25.994] 
+[21:10:25.994] === FIELD CHANGE @ PRACTICE_LOAD ===
+[21:10:25.994]   0x19b8b4+0x188: N/A -> 651740812 (from sprintf#1)
+[21:10:25.994]   0x1939bc+0xf4: N/A -> 1209802788 (from sprintf#2)
+[21:10:25.994]   0x1939c0+0xf0: N/A -> 1209802788 (from sprintf#2)
+[21:10:25.994]   0x1939f8+0xb8: N/A -> 1209802788 (from sprintf#2)
+[21:10:25.994]   0x193a1c+0x94: N/A -> 1209802788 (from sprintf#2)
+[21:10:25.994]   0x193a08+0xa8: N/A -> 1209802788 (from sprintf#2)
+[21:10:25.994]   0x193a3c+0x74: N/A -> 1209802788 (from sprintf#2)
+[21:10:25.994]   0x193a28+0x88: N/A -> 1209802788 (from sprintf#2)
+[21:10:25.994]   0x193ab0+0x0: N/A -> 1209802788 (from sprintf#2)
+[21:10:25.994] 
+[21:10:29.495] 
+[21:10:29.496] === FIELD CHANGE @ PRACTICE_LOAD ===
+[21:10:29.496]   0x1939bc+0xf4: 1209802788 -> 1654132 (from sprintf#2)
+[21:10:29.496]   0x1939c0+0xf0: 1209802788 -> 1654132 (from sprintf#2)
+[21:10:29.496]   0x1939f8+0xb8: 1209802788 -> 1654132 (from sprintf#2)
+[21:10:29.496]   0x193a1c+0x94: 1209802788 -> 1654132 (from sprintf#2)
+[21:10:29.496]   0x193a08+0xa8: 1209802788 -> 1654132 (from sprintf#2)
+[21:10:29.496]   0x193a3c+0x74: 1209802788 -> 1654132 (from sprintf#2)
+[21:10:29.496]   0x193a28+0x88: 1209802788 -> 1654132 (from sprintf#2)
+[21:10:29.496]   0x193ab0+0x0: 1209802788 -> 1654132 (from sprintf#2)
+[21:10:29.496] 
+[21:10:37.001] 
+[21:10:37.001] === FIELD CHANGE @ PRACTICE_LOAD ===
+[21:10:37.001]   0x19b8b4+0x188: 651740812 -> 2013265920 (from sprintf#1)
+[21:10:37.001] 
+[21:10:37.502] 
+[21:10:37.502] === FIELD CHANGE @ PRACTICE_LOAD ===
+[21:10:37.502]   0x19b8b4+0x188: 2013265920 -> 651740812 (from sprintf#1)
+[21:10:37.502] 
+[21:10:38.003] 
+[21:10:38.003] === FIELD CHANGE @ PRACTICE_LOAD ===
+[21:10:38.003]   0x1939bc+0xf4: 1654132 -> 0 (from sprintf#2)
+[21:10:38.003]   0x1939c0+0xf0: 1654132 -> 0 (from sprintf#2)
+[21:10:38.003]   0x1939f8+0xb8: 1654132 -> 0 (from sprintf#2)
+[21:10:38.003]   0x193a1c+0x94: 1654132 -> 0 (from sprintf#2)
+[21:10:38.003]   0x193a08+0xa8: 1654132 -> 0 (from sprintf#2)
+[21:10:38.003]   0x193a3c+0x74: 1654132 -> 0 (from sprintf#2)
+[21:10:38.003]   0x193a28+0x88: 1654132 -> 0 (from sprintf#2)
+[21:10:38.003]   0x193ab0+0x0: 1654132 -> 0 (from sprintf#2)
+[21:10:38.003] 

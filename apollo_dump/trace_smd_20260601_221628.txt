@@ -1,0 +1,14 @@
+[22:16:28] PID=18928
+[22:16:30] Frida 已附加
+[22:16:30]   [探测] 探测 Frida API...
+[22:16:30]   [探测] typeof Module = function
+[22:16:30]   [探测] typeof Process = object
+[22:16:30]   [探测] typeof Interceptor = object
+[22:16:30]   [探测] typeof Thread = function
+[22:16:30]   [探测] kernel32 base = 0x76070000
+[22:16:30]   [探测] enumerateExports 找到 CreateFileA = 0x7608ea60
+[22:16:30]   CreateFileA @ 0x7608ea60，开始 hook
+[22:16:30]   就绪，进练习场触发加载...
+[22:16:30] 进练习场触发加载... (Ctrl+C 退出)
+
+[22:27:20] 已断开

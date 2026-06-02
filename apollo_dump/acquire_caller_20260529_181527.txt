@@ -1,0 +1,286 @@
+[18:15:27] === AcquireSMD调用者诊断 === PID:19100 ===
+[18:15:27] 目标: 0x1EEBAE3 附近的函数入口
+[18:15:27] 日志: D:\py\反编译\FreeStyle\apollo_dump\acquire_caller_20260529_181527.txt
+[18:15:29]   扫描起始: 返回地址 0x22ebae3
+[18:15:29]   [候选] RVA=0x1eeba30 (0xb3 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 6a ff 68 f0 4d 64 02 64 a1 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeba30 (0xb3 bytes before retAddr) [有边界] prologue#2
+[18:15:29]     bytes: 55 8b ec 6a ff 68 f0 4d 64 02 64 a1 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb8f0 (0x1f3 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 6a ff 68 c1 4d 64 02 64 a1 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb8f0 (0x1f3 bytes before retAddr) [有边界] prologue#2
+[18:15:29]     bytes: 55 8b ec 6a ff 68 c1 4d 64 02 64 a1 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb8a0 (0x243 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 83 ec 0c 83 3d 68 53 a9 02 00 74 38 a1 
+[18:15:29]   [候选] RVA=0x1eeb8a0 (0x243 bytes before retAddr) [有边界] prologue#1
+[18:15:29]     bytes: 55 8b ec 83 ec 0c 83 3d 68 53 a9 02 00 74 38 a1 
+[18:15:29]   [候选] RVA=0x1eeb850 (0x293 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 83 ec 08 89 4d f8 6a 00 8b 4d f8 e8 9d 
+[18:15:29]   [候选] RVA=0x1eeb850 (0x293 bytes before retAddr) [有边界] prologue#1
+[18:15:29]     bytes: 55 8b ec 83 ec 08 89 4d f8 6a 00 8b 4d f8 e8 9d 
+[18:15:29]   [候选] RVA=0x1eeb800 (0x2e3 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 51 89 4d fc 8b 45 fc c7 00 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb800 (0x2e3 bytes before retAddr) [有边界] prologue#3
+[18:15:29]     bytes: 55 8b ec 51 89 4d fc 8b 45 fc c7 00 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb740 (0x3a3 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 83 ec 24 89 4d f0 8b 45 f0 d9 80 f0 00 
+[18:15:29]   [候选] RVA=0x1eeb740 (0x3a3 bytes before retAddr) [有边界] prologue#1
+[18:15:29]     bytes: 55 8b ec 83 ec 24 89 4d f0 8b 45 f0 d9 80 f0 00 
+[18:15:29]   [候选] RVA=0x1eeb6f0 (0x3f3 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 83 ec 08 89 4d f8 c7 45 fc 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb6f0 (0x3f3 bytes before retAddr) [有边界] prologue#1
+[18:15:29]     bytes: 55 8b ec 83 ec 08 89 4d f8 c7 45 fc 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb690 (0x453 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 51 89 4d fc 8b 45 fc c7 00 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb690 (0x453 bytes before retAddr) [有边界] prologue#3
+[18:15:29]     bytes: 55 8b ec 51 89 4d fc 8b 45 fc c7 00 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb640 (0x4a3 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 83 ec 08 89 4d f8 8b 45 f8 83 c0 0c 89 
+[18:15:29]   [候选] RVA=0x1eeb640 (0x4a3 bytes before retAddr) [有边界] prologue#1
+[18:15:29]     bytes: 55 8b ec 83 ec 08 89 4d f8 8b 45 f8 83 c0 0c 89 
+[18:15:29]   [候选] RVA=0x1eeb5e0 (0x503 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 6a ff 68 68 4d 64 02 64 a1 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb5e0 (0x503 bytes before retAddr) [有边界] prologue#2
+[18:15:29]     bytes: 55 8b ec 6a ff 68 68 4d 64 02 64 a1 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb570 (0x573 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 6a ff 68 41 4d 64 02 64 a1 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb570 (0x573 bytes before retAddr) [有边界] prologue#2
+[18:15:29]     bytes: 55 8b ec 6a ff 68 41 4d 64 02 64 a1 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb4a0 (0x643 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 6a ff 68 10 4d 64 02 64 a1 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb4a0 (0x643 bytes before retAddr) [有边界] prologue#2
+[18:15:29]     bytes: 55 8b ec 6a ff 68 10 4d 64 02 64 a1 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb480 (0x663 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 8b 4d 0c e8 75 70 ff ff 33 c0 83 e0 01 
+[18:15:29]   [候选] RVA=0x1eeb3b0 (0x733 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 6a ff 68 f0 4c 64 02 64 a1 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb3b0 (0x733 bytes before retAddr) [有边界] prologue#2
+[18:15:29]     bytes: 55 8b ec 6a ff 68 f0 4c 64 02 64 a1 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb340 (0x7a3 bytes before retAddr) [有边界] prologue#0
+[18:15:29]     bytes: 55 8b ec 6a ff 68 c8 4c 64 02 64 a1 00 00 00 00 
+[18:15:29]   [候选] RVA=0x1eeb340 (0x7a3 bytes before retAddr) [有边界] prologue#2
+[18:15:29]     bytes: 55 8b ec 6a ff 68 c8 4c 64 02 64 a1 00 00 00 00 
+[18:15:29]   [入口] 0x22eba30 RVA=0x1eeba30
+[18:15:29]   调用者hook已安装 @ 0x22eba30
+[18:15:29]   调用者诊断就绪. 进房间触发.
+[18:15:29] 
+[18:15:29] 进房间触发角色加载。
+[18:15:29] 命令: status | quit
+[18:15:29] 
+[18:15:33]   [CALLER #1] ======
+[18:15:33]     regs: eax=0x2b9b ecx=0x19a6f8 edx=0x2b9c
+[18:15:33]           esi=0x289c395c edi=0x19dc5c
+[18:15:33]     stack: 0x19a6f8 0x2b9b 0x2b9c 0x2 0x1 0xa07a280b 0x13f807c6 0x671df263 0x19a579 0x2 0x19a588 0x6723d24a
+[18:15:33]     this对象字符串:
+[18:15:33]       +0x10: "res707\c800.smd"
+[18:15:33]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:33]       +0x54: "棒bK棒bK"
+[18:15:33]     栈参数字符串:
+[18:15:33]       arg7 [0x671df263]: "E?勅?"
+[18:15:33]     backtrace #1: 0x1ad0aae → 0x1eeba30 → 0x1ae28cc → 0x15cb1da → 0x15cf727 → 0x15c35b8 → 0x15b9215 → 0x14f6d15 → 0x15b8299 → 0x1444259 → 0x1dd7b2d → 0x14508bb → 0x28923de → 0x20bf002 → 0x76507ba9
+[18:15:33]   [CALLER #2] ======
+[18:15:33]     regs: eax=0x2b9b ecx=0x19a6f8 edx=0x2b9f
+[18:15:33]           esi=0x289c395c edi=0x19dc5c
+[18:15:33]     stack: 0x19a6f8 0x2b9b 0x2b9f 0x2 0x1 0xa07a280b 0x13f807c6 0x671df263 0x19a579 0x2 0x19a588 0x6723d24a
+[18:15:33]     this对象字符串:
+[18:15:33]       +0x10: "res707\c801.smd"
+[18:15:33]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:33]       +0x54: "T簞"
+[18:15:33]     栈参数字符串:
+[18:15:33]       arg7 [0x671df263]: "E?勅?"
+[18:15:33]     backtrace #2: 0x1ad0aae → 0x1eeba30 → 0x1ae28cc → 0x15cb1da → 0x15cf727 → 0x15c35b8 → 0x15b9215 → 0x14f6d15 → 0x15b8299 → 0x1444259 → 0x1dd7b2d → 0x14508bb → 0x28923de → 0x20bf002 → 0x76507ba9
+[18:15:33]   [CALLER #3] ======
+[18:15:33]     regs: eax=0x2ba2 ecx=0x19a6f8 edx=0x2ba3
+[18:15:33]           esi=0x289c395c edi=0x19dc5c
+[18:15:33]     stack: 0x19a6f8 0x2ba2 0x2ba3 0x2 0x1 0xa07a280b 0x13f807c6 0x671df263 0x19a579 0x2 0x19a588 0x6723d24a
+[18:15:33]     this对象字符串:
+[18:15:33]       +0x10: "Res767\i50421031_FN.smd"
+[18:15:33]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:33]       +0x54: "T簞"
+[18:15:33]     栈参数字符串:
+[18:15:33]       arg7 [0x671df263]: "E?勅?"
+[18:15:33]     backtrace #3: 0x1ad0aae → 0x1eeba30 → 0x1ae28cc → 0x15cb1da → 0x15cf727 → 0x15c35b8 → 0x15b9215 → 0x14f6d15 → 0x15b8299 → 0x1444259 → 0x1dd7b2d → 0x14508bb → 0x28923de → 0x20bf002 → 0x76507ba9
+[18:15:33]   [CALLER #4] ======
+[18:15:33]     regs: eax=0x2ba2 ecx=0x19a6f8 edx=0x2bac
+[18:15:33]           esi=0x289c395c edi=0x19dc5c
+[18:15:33]     stack: 0x19a6f8 0x2ba2 0x2bac 0x2 0x1 0xa07a280b 0x13f807c6 0x671df263 0x19a579 0x2 0x19a588 0x6723d24a
+[18:15:33]     this对象字符串:
+[18:15:33]       +0x10: "Res767\i50421031_FN_upp01.smd"
+[18:15:33]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:33]       +0x54: "T簞"
+[18:15:33]     栈参数字符串:
+[18:15:33]       arg0 [0x19a6f8] SString(len=3): "..."
+[18:15:33]       arg7 [0x671df263]: "E?勅?"
+[18:15:33]   [CALLER #5] ======
+[18:15:33]     regs: eax=0x2baf ecx=0x19a6f8 edx=0x2bb0
+[18:15:33]           esi=0x289c395c edi=0x19dc5c
+[18:15:33]     stack: 0x19a6f8 0x2baf 0x2bb0 0x2 0x1 0xa07a280b 0x13f807c6 0x671df263 0x19a579 0x2 0x19a588 0x6723d24a
+[18:15:33]     this对象字符串:
+[18:15:33]       +0x10: "res767\i50519561_FN.smd"
+[18:15:33]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:33]       +0x54: "T簞"
+[18:15:33]     栈参数字符串:
+[18:15:33]       arg0 [0x19a6f8] SString(len=4): "...."
+[18:15:33]       arg7 [0x671df263]: "E?勅?"
+[18:15:33]   [CALLER #6] ======
+[18:15:33]     regs: eax=0x2baf ecx=0x19a6f8 edx=0x2bb6
+[18:15:33]           esi=0x289c395c edi=0x19dc5c
+[18:15:33]     stack: 0x19a6f8 0x2baf 0x2bb6 0x2 0x1 0xa07a280b 0x13f807c6 0x671df263 0x19a579 0x2 0x19a588 0x6723d24a
+[18:15:33]     this对象字符串:
+[18:15:33]       +0x10: "res767\i50519561_F_low01.smd"
+[18:15:33]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:33]       +0x54: "T簞"
+[18:15:33]     栈参数字符串:
+[18:15:33]       arg0 [0x19a6f8] SString(len=5): "h...."
+[18:15:33]       arg7 [0x671df263]: "E?勅?"
+[18:15:33]   [CALLER #7] ======
+[18:15:33]     regs: eax=0x2baf ecx=0x19a6f8 edx=0x2bba
+[18:15:33]           esi=0x289c395c edi=0x19dc5c
+[18:15:33]     stack: 0x19a6f8 0x2baf 0x2bba 0x2 0x1 0xa07a280b 0x13f807c6 0x671df263 0x19a579 0x2 0x19a588 0x6723d24a
+[18:15:33]     this对象字符串:
+[18:15:33]       +0x10: "res767\i50623371_F.smd"
+[18:15:33]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:33]       +0x54: "T簞"
+[18:15:33]     栈参数字符串:
+[18:15:33]       arg0 [0x19a6f8] SString(len=6): "......"
+[18:15:33]       arg7 [0x671df263]: "E?勅?"
+[18:15:33]   [CALLER #8] ======
+[18:15:33]     regs: eax=0x2baf ecx=0x19a6f8 edx=0x2bc0
+[18:15:33]           esi=0x289c395c edi=0x19dc5c
+[18:15:33]     stack: 0x19a6f8 0x2baf 0x2bc0 0x2 0x1 0xa07a280b 0x13f807c6 0x671df263 0x19a579 0x2 0x19a588 0x6723d24a
+[18:15:33]     this对象字符串:
+[18:15:33]       +0x10: "res767\i50914721_F.smd"
+[18:15:33]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:33]       +0x54: "T簞"
+[18:15:33]     栈参数字符串:
+[18:15:33]       arg0 [0x19a6f8] SString(len=7): "......."
+[18:15:33]       arg7 [0x671df263]: "E?勅?"
+[18:15:33]   [CALLER #9] ======
+[18:15:33]     regs: eax=0x2baf ecx=0x19a6f8 edx=0x2bc7
+[18:15:33]           esi=0x289c395c edi=0x19dc5c
+[18:15:33]     stack: 0x19a6f8 0x2baf 0x2bc7 0x2 0x1 0xa07a280b 0x13f807c6 0x671df263 0x19a579 0x2 0x19a588 0x6723d24a
+[18:15:33]     this对象字符串:
+[18:15:33]       +0x10: "res767\i51514521_F.smd"
+[18:15:33]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:33]       +0x54: "T簞"
+[18:15:33]     栈参数字符串:
+[18:15:33]       arg0 [0x19a6f8] SString(len=8): "........"
+[18:15:33]       arg7 [0x671df263]: "E?勅?"
+[18:15:33]   [CALLER #10] ======
+[18:15:33]     regs: eax=0x2baf ecx=0x19a6f8 edx=0x2bcd
+[18:15:33]           esi=0x289c395c edi=0x19dc5c
+[18:15:33]     stack: 0x19a6f8 0x2baf 0x2bcd 0x2 0x1 0xa07a280b 0x13f807c6 0x671df263 0x19a579 0x2 0x19a588 0x6723d24a
+[18:15:33]     this对象字符串:
+[18:15:33]       +0x10: "res767\i50125461_FN.smd"
+[18:15:33]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:33]       +0x54: "T簞"
+[18:15:33]     栈参数字符串:
+[18:15:33]       arg0 [0x19a6f8] SString(len=9): "........$"
+[18:15:33]       arg7 [0x671df263]: "E?勅?"
+[18:15:33]   [CALLER #11] ======
+[18:15:33]     regs: eax=0x2baf ecx=0x19a6f8 edx=0x2bd4
+[18:15:33]           esi=0x289c395c edi=0x19dc5c
+[18:15:33]     stack: 0x19a6f8 0x2baf 0x2bd4 0x2 0x1 0xa07a280b 0x13f807c6 0x671df263 0x19a579 0x2 0x19a588 0x6723d24a
+[18:15:33]     this对象字符串:
+[18:15:33]       +0x10: "res767\i51616261_F.smd"
+[18:15:33]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:33]       +0x54: "T簞"
+[18:15:33]     栈参数字符串:
+[18:15:33]       arg0 [0x19a6f8] SString(len=10): "........@5"
+[18:15:33]       arg7 [0x671df263]: "E?勅?"
+[18:15:33]   [CALLER #12] ======
+[18:15:33]     regs: eax=0x2baf ecx=0x19a6f8 edx=0x2bd8
+[18:15:33]           esi=0x289c395c edi=0x19dc5c
+[18:15:33]     stack: 0x19a6f8 0x2baf 0x2bd8 0x2 0x1 0xa07a280b 0x13f807c6 0x671df263 0x19a579 0x2 0x19a588 0x6723d24a
+[18:15:33]     this对象字符串:
+[18:15:33]       +0x10: "res767\i51213111_FN.smd"
+[18:15:33]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:33]       +0x54: "T簞"
+[18:15:33]     栈参数字符串:
+[18:15:33]       arg0 [0x19a6f8] SString(len=11): "........\6."
+[18:15:33]       arg7 [0x671df263]: "E?勅?"
+[18:15:35]   [CALLER #13] ======
+[18:15:35]     regs: eax=0x2b9b ecx=0x196b30 edx=0x2b9c
+[18:15:35]           esi=0x289c395c edi=0x19db00
+[18:15:35]     stack: 0x196b30 0x2b9b 0x2b9c 0x2 0x1 0xa07ae453 0x13f8c20e 0x671df263 0x1969b1 0x2 0x1969c0 0x6723d24a
+[18:15:35]     this对象字符串:
+[18:15:35]       +0x10: "res707\c800.smd"
+[18:15:35]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:35]       +0x54: "?cK?cK?U-"
+[18:15:35]     栈参数字符串:
+[18:15:35]       arg7 [0x671df263]: "E?勅?"
+[18:15:35]   [CALLER #14] ======
+[18:15:35]     regs: eax=0x2b9b ecx=0x196b30 edx=0x2b9f
+[18:15:35]           esi=0x289c395c edi=0x19db00
+[18:15:35]     stack: 0x196b30 0x2b9b 0x2b9f 0x2 0x1 0xa07ae453 0x13f8c20e 0x671df263 0x1969b1 0x2 0x1969c0 0x6723d24a
+[18:15:35]     this对象字符串:
+[18:15:35]       +0x10: "res707\c801.smd"
+[18:15:35]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:35]       +0x54: "T簞"
+[18:15:35]     栈参数字符串:
+[18:15:35]       arg7 [0x671df263]: "E?勅?"
+[18:15:35]   [CALLER #15] ======
+[18:15:35]     regs: eax=0x2ba2 ecx=0x196b30 edx=0x2ba3
+[18:15:35]           esi=0x289c395c edi=0x19db00
+[18:15:35]     stack: 0x196b30 0x2ba2 0x2ba3 0x2 0x1 0xa07ae453 0x13f8c20e 0x671df263 0x1969b1 0x2 0x1969c0 0x6723d24a
+[18:15:35]     this对象字符串:
+[18:15:35]       +0x10: "Res767\i50421031_FN.smd"
+[18:15:35]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:35]       +0x54: "T簞"
+[18:15:35]     栈参数字符串:
+[18:15:35]       arg7 [0x671df263]: "E?勅?"
+[18:15:35]   [CALLER #16] ======
+[18:15:35]     regs: eax=0x2ba2 ecx=0x196b30 edx=0x2bac
+[18:15:35]           esi=0x289c395c edi=0x19db00
+[18:15:35]     stack: 0x196b30 0x2ba2 0x2bac 0x2 0x1 0xa07ae453 0x13f8c20e 0x671df263 0x1969b1 0x2 0x1969c0 0x6723d24a
+[18:15:35]     this对象字符串:
+[18:15:35]       +0x10: "Res767\i50421031_FN_upp01.smd"
+[18:15:35]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:35]       +0x54: "T簞"
+[18:15:35]     栈参数字符串:
+[18:15:35]       arg0 [0x196b30] SString(len=3): "@.."
+[18:15:35]       arg7 [0x671df263]: "E?勅?"
+[18:15:35]   [CALLER #17] ======
+[18:15:35]     regs: eax=0x2baf ecx=0x196b30 edx=0x2bb0
+[18:15:35]           esi=0x289c395c edi=0x19db00
+[18:15:35]     stack: 0x196b30 0x2baf 0x2bb0 0x2 0x1 0xa07ae453 0x13f8c20e 0x671df263 0x1969b1 0x2 0x1969c0 0x6723d24a
+[18:15:35]     this对象字符串:
+[18:15:35]       +0x10: "res767\i50519561_FN.smd"
+[18:15:35]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:35]       +0x54: "T簞"
+[18:15:35]     栈参数字符串:
+[18:15:35]       arg0 [0x196b30] SString(len=4): "...."
+[18:15:35]       arg7 [0x671df263]: "E?勅?"
+[18:15:35]   [CALLER #18] ======
+[18:15:35]     regs: eax=0x2baf ecx=0x196b30 edx=0x2bb6
+[18:15:35]           esi=0x289c395c edi=0x19db00
+[18:15:35]     stack: 0x196b30 0x2baf 0x2bb6 0x2 0x1 0xa07ae453 0x13f8c20e 0x671df263 0x1969b1 0x2 0x1969c0 0x6723d24a
+[18:15:35]     this对象字符串:
+[18:15:35]       +0x10: "res767\i50519561_F_low01.smd"
+[18:15:35]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:35]       +0x54: "T簞"
+[18:15:35]     栈参数字符串:
+[18:15:35]       arg0 [0x196b30] SString(len=5): "....."
+[18:15:35]       arg7 [0x671df263]: "E?勅?"
+[18:15:35]   [CALLER #19] ======
+[18:15:35]     regs: eax=0x2baf ecx=0x196b30 edx=0x2bba
+[18:15:35]           esi=0x289c395c edi=0x19db00
+[18:15:35]     stack: 0x196b30 0x2baf 0x2bba 0x2 0x1 0xa07ae453 0x13f8c20e 0x671df263 0x1969b1 0x2 0x1969c0 0x6723d24a
+[18:15:35]     this对象字符串:
+[18:15:35]       +0x10: "res767\i50623371_F.smd"
+[18:15:35]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:35]       +0x54: "T簞"
+[18:15:35]     栈参数字符串:
+[18:15:35]       arg0 [0x196b30] SString(len=6): "h....."
+[18:15:35]       arg7 [0x671df263]: "E?勅?"
+[18:15:35]   [CALLER #20] ======
+[18:15:35]     regs: eax=0x2baf ecx=0x196b30 edx=0x2bc0
+[18:15:35]           esi=0x289c395c edi=0x19db00
+[18:15:35]     stack: 0x196b30 0x2baf 0x2bc0 0x2 0x1 0xa07ae453 0x13f8c20e 0x671df263 0x1969b1 0x2 0x1969c0 0x6723d24a
+[18:15:35]     this对象字符串:
+[18:15:35]       +0x10: "res767\i50914721_F.smd"
+[18:15:35]       +0x4c: "婾磱E??婾磱E婬塉婾磱E婬塉婾?"
+[18:15:35]       +0x54: "T簞"
+[18:15:35]     栈参数字符串:
+[18:15:35]       arg0 [0x196b30] SString(len=7): "......."
+[18:15:35]       arg7 [0x671df263]: "E?勅?"

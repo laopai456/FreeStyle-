@@ -1,0 +1,14 @@
+Output: D:\py\反编译\FreeStyle\apollo_dump\smd_redirect_20260522_212114.txt
+Attaching to PID 24568...
+[*] SMD redirect engine loaded. 0 rules.
+
+SMD redirect active. 0 initial rules.
+Run in another terminal:
+  py smd_redirect.py --rpc redirect "<src>.smd" "<dst>.smd"
+  py smd_redirect.py --rpc list
+  py smd_redirect.py --rpc status
+Press Ctrl+C to stop.
+
+
+Status: {'hits': 232, 'misses': 116, 'redirected': 0, 'rules': 0}
+Detaching...

@@ -1,0 +1,308 @@
+[20:08:08.372] === Sprintf Context Monitor ===
+[20:08:08.372] PID: 25992
+[20:08:08.372] SRC: 50125461  DST: 50125711
+[20:08:08.372] Log: D:\py\反编译\FreeStyle\apollo_dump\sprintf_context_20260531_200808.txt
+[20:08:08.372] 
+[20:08:09.735]   [setup] sprintf context hook ready
+[20:08:09.735]   [setup] CreateFileA/W hooks ready
+[20:08:09.735]   [ready] SRC=50125461 DST=50125711
+[20:08:09.735] 
+[20:08:09.736] Instructions:
+[20:08:09.736]   1. Enter room
+[20:08:09.736]   2. Enter practice
+[20:08:09.736]   3. Observe backtrace differences between room and practice
+[20:08:09.736] 
+[20:08:09.736] Commands: status | quit
+[20:08:09.736] 
+[20:08:12.496] 
+[20:08:12.496] [sprintf] #1 ic=3001 fmt="customize\item\c%d.xml" phase=INJECTED
+[20:08:12.496]   backtrace:
+[20:08:12.496]     [0] FreeStyle.exe+0x1ae23b6
+[20:08:12.496]     [1] MSVCR100.dll+0x66051
+[20:08:12.496]     [2] FreeStyle.exe+0x192978d
+[20:08:12.496]     [3] FreeStyle.exe+0x15065d9
+[20:08:12.496]     [4] FreeStyle.exe+0x191d1c3
+[20:08:12.496]     [5] FreeStyle.exe+0x14f6d15
+[20:08:12.496]     [6] FreeStyle.exe+0x1919302
+[20:08:12.496]     [7] FreeStyle.exe+0x1444259
+[20:08:12.496]   regs: eax=0x825da5b0 ecx=0xbb9 ebx=0x0
+[20:08:12.496]   stack: 0x1ee23b6, 0x193ad4, 0x26a1698, 0xbb9, 0xf75a411b, 0xa41e04c, 0x193804, 0x825da5b0
+[20:08:12.496] 
+[20:08:12.496] [phase] INJECTED -> ROOM_LOAD
+[20:08:12.496] 
+[20:08:12.504] 
+[20:08:12.504] [sprintf] #2 ic=50125461 <== SRC_IC fmt="customize\item\i%d.xml" phase=ROOM_LOAD
+[20:08:12.504]   backtrace:
+[20:08:12.504]     [0] FreeStyle.exe+0x1ae2563
+[20:08:12.504]     [1] MSVCR100.dll+0x66051
+[20:08:12.504]     [2] FreeStyle.exe+0x192978d
+[20:08:12.504]     [3] FreeStyle.exe+0x15065d9
+[20:08:12.504]     [4] FreeStyle.exe+0x191d1c3
+[20:08:12.504]     [5] FreeStyle.exe+0x14f6d15
+[20:08:12.504]     [6] FreeStyle.exe+0x1919302
+[20:08:12.504]     [7] FreeStyle.exe+0x1444259
+[20:08:12.504]   regs: eax=0x193ad4 ecx=0x1 ebx=0x0
+[20:08:12.504]   stack: 0x1ee2563, 0x193ad4, 0x26a1680, 0x2fcda95, 0xf75a411b, 0xa41e04c, 0x193804, 0x825da5b0
+[20:08:12.504] 
+[20:08:12.505] [phase] ROOM_LOAD -> PRACTICE_LOAD
+[20:08:12.505] 
+[20:08:12.512] 
+[20:08:12.512] [sprintf] #3 ic=50420791 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:12.512]   backtrace:
+[20:08:12.512]     [0] FreeStyle.exe+0x1ae2563
+[20:08:12.512]     [1] MSVCR100.dll+0x66051
+[20:08:12.512]     [2] FreeStyle.exe+0x192978d
+[20:08:12.512]     [3] FreeStyle.exe+0x15065d9
+[20:08:12.512]     [4] FreeStyle.exe+0x191d1c3
+[20:08:12.512]     [5] FreeStyle.exe+0x14f6d15
+[20:08:12.512]     [6] FreeStyle.exe+0x1919302
+[20:08:12.512]     [7] FreeStyle.exe+0x1444259
+[20:08:12.512]   regs: eax=0x193ad4 ecx=0x4 ebx=0x0
+[20:08:12.512]   stack: 0x1ee2563, 0x193ad4, 0x26a1680, 0x3015c37, 0xf75a411b, 0xa41e04c, 0x193804, 0x825da5b0
+[20:08:12.520] 
+[20:08:12.520] [sprintf] #4 ic=50519331 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:12.520]   backtrace:
+[20:08:12.520]     [0] FreeStyle.exe+0x1ae2563
+[20:08:12.520]     [1] MSVCR100.dll+0x66051
+[20:08:12.520]     [2] FreeStyle.exe+0x192978d
+[20:08:12.520]     [3] FreeStyle.exe+0x15065d9
+[20:08:12.520]     [4] FreeStyle.exe+0x191d1c3
+[20:08:12.520]     [5] FreeStyle.exe+0x14f6d15
+[20:08:12.520]     [6] FreeStyle.exe+0x1919302
+[20:08:12.520]     [7] FreeStyle.exe+0x1444259
+[20:08:12.521]   regs: eax=0x193ad4 ecx=0x8 ebx=0x0
+[20:08:12.521]   stack: 0x1ee2563, 0x193ad4, 0x26a1680, 0x302dd23, 0xf75a411b, 0xa41e04c, 0x193804, 0x825da5b0
+[20:08:12.528] 
+[20:08:12.528] [sprintf] #5 ic=50622961 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:12.528]   backtrace:
+[20:08:12.528]     [0] FreeStyle.exe+0x1ae2563
+[20:08:12.528]     [1] MSVCR100.dll+0x66051
+[20:08:12.528]     [2] FreeStyle.exe+0x192978d
+[20:08:12.528]     [3] FreeStyle.exe+0x15065d9
+[20:08:12.528]     [4] FreeStyle.exe+0x191d1c3
+[20:08:12.528]     [5] FreeStyle.exe+0x14f6d15
+[20:08:12.528]     [6] FreeStyle.exe+0x1919302
+[20:08:12.528]     [7] FreeStyle.exe+0x1444259
+[20:08:12.528]   regs: eax=0x193ad4 ecx=0x10 ebx=0x0
+[20:08:12.528]   stack: 0x1ee2563, 0x193ad4, 0x26a1680, 0x30471f1, 0xf75a411b, 0xa41e04c, 0x193804, 0x825da5b0
+[20:08:12.537] 
+[20:08:12.537] [sprintf] #6 ic=51612121 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:12.537]   backtrace:
+[20:08:12.537]     [0] FreeStyle.exe+0x1ae2563
+[20:08:12.537]     [1] MSVCR100.dll+0x66051
+[20:08:12.537]     [2] FreeStyle.exe+0x192978d
+[20:08:12.537]     [3] FreeStyle.exe+0x15065d9
+[20:08:12.537]     [4] FreeStyle.exe+0x191d1c3
+[20:08:12.538]     [5] FreeStyle.exe+0x14f6d15
+[20:08:12.538]     [6] FreeStyle.exe+0x1919302
+[20:08:12.538]     [7] FreeStyle.exe+0x1444259
+[20:08:12.538]   regs: eax=0x193ad4 ecx=0x20000 ebx=0x0
+[20:08:12.538]   stack: 0x1ee2563, 0x193ad4, 0x26a1680, 0x31389d9, 0xf75a411b, 0xa41e04c, 0x193804, 0x825da5b0
+[20:08:12.549] 
+[20:08:12.549] [sprintf] #7 ic=51514321 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:12.549]   backtrace:
+[20:08:12.549]     [0] FreeStyle.exe+0x1ae2563
+[20:08:12.549]     [1] MSVCR100.dll+0x66051
+[20:08:12.549]     [2] FreeStyle.exe+0x192978d
+[20:08:12.549]     [3] FreeStyle.exe+0x15065d9
+[20:08:12.549]     [4] FreeStyle.exe+0x191d1c3
+[20:08:12.549]     [5] FreeStyle.exe+0x14f6d15
+[20:08:12.549]     [6] FreeStyle.exe+0x1919302
+[20:08:12.549]     [7] FreeStyle.exe+0x1444259
+[20:08:12.549]   regs: eax=0x193ad4 ecx=0x10000 ebx=0x0
+[20:08:12.549]   stack: 0x1ee2563, 0x193ad4, 0x26a1680, 0x3120bd1, 0xf75a411b, 0xa41e04c, 0x193804, 0x825da5b0
+[20:08:12.560] 
+[20:08:12.560] [sprintf] #8 ic=51212851 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:12.560]   backtrace:
+[20:08:12.560]     [0] FreeStyle.exe+0x1ae2563
+[20:08:12.560]     [1] MSVCR100.dll+0x66051
+[20:08:12.560]     [2] FreeStyle.exe+0x192978d
+[20:08:12.560]     [3] FreeStyle.exe+0x15065d9
+[20:08:12.560]     [4] FreeStyle.exe+0x191d1c3
+[20:08:12.560]     [5] FreeStyle.exe+0x14f6d15
+[20:08:12.560]     [6] FreeStyle.exe+0x1919302
+[20:08:12.560]     [7] FreeStyle.exe+0x1444259
+[20:08:12.560]   regs: eax=0x193ad4 ecx=0x4000 ebx=0x0
+[20:08:12.560]   stack: 0x1ee2563, 0x193ad4, 0x26a1680, 0x30d7233, 0xf75a411b, 0xa41e04c, 0x193804, 0x825da5b0
+[20:08:12.568] 
+[20:08:12.568] [sprintf] #9 ic=50914671 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:12.568]   backtrace:
+[20:08:12.568]     [0] FreeStyle.exe+0x1ae2563
+[20:08:12.568]     [1] MSVCR100.dll+0x66051
+[20:08:12.568]     [2] FreeStyle.exe+0x192978d
+[20:08:12.568]     [3] FreeStyle.exe+0x15065d9
+[20:08:12.568]     [4] FreeStyle.exe+0x191d1c3
+[20:08:12.568]     [5] FreeStyle.exe+0x14f6d15
+[20:08:12.568]     [6] FreeStyle.exe+0x1919302
+[20:08:12.568]     [7] FreeStyle.exe+0x1444259
+[20:08:12.568]   regs: eax=0x193ad4 ecx=0x400 ebx=0x0
+[20:08:12.568]   stack: 0x1ee2563, 0x193ad4, 0x26a1680, 0x308e56f, 0xf75a411b, 0xa41e04c, 0x193804, 0x825da5b0
+[20:08:12.578] 
+[20:08:12.578] [sprintf] #10 ic=51113901 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:12.578]   backtrace:
+[20:08:12.578]     [0] FreeStyle.exe+0x1ae2563
+[20:08:12.578]     [1] MSVCR100.dll+0x66051
+[20:08:12.578]     [2] FreeStyle.exe+0x192978d
+[20:08:12.578]     [3] FreeStyle.exe+0x15065d9
+[20:08:12.578]     [4] FreeStyle.exe+0x191d1c3
+[20:08:12.578]     [5] FreeStyle.exe+0x14f6d15
+[20:08:12.578]     [6] FreeStyle.exe+0x1919302
+[20:08:12.578]     [7] FreeStyle.exe+0x1444259
+[20:08:12.578]   regs: eax=0x193ad4 ecx=0x1000 ebx=0x0
+[20:08:12.578]   stack: 0x1ee2563, 0x193ad4, 0x26a1680, 0x30befad, 0xf75a411b, 0xa41e04c, 0x193804, 0x825da5b0
+[20:08:12.587] 
+[20:08:12.587] [sprintf] #11 ic=51012781 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:12.587]   backtrace:
+[20:08:12.587]     [0] FreeStyle.exe+0x1ae2563
+[20:08:12.587]     [1] MSVCR100.dll+0x66051
+[20:08:12.587]     [2] FreeStyle.exe+0x192978d
+[20:08:12.587]     [3] FreeStyle.exe+0x15065d9
+[20:08:12.587]     [4] FreeStyle.exe+0x191d1c3
+[20:08:12.587]     [5] FreeStyle.exe+0x14f6d15
+[20:08:12.587]     [6] FreeStyle.exe+0x1919302
+[20:08:12.587]     [7] FreeStyle.exe+0x1444259
+[20:08:12.587]   regs: eax=0x193ad4 ecx=0x800 ebx=0x0
+[20:08:12.587]   stack: 0x1ee2563, 0x193ad4, 0x26a1680, 0x30a64ad, 0xf75a411b, 0xa41e04c, 0x193804, 0x825da5b0
+[20:08:42.619] 
+[20:08:42.619] [sprintf] #12 ic=3001 fmt="customize\item\c%d.xml" phase=PRACTICE_LOAD
+[20:08:42.619]   backtrace:
+[20:08:42.619]     [0] FreeStyle.exe+0x1ae23b6
+[20:08:42.619]     [1] MSVCR100.dll+0x66051
+[20:08:42.619]     [2] FreeStyle.exe+0x173c60c
+[20:08:42.619]     [3] FreeStyle.exe+0x1725986
+[20:08:42.619]     [4] FreeStyle.exe+0x14f6d15
+[20:08:42.619]     [5] FreeStyle.exe+0x1723e84
+[20:08:42.619]     [6] FreeStyle.exe+0x1444259
+[20:08:42.619]     [7] FreeStyle.exe+0x1dd7b2d
+[20:08:42.619]   regs: eax=0x825d9c28 ecx=0xbb9 ebx=0x0
+[20:08:42.619]   stack: 0x1ee23b6, 0x196ef0, 0x26a1698, 0xbb9, 0xf75a1537, 0x196c68, 0x257d790, 0x825d9c28
+[20:08:42.626] 
+[20:08:42.627] [sprintf] #13 ic=50125461 <== SRC_IC fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:42.627]   backtrace:
+[20:08:42.627]     [0] FreeStyle.exe+0x1ae2563
+[20:08:42.627]     [1] MSVCR100.dll+0x66051
+[20:08:42.627]     [2] FreeStyle.exe+0x173c60c
+[20:08:42.627]     [3] FreeStyle.exe+0x1725986
+[20:08:42.627]     [4] FreeStyle.exe+0x14f6d15
+[20:08:42.627]     [5] FreeStyle.exe+0x1723e84
+[20:08:42.627]     [6] FreeStyle.exe+0x1444259
+[20:08:42.627]     [7] FreeStyle.exe+0x1dd7b2d
+[20:08:42.627]   regs: eax=0x196ef0 ecx=0x1 ebx=0x0
+[20:08:42.627]   stack: 0x1ee2563, 0x196ef0, 0x26a1680, 0x2fcda95, 0xf75a1537, 0x196c68, 0x257d790, 0x825d9c28
+[20:08:42.636] 
+[20:08:42.636] [sprintf] #14 ic=50420791 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:42.636]   backtrace:
+[20:08:42.636]     [0] FreeStyle.exe+0x1ae2563
+[20:08:42.636]     [1] MSVCR100.dll+0x66051
+[20:08:42.636]     [2] FreeStyle.exe+0x173c60c
+[20:08:42.636]     [3] FreeStyle.exe+0x1725986
+[20:08:42.636]     [4] FreeStyle.exe+0x14f6d15
+[20:08:42.636]     [5] FreeStyle.exe+0x1723e84
+[20:08:42.636]     [6] FreeStyle.exe+0x1444259
+[20:08:42.637]     [7] FreeStyle.exe+0x1dd7b2d
+[20:08:42.637]   regs: eax=0x196ef0 ecx=0x4 ebx=0x0
+[20:08:42.637]   stack: 0x1ee2563, 0x196ef0, 0x26a1680, 0x3015c37, 0xf75a1537, 0x196c68, 0x257d790, 0x825d9c28
+[20:08:42.645] 
+[20:08:42.645] [sprintf] #15 ic=50519331 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:42.645]   backtrace:
+[20:08:42.645]     [0] FreeStyle.exe+0x1ae2563
+[20:08:42.645]     [1] MSVCR100.dll+0x66051
+[20:08:42.645]     [2] FreeStyle.exe+0x173c60c
+[20:08:42.645]     [3] FreeStyle.exe+0x1725986
+[20:08:42.645]     [4] FreeStyle.exe+0x14f6d15
+[20:08:42.646]     [5] FreeStyle.exe+0x1723e84
+[20:08:42.646]     [6] FreeStyle.exe+0x1444259
+[20:08:42.646]     [7] FreeStyle.exe+0x1dd7b2d
+[20:08:42.646]   regs: eax=0x196ef0 ecx=0x8 ebx=0x0
+[20:08:42.646]   stack: 0x1ee2563, 0x196ef0, 0x26a1680, 0x302dd23, 0xf75a1537, 0x196c68, 0x257d790, 0x825d9c28
+[20:08:42.653] 
+[20:08:42.653] [sprintf] #16 ic=50622961 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:42.653]   backtrace:
+[20:08:42.653]     [0] FreeStyle.exe+0x1ae2563
+[20:08:42.653]     [1] MSVCR100.dll+0x66051
+[20:08:42.653]     [2] FreeStyle.exe+0x173c60c
+[20:08:42.654]     [3] FreeStyle.exe+0x1725986
+[20:08:42.654]     [4] FreeStyle.exe+0x14f6d15
+[20:08:42.654]     [5] FreeStyle.exe+0x1723e84
+[20:08:42.654]     [6] FreeStyle.exe+0x1444259
+[20:08:42.654]     [7] FreeStyle.exe+0x1dd7b2d
+[20:08:42.654]   regs: eax=0x196ef0 ecx=0x10 ebx=0x0
+[20:08:42.654]   stack: 0x1ee2563, 0x196ef0, 0x26a1680, 0x30471f1, 0xf75a1537, 0x196c68, 0x257d790, 0x825d9c28
+[20:08:42.661] 
+[20:08:42.661] [sprintf] #17 ic=51612121 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:42.661]   backtrace:
+[20:08:42.661]     [0] FreeStyle.exe+0x1ae2563
+[20:08:42.661]     [1] MSVCR100.dll+0x66051
+[20:08:42.661]     [2] FreeStyle.exe+0x173c60c
+[20:08:42.661]     [3] FreeStyle.exe+0x1725986
+[20:08:42.661]     [4] FreeStyle.exe+0x14f6d15
+[20:08:42.661]     [5] FreeStyle.exe+0x1723e84
+[20:08:42.661]     [6] FreeStyle.exe+0x1444259
+[20:08:42.661]     [7] FreeStyle.exe+0x1dd7b2d
+[20:08:42.661]   regs: eax=0x196ef0 ecx=0x20000 ebx=0x0
+[20:08:42.661]   stack: 0x1ee2563, 0x196ef0, 0x26a1680, 0x31389d9, 0xf75a1537, 0x196c68, 0x257d790, 0x825d9c28
+[20:08:42.669] 
+[20:08:42.669] [sprintf] #18 ic=51514321 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:42.669]   backtrace:
+[20:08:42.669]     [0] FreeStyle.exe+0x1ae2563
+[20:08:42.669]     [1] MSVCR100.dll+0x66051
+[20:08:42.670]     [2] FreeStyle.exe+0x173c60c
+[20:08:42.670]     [3] FreeStyle.exe+0x1725986
+[20:08:42.670]     [4] FreeStyle.exe+0x14f6d15
+[20:08:42.670]     [5] FreeStyle.exe+0x1723e84
+[20:08:42.670]     [6] FreeStyle.exe+0x1444259
+[20:08:42.670]     [7] FreeStyle.exe+0x1dd7b2d
+[20:08:42.670]   regs: eax=0x196ef0 ecx=0x10000 ebx=0x0
+[20:08:42.670]   stack: 0x1ee2563, 0x196ef0, 0x26a1680, 0x3120bd1, 0xf75a1537, 0x196c68, 0x257d790, 0x825d9c28
+[20:08:42.676] 
+[20:08:42.676] [sprintf] #19 ic=51212851 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:42.676]   backtrace:
+[20:08:42.676]     [0] FreeStyle.exe+0x1ae2563
+[20:08:42.677]     [1] MSVCR100.dll+0x66051
+[20:08:42.677]     [2] FreeStyle.exe+0x173c60c
+[20:08:42.677]     [3] FreeStyle.exe+0x1725986
+[20:08:42.677]     [4] FreeStyle.exe+0x14f6d15
+[20:08:42.677]     [5] FreeStyle.exe+0x1723e84
+[20:08:42.677]     [6] FreeStyle.exe+0x1444259
+[20:08:42.677]     [7] FreeStyle.exe+0x1dd7b2d
+[20:08:42.677]   regs: eax=0x196ef0 ecx=0x4000 ebx=0x0
+[20:08:42.677]   stack: 0x1ee2563, 0x196ef0, 0x26a1680, 0x30d7233, 0xf75a1537, 0x196c68, 0x257d790, 0x825d9c28
+[20:08:42.685] 
+[20:08:42.685] [sprintf] #20 ic=50914671 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:42.685]   backtrace:
+[20:08:42.685]     [0] FreeStyle.exe+0x1ae2563
+[20:08:42.685]     [1] MSVCR100.dll+0x66051
+[20:08:42.685]     [2] FreeStyle.exe+0x173c60c
+[20:08:42.685]     [3] FreeStyle.exe+0x1725986
+[20:08:42.685]     [4] FreeStyle.exe+0x14f6d15
+[20:08:42.685]     [5] FreeStyle.exe+0x1723e84
+[20:08:42.685]     [6] FreeStyle.exe+0x1444259
+[20:08:42.685]     [7] FreeStyle.exe+0x1dd7b2d
+[20:08:42.685]   regs: eax=0x196ef0 ecx=0x400 ebx=0x0
+[20:08:42.685]   stack: 0x1ee2563, 0x196ef0, 0x26a1680, 0x308e56f, 0xf75a1537, 0x196c68, 0x257d790, 0x825d9c28
+[20:08:42.693] 
+[20:08:42.694] [sprintf] #21 ic=51113901 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:42.694]   backtrace:
+[20:08:42.694]     [0] FreeStyle.exe+0x1ae2563
+[20:08:42.694]     [1] MSVCR100.dll+0x66051
+[20:08:42.694]     [2] FreeStyle.exe+0x173c60c
+[20:08:42.694]     [3] FreeStyle.exe+0x1725986
+[20:08:42.694]     [4] FreeStyle.exe+0x14f6d15
+[20:08:42.694]     [5] FreeStyle.exe+0x1723e84
+[20:08:42.694]     [6] FreeStyle.exe+0x1444259
+[20:08:42.694]     [7] FreeStyle.exe+0x1dd7b2d
+[20:08:42.694]   regs: eax=0x196ef0 ecx=0x1000 ebx=0x0
+[20:08:42.694]   stack: 0x1ee2563, 0x196ef0, 0x26a1680, 0x30befad, 0xf75a1537, 0x196c68, 0x257d790, 0x825d9c28
+[20:08:42.701] 
+[20:08:42.701] [sprintf] #22 ic=51012781 fmt="customize\item\i%d.xml" phase=PRACTICE_LOAD
+[20:08:42.701]   backtrace:
+[20:08:42.701]     [0] FreeStyle.exe+0x1ae2563
+[20:08:42.701]     [1] MSVCR100.dll+0x66051
+[20:08:42.702]     [2] FreeStyle.exe+0x173c60c
+[20:08:42.702]     [3] FreeStyle.exe+0x1725986
+[20:08:42.702]     [4] FreeStyle.exe+0x14f6d15
+[20:08:42.702]     [5] FreeStyle.exe+0x1723e84
+[20:08:42.702]     [6] FreeStyle.exe+0x1444259
+[20:08:42.702]     [7] FreeStyle.exe+0x1dd7b2d
+[20:08:42.702]   regs: eax=0x196ef0 ecx=0x800 ebx=0x0
+[20:08:42.702]   stack: 0x1ee2563, 0x196ef0, 0x26a1680, 0x30a64ad, 0xf75a1537, 0x196c68, 0x257d790, 0x825d9c28

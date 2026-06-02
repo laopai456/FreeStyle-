@@ -1,0 +1,29 @@
+[23:13:39] ============================================================
+[23:13:39]   Python Debugger — Dynamic API Analysis
+[23:13:39] ============================================================
+[23:13:41] Phase 1: Launching suspended...
+[23:13:41] PID=32624
+[23:13:41] DebugActiveProcess OK
+[23:13:42] CRC patched @ 0x069C3C54, 0x069DE222
+[23:13:42] Phase 3: Resolving target APIs...
+[23:13:42]   connect: 0x77546980 — Connects socket to server
+[23:13:42]   WSAConnect: 0x77561CB0 — Extended connect
+[23:13:42]   sendto: 0x7754A350 — UDP sendto — target
+[23:13:42]   WSASendTo: 0x775605C0 — UDP WSASendTo
+[23:13:42]   WSASend: 0x775402B0 — TCP WSASend
+[23:13:42]   send: 0x775467F0 — TCP send
+[23:13:42]   closesocket: 0x7753FA00 — Close socket
+[23:13:42] Phase 4: Setting breakpoints...
+[23:13:42]   BP set: connect @ 0x77546980 (orig=8b)
+[23:13:42]   BP set: WSAConnect @ 0x77561CB0 (orig=8b)
+[23:13:42]   BP set: sendto @ 0x7754A350 (orig=8b)
+[23:13:42]   BP set: WSASendTo @ 0x775605C0 (orig=8b)
+[23:13:42]   BP set: WSASend @ 0x775402B0 (orig=8b)
+[23:13:42]   BP set: send @ 0x775467F0 (orig=8b)
+[23:13:42]   BP set: closesocket @ 0x7753FA00 (orig=8b)
+[23:13:42] 
+Phase 5: Debug loop — waiting for API calls...
+[23:13:42]   Login and interact with the game!
+[23:13:42]   Press Ctrl+C to stop
+
+[23:20:46] Ctrl+C — detaching...

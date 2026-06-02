@@ -1,0 +1,217 @@
+[19:02:10] === sprintf ItemCode替换 === PID:5216 ===
+[19:02:10] 替换: 50125461(美丽梦想发型) → 50125711(紫色超赛发型)
+[19:02:10] 前置: sc.exe stop ApolloProtect
+[19:02:10] 日志: D:\py\反编译\FreeStyle\apollo_dump\sprintf_replace_20260530_190210.txt
+[19:02:11]   [步骤] JS开始执行
+[19:02:11]   [步骤] MSVCR100 sprintf=0x66d96051
+[19:02:11]   sprintf替换就绪: 50125461 → 50125711 (含ReadFile+AcquireSMD诊断)
+[19:02:11] 
+[19:02:11] 进房间触发角色加载。观察是否显示紫色超赛发型。
+[19:02:11] 命令: status | quit
+[19:02:11] 
+[19:02:15]   [sprintf] #1 fmt="customize\item\c%d.xml" IC=800
+[19:02:15]   [sprintf] #2 fmt="customize\item\c%d.xml" IC=801
+[19:02:15]   [sprintf] #3 fmt="customize\item\i%d.xml" IC=50421031
+[19:02:15]   [sprintf] #4 fmt="customize\item\i%d.xml" IC=50519561
+[19:02:15]   [sprintf] #5 fmt="customize\item\i%d.xml" IC=50623371
+[19:02:15]   [sprintf] #6 fmt="customize\item\i%d.xml" IC=50914721
+[19:02:15]   [sprintf] #7 fmt="customize\item\i%d.xml" IC=51514521
+[19:02:15]   [sprintf] #8 fmt="customize\item\i%d.xml" IC=50125461
+[19:02:15]   [替换!] #1 50125461→50125711 → i50125711.xml
+[19:02:15]   [sprintf] #9 fmt="customize\item\i%d.xml" IC=51616261
+[19:02:15]   [sprintf] #10 fmt="customize\item\i%d.xml" IC=51213111
+[19:02:15]   [AcquireSMD] #1 path="res707\c800.smd
+[19:02:15]   [ReadFile] #1 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #2 name="SSKF" bytes=78848
+[19:02:15]   [AcquireSMD] #2 path="res707\c801.smd
+[19:02:15]   [ReadFile] #3 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #4 name="SSKF" bytes=80896
+[19:02:15]   [AcquireSMD] #3 path="Res767\i50421031_FN.smd
+[19:02:15]   [ReadFile] #5 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #6 name="SSKF" bytes=51712
+[19:02:15]   [AcquireSMD] #4 path="Res767\i50421031_FN_upp01.smd
+[19:02:15]   [ReadFile] #7 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #8 name="SSKF" bytes=60928
+[19:02:15]   [AcquireSMD] #5 path="res767\i50519561_FN.smd
+[19:02:15]   [ReadFile] #9 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #10 name="SSKF" bytes=94208
+[19:02:15]   [AcquireSMD] #6 path="res767\i50519561_F_low01.smd
+[19:02:15]   [ReadFile] #11 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #12 name="SSKF" bytes=16384
+[19:02:15]   [AcquireSMD] #7 path="res767\i50623371_F.smd
+[19:02:15]   [ReadFile] #13 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #14 name="SSKF" bytes=118272
+[19:02:15]   [AcquireSMD] #8 path="res767\i50914721_F.smd
+[19:02:15]   [ReadFile] #15 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #16 name="SSKF" bytes=15872
+[19:02:15]   [AcquireSMD] #9 path="res767\i51514521_F.smd
+[19:02:15]   [ReadFile] #17 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #18 name="SSKF" bytes=41472
+[19:02:15]   [AcquireSMD] #10 path="res768\i50125711_FN.smd
+[19:02:15]   [ReadFile] #19 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #20 name="SSKF" bytes=269824
+[19:02:15]   [AcquireSMD] #11 path="res767\i51616261_F.smd
+[19:02:15]   [ReadFile] #21 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #22 name="SSKF" bytes=37888
+[19:02:15]   [AcquireSMD] #12 path="res767\i51213111_FN.smd
+[19:02:15]   [ReadFile] #23 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #24 name="SSKF" bytes=53760
+[19:02:15]   [ReadFile] #25 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #26 name="SSKF" bytes=247296
+[19:02:15]   [ReadFile] #27 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #28 name="SSKF" bytes=5120
+[19:02:15]   [ReadFile] #29 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #30 name="SSKF" bytes=1536
+[19:02:15]   [ReadFile] #31 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #32 name="SSKF" bytes=1536
+[19:02:15]   [ReadFile] #33 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #34 name="SSKF" bytes=19456
+[19:02:15]   [ReadFile] #35 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #36 name="SSKF" bytes=19456
+[19:02:15]   [ReadFile] #37 name="SSKF" bytes=512
+[19:02:15]   [ReadFile] #38 name="SSKF" bytes=24576
+[19:02:43]   [sprintf] #11 fmt="customize\item\c%d.xml" IC=800
+[19:02:43]   [sprintf] #12 fmt="customize\item\c%d.xml" IC=801
+[19:02:43]   [sprintf] #13 fmt="customize\item\i%d.xml" IC=50421031
+[19:02:43]   [sprintf] #14 fmt="customize\item\i%d.xml" IC=50519561
+[19:02:43]   [sprintf] #15 fmt="customize\item\i%d.xml" IC=50623371
+[19:02:43]   [sprintf] #16 fmt="customize\item\i%d.xml" IC=50914721
+[19:02:43]   [sprintf] #17 fmt="customize\item\i%d.xml" IC=51514521
+[19:02:43]   [sprintf] #18 fmt="customize\item\i%d.xml" IC=50125461
+[19:02:43]   [替换!] #2 50125461→50125711 → i50125711.xml
+[19:02:43]   [sprintf] #19 fmt="customize\item\i%d.xml" IC=51616261
+[19:02:43]   [sprintf] #20 fmt="customize\item\i%d.xml" IC=51213111
+[19:02:43]   [AcquireSMD] #13 path="res707\c800.smd
+[19:02:43]   [ReadFile] #39 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #40 name="SSKF" bytes=78848
+[19:02:43]   [AcquireSMD] #14 path="res707\c801.smd
+[19:02:43]   [ReadFile] #41 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #42 name="SSKF" bytes=80896
+[19:02:43]   [AcquireSMD] #15 path="Res767\i50421031_FN.smd
+[19:02:43]   [ReadFile] #43 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #44 name="SSKF" bytes=51712
+[19:02:43]   [ReadFile] #45 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #46 name="SSKF" bytes=60928
+[19:02:43]   [ReadFile] #47 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #48 name="SSKF" bytes=94208
+[19:02:43]   [ReadFile] #49 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #50 name="SSKF" bytes=16384
+[19:02:43]   [ReadFile] #51 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #52 name="SSKF" bytes=118272
+[19:02:43]   [ReadFile] #53 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #54 name="SSKF" bytes=15872
+[19:02:43]   [ReadFile] #55 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #56 name="SSKF" bytes=41472
+[19:02:43]   [AcquireSMD] #22 path="res768\i50125711_FN.smd
+[19:02:43]   [ReadFile] #57 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #58 name="SSKF" bytes=269824
+[19:02:43]   [ReadFile] #59 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #60 name="SSKF" bytes=37888
+[19:02:43]   [ReadFile] #61 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #62 name="SSKF" bytes=53760
+[19:02:43]   [ReadFile] #63 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #64 name="SSKF" bytes=5120
+[19:02:43]   [ReadFile] #65 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #66 name="SSKF" bytes=1536
+[19:02:43]   [ReadFile] #67 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #68 name="SSKF" bytes=1536
+[19:02:43]   [ReadFile] #69 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #70 name="SSKF" bytes=19456
+[19:02:43]   [ReadFile] #71 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #72 name="SSKF" bytes=19456
+[19:02:43]   [ReadFile] #73 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #74 name="SSKF" bytes=24576
+[19:02:43]   [替换!] #3 50125461→50125711 → i50125711.xml
+[19:02:43]   [ReadFile] #75 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #76 name="SSKF" bytes=78848
+[19:02:43]   [ReadFile] #77 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #78 name="SSKF" bytes=80896
+[19:02:43]   [ReadFile] #79 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #80 name="SSKF" bytes=51712
+[19:02:43]   [ReadFile] #81 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #82 name="SSKF" bytes=60928
+[19:02:43]   [ReadFile] #83 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #84 name="SSKF" bytes=94208
+[19:02:43]   [ReadFile] #85 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #86 name="SSKF" bytes=16384
+[19:02:43]   [ReadFile] #87 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #88 name="SSKF" bytes=118272
+[19:02:43]   [ReadFile] #89 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #90 name="SSKF" bytes=15872
+[19:02:43]   [ReadFile] #91 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #92 name="SSKF" bytes=41472
+[19:02:43]   [AcquireSMD] #34 path="res768\i50125711_FN.smd
+[19:02:43]   [ReadFile] #93 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #94 name="SSKF" bytes=269824
+[19:02:43]   [ReadFile] #95 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #96 name="SSKF" bytes=37888
+[19:02:43]   [ReadFile] #97 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #98 name="SSKF" bytes=53760
+[19:02:43]   [替换!] #4 50125461→50125711 → i50125711.xml
+[19:02:43]   [ReadFile] #99 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #100 name="SSKF" bytes=78848
+[19:02:43]   [ReadFile] #101 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #102 name="SSKF" bytes=80896
+[19:02:43]   [ReadFile] #103 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #104 name="SSKF" bytes=51712
+[19:02:43]   [ReadFile] #105 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #106 name="SSKF" bytes=60928
+[19:02:43]   [ReadFile] #107 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #108 name="SSKF" bytes=94208
+[19:02:43]   [ReadFile] #109 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #110 name="SSKF" bytes=16384
+[19:02:43]   [ReadFile] #111 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #112 name="SSKF" bytes=118272
+[19:02:43]   [ReadFile] #113 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #114 name="SSKF" bytes=15872
+[19:02:43]   [ReadFile] #115 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #116 name="SSKF" bytes=41472
+[19:02:43]   [AcquireSMD] #46 path="res768\i50125711_FN.smd
+[19:02:43]   [ReadFile] #117 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #118 name="SSKF" bytes=269824
+[19:02:43]   [ReadFile] #119 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #120 name="SSKF" bytes=37888
+[19:02:43]   [ReadFile] #121 name="SSKF" bytes=512
+[19:02:43]   [ReadFile] #122 name="SSKF" bytes=53760
+[19:02:51]   [ReadFile] #123 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #124 name="SSKF" bytes=1536
+[19:02:51]   [ReadFile] #125 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #126 name="SSKF" bytes=1536
+[19:02:51]   [ReadFile] #127 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #128 name="SSKF" bytes=1024
+[19:02:51]   [ReadFile] #129 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #130 name="SSKF" bytes=222720
+[19:02:51]   [ReadFile] #131 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #132 name="SSKF" bytes=1024
+[19:02:51]   [ReadFile] #133 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #134 name="SSKF" bytes=1024
+[19:02:51]   [ReadFile] #135 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #136 name="SSKF" bytes=463360
+[19:02:51]   [ReadFile] #137 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #138 name="SSKF" bytes=16896
+[19:02:51]   [ReadFile] #139 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #140 name="SSKF" bytes=4096
+[19:02:51]   [ReadFile] #141 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #142 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #143 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #144 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #145 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #146 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #147 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #148 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #149 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #150 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #151 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #152 name="SSKF" bytes=4608
+[19:02:51]   [ReadFile] #153 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #154 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #155 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #156 name="SSKF" bytes=4096
+[19:02:51]   [ReadFile] #157 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #158 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #159 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #160 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #161 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #162 name="SSKF" bytes=8704
+[19:02:51]   [ReadFile] #163 name="SSKF" bytes=512
+[19:02:51]   [ReadFile] #164 name="SSKF" bytes=34816

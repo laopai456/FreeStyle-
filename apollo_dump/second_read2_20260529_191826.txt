@@ -1,0 +1,12 @@
+[19:18:26] === 第二次读取替换v2 === PID:17236 ===
+[19:18:26] 策略: msvcrt fopen/fread 读目标文件, 替换第二次ReadFile buffer
+[19:18:26] 日志: D:\py\反编译\FreeStyle\apollo_dump\second_read2_20260529_191826.txt
+[19:18:27]   [步骤] JS开始执行
+[19:18:27]   [JS错误] TypeError: not a function
+[19:18:27]     行号: 23
+[19:18:27]     堆栈: TypeError: not a function
+    at <eval> (/script1.js:23)
+[19:18:27] 
+[19:18:27] 进房间触发角色加载。
+[19:18:27] 命令: status | quit
+[19:18:27] 

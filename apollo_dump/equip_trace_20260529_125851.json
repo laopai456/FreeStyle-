@@ -1,0 +1,466 @@
+[
+  {
+    "event": "call",
+    "func": "DynamicCreate1",
+    "addr": "0x2299730",
+    "retAddr": "0x1efa3a0",
+    "frames": [
+      {
+        "addr": "0x22fa3a0",
+        "rva": "0x1efa3a0",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d c4 e8 90 f3 f9 ff "
+      },
+      {
+        "addr": "0x2299730",
+        "rva": "0x1e99730",
+        "mod": "FreeStyle.exe",
+        "before": "d9 1d 0c 36 a1 02 5d c3 "
+      },
+      {
+        "addr": "0x1ecc919",
+        "rva": "0x1acc919",
+        "mod": "FreeStyle.exe",
+        "before": "ff ff ff e8 57 da 42 00 "
+      },
+      {
+        "addr": "0x1b1975a",
+        "rva": "0x171975a",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d b4 e8 86 31 3b 00 "
+      },
+      {
+        "addr": "0x1b1af60",
+        "rva": "0x171af60",
+        "mod": "FreeStyle.exe",
+        "before": "93 ff ff e8 20 e6 ff ff "
+      },
+      {
+        "addr": "0x18456cb",
+        "rva": "0x14456cb",
+        "mod": "FreeStyle.exe",
+        "before": "8b 82 54 01 00 00 ff d0 "
+      },
+      {
+        "addr": "0x1844186",
+        "rva": "0x1444186",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d 98 e8 5a 13 00 00 "
+      },
+      {
+        "addr": "0x21d7b2d",
+        "rva": "0x1dd7b2d",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d f8 8b 42 0c ff d0 "
+      },
+      {
+        "addr": "0x18508bb",
+        "rva": "0x14508bb",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d f0 8b 42 14 ff d0 "
+      },
+      {
+        "addr": "0x2c923de",
+        "rva": "0x28923de",
+        "mod": "FreeStyle.exe",
+        "before": "f1 b1 ad e8 92 e4 bb fe "
+      },
+      {
+        "addr": "0x24bf002",
+        "rva": "0x20bf002",
+        "mod": "FreeStyle.exe",
+        "before": "00 40 00 e8 5e e5 3f ff "
+      },
+      {
+        "addr": "0x76907ba9",
+        "rva": "0x76507ba9",
+        "mod": "KERNEL32.DLL",
+        "before": "ff 15 30 22 97 76 ff d6 "
+      },
+      {
+        "addr": "0x77e7bd3b",
+        "rva": "0x77a7bd3b",
+        "mod": "ntdll.dll",
+        "before": "f4 77 8b d7 33 c9 ff d6 "
+      },
+      {
+        "addr": "0x77e7bcbf",
+        "rva": "0x77a7bcbf",
+        "mod": "ntdll.dll",
+        "before": "8b 4d 08 e8 51 00 00 00 "
+      }
+    ],
+    "stack": [
+      "0x22fa3a0",
+      "0xa16027e5",
+      "0x85a77088",
+      "0x80f88f70",
+      "0x0",
+      "0x5bd",
+      "0x0",
+      "0x6ecce010",
+      "0x6ecdc68f",
+      "0x6ecdc690",
+      "0x80f88f60",
+      "0x5690000",
+      "0x1a",
+      "0x198a8c",
+      "0x198b8c",
+      "0x26457d4"
+    ],
+    "eax": "0x198a70",
+    "ecx": "0x85a77088",
+    "edx": "0x74aef78"
+  },
+  {
+    "event": "call",
+    "func": "DynamicCreate1",
+    "addr": "0x2299730",
+    "retAddr": "0x1efa3a0",
+    "frames": [
+      {
+        "addr": "0x22fa3a0",
+        "rva": "0x1efa3a0",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d c4 e8 90 f3 f9 ff "
+      },
+      {
+        "addr": "0x2299730",
+        "rva": "0x1e99730",
+        "mod": "FreeStyle.exe",
+        "before": "d9 1d 0c 36 a1 02 5d c3 "
+      },
+      {
+        "addr": "0x1ecc919",
+        "rva": "0x1acc919",
+        "mod": "FreeStyle.exe",
+        "before": "ff ff ff e8 57 da 42 00 "
+      },
+      {
+        "addr": "0x57a688",
+        "rva": "0x17a688",
+        "mod": "FreeStyle.exe",
+        "before": "df ff ff e8 58 22 95 01 "
+      },
+      {
+        "addr": "0x572bf9",
+        "rva": "0x172bf9",
+        "mod": "FreeStyle.exe",
+        "before": "de ff ff e8 b7 78 00 00 "
+      },
+      {
+        "addr": "0x18456cb",
+        "rva": "0x14456cb",
+        "mod": "FreeStyle.exe",
+        "before": "8b 82 54 01 00 00 ff d0 "
+      },
+      {
+        "addr": "0x1844186",
+        "rva": "0x1444186",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d 98 e8 5a 13 00 00 "
+      },
+      {
+        "addr": "0x21d7b2d",
+        "rva": "0x1dd7b2d",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d f8 8b 42 0c ff d0 "
+      },
+      {
+        "addr": "0x18508bb",
+        "rva": "0x14508bb",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d f0 8b 42 14 ff d0 "
+      },
+      {
+        "addr": "0x2c923de",
+        "rva": "0x28923de",
+        "mod": "FreeStyle.exe",
+        "before": "f1 b1 ad e8 92 e4 bb fe "
+      },
+      {
+        "addr": "0x24bf002",
+        "rva": "0x20bf002",
+        "mod": "FreeStyle.exe",
+        "before": "00 40 00 e8 5e e5 3f ff "
+      },
+      {
+        "addr": "0x76907ba9",
+        "rva": "0x76507ba9",
+        "mod": "KERNEL32.DLL",
+        "before": "ff 15 30 22 97 76 ff d6 "
+      },
+      {
+        "addr": "0x77e7bd3b",
+        "rva": "0x77a7bd3b",
+        "mod": "ntdll.dll",
+        "before": "f4 77 8b d7 33 c9 ff d6 "
+      },
+      {
+        "addr": "0x77e7bcbf",
+        "rva": "0x77a7bcbf",
+        "mod": "ntdll.dll",
+        "before": "8b 4d 08 e8 51 00 00 00 "
+      }
+    ],
+    "stack": [
+      "0x22fa3a0",
+      "0xa16014d5",
+      "0x85a707b0",
+      "0x82ced8c8",
+      "0x82ced9e0",
+      "0x64",
+      "0x980699",
+      "0x9f62330",
+      "0x0",
+      "0x98",
+      "0x0",
+      "0x82cec008",
+      "0x82ced8c7",
+      "0x82ced8c8",
+      "0x19ba5c",
+      "0x26457d4"
+    ],
+    "eax": "0x19b940",
+    "ecx": "0x85a707b0",
+    "edx": "0x0"
+  },
+  {
+    "event": "call",
+    "func": "DynamicCreate1",
+    "addr": "0x2299730",
+    "retAddr": "0x1efa3a0",
+    "frames": [
+      {
+        "addr": "0x22fa3a0",
+        "rva": "0x1efa3a0",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d c4 e8 90 f3 f9 ff "
+      },
+      {
+        "addr": "0x2299730",
+        "rva": "0x1e99730",
+        "mod": "FreeStyle.exe",
+        "before": "d9 1d 0c 36 a1 02 5d c3 "
+      },
+      {
+        "addr": "0x1ecc919",
+        "rva": "0x1acc919",
+        "mod": "FreeStyle.exe",
+        "before": "ff ff ff e8 57 da 42 00 "
+      },
+      {
+        "addr": "0x23e2bed",
+        "rva": "0x1fe2bed",
+        "mod": "FreeStyle.exe",
+        "before": "51 8b c8 e8 f3 9c ae ff "
+      },
+      {
+        "addr": "0x23ae2d8",
+        "rva": "0x1fae2d8",
+        "mod": "FreeStyle.exe",
+        "before": "ff ff ff e8 08 48 03 00 "
+      },
+      {
+        "addr": "0x23946e2",
+        "rva": "0x1f946e2",
+        "mod": "FreeStyle.exe",
+        "before": "ff ff ff e8 1e 8a 01 00 "
+      },
+      {
+        "addr": "0x239514f",
+        "rva": "0x1f9514f",
+        "mod": "FreeStyle.exe",
+        "before": "fe ff ff e8 01 ee ff ff "
+      },
+      {
+        "addr": "0x2394c82",
+        "rva": "0x1f94c82",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d d4 e8 3e 00 00 00 "
+      },
+      {
+        "addr": "0x2394b26",
+        "rva": "0x1f94b26",
+        "mod": "FreeStyle.exe",
+        "before": "ff ff ff e8 aa 00 00 00 "
+      },
+      {
+        "addr": "0x19880c7",
+        "rva": "0x15880c7",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d d0 e8 09 c9 a0 00 "
+      },
+      {
+        "addr": "0x57ab1a",
+        "rva": "0x17ab1a",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d dc 8b 42 2c ff d0 "
+      },
+      {
+        "addr": "0x572e79",
+        "rva": "0x172e79",
+        "mod": "FreeStyle.exe",
+        "before": "de ff ff e8 f7 7b 00 00 "
+      },
+      {
+        "addr": "0x18456cb",
+        "rva": "0x14456cb",
+        "mod": "FreeStyle.exe",
+        "before": "8b 82 54 01 00 00 ff d0 "
+      },
+      {
+        "addr": "0x1844186",
+        "rva": "0x1444186",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d 98 e8 5a 13 00 00 "
+      },
+      {
+        "addr": "0x21d7b2d",
+        "rva": "0x1dd7b2d",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d f8 8b 42 0c ff d0 "
+      }
+    ],
+    "stack": [
+      "0x22fa3a0",
+      "0xa16062f5",
+      "0x85a77a10",
+      "0x29e831ac",
+      "0x19cf5c",
+      "0xe528078",
+      "0x40",
+      "0xf06b490",
+      "0xe2eaed4",
+      "0xe2e8e9c",
+      "0x20",
+      "0x149045f",
+      "0x818ab010",
+      "0x818ab024",
+      "0x19d07c",
+      "0x26457d4"
+    ],
+    "eax": "0x19cf60",
+    "ecx": "0x85a77a10",
+    "edx": "0x0"
+  },
+  {
+    "event": "call",
+    "func": "DynamicCreate1",
+    "addr": "0x2299730",
+    "retAddr": "0x1efa3a0",
+    "frames": [
+      {
+        "addr": "0x22fa3a0",
+        "rva": "0x1efa3a0",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d c4 e8 90 f3 f9 ff "
+      },
+      {
+        "addr": "0x2299730",
+        "rva": "0x1e99730",
+        "mod": "FreeStyle.exe",
+        "before": "d9 1d 0c 36 a1 02 5d c3 "
+      },
+      {
+        "addr": "0x1b4fa39",
+        "rva": "0x174fa39",
+        "mod": "FreeStyle.exe",
+        "before": "f7 ff ff e8 37 a9 7a 00 "
+      },
+      {
+        "addr": "0x1b3c926",
+        "rva": "0x173c926",
+        "mod": "FreeStyle.exe",
+        "before": "b8 ff ff e8 ba 25 01 00 "
+      },
+      {
+        "addr": "0x1b25986",
+        "rva": "0x1725986",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d d4 e8 1a 5e 01 00 "
+      },
+      {
+        "addr": "0x18f6d15",
+        "rva": "0x14f6d15",
+        "mod": "FreeStyle.exe",
+        "before": "8b 82 5c 01 00 00 ff d0 "
+      },
+      {
+        "addr": "0x1b23e84",
+        "rva": "0x1723e84",
+        "mod": "FreeStyle.exe",
+        "before": "fe ff ff e8 2c 29 dd ff "
+      },
+      {
+        "addr": "0x1844259",
+        "rva": "0x1444259",
+        "mod": "FreeStyle.exe",
+        "before": "8b 90 84 01 00 00 ff d2 "
+      },
+      {
+        "addr": "0x21d7b2d",
+        "rva": "0x1dd7b2d",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d f8 8b 42 0c ff d0 "
+      },
+      {
+        "addr": "0x18508bb",
+        "rva": "0x14508bb",
+        "mod": "FreeStyle.exe",
+        "before": "8b 4d f0 8b 42 14 ff d0 "
+      },
+      {
+        "addr": "0x2c923de",
+        "rva": "0x28923de",
+        "mod": "FreeStyle.exe",
+        "before": "f1 b1 ad e8 92 e4 bb fe "
+      },
+      {
+        "addr": "0x24bf002",
+        "rva": "0x20bf002",
+        "mod": "FreeStyle.exe",
+        "before": "00 40 00 e8 5e e5 3f ff "
+      },
+      {
+        "addr": "0x76907ba9",
+        "rva": "0x76507ba9",
+        "mod": "KERNEL32.DLL",
+        "before": "ff 15 30 22 97 76 ff d6 "
+      },
+      {
+        "addr": "0x77e7bd3b",
+        "rva": "0x77a7bd3b",
+        "mod": "ntdll.dll",
+        "before": "f4 77 8b d7 33 c9 ff d6 "
+      },
+      {
+        "addr": "0x77e7bcbf",
+        "rva": "0x77a7bcbf",
+        "mod": "ntdll.dll",
+        "before": "8b 4d 08 e8 51 00 00 00 "
+      }
+    ],
+    "stack": [
+      "0x22fa3a0",
+      "0xa160c809",
+      "0x86457158",
+      "0x5690000",
+      "0x0",
+      "0x7dc",
+      "0x19db00",
+      "0x28c27d8c",
+      "0x0",
+      "0x19658c",
+      "0x671d233b",
+      "0x7dc",
+      "0xffffffff",
+      "0x196fc4",
+      "0x196fb8",
+      "0x26457d4"
+    ],
+    "eax": "0x196584",
+    "ecx": "0x86457158",
+    "edx": "0x0"
+  }
+]

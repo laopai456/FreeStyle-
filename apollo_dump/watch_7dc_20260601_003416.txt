@@ -1,0 +1,89 @@
+[00:34:16.032] === Watch +0x7DC Writer ===
+[00:34:16.032] PID: 1672
+[00:34:16.032] SRC: 50125461 美丽梦想(静态, pak767)
+[00:34:16.032] DST: 50125711 紫色超赛(动态, pak768)
+[00:34:16.032] Target: [subObj+0x7DC]
+[00:34:16.032] Log: D:\py\反编译\FreeStyle\apollo_dump\watch_7dc_20260601_003416.txt
+[00:34:16.032] 
+[00:34:16.802]   [setup] sprintf hook ready
+[00:34:16.802]   [setup] memcpy hook ready
+[00:34:16.802]   [setup] memset hook ready
+[00:34:16.802]   [setup] CreateFileA/W hooks ready
+[00:34:16.802]   [ready] SRC=50125461 DST=50125711
+[00:34:16.802] 
+[00:34:16.802] 流程:
+[00:34:16.802]   1. 进房间 -> sprintf 捕获 subObj 地址，自动启动写入监控
+[00:34:16.802]   2. 进练习场 -> 观察 WRITE DETECTED / memset / memcpy 事件
+[00:34:16.803]   3. 关注调用栈，定位清零源头
+[00:34:16.803] 
+[00:34:16.803] 命令: status | writes | set <addr> | quit
+[00:34:16.803] 
+[00:34:26.721] [sprintf] #1 ic=800 phase=INJECTED err=Error: access violation accessing 0x12647790
+[00:34:26.721] 
+[00:34:26.721] [phase] INJECTED -> ROOM_LOAD
+[00:34:26.721] 
+[00:34:26.734] [sprintf] #2 ic=801 phase=ROOM_LOAD err=Error: access violation accessing 0x12647790
+[00:34:26.734] 
+[00:34:26.734] [phase] ROOM_LOAD -> PRACTICE_LOAD
+[00:34:26.734] 
+[00:34:26.735] [sprintf] #3 ic=50421031 phase=PRACTICE_LOAD err=Error: access violation accessing 0x12647790
+[00:34:26.738] [sprintf] #4 ic=50519561 phase=PRACTICE_LOAD err=Error: access violation accessing 0x12647790
+[00:34:26.738] [sprintf] #5 ic=50623371 phase=PRACTICE_LOAD err=Error: access violation accessing 0x12647790
+[00:34:26.740] [sprintf] #6 ic=50914721 phase=PRACTICE_LOAD err=Error: access violation accessing 0x12647790
+[00:34:26.741] [sprintf] #7 ic=51514521 phase=PRACTICE_LOAD err=Error: access violation accessing 0x12647790
+[00:34:26.741] [sprintf] #8 ic=50125461 <== SRC_IC phase=PRACTICE_LOAD err=Error: access violation accessing 0x12647790
+[00:34:26.741] [sprintf] #9 ic=51616261 phase=PRACTICE_LOAD err=Error: access violation accessing 0x12647790
+[00:34:26.743] [sprintf] #10 ic=51213111 phase=PRACTICE_LOAD err=Error: access violation accessing 0x12647790
+[00:34:31.785] [sprintf] #11 ic=800 phase=PRACTICE_LOAD err=Error: access violation accessing 0x9563ccd3
+[00:34:31.785] [sprintf] #12 ic=801 phase=PRACTICE_LOAD err=Error: access violation accessing 0x9563ccd3
+[00:34:31.786] [sprintf] #13 ic=50421031 phase=PRACTICE_LOAD err=Error: access violation accessing 0x9563ccd3
+[00:34:31.788] [sprintf] #14 ic=50519561 phase=PRACTICE_LOAD err=Error: access violation accessing 0x9563ccd3
+[00:34:31.788] [sprintf] #15 ic=50623371 phase=PRACTICE_LOAD err=Error: access violation accessing 0x9563ccd3
+[00:34:31.789] [sprintf] #16 ic=50914721 phase=PRACTICE_LOAD err=Error: access violation accessing 0x9563ccd3
+[00:34:31.790] [sprintf] #17 ic=51514521 phase=PRACTICE_LOAD err=Error: access violation accessing 0x9563ccd3
+[00:34:31.791] [sprintf] #18 ic=50125461 <== SRC_IC phase=PRACTICE_LOAD err=Error: access violation accessing 0x9563ccd3
+[00:34:31.792] [sprintf] #19 ic=51616261 phase=PRACTICE_LOAD err=Error: access violation accessing 0x9563ccd3
+[00:34:31.793] [sprintf] #20 ic=51213111 phase=PRACTICE_LOAD err=Error: access violation accessing 0x9563ccd3
+[00:34:43.738] [sprintf] #21 ic=800 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.738] [sprintf] #22 ic=801 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.739] [sprintf] #23 ic=50421031 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.740] [sprintf] #24 ic=50519561 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.742] [sprintf] #25 ic=50623371 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.743] [sprintf] #26 ic=50914721 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.744] [sprintf] #27 ic=51514521 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.745] [sprintf] #28 ic=50125461 <== SRC_IC phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.746] [sprintf] #29 ic=51616261 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.747] [sprintf] #30 ic=51213111 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.860] [sprintf] #31 ic=800 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.860] [sprintf] #32 ic=801 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.861] [sprintf] #33 ic=50421031 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.863] [sprintf] #34 ic=50519561 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.864] [sprintf] #35 ic=50623371 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.865] [sprintf] #36 ic=50914721 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.866] [sprintf] #37 ic=51514521 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.867] [sprintf] #38 ic=50125461 <== SRC_IC phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.869] [sprintf] #39 ic=51616261 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.870] [sprintf] #40 ic=51213111 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.947] [sprintf] #41 ic=800 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.948] [sprintf] #42 ic=801 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.949] [sprintf] #43 ic=50421031 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.950] [sprintf] #44 ic=50519561 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.951] [sprintf] #45 ic=50623371 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.952] [sprintf] #46 ic=50914721 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.952] [sprintf] #47 ic=51514521 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.953] [sprintf] #48 ic=50125461 <== SRC_IC phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.954] [sprintf] #49 ic=51616261 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:34:43.955] [sprintf] #50 ic=51213111 phase=PRACTICE_LOAD err=Error: access violation accessing 0x164
+[00:35:08.553] [sprintf] #51 ic=800 val7DC=2664867508(MISMATCH) subObj=0x80004a00 phase=PRACTICE_LOAD
+[00:35:08.553]   [setup] MemoryAccessMonitor FAILED: Error: expected a callback value, falling back to polling
+[00:35:08.553]   [setup] Using polling fallback (50ms)
+[00:35:08.553]   [setup] polling started
+[00:35:08.553] [sprintf] #52 ic=801 val7DC=2664867508(MISMATCH) subObj=0x80004a00 phase=PRACTICE_LOAD
+[00:35:08.554] [sprintf] #53 ic=50421031 val7DC=2664867508(MISMATCH) subObj=0x80004a00 phase=PRACTICE_LOAD
+[00:35:08.556] [sprintf] #54 ic=50519561 val7DC=2664867508(MISMATCH) subObj=0x80004a00 phase=PRACTICE_LOAD
+[00:35:08.557] [sprintf] #55 ic=50623371 val7DC=2664867508(MISMATCH) subObj=0x80004a00 phase=PRACTICE_LOAD
+[00:35:08.558] [sprintf] #56 ic=50914721 val7DC=2664867508(MISMATCH) subObj=0x80004a00 phase=PRACTICE_LOAD
+[00:35:08.559] [sprintf] #57 ic=51514521 val7DC=2664867508(MISMATCH) subObj=0x80004a00 phase=PRACTICE_LOAD
+[00:35:08.560] [sprintf] #58 ic=50125461 <== SRC_IC val7DC=2664867508(MISMATCH) subObj=0x80004a00 phase=PRACTICE_LOAD
+[00:35:08.560] [sprintf] #59 ic=51616261 val7DC=2664867508(MISMATCH) subObj=0x80004a00 phase=PRACTICE_LOAD
+[00:35:08.563] [sprintf] #60 ic=51213111 val7DC=2664867508(MISMATCH) subObj=0x80004a00 phase=PRACTICE_LOAD

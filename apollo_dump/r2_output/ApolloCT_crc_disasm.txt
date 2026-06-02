@@ -1,0 +1,26 @@
+'=== CRC check @ 0x691A3C54 ==='
+- offset -  5455 5657 5859 5A5B 5C5D 5E5F 6061 6263  456789ABCDEF0123
+0x691a3c54  33c0 c30f 8f4c b0ff ff84 f33b 45fc 5289  3....L.....;E.R.
+0x691a3c64  1424 ff34 248d 6424 080f 847b 0001 0066  .$.4$.d$...{...f
+0x691a3c74  d3d8 c0fc 028b 450c 3c21 f6c4 6b39 4204  ......E.<!..k9B.
+0x691a3c84  60e9 bd3f fdff 5153 29db f966 0fba e60f  `..?..QS)..f....
+0x691a3c94  391d a897 0200 8d64 2408 0f85 62ac 0000  9......d$...b...
+0x691a3ca4  9c60 ff34 248d 6424 280f 84bd 8701 0066  .`.4$.d$(......f
+0x691a3cb4  81fa 1ce5 f5f9 84fc 837d dc14 6060 e980  .........}..``..
+0x691a3cc4  7500 00c7 4424 0c00 0000 01e9 9ddd 0000  u...D$..........
+            ; CALL XREF from fcn.6919ad16 @ 0x691aefb7(x)
+/ 6: fcn.691a3c51 ();
+|           0x691a3c51      0fa3ef         bt edi, ebp
+|           0x691a3c54      33c0           xor eax, eax
+\           0x691a3c56      c3             ret
+'=== CRC check @ 0x691BE222 ==='
+- offset -  2223 2425 2627 2829 2A2B 2C2D 2E2F 3031  23456789ABCDEF01
+0x691be222  33c0 c368 da34 580f 381d a497 0200 6689  3..h.4X.8.....f.
+0x691be232  0c24 538d 6424 080f 84ca 48fe ff66 0fb6  .$S.d$....H..f..
+0x691be242  c0fa f50f 20c0 0f89 2c21 feff 9c25 ffff  .... ...,!...%..
+0x691be252  feff 9ce8 8198 fdff e9c2 0d00 0066 0fc8  .............f..
+0x691be262  a170 9201 0083 c408 0f8e 5bb4 fbff 85f3  .p........[.....
+0x691be272  f933 c5f9 0fba e204 e910 2bfe ffe8 97cd  .3........+.....
+0x691be282  ffff 9c80 fec7 8325 d497 0200 0066 892c  .......%.....f.,
+0x691be292  2460 f829 c060 9c9c 9c8d 6424 50c9 685c  $`.).`....d$P.h\
+ERROR: Linear size differs too much from the bbsum, please use pdr instead

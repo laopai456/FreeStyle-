@@ -1,0 +1,82 @@
+[11:22:22] === v3 Actor诊断 === PID:7668 ===
+[11:22:22] 日志: D:\py\反编译\FreeStyle\apollo_dump\v3_log_20260529_112222.txt
+[11:22:23] [module] {"event": "module", "base": "0x400000", "text": "0x401000", "size": 41988096}
+[11:22:23] [apollo] {"event": "apollo", "msg": "deception active"}
+[11:22:23] [HOOK OK] StaticCreate1 @ 0x231b930
+[11:22:23] [HOOK OK] StaticCreate2 @ 0x231bdb0
+[11:22:23] [HOOK OK] DynamicCreate1 @ 0x2299730
+[11:22:23] [HOOK OK] DynamicCreate2 @ 0x22f27b0
+[11:22:23] [HOOK OK] StaticFactory @ 0x236b340
+[11:22:23] [HOOK OK] DynamicFactory @ 0x229af00
+[11:22:23] [READY] v3: BML+SSKF+Actor monitoring
+[11:22:23] 
+[11:22:23] Hook已激活。装备美丽梦想发型(50125461)查看效果。
+[11:22:23] 命令: status | actors | quit
+[11:22:23] 
+[11:22:28] [ACTOR #1] DynamicCreate1 @ 0x2299730
+[11:22:28]   ret=0x1efa3a0 eax=0x19efcc stack=['0x22fa3a0', '0xa1f9fd0a', '0x855c3810', '0xee706f0', '0x19efc8', '0xe5b8078', '0x40', '0xee70f60']
+[11:22:28] [ACTOR #2] DynamicFactory @ 0x229af00
+[11:22:28]   ret=0x1e99741 eax=0x19efcc stack=['0x2299741', '0x855c3810', '0x19efcc', '0x286', '0x19efd8', '0x9cd091f', '0xa1f9fd0a', '0x855c3810']
+[11:22:28] [ACTOR RET] DynamicFactory → 0x855c3810
+[11:22:28] [ACTOR RET] DynamicCreate1 → 0x855c3810
+[11:22:28] [ACTOR #3] DynamicCreate1 @ 0x2299730
+[11:22:28]   ret=0x1efa3a0 eax=0x19b940 stack=['0x22fa3a0', '0xa1f9ab9e', '0x855c54a8', '0x8852d828', '0x8852db70', '0x64', '0x3c70325', '0x461fa3e0']
+[11:22:28] [ACTOR #4] DynamicFactory @ 0x229af00
+[11:22:28]   ret=0x1e99741 eax=0x19b940 stack=['0x2299741', '0x855c54a8', '0x19b940', '0x282', '0x19b94c', '0x9cd091f', '0xa1f9ab9e', '0x855c54a8']
+[11:22:28] [ACTOR RET] DynamicFactory → 0x855c54a8
+[11:22:28] [ACTOR RET] DynamicCreate1 → 0x855c54a8
+[11:22:28] [BML #1] ic= meshes=1
+[11:22:28] [BML #2] ic= meshes=1
+[11:22:28] [BML #3] ic=50421031 meshes=9
+[11:22:28] [BML #4] ic=50519561 meshes=9
+[11:22:28] [BML #5] ic=50623371 meshes=5
+[11:22:28] [BML #6] ic=50914721 meshes=5
+[11:22:28] [BML #7] ic=51514521 meshes=5
+[11:22:28] [BML #8] ic=50125461 meshes=8
+[11:22:28] [PATCH] 15处 总15
+[11:22:28]   → res767\i50125711_MT.smd
+[11:22:28]   → res767\i50125711_MS.smd
+[11:22:28]   → res767\i50125711_MN.smd
+[11:22:28]   → res767\i50125711_MF.smd
+[11:22:28]   → res767\i50125711_FT.smd
+[11:22:28]   → res767\i50125711_FS.smd
+[11:22:28]   → res767\i50125711_FN.smd
+[11:22:28]   → res767\i50125711_Fsc.smd
+[11:22:28] [BML #9] ic=51616261 meshes=5
+[11:22:28] [BML #10] ic=51213111 meshes=5
+[11:22:28] [SSKF #1] res707/c800.smd (512B)
+[11:22:28] [SSKF #2] res707/c800.smd (78,848B)
+[11:22:28] [SSKF #3] c801.smd (512B)
+[11:22:28] [SSKF #4] c801.smd (80,896B)
+[11:22:28] [SSKF #5] i50421031_fn.smd (512B)
+[11:22:28] [SSKF #6] i50421031_fn.smd (51,712B)
+[11:22:28] [SSKF #7] i50421031_fn_upp01.smd (512B)
+[11:22:28] [SSKF #8] i50421031_fn_upp01.smd (60,928B)
+[11:22:28] [SSKF #9] i50519561_fn.smd (512B)
+[11:22:28] [SSKF #10] i50519561_fn.smd (94,208B)
+[11:22:28] [SSKF #11] i50519561_f_low01.smd (512B)
+[11:22:28] [SSKF #12] i50519561_f_low01.smd (16,384B)
+[11:22:28] [SSKF #13] i50623371_f.smd (512B)
+[11:22:28] [SSKF #14] i50623371_f.smd (118,272B)
+[11:22:28] [SSKF #15] i50914721_f.smd (512B)
+[11:22:28] [SSKF #16] i50914721_f.smd (15,872B)
+[11:22:28] [SSKF #17] i51514521_f.smd (512B)
+[11:22:28] [SSKF #18] i51514521_f.smd (41,472B)
+[11:22:28] [SSKF #19] i50125711_fn.smd (512B)
+[11:22:28] [SSKF #20] i50125711_fn.smd (269,824B)
+[11:22:28] [SSKF #21] SMD_basic_Plane_pivot_A001.smd (512B)
+[11:22:28] [SSKF #22] SMD_basic_Plane_pivot_A001.smd (5,120B)
+[11:22:28] [SSKF #23] wind_plane_01.smd (512B)
+[11:22:28] [SSKF #24] wind_plane_01.smd (1,536B)
+[11:22:28] [SSKF #25] wind_plane_01.smd (512B)
+[11:22:28] [SSKF #26] wind_plane_01.smd (1,536B)
+[11:22:28] [SSKF #27] magic_energy_01.smd (512B)
+[11:22:28] [SSKF #28] magic_energy_01.smd (19,456B)
+[11:22:28] [SSKF #29] magic_energy_01.smd (512B)
+[11:22:28] [SSKF #30] magic_energy_01.smd (19,456B)
+[11:22:28] [SSKF #31] SMD_magic_screw003.smd (512B)
+[11:22:28] [SSKF #32] SMD_magic_screw003.smd (24,576B)
+[11:22:36] 
+=== 汇总 ===
+[11:22:36] BML=10 SSKF=32 Patch=1 ActorCalls=4 ActorRets=4 Errors=0
+[11:22:36] 日志: D:\py\反编译\FreeStyle\apollo_dump\v3_log_20260529_112222.txt

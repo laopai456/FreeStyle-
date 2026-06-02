@@ -1,0 +1,25 @@
+[18:52:45] === CreateFileA诊断 === PID:12824 ===
+[18:52:45] 替换: 50125461(美丽梦想) → 50125711(紫色超赛)
+[18:52:45] 日志: D:\py\反编译\FreeStyle\apollo_dump\diag_createfile_20260530_185245.txt
+[18:52:46]   [步骤] JS开始执行
+[18:52:46]   [步骤] CreateFileA hook已设置
+[18:52:46]   [步骤] _chdir hook已设置
+[18:52:46]   CreateFileA诊断就绪
+[18:52:46] 
+[18:52:46] 进房间触发角色加载。
+[18:52:46] 命令: status | quit
+[18:52:46] 
+[18:52:49]   [替换!] #1
+[18:52:49]   [CreateFile] #1 path="C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\Resource\item768\i50125711.bml" disp=128
+[18:52:49]   [AcquireSMD] #1 path="res707\c800.smd"
+[18:52:49]   [AcquireSMD] #2 path="res707\c801.smd"
+[18:52:49]   [AcquireSMD] #3 path="Res767\i50421031_FN.smd"
+[18:52:49]   [AcquireSMD] #4 path="Res767\i50421031_FN_upp01.smd"
+[18:52:49]   [AcquireSMD] #5 path="res767\i50519561_FN.smd"
+[18:52:49]   [AcquireSMD] #6 path="res767\i50519561_F_low01.smd"
+[18:52:49]   [AcquireSMD] #7 path="res767\i50623371_F.smd"
+[18:52:49]   [AcquireSMD] #8 path="res767\i50914721_F.smd"
+[18:52:49]   [AcquireSMD] #9 path="res767\i51514521_F.smd"
+[18:52:49]   [AcquireSMD] #10 path="res767\i51616261_F.smd"
+[18:52:49]   [AcquireSMD] #11 path="res767\i51213111_FN.smd"
+[18:52:56]   {"patches":1,"files":1,"acquires":11}

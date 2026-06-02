@@ -1,0 +1,5 @@
+Log: D:\py\反编译\FreeStyle\apollo_dump\destroyer_20260523_212243.txt
+Attaching PID 19952...
+  [READY] Apollo destroyer loaded. Commands: killAll | phase2 | phase3 | phase35 | phase4 | status
+
+!!! PROCESS EXIT: reason=application-requested, crash=None !!!

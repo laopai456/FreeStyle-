@@ -1,0 +1,10 @@
+[16:35:48] ============================================================
+[16:35:48]   TCP PROXY CAPTURE for FreeStyle Login
+[16:35:48] ============================================================
+[16:35:48]   Listen: 0.0.0.0:17891
+[16:35:48]   Forward to: 42.193.73.163:10005
+[16:35:48]   Capture: d:\py\反编译\FreeStyle\apollo_dump\tcp_proxy_capture.bin
+[16:35:48] 
+[16:35:48] Listening on port 17891...
+[16:35:48] Now launch game with: FreeStyle.exe 127.0.0.1:17891
+[16:35:48] 

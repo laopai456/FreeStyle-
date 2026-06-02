@@ -1,0 +1,37 @@
+[13:35:21.070] === ItemCode Reader Tracer === PID:4488 ===
+[13:35:21.070] SRC: 50125461  DST: 50125711
+[13:35:21.070] 目标: 追踪练习场阶段谁在读取原始 ItemCode
+[13:35:21.070] 方法: 监控 CreateFileA/W 路径参数 + 20帧调用栈
+[13:35:21.070] 日志: D:\py\反编译\FreeStyle\apollo_dump\itemcode_reader_20260601_133521.txt
+[13:35:21.070] 
+[13:35:22.241]   [setup] sprintf hook ready
+[13:35:22.242]   [setup] CreateFileA/W hooks ready (with backtrace)
+[13:35:22.242]   [setup] silence detector started
+[13:35:22.242]   ItemCode reader tracer ready
+[13:35:22.242] 
+[13:35:22.242] 测试流程:
+[13:35:22.242] 1. 进房间 → 观察文件路径和调用栈
+[13:35:22.242] 2. 进练习场 → 关键：看有没有含 SRC_IC 的路径
+[13:35:22.242] 3. 如果有 → 调用栈会显示谁在构造这个路径
+[13:35:22.242] 
+[13:35:22.242] 命令: status | scansrc | scandst | quit
+[13:35:22.242] 
+[13:35:49.828]   {"phase":"INJECTED","sprintfCount":0,"fileCount":0}
+[13:35:56.378]   SRC_IC addresses: ["0x210a8ef0","0x256aef9c","0x25c4d93c","0x25fad500","0x25fadd48","0x286bf1a0","0x4844fa4c","0x4d475...
+[13:36:01.853]   DST_IC addresses: ["0x17eecc","0x210ab8f0","0x2571323c","0x25c623fc","0x25c7c47c","0x286c0880","0x290d0fa4","0x35251fb4","0x3525f9f4","0x35262b74","0x35265244","0x35265a6c","0x352f18cf","0x4a8268fc"]
+[13:36:07.529] [sprintf] #1 ic=800 phase=INJECTED
+[13:36:07.529] 
+[13:36:07.529] [PHASE] INJECTED -> ROOM_LOAD
+[13:36:07.529] 
+[13:36:07.529] [sprintf] #2 ic=801 phase=ROOM_LOAD
+[13:36:07.530] [sprintf] #3 ic=50421031 phase=ROOM_LOAD
+[13:36:07.530] [sprintf] #4 ic=50519561 phase=ROOM_LOAD
+[13:36:07.530] [sprintf] #5 ic=50623371 phase=ROOM_LOAD
+[13:36:07.530] [sprintf] #6 ic=50914721 phase=ROOM_LOAD
+[13:36:07.532] [sprintf] #7 ic=51514521 phase=ROOM_LOAD
+[13:36:07.533] [sprintf] #8 ic=50125461 <== SRC phase=ROOM_LOAD
+[13:36:07.533] [sprintf] #9 ic=51616261 phase=ROOM_LOAD
+[13:36:07.533] [sprintf] #10 ic=51213111 phase=ROOM_LOAD
+[13:36:12.858] 
+[13:36:12.858] [PHASE] ROOM_LOAD -> PRACTICE
+[13:36:12.858] 

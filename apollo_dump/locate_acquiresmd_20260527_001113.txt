@@ -1,0 +1,5 @@
+[00:11:13.981] locate_acquiresmd.py started
+[00:11:13.982] Log file: D:\py\反编译\FreeStyle\apollo_dump\locate_acquiresmd_20260527_001113.txt
+[00:11:13.982] 
+[00:11:14.181] [+] FreeStyle.exe PID: 9248
+[00:11:14.181] [*] Attaching via Frida...

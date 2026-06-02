@@ -1,0 +1,15 @@
+Log: D:\py\反编译\FreeStyle\apollo_dump\acquire_test_20260523_011945.txt
+Attaching PID 31072...
+[JS ERROR] TypeError: not a function
+
+=== Memory.protect + Interceptor.attach AcquireSMD ===
+Commands: try  |  s (status)  |  Ctrl+C (exit)
+
+步骤:
+  1. 先在游戏里操作一下确认 SSKF 日志正常
+  2. 输入 try → 保护代码页 + hook AcquireSMD
+  3. 如果游戏没崩 → 进商城点发型
+  4. 看到 "HOOKED" = 实验成功!
+
+
+Detaching...

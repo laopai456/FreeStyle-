@@ -1,0 +1,1173 @@
+[19:31:36] === 崩溃诊断 === PID:26452 ===
+[19:31:36] 替换: 50125461(美丽梦想) → 50125711
+[19:31:36] 日志: D:\py\反编译\FreeStyle\apollo_dump\diag_crash_20260530_193136.txt
+[19:31:37]   [步骤] JS开始执行
+[19:31:37]   [步骤] 异常处理器已设置
+[19:31:37]   [步骤] sprintf hook已设置
+[19:31:37]   [步骤] LoadItemFile hook已设置
+[19:31:37]   [步骤] AcquireSMD hook已设置
+[19:31:37]   [步骤] CreateFileA hook已设置
+[19:31:37]   诊断就绪 — 异常/sprintf/LoadItemFile/SMD/CreateFile (骨骼/分配/错误已禁用)
+[19:31:37] 
+[19:31:37] 进房间 → 穿戴发型 → 进练习场。
+[19:31:37] 命令: status | quit
+[19:31:37] 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x69557e4d
+[19:31:42]     EIP=0x69557e4d EAX=0x0 EBX=0x6b00400
+[19:31:42]     ECX=0x73fffcc EDX=0x0
+[19:31:42]     ESP=0x73ffee4 EBP=0x73fff58
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x695582d6', '0x69017470', '0x69017470', '0x73fff08', '0x6b00400', '0x0', '0x70000cc', '0x0', '0x69', '0x41b70000', '0x69017470', '0x8dae97c', '0x73fff74', '0x73fff30', '0x6b00400']
+[19:31:42]     代码@0x69157e4d: bd 2d 34 c7 2d af dc b9 cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff4a EBX=0x8c91b3b
+[19:31:42]     ECX=0x3869764f EDX=0x1a530073
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff44
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576b7', '0x73fff3e', '0x73ffe58', '0x8c91b3b']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff52 EBX=0x8c91b5b
+[19:31:42]     ECX=0x1c69764f EDX=0x1a530073
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff44
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576c5', '0x73fff3e', '0x73ffe58', '0x8c91b5b']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff56 EBX=0x8c91bd3
+[19:31:42]     ECX=0x3869764f EDX=0x1a530073
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff44
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576d3', '0x73fff3e', '0x73ffe58', '0x8c91bd3']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff48 EBX=0x9d88d233
+[19:31:42]     ECX=0x3869764f EDX=0x1a50070
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557725', '0x73fff3a', '0x73ffe58', '0x9d88d233']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff49 EBX=0x9d88d242
+[19:31:42]     ECX=0x1c69764f EDX=0x1a50061
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557733', '0x73fff3a', '0x73ffe58', '0x9d88d242']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff4b EBX=0x9b9dd64b
+[19:31:42]     ECX=0x2469764f EDX=0x1a5002e
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557749', '0x73fff3a', '0x73ffe58', '0x9b9dd64b']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff4c EBX=0x9b9dd6cd
+[19:31:42]     ECX=0x3869764f EDX=0x1a50064
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557757', '0x73fff3a', '0x73ffe58', '0x9b9dd6cd']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff4d EBX=0x9b9dd628
+[19:31:42]     ECX=0x2469764f EDX=0x1a5006c
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557765', '0x73fff3a', '0x73ffe58', '0x9b9dd628']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff4e EBX=0x99b2d904
+[19:31:42]     ECX=0x469764f EDX=0x1a5006c
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x6955777b', '0x73fff3a', '0x73ffe58', '0x99b2d904']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff4f EBX=0x97c7dc0f
+[19:31:42]     ECX=0x1c69764f EDX=0x1a50000
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557791', '0x73fff3a', '0x73ffe58', '0x97c7dc0f']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff50 EBX=0x97c7dc85
+[19:31:42]     ECX=0x3869764f EDX=0x1a50054
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x6955779f', '0x73fff3a', '0x73ffe58', '0x97c7dc85']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff51 EBX=0x97c7dc71
+[19:31:42]     ECX=0x469764f EDX=0x1a50065
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577ad', '0x73fff3a', '0x73ffe58', '0x97c7dc71']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff53 EBX=0x97c7dcb6
+[19:31:42]     ECX=0x1c69764f EDX=0x1a50074
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577bb', '0x73fff3a', '0x73ffe58', '0x97c7dcb6']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff54 EBX=0x95dd1ed1
+[19:31:42]     ECX=0x3869764f EDX=0x1a50050
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577d1', '0x73fff3a', '0x73ffe58', '0x95dd1ed1']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff55 EBX=0x95dd1ea4
+[19:31:42]     ECX=0x469764f EDX=0x1a50061
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577df', '0x73fff3a', '0x73ffe58', '0x95dd1ea4']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:42]   ★★★ 崩溃! ★★★
+[19:31:42]     type=breakpoint addr=0x694f3e32
+[19:31:42]     EIP=0x694f3e32 EAX=0x73fff57 EBX=0x95dd1e2d
+[19:31:42]     ECX=0x3869764f EDX=0x1a50000
+[19:31:42]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:42]     patches=0 cycle=0
+[19:31:42]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577ed', '0x73fff3a', '0x73ffe58', '0x95dd1e2d']
+[19:31:42]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:43]   [LoadItemFile] #1 ic=0 "customize\item\c800.xml"
+[19:31:43]   [LoadItemFile] #2 ic=0 "customize\item\c801.xml"
+[19:31:43]   [LoadItemFile] #3 ic=50421031 "customize\item\i50421031.xml"
+[19:31:43]   [LoadItemFile] #4 ic=50519561 "customize\item\i50519561.xml"
+[19:31:43]   [LoadItemFile] #5 ic=50623371 "customize\item\i50623371.xml"
+[19:31:43]   [LoadItemFile] #6 ic=50914721 "customize\item\i50914721.xml"
+[19:31:43]   [LoadItemFile] #7 ic=51514521 "customize\item\i51514521.xml"
+[19:31:43]   [替换!] #1 cycle=1
+[19:31:43]   [LoadItemFile] #8 ic=50125711 "customize\item\i50125711.xml"
+[19:31:43]   [CreateFile] #1 "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\Resource\item768\i50125711.bml"
+[19:31:43]   [LoadItemFile] #9 ic=51616261 "customize\item\i51616261.xml"
+[19:31:43]   [LoadItemFile] #10 ic=51213111 "customize\item\i51213111.xml"
+[19:31:43]   [AcquireSMD] #1 "res707\c800.smd"
+[19:31:43]   [AcquireSMD] #2 "res707\c801.smd"
+[19:31:43]   [AcquireSMD] #3 "Res767\i50421031_FN.smd"
+[19:31:43]   [AcquireSMD] #4 "Res767\i50421031_FN_upp01.smd"
+[19:31:43]   [AcquireSMD] #5 "res767\i50519561_FN.smd"
+[19:31:43]   [AcquireSMD] #6 "res767\i50519561_F_low01.smd"
+[19:31:43]   [AcquireSMD] #7 "res767\i50623371_F.smd"
+[19:31:43]   [AcquireSMD] #8 "res767\i50914721_F.smd"
+[19:31:43]   [AcquireSMD] #9 "res767\i51514521_F.smd"
+[19:31:43]   [AcquireSMD] #10 "res768\i50125711_FN.smd"
+[19:31:43]   [CreateFile] #2 "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\res768.pak"
+[19:31:43]   [AcquireSMD] #11 "res767\i51616261_F.smd"
+[19:31:43]   [AcquireSMD] #12 "res767\i51213111_FN.smd"
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x69557e4d
+[19:31:47]     EIP=0x69557e4d EAX=0x0 EBX=0x6b00400
+[19:31:47]     ECX=0x73fffcc EDX=0x0
+[19:31:47]     ESP=0x73ffee4 EBP=0x73fff58
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x695582d6', '0x69017470', '0x69017470', '0x73fff08', '0x6b00400', '0x0', '0x70000cc', '0x0', '0x69', '0x41b70000', '0x69017470', '0x8dae97c', '0x73fff74', '0x73fff30', '0x6b00400']
+[19:31:47]     代码@0x69157e4d: bd 2d 34 c7 2d af dc b9 cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff4a EBX=0x8c91b3b
+[19:31:47]     ECX=0x3869764f EDX=0x1a530073
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff44
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576b7', '0x73fff3e', '0x73ffe58', '0x8c91b3b']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff52 EBX=0x8c91b5b
+[19:31:47]     ECX=0x1c69764f EDX=0x1a530073
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff44
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576c5', '0x73fff3e', '0x73ffe58', '0x8c91b5b']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff56 EBX=0x8c91bd3
+[19:31:47]     ECX=0x3869764f EDX=0x1a530073
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff44
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576d3', '0x73fff3e', '0x73ffe58', '0x8c91bd3']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff48 EBX=0x9d88d233
+[19:31:47]     ECX=0x3869764f EDX=0x1a50070
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557725', '0x73fff3a', '0x73ffe58', '0x9d88d233']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff49 EBX=0x9d88d242
+[19:31:47]     ECX=0x1c69764f EDX=0x1a50061
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557733', '0x73fff3a', '0x73ffe58', '0x9d88d242']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff4b EBX=0x9b9dd64b
+[19:31:47]     ECX=0x2469764f EDX=0x1a5002e
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557749', '0x73fff3a', '0x73ffe58', '0x9b9dd64b']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff4c EBX=0x9b9dd6cd
+[19:31:47]     ECX=0x3869764f EDX=0x1a50064
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557757', '0x73fff3a', '0x73ffe58', '0x9b9dd6cd']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff4d EBX=0x9b9dd628
+[19:31:47]     ECX=0x2469764f EDX=0x1a5006c
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557765', '0x73fff3a', '0x73ffe58', '0x9b9dd628']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff4e EBX=0x99b2d904
+[19:31:47]     ECX=0x469764f EDX=0x1a5006c
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x6955777b', '0x73fff3a', '0x73ffe58', '0x99b2d904']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff4f EBX=0x97c7dc0f
+[19:31:47]     ECX=0x1c69764f EDX=0x1a50000
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557791', '0x73fff3a', '0x73ffe58', '0x97c7dc0f']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff50 EBX=0x97c7dc85
+[19:31:47]     ECX=0x3869764f EDX=0x1a50054
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x6955779f', '0x73fff3a', '0x73ffe58', '0x97c7dc85']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff51 EBX=0x97c7dc71
+[19:31:47]     ECX=0x469764f EDX=0x1a50065
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577ad', '0x73fff3a', '0x73ffe58', '0x97c7dc71']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff53 EBX=0x97c7dcb6
+[19:31:47]     ECX=0x1c69764f EDX=0x1a50074
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577bb', '0x73fff3a', '0x73ffe58', '0x97c7dcb6']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff54 EBX=0x95dd1ed1
+[19:31:47]     ECX=0x3869764f EDX=0x1a50050
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577d1', '0x73fff3a', '0x73ffe58', '0x95dd1ed1']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff55 EBX=0x95dd1ea4
+[19:31:47]     ECX=0x469764f EDX=0x1a50061
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577df', '0x73fff3a', '0x73ffe58', '0x95dd1ea4']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:47]   ★★★ 崩溃! ★★★
+[19:31:47]     type=breakpoint addr=0x694f3e32
+[19:31:47]     EIP=0x694f3e32 EAX=0x73fff57 EBX=0x95dd1e2d
+[19:31:47]     ECX=0x3869764f EDX=0x1a50000
+[19:31:47]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:47]     patches=1 cycle=1
+[19:31:47]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577ed', '0x73fff3a', '0x73ffe58', '0x95dd1e2d']
+[19:31:47]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:48]   ★★★ 崩溃! ★★★
+[19:31:48]     type=breakpoint addr=0x6951be0f
+[19:31:48]     EIP=0x6951be0f EAX=0x1c53bd5 EBX=0x0
+[19:31:48]     ECX=0xc141e573 EDX=0x1c53b
+[19:31:48]     ESP=0x198984 EBP=0x1989d4
+[19:31:48]     patches=1 cycle=1
+[19:31:48]     栈: ['0x198d74', '0x6951c424', '0x198b20', '0x3e0c580', '0x69097000', '0x74666f53', '0x65726177', '0x4332545c', '0xd6bd5c4e', '0xbac0b7cd', '0xf2c7', '0xf9e1fd10', '0x2d414173', '0x3e0c580', '0x198a9c', '0x200206']
+[19:31:48]     代码@0x6911be0f: 02 ae c0 98 52 02 d9 7a cc 9d e8 a9 cc 9d f4 5c 7f 74 2d 27 68 dd 6d c5 
+[19:31:48]   ★★★ 崩溃! ★★★
+[19:31:48]     type=breakpoint addr=0x694b3fe6
+[19:31:48]     EIP=0x694b3fe6 EAX=0x1989e0 EBX=0x69097000
+[19:31:48]     ECX=0x1988dc EDX=0x9f8b6f30
+[19:31:48]     ESP=0x198898 EBP=0x1989e4
+[19:31:48]     patches=1 cycle=1
+[19:31:48]     栈: ['0x198d74', '0x694b67eb', '0x198b20', '0x99a85864', '0x1989e4', '0x1988c0', '0x69097000', '0x9f8b6f30', '0x1988dc', '0x1989e0', '0x200212', '0x944a8cac', '0x69631101', '0x2', '0x1988dc', '0x1989e0']
+[19:31:48]     代码@0x690b3fe6: ff eb dc 01 7b a9 41 44 cc 9d 47 cb 89 a2 eb 40 58 7e 60 81 e8 c6 d2 5d 
+[19:31:49]   [LoadItemFile] #11 ic=0 "customize\item\c800.xml"
+[19:31:49]   [LoadItemFile] #12 ic=0 "customize\item\c801.xml"
+[19:31:49]   [LoadItemFile] #13 ic=50421031 "customize\item\i50421031.xml"
+[19:31:49]   [LoadItemFile] #14 ic=50519561 "customize\item\i50519561.xml"
+[19:31:49]   [LoadItemFile] #15 ic=50623371 "customize\item\i50623371.xml"
+[19:31:49]   [LoadItemFile] #16 ic=50914721 "customize\item\i50914721.xml"
+[19:31:49]   [LoadItemFile] #17 ic=51514521 "customize\item\i51514521.xml"
+[19:31:49]   [替换!] #2 cycle=2
+[19:31:49]   [LoadItemFile] #18 ic=50125711 "customize\item\i50125711.xml"
+[19:31:49]   [CreateFile] #3 "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\Resource\item768\i50125711.bml"
+[19:31:49]   [LoadItemFile] #19 ic=51616261 "customize\item\i51616261.xml"
+[19:31:49]   [LoadItemFile] #20 ic=51213111 "customize\item\i51213111.xml"
+[19:31:49]   [AcquireSMD] #13 "res707\c800.smd"
+[19:31:49]   [AcquireSMD] #14 "res707\c801.smd"
+[19:31:49]   [AcquireSMD] #15 "Res767\i50421031_FN.smd"
+[19:31:49]   [AcquireSMD] #16 "Res767\i50421031_FN_upp01.smd"
+[19:31:49]   [AcquireSMD] #17 "res767\i50519561_FN.smd"
+[19:31:49]   [AcquireSMD] #18 "res767\i50519561_F_low01.smd"
+[19:31:49]   [AcquireSMD] #19 "res767\i50623371_F.smd"
+[19:31:49]   [AcquireSMD] #20 "res767\i50914721_F.smd"
+[19:31:49]   [AcquireSMD] #22 "res768\i50125711_FN.smd"
+[19:31:50]   [LoadItemFile] #21 ic=0 "customize\item\c800.xml"
+[19:31:50]   [LoadItemFile] #22 ic=0 "customize\item\c801.xml"
+[19:31:50]   [LoadItemFile] #23 ic=50421031 "customize\item\i50421031.xml"
+[19:31:50]   [LoadItemFile] #24 ic=50519561 "customize\item\i50519561.xml"
+[19:31:50]   [LoadItemFile] #25 ic=50623371 "customize\item\i50623371.xml"
+[19:31:50]   [LoadItemFile] #26 ic=50914721 "customize\item\i50914721.xml"
+[19:31:50]   [LoadItemFile] #27 ic=51514521 "customize\item\i51514521.xml"
+[19:31:50]   [LoadItemFile] #28 ic=50115851 "customize\item\i50115851.xml"
+[19:31:50]   [CreateFile] #4 "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\item707.pak"
+[19:31:50]   [LoadItemFile] #29 ic=51616261 "customize\item\i51616261.xml"
+[19:31:50]   [LoadItemFile] #30 ic=51213111 "customize\item\i51213111.xml"
+[19:31:50]   [CreateFile] #5 "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\res705.pak"
+[19:31:51]   [LoadItemFile] #31 ic=0 "customize\item\c800.xml"
+[19:31:51]   [LoadItemFile] #32 ic=0 "customize\item\c801.xml"
+[19:31:51]   [LoadItemFile] #33 ic=50421031 "customize\item\i50421031.xml"
+[19:31:51]   [LoadItemFile] #34 ic=50519561 "customize\item\i50519561.xml"
+[19:31:51]   [LoadItemFile] #35 ic=50623371 "customize\item\i50623371.xml"
+[19:31:51]   [LoadItemFile] #36 ic=50914721 "customize\item\i50914721.xml"
+[19:31:51]   [LoadItemFile] #37 ic=51514521 "customize\item\i51514521.xml"
+[19:31:51]   [替换!] #3 cycle=3
+[19:31:51]   [LoadItemFile] #38 ic=50125711 "customize\item\i50125711.xml"
+[19:31:51]   [CreateFile] #6 "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\Resource\item768\i50125711.bml"
+[19:31:51]   [LoadItemFile] #39 ic=51616261 "customize\item\i51616261.xml"
+[19:31:51]   [LoadItemFile] #40 ic=51213111 "customize\item\i51213111.xml"
+[19:31:51]   [AcquireSMD] #46 "res768\i50125711_FN.smd"
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x69557e4d
+[19:31:52]     EIP=0x69557e4d EAX=0x0 EBX=0x6b00400
+[19:31:52]     ECX=0x73fffcc EDX=0x0
+[19:31:52]     ESP=0x73ffee4 EBP=0x73fff58
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x695582d6', '0x69017470', '0x69017470', '0x73fff08', '0x6b00400', '0x0', '0x70000cc', '0x0', '0x69', '0x41b70000', '0x69017470', '0x8dae97c', '0x73fff74', '0x73fff30', '0x6b00400']
+[19:31:52]     代码@0x69157e4d: bd 2d 34 c7 2d af dc b9 cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff4a EBX=0x8c91b3b
+[19:31:52]     ECX=0x3869764f EDX=0x1a530073
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff44
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576b7', '0x73fff3e', '0x73ffe58', '0x8c91b3b']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff52 EBX=0x8c91b5b
+[19:31:52]     ECX=0x1c69764f EDX=0x1a530073
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff44
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576c5', '0x73fff3e', '0x73ffe58', '0x8c91b5b']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff56 EBX=0x8c91bd3
+[19:31:52]     ECX=0x3869764f EDX=0x1a530073
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff44
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576d3', '0x73fff3e', '0x73ffe58', '0x8c91bd3']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff48 EBX=0x9d88d233
+[19:31:52]     ECX=0x3869764f EDX=0x1a50070
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557725', '0x73fff3a', '0x73ffe58', '0x9d88d233']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff49 EBX=0x9d88d242
+[19:31:52]     ECX=0x1c69764f EDX=0x1a50061
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557733', '0x73fff3a', '0x73ffe58', '0x9d88d242']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff4b EBX=0x9b9dd64b
+[19:31:52]     ECX=0x2469764f EDX=0x1a5002e
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557749', '0x73fff3a', '0x73ffe58', '0x9b9dd64b']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff4c EBX=0x9b9dd6cd
+[19:31:52]     ECX=0x3869764f EDX=0x1a50064
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557757', '0x73fff3a', '0x73ffe58', '0x9b9dd6cd']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff4d EBX=0x9b9dd628
+[19:31:52]     ECX=0x2469764f EDX=0x1a5006c
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557765', '0x73fff3a', '0x73ffe58', '0x9b9dd628']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff4e EBX=0x99b2d904
+[19:31:52]     ECX=0x469764f EDX=0x1a5006c
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x6955777b', '0x73fff3a', '0x73ffe58', '0x99b2d904']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff4f EBX=0x97c7dc0f
+[19:31:52]     ECX=0x1c69764f EDX=0x1a50000
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557791', '0x73fff3a', '0x73ffe58', '0x97c7dc0f']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff50 EBX=0x97c7dc85
+[19:31:52]     ECX=0x3869764f EDX=0x1a50054
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x6955779f', '0x73fff3a', '0x73ffe58', '0x97c7dc85']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff51 EBX=0x97c7dc71
+[19:31:52]     ECX=0x469764f EDX=0x1a50065
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577ad', '0x73fff3a', '0x73ffe58', '0x97c7dc71']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff53 EBX=0x97c7dcb6
+[19:31:52]     ECX=0x1c69764f EDX=0x1a50074
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577bb', '0x73fff3a', '0x73ffe58', '0x97c7dcb6']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff54 EBX=0x95dd1ed1
+[19:31:52]     ECX=0x3869764f EDX=0x1a50050
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577d1', '0x73fff3a', '0x73ffe58', '0x95dd1ed1']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff55 EBX=0x95dd1ea4
+[19:31:52]     ECX=0x469764f EDX=0x1a50061
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577df', '0x73fff3a', '0x73ffe58', '0x95dd1ea4']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff57 EBX=0x95dd1e2d
+[19:31:52]     ECX=0x3869764f EDX=0x1a50000
+[19:31:52]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577ed', '0x73fff3a', '0x73ffe58', '0x95dd1e2d']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff00 EBX=0x305fc679
+[19:31:52]     ECX=0x1c69764f EDX=0x53df0062
+[19:31:52]     ESP=0x73ffdb4 EBP=0x73ffeec
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fff48', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe00', '0x695679c7', '0x73ffee6', '0x73ffe00', '0x305fc679']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff02 EBX=0x305fc66e
+[19:31:52]     ECX=0x1c69764f EDX=0x53df0075
+[19:31:52]     ESP=0x73ffdb4 EBP=0x73ffeec
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fff48', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe00', '0x695679d5', '0x73ffee6', '0x73ffe00', '0x305fc66e']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff04 EBX=0x2e75ffb5
+[19:31:52]     ECX=0x2469764f EDX=0x53df0067
+[19:31:52]     ESP=0x73ffdb4 EBP=0x73ffeec
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fff48', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe00', '0x695679eb', '0x73ffee6', '0x73ffe00', '0x2e75ffb5']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff06 EBX=0x2e75ff88
+[19:31:52]     ECX=0x1c69764f EDX=0x53df004f
+[19:31:52]     ESP=0x73ffdb4 EBP=0x73ffeec
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fff48', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe00', '0x695679f9', '0x73ffee6', '0x73ffe00', '0x2e75ff88']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff08 EBX=0x2e75ff16
+[19:31:52]     ECX=0x469764f EDX=0x53df0062
+[19:31:52]     ESP=0x73ffdb4 EBP=0x73ffeec
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fff48', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe00', '0x69567a07', '0x73ffee6', '0x73ffe00', '0x2e75ff16']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff0a EBX=0x2e75ff08
+[19:31:52]     ECX=0x1c69764f EDX=0x53df006a
+[19:31:52]     ESP=0x73ffdb4 EBP=0x73ffeec
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fff48', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe00', '0x69567a15', '0x73ffee6', '0x73ffe00', '0x2e75ff08']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff0c EBX=0x2e75ffc2
+[19:31:52]     ECX=0x469764f EDX=0x53df0065
+[19:31:52]     ESP=0x73ffdb4 EBP=0x73ffeec
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fff48', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe00', '0x69567a23', '0x73ffee6', '0x73ffe00', '0x2e75ffc2']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff0e EBX=0x2e75ffc9
+[19:31:52]     ECX=0x2469764f EDX=0x53df0063
+[19:31:52]     ESP=0x73ffdb4 EBP=0x73ffeec
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fff48', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe00', '0x69567a31', '0x73ffee6', '0x73ffe00', '0x2e75ffc9']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   ★★★ 崩溃! ★★★
+[19:31:52]     type=breakpoint addr=0x694f3e32
+[19:31:52]     EIP=0x694f3e32 EAX=0x73fff10 EBX=0x2e75ff83
+[19:31:52]     ECX=0x469764f EDX=0x53df0074
+[19:31:52]     ESP=0x73ffdb4 EBP=0x73ffeec
+[19:31:52]     patches=3 cycle=3
+[19:31:52]     栈: ['0x73fff48', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe00', '0x69567a3f', '0x73ffee6', '0x73ffe00', '0x2e75ff83']
+[19:31:52]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:52]   [LoadItemFile] #41 ic=0 "customize\item\c800.xml"
+[19:31:52]   [LoadItemFile] #42 ic=0 "customize\item\c801.xml"
+[19:31:52]   [LoadItemFile] #43 ic=50421031 "customize\item\i50421031.xml"
+[19:31:52]   [LoadItemFile] #44 ic=50519561 "customize\item\i50519561.xml"
+[19:31:52]   [LoadItemFile] #45 ic=50623371 "customize\item\i50623371.xml"
+[19:31:52]   [LoadItemFile] #46 ic=50914721 "customize\item\i50914721.xml"
+[19:31:52]   [LoadItemFile] #47 ic=51514521 "customize\item\i51514521.xml"
+[19:31:52]   [替换!] #4 cycle=4
+[19:31:52]   [LoadItemFile] #48 ic=50125711 "customize\item\i50125711.xml"
+[19:31:52]   [CreateFile] #7 "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\Resource\item768\i50125711.bml"
+[19:31:52]   [LoadItemFile] #49 ic=51616261 "customize\item\i51616261.xml"
+[19:31:52]   [LoadItemFile] #50 ic=51213111 "customize\item\i51213111.xml"
+[19:31:52]   [AcquireSMD] #58 "res768\i50125711_FN.smd"
+[19:31:56]   [LoadItemFile] #51 ic=0 "customize\item\c800.xml"
+[19:31:56]   [LoadItemFile] #52 ic=0 "customize\item\c801.xml"
+[19:31:56]   [LoadItemFile] #53 ic=50421031 "customize\item\i50421031.xml"
+[19:31:56]   [LoadItemFile] #54 ic=50519561 "customize\item\i50519561.xml"
+[19:31:56]   [LoadItemFile] #55 ic=50623371 "customize\item\i50623371.xml"
+[19:31:56]   [LoadItemFile] #56 ic=50914721 "customize\item\i50914721.xml"
+[19:31:56]   [LoadItemFile] #57 ic=51514521 "customize\item\i51514521.xml"
+[19:31:56]   [替换!] #5 cycle=5
+[19:31:56]   [LoadItemFile] #58 ic=50125711 "customize\item\i50125711.xml"
+[19:31:56]   [CreateFile] #8 "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\Resource\item768\i50125711.bml"
+[19:31:56]   [LoadItemFile] #59 ic=51616261 "customize\item\i51616261.xml"
+[19:31:56]   [LoadItemFile] #60 ic=51213111 "customize\item\i51213111.xml"
+[19:31:56]   [AcquireSMD] #70 "res768\i50125711_FN.smd"
+[19:31:56]   [LoadItemFile] #61 ic=0 "customize\item\c800.xml"
+[19:31:56]   [LoadItemFile] #62 ic=0 "customize\item\c801.xml"
+[19:31:56]   [LoadItemFile] #63 ic=50421031 "customize\item\i50421031.xml"
+[19:31:56]   [LoadItemFile] #64 ic=50519561 "customize\item\i50519561.xml"
+[19:31:56]   [LoadItemFile] #65 ic=50623371 "customize\item\i50623371.xml"
+[19:31:56]   [LoadItemFile] #66 ic=50914721 "customize\item\i50914721.xml"
+[19:31:56]   [LoadItemFile] #67 ic=51514521 "customize\item\i51514521.xml"
+[19:31:56]   [替换!] #6 cycle=6
+[19:31:56]   [LoadItemFile] #68 ic=50125711 "customize\item\i50125711.xml"
+[19:31:56]   [CreateFile] #9 "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\Resource\item768\i50125711.bml"
+[19:31:56]   [LoadItemFile] #69 ic=51616261 "customize\item\i51616261.xml"
+[19:31:56]   [LoadItemFile] #70 ic=51213111 "customize\item\i51213111.xml"
+[19:31:56]   [AcquireSMD] #82 "res768\i50125711_FN.smd"
+[19:31:56]   [LoadItemFile] #71 ic=0 "customize\item\c800.xml"
+[19:31:56]   [LoadItemFile] #72 ic=0 "customize\item\c801.xml"
+[19:31:56]   [LoadItemFile] #73 ic=50421031 "customize\item\i50421031.xml"
+[19:31:56]   [LoadItemFile] #74 ic=50519561 "customize\item\i50519561.xml"
+[19:31:56]   [LoadItemFile] #75 ic=50623371 "customize\item\i50623371.xml"
+[19:31:56]   [LoadItemFile] #76 ic=50914721 "customize\item\i50914721.xml"
+[19:31:56]   [LoadItemFile] #77 ic=51514521 "customize\item\i51514521.xml"
+[19:31:56]   [替换!] #7 cycle=7
+[19:31:56]   [LoadItemFile] #78 ic=50125711 "customize\item\i50125711.xml"
+[19:31:56]   [CreateFile] #10 "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\Resource\item768\i50125711.bml"
+[19:31:56]   [LoadItemFile] #79 ic=51616261 "customize\item\i51616261.xml"
+[19:31:56]   [LoadItemFile] #80 ic=51213111 "customize\item\i51213111.xml"
+[19:31:56]   [AcquireSMD] #94 "res768\i50125711_FN.smd"
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x69557e4d
+[19:31:57]     EIP=0x69557e4d EAX=0x0 EBX=0x0
+[19:31:57]     ECX=0x73fffcc EDX=0x0
+[19:31:57]     ESP=0x73ffee4 EBP=0x73fff58
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x695582d6', '0x268f000', '0x31', '0x73fff08', '0x0', '0x0', '0x70000cc', '0x0', '0x69', '0x41b70000', '0x268f000', '0x8dae97c', '0x73fff74', '0x73fff30', '0x0']
+[19:31:57]     代码@0x69157e4d: bd 2d 34 c7 2d af dc b9 cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff4a EBX=0x8c91b3b
+[19:31:57]     ECX=0x3869764f EDX=0x1a530073
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff44
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576b7', '0x73fff3e', '0x73ffe58', '0x8c91b3b']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff52 EBX=0x8c91b5b
+[19:31:57]     ECX=0x1c69764f EDX=0x1a530073
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff44
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576c5', '0x73fff3e', '0x73ffe58', '0x8c91b5b']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff56 EBX=0x8c91bd3
+[19:31:57]     ECX=0x3869764f EDX=0x1a530073
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff44
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576d3', '0x73fff3e', '0x73ffe58', '0x8c91bd3']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff48 EBX=0x9d88d233
+[19:31:57]     ECX=0x3869764f EDX=0x1a50070
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557725', '0x73fff3a', '0x73ffe58', '0x9d88d233']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff49 EBX=0x9d88d242
+[19:31:57]     ECX=0x1c69764f EDX=0x1a50061
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557733', '0x73fff3a', '0x73ffe58', '0x9d88d242']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff4b EBX=0x9b9dd64b
+[19:31:57]     ECX=0x2469764f EDX=0x1a5002e
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557749', '0x73fff3a', '0x73ffe58', '0x9b9dd64b']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff4c EBX=0x9b9dd6cd
+[19:31:57]     ECX=0x3869764f EDX=0x1a50064
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557757', '0x73fff3a', '0x73ffe58', '0x9b9dd6cd']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff4d EBX=0x9b9dd628
+[19:31:57]     ECX=0x2469764f EDX=0x1a5006c
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557765', '0x73fff3a', '0x73ffe58', '0x9b9dd628']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff4e EBX=0x99b2d904
+[19:31:57]     ECX=0x469764f EDX=0x1a5006c
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x6955777b', '0x73fff3a', '0x73ffe58', '0x99b2d904']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff4f EBX=0x97c7dc0f
+[19:31:57]     ECX=0x1c69764f EDX=0x1a50000
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557791', '0x73fff3a', '0x73ffe58', '0x97c7dc0f']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff50 EBX=0x97c7dc85
+[19:31:57]     ECX=0x3869764f EDX=0x1a50054
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x6955779f', '0x73fff3a', '0x73ffe58', '0x97c7dc85']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff51 EBX=0x97c7dc71
+[19:31:57]     ECX=0x469764f EDX=0x1a50065
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577ad', '0x73fff3a', '0x73ffe58', '0x97c7dc71']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff53 EBX=0x97c7dcb6
+[19:31:57]     ECX=0x1c69764f EDX=0x1a50074
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577bb', '0x73fff3a', '0x73ffe58', '0x97c7dcb6']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff54 EBX=0x95dd1ed1
+[19:31:57]     ECX=0x3869764f EDX=0x1a50050
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577d1', '0x73fff3a', '0x73ffe58', '0x95dd1ed1']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff55 EBX=0x95dd1ea4
+[19:31:57]     ECX=0x469764f EDX=0x1a50061
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577df', '0x73fff3a', '0x73ffe58', '0x95dd1ea4']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:31:57]   ★★★ 崩溃! ★★★
+[19:31:57]     type=breakpoint addr=0x694f3e32
+[19:31:57]     EIP=0x694f3e32 EAX=0x73fff57 EBX=0x95dd1e2d
+[19:31:57]     ECX=0x3869764f EDX=0x1a50000
+[19:31:57]     ESP=0x73ffe0c EBP=0x73fff40
+[19:31:57]     patches=7 cycle=7
+[19:31:57]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577ed', '0x73fff3a', '0x73ffe58', '0x95dd1e2d']
+[19:31:57]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x69557e4d
+[19:32:02]     EIP=0x69557e4d EAX=0x0 EBX=0x0
+[19:32:02]     ECX=0x73fffcc EDX=0x0
+[19:32:02]     ESP=0x73ffee4 EBP=0x73fff58
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x695582d6', '0x268f000', '0x31', '0x73fff08', '0x0', '0x0', '0x70000cc', '0x0', '0x69', '0x41b70000', '0x268f000', '0x8dae97c', '0x73fff74', '0x73fff30', '0x0']
+[19:32:02]     代码@0x69157e4d: bd 2d 34 c7 2d af dc b9 cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff4a EBX=0x8c91b3b
+[19:32:02]     ECX=0x3869764f EDX=0x1a530073
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff44
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576b7', '0x73fff3e', '0x73ffe58', '0x8c91b3b']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff52 EBX=0x8c91b5b
+[19:32:02]     ECX=0x1c69764f EDX=0x1a530073
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff44
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576c5', '0x73fff3e', '0x73ffe58', '0x8c91b5b']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff56 EBX=0x8c91bd3
+[19:32:02]     ECX=0x3869764f EDX=0x1a530073
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff44
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576d3', '0x73fff3e', '0x73ffe58', '0x8c91bd3']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff48 EBX=0x9d88d233
+[19:32:02]     ECX=0x3869764f EDX=0x1a50070
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557725', '0x73fff3a', '0x73ffe58', '0x9d88d233']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff49 EBX=0x9d88d242
+[19:32:02]     ECX=0x1c69764f EDX=0x1a50061
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557733', '0x73fff3a', '0x73ffe58', '0x9d88d242']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff4b EBX=0x9b9dd64b
+[19:32:02]     ECX=0x2469764f EDX=0x1a5002e
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557749', '0x73fff3a', '0x73ffe58', '0x9b9dd64b']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff4c EBX=0x9b9dd6cd
+[19:32:02]     ECX=0x3869764f EDX=0x1a50064
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557757', '0x73fff3a', '0x73ffe58', '0x9b9dd6cd']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff4d EBX=0x9b9dd628
+[19:32:02]     ECX=0x2469764f EDX=0x1a5006c
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557765', '0x73fff3a', '0x73ffe58', '0x9b9dd628']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff4e EBX=0x99b2d904
+[19:32:02]     ECX=0x469764f EDX=0x1a5006c
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x6955777b', '0x73fff3a', '0x73ffe58', '0x99b2d904']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff4f EBX=0x97c7dc0f
+[19:32:02]     ECX=0x1c69764f EDX=0x1a50000
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557791', '0x73fff3a', '0x73ffe58', '0x97c7dc0f']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff50 EBX=0x97c7dc85
+[19:32:02]     ECX=0x3869764f EDX=0x1a50054
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x6955779f', '0x73fff3a', '0x73ffe58', '0x97c7dc85']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff51 EBX=0x97c7dc71
+[19:32:02]     ECX=0x469764f EDX=0x1a50065
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577ad', '0x73fff3a', '0x73ffe58', '0x97c7dc71']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff53 EBX=0x97c7dcb6
+[19:32:02]     ECX=0x1c69764f EDX=0x1a50074
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577bb', '0x73fff3a', '0x73ffe58', '0x97c7dcb6']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff54 EBX=0x95dd1ed1
+[19:32:02]     ECX=0x3869764f EDX=0x1a50050
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577d1', '0x73fff3a', '0x73ffe58', '0x95dd1ed1']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff55 EBX=0x95dd1ea4
+[19:32:02]     ECX=0x469764f EDX=0x1a50061
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577df', '0x73fff3a', '0x73ffe58', '0x95dd1ea4']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:02]   ★★★ 崩溃! ★★★
+[19:32:02]     type=breakpoint addr=0x694f3e32
+[19:32:02]     EIP=0x694f3e32 EAX=0x73fff57 EBX=0x95dd1e2d
+[19:32:02]     ECX=0x3869764f EDX=0x1a50000
+[19:32:02]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:02]     patches=7 cycle=7
+[19:32:02]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577ed', '0x73fff3a', '0x73ffe58', '0x95dd1e2d']
+[19:32:02]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x69557e4d
+[19:32:07]     EIP=0x69557e4d EAX=0x0 EBX=0x0
+[19:32:07]     ECX=0x73fffcc EDX=0x0
+[19:32:07]     ESP=0x73ffee4 EBP=0x73fff58
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x695582d6', '0x268f000', '0x31', '0x73fff08', '0x0', '0x0', '0x70000cc', '0x0', '0x69', '0x41b70000', '0x268f000', '0x8dae97c', '0x73fff74', '0x73fff30', '0x0']
+[19:32:07]     代码@0x69157e4d: bd 2d 34 c7 2d af dc b9 cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff4a EBX=0x8c91b3b
+[19:32:07]     ECX=0x3869764f EDX=0x1a530073
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff44
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576b7', '0x73fff3e', '0x73ffe58', '0x8c91b3b']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff52 EBX=0x8c91b5b
+[19:32:07]     ECX=0x1c69764f EDX=0x1a530073
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff44
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576c5', '0x73fff3e', '0x73ffe58', '0x8c91b5b']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff56 EBX=0x8c91bd3
+[19:32:07]     ECX=0x3869764f EDX=0x1a530073
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff44
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695576d3', '0x73fff3e', '0x73ffe58', '0x8c91bd3']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff48 EBX=0x9d88d233
+[19:32:07]     ECX=0x3869764f EDX=0x1a50070
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557725', '0x73fff3a', '0x73ffe58', '0x9d88d233']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff49 EBX=0x9d88d242
+[19:32:07]     ECX=0x1c69764f EDX=0x1a50061
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557733', '0x73fff3a', '0x73ffe58', '0x9d88d242']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff4b EBX=0x9b9dd64b
+[19:32:07]     ECX=0x2469764f EDX=0x1a5002e
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557749', '0x73fff3a', '0x73ffe58', '0x9b9dd64b']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff4c EBX=0x9b9dd6cd
+[19:32:07]     ECX=0x3869764f EDX=0x1a50064
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557757', '0x73fff3a', '0x73ffe58', '0x9b9dd6cd']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff4d EBX=0x9b9dd628
+[19:32:07]     ECX=0x2469764f EDX=0x1a5006c
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557765', '0x73fff3a', '0x73ffe58', '0x9b9dd628']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff4e EBX=0x99b2d904
+[19:32:07]     ECX=0x469764f EDX=0x1a5006c
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x6955777b', '0x73fff3a', '0x73ffe58', '0x99b2d904']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff4f EBX=0x97c7dc0f
+[19:32:07]     ECX=0x1c69764f EDX=0x1a50000
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x69557791', '0x73fff3a', '0x73ffe58', '0x97c7dc0f']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff50 EBX=0x97c7dc85
+[19:32:07]     ECX=0x3869764f EDX=0x1a50054
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x6955779f', '0x73fff3a', '0x73ffe58', '0x97c7dc85']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff51 EBX=0x97c7dc71
+[19:32:07]     ECX=0x469764f EDX=0x1a50065
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577ad', '0x73fff3a', '0x73ffe58', '0x97c7dc71']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff53 EBX=0x97c7dcb6
+[19:32:07]     ECX=0x1c69764f EDX=0x1a50074
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577bb', '0x73fff3a', '0x73ffe58', '0x97c7dcb6']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff54 EBX=0x95dd1ed1
+[19:32:07]     ECX=0x3869764f EDX=0x1a50050
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577d1', '0x73fff3a', '0x73ffe58', '0x95dd1ed1']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff55 EBX=0x95dd1ea4
+[19:32:07]     ECX=0x469764f EDX=0x1a50061
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577df', '0x73fff3a', '0x73ffe58', '0x95dd1ea4']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:07]   ★★★ 崩溃! ★★★
+[19:32:07]     type=breakpoint addr=0x694f3e32
+[19:32:07]     EIP=0x694f3e32 EAX=0x73fff57 EBX=0x95dd1e2d
+[19:32:07]     ECX=0x3869764f EDX=0x1a50000
+[19:32:07]     ESP=0x73ffe0c EBP=0x73fff40
+[19:32:07]     patches=7 cycle=7
+[19:32:07]     栈: ['0x73fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x73ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21625', '0x73ffe58', '0x695577ed', '0x73fff3a', '0x73ffe58', '0x95dd1e2d']
+[19:32:07]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:09]   [LoadItemFile] #81 ic=0 "customize\item\c800.xml"
+[19:32:09]   [LoadItemFile] #82 ic=0 "customize\item\c801.xml"
+[19:32:09]   [LoadItemFile] #83 ic=50421031 "customize\item\i50421031.xml"
+[19:32:09]   [LoadItemFile] #84 ic=50519561 "customize\item\i50519561.xml"
+[19:32:09]   [LoadItemFile] #85 ic=50623371 "customize\item\i50623371.xml"
+[19:32:09]   [LoadItemFile] #86 ic=50914721 "customize\item\i50914721.xml"
+[19:32:09]   [LoadItemFile] #87 ic=51514521 "customize\item\i51514521.xml"
+[19:32:09]   [LoadItemFile] #88 ic=50125461 "customize\item\i50125461.xml"
+[19:32:09]   [LoadItemFile] #89 ic=51616261 "customize\item\i51616261.xml"
+[19:32:09]   [LoadItemFile] #90 ic=51213111 "customize\item\i51213111.xml"
+[19:32:09]   [LoadItemFile] #91 ic=50115861 "customize\item\i50115861.xml"
+[19:32:09]   [LoadItemFile] #92 ic=50312941 "customize\item\i50312941.xml"
+[19:32:09]   [LoadItemFile] #93 ic=50911161 "customize\item\i50911161.xml"
+[19:32:09]   [AcquireSMD] #106 "res767\i50125461_FN.smd"
+[19:32:09]   [LoadItemFile] #94 ic=0 "customize\item\i0.xml"
+[19:32:09]   [LoadItemFile] #95 ic=51510601 "customize\item\i51510601.xml"
+[19:32:09]   [CreateFile] #11 "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\item702.pak"
+[19:32:09]   [LoadItemFile] #96 ic=51510621 "customize\item\i51510621.xml"
+[19:32:09]   [LoadItemFile] #97 ic=51510631 "customize\item\i51510631.xml"
+[19:32:09]   [CreateFile] #12 "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\res702.pak"
+[19:32:10]   ★★★ 崩溃! ★★★
+[19:32:10]     type=breakpoint addr=0x2c97ff0
+[19:32:10]     EIP=0x2c97ff0 EAX=0x0 EBX=0x0
+[19:32:10]     ECX=0xa53e5a8 EDX=0x283fe00
+[19:32:10]     ESP=0x19f794 EBP=0x19fd18
+[19:32:10]     patches=7 cycle=7
+[19:32:10]     栈: ['0x19ff64', '0x2c98b01', '0x1', '0xa2a6af8', '0xa53e5a8', '0x80000000', '0x3f800000', '0x0', '0x0', '0x0', '0x0', '0x3f800000', '0x0', '0x0', '0x0', '0x0']
+[19:32:10]     代码@0x2897ff0: eb c2 e2 9c 7d 9f 1c 68 cc 9d ee eb 0f 0b 8c 02 65 94 7c c5 47 d7 b2 41 
+[19:32:10]   ★★★ 崩溃! ★★★
+[19:32:10]     type=system addr=0x770a90e2
+[19:32:10]     EIP=0x770a90e2 EAX=0x19f098 EBX=0x0
+[19:32:10]     ECX=0x2 EDX=0x0
+[19:32:10]     ESP=0x19f098 EBP=0x19f0f4
+[19:32:10]     patches=7 cycle=7
+[19:32:10]     栈: ['0x40010006', '0x0', '0x0', '0x770a90e2', '0x2', '0x1e', '0x19f4b0', '0x0', '0x225feba0', '0x2b4a09c0', '0x8603f01f', '0x225feba0', '0x0', '0x1', '0x225feba0', '0x204754d']
+[19:32:10]     代码@0x76ca90e2: 24 50 ff 15 4c 34 19 77 8b 4c 24 54 33 cc e8 55 6d 00 00 8b e5 5d c2 10 
+[19:32:10]   ★★★ 崩溃! ★★★
+[19:32:10]     type=breakpoint addr=0x694f3e32
+[19:32:10]     EIP=0x694f3e32 EAX=0x72fff00 EBX=0x2f9d0ff
+[19:32:10]     ECX=0x3869764f EDX=0x1a5300cd
+[19:32:10]     ESP=0x72ffdac EBP=0x72ffee4
+[19:32:10]     patches=7 cycle=7
+[19:32:10]     栈: ['0x72fffcc', '0x694f780b', '0x38694f76', '0x694f76c8', '0x38', '0x694f171a', '0x694f171a', '0x72ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21225', '0x72ffdf8', '0x6951c9e3', '0x72ffede', '0x72ffdf8', '0x2f9d0ff']
+[19:32:10]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:10]   ★★★ 崩溃! ★★★
+[19:32:10]     type=breakpoint addr=0x694f3e32
+[19:32:10]     EIP=0x694f3e32 EAX=0x72fff01 EBX=0x2f9d061
+[19:32:10]     ECX=0x1c69764f EDX=0x1a5300b7
+[19:32:10]     ESP=0x72ffdac EBP=0x72ffee4
+[19:32:10]     patches=7 cycle=7
+[19:32:10]     栈: ['0x72fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x72ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21225', '0x72ffdf8', '0x6951c9f1', '0x72ffede', '0x72ffdf8', '0x2f9d061']
+[19:32:10]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:10]   ★★★ 崩溃! ★★★
+[19:32:10]     type=breakpoint addr=0x694f3e32
+[19:32:10]     EIP=0x694f3e32 EAX=0x72fff02 EBX=0x2f9d0e5
+[19:32:10]     ECX=0x2469764f EDX=0x1a5300c0
+[19:32:10]     ESP=0x72ffdac EBP=0x72ffee4
+[19:32:10]     patches=7 cycle=7
+[19:32:10]     栈: ['0x72fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x72ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21225', '0x72ffdf8', '0x6951c9ff', '0x72ffede', '0x72ffdf8', '0x2f9d0e5']
+[19:32:10]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:10]   ★★★ 崩溃! ★★★
+[19:32:10]     type=breakpoint addr=0x694f3e32
+[19:32:10]     EIP=0x694f3e32 EAX=0x72fff03 EBX=0x2f9d004
+[19:32:10]     ECX=0x469764f EDX=0x1a5300ba
+[19:32:10]     ESP=0x72ffdac EBP=0x72ffee4
+[19:32:10]     patches=7 cycle=7
+[19:32:10]     栈: ['0x72fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x72ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21225', '0x72ffdf8', '0x6951ca0d', '0x72ffede', '0x72ffdf8', '0x2f9d004']
+[19:32:10]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:10]   ★★★ 崩溃! ★★★
+[19:32:10]     type=breakpoint addr=0x694f3e32
+[19:32:10]     EIP=0x694f3e32 EAX=0x72fff04 EBX=0x2f9d091
+[19:32:10]     ECX=0x2469764f EDX=0x1a5300c7
+[19:32:10]     ESP=0x72ffdac EBP=0x72ffee4
+[19:32:10]     patches=7 cycle=7
+[19:32:10]     栈: ['0x72fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x72ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21225', '0x72ffdf8', '0x6951ca1b', '0x72ffede', '0x72ffdf8', '0x2f9d091']
+[19:32:10]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:10]   ★★★ 崩溃! ★★★
+[19:32:10]     type=breakpoint addr=0x694f3e32
+[19:32:10]     EIP=0x694f3e32 EAX=0x72fff05 EBX=0x10b468a
+[19:32:10]     ECX=0x1c69764f EDX=0x1a5300f2
+[19:32:10]     ESP=0x72ffdac EBP=0x72ffee4
+[19:32:10]     patches=7 cycle=7
+[19:32:10]     栈: ['0x72fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x72ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21225', '0x72ffdf8', '0x6951ca31', '0x72ffede', '0x72ffdf8', '0x10b468a']
+[19:32:10]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:10]   ★★★ 崩溃! ★★★
+[19:32:10]     type=breakpoint addr=0x694f3e32
+[19:32:10]     EIP=0x694f3e32 EAX=0x72fff06 EBX=0x10b46f2
+[19:32:10]     ECX=0x469764f EDX=0x1a530000
+[19:32:10]     ESP=0x72ffdac EBP=0x72ffee4
+[19:32:10]     patches=7 cycle=7
+[19:32:10]     栈: ['0x72fffcc', '0x694f780b', '0x4694f76', '0x694f76c8', '0x4', '0x694f171a', '0x694f171a', '0x72ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21225', '0x72ffdf8', '0x6951ca3f', '0x72ffede', '0x72ffdf8', '0x10b46f2']
+[19:32:10]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:10]   ★★★ 崩溃! ★★★
+[19:32:10]     type=breakpoint addr=0x694f3e32
+[19:32:10]     EIP=0x694f3e32 EAX=0x72fff28 EBX=0x10b4611
+[19:32:10]     ECX=0x1c69764f EDX=0x1a53004d
+[19:32:10]     ESP=0x72ffdac EBP=0x72ffee4
+[19:32:10]     patches=7 cycle=7
+[19:32:10]     栈: ['0x72fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x72ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21225', '0x72ffdf8', '0x6951ca4d', '0x72ffede', '0x72ffdf8', '0x10b4611']
+[19:32:10]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:10]   ★★★ 崩溃! ★★★
+[19:32:10]     type=breakpoint addr=0x694f3e32
+[19:32:10]     EIP=0x694f3e32 EAX=0x72fff29 EBX=0x10b4660
+[19:32:10]     ECX=0x2469764f EDX=0x1a530064
+[19:32:10]     ESP=0x72ffdac EBP=0x72ffee4
+[19:32:10]     patches=7 cycle=7
+[19:32:10]     栈: ['0x72fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x72ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21225', '0x72ffdf8', '0x6951ca5b', '0x72ffede', '0x72ffdf8', '0x10b4660']
+[19:32:10]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:10]   ★★★ 崩溃! ★★★
+[19:32:10]     type=breakpoint addr=0x694f3e32
+[19:32:10]     EIP=0x694f3e32 EAX=0x72fff2a EBX=0x10b4669
+[19:32:10]     ECX=0x1c69764f EDX=0x1a530035
+[19:32:10]     ESP=0x72ffdac EBP=0x72ffee4
+[19:32:10]     patches=7 cycle=7
+[19:32:10]     栈: ['0x72fffcc', '0x694f780b', '0x1c694f76', '0x694f76c8', '0x1c', '0x694f171a', '0x694f171a', '0x72ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21225', '0x72ffdf8', '0x6951ca69', '0x72ffede', '0x72ffdf8', '0x10b4669']
+[19:32:10]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:10]   ★★★ 崩溃! ★★★
+[19:32:10]     type=breakpoint addr=0x694f3e32
+[19:32:10]     EIP=0x694f3e32 EAX=0x72fff2b EBX=0x10b4656
+[19:32:10]     ECX=0x2469764f EDX=0x1a530000
+[19:32:10]     ESP=0x72ffdac EBP=0x72ffee4
+[19:32:10]     patches=7 cycle=7
+[19:32:10]     栈: ['0x72fffcc', '0x694f780b', '0x24694f76', '0x694f76c8', '0x24', '0x694f171a', '0x694f171a', '0x72ffe8f', '0xbffc9c34', '0xf7587d4a', '0x21225', '0x72ffdf8', '0x6951ca77', '0x72ffede', '0x72ffdf8', '0x10b4656']
+[19:32:10]     代码@0x690f3e32: 68 40 fa aa 81 de b5 db cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f 
+[19:32:10]   ★★★ 崩溃! ★★★
+[19:32:10]     type=breakpoint addr=0x6951be0f
+[19:32:10]     EIP=0x6951be0f EAX=0x1c592af EBX=0x8
+[19:32:10]     ECX=0x3d6c1037 EDX=0x1c592
+[19:32:10]     ESP=0x72ffedc EBP=0x72fff2c
+[19:32:10]     patches=7 cycle=7
+[19:32:10]     栈: ['0x72fffcc', '0x6951c424', '0x268e000', '0x9d8f4a0', '0x0', '0x74666f53', '0x65726177', '0x4332545c', '0xd6bd5c4e', '0xbac0b7cd', '0xff00f2c7', '0x31ef32f5', '0x7c4df688', '0x9d8f4a0', '0x72fff74', '0x203']
+[19:32:10]     代码@0x6911be0f: 02 ae c0 98 52 02 d9 7a cc 9d e8 a9 cc 9d f4 5c 7f 74 2d 27 68 dd 6d c5 

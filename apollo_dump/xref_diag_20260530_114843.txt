@@ -1,0 +1,14 @@
+[11:48:43] === xref定位SetCharacterFeature === PID:21000 ===
+[11:48:43] 日志: D:\py\反编译\FreeStyle\apollo_dump\xref_diag_20260530_114843.txt
+[11:48:45]   [步骤] JS开始执行
+[11:48:45]   [步骤] 格式串地址: item=0x26a1680 face=0x26a1698
+[11:48:45]   [步骤] item格式串: "customize\item\i%d.xml"
+[11:48:45]   [步骤] face格式串: "customize\item\c%d.xml"
+[11:48:45]   [步骤] .text: base=0x401000 size=41988096
+[11:48:45]   [步骤] 找到 0 个唯一函数入口
+[11:48:45]   [步骤] sprintf=0x76228120
+[11:48:45]   xref诊断就绪 — 格式串交叉引用 + sprintf hook
+[11:48:45] 
+[11:48:45] 进房间触发角色加载。
+[11:48:45] 命令: status | quit
+[11:48:45] 

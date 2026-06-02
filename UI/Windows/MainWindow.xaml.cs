@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Media.Animation;
 using System.IO;
 using System.Linq;
@@ -14,6 +15,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Win32;
+using LibVLCSharp.Shared;
 using FS服装搭配专家v1._0.UI.Windows;
 using FS服装搭配专家v1._0.Core.Services;
 using FS服装搭配专家v1._0.Core.Models;
@@ -144,35 +146,12 @@ namespace FS服装搭配专家v1._0
                 Console.WriteLine($"最终窗口可见性: {this.Visibility}");
                 Console.WriteLine($"最终窗口大小: {this.Width}, {this.Height}");
                 Console.WriteLine("=== 主窗口初始化完成 ===");
-                
-                // 写入日志文件
-                string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "mainwindow.log");
-                using (StreamWriter writer = new StreamWriter(logFilePath))
-                {
-                    writer.WriteLine($"=== 主窗口初始化日志 ===");
-                    writer.WriteLine($"初始化时间: {DateTime.Now}");
-                    writer.WriteLine($"窗口宽度: {this.Width}");
-                    writer.WriteLine($"窗口高度: {this.Height}");
-                    writer.WriteLine($"窗口状态: {this.WindowState}");
-                    writer.WriteLine($"窗口可见性: {this.Visibility}");
-                    writer.WriteLine("=== 初始化完成 ===");
-                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"主窗口初始化出错: {ex.Message}");
                 Console.WriteLine($"堆栈跟踪: {ex.StackTrace}");
                 
-                // 写入错误日志
-                string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "mainwindow.log");
-                using (StreamWriter writer = new StreamWriter(logFilePath, true))
-                {
-                    writer.WriteLine($"初始化出错: {ex.Message}");
-                    writer.WriteLine($"堆栈跟踪: {ex.StackTrace}");
-                    writer.WriteLine("=== 初始化失败 ===");
-                }
-                
-                // 显示错误消息
                 this.Dispatcher.Invoke(() =>
                 {
                     MessageBox.Show($"主窗口初始化失败: {ex.Message}", "初始化错误", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -315,8 +294,120 @@ namespace FS服装搭配专家v1._0
             }
         }
 
+        private LibVLC? _libVLC;
+        private LibVLCSharp.Shared.MediaPlayer? _mediaPlayer;
+        private Media? _currentMedia;
+        private WriteableBitmap? _videoBitmap;
+        private IntPtr _videoBuffer;
+        private int _videoBufferSize;
+        private int _videoWidth, _videoHeight;
+
+        private LibVLCSharp.Shared.MediaPlayer.LibVLCVideoFormatCb? _videoFormatCb;
+        private LibVLCSharp.Shared.MediaPlayer.LibVLCVideoCleanupCb? _videoCleanupCb;
+        private LibVLCSharp.Shared.MediaPlayer.LibVLCVideoLockCb? _lockVideoCb;
+        private LibVLCSharp.Shared.MediaPlayer.LibVLCVideoUnlockCb? _unlockVideoCb;
+
+        [DllImport("kernel32.dll", EntryPoint = "RtlMoveMemory")]
+        private static extern void CopyMemory(IntPtr dest, IntPtr src, int count);
+
+        private void EnsureVLCInitialized()
+        {
+            if (_libVLC != null) return;
+
+            LibVLCSharp.Shared.Core.Initialize();
+            _libVLC = new LibVLC("--no-video-title-show", "--input-repeat=65535");
+            _mediaPlayer = new LibVLCSharp.Shared.MediaPlayer(_libVLC);
+
+            _videoFormatCb = new LibVLCSharp.Shared.MediaPlayer.LibVLCVideoFormatCb(OnVideoFormat);
+            _videoCleanupCb = new LibVLCSharp.Shared.MediaPlayer.LibVLCVideoCleanupCb(OnVideoCleanup);
+            _lockVideoCb = new LibVLCSharp.Shared.MediaPlayer.LibVLCVideoLockCb(OnLockVideo);
+            _unlockVideoCb = new LibVLCSharp.Shared.MediaPlayer.LibVLCVideoUnlockCb(OnUnlockVideo);
+
+            _mediaPlayer.SetVideoFormatCallbacks(_videoFormatCb, _videoCleanupCb);
+            _mediaPlayer.SetVideoCallbacks(_lockVideoCb, _unlockVideoCb, null);
+
+            _mediaPlayer.EndReached += (s, e) =>
+            {
+                Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    _mediaPlayer.Stop();
+                    _mediaPlayer.Play(_currentMedia);
+                }));
+            };
+
+            _mediaPlayer.EncounteredError += (s, e) =>
+            {
+                Console.WriteLine($"VLC 播放错误");
+            };
+
+            Console.WriteLine("VLC 初始化完成");
+        }
+
+        private uint OnVideoFormat(ref IntPtr opaque, IntPtr chroma, ref uint width, ref uint height, ref uint pitches, ref uint lines)
+        {
+            _videoWidth = (int)width;
+            _videoHeight = (int)height;
+
+            byte[] chromaBytes = Encoding.ASCII.GetBytes("RV32");
+            Marshal.Copy(chromaBytes, 0, chroma, 4);
+
+            pitches = (uint)(width * 4);
+            lines = height;
+            _videoBufferSize = (int)(pitches * lines);
+
+            if (_videoBuffer != IntPtr.Zero)
+                Marshal.FreeHGlobal(_videoBuffer);
+            _videoBuffer = Marshal.AllocHGlobal(_videoBufferSize);
+
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                _videoBitmap = new WriteableBitmap(_videoWidth, _videoHeight, 96, 96, PixelFormats.Bgr32, null);
+                VideoBackgroundImage.Source = _videoBitmap;
+            }));
+
+            return 1;
+        }
+
+        private void OnVideoCleanup(ref IntPtr opaque)
+        {
+            if (_videoBuffer != IntPtr.Zero)
+            {
+                Marshal.FreeHGlobal(_videoBuffer);
+                _videoBuffer = IntPtr.Zero;
+            }
+        }
+
+        private IntPtr OnLockVideo(IntPtr opaque, IntPtr planes)
+        {
+            Marshal.WriteIntPtr(planes, _videoBuffer);
+            return _videoBuffer;
+        }
+
+        private void OnUnlockVideo(IntPtr opaque, IntPtr picture, IntPtr planes)
+        {
+            if (_videoBitmap == null || _videoBuffer == IntPtr.Zero) return;
+
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                try
+                {
+                    _videoBitmap.Lock();
+                    CopyMemory(_videoBitmap.BackBuffer, _videoBuffer, _videoBufferSize);
+                    _videoBitmap.AddDirtyRect(new Int32Rect(0, 0, _videoWidth, _videoHeight));
+                    _videoBitmap.Unlock();
+                }
+                catch { }
+            }));
+        }
+
         private void ApplyVideoBackground(SkinTheme theme)
         {
+            if (_mediaPlayer != null && _mediaPlayer.IsPlaying)
+            {
+                _mediaPlayer.Stop();
+                Thread.Sleep(50);
+            }
+
             var applier = new ThemeApplier();
             var bgStyle = theme.Styles.Window.Background;
             
@@ -325,29 +416,28 @@ namespace FS服装搭配专家v1._0
                 string? videoPath = applier.GetVideoPath(bgStyle);
                 if (!string.IsNullOrEmpty(videoPath) && File.Exists(videoPath))
                 {
-                    VideoBackground.Source = new Uri(videoPath);
-                    VideoBackground.Visibility = Visibility.Visible;
-                    VideoBackground.Volume = bgStyle.Volume;
-                    VideoBackground.Play();
+                    EnsureVLCInitialized();
+
+                    _currentMedia?.Dispose();
+                    _currentMedia = new Media(_libVLC, new Uri(videoPath));
+
+                    VideoBackgroundImage.Visibility = Visibility.Visible;
+                    _mediaPlayer.Play(_currentMedia);
                     Console.WriteLine($"播放视频背景: {videoPath}");
                 }
                 else
                 {
                     Console.WriteLine($"视频文件不存在: {videoPath}");
-                    VideoBackground.Visibility = Visibility.Collapsed;
+                    VideoBackgroundImage.Visibility = Visibility.Collapsed;
                 }
             }
             else
             {
-                VideoBackground.Stop();
-                VideoBackground.Visibility = Visibility.Collapsed;
+                _mediaPlayer?.Stop();
+                _currentMedia?.Dispose();
+                _currentMedia = null;
+                VideoBackgroundImage.Visibility = Visibility.Collapsed;
             }
-        }
-
-        private void VideoBackground_MediaEnded(object sender, RoutedEventArgs e)
-        {
-            VideoBackground.Position = TimeSpan.Zero;
-            VideoBackground.Play();
         }
 
         private void btnBgCrop_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -1573,63 +1663,63 @@ namespace FS服装搭配专家v1._0
                         Console.WriteLine("解析文件失败: " + ex.Message);
                     }
                     
-                    // 加载常用物品颜色配置
-                    List<string> colorList = new List<string>();
+                    Dictionary<string, string> colorDict = new Dictionary<string, string>();
                     try
                     {
                         string oftenitemcodePath = Path.Combine(Environment.CurrentDirectory, this.oftenitemcode);
                         if (File.Exists(oftenitemcodePath))
                         {
-                            StreamReader streamReader2 = new StreamReader(oftenitemcodePath, Encoding.Default);
-                            string text3;
-                            while ((text3 = streamReader2.ReadLine()) != null)
+                            foreach (var line in File.ReadLines(oftenitemcodePath, Encoding.Default))
                             {
-                                colorList.Add(text3.ToString());
+                                string trimmed = line.Trim();
+                                if (!string.IsNullOrEmpty(trimmed) && !colorDict.ContainsKey(trimmed))
+                                {
+                                    string code = trimmed.Split(new[] { '\t', ' ', '=', ',' }, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault() ?? trimmed;
+                                    colorDict[code] = trimmed;
+                                }
                             }
-                            streamReader2.Close();
                         }
                     }
                     catch (Exception ex)
                     {
                         Console.WriteLine("加载常用物品颜色配置失败: " + ex.Message);
                     }
-                    
-                    // 加载修改记录
-                    List<string> modifyList = new List<string>();
+
+                    Dictionary<string, string> modifyDict = new Dictionary<string, string>();
                     try
                     {
                         string dopaklogPath = Path.Combine(Environment.CurrentDirectory, AppConfig.Files.DopakLog);
                         if (File.Exists(dopaklogPath))
                         {
-                            StreamReader streamReader2 = new StreamReader(dopaklogPath, Encoding.Default);
-                            string text4;
-                            while ((text4 = streamReader2.ReadLine()) != null)
+                            foreach (var line in File.ReadLines(dopaklogPath, Encoding.Default))
                             {
-                                modifyList.Add(text4.ToString());
+                                string trimmed = line.Trim();
+                                if (string.IsNullOrEmpty(trimmed)) continue;
+                                int hashIdx = trimmed.IndexOf('#');
+                                if (hashIdx > 0)
+                                {
+                                    string itemCode = trimmed.Substring(0, hashIdx);
+                                    modifyDict[itemCode] = trimmed;
+                                }
                             }
-                            streamReader2.Close();
                         }
                     }
                     catch (Exception ex)
                     {
                         Console.WriteLine("加载修改记录失败: " + ex.Message);
                     }
-                    
-                    // 更新物品属性
+
                     foreach (ItemshopM item in this.list)
                     {
-                        item.RowBackColor = (from o in colorList
-                                            where o.IndexOf(item.ItemCode) != -1
-                                            select o).FirstOrDefault<string>();
-                        
-                        string text5 = (from o in modifyList
-                                        where o.IndexOf(item.ItemCode + "#") != -1
-                                        select o).FirstOrDefault<string>();
-                        if (text5 != null)
+                        colorDict.TryGetValue(item.ItemCode, out string colorEntry);
+                        item.RowBackColor = colorEntry;
+
+                        if (modifyDict.TryGetValue(item.ItemCode, out string modifyEntry))
                         {
-                            if (text5.IndexOf("#") != -1)
+                            int hashIdx = modifyEntry.IndexOf('#');
+                            if (hashIdx >= 0)
                             {
-                                item.EditNewCode = text5.Split(new char[] { '#' })[1];
+                                item.EditNewCode = modifyEntry.Substring(hashIdx + 1);
                             }
                         }
                     }
@@ -1779,105 +1869,126 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
-                this.Dispatcher.Invoke(() =>
+                this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     labLoadingStatus.Text = "正在加载图片...";
                     labLoadingStatus.Visibility = Visibility.Visible;
                     labErrorMsg.Visibility = Visibility.Collapsed;
-                });
-                
+                }));
+
                 string cookiesDir = Path.Combine(Environment.CurrentDirectory, this.cookiename);
-                
-                // 查找resources.exe
                 string resourcesExePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AppConfig.Directories.Pack, AppConfig.Files.ResourcesExe);
-                
-                Console.WriteLine("resources.exe路径: " + resourcesExePath);
-                
+
                 if (!File.Exists(resourcesExePath))
                 {
-                    this.Dispatcher.Invoke(() =>
+                    this.Dispatcher.BeginInvoke(new Action(() =>
                     {
                         labErrorMsg.Text = "找不到resources.exe，请确保pack目录下有resources.exe";
                         labErrorMsg.Visibility = Visibility.Visible;
                         labLoadingStatus.Visibility = Visibility.Collapsed;
-                    });
+                    }));
                     return;
                 }
-                
+
                 if (this.list == null || this.list.Count == 0)
                 {
                     throw new InvalidOperationException("服装列表为空，请先加载服装数据");
                 }
-                
-                List<FS服装搭配专家v1._0.ItemshopM> distinctList = this.list.Distinct(new ItemshopMComparer()).ToList<FS服装搭配专家v1._0.ItemshopM>();
-                int totalCount = distinctList.Count;
-                int currentCount = 0;
-                int successCount = 0;
-                int skipCount = 0;
-                
-                foreach (FS服装搭配专家v1._0.ItemshopM itemshopM in distinctList)
+
+                var pakNums = new HashSet<string>();
+                foreach (var item in this.list)
                 {
-                    currentCount++;
-                    
-                    if (currentCount % 50 == 0)
+                    string pakNum = item.PakNum.Replace("*", "");
+                    if (!pakNums.Contains(pakNum))
                     {
-                        int finalCurrentCount = currentCount;
-                        this.Dispatcher.Invoke(() =>
-                        {
-                            labLoadingStatus.Text = string.Format("正在解包图片... {0}/{1}", finalCurrentCount, totalCount);
-                        });
+                        pakNums.Add(pakNum);
                     }
-                    
-                    string pakNum = itemshopM.PakNum.Replace("*", "");
+                }
+
+                var paksToProcess = new List<string>();
+                foreach (var pakNum in pakNums)
+                {
                     string iconDirName = "icon" + pakNum.Replace(".", "_");
                     string iconDir = Path.Combine(cookiesDir, iconDirName);
-                    string iconPakName = "icon" + pakNum;
-                    
-                    // 检查目录是否存在且有文件
                     if (Directory.Exists(iconDir) && Directory.GetFiles(iconDir).Length > 0)
-                    {
-                        skipCount++;
                         continue;
-                    }
-                    
-                    string sourcePath = Path.Combine(this.strInstallDirectory, iconPakName);
-                    string destPath = Path.Combine(cookiesDir, iconPakName);
-                    
+
+                    string sourcePath = Path.Combine(this.strInstallDirectory, "icon" + pakNum);
+                    if (File.Exists(sourcePath))
+                        paksToProcess.Add(pakNum);
+                }
+
+                int totalCount = paksToProcess.Count;
+                int processedCount = 0;
+                int successCount = 0;
+                int skipCount = pakNums.Count - totalCount;
+
+                object lockObj = new object();
+
+                Parallel.ForEach(paksToProcess, new ParallelOptions { MaxDegreeOfParallelism = 4 }, pakNum =>
+                {
                     try
                     {
+                        string iconPakName = "icon" + pakNum;
+                        string destPath = Path.Combine(cookiesDir, iconPakName);
+                        string sourcePath = Path.Combine(this.strInstallDirectory, iconPakName);
+
                         if (File.Exists(sourcePath))
                         {
                             File.Copy(sourcePath, destPath, true);
-                            
-                            string cmd = "pack\\resources \"" + destPath + "\" -byname .+\\.png";
-                            conmon.RunCmd(cmd);
-                            
-                            successCount++;
-                        }
-                        else
-                        {
-                            skipCount++;
+
+                            var psi = new ProcessStartInfo
+                            {
+                                FileName = resourcesExePath,
+                                Arguments = $"\"{destPath}\" -byname .+\\.png",
+                                UseShellExecute = false,
+                                CreateNoWindow = true,
+                                WindowStyle = ProcessWindowStyle.Hidden,
+                                RedirectStandardOutput = true,
+                                RedirectStandardError = true,
+                                WorkingDirectory = Environment.CurrentDirectory
+                            };
+
+                            using (var proc = Process.Start(psi))
+                            {
+                                proc.WaitForExit(30000);
+                                if (!proc.HasExited) proc.Kill();
+                            }
+
+                            lock (lockObj)
+                            {
+                                successCount++;
+                                processedCount++;
+                                if (processedCount % 5 == 0)
+                                {
+                                    int c = processedCount;
+                                    this.Dispatcher.BeginInvoke(new Action(() =>
+                                    {
+                                        labLoadingStatus.Text = string.Format("正在解包图片... {0}/{1}", c, totalCount);
+                                    }));
+                                }
+                            }
                         }
                     }
                     catch (Exception ex)
                     {
                         Console.WriteLine("加载图片失败: " + ex.Message);
                     }
-                }
-                
-                this.Dispatcher.Invoke(() =>
+                });
+
+                this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     labErrorMsg.Text = string.Format("图片加载完成！新加载: {0}, 跳过: {1}", successCount, skipCount);
                     labErrorMsg.Visibility = Visibility.Visible;
-                });
+                }));
             }
             catch (Exception ex)
             {
-                this.Dispatcher.Invoke(() =>
+                this.Dispatcher.BeginInvoke(new Action(() =>
                 {
                     labErrorMsg.Text = "加载图片失败: " + ex.Message;
                     labErrorMsg.Visibility = Visibility.Visible;
-                });
+                }));
             }
         }
         
@@ -2172,11 +2283,11 @@ namespace FS服装搭配专家v1._0
 
         private void UpdateLoadingStatus(string status)
         {
-            this.Dispatcher.Invoke(() =>
+            this.Dispatcher.BeginInvoke(new Action(() =>
             {
                 labLoadingStatus.Text = status;
                 labLoadingStatus.Visibility = Visibility.Visible;
-            });
+            }));
             Console.WriteLine("[状态] " + status);
         }
 
@@ -2261,13 +2372,11 @@ namespace FS服装搭配专家v1._0
         {
             try
             {
-                // 只在窗口正常状态下保存尺寸
                 if (this.WindowState == WindowState.Normal)
                 {
                     var configService = Core.Config.ConfigService.Instance;
                     configService.MainWindowWidth = this.ActualWidth;
                     configService.MainWindowHeight = this.ActualHeight;
-                    Console.WriteLine($"[MainWindow] 窗口尺寸已保存: {ActualWidth}x{ActualHeight}");
                 }
             }
             catch (Exception ex)

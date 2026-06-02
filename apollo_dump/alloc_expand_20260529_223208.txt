@@ -1,0 +1,36 @@
+[22:32:08] === malloc扩展模式v2 === PID:15884 ===
+[22:32:08] 策略: onEnter改malloc参数 + onLeave改bytesRead
+[22:32:08] 目标: i50125461_FN.smd(美丽梦想发型) → i50125711_FN.smd(紫色超赛发型)
+[22:32:08] 日志: D:\py\反编译\FreeStyle\apollo_dump\alloc_expand_20260529_223208.txt
+[22:32:09]   [步骤] JS开始执行
+[22:32:09]   [步骤] CRT函数OK
+[22:32:09]   目标加载: 270264B/270264B magic=SSKF name=i50125711_FN.smd
+[22:32:09]   [步骤] 目标文件加载完成
+[22:32:09]   [步骤] MSVCR100 malloc=0x7b4c0233
+[22:32:09]   [步骤] msvcrt malloc=0x75ae8290
+[22:32:09]   [步骤] MSVCR100 operator new=0x7b4c232b
+[22:32:09]   malloc扩展模式v2就绪. onEnter改大小, onLeave改bytesRead.
+[22:32:09] 
+[22:32:09] 进房间触发角色加载。
+[22:32:09] 命令: status | quit
+[22:32:09] 
+[22:32:14]   [SSKF #1] "c800.smd" read=512B req=512B buf=0x7e1db170
+[22:32:14]   [SSKF #2] "c800.smd" read=78848B req=78848B buf=0x84b4d008
+[22:32:14]   [SSKF #3] "c801.smd" read=512B req=512B buf=0x7e1db170
+[22:32:14]   [SSKF #4] "c801.smd" read=80896B req=80896B buf=0x84b4d008
+[22:32:14]   [SSKF #5] "i50421031_FN.smd" read=512B req=512B buf=0x7e1d8158
+[22:32:14]   [SSKF #6] "i50421031_FN.smd" read=51712B req=51712B buf=0x833ef010
+[22:32:14]   [SSKF #7] "i50421031_FN_upp01.smd" read=512B req=512B buf=0x7e1d8158
+[22:32:14]   [SSKF #8] "i50421031_FN_upp01.smd" read=60928B req=60928B buf=0x479d4010
+[22:32:14]   [SSKF #9] "i50519561_FN.smd" read=512B req=512B buf=0x7e1d5140
+[22:32:14]   [SSKF #10] "i50519561_FN.smd" read=94208B req=94208B buf=0x84b4d008
+[22:32:14]   [SSKF #11] "i50519561_F_low01.smd" read=512B req=512B buf=0x7e1d5140
+[22:32:14]   [SSKF #12] "i50519561_F_low01.smd" read=16384B req=16384B buf=0x3f661780
+[22:32:14]   [SSKF #13] "i50623371_F.smd" read=512B req=512B buf=0x7e1d5140
+[22:32:14]   [SSKF #14] "i50623371_F.smd" read=118272B req=118272B buf=0x84b4d008
+[22:32:14]   [SSKF #15] "i50914461_F.smd" read=512B req=512B buf=0x7e1d5140
+[22:32:14]   [Header替换] → i50125711_FN.smd
+[22:32:14]   [malloc扩大] onEnter改参数 101095B → 270264B
+[22:32:14]   [malloc返回] buf=0x4e735010 size=270264
+[22:32:14]   [第二次读取] buf=0x4e735010 expanded=0x4e735010 匹配=True read=100864B req=100864B
+[22:32:14]   [数据复制] 270264B (原始read=100864B) → "i50125711_FN.smd"

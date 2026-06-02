@@ -14,6 +14,11 @@ namespace FS服装搭配专家v1._0.Core.Services
         {
             if (window == null || theme == null) return;
 
+            if (theme.Styles.Window.Background?.Type?.ToLower() == "video")
+            {
+                window.Background = new SolidColorBrush(Colors.Black);
+            }
+
             ApplyBackground(window, theme.Styles.Window.Background);
             ApplyResources(window, theme);
         }
@@ -34,6 +39,11 @@ namespace FS服装搭配专家v1._0.Core.Services
 
         private void ApplyBackground(Window window, BackgroundStyle bgStyle)
         {
+            if (bgStyle?.Type?.ToLower() != "video")
+            {
+                window.Background = new SolidColorBrush(Colors.White);
+            }
+
             if (window.Content is Grid rootGrid)
             {
                 ApplyBackgroundToGrid(rootGrid, bgStyle);

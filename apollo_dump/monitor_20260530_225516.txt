@@ -1,0 +1,1368 @@
+[22:55:16] === 动态发型不显示诊断 === PID:2372 ===
+[22:55:16] 替换: 50125461(美丽梦想) → 50122451(鬼魅)
+[22:55:16] 监控: sprintf → LoadItemFile → CreateFileA → ReadFile → AcquireSMD
+[22:55:16] 日志: D:\py\反编译\FreeStyle\apollo_dump\monitor_20260530_225516.txt
+[22:55:17]   [步骤] JS开始执行
+[22:55:17]   [步骤] sprintf hook OK
+[22:55:17]   [步骤] LoadItemFile hook OK
+[22:55:17]   [步骤] CreateFileA hook OK
+[22:55:17]   [步骤] ReadFile hook OK
+[22:55:17]   [步骤] AcquireSMD hook OK
+[22:55:17]   全链路监控就绪: sprintf→LIF→CreateFile→ReadFile→AcquireSMD
+[22:55:17] 
+[22:55:17] 进房间触发角色加载。重点看:
+[22:55:17]   1. [CreateFile] 是否打开i50122451.bml? 路径是什么?
+[22:55:17]   2. [LoadItemFile] ic是否=50122451?
+[22:55:17]   3. [BML解码] 是否看到XOR编码的BML被读取?
+[22:55:17]   4. [AcquireSMD] 是否加载res742的SMD?
+[22:55:17] 
+[22:55:17] 命令: status | errors | quit
+[22:55:18]   [ReadFile] #2 512B hex=b5 c0 be df 5c 6e b2 bb ee bf cc d7 d7 b0 cf c2 "µÀ¾ß\n²»î¿Ì××°ÏÂÒÂ : ÄÜÁ¦µÀ¾ß\n²»î¿Ì××°¸"
+[22:55:18]   [ReadFile] #3 3072B hex=49 74 65 6d 43 6f 64 65 09 4e 61 6d 65 09 43 6f "ItemCode	Name	Comment
+52122381	ÇàÍ­»ù´¡"
+[22:55:18]   [ReadFile] #4 512B hex=a6 d0 a7 b9 fb a3 ba b7 c0 ca d8 c4 dc c1 a6 d0 "¦Ð§¹û£º·ÀÊØÄÜÁ¦Ð§¹û\n±³¾°É«£º°üº¬ËùÓÐ±³¾"
+[22:55:18]   [ReadFile] #5 512B hex=49 74 65 6d 43 6f 64 65 0d 0a 35 32 31 31 35 37 "ItemCode
+52115731
+52115741
+52115751
+"
+[22:55:18]   [ReadFile] #6 1024B hex=49 74 65 6d 43 6f 64 65 0d 0a 35 30 33 31 33 34 "ItemCode
+50313451
+52124571
+52126311
+"
+[22:55:18]   [ReadFile] #7 96B hex=31 31 32 31 0d 0a 35 32 31 33 32 36 37 31 0d 0a "1121
+52132671
+52132681
+52132601
+5213"
+[22:55:18]   [ReadFile] #9 512B hex=f3 bf ec cb d9 bd d3 d0 fd d7 aa d4 cb c7 f2 cd "ó¿ìËÙ½ÓÐý×ªÔËÇòÍ»ÆÆ¡£
+990	4	Ä¬ÈÏ×Ô´ø½üÍ"
+[22:55:18]   [ReadFile] #10 2560B hex=54 72 61 69 6e 69 6e 67 4e 6f 09 54 72 61 69 6e "TrainingNo	TrainingNo	Name	Comment
+0	0	"
+[22:55:18]   [ReadFile] #11 512B hex=af cc f8 bc af d6 d0 d1 b5 c1 b7 20 49 49 49 09 "¯Ìø¼¯ÖÐÑµÁ· III	µ¯Ìø+2 ÅÜ¶¯-2
+84	84	ÉíÌ"
+[22:55:18]   [CreateFile] #1 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\map_text.pak"
+[22:55:18]   [ReadFile] #12 511B hex=50 47 46 4e 02 00 00 00 00 00 00 00 00 00 00 00 "PGFN"
+[22:55:18]   [ReadFile] #13 16B hex=49 43 55 53 01 00 00 00 00 00 00 00 00 00 00 00 "ICUS"
+[22:55:18]   [ReadFile] #14 511B hex=50 47 46 4e 02 00 00 00 00 00 00 00 00 00 00 00 "PGFN"
+[22:55:18]   [ReadFile] #15 457B hex=53 74 61 67 65 49 6e 64 65 78 09 53 74 61 67 65 "StageIndex	StagePakNum	StageName
+1	23	º"
+[22:55:18]   [CreateFile] #2 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\episode.pak"
+[22:55:18]   [ReadFile] #16 4096B hex=50 47 46 4e 02 00 00 00 00 00 00 00 00 00 00 00 "PGFN"
+[22:55:18]   [ReadFile] #17 16B hex=49 43 55 53 01 00 00 00 00 00 00 00 00 00 00 00 "ICUS"
+[22:55:18]   [ReadFile] #18 512B hex=50 47 46 4e 02 00 00 00 00 00 00 00 00 00 00 00 "PGFN"
+[22:55:18]   [ReadFile] #19 512B hex=0e 00 00 00 f7 53 00 00 ba 45 01 00 b1 99 01 00 ""
+[22:55:18]   [ReadFile] #20 512B hex=10 00 00 00 d1 99 01 00 1b 4c 00 00 ec e5 01 00 ""
+[22:55:18]   [ReadFile] #21 512B hex=0e 00 00 00 0a e6 01 00 cf 46 00 00 d9 2c 02 00 ""
+[22:55:18]   [ReadFile] #22 512B hex=10 00 00 00 f9 2c 02 00 5c 53 00 00 55 80 02 00 ""
+[22:55:18]   [ReadFile] #23 512B hex=13 00 00 00 78 80 02 00 de 53 00 00 56 d4 02 00 ""
+[22:55:18]   [ReadFile] #24 512B hex=0e 00 00 00 74 d4 02 00 24 5f 00 00 98 33 03 00 ""
+[22:55:18]   [ReadFile] #25 512B hex=10 00 00 00 b8 33 03 00 da 5f 00 00 92 93 03 00 ""
+[22:55:18]   [ReadFile] #26 512B hex=10 00 00 00 b2 93 03 00 ac 5e 00 00 5e f2 03 00 ""
+[22:55:18]   [ReadFile] #27 512B hex=0c 00 00 00 7a f2 03 00 09 54 00 00 83 46 04 00 ""
+[22:55:18]   [ReadFile] #28 512B hex=10 00 00 00 a3 46 04 00 68 72 00 00 0b b9 04 00 ""
+[22:55:18]   [ReadFile] #29 512B hex=10 00 00 00 2b b9 04 00 82 5f 00 00 ad 18 05 00 ""
+[22:55:18]   [ReadFile] #30 512B hex=10 00 00 00 cd 18 05 00 60 5e 00 00 2d 77 05 00 ""
+[22:55:18]   [ReadFile] #31 512B hex=0f 00 00 00 4c 77 05 00 51 80 00 00 9d f7 05 00 ""
+[22:55:18]   [ReadFile] #32 512B hex=09 00 00 00 b6 f7 05 00 e5 3b 00 00 9b 33 06 00 "	"
+[22:55:18]   [ReadFile] #33 512B hex=19 00 00 00 c4 33 06 00 3d b5 00 00 01 e9 06 00 ""
+[22:55:18]   [ReadFile] #34 512B hex=1a 00 00 00 2b e9 06 00 b9 9b 00 00 e4 84 07 00 ""
+[22:55:18]   [ReadFile] #35 512B hex=1a 00 00 00 0e 85 07 00 d3 9d 00 00 e1 22 08 00 ""
+[22:55:18]   [ReadFile] #36 512B hex=1a 00 00 00 0b 23 08 00 e7 81 00 00 f2 a4 08 00 ""
+[22:55:18]   [ReadFile] #37 512B hex=1a 00 00 00 1c a5 08 00 97 80 00 00 b3 25 09 00 ""
+[22:55:18]   [ReadFile] #38 512B hex=1a 00 00 00 dd 25 09 00 4d 6c 00 00 2a 92 09 00 ""
+[22:55:18]   [ReadFile] #39 512B hex=1a 00 00 00 54 92 09 00 37 6c 00 00 8b fe 09 00 ""
+[22:55:18]   [ReadFile] #40 512B hex=19 00 00 00 b4 fe 09 00 f5 77 00 00 a9 76 0a 00 ""
+[22:55:18]   [ReadFile] #41 512B hex=19 00 00 00 d2 76 0a 00 32 91 00 00 04 08 0b 00 ""
+[22:55:18]   [ReadFile] #42 512B hex=19 00 00 00 2d 08 0b 00 6b ab 00 00 98 b3 0b 00 ""
+[22:55:18]   [ReadFile] #43 512B hex=19 00 00 00 c1 b3 0b 00 9d 91 00 00 5e 45 0c 00 ""
+[22:55:18]   [ReadFile] #44 512B hex=19 00 00 00 87 45 0c 00 1c 85 00 00 a3 ca 0c 00 ""
+[22:55:18]   [ReadFile] #45 512B hex=19 00 00 00 cc ca 0c 00 59 7d 00 00 25 48 0d 00 ""
+[22:55:18]   [ReadFile] #46 512B hex=19 00 00 00 4e 48 0d 00 fb 92 00 00 49 db 0d 00 ""
+[22:55:18]   [ReadFile] #47 512B hex=19 00 00 00 72 db 0d 00 a6 67 00 00 18 43 0e 00 ""
+[22:55:18]   [ReadFile] #48 512B hex=24 00 00 00 4c 43 0e 00 e6 77 00 00 32 bb 0e 00 "$"
+[22:55:18]   [ReadFile] #49 512B hex=1f 00 00 00 61 bb 0e 00 fb 69 00 00 5c 25 0f 00 ""
+[22:55:18]   [ReadFile] #50 512B hex=1e 00 00 00 8a 25 0f 00 2e 93 00 00 b8 b8 0f 00 ""
+[22:55:18]   [ReadFile] #51 512B hex=1e 00 00 00 e6 b8 0f 00 54 94 00 00 3a 4d 10 00 ""
+[22:55:18]   [ReadFile] #52 512B hex=1e 00 00 00 68 4d 10 00 88 9b 00 00 f0 e8 10 00 ""
+[22:55:18]   [ReadFile] #53 512B hex=20 00 00 00 20 e9 10 00 46 6f 00 00 66 58 11 00 " "
+[22:55:18]   [ReadFile] #54 512B hex=20 00 00 00 96 58 11 00 19 75 00 00 af cd 11 00 " "
+[22:55:18]   [ReadFile] #55 512B hex=24 00 00 00 e3 cd 11 00 5b 76 00 00 3e 44 12 00 "$"
+[22:55:18]   [ReadFile] #56 512B hex=20 00 00 00 6e 44 12 00 ee 6f 00 00 5c b4 12 00 " "
+[22:55:18]   [ReadFile] #57 512B hex=20 00 00 00 8c b4 12 00 2c 6d 00 00 b8 21 13 00 " "
+[22:55:18]   [ReadFile] #58 512B hex=20 00 00 00 e8 21 13 00 e0 6d 00 00 c8 8f 13 00 " "
+[22:55:18]   [ReadFile] #59 512B hex=16 00 00 00 ee 8f 13 00 95 1e 01 00 83 ae 14 00 ""
+[22:55:18]   [ReadFile] #60 512B hex=10 00 00 00 a3 ae 14 00 99 07 01 00 3c b6 15 00 ""
+[22:55:18]   [ReadFile] #61 512B hex=10 00 00 00 5c b6 15 00 e8 1d 01 00 44 d4 16 00 ""
+[22:55:18]   [ReadFile] #62 512B hex=0b 00 00 00 5f d4 16 00 b2 ec 00 00 11 c1 17 00 ""
+[22:55:18]   [ReadFile] #63 512B hex=0d 00 00 00 2e c1 17 00 96 e1 00 00 c4 a2 18 00 ""
+[22:55:18]   [ReadFile] #64 512B hex=0a 00 00 00 de a2 18 00 63 25 00 00 41 c8 18 00 "
+"
+[22:55:18]   [ReadFile] #65 512B hex=0f 00 00 00 60 c8 18 00 dd 1d 00 00 3d e6 18 00 ""
+[22:55:18]   [ReadFile] #66 512B hex=0e 00 00 00 5b e6 18 00 2e 1c 00 00 89 02 19 00 ""
+[22:55:18]   [ReadFile] #67 512B hex=11 00 00 00 aa 02 19 00 5c 1e 00 00 06 21 19 00 ""
+[22:55:18]   [ReadFile] #68 512B hex=0c 00 00 00 22 21 19 00 c1 e3 00 00 e3 04 1a 00 ""
+[22:55:18]   [ReadFile] #69 512B hex=11 00 00 00 04 05 1a 00 a0 05 00 00 a4 0a 1a 00 ""
+[22:55:18]   [ReadFile] #70 512B hex=12 00 00 00 c6 0a 1a 00 40 6f 00 00 06 7a 1a 00 ""
+[22:55:18]   [ReadFile] #71 512B hex=19 00 00 00 2f 7a 1a 00 d7 0e 00 00 06 89 1a 00 ""
+[22:55:18]   [ReadFile] #72 512B hex=11 00 00 00 27 89 1a 00 26 97 01 00 4d 20 1c 00 ""
+[22:55:18]   [ReadFile] #73 512B hex=18 00 00 00 75 20 1c 00 b8 1f 00 00 2d 40 1c 00 ""
+[22:55:18]   [ReadFile] #74 512B hex=12 00 00 00 4f 40 1c 00 3d 4e 00 00 8c 8e 1c 00 ""
+[22:55:18]   [ReadFile] #75 512B hex=10 00 00 00 ac 8e 1c 00 cd de 00 00 79 6d 1d 00 ""
+[22:55:18]   [ReadFile] #76 512B hex=12 00 00 00 9b 6d 1d 00 23 4d 00 00 be ba 1d 00 ""
+[22:55:18]   [ReadFile] #77 512B hex=10 00 00 00 de ba 1d 00 a4 53 00 00 82 0e 1e 00 ""
+[22:55:18]   [ReadFile] #78 512B hex=12 00 00 00 a4 0e 1e 00 0e 53 00 00 b2 61 1e 00 ""
+[22:55:18]   [ReadFile] #79 512B hex=15 00 00 00 d7 61 1e 00 9b 53 00 00 72 b5 1e 00 ""
+[22:55:18]   [ReadFile] #80 512B hex=0f 00 00 00 91 b5 1e 00 a1 d7 00 00 32 8d 1f 00 ""
+[22:55:18]   [ReadFile] #81 512B hex=0f 00 00 00 51 8d 1f 00 a1 d7 00 00 f2 64 20 00 ""
+[22:55:18]   [ReadFile] #82 512B hex=0d 00 00 00 0f 65 20 00 49 37 00 00 58 9c 20 00 ""
+[22:55:18]   [ReadFile] #83 512B hex=0b 00 00 00 73 9c 20 00 aa 31 00 00 1d ce 20 00 ""
+[22:55:18]   [ReadFile] #84 512B hex=0d 00 00 00 3a ce 20 00 f1 30 00 00 2b ff 20 00 ""
+[22:55:18]   [ReadFile] #85 512B hex=0f 00 00 00 4a ff 20 00 fd 57 00 00 47 57 21 00 ""
+[22:55:18]   [ReadFile] #86 512B hex=0f 00 00 00 66 57 21 00 2f 53 00 00 95 aa 21 00 ""
+[22:55:18]   [ReadFile] #87 512B hex=0d 00 00 00 b2 aa 21 00 b4 56 00 00 66 01 22 00 ""
+[22:55:18]   [ReadFile] #88 512B hex=0f 00 00 00 85 01 22 00 1e 59 00 00 a3 5a 22 00 ""
+[22:55:18]   [ReadFile] #89 512B hex=12 00 00 00 c5 5a 22 00 7b 55 00 00 40 b0 22 00 ""
+[22:55:18]   [ReadFile] #90 512B hex=12 00 00 00 62 b0 22 00 25 bc 00 00 87 6c 23 00 ""
+[22:55:18]   [ReadFile] #91 512B hex=12 00 00 00 a9 6c 23 00 c9 73 00 00 72 e0 23 00 ""
+[22:55:18]   [ReadFile] #92 512B hex=12 00 00 00 94 e0 23 00 17 bc 00 00 ab 9c 24 00 ""
+[22:55:18]   [ReadFile] #93 512B hex=12 00 00 00 cd 9c 24 00 c0 73 00 00 8d 10 25 00 ""
+[22:55:18]   [ReadFile] #94 512B hex=13 00 00 00 b0 10 25 00 58 41 00 00 08 52 25 00 ""
+[22:55:18]   [ReadFile] #95 512B hex=11 00 00 00 29 52 25 00 d0 38 00 00 f9 8a 25 00 ""
+[22:55:18]   [ReadFile] #96 512B hex=12 00 00 00 1b 8b 25 00 13 40 00 00 2e cb 25 00 ""
+[22:55:18]   [ReadFile] #97 512B hex=14 00 00 00 52 cb 25 00 5f 41 00 00 b1 0c 26 00 ""
+[22:55:18]   [ReadFile] #98 512B hex=13 00 00 00 d4 0c 26 00 73 38 00 00 47 45 26 00 ""
+[22:55:18]   [ReadFile] #99 512B hex=16 00 00 00 6d 45 26 00 93 38 00 00 00 7e 26 00 ""
+[22:55:18]   [ReadFile] #100 512B hex=0d 00 00 00 1d 7e 26 00 45 3b 01 00 62 b9 27 00 ""
+[22:55:18]   [BML解码!] 512B hex=bc ba b0 f8 21 0d 0a 48 59 4f 59 45 4f 4e 09 32
+[22:55:18]   [CreateFile] #3 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\loadingtip.pak"
+[22:55:18]   [CreateFile] #4 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\mission.pak"
+[22:55:18]   [CreateFile] #5 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\animation_list.pak"
+[22:55:18]   [CreateFile] #6 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\hotgirl_mission.pak"
+[22:55:18]   [CreateFile] #7 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\simulationmode_play.pak"
+[22:55:18]   [CreateFile] #8 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\vehicle_info.pak"
+[22:55:20]   [CreateFile] #9 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\u_background.pak"
+[22:55:20]   [CreateFile] #10 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\u_login.pak"
+[22:55:20]   [CreateFile] #11 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\u_loading.pak"
+[22:55:20]   [CreateFile] #12 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\ur_chn.pak"
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:22]   [CreateFile] #13 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\curse.pak"
+[22:55:23]   [CreateFile] #14 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp10.pak"
+[22:55:23]   [CreateFile] #15 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp100.pak"
+[22:55:23]   [CreateFile] #16 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp101.pak"
+[22:55:23]   [CreateFile] #17 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp102.pak"
+[22:55:23]   [CreateFile] #18 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp103.pak"
+[22:55:23]   [CreateFile] #19 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp106.pak"
+[22:55:23]   [CreateFile] #20 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp107.pak"
+[22:55:23]   [CreateFile] #21 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp108.pak"
+[22:55:23]   [CreateFile] #22 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp109.pak"
+[22:55:23]   [CreateFile] #23 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp11.pak"
+[22:55:23]   [CreateFile] #24 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp110.pak"
+[22:55:23]   [CreateFile] #25 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp111.pak"
+[22:55:23]   [CreateFile] #26 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp112.pak"
+[22:55:23]   [CreateFile] #27 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp113.pak"
+[22:55:23]   [CreateFile] #28 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp114.pak"
+[22:55:23]   [CreateFile] #29 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp12.pak"
+[22:55:23]   [CreateFile] #30 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp13.pak"
+[22:55:23]   [CreateFile] #31 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp14.pak"
+[22:55:23]   [CreateFile] #32 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp15.pak"
+[22:55:23]   [CreateFile] #33 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp16.pak"
+[22:55:23]   [CreateFile] #34 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp17.pak"
+[22:55:23]   [CreateFile] #35 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp18.pak"
+[22:55:24]   [CreateFile] #36 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp19.pak"
+[22:55:24]   [CreateFile] #37 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp20.pak"
+[22:55:24]   [CreateFile] #38 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp200.pak"
+[22:55:24]   [CreateFile] #39 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp2000.pak"
+[22:55:24]   [CreateFile] #40 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp2001.pak"
+[22:55:24]   [CreateFile] #41 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp2002.pak"
+[22:55:24]   [CreateFile] #42 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp2003.pak"
+[22:55:24]   [CreateFile] #43 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp2004.pak"
+[22:55:24]   [CreateFile] #44 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp2005.pak"
+[22:55:24]   [CreateFile] #45 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp2006.pak"
+[22:55:24]   [CreateFile] #46 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp202.pak"
+[22:55:24]   [CreateFile] #47 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp204.pak"
+[22:55:24]   [CreateFile] #48 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp205.pak"
+[22:55:24]   [CreateFile] #49 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp206.pak"
+[22:55:24]   [CreateFile] #50 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\sap_sp207.pak"
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:51]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:55:56]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:01]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:06]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:11]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=0
+[22:56:13]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=0
+[22:56:13]   {"t": "56.4s", "n": 1, "fmt": "customize\\item\\c%d.xml", "ic": 800, "target": false}
+[22:56:13]   [LoadItemFile] #1 ic=0 "customize\item\c800.xml" grp=(800,801)
+[22:56:13]   {"t": "56.5s", "n": 2, "fmt": "customize\\item\\c%d.xml", "ic": 801, "target": false}
+[22:56:13]   [LoadItemFile] #2 ic=0 "customize\item\c801.xml" grp=(800,801)
+[22:56:13]   {"t": "56.5s", "n": 3, "fmt": "customize\\item\\i%d.xml", "ic": 50421031, "target": false}
+[22:56:13]   [LoadItemFile] #3 ic=50421031 "customize\item\i50421031.xml" grp=(800,801)
+[22:56:13]   {"t": "56.5s", "n": 4, "fmt": "customize\\item\\i%d.xml", "ic": 50519561, "target": false}
+[22:56:13]   [LoadItemFile] #4 ic=50519561 "customize\item\i50519561.xml" grp=(800,801)
+[22:56:13]   {"t": "56.5s", "n": 5, "fmt": "customize\\item\\i%d.xml", "ic": 50623371, "target": false}
+[22:56:13]   [LoadItemFile] #5 ic=50623371 "customize\item\i50623371.xml" grp=(800,801)
+[22:56:13]   {"t": "56.5s", "n": 6, "fmt": "customize\\item\\i%d.xml", "ic": 50914721, "target": false}
+[22:56:13]   [LoadItemFile] #6 ic=50914721 "customize\item\i50914721.xml" grp=(800,801)
+[22:56:13]   {"t": "56.5s", "n": 7, "fmt": "customize\\item\\i%d.xml", "ic": 51514521, "target": false}
+[22:56:13]   [LoadItemFile] #7 ic=51514521 "customize\item\i51514521.xml" grp=(800,801)
+[22:56:13]   {"t": "56.5s", "n": 8, "fmt": "customize\\item\\i%d.xml", "ic": 50125461, "target": true}
+[22:56:13]   [替换!] #1 50125461→50122451 ebp@0x19aa94 old=50125461 new=50122451
+[22:56:13]   [LoadItemFile] #8 ic=50122451 "customize\item\i50122451.xml" grp=(800,801)
+[22:56:13]   [CreateFile] #426 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\Resource\item742\i50122451.bml"
+[22:56:13]   {"t": "56.5s", "n": 9, "fmt": "customize\\item\\i%d.xml", "ic": 51616261, "target": false}
+[22:56:13]   [LoadItemFile] #9 ic=51616261 "customize\item\i51616261.xml" grp=(800,801)
+[22:56:13]   {"t": "56.5s", "n": 10, "fmt": "customize\\item\\i%d.xml", "ic": 51213111, "target": false}
+[22:56:13]   [LoadItemFile] #10 ic=51213111 "customize\item\i51213111.xml" grp=(800,801)
+[22:56:13]   [AcquireSMD] #1 "res707\c800.smd"
+[22:56:13]   [ReadFile] #684469 512B hex=53 53 4b 46 01 00 00 00 63 38 30 30 2e 73 6d 64 "SSKF"
+[22:56:13]   [ReadFile] #684470 78848B hex=53 53 4b 46 01 00 00 00 63 38 30 30 2e 73 6d 64 "SSKF"
+[22:56:13]   [AcquireSMD] #2 "res707\c801.smd"
+[22:56:13]   [ReadFile] #684474 512B hex=53 53 4b 46 01 00 00 00 63 38 30 31 2e 73 6d 64 "SSKF"
+[22:56:13]   [ReadFile] #684475 80896B hex=53 53 4b 46 01 00 00 00 63 38 30 31 2e 73 6d 64 "SSKF"
+[22:56:13]   [AcquireSMD] #3 "Res767\i50421031_FN.smd"
+[22:56:13]   [ReadFile] #685549 512B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:13]   [ReadFile] #685550 51712B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:13]   [AcquireSMD] #4 "Res767\i50421031_FN_upp01.smd"
+[22:56:13]   [ReadFile] #685554 512B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:13]   [ReadFile] #685555 60928B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:13]   [AcquireSMD] #5 "res767\i50519561_FN.smd"
+[22:56:13]   [ReadFile] #686629 512B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:13]   [ReadFile] #686630 94208B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:13]   [AcquireSMD] #6 "res767\i50519561_F_low01.smd"
+[22:56:13]   [ReadFile] #686634 512B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:13]   [ReadFile] #686635 16384B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:13]   [AcquireSMD] #7 "res767\i50623371_F.smd"
+[22:56:13]   [ReadFile] #686639 512B hex=53 53 4b 46 01 00 00 00 69 35 30 36 32 33 33 37 "SSKF"
+[22:56:13]   [ReadFile] #686640 118272B hex=53 53 4b 46 01 00 00 00 69 35 30 36 32 33 33 37 "SSKF"
+[22:56:13]   [AcquireSMD] #8 "res767\i50914721_F.smd"
+[22:56:13]   [ReadFile] #686644 512B hex=53 53 4b 46 01 00 00 00 69 35 30 39 31 34 34 36 "SSKF"
+[22:56:13]   [ReadFile] #686645 15872B hex=53 53 4b 46 01 00 00 00 69 35 30 39 31 34 34 36 "SSKF"
+[22:56:13]   [AcquireSMD] #9 "res767\i51514521_F.smd"
+[22:56:13]   [ReadFile] #686649 512B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 34 35 32 "SSKF"
+[22:56:13]   [ReadFile] #686650 41472B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 34 35 32 "SSKF"
+[22:56:13]   [AcquireSMD] #10 "res742\i50122451_FN.smd"
+[22:56:14]   [ReadFile] #687341 512B hex=53 53 4b 46 01 00 00 00 69 35 30 31 32 32 34 35 "SSKF"
+[22:56:14]   [ReadFile] #687342 217600B hex=53 53 4b 46 01 00 00 00 69 35 30 31 32 32 34 35 "SSKF"
+[22:56:14]   [AcquireSMD] #11 "res767\i51616261_F.smd"
+[22:56:14]   [ReadFile] #687346 512B hex=53 53 4b 46 01 00 00 00 69 35 31 36 31 36 32 36 "SSKF"
+[22:56:14]   [ReadFile] #687347 37888B hex=53 53 4b 46 01 00 00 00 69 35 31 36 31 36 32 36 "SSKF"
+[22:56:14]   [AcquireSMD] #12 "res767\i51213111_FN.smd"
+[22:56:14]   [ReadFile] #687351 512B hex=53 53 4b 46 01 00 00 00 69 35 31 32 31 33 31 31 "SSKF"
+[22:56:14]   [ReadFile] #687352 53760B hex=53 53 4b 46 01 00 00 00 69 35 31 32 31 33 31 31 "SSKF"
+[22:56:14]   [ReadFile] #717550 512B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 62 61 73 69 "SSKF"
+[22:56:14]   [ReadFile] #717551 5120B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 62 61 73 69 "SSKF"
+[22:56:14]   [ReadFile] #717576 512B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:14]   [ReadFile] #717577 1536B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:14]   [ReadFile] #717583 512B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:14]   [ReadFile] #717584 1536B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:14]   [ReadFile] #717590 512B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:14]   [ReadFile] #717591 19456B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:14]   [ReadFile] #717597 512B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:14]   [ReadFile] #717598 19456B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:14]   [ReadFile] #717604 512B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 6d 61 67 69 "SSKF"
+[22:56:14]   [ReadFile] #717605 24576B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 6d 61 67 69 "SSKF"
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:16]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=1
+[22:56:21]   {"t": "63.8s", "n": 11, "fmt": "customize\\item\\c%d.xml", "ic": 800, "target": false}
+[22:56:21]   [LoadItemFile] #11 ic=0 "customize\item\c800.xml" grp=(800,801)
+[22:56:21]   {"t": "63.8s", "n": 12, "fmt": "customize\\item\\c%d.xml", "ic": 801, "target": false}
+[22:56:21]   [LoadItemFile] #12 ic=0 "customize\item\c801.xml" grp=(800,801)
+[22:56:21]   {"t": "63.8s", "n": 13, "fmt": "customize\\item\\i%d.xml", "ic": 50421031, "target": false}
+[22:56:21]   [LoadItemFile] #13 ic=50421031 "customize\item\i50421031.xml" grp=(800,801)
+[22:56:21]   {"t": "63.8s", "n": 14, "fmt": "customize\\item\\i%d.xml", "ic": 50519561, "target": false}
+[22:56:21]   [LoadItemFile] #14 ic=50519561 "customize\item\i50519561.xml" grp=(800,801)
+[22:56:21]   {"t": "63.8s", "n": 15, "fmt": "customize\\item\\i%d.xml", "ic": 50623371, "target": false}
+[22:56:21]   [LoadItemFile] #15 ic=50623371 "customize\item\i50623371.xml" grp=(800,801)
+[22:56:21]   {"t": "63.8s", "n": 16, "fmt": "customize\\item\\i%d.xml", "ic": 50914721, "target": false}
+[22:56:21]   [LoadItemFile] #16 ic=50914721 "customize\item\i50914721.xml" grp=(800,801)
+[22:56:21]   {"t": "63.8s", "n": 17, "fmt": "customize\\item\\i%d.xml", "ic": 51514521, "target": false}
+[22:56:21]   [LoadItemFile] #17 ic=51514521 "customize\item\i51514521.xml" grp=(800,801)
+[22:56:21]   {"t": "63.8s", "n": 18, "fmt": "customize\\item\\i%d.xml", "ic": 50125461, "target": true}
+[22:56:21]   [替换!] #2 50125461→50122451 ebp@0x196ecc old=50125461 new=50122451
+[22:56:21]   [LoadItemFile] #18 ic=50122451 "customize\item\i50122451.xml" grp=(800,801)
+[22:56:21]   [CreateFile] #451 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\Resource\item742\i50122451.bml"
+[22:56:21]   {"t": "63.8s", "n": 19, "fmt": "customize\\item\\i%d.xml", "ic": 51616261, "target": false}
+[22:56:21]   [LoadItemFile] #19 ic=51616261 "customize\item\i51616261.xml" grp=(800,801)
+[22:56:21]   {"t": "63.8s", "n": 20, "fmt": "customize\\item\\i%d.xml", "ic": 51213111, "target": false}
+[22:56:21]   [LoadItemFile] #20 ic=51213111 "customize\item\i51213111.xml" grp=(800,801)
+[22:56:21]   [AcquireSMD] #13 "res707\c800.smd"
+[22:56:21]   [ReadFile] #720940 512B hex=53 53 4b 46 01 00 00 00 63 38 30 30 2e 73 6d 64 "SSKF"
+[22:56:21]   [ReadFile] #720941 78848B hex=53 53 4b 46 01 00 00 00 63 38 30 30 2e 73 6d 64 "SSKF"
+[22:56:21]   [AcquireSMD] #14 "res707\c801.smd"
+[22:56:21]   [ReadFile] #720945 512B hex=53 53 4b 46 01 00 00 00 63 38 30 31 2e 73 6d 64 "SSKF"
+[22:56:21]   [ReadFile] #720946 80896B hex=53 53 4b 46 01 00 00 00 63 38 30 31 2e 73 6d 64 "SSKF"
+[22:56:21]   [AcquireSMD] #15 "Res767\i50421031_FN.smd"
+[22:56:21]   [ReadFile] #720948 512B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:21]   [ReadFile] #720949 51712B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:21]   [AcquireSMD] #16 "Res767\i50421031_FN_upp01.smd"
+[22:56:21]   [ReadFile] #720953 512B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:21]   [ReadFile] #720954 60928B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:21]   [AcquireSMD] #17 "res767\i50519561_FN.smd"
+[22:56:21]   [ReadFile] #720956 512B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:21]   [ReadFile] #720957 94208B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:21]   [AcquireSMD] #18 "res767\i50519561_F_low01.smd"
+[22:56:21]   [ReadFile] #720961 512B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:21]   [ReadFile] #720962 16384B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:21]   [AcquireSMD] #19 "res767\i50623371_F.smd"
+[22:56:21]   [ReadFile] #720966 512B hex=53 53 4b 46 01 00 00 00 69 35 30 36 32 33 33 37 "SSKF"
+[22:56:21]   [ReadFile] #720967 118272B hex=53 53 4b 46 01 00 00 00 69 35 30 36 32 33 33 37 "SSKF"
+[22:56:21]   [AcquireSMD] #20 "res767\i50914721_F.smd"
+[22:56:21]   [ReadFile] #720971 512B hex=53 53 4b 46 01 00 00 00 69 35 30 39 31 34 34 36 "SSKF"
+[22:56:21]   [ReadFile] #720972 15872B hex=53 53 4b 46 01 00 00 00 69 35 30 39 31 34 34 36 "SSKF"
+[22:56:21]   [ReadFile] #720976 512B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 34 35 32 "SSKF"
+[22:56:21]   [ReadFile] #720977 41472B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 34 35 32 "SSKF"
+[22:56:21]   [AcquireSMD] #22 "res742\i50122451_FN.smd"
+[22:56:21]   [ReadFile] #720981 512B hex=53 53 4b 46 01 00 00 00 69 35 30 31 32 32 34 35 "SSKF"
+[22:56:21]   [ReadFile] #720982 217600B hex=53 53 4b 46 01 00 00 00 69 35 30 31 32 32 34 35 "SSKF"
+[22:56:21]   [ReadFile] #720986 512B hex=53 53 4b 46 01 00 00 00 69 35 31 36 31 36 32 36 "SSKF"
+[22:56:21]   [ReadFile] #720987 37888B hex=53 53 4b 46 01 00 00 00 69 35 31 36 31 36 32 36 "SSKF"
+[22:56:21]   [ReadFile] #720991 512B hex=53 53 4b 46 01 00 00 00 69 35 31 32 31 33 31 31 "SSKF"
+[22:56:21]   [ReadFile] #720992 53760B hex=53 53 4b 46 01 00 00 00 69 35 31 32 31 33 31 31 "SSKF"
+[22:56:21]   [ReadFile] #721097 512B hex=53 53 4b 46 01 00 00 00 42 61 73 6b 65 74 62 61 "SSKF"
+[22:56:21]   [ReadFile] #721098 247296B hex=53 53 4b 46 01 00 00 00 42 61 73 6b 65 74 62 61 "SSKF"
+[22:56:21]   [ReadFile] #721119 512B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 62 61 73 69 "SSKF"
+[22:56:21]   [ReadFile] #721120 5120B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 62 61 73 69 "SSKF"
+[22:56:21]   [ReadFile] #721145 512B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:21]   [ReadFile] #721146 1536B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:21]   [ReadFile] #721152 512B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:21]   [ReadFile] #721153 1536B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:21]   [ReadFile] #721159 512B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:21]   [ReadFile] #721160 19456B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:21]   [ReadFile] #721166 512B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:21]   [ReadFile] #721167 19456B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:21]   [ReadFile] #721173 512B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 6d 61 67 69 "SSKF"
+[22:56:21]   [ReadFile] #721174 24576B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 6d 61 67 69 "SSKF"
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:21]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:26]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=2
+[22:56:27]   {"t": "70.4s", "n": 21, "fmt": "customize\\item\\c%d.xml", "ic": 800, "target": false}
+[22:56:27]   [LoadItemFile] #21 ic=0 "customize\item\c800.xml" grp=(800,801)
+[22:56:27]   {"t": "70.4s", "n": 22, "fmt": "customize\\item\\c%d.xml", "ic": 801, "target": false}
+[22:56:27]   [LoadItemFile] #22 ic=0 "customize\item\c801.xml" grp=(800,801)
+[22:56:27]   {"t": "70.4s", "n": 23, "fmt": "customize\\item\\i%d.xml", "ic": 50421031, "target": false}
+[22:56:27]   [LoadItemFile] #23 ic=50421031 "customize\item\i50421031.xml" grp=(800,801)
+[22:56:27]   {"t": "70.4s", "n": 24, "fmt": "customize\\item\\i%d.xml", "ic": 50519561, "target": false}
+[22:56:27]   [LoadItemFile] #24 ic=50519561 "customize\item\i50519561.xml" grp=(800,801)
+[22:56:27]   {"t": "70.4s", "n": 25, "fmt": "customize\\item\\i%d.xml", "ic": 50623371, "target": false}
+[22:56:27]   [LoadItemFile] #25 ic=50623371 "customize\item\i50623371.xml" grp=(800,801)
+[22:56:27]   {"t": "70.4s", "n": 26, "fmt": "customize\\item\\i%d.xml", "ic": 50914721, "target": false}
+[22:56:27]   [LoadItemFile] #26 ic=50914721 "customize\item\i50914721.xml" grp=(800,801)
+[22:56:27]   {"t": "70.4s", "n": 27, "fmt": "customize\\item\\i%d.xml", "ic": 51514521, "target": false}
+[22:56:27]   [LoadItemFile] #27 ic=51514521 "customize\item\i51514521.xml" grp=(800,801)
+[22:56:27]   {"t": "70.4s", "n": 28, "fmt": "customize\\item\\i%d.xml", "ic": 50125461, "target": true}
+[22:56:27]   [替换!] #3 50125461→50122451 ebp@0x193ab0 old=50125461 new=50122451
+[22:56:27]   [LoadItemFile] #28 ic=50122451 "customize\item\i50122451.xml" grp=(800,801)
+[22:56:27]   [CreateFile] #468 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\Resource\item742\i50122451.bml"
+[22:56:27]   {"t": "70.4s", "n": 29, "fmt": "customize\\item\\i%d.xml", "ic": 51616261, "target": false}
+[22:56:27]   [LoadItemFile] #29 ic=51616261 "customize\item\i51616261.xml" grp=(800,801)
+[22:56:27]   {"t": "70.4s", "n": 30, "fmt": "customize\\item\\i%d.xml", "ic": 51213111, "target": false}
+[22:56:27]   [LoadItemFile] #30 ic=51213111 "customize\item\i51213111.xml" grp=(800,801)
+[22:56:27]   [ReadFile] #723686 512B hex=53 53 4b 46 01 00 00 00 63 38 30 30 2e 73 6d 64 "SSKF"
+[22:56:27]   [ReadFile] #723687 78848B hex=53 53 4b 46 01 00 00 00 63 38 30 30 2e 73 6d 64 "SSKF"
+[22:56:27]   [ReadFile] #723691 512B hex=53 53 4b 46 01 00 00 00 63 38 30 31 2e 73 6d 64 "SSKF"
+[22:56:27]   [ReadFile] #723692 80896B hex=53 53 4b 46 01 00 00 00 63 38 30 31 2e 73 6d 64 "SSKF"
+[22:56:27]   [ReadFile] #723694 512B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:27]   [ReadFile] #723695 51712B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:27]   [ReadFile] #723699 512B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:27]   [ReadFile] #723700 60928B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:27]   [ReadFile] #723702 512B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:27]   [ReadFile] #723703 94208B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:27]   [ReadFile] #723707 512B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:27]   [ReadFile] #723708 16384B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:27]   [ReadFile] #723712 512B hex=53 53 4b 46 01 00 00 00 69 35 30 36 32 33 33 37 "SSKF"
+[22:56:27]   [ReadFile] #723713 118272B hex=53 53 4b 46 01 00 00 00 69 35 30 36 32 33 33 37 "SSKF"
+[22:56:27]   [ReadFile] #723717 512B hex=53 53 4b 46 01 00 00 00 69 35 30 39 31 34 34 36 "SSKF"
+[22:56:27]   [ReadFile] #723718 15872B hex=53 53 4b 46 01 00 00 00 69 35 30 39 31 34 34 36 "SSKF"
+[22:56:27]   [ReadFile] #723722 512B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 34 35 32 "SSKF"
+[22:56:27]   [ReadFile] #723723 41472B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 34 35 32 "SSKF"
+[22:56:27]   [AcquireSMD] #34 "res742\i50122451_FN.smd"
+[22:56:27]   [ReadFile] #723727 512B hex=53 53 4b 46 01 00 00 00 69 35 30 31 32 32 34 35 "SSKF"
+[22:56:27]   [ReadFile] #723728 217600B hex=53 53 4b 46 01 00 00 00 69 35 30 31 32 32 34 35 "SSKF"
+[22:56:27]   [ReadFile] #723732 512B hex=53 53 4b 46 01 00 00 00 69 35 31 36 31 36 32 36 "SSKF"
+[22:56:27]   [ReadFile] #723733 37888B hex=53 53 4b 46 01 00 00 00 69 35 31 36 31 36 32 36 "SSKF"
+[22:56:27]   [ReadFile] #723737 512B hex=53 53 4b 46 01 00 00 00 69 35 31 32 31 33 31 31 "SSKF"
+[22:56:27]   [ReadFile] #723738 53760B hex=53 53 4b 46 01 00 00 00 69 35 31 32 31 33 31 31 "SSKF"
+[22:56:27]   [ReadFile] #723759 512B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 62 61 73 69 "SSKF"
+[22:56:27]   [ReadFile] #723760 5120B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 62 61 73 69 "SSKF"
+[22:56:27]   [ReadFile] #723785 512B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:27]   [ReadFile] #723786 1536B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:27]   [ReadFile] #723792 512B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:27]   [ReadFile] #723793 1536B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:27]   [ReadFile] #723799 512B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:27]   [ReadFile] #723800 19456B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:27]   [ReadFile] #723806 512B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:27]   [ReadFile] #723807 19456B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:27]   [ReadFile] #723813 512B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 6d 61 67 69 "SSKF"
+[22:56:27]   [ReadFile] #723814 24576B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 6d 61 67 69 "SSKF"
+[22:56:27]   {"t": "70.6s", "n": 38, "fmt": "customize\\item\\i%d.xml", "ic": 50125461, "target": true}
+[22:56:27]   [替换!] #4 50125461→50122451 ebp@0x193ab0 old=50125461 new=50122451
+[22:56:27]   [LoadItemFile] #38 ic=50122451 "customize\item\i50122451.xml" grp=(800,801)
+[22:56:27]   [CreateFile] #469 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\Resource\item742\i50122451.bml"
+[22:56:27]   [ReadFile] #723842 512B hex=53 53 4b 46 01 00 00 00 63 38 30 30 2e 73 6d 64 "SSKF"
+[22:56:27]   [ReadFile] #723843 78848B hex=53 53 4b 46 01 00 00 00 63 38 30 30 2e 73 6d 64 "SSKF"
+[22:56:27]   [ReadFile] #723847 512B hex=53 53 4b 46 01 00 00 00 63 38 30 31 2e 73 6d 64 "SSKF"
+[22:56:27]   [ReadFile] #723848 80896B hex=53 53 4b 46 01 00 00 00 63 38 30 31 2e 73 6d 64 "SSKF"
+[22:56:27]   [ReadFile] #723850 512B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:27]   [ReadFile] #723851 51712B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:27]   [ReadFile] #723855 512B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:27]   [ReadFile] #723856 60928B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:27]   [ReadFile] #723858 512B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:27]   [ReadFile] #723859 94208B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:27]   [ReadFile] #723863 512B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:27]   [ReadFile] #723864 16384B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:27]   [ReadFile] #723868 512B hex=53 53 4b 46 01 00 00 00 69 35 30 36 32 33 33 37 "SSKF"
+[22:56:27]   [ReadFile] #723869 118272B hex=53 53 4b 46 01 00 00 00 69 35 30 36 32 33 33 37 "SSKF"
+[22:56:27]   [ReadFile] #723873 512B hex=53 53 4b 46 01 00 00 00 69 35 30 39 31 34 34 36 "SSKF"
+[22:56:27]   [ReadFile] #723874 15872B hex=53 53 4b 46 01 00 00 00 69 35 30 39 31 34 34 36 "SSKF"
+[22:56:27]   [ReadFile] #723878 512B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 34 35 32 "SSKF"
+[22:56:27]   [ReadFile] #723879 41472B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 34 35 32 "SSKF"
+[22:56:27]   [AcquireSMD] #46 "res742\i50122451_FN.smd"
+[22:56:27]   [ReadFile] #723883 512B hex=53 53 4b 46 01 00 00 00 69 35 30 31 32 32 34 35 "SSKF"
+[22:56:27]   [ReadFile] #723884 217600B hex=53 53 4b 46 01 00 00 00 69 35 30 31 32 32 34 35 "SSKF"
+[22:56:27]   [ReadFile] #723888 512B hex=53 53 4b 46 01 00 00 00 69 35 31 36 31 36 32 36 "SSKF"
+[22:56:27]   [ReadFile] #723889 37888B hex=53 53 4b 46 01 00 00 00 69 35 31 36 31 36 32 36 "SSKF"
+[22:56:27]   [ReadFile] #723893 512B hex=53 53 4b 46 01 00 00 00 69 35 31 32 31 33 31 31 "SSKF"
+[22:56:27]   [ReadFile] #723894 53760B hex=53 53 4b 46 01 00 00 00 69 35 31 32 31 33 31 31 "SSKF"
+[22:56:27]   {"t": "70.6s", "n": 48, "fmt": "customize\\item\\i%d.xml", "ic": 50125461, "target": true}
+[22:56:27]   [替换!] #5 50125461→50122451 ebp@0x193ab0 old=50125461 new=50122451
+[22:56:27]   [LoadItemFile] #48 ic=50122451 "customize\item\i50122451.xml" grp=(800,801)
+[22:56:27]   [CreateFile] #470 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\Resource\item742\i50122451.bml"
+[22:56:27]   [ReadFile] #723921 512B hex=53 53 4b 46 01 00 00 00 63 38 30 30 2e 73 6d 64 "SSKF"
+[22:56:27]   [ReadFile] #723922 78848B hex=53 53 4b 46 01 00 00 00 63 38 30 30 2e 73 6d 64 "SSKF"
+[22:56:28]   [ReadFile] #723926 512B hex=53 53 4b 46 01 00 00 00 63 38 30 31 2e 73 6d 64 "SSKF"
+[22:56:28]   [ReadFile] #723927 80896B hex=53 53 4b 46 01 00 00 00 63 38 30 31 2e 73 6d 64 "SSKF"
+[22:56:28]   [ReadFile] #723929 512B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:28]   [ReadFile] #723930 51712B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:28]   [ReadFile] #723934 512B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:28]   [ReadFile] #723935 60928B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:28]   [ReadFile] #723937 512B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:28]   [ReadFile] #723938 94208B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:28]   [ReadFile] #723942 512B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:28]   [ReadFile] #723943 16384B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:28]   [ReadFile] #723947 512B hex=53 53 4b 46 01 00 00 00 69 35 30 36 32 33 33 37 "SSKF"
+[22:56:28]   [ReadFile] #723948 118272B hex=53 53 4b 46 01 00 00 00 69 35 30 36 32 33 33 37 "SSKF"
+[22:56:28]   [ReadFile] #723952 512B hex=53 53 4b 46 01 00 00 00 69 35 30 39 31 34 34 36 "SSKF"
+[22:56:28]   [ReadFile] #723953 15872B hex=53 53 4b 46 01 00 00 00 69 35 30 39 31 34 34 36 "SSKF"
+[22:56:28]   [ReadFile] #723957 512B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 34 35 32 "SSKF"
+[22:56:28]   [ReadFile] #723958 41472B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 34 35 32 "SSKF"
+[22:56:28]   [AcquireSMD] #58 "res742\i50122451_FN.smd"
+[22:56:28]   [ReadFile] #723962 512B hex=53 53 4b 46 01 00 00 00 69 35 30 31 32 32 34 35 "SSKF"
+[22:56:28]   [ReadFile] #723963 217600B hex=53 53 4b 46 01 00 00 00 69 35 30 31 32 32 34 35 "SSKF"
+[22:56:28]   [ReadFile] #723967 512B hex=53 53 4b 46 01 00 00 00 69 35 31 36 31 36 32 36 "SSKF"
+[22:56:28]   [ReadFile] #723968 37888B hex=53 53 4b 46 01 00 00 00 69 35 31 36 31 36 32 36 "SSKF"
+[22:56:28]   [ReadFile] #723972 512B hex=53 53 4b 46 01 00 00 00 69 35 31 32 31 33 31 31 "SSKF"
+[22:56:28]   [ReadFile] #723973 53760B hex=53 53 4b 46 01 00 00 00 69 35 31 32 31 33 31 31 "SSKF"
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x6951be0f EIP=0x6951be0f patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694b3fe6 EIP=0x694b3fe6 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:30]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:31]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:33]   [ReadFile] #724017 512B hex=53 53 4b 46 00 00 00 00 73 32 63 6c 6f 75 64 2e "SSKF"
+[22:56:33]   [ReadFile] #724018 1536B hex=53 53 4b 46 00 00 00 00 73 32 63 6c 6f 75 64 2e "SSKF"
+[22:56:33]   [ReadFile] #724021 512B hex=53 53 4b 46 00 00 00 00 63 6f 75 72 74 5f 6c 2e "SSKF"
+[22:56:33]   [ReadFile] #724022 1536B hex=53 53 4b 46 00 00 00 00 63 6f 75 72 74 5f 6c 2e "SSKF"
+[22:56:34]   [ReadFile] #724028 512B hex=53 53 4b 46 00 00 00 00 63 6f 75 72 74 5f 6c 5f "SSKF"
+[22:56:34]   [ReadFile] #724029 1024B hex=53 53 4b 46 00 00 00 00 63 6f 75 72 74 5f 6c 5f "SSKF"
+[22:56:34]   [ReadFile] #724033 512B hex=53 53 4b 46 00 00 00 00 64 6f 67 2e 73 6d 64 00 "SSKF"
+[22:56:34]   [ReadFile] #724034 222720B hex=53 53 4b 46 00 00 00 00 64 6f 67 2e 73 6d 64 00 "SSKF"
+[22:56:34]   [ReadFile] #724171 512B hex=53 53 4b 46 00 00 00 00 63 6f 75 72 74 5f 72 2e "SSKF"
+[22:56:34]   [ReadFile] #724172 1024B hex=53 53 4b 46 00 00 00 00 63 6f 75 72 74 5f 72 2e "SSKF"
+[22:56:34]   [ReadFile] #724176 512B hex=53 53 4b 46 00 00 00 00 63 6f 75 72 74 5f 72 5f "SSKF"
+[22:56:34]   [ReadFile] #724177 1024B hex=53 53 4b 46 00 00 00 00 63 6f 75 72 74 5f 72 5f "SSKF"
+[22:56:34]   [ReadFile] #724181 512B hex=53 53 4b 46 00 00 00 00 64 6a 2e 73 6d 64 00 00 "SSKF"
+[22:56:34]   [ReadFile] #724182 463360B hex=53 53 4b 46 00 00 00 00 64 6a 2e 73 6d 64 00 00 "SSKF"
+[22:56:34]   [ReadFile] #724440 512B hex=53 53 4b 46 00 00 00 00 73 69 64 65 2e 73 6d 64 "SSKF"
+[22:56:34]   [ReadFile] #724441 16896B hex=53 53 4b 46 00 00 00 00 73 69 64 65 2e 73 6d 64 "SSKF"
+[22:56:34]   [ReadFile] #724445 512B hex=53 53 4b 46 00 00 00 00 63 6f 75 72 74 5f 6c 5f "SSKF"
+[22:56:34]   [ReadFile] #724446 4096B hex=53 53 4b 46 00 00 00 00 63 6f 75 72 74 5f 6c 5f "SSKF"
+[22:56:34]   [ReadFile] #735912 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735913 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735925 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735926 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735932 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735933 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735939 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735940 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735946 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735947 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735953 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735954 4608B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735962 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735963 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735969 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #735970 4096B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #736124 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #736125 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #736129 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #736130 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 62 61 6c 6c "SSKF"
+[22:56:34]   [ReadFile] #736134 512B hex=53 53 4b 46 01 00 00 00 6e 6f 7a 6f 6e 65 2e 73 "SSKF"
+[22:56:34]   [ReadFile] #736135 8704B hex=53 53 4b 46 01 00 00 00 6e 6f 7a 6f 6e 65 2e 73 "SSKF"
+[22:56:34]   [ReadFile] #736139 512B hex=53 53 4b 46 01 00 00 00 6e 6f 7a 6f 6e 65 5f 31 "SSKF"
+[22:56:34]   [ReadFile] #736140 34816B hex=53 53 4b 46 01 00 00 00 6e 6f 7a 6f 6e 65 5f 31 "SSKF"
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:36]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:41]   [ReadFile] #736294 512B hex=53 53 4b 46 00 00 00 00 73 6b 79 62 6f 78 2e 73 "SSKF"
+[22:56:41]   [ReadFile] #736295 8192B hex=53 53 4b 46 00 00 00 00 73 6b 79 62 6f 78 2e 73 "SSKF"
+[22:56:41]   [ReadFile] #736308 512B hex=53 53 4b 46 01 00 00 00 6d 61 72 6b 31 2e 73 6d "SSKF"
+[22:56:41]   [ReadFile] #736309 512B hex=53 53 4b 46 01 00 00 00 6d 61 72 6b 31 2e 73 6d "SSKF"
+[22:56:41]   [ReadFile] #736313 512B hex=53 53 4b 46 01 00 00 00 6d 61 72 6b 32 2e 73 6d "SSKF"
+[22:56:41]   [ReadFile] #736314 512B hex=53 53 4b 46 01 00 00 00 6d 61 72 6b 32 2e 73 6d "SSKF"
+[22:56:41]   [ReadFile] #736318 512B hex=53 53 4b 46 01 00 00 00 41 72 72 6f 77 2e 73 6d "SSKF"
+[22:56:41]   [ReadFile] #736319 4608B hex=53 53 4b 46 01 00 00 00 41 72 72 6f 77 2e 73 6d "SSKF"
+[22:56:41]   [ReadFile] #736323 512B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 53 68 "SSKF"
+[22:56:41]   [ReadFile] #736324 4608B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 53 68 "SSKF"
+[22:56:41]   [ReadFile] #736328 512B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 53 68 "SSKF"
+[22:56:41]   [ReadFile] #736329 4608B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 53 68 "SSKF"
+[22:56:41]   [ReadFile] #736333 512B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 53 68 "SSKF"
+[22:56:41]   [ReadFile] #736334 4096B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 53 68 "SSKF"
+[22:56:41]   [ReadFile] #736338 512B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 53 68 "SSKF"
+[22:56:41]   [ReadFile] #736339 4608B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 53 68 "SSKF"
+[22:56:41]   [ReadFile] #736341 512B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 53 68 "SSKF"
+[22:56:41]   [ReadFile] #736342 4608B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 53 68 "SSKF"
+[22:56:41]   [ReadFile] #736344 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 74 61 63 74 "SSKF"
+[22:56:41]   [ReadFile] #736345 4096B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 74 61 63 74 "SSKF"
+[22:56:41]   [ReadFile] #736349 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 74 61 63 74 "SSKF"
+[22:56:41]   [ReadFile] #736350 4096B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 74 61 63 74 "SSKF"
+[22:56:41]   [ReadFile] #736354 512B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 74 61 63 74 "SSKF"
+[22:56:41]   [ReadFile] #736355 4096B hex=53 53 4b 46 01 00 00 00 65 66 66 5f 74 61 63 74 "SSKF"
+[22:56:41]   [LIF替换!] #58 50125461→50122451 "customize\item\i50125461.xml"
+[22:56:41]   [CreateFile] #474 OK "C:\Program Files (x86)\T2CN\½ÖÍ·ÀºÇò\Resource\item742\i50122451.bml"
+[22:56:41]   [ReadFile] #736519 512B hex=53 53 4b 46 01 00 00 00 63 38 30 30 2e 73 6d 64 "SSKF"
+[22:56:41]   [ReadFile] #736520 78848B hex=53 53 4b 46 01 00 00 00 63 38 30 30 2e 73 6d 64 "SSKF"
+[22:56:41]   [ReadFile] #736522 512B hex=53 53 4b 46 01 00 00 00 63 38 30 31 2e 73 6d 64 "SSKF"
+[22:56:41]   [ReadFile] #736523 80896B hex=53 53 4b 46 01 00 00 00 63 38 30 31 2e 73 6d 64 "SSKF"
+[22:56:41]   [ReadFile] #736525 512B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:41]   [ReadFile] #736526 51712B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:41]   [ReadFile] #736528 512B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:41]   [ReadFile] #736529 60928B hex=53 53 4b 46 01 00 00 00 69 35 30 34 32 31 30 33 "SSKF"
+[22:56:41]   [ReadFile] #736531 512B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:41]   [ReadFile] #736532 94208B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:41]   [ReadFile] #736534 512B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:41]   [ReadFile] #736535 16384B hex=53 53 4b 46 01 00 00 00 69 35 30 35 31 39 35 36 "SSKF"
+[22:56:41]   [ReadFile] #736537 512B hex=53 53 4b 46 01 00 00 00 69 35 30 36 32 33 33 37 "SSKF"
+[22:56:42]   [ReadFile] #736538 118272B hex=53 53 4b 46 01 00 00 00 69 35 30 36 32 33 33 37 "SSKF"
+[22:56:42]   [ReadFile] #736540 512B hex=53 53 4b 46 01 00 00 00 69 35 30 39 31 34 34 36 "SSKF"
+[22:56:42]   [ReadFile] #736541 15872B hex=53 53 4b 46 01 00 00 00 69 35 30 39 31 34 34 36 "SSKF"
+[22:56:42]   [ReadFile] #736543 512B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 34 35 32 "SSKF"
+[22:56:42]   [ReadFile] #736544 41472B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 34 35 32 "SSKF"
+[22:56:42]   [AcquireSMD] #70 "res742\i50122451_FN.smd"
+[22:56:42]   [ReadFile] #736546 512B hex=53 53 4b 46 01 00 00 00 69 35 30 31 32 32 34 35 "SSKF"
+[22:56:42]   [ReadFile] #736547 217600B hex=53 53 4b 46 01 00 00 00 69 35 30 31 32 32 34 35 "SSKF"
+[22:56:42]   [ReadFile] #736549 512B hex=53 53 4b 46 01 00 00 00 69 35 31 36 31 36 32 36 "SSKF"
+[22:56:42]   [ReadFile] #736550 37888B hex=53 53 4b 46 01 00 00 00 69 35 31 36 31 36 32 36 "SSKF"
+[22:56:42]   [ReadFile] #736552 512B hex=53 53 4b 46 01 00 00 00 69 35 31 32 31 33 31 31 "SSKF"
+[22:56:42]   [ReadFile] #736553 53760B hex=53 53 4b 46 01 00 00 00 69 35 31 32 31 33 31 31 "SSKF"
+[22:56:42]   [ReadFile] #737099 512B hex=53 53 4b 46 01 00 00 00 69 35 30 31 31 35 38 36 "SSKF"
+[22:56:42]   [ReadFile] #737100 105472B hex=53 53 4b 46 01 00 00 00 69 35 30 31 31 35 38 36 "SSKF"
+[22:56:42]   [ReadFile] #737104 512B hex=53 53 4b 46 01 00 00 00 69 35 30 31 31 35 38 36 "SSKF"
+[22:56:42]   [ReadFile] #737105 62976B hex=53 53 4b 46 01 00 00 00 69 35 30 31 31 35 38 36 "SSKF"
+[22:56:42]   [ReadFile] #737109 512B hex=53 53 4b 46 01 00 00 00 69 35 30 33 31 32 39 34 "SSKF"
+[22:56:42]   [ReadFile] #737110 47104B hex=53 53 4b 46 01 00 00 00 69 35 30 33 31 32 39 34 "SSKF"
+[22:56:42]   [ReadFile] #737114 512B hex=53 53 4b 46 01 00 00 00 69 35 30 33 31 32 39 34 "SSKF"
+[22:56:42]   [ReadFile] #737115 89600B hex=53 53 4b 46 01 00 00 00 69 35 30 33 31 32 39 34 "SSKF"
+[22:56:42]   [ReadFile] #737117 512B hex=53 53 4b 46 01 00 00 00 69 35 30 33 31 32 39 34 "SSKF"
+[22:56:42]   [ReadFile] #737118 74752B hex=53 53 4b 46 01 00 00 00 69 35 30 33 31 32 39 34 "SSKF"
+[22:56:42]   [ReadFile] #737122 512B hex=53 53 4b 46 01 00 00 00 69 35 30 33 31 32 39 34 "SSKF"
+[22:56:42]   [ReadFile] #737123 42496B hex=53 53 4b 46 01 00 00 00 69 35 30 33 31 32 39 34 "SSKF"
+[22:56:42]   [ReadFile] #737125 512B hex=53 53 4b 46 01 00 00 00 69 35 30 33 31 32 39 34 "SSKF"
+[22:56:42]   [ReadFile] #737126 45056B hex=53 53 4b 46 01 00 00 00 69 35 30 33 31 32 39 34 "SSKF"
+[22:56:42]   [ReadFile] #737131 512B hex=53 53 4b 46 01 00 00 00 69 35 30 39 31 31 31 36 "SSKF"
+[22:56:42]   [ReadFile] #737132 38912B hex=53 53 4b 46 01 00 00 00 69 35 30 39 31 31 31 36 "SSKF"
+[22:56:42]   [ReadFile] #737518 512B hex=53 53 4b 46 01 00 00 00 63 68 65 65 72 5f 32 34 "SSKF"
+[22:56:42]   [ReadFile] #737519 487936B hex=53 53 4b 46 01 00 00 00 63 68 65 65 72 5f 32 34 "SSKF"
+[22:56:42]   [ReadFile] #737689 512B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 30 36 30 "SSKF"
+[22:56:42]   [ReadFile] #737690 81920B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 30 36 30 "SSKF"
+[22:56:42]   [ReadFile] #737694 512B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 30 36 32 "SSKF"
+[22:56:42]   [ReadFile] #737695 79872B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 30 36 32 "SSKF"
+[22:56:42]   [ReadFile] #737697 512B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 30 36 33 "SSKF"
+[22:56:42]   [ReadFile] #737698 80896B hex=53 53 4b 46 01 00 00 00 69 35 31 35 31 30 36 33 "SSKF"
+[22:56:42]   [ReadFile] #742278 512B hex=53 53 4b 46 01 00 00 00 42 61 73 6b 65 74 62 61 "SSKF"
+[22:56:42]   [ReadFile] #742279 247296B hex=53 53 4b 46 01 00 00 00 42 61 73 6b 65 74 62 61 "SSKF"
+[22:56:42]   [ReadFile] #742281 512B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 52 65 "SSKF"
+[22:56:42]   [ReadFile] #742282 25600B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 52 65 "SSKF"
+[22:56:42]   [ReadFile] #742286 512B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 52 65 "SSKF"
+[22:56:42]   [ReadFile] #742287 25600B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 52 65 "SSKF"
+[22:56:42]   [ReadFile] #742291 512B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 44 69 "SSKF"
+[22:56:42]   [ReadFile] #742292 25088B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 44 69 "SSKF"
+[22:56:42]   [ReadFile] #742296 512B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 44 69 "SSKF"
+[22:56:42]   [ReadFile] #742297 25088B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 44 69 "SSKF"
+[22:56:42]   [ReadFile] #742302 512B hex=53 53 4b 46 00 00 00 00 72 69 6d 2e 73 6d 64 00 "SSKF"
+[22:56:42]   [ReadFile] #742303 62464B hex=53 53 4b 46 00 00 00 00 72 69 6d 2e 73 6d 64 00 "SSKF"
+[22:56:42]   [ReadFile] #742859 512B hex=53 53 4b 46 00 00 00 00 72 69 6d 2e 73 6d 64 00 "SSKF"
+[22:56:42]   [ReadFile] #742860 62464B hex=53 53 4b 46 00 00 00 00 72 69 6d 2e 73 6d 64 00 "SSKF"
+[22:56:42]   [ReadFile] #744008 512B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 62 61 73 69 "SSKF"
+[22:56:42]   [ReadFile] #744009 5120B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 62 61 73 69 "SSKF"
+[22:56:42]   [ReadFile] #744068 512B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 63 6f 6d 6d "SSKF"
+[22:56:42]   [ReadFile] #744069 12288B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 63 6f 6d 6d "SSKF"
+[22:56:42]   [ReadFile] #744091 512B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 63 6f 6d 6d "SSKF"
+[22:56:42]   [ReadFile] #744092 12288B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 63 6f 6d 6d "SSKF"
+[22:56:42]   [ReadFile] #744096 512B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 63 6f 6d 6d "SSKF"
+[22:56:42]   [ReadFile] #744097 12288B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 63 6f 6d 6d "SSKF"
+[22:56:42]   ★★★ 崩溃! breakpoint @ 0x2c97ff0 EIP=0x2c97ff0 patches=5
+[22:56:42]   [ReadFile] #744124 512B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:42]   [ReadFile] #744125 1536B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:42]   [ReadFile] #744131 512B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:42]   [ReadFile] #744132 1536B hex=53 53 4b 46 01 00 00 00 77 69 6e 64 5f 70 6c 61 "SSKF"
+[22:56:42]   [ReadFile] #744138 512B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:42]   [ReadFile] #744139 19456B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:42]   [ReadFile] #744145 512B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:42]   [ReadFile] #744146 19456B hex=53 53 4b 46 01 00 00 00 6d 61 67 69 63 5f 65 6e "SSKF"
+[22:56:42]   [ReadFile] #744152 512B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 6d 61 67 69 "SSKF"
+[22:56:42]   [ReadFile] #744153 24576B hex=53 53 4b 46 01 00 00 00 53 4d 44 5f 6d 61 67 69 "SSKF"
+[22:56:42]   [ReadFile] #744161 512B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 50 6c "SSKF"
+[22:56:42]   [ReadFile] #744162 2560B hex=53 53 4b 46 01 00 00 00 47 75 69 64 65 5f 50 6c "SSKF"
+[22:56:43]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:44]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:44]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:45]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:45]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:45]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:46]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:46]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:46]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:46]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:46]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:46]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x69557e4d EIP=0x69557e4d patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:46]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:47]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:47]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:47]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:47]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:47]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:47]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:47]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:47]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:47]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:47]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:47]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:47]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:47]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:47]   ★★★ 崩溃! system @ 0x770a90e2 EIP=0x770a90e2 patches=5
+[22:56:47]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:47]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:47]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:47]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:47]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:47]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:47]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:47]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:47]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:47]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:47]   ★★★ 崩溃! breakpoint @ 0x694f3e32 EIP=0x694f3e32 patches=5
+[22:56:47]   ★★★ 崩溃! breakpoint @ 0x6951be0f EIP=0x6951be0f patches=5

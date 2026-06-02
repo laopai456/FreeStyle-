@@ -1,0 +1,27 @@
+Log: D:\py\反编译\FreeStyle\apollo_dump\smd_redirect_20260522_223636.txt
+Attaching to PID 24568...
+[*] SMD redirect v5 (addr cache) loaded.
+
+SMD redirect v3 ready. Commands:
+  r <src> <dst>  — redirect src to dst
+  l               — list rules
+  s               — stats
+  del <src>       — remove rule
+  clear           — clear all rules
+  reset           — clear seen files (re-scan)
+  Ctrl+C          — exit
+
+  DIAG SFullName* 0x1976e4:
+    +0x0: <?<?w
+    +0x4: <?w
+    +0x8: w
+    +0x18: 衶
+    +0x1c: 餗d
+    +0x20: 
+    ptr0: 0x2a43c08 -> 
+    ptr4: 0x2a43c04 -> L?
+    ptr8: 0x197708 -> 躿
+    ptrc: 0x0 -> null
+    sfn: 0x1976e4
+
+Detaching...

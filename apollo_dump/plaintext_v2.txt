@@ -1,0 +1,26 @@
+
+=== frida_capture_v2 loading ===
+Arch: x86
+CryptAcquireContextA hooked ✓
+CryptImportKey @ 0x76c42280
+CryptImportKey hooked ✓
+CryptGenRandom hooked ✓
+CryptEncrypt @ 0x76c571a0
+CryptEncrypt hooked ✓ (no filter)
+WSASendTo hooked ✓
+WSASend hooked ✓
+
+--- AES S-box @ +0x2442ef8 ---
+  Looking for references to: 0x2842ef8 (bytes: 63 7c 77 7b)
+  Found 2 references
+    @ +0x2442ef8 | 00 00 00 00 00 00 00 00 63 7c 77 7b f2 6b 6f c5 
+    @ +0x2617f18 | 1c 24 6c b4 c7 52 f6 01 63 7c 77 7b f2 6b 6f c5 
+
+--- AES S-box @ +0x2617f18 ---
+  Looking for references to: 0x2a17f18 (bytes: 63 7c 77 7b)
+  Found 2 references
+    @ +0x2442ef8 | 00 00 00 00 00 00 00 00 63 7c 77 7b f2 6b 6f c5 
+    @ +0x2617f18 | 1c 24 6c b4 c7 52 f6 01 63 7c 77 7b f2 6b 6f c5 
+=== READY ===
+ALL CryptEncrypt calls will be logged (no size filter)
+Login & enter game, then operate to trigger...

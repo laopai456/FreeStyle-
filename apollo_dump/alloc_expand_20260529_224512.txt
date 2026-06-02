@@ -1,0 +1,37 @@
+[22:45:12] === malloc扩展模式v2 === PID:25712 ===
+[22:45:12] 策略: onEnter改malloc参数 + onLeave改bytesRead
+[22:45:12] 目标: i50125461_FN.smd(美丽梦想发型) → i50125711_FN.smd(紫色超赛发型)
+[22:45:12] 日志: D:\py\反编译\FreeStyle\apollo_dump\alloc_expand_20260529_224512.txt
+[22:45:13]   [步骤] JS开始执行
+[22:45:13]   [步骤] CRT函数OK
+[22:45:13]   目标加载: 270264B/270264B magic=SSKF name=i50125711_FN.smd
+[22:45:13]   [步骤] 目标文件加载完成
+[22:45:13]   [步骤] MSVCR100 malloc=0x7b4c0233
+[22:45:13]   [步骤] msvcrt malloc=0x75ae8290
+[22:45:13]   [步骤] MSVCR100 operator new=0x7b4c232b
+[22:45:13]   [步骤] fread wrapper=0x21e25b0
+[22:45:13]   malloc扩展模式v2就绪. onEnter改大小, onLeave改bytesRead.
+[22:45:13] 
+[22:45:13] 进房间触发角色加载。
+[22:45:13] 命令: status | quit
+[22:45:13] 
+[22:45:16]   [SSKF #1] "c519.smd" read=512B req=512B buf=0x4dfcc168
+[22:45:16]   [SSKF #2] "c519.smd" read=84480B req=84480B buf=0x81a07008
+[22:45:16]   [SSKF #3] "c520.smd" read=512B req=512B buf=0x4dfcc168
+[22:45:16]   [SSKF #4] "c520.smd" read=84480B req=84480B buf=0x81a07008
+[22:45:16]   [SSKF #5] "i50125461_FN.smd" read=512B req=512B buf=0x70bb4048
+[22:45:16]   [Header替换] → i50125711_FN.smd
+[22:45:16]   [malloc扩大] onEnter改参数 101095B → 270264B
+[22:45:16]   [malloc返回] buf=0x52cc8010 size=270264
+[22:45:16]   [fread wrapper] 请求读101094B
+[22:45:16]   [SSKF #6] "i50125461_FN.smd" read=100864B req=100864B buf=0x52cc8010
+[22:45:16]   [ReadFile第二次] read=100864B req=100864B buf=0x52cc8010
+[22:45:16]   [JS错误] Error: access violation accessing 0xe3c88c94 行170
+[22:45:16]   [fread wrapper] 请求读162875B
+[22:45:16]   [JS错误] Error: access violation accessing 0x86d3d000 行170
+[22:45:16]   [fread wrapper] 请求读4B
+[22:45:16]   [JS错误] Error: access violation accessing 0xe3c8868c 行170
+[22:45:16]   [fread wrapper] 请求读4B
+[22:45:16]   [JS错误] Error: access violation accessing 0xe3c8868c 行170
+[22:45:16]   [fread wrapper] 请求读4B
+[22:45:16]   [fread wrapper完成] 返回4B→270264B buf=0x82135138 name="i50125711_FN.smd"

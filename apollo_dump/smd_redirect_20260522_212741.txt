@@ -1,0 +1,12 @@
+Output: D:\py\反编译\FreeStyle\apollo_dump\smd_redirect_20260522_212741.txt
+Attaching to PID 24568...
+[*] SMD redirect v2 loaded. Cmd file: D:\py\反编译\FreeStyle\apollo_dump\smd_cmd.json
+
+SMD redirect v2 active. Commands (run in another terminal):
+  py smd_redirect.py --cmd redirect "i50421161_MT.smd" "i51612121.smd"
+  py smd_redirect.py --cmd list
+  py smd_redirect.py --cmd status
+Press Ctrl+C to stop.
+
+
+Detaching...

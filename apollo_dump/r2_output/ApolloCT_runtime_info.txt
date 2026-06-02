@@ -1,0 +1,322 @@
+arch     x86
+baddr    0x69000000
+binsz    -2
+bintype  pe
+bits     32
+canary   true
+injprot  false
+retguard false
+class    PE32
+compiled Tue Aug 19 15:54:19 2025
+
+crypto   false
+endian   little
+havecode true
+hdr.csum 0x006bc903
+laddr    0x0
+lang     c
+linenum  true
+lsyms    true
+machine  i386
+nx       false
+os       windows
+overlay  true
+cc       cdecl
+pic      false
+relocs   false
+signed   false
+sanitize false
+static   false
+stripped false
+uncaps   false
+subsys   Windows GUI
+va       true
+kernel32
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+kernel32.dll
+user32.dll
+nth paddr      vaddr      bind   type size lib          name       demangled
+----------------------------------------------------------------------------
+1   0x0001a440 0x6901a440 GLOBAL FUNC 0    ApolloCT.dll Ordinal_1
+1   0x0001a460 0x6901a460 GLOBAL FUNC 0    ApolloCT.dll Ordinal_2
+1   0x0001a420 0x6901a420 GLOBAL FUNC 0    ApolloCT.dll Ordinal_3
+1   0x0001a400 0x6901a400 GLOBAL FUNC 0    ApolloCT.dll Ordinal_4
+1   0x0001a470 0x6901a470 GLOBAL FUNC 0    ApolloCT.dll Ordinal_5
+1   0x0001a250 0x6901a250 GLOBAL FUNC 0    ApolloCT.dll Ordinal_6
+1   0x0001a280 0x6901a280 GLOBAL FUNC 0    ApolloCT.dll Ordinal_7
+1   0x0001a320 0x6901a320 GLOBAL FUNC 0    ApolloCT.dll Ordinal_8
+1   0x0001a340 0x6901a340 GLOBAL FUNC 0    ApolloCT.dll Ordinal_9
+1   0x0001a230 0x6901a230 GLOBAL FUNC 0    ApolloCT.dll Ordinal_10
+1   0x000178d0 0x690178d0 GLOBAL FUNC 0    ApolloCT.dll Ordinal_11
+1   0x0001a270 0x6901a270 GLOBAL FUNC 0    ApolloCT.dll Ordinal_12
+1   0x0001a4b0 0x6901a4b0 GLOBAL FUNC 0    ApolloCT.dll Ordinal_13
+1   0x0001a4e0 0x6901a4e0 GLOBAL FUNC 0    ApolloCT.dll Ordinal_14
+1   0x0001a690 0x6901a690 GLOBAL FUNC 0    ApolloCT.dll Ordinal_15
+1   0x0001a6a0 0x6901a6a0 GLOBAL FUNC 0    ApolloCT.dll Ordinal_16
+1   0x0001a6b0 0x6901a6b0 GLOBAL FUNC 0    ApolloCT.dll Ordinal_17
+1   0x0001a740 0x6901a740 GLOBAL FUNC 0    ApolloCT.dll Ordinal_18
+1   0x0001a220 0x6901a220 GLOBAL FUNC 0    ApolloCT.dll Ordinal_19
+1   0x0001a330 0x6901a330 GLOBAL FUNC 0    ApolloCT.dll Ordinal_20
+1   0x000064d0 0x690064d0 GLOBAL FUNC 0    ApolloCT.dll Ordinal_21
+1   0x00000000 0x69000000 GLOBAL FUNC 0    ApolloCT.dll Ordinal_22
+1   0x0001a780 0x6901a780 GLOBAL FUNC 0    ApolloCT.dll Ordinal_23
+1   0x00000000 0x69000000 GLOBAL FUNC 0    ApolloCT.dll Ordinal_24
+1   0x00000000 0x69000000 GLOBAL FUNC 0    ApolloCT.dll Ordinal_25
+1   0x00000000 0x69000000 GLOBAL FUNC 0    ApolloCT.dll Ordinal_26
+1   0x00000000 0x69000000 GLOBAL FUNC 0    ApolloCT.dll Ordinal_27
+1   0x0001a210 0x6901a210 GLOBAL FUNC 0    ApolloCT.dll Ordinal_28
+nth paddr           size vaddr          vsize perm flags          type name
+---------------------------------------------------------------------------
+0   0x00001000  0x412000 0x69001000  0x412000 -r-x 0x7ff860000060 ---- .text
+1   0x00413000    0x4000 0x69413000    0x5000 -r-- 0x7ff848000040 ---- Apollo
+2   0x00417000  0x29e000 0x69418000  0x29e000 -r-x 0x7ff868000020 ---- Apollo_1
+3   0x006b5000    0x1000 0x696b6000    0x1000 -r-- 0x7ff842000040 ---- Apollo_2
+4   0x006b6000    0x1000 0x696b7000    0x1000 -r-- 0x7ff840000040 ---- Apollo_3
+nth paddr vaddr len size section type string
+--------------------------------------------

@@ -1,0 +1,51 @@
+=== Image Base ===
+Image Base: 00400000
+Default Address Space: ram:
+
+=== Memory Segments ===
+Headers: 00400000 - 004003ff (size=1024, read=true, write=false, exec=false, initialized=true)
+.text: 00401000 - 02c0bfff (size=41988096, read=true, write=true, exec=true, initialized=true)
+Apollo: 02c0c000 - 02c13fff (size=32768, read=true, write=true, exec=false, initialized=true)
+Apollo: 02c14000 - 02cfbfff (size=950272, read=true, write=true, exec=true, initialized=true)
+Apollo: 02cfc000 - 02cfcfff (size=4096, read=true, write=false, exec=false, initialized=true)
+tdb: ffdff000 - ffdfffff (size=4096, read=true, write=true, exec=false, initialized=true)
+
+=== Function Search Near Known Addresses ===
+
+AcquireSMD @ 0x22eccd0
+  Block: .text exec=true
+  CodeUnit: DataDB
+  Mnemonic: ?? 4Fh    O
+
+AcquireSMDEntry @ 0x22ec130
+  Block: .text exec=true
+  CodeUnit: DataDB
+  Mnemonic: ?? 19h
+
+DDynActorCtor @ 0x229b0b0
+  Block: .text exec=true
+  CodeUnit: DataDB
+  Mnemonic: ?? 48h    H
+
+PPI_Handler @ 0x2371b00
+  Block: .text exec=true
+  CodeUnit: DataDB
+  Mnemonic: ?? 2Eh    .
+
+FactoryFn @ 0x21c1f00
+  Block: .text exec=true
+  CodeUnit: DataDB
+  Mnemonic: ?? 8Ah
+
+=== Functions Near AcquireSMD String Refs ===
+
+String @ 0x284ba2c
+  Block: .text exec=true
+
+String @ 0x284ba6c
+  Block: .text exec=true
+
+=== Function Count & Coverage ===
+Total functions: 30082
+.text (00401000-02c0bfff): executable
+Apollo (02c14000-02cfbfff): executable

@@ -1,0 +1,32 @@
+Log: D:\py\反编译\FreeStyle\apollo_dump\smd_redirect_20260522_213230.txt
+Attaching to PID 24568...
+[*] SMD redirect v3 loaded.
+
+SMD redirect v3 ready. Commands:
+  r <src> <dst>  — redirect src to dst
+  l               — list rules
+  s               — stats
+  del <src>       — remove rule
+  clear           — clear all
+  Ctrl+C          — exit
+
+  FILE: c3000.smd
+  FILE: i50125711_ms.smd
+  FILE: i50421161_MT.smd
+  FILE: i50421161_MT_upp01.smd
+  FILE: i50519681_MT.smd
+  FILE: i50519681_M_low01.smd
+  FILE: i50623611_M.smd
+  FILE: i51612121.smd
+  FILE: i51212851.smd
+  FILE: i50914671_MT.smd
+  FILE: i51313301_MT.smd
+  FILE: SMD_2211_halo001.smd
+  FILE: i50125701_ms.smd
+  FILE: i50125691_MS.smd
+  FILE: i50119441_M.smd
+  FILE: SMD_2209_lightning0002.smd
+  FILE: SMD_2209_lightning051.smd
+
+Detaching...
+Final: hits=184 miss=92 redir=0 rules=0

@@ -1,0 +1,3 @@
+﻿有效的命令行参数: /encodedCommand
+运行 "bcdedit /?" 获得命令行帮助。
+参数错误。

@@ -1,0 +1,15 @@
+Log: D:\py\反编译\FreeStyle\apollo_dump\smd_redirect_20260522_213127.txt
+Attaching to PID 24568...
+[ERROR] ReferenceError: 'CMD_FILE' is not defined
+
+SMD redirect v3 ready. Commands:
+  r <src> <dst>  — redirect src to dst
+  l               — list rules
+  s               — stats
+  del <src>       — remove rule
+  clear           — clear all
+  Ctrl+C          — exit
+
+
+Detaching...
+Final: hits=0 miss=0 redir=0 rules=0

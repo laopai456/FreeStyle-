@@ -1,0 +1,22 @@
+[11:56:49] === sprintf ItemCode替换 === PID:21000 ===
+[11:56:49] 替换: 50125461(美丽梦想发型) → 50125711(紫色超赛发型)
+[11:56:49] 前置: sc.exe stop ApolloProtect
+[11:56:49] 日志: D:\py\反编译\FreeStyle\apollo_dump\sprintf_replace_20260530_115649.txt
+[11:56:50]   [步骤] JS开始执行
+[11:56:50]   [步骤] MSVCR100 sprintf=0x7bc66051
+[11:56:50]   sprintf替换就绪: 50125461 → 50125711
+[11:56:50] 
+[11:56:50] 进房间触发角色加载。观察是否显示紫色超赛发型。
+[11:56:50] 命令: status | quit
+[11:56:50] 
+[11:56:53]   [sprintf] #1 fmt="customize\item\c%d.xml" IC=800
+[11:56:53]   [sprintf] #2 fmt="customize\item\c%d.xml" IC=801
+[11:56:53]   [sprintf] #3 fmt="customize\item\i%d.xml" IC=50421031
+[11:56:53]   [sprintf] #4 fmt="customize\item\i%d.xml" IC=50519561
+[11:56:53]   [sprintf] #5 fmt="customize\item\i%d.xml" IC=50623371
+[11:56:53]   [sprintf] #6 fmt="customize\item\i%d.xml" IC=50914721
+[11:56:53]   [sprintf] #7 fmt="customize\item\i%d.xml" IC=51514521
+[11:56:53]   [sprintf] #8 fmt="customize\item\i%d.xml" IC=50125461
+[11:56:53]   [替换!] #1 50125461→50125711 → i50125711.xml
+[11:56:53]   [sprintf] #9 fmt="customize\item\i%d.xml" IC=51616261
+[11:56:53]   [sprintf] #10 fmt="customize\item\i%d.xml" IC=51213111

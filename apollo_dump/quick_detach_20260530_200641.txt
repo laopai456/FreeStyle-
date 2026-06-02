@@ -1,0 +1,49 @@
+[20:06:41] === 快速脱离替换 === PID:7768 ===
+[20:06:41] 替换: 50125461(美丽梦想) → 50125711(紫色超赛)
+[20:06:41] 自动脱离: 90秒无活动后
+[20:06:41] 日志: D:\py\反编译\FreeStyle\apollo_dump\quick_detach_20260530_200641.txt
+[20:06:42]   [挂钩] sprintf + LoadItemFile hook已设置
+[20:06:42] 
+[20:06:42] 流程:
+[20:06:42]   1. 进房间 → 头发渲染 → 自动脱离
+[20:06:42]   2. 输入 attach → 重新挂钩
+[20:06:42]   3. 进练习场 → 头发渲染 → 自动脱离
+[20:06:42] 命令: attach | detach | status | quit
+[20:06:42] 
+[20:06:46]   [sprintf替换] #1
+[20:06:58]   [sprintf替换] #2
+[20:06:58]   [sprintf替换] #3
+[20:06:58]   [sprintf替换] #4
+[20:07:10]   [LoadItemFile替换] #5
+[20:07:11]   ★ 崩溃! type=system addr=0x770a90e2
+[20:07:11]     EIP=0x770a90e2 EAX=0x19f098
+[20:07:11]     ESP=0x19f098 EBP=0x19f0f4
+[20:07:11]     patches=5
+[20:07:14]   ★ 崩溃! type=system addr=0x770a90e2
+[20:07:14]     EIP=0x770a90e2 EAX=0x19f0a0
+[20:07:14]     ESP=0x19f0a0 EBP=0x19f0fc
+[20:07:14]     patches=5
+[20:07:15]   ★ 崩溃! type=system addr=0x770a90e2
+[20:07:15]     EIP=0x770a90e2 EAX=0x195048
+[20:07:15]     ESP=0x195048 EBP=0x1950a0
+[20:07:15]     patches=5
+[20:07:15]   ★ 崩溃! type=system addr=0x770a90e2
+[20:07:15]     EIP=0x770a90e2 EAX=0x19f0b0
+[20:07:15]     ESP=0x19f0b0 EBP=0x19f108
+[20:07:15]     patches=5
+[20:07:15]   ★ 崩溃! type=system addr=0x770a90e2
+[20:07:15]     EIP=0x770a90e2 EAX=0x191b80
+[20:07:15]     ESP=0x191b80 EBP=0x191bdc
+[20:07:15]     patches=5
+[20:07:15]   ★ 崩溃! type=system addr=0x770a90e2
+[20:07:15]     EIP=0x770a90e2 EAX=0x191b80
+[20:07:15]     ESP=0x191b80 EBP=0x191bdc
+[20:07:15]     patches=5
+[20:07:15]   ★ 崩溃! type=system addr=0x770a90e2
+[20:07:15]     EIP=0x770a90e2 EAX=0x18fb80
+[20:07:15]     ESP=0x18fb80 EBP=0x18fbdc
+[20:07:15]     patches=5
+[20:07:15]   ★ 崩溃! type=system addr=0x770a90e2
+[20:07:15]     EIP=0x770a90e2 EAX=0x19f0f0
+[20:07:15]     ESP=0x19f0f0 EBP=0x19f14c
+[20:07:15]     patches=5

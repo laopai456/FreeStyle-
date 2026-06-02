@@ -1,0 +1,74 @@
+[18:29:17] === AcquireSMD 替换v3 === PID:19836 ===
+[18:29:17] 50125461(美丽梦想发型 pak767) → 50125711(紫色超赛发型 pak768)
+[18:29:17] 精确匹配: 只在包含ItemCode时替换, 完整诊断所有调用
+[18:29:17] 日志: D:\py\反编译\FreeStyle\apollo_dump\acquire_replace3_20260529_182917.txt
+[18:29:18]   替换hook v3就绪 (精确匹配+完整诊断). 进房间.
+[18:29:18] 
+[18:29:18] 进房间触发角色加载。
+[18:29:18] 命令: status | quit
+[18:29:18] 
+[18:29:21]   [#1] ecx=0x196b30 ptr@10=0x6ed13bf8 [ptr_deref] "res707\c800.smd"
+[18:29:21]         hex: 00000000 00000000 00000000 6b2e3020 6ed13bf8 00000010 00000010 00000000
+[18:29:21]   [SSKF #1] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #2] total=78848 mesh=1 flag=0x0
+[18:29:21]   [#2] ecx=0x196b30 ptr@10=0x6ed13c40 [ptr_deref] "res707\c801.smd"
+[18:29:21]         hex: 00000001 86154568 00000000 6b2e313c 6ed13c40 00000010 00000010 00000000
+[18:29:21]   [SSKF #3] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #4] total=80896 mesh=1 flag=0x0
+[18:29:21]   [#3] ecx=0x196b30 ptr@10=0x4e40ad00 [ptr_deref] "Res767\i50421031_FN.smd"
+[18:29:21]         hex: 00000002 86155e60 00000000 6b2e3258 4e40ad00 00000018 00000018 00000000
+[18:29:21]   [SSKF #5] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #6] total=51712 mesh=1 flag=0x0
+[18:29:21]   [#4] ecx=0x196b30 ptr@10=0x470e5e88 [ptr_deref] "Res767\i50421031_FN_upp01.smd"
+[18:29:21]         hex: 00000003 86154cc0 00000000 6b2e328c 470e5e88 0000001e 0000001e 00000001
+[18:29:21]   [SSKF #7] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #8] total=60928 mesh=1 flag=0x0
+[18:29:21]   [#5] ecx=0x196b30 ptr@10=0x4e40ae40 [ptr_deref] "res767\i50519561_FN.smd"
+[18:29:21]         hex: 00000004 86156a20 00000000 6b2e3374 4e40ae40 00000018 00000018 00000000
+[18:29:21]   [SSKF #9] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #10] total=94208 mesh=1 flag=0x0
+[18:29:21]   [#6] ecx=0x196b30 ptr@10=0x470e5d48 [ptr_deref] "res767\i50519561_F_low01.smd"
+[18:29:21]         hex: 00000005 86156d10 00000000 6b2e33a8 470e5d48 0000001d 0000001d 00000001
+[18:29:21]   [SSKF #11] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #12] total=16384 mesh=1 flag=0x0
+[18:29:21]   [#7] ecx=0x196b30 ptr@10=0x4e40ae60 [ptr_deref] "res767\i50623371_F.smd"
+[18:29:21]         hex: 00000006 86156b98 00000000 6b2e3490 4e40ae60 00000017 00000017 00000000
+[18:29:21]   [SSKF #13] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #14] total=118272 mesh=1 flag=0x0
+[18:29:21]   [#8] ecx=0x196b30 ptr@10=0x4e40aca0 [ptr_deref] "res767\i50914721_F.smd"
+[18:29:21]         hex: 00000007 86153f88 00000000 6b2e35ac 4e40aca0 00000017 00000017 00000000
+[18:29:21]   [SSKF #15] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #16] total=15872 mesh=1 flag=0x0
+[18:29:21]   [#9] ecx=0x196b30 ptr@10=0x4e40ad80 [ptr_deref] "res767\i51514521_F.smd"
+[18:29:21]         hex: 00000008 86155b70 00000000 6b2e36c8 4e40ad80 00000017 00000017 00000000
+[18:29:21]   [SSKF #17] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #18] total=41472 mesh=1 flag=0x0
+[18:29:21]   [#10] ecx=0x196b30 ptr@10=0x4e40adc0 [ptr_deref] "res767\i50125461_FN.smd"
+[18:29:21]         hex: 00000009 86155ce8 00000000 6b2e37e4 4e40adc0 00000018 00000018 00000000
+[18:29:21]   [目标 #10] "res767\i50125461_FN.smd" (方法: ptr_deref)
+[18:29:21]     替换 ItemCode @+8
+[18:29:21]     替换 PakPath @+0
+[18:29:21]   [补丁 #10] "res767\i50125461_FN.smd" → "res768\i50125711_FN.smd" (2处)
+[18:29:21]   [SSKF #19] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #20] total=100864 mesh=1 flag=0x0
+[18:29:21]   [#11] ecx=0x196b30 ptr@10=0x4e40ace0 [ptr_deref] "res767\i51616261_F.smd"
+[18:29:21]         hex: 0000000a 86155418 00000000 6b2e3900 4e40ace0 00000017 00000017 00000000
+[18:29:21]   [SSKF #21] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #22] total=37888 mesh=1 flag=0x0
+[18:29:21]   [#12] ecx=0x196b30 ptr@10=0x4e40abc0 [ptr_deref] "res767\i51213111_FN.smd"
+[18:29:21]         hex: 0000000b 86156150 00000000 6b2e3a1c 4e40abc0 00000018 00000018 00000000
+[18:29:21]   [SSKF #23] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #24] total=53760 mesh=1 flag=0x0
+[18:29:21]   [SSKF #25] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #26] total=5120 mesh=1 flag=0x0
+[18:29:21]   [SSKF #27] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #28] total=1536 mesh=1 flag=0x0
+[18:29:21]   [SSKF #29] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #30] total=1536 mesh=1 flag=0x0
+[18:29:21]   [SSKF #31] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #32] total=19456 mesh=1 flag=0x0
+[18:29:21]   [SSKF #33] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #34] total=19456 mesh=1 flag=0x0
+[18:29:21]   [SSKF #35] total=512 mesh=1 flag=0x0
+[18:29:21]   [SSKF #36] total=24576 mesh=1 flag=0x0
+[18:29:29]   {"total":12,"patches":1,"sskf":36}

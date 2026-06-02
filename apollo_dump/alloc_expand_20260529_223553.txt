@@ -1,0 +1,39 @@
+[22:35:53] === malloc扩展模式v2 === PID:23104 ===
+[22:35:53] 策略: onEnter改malloc参数 + onLeave改bytesRead
+[22:35:53] 目标: i50125461_FN.smd(美丽梦想发型) → i50125711_FN.smd(紫色超赛发型)
+[22:35:53] 日志: D:\py\反编译\FreeStyle\apollo_dump\alloc_expand_20260529_223553.txt
+[22:35:54]   [步骤] JS开始执行
+[22:35:54]   [步骤] CRT函数OK
+[22:35:54]   目标加载: 270264B/270264B magic=SSKF name=i50125711_FN.smd
+[22:35:54]   [步骤] 目标文件加载完成
+[22:35:54]   [步骤] MSVCR100 malloc=0x7b4c0233
+[22:35:54]   [步骤] msvcrt malloc=0x75ae8290
+[22:35:54]   [步骤] MSVCR100 operator new=0x7b4c232b
+[22:35:54]   [步骤] fread wrapper=0x21e25b0
+[22:35:54]   malloc扩展模式v2就绪. onEnter改大小, onLeave改bytesRead.
+[22:35:54] 
+[22:35:54] 进房间触发角色加载。
+[22:35:54] 命令: status | quit
+[22:35:54] 
+[22:35:59]   [SSKF #1] "c800.smd" read=512B req=512B buf=0x4d7a61b8
+[22:35:59]   [SSKF #2] "c800.smd" read=78848B req=78848B buf=0x8c3e0010
+[22:35:59]   [SSKF #3] "c801.smd" read=512B req=512B buf=0x4d7a61b8
+[22:35:59]   [SSKF #4] "c801.smd" read=80896B req=80896B buf=0x8c3e0010
+[22:35:59]   [SSKF #5] "i50421031_FN.smd" read=512B req=512B buf=0x4d7a31a0
+[22:35:59]   [SSKF #6] "i50421031_FN.smd" read=51712B req=51712B buf=0x7e0ce010
+[22:35:59]   [SSKF #7] "i50421031_FN_upp01.smd" read=512B req=512B buf=0x4d7a31a0
+[22:35:59]   [SSKF #8] "i50421031_FN_upp01.smd" read=60928B req=60928B buf=0x80f71008
+[22:35:59]   [SSKF #9] "i50519561_FN.smd" read=512B req=512B buf=0x4d79f180
+[22:35:59]   [SSKF #10] "i50519561_FN.smd" read=94208B req=94208B buf=0x8c3e0010
+[22:35:59]   [SSKF #11] "i50519561_F_low01.smd" read=512B req=512B buf=0x4d79f180
+[22:35:59]   [SSKF #12] "i50519561_F_low01.smd" read=16384B req=16384B buf=0x813ef010
+[22:35:59]   [SSKF #13] "i50623371_F.smd" read=512B req=512B buf=0x4d79f180
+[22:35:59]   [SSKF #14] "i50623371_F.smd" read=118272B req=118272B buf=0x84e17008
+[22:35:59]   [SSKF #15] "i50914461_F.smd" read=512B req=512B buf=0x4d79f180
+[22:35:59]   [Header替换] → i50125711_FN.smd
+[22:35:59]   [malloc扩大] onEnter改参数 101095B → 270264B
+[22:35:59]   [malloc返回] buf=0x82efd008 size=270264
+[22:35:59]   [fread wrapper] 请求读101094B
+[22:35:59]   [第二次读取] buf=0x82efd008 expanded=0x82efd008 匹配=True read=100864B req=100864B
+[22:35:59]   [数据复制] 270264B (原始read=100864B) → "i50125711_FN.smd"
+[22:35:59]   [fread wrapper返回] 0B → 伪造270264B

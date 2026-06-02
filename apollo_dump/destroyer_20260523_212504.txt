@@ -1,0 +1,25 @@
+Log: D:\py\反编译\FreeStyle\apollo_dump\destroyer_20260523_212504.txt
+Attaching PID 19952...
+  [READY] Apollo destroyer loaded. Commands: killall | phase2 | phase3 | phase35 | phase4 | status
+  === Phase 2: CRC patch + Suspend ApolloCT threads ===
+  Step 2.0: Patching CRC...
+  [CRC] {'t': 'CRC', 'msg': 'CRC patched at 0x1A3C54 + 0x1BE222'}
+  [APOLLO] TID=24096 EIP=4f5461 apolloFrames=1/6
+  [SUSPEND] TID=24096 OK
+  Phase 2 done. ApolloCT threads: 1 found, 1 suspended.
+  === Phase 3.5: Apollo2.dll + L2 embedded Apollo ===
+  Apollo2.dll not loaded. Skipping.
+  L2 Apollo segment: 0 threads, 0 suspended.
+  === Phase 3: Unlock FreeStyle.exe .text ===
+  .text at 0x401000 size=41988096
+  Unlocked full .text section (41988096 bytes) in one call.
+  === Phase 4: Locate AcquireSMD ===
+  Strategy A: search format string ref...
+  [SSREF] 0 hits: []
+  Strategy B: search SSKF magic...
+  [SSKF] 1 hits: ['[object Object]']
+  Strategy C: test Interceptor.attach on game code...
+  [ATTACH] Interceptor.attach SUCCESS on 0x21e25b0 (game code).
+  === ALL PHASES COMPLETE. ===
+
+!!! PROCESS EXIT: reason=process-terminated, crash=None !!!

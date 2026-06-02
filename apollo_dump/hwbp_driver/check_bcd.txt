@@ -1,0 +1,11 @@
+﻿
+description             Windows Boot Manager
+description             Windows 11
+nointegritychecks       Yes
+testsigning             Yes
+
+
+
+2026年6月2日 12:44:35
+
+

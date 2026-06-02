@@ -1,0 +1,155 @@
+JS: JS loaded, waiting for modules...
+JS: WSASend hooked OK
+JS: E0 hooked OK
+
+[GAME_PKT#1] seq=1 len=28 field12=0x-57B70F73
+  enc_full: 00 00 00 00 0a 00 00 00
+  pl_full:  4d b8 a8 54 47 b8 a8 54
+
+[GAME_PKT#2] seq=2 len=28 field12=0x-3595864C
+  enc_full: 00 00 00 00 0c 00 00 00
+  pl_full:  4d b8 a8 54 41 b8 a8 54
+
+[GAME_PKT#3] seq=3 len=28 field12=0x172FD30C
+  enc_full: cd fd 00 0c 55 00 36 57
+  pl_full:  80 45 a8 58 18 b8 9e 03
+
+[GAME_PKT#4] seq=4 len=28 field12=0x0E2F6BC6
+  enc_full: ce dd 00 0c 55 00 09 58
+  pl_full:  83 65 a8 58 18 b8 a1 0c
+
+[GAME_PKT#5] seq=5 len=51 field12=0x-2C953E82
+  enc_full: cf 15 00 0c 55 00 58 4d ff 17 77 55 ce 27 46 7b cd 25 4f 7b cc 23 59 67 ce 17 77
+  pl_full:  82 ad a8 58 18 b8 f0 19 b2 af df 01 83 9f ee 2f 80 9d e7 2f 81 9b f1 33 83 af df
+
+[GAME_PKT#6] seq=6 len=51 field12=0x-4EB7B7B9
+  enc_full: c0 12 00 0c 55 00 58 4a 14 1c 77 55 31 2c 46 7b 32 2e 4f 7b 33 28 59 67 31 1c 77
+  pl_full:  8d aa a8 58 18 b8 f0 1e 59 a4 df 01 7c 94 ee 2f 7f 96 e7 2f 7e 90 f1 33 7c a4 df
+
+[GAME_PKT#7] seq=7 len=51 field12=0x6C0DE2FF
+  enc_full: c1 2e 00 0c 55 00 58 76 2a 20 77 55 33 10 46 7b 30 12 4f 7b 31 14 59 67 33 20 77
+  pl_full:  8c 96 a8 58 18 b8 f0 22 67 98 df 01 7e a8 ee 2f 7d aa e7 2f 7c ac f1 33 7e 98 df
+
+[GAME_PKT#8] seq=8 len=51 field12=0x-7CB6C62D
+  enc_full: c2 29 00 0c 55 00 58 71 39 24 77 55 34 14 46 7b 37 16 4f 7b 36 10 59 67 34 24 77
+  pl_full:  8f 91 a8 58 18 b8 f0 25 74 9c df 01 79 ac ee 2f 7a ae e7 2f 7b a8 f1 33 79 9c df
+
+[GAME_PKT#9] seq=9 len=51 field12=0x5E0C936B
+  enc_full: c3 23 00 0c 55 00 58 7b 59 28 77 55 38 18 46 7b 3b 1a 4f 7b 3a 1c 59 67 38 28 77
+  pl_full:  8e 9b a8 58 18 b8 f0 2f 14 90 df 01 75 a0 ee 2f 76 a2 e7 2f 77 a4 f1 33 75 90 df
+
+[GAME_PKT#10] seq=10 len=51 field12=0x3C2E1A52
+  enc_full: c4 3c 00 0c 55 00 58 64 6a 2c 77 55 3f 1c 46 7b 3c 1e 4f 7b 3d 18 59 67 3f 2c 77
+  pl_full:  89 84 a8 58 18 b8 f0 30 27 94 df 01 72 a4 ee 2f 71 a6 e7 2f 70 a0 f1 33 72 94 df
+
+[GAME_PKT#11] seq=11 len=51 field12=0x-1E944F16
+  enc_full: c5 34 00 0c 55 00 58 6c 6c 30 77 55 25 00 46 7b 26 02 4f 7b 27 04 59 67 25 30 77
+  pl_full:  88 8c a8 58 18 b8 f0 38 21 88 df 01 68 b8 ee 2f 6b ba e7 2f 6a bc f1 33 68 88 df
+
+[GAME_PKT#12] seq=12 len=51 field12=0x-794F7E0
+  enc_full: c6 cb 00 0c 55 00 58 93 97 34 77 55 2a 04 46 7b 29 06 4f 7b 28 00 59 67 2a 34 77
+  pl_full:  8b 73 a8 58 18 b8 f0 c7 da 8c df 01 67 bc ee 2f 64 be e7 2f 65 b8 f1 33 67 8c df
+
+[GAME_PKT#13] seq=13 len=51 field12=0x252EA298
+  enc_full: c7 c1 00 0c 55 00 58 99 83 38 77 55 12 08 46 7b 11 0a 4f 7b 10 0c 59 67 12 38 77
+  pl_full:  8a 79 a8 58 18 b8 f0 cd ce 80 df 01 5f b0 ee 2f 5c b2 e7 2f 5d b4 f1 33 5f 80 df
+
+[GAME_PKT#14] seq=14 len=51 field12=0x470C2BA1
+  enc_full: d8 d6 00 0c 55 00 58 8e 98 3c 77 55 1d 0c 46 7b 1e 0e 4f 7b 1f 08 59 67 1d 3c 77
+  pl_full:  95 6e a8 58 18 b8 f0 da d5 84 df 01 50 b4 ee 2f 53 b6 e7 2f 52 b0 f1 33 50 84 df
+
+[GAME_PKT#15] seq=15 len=51 field12=0x-65B67EE7
+  enc_full: d9 ea 00 0c 55 00 58 b2 f0 40 77 55 07 70 46 7b 04 72 4f 7b 05 74 59 67 07 40 77
+  pl_full:  94 52 a8 58 18 b8 f0 e6 bd f8 df 01 4a c8 ee 2f 49 ca e7 2f 48 cc f1 33 4a f8 df
+
+[GAME_PKT#16] seq=16 len=28 field12=0x-639614F8
+  enc_full: da 92 00 0c 55 00 1b b2
+  pl_full:  97 2a a8 58 18 b8 b3 e6
+
+[GAME_PKT#17] seq=17 len=28 field12=0x412C41B0
+  enc_full: db e0 00 0c 55 00 1b c0
+  pl_full:  96 58 a8 58 18 b8 b3 94
+
+[GAME_PKT#18] seq=18 len=291 field12=0x230EC889
+  enc_full: dc 56 00 0c 54 00 6f c8 5a 4c 77 55 1b 7d 4f 62 1c 0f 47 63 69 7d 46 60 6a 08 42
+  pl_full:  91 ee a8 58 19 b8 c7 9c 17 f4 df 01 56 c5 e7 36 51 b7 ef 37 24 c5 ee 34 27 b0 ea
+
+[GAME_PKT#19] seq=19 len=61 field12=0x-1B49DCF
+  enc_full: dd bb 00 0c 55 00 0a fe 68 50 77 55 68 50 77 55 68 50 77 55 68 50 77 55 68 50 77
+  pl_full:  90 03 a8 58 18 b8 a2 aa 25 e8 df 01 25 e8 df 01 25 e8 df 01 25 e8 df 01 25 e8 df
+
+[GAME_PKT#20] seq=20 len=28 field12=0x-18B42505
+  enc_full: de 94 00 0c 55 00 08 f0
+  pl_full:  93 2c a8 58 18 b8 a0 a4
+
+[GAME_PKT#21] seq=21 len=29 field12=0x3A0E7043
+  enc_full: df 65 00 0c 56 00 0b 03 6b
+  pl_full:  92 dd a8 58 1b b8 a3 57 26
+
+[GAME_PKT#22] seq=22 len=28 field12=0x582CF97A
+  enc_full: d0 d9 00 0c 56 00 0a 15
+  pl_full:  9d 61 a8 58 1b b8 a2 41
+
+[GAME_PKT#23] seq=23 len=37 field12=0x-7A96AC3E
+  enc_full: d1 d0 00 0c 56 00 41 20 aa 68 77 55 aa 9e 88 aa 66
+  pl_full:  9c 68 a8 58 1b b8 e9 74 e7 d0 df 01 e7 26 20 fe 2b
+
+[GAME_PKT#24] seq=24 len=28 field12=0x6A2D88EE
+  enc_full: d2 6f 00 0c 56 00 42 3e
+  pl_full:  9f d7 a8 58 1b b8 ea 6a
+
+[GAME_PKT#25] seq=25 len=28 field12=0x-4897DDAA
+  enc_full: d3 22 00 0c 56 00 76 54
+  pl_full:  9e 9a a8 58 1b b8 de 00
+
+[GAME_PKT#26] seq=26 len=32 field12=0x-2AB55491
+  enc_full: d4 d5 00 0c 56 00 41 6f e6 6c 77 55
+  pl_full:  99 6d a8 58 1b b8 e9 3b ab d4 df 01
+
+[GAME_PKT#27] seq=27 len=28 field12=0x080F01D7
+  enc_full: d5 80 00 0c 56 00 77 83
+  pl_full:  98 38 a8 58 1b b8 df d7
+
+[GAME_PKT#28] seq=28 len=28 field12=0x110FB91D
+  enc_full: d6 ff 00 0c 56 00 0c 9c
+  pl_full:  9b 47 a8 58 1b b8 a4 c8
+
+[GAME_PKT#29] seq=29 len=28 field12=0x-33B5EC5B
+  enc_full: d7 86 00 0c 56 00 0c b6
+  pl_full:  9a 3e a8 58 1b b8 a4 e2
+
+[GAME_PKT#30] seq=30 len=29 field12=0x-51976564
+  enc_full: e8 d7 00 0c 56 00 08 d0 5d
+  pl_full:  a5 6f a8 58 1b b8 a0 84 10
+
+[GAME_PKT#31] seq=31 len=28 field12=0x732D3024
+  enc_full: e9 ef 00 0c 56 00 35 ed
+  pl_full:  a4 57 a8 58 1b b8 9d b9
+
+[GAME_PKT#32] seq=32 len=28 field12=0x-5DD7B142
+  enc_full: ea 4a 00 0c 57 00 31 0a
+  pl_full:  a7 f2 a8 58 1a b8 99 5e
+
+[GAME_PKT#33] seq=33 len=28 field12=0x7F6DE406
+  enc_full: eb be 00 0c 57 00 32 28
+  pl_full:  a6 06 a8 58 1a b8 9a 7c
+
+[GAME_PKT#34] seq=34 len=28 field12=0x1D4F6D3F
+  enc_full: ec 7f 00 0c 57 00 31 47
+  pl_full:  a1 c7 a8 58 1a b8 99 13
+
+[GAME_PKT#35] seq=35 len=49 field12=0x-3FF53879
+  enc_full: ed b4 00 0c 57 00 40 72 2f 6e 88 aa d0 99 77 55 d0 6f 88 aa 2f 91 77 55 d0 90 77
+  pl_full:  a0 0c a8 58 1a b8 e8 26 62 d6 20 fe 9d 21 df 01 9d d7 20 fe 62 29 df 01 9d 28 df
+
+[GAME_PKT#36] seq=36 len=28 field12=0x-26F580B3
+  enc_full: ee a8 00 0c 57 00 19 88
+  pl_full:  a3 10 a8 58 1a b8 b1 dc
+
+[GAME_PKT#37] seq=37 len=47 field12=0x044FD5F5
+  enc_full: ef 53 00 0c 57 00 4f b9 0e 9a 77 55 c4 67 a4 85 b7 6b c2 a2 0f 9a 77 55 aa 57 b8
+  pl_full:  a2 eb a8 58 1a b8 e7 ed 43 22 df 01 89 df 0c d1 fa d3 6a f6 42 22 df 01 e7 ef 10
+
+[GAME_PKT#38] seq=38 len=32 field12=0x666D5CCC
+  enc_full: e0 73 00 0c 57 00 40 c9 30 9e 77 55
+  pl_full:  ad cb a8 58 1a b8 e8 9d 7d 26 df 01

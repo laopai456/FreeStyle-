@@ -1,0 +1,1090 @@
+Output: D:\py\反编译\FreeStyle\apollo_dump\smd_hook_20260522_203511.txt
+Attaching to PID 22884...
+[*] ReadFile SSKF hook only (safe mode), 12-frame stack walk
+
+Hook active. Trigger SMD loading (e.g. click hair in shop).
+Press Ctrl+C to stop.
+
+
+[#1] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#2] SSKF sz=126976 (124KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#3] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#4] SSKF sz=83968 (82KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#5] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#6] SSKF sz=103424 (101KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#7] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#8] SSKF sz=35328 (34KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#9] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#10] SSKF sz=182784 (178KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#11] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#12] SSKF sz=17408 (17KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#13] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#14] SSKF sz=99328 (97KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#15] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#16] SSKF sz=89088 (87KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#17] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#18] SSKF sz=17408 (17KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#19] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#20] SSKF sz=39424 (38KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#21] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#22] SSKF sz=27136 (26KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#23] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1f66955 <<<
+    >>> FreeStyle+0x1f71ebc <<<
+    >>> FreeStyle+0x1f7136c <<<
+    >>> FreeStyle+0x1f71572 <<<
+    >>> FreeStyle+0x1f135d7 <<<
+    >>> FreeStyle+0x1f139fc <<<
+
+[#24] SSKF sz=1536 (1KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1f66a8d <<<
+    >>> FreeStyle+0x1f71ebc <<<
+    >>> FreeStyle+0x1f7136c <<<
+    >>> FreeStyle+0x1f71572 <<<
+    >>> FreeStyle+0x1f135d7 <<<
+    >>> FreeStyle+0x1f139fc <<<
+    >>> FreeStyle+0x11c3bc7 <<<
+
+[#25] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1f66955 <<<
+    >>> FreeStyle+0x1f71ebc <<<
+    >>> FreeStyle+0x1f7136c <<<
+    >>> FreeStyle+0x1f71572 <<<
+    >>> FreeStyle+0x1f135d7 <<<
+    >>> FreeStyle+0x1f139fc <<<
+
+[#26] SSKF sz=45056 (44KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1f66a8d <<<
+    >>> FreeStyle+0x1f71ebc <<<
+    >>> FreeStyle+0x1f7136c <<<
+    >>> FreeStyle+0x1f71572 <<<
+    >>> FreeStyle+0x1f135d7 <<<
+    >>> FreeStyle+0x1f139fc <<<
+    >>> FreeStyle+0x11c3bc7 <<<
+
+[#27] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#28] SSKF sz=126976 (124KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#29] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#30] SSKF sz=272896 (266KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#31] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#32] SSKF sz=103424 (101KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#33] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#34] SSKF sz=35328 (34KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#35] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#36] SSKF sz=182784 (178KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#37] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#38] SSKF sz=17408 (17KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#39] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#40] SSKF sz=99328 (97KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#41] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#42] SSKF sz=89088 (87KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#43] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#44] SSKF sz=17408 (17KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#45] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#46] SSKF sz=39424 (38KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#47] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#48] SSKF sz=27136 (26KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#49] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1f66955 <<<
+    >>> FreeStyle+0x1f71ebc <<<
+    >>> FreeStyle+0x1f7136c <<<
+    >>> FreeStyle+0x1f71572 <<<
+    >>> FreeStyle+0x1f135d7 <<<
+    >>> FreeStyle+0x1f139fc <<<
+
+[#50] SSKF sz=30720 (30KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1f66a8d <<<
+    >>> FreeStyle+0x1f71ebc <<<
+    >>> FreeStyle+0x1f7136c <<<
+    >>> FreeStyle+0x1f71572 <<<
+    >>> FreeStyle+0x1f135d7 <<<
+    >>> FreeStyle+0x1f139fc <<<
+    >>> FreeStyle+0x11c19bc <<<
+
+[#51] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#52] SSKF sz=126976 (124KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#53] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#54] SSKF sz=148480 (145KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#55] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#56] SSKF sz=103424 (101KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#57] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#58] SSKF sz=35328 (34KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#59] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#60] SSKF sz=182784 (178KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#61] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#62] SSKF sz=17408 (17KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#63] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#64] SSKF sz=99328 (97KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#65] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#66] SSKF sz=89088 (87KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#67] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#68] SSKF sz=17408 (17KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#69] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#70] SSKF sz=39424 (38KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+[#71] SSKF sz=512 (hdr)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x1cdd1
+       MSVCR100.dll+0x230b3
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eec93e <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+
+[#72] SSKF sz=27136 (26KB)
+  Stack (12 frames):
+       MSVCR100.dll+0x1aca0
+       MSVCR100.dll+0x38caf
+       MSVCR100.dll+0x22be7
+       MSVCR100.dll+0x22c3c
+    >>> FreeStyle+0x1de2605 <<<
+    >>> FreeStyle+0x1eecba7 <<<
+    >>> FreeStyle+0x1eebae3 <<<
+    >>> FreeStyle+0x1ad0aae <<<
+    >>> FreeStyle+0x1ae28cc <<<
+    >>> FreeStyle+0x16eba6b <<<
+    >>> FreeStyle+0x16ef136 <<<
+    >>> FreeStyle+0x16dd5d8 <<<
+
+
+Detaching...
