@@ -1,0 +1,140 @@
+[22:42:35] === 统一路径拦截器 v2 === PID:3752 ===
+[22:42:35] 替换: 50125461(美丽梦想发型) → 50125671(紫色超赛发型)
+[22:42:35] 等长: 8位 → 8位 ✓
+[22:42:35] 钩子: sprintf + strcpy + lstrcpyA (全部DLL函数)
+[22:42:35] 验证: strstr 观察 (不改)
+[22:42:35] 安全: 零.text hook | NULL guard | Apollo交给外部
+[22:42:35] 日志: D:\py\反编译\FreeStyle\apollo_dump\path_intercept_20260604_224235.txt
+[22:42:36]   [步骤] JS开始执行
+[22:42:36]   [步骤] sprintf=0x62076051
+[22:42:36]   [步骤] strcpy=0x62012700 (MSVCR100.dll)
+[22:42:36]   [步骤] lstrcpyA=0x76728420 (KERNEL32.DLL)
+[22:42:36]   ★ v2 就绪: 50125461 → 50125671 | 仅DLL hook: sprintf+strcpy+lstrcpyA+strstr | 零.text | NULL guard
+[22:42:36] 
+[22:42:36] 后台常驻。进练习场测试。
+[22:42:36] 
+[22:42:36]   [strstr样本] #1 total=1 needle="GroundBone"
+[22:42:36]   [strstr样本] #2 total=2 needle="GroundBone"
+[22:42:36]   [strstr样本] #3 total=3 needle="GroundBone"
+[22:42:36]   [strstr样本] #4 total=4 needle="GroundBone"
+[22:42:36]   [strstr样本] #5 total=5 needle="GroundBone"
+[22:42:36]   [strstr样本] #6 total=6 needle="GroundBone"
+[22:42:36]   [strstr样本] #7 total=7 needle="GroundBone"
+[22:42:36]   [strstr样本] #8 total=8 needle="GroundBone"
+[22:42:36]   [strstr样本] #9 total=9 needle="GroundBone"
+[22:42:36]   [strstr样本] #10 total=10 needle="GroundBone"
+[22:42:42]   [ReadFile] #1 BML 1536B ❌读源码 src=True dst=False
+[22:42:42]   [ReadFile] #2 SSKF 512B ❌读源码 src=True dst=False
+[22:42:46]   [状态] sprintf=0 strcpy=0 readfile=2 strstr总=6494 命中=0
+[22:42:56]   [状态] sprintf=0 strcpy=0 readfile=2 strstr总=19583 命中=0
+[22:43:06]   [状态] sprintf=0 strcpy=0 readfile=2 strstr总=32668 命中=0
+[22:43:16]   [状态] sprintf=0 strcpy=0 readfile=2 strstr总=45791 命中=0
+[22:43:26]   [状态] sprintf=0 strcpy=0 readfile=2 strstr总=58871 命中=0
+[22:43:36]   [状态] sprintf=0 strcpy=0 readfile=2 strstr总=71964 命中=0
+[22:43:46]   [状态] sprintf=0 strcpy=0 readfile=2 strstr总=85119 命中=0
+[22:43:56]   [状态] sprintf=0 strcpy=0 readfile=2 strstr总=98206 命中=0
+[22:44:05]   [sprintf替换] #1 → i50125671.xml
+[22:44:05]   [strcpy替换] #1 (strcpy) pos=0
+[22:44:05]     → i50125671.bml
+[22:44:05]   [ReadFile] #3 BML 1536B ✅读目标 src=False dst=True
+[22:44:05]   [strcpy替换] #2 (strcpy) pos=113
+[22:44:05]     → c801.smd
+[22:44:05]   [strcpy替换] #3 (strcpy) pos=169
+[22:44:05]     → i50421031_FN_upp01.smd
+[22:44:05]   [strcpy替换] #4 (strcpy) pos=169
+[22:44:05]     → i50421031_FN_upp01.smd
+[22:44:05]   [strcpy替换] #5 (strcpy) pos=113
+[22:44:05]     → i50421031_fn_upp01.smd
+[22:44:05]   [strcpy替换] #6 (strcpy) pos=57
+[22:44:05]     → i50519561_FN.smd
+[22:44:05]   [strcpy替换] #7 (strcpy) pos=0
+[22:44:05]     → i50125671_FN.smd
+[22:44:05]   [strcpy替换] #8 (strcpy) pos=0
+[22:44:05]     → i50125671_FN.smd
+[22:44:05]   [strcpy替换] #9 (strcpy) pos=0
+[22:44:05]     → i50125671_FN.smd
+[22:44:05]   [strcpy替换] #10 (strcpy) pos=0
+[22:44:05]     → i50125671_fn.smd
+[22:44:05]   [ReadFile] #4 SSKF 512B ✅读目标 src=False dst=True
+[22:44:05]   [strcpy替换] #11 (strcpy) pos=0
+[22:44:05]     → i50125671.png
+[22:44:06]   [状态] sprintf=1 strcpy=11 readfile=4 strstr总=108733 命中=0
+[22:44:08]   [sprintf替换] #2 → i50125671.xml
+[22:44:08]   [strcpy替换] #12 (strcpy) pos=0
+[22:44:08]     → i50125671.bml
+[22:44:08]   [ReadFile] #5 BML 1536B ✅读目标 src=False dst=True
+[22:44:08]   [strcpy替换] #13 (strcpy) pos=113
+[22:44:08]     → c801.smd
+[22:44:09]   [strcpy替换] #14 (strcpy) pos=0
+[22:44:09]     → i50125671_FN.smd
+[22:44:09]   [strcpy替换] #15 (strcpy) pos=0
+[22:44:09]     → i50125671_FN.smd
+[22:44:09]   [strcpy替换] #16 (strcpy) pos=0
+[22:44:09]     → i50125671_FN.smd
+[22:44:09]   [strcpy替换] #17 (strcpy) pos=0
+[22:44:09]     → i50125671_fn.smd
+[22:44:09]   [ReadFile] #6 SSKF 512B ✅读目标 src=False dst=True
+[22:44:09]   [strcpy替换] #18 (strcpy) pos=0
+[22:44:09]     → i50125671.png
+[22:44:09]   [sprintf替换] #3 → i50125671.xml
+[22:44:09]   [strcpy替换] #19 (strcpy) pos=0
+[22:44:09]     → i50125671.bml
+[22:44:09]   [ReadFile] #7 BML 1536B ✅读目标 src=False dst=True
+[22:44:09]   [strcpy替换] #20 (strcpy) pos=0
+[22:44:09]     → i50125671_FN.smd
+[22:44:09]   [strcpy替换] #21 (strcpy) pos=0
+[22:44:09]     → i50125671_FN.smd
+[22:44:09]   [strcpy替换] #22 (strcpy) pos=0
+[22:44:09]     → i50125671_FN.smd
+[22:44:09]   [strcpy替换] #23 (strcpy) pos=0
+[22:44:09]     → i50125671_fn.smd
+[22:44:09]   [ReadFile] #8 SSKF 512B ✅读目标 src=False dst=True
+[22:44:09]   [strcpy替换] #24 (strcpy) pos=0
+[22:44:09]     → i50125671.png
+[22:44:09]   [错误] strcpy LEAVE: Error: access violation accessing 0x28166000
+[22:44:09]   [sprintf替换] #4 → i50125671.xml
+[22:44:09]   [strcpy替换] #25 (strcpy) pos=0
+[22:44:09]     → i50125671.bml
+[22:44:09]   [ReadFile] #9 BML 1536B ✅读目标 src=False dst=True
+[22:44:09]   [strcpy替换] #26 (strcpy) pos=113
+[22:44:09]     → i50914721_F.smd
+[22:44:09]   [strcpy替换] #27 (strcpy) pos=0
+[22:44:09]     → i50125671_FN.smd
+[22:44:09]   [strcpy替换] #28 (strcpy) pos=0
+[22:44:09]     → i50125671_FN.smd
+[22:44:09]   [strcpy替换] #29 (strcpy) pos=0
+[22:44:09]     → i50125671_FN.smd
+[22:44:09]   [strcpy替换] #30 (strcpy) pos=0
+[22:44:09]     → i50125671_fn.smd
+[22:44:09]   [ReadFile] #10 SSKF 512B ✅读目标 src=False dst=True
+[22:44:09]   [strcpy替换] #31 (strcpy) pos=0
+[22:44:09]     → i50125671.png
+[22:44:16]   [状态] sprintf=4 strcpy=31 readfile=10 strstr总=111137 命中=0
+[22:44:20]   [ReadFile] #11 BML 1536B ❌读源码 src=True dst=False
+[22:44:20]   [ReadFile] #12 SSKF 512B ❌读源码 src=True dst=False
+[22:44:26]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=119471 命中=0
+[22:44:36]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=132510 命中=0
+[22:44:46]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=145539 命中=0
+[22:44:56]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=158583 命中=0
+[22:45:06]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=171736 命中=0
+[22:45:16]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=184835 命中=0
+[22:45:26]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=197892 命中=0
+[22:45:36]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=210944 命中=0
+[22:45:46]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=223983 命中=0
+[22:45:56]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=237039 命中=0
+[22:46:06]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=250089 命中=0
+[22:46:16]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=263098 命中=0
+[22:46:26]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=277076 命中=0
+[22:46:36]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=290022 命中=0
+[22:46:46]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=302984 命中=0
+[22:46:56]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=316020 命中=0
+[22:47:06]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=329105 命中=0
+[22:47:16]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=342159 命中=0
+[22:47:26]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=355281 命中=0
+[22:47:36]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=368369 命中=0
+[22:47:46]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=381489 命中=0
+[22:47:56]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=394510 命中=0
+[22:48:06]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=407525 命中=0
+[22:48:16]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=420486 命中=0
+[22:48:26]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=433408 命中=0
+[22:48:36]   [状态] sprintf=4 strcpy=31 readfile=12 strstr总=446375 命中=0

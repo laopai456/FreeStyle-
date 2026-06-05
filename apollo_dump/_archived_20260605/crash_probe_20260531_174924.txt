@@ -1,0 +1,2296 @@
+[17:49:24.743] ===== 低干扰崩溃定性脚本 v2 =====
+[17:49:24.744] PID: 23680
+[17:49:24.744] SRC: 50125461  DST: 50125711
+[17:49:24.744] PATCH_EBP_D8: False
+[17:49:24.744] ENABLE_READFILE: True
+[17:49:24.744] ENABLE_VERBOSE_FILELOG: False
+[17:49:24.744] 日志: D:\py\反编译\FreeStyle\apollo_dump\crash_probe_20260531_174924.txt
+[17:49:24.744] 
+[17:49:25.952]   [setup] sprintf hook @ MSVCR100.dll
+[17:49:25.953]   [setup] CreateFileA hook @ kernel32.dll
+[17:49:25.953]   [setup] ReadFile hook @ kernel32.dll (弱辅助)
+[17:49:25.953]   [setup] ExceptionHandler 已设置
+[17:49:25.953]   [ready] SRC=50125461 DST=50125711 EBP_D8=False ReadFile=True
+[17:49:25.954] 
+[17:49:25.954] 操作:
+[17:49:25.954]   1. 进房间 → 触发第一次替换 (phase→ROOM_LOAD)
+[17:49:25.954]   2. 确认渲染成功
+[17:49:25.954]   3. 进练习场 → 触发第二次替换 (phase→PRACTICE_LOAD)
+[17:49:25.954]   4. 观察崩溃或正常
+[17:49:25.954] 
+[17:49:25.954] 命令: status | phase | quit
+[17:49:25.954] 
+[17:49:28.930] 
+[17:49:28.930] [phase] INJECTED -> CRASH
+[17:49:28.930] 
+[17:49:29.117] 
+[17:49:29.117] ===== CRASH SUMMARY =====
+[17:49:29.117] phase: INJECTED
+[17:49:29.117] phase_now: CRASH
+[17:49:29.117] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.117] module: ApolloCT.dll
+[17:49:29.117] eip: 0x69557e4d
+[17:49:29.117] rva: 0x69157e4d
+[17:49:29.117] type: breakpoint
+[17:49:29.117] instruction: cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff
+[17:49:29.117] memory: N/A @ N/A
+[17:49:29.117] registers: eax=0x0 ecx=0x70affcc edx=0x0 ebx=0x66f0400
+[17:49:29.117]            esp=0x70afee4 ebp=0x70aff58
+[17:49:29.117] recent events:
+[17:49:29.117]   [INJECTED] phase_change ->INJECTED
+[17:49:29.117]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.117] backtrace:
+[17:49:29.117]   ?+? (0x70affcc)
+[17:49:29.117]   ApolloCT.Dll+0x557e4d (0x69557e4d)
+[17:49:29.118]   ApolloCT.Dll+0x673fe6 (0x69673fe6)
+[17:49:29.118]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.118]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.118]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.118] =========================
+[17:49:29.118] 
+[17:49:29.118] >>> 信号指向 Apollo。建议:
+[17:49:29.118] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.118] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.119] 
+[17:49:29.119] ===== CRASH SUMMARY =====
+[17:49:29.119] phase: CRASH
+[17:49:29.119] phase_now: CRASH
+[17:49:29.119] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.119] module: ApolloCT.dll
+[17:49:29.119] eip: 0x694f3e32
+[17:49:29.119] rva: 0x690f3e32
+[17:49:29.119] type: breakpoint
+[17:49:29.119] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.119] memory: N/A @ N/A
+[17:49:29.119] registers: eax=0x70aff4a ecx=0x3869764f edx=0x1a530073 ebx=0x8c91b3b
+[17:49:29.119]            esp=0x70afe0c ebp=0x70aff44
+[17:49:29.119] recent events:
+[17:49:29.119]   [INJECTED] phase_change ->INJECTED
+[17:49:29.119]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.119] backtrace:
+[17:49:29.119]   ?+? (0x70affcc)
+[17:49:29.119]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.119]   ?+? (0x6730400)
+[17:49:29.119]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.119]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.119]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.120] =========================
+[17:49:29.120] 
+[17:49:29.120] >>> 信号指向 Apollo。建议:
+[17:49:29.120] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.120] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.120] 
+[17:49:29.121] ===== CRASH SUMMARY =====
+[17:49:29.121] phase: CRASH
+[17:49:29.121] phase_now: CRASH
+[17:49:29.121] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.121] module: ApolloCT.dll
+[17:49:29.121] eip: 0x694f3e32
+[17:49:29.121] rva: 0x690f3e32
+[17:49:29.121] type: breakpoint
+[17:49:29.121] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.121] memory: N/A @ N/A
+[17:49:29.121] registers: eax=0x70aff52 ecx=0x1c69764f edx=0x1a530073 ebx=0x8c91b5b
+[17:49:29.121]            esp=0x70afe0c ebp=0x70aff44
+[17:49:29.121] recent events:
+[17:49:29.121]   [INJECTED] phase_change ->INJECTED
+[17:49:29.121]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.121] backtrace:
+[17:49:29.121]   ?+? (0x70affcc)
+[17:49:29.121]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.121]   ?+? (0x6730400)
+[17:49:29.121]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.121]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.121]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.121] =========================
+[17:49:29.121] 
+[17:49:29.121] >>> 信号指向 Apollo。建议:
+[17:49:29.121] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.121] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.121] 
+[17:49:29.121] ===== CRASH SUMMARY =====
+[17:49:29.121] phase: CRASH
+[17:49:29.121] phase_now: CRASH
+[17:49:29.121] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.121] module: ApolloCT.dll
+[17:49:29.121] eip: 0x694f3e32
+[17:49:29.121] rva: 0x690f3e32
+[17:49:29.121] type: breakpoint
+[17:49:29.121] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.121] memory: N/A @ N/A
+[17:49:29.121] registers: eax=0x70aff56 ecx=0x3869764f edx=0x1a530073 ebx=0x8c91bd3
+[17:49:29.121]            esp=0x70afe0c ebp=0x70aff44
+[17:49:29.121] recent events:
+[17:49:29.121]   [INJECTED] phase_change ->INJECTED
+[17:49:29.121]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.121] backtrace:
+[17:49:29.121]   ?+? (0x70affcc)
+[17:49:29.121]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.121]   ?+? (0x6730400)
+[17:49:29.121]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.121]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.121]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.121] =========================
+[17:49:29.121] 
+[17:49:29.121] >>> 信号指向 Apollo。建议:
+[17:49:29.121] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.121] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.123] 
+[17:49:29.123] ===== CRASH SUMMARY =====
+[17:49:29.123] phase: CRASH
+[17:49:29.123] phase_now: CRASH
+[17:49:29.123] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.123] module: ApolloCT.dll
+[17:49:29.123] eip: 0x694f3e32
+[17:49:29.123] rva: 0x690f3e32
+[17:49:29.123] type: breakpoint
+[17:49:29.123] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.123] memory: N/A @ N/A
+[17:49:29.123] registers: eax=0x70aff48 ecx=0x3869764f edx=0x1a50070 ebx=0x9d88d233
+[17:49:29.123]            esp=0x70afe0c ebp=0x70aff40
+[17:49:29.123] recent events:
+[17:49:29.123]   [INJECTED] phase_change ->INJECTED
+[17:49:29.123]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.123] backtrace:
+[17:49:29.123]   ?+? (0x70affcc)
+[17:49:29.123]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.123]   ?+? (0x66f0400)
+[17:49:29.123]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.123]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.123]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.123] =========================
+[17:49:29.123] 
+[17:49:29.123] >>> 信号指向 Apollo。建议:
+[17:49:29.124] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.124] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.124] 
+[17:49:29.124] ===== CRASH SUMMARY =====
+[17:49:29.124] phase: CRASH
+[17:49:29.124] phase_now: CRASH
+[17:49:29.124] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.124] module: ApolloCT.dll
+[17:49:29.124] eip: 0x694f3e32
+[17:49:29.124] rva: 0x690f3e32
+[17:49:29.124] type: breakpoint
+[17:49:29.124] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.124] memory: N/A @ N/A
+[17:49:29.124] registers: eax=0x70aff49 ecx=0x1c69764f edx=0x1a50061 ebx=0x9d88d242
+[17:49:29.124]            esp=0x70afe0c ebp=0x70aff40
+[17:49:29.124] recent events:
+[17:49:29.124]   [INJECTED] phase_change ->INJECTED
+[17:49:29.124]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.124] backtrace:
+[17:49:29.124]   ?+? (0x70affcc)
+[17:49:29.125]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.125]   ?+? (0x66f0400)
+[17:49:29.125]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.125]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.125]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.125] =========================
+[17:49:29.125] 
+[17:49:29.125] >>> 信号指向 Apollo。建议:
+[17:49:29.125] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.125] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.125] 
+[17:49:29.125] ===== CRASH SUMMARY =====
+[17:49:29.125] phase: CRASH
+[17:49:29.126] phase_now: CRASH
+[17:49:29.126] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.126] module: ApolloCT.dll
+[17:49:29.126] eip: 0x694f3e32
+[17:49:29.126] rva: 0x690f3e32
+[17:49:29.126] type: breakpoint
+[17:49:29.126] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.126] memory: N/A @ N/A
+[17:49:29.126] registers: eax=0x70aff4b ecx=0x2469764f edx=0x1a5002e ebx=0x9b9dd64b
+[17:49:29.126]            esp=0x70afe0c ebp=0x70aff40
+[17:49:29.126] recent events:
+[17:49:29.126]   [INJECTED] phase_change ->INJECTED
+[17:49:29.126]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.126] backtrace:
+[17:49:29.126]   ?+? (0x70affcc)
+[17:49:29.126]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.126]   ?+? (0x66f0400)
+[17:49:29.126]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.126]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.126]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.126] =========================
+[17:49:29.126] 
+[17:49:29.126] >>> 信号指向 Apollo。建议:
+[17:49:29.126] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.126] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.127] 
+[17:49:29.127] ===== CRASH SUMMARY =====
+[17:49:29.127] phase: CRASH
+[17:49:29.127] phase_now: CRASH
+[17:49:29.127] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.127] module: ApolloCT.dll
+[17:49:29.127] eip: 0x694f3e32
+[17:49:29.127] rva: 0x690f3e32
+[17:49:29.127] type: breakpoint
+[17:49:29.127] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.127] memory: N/A @ N/A
+[17:49:29.127] registers: eax=0x70aff4c ecx=0x3869764f edx=0x1a50064 ebx=0x9b9dd6cd
+[17:49:29.127]            esp=0x70afe0c ebp=0x70aff40
+[17:49:29.127] recent events:
+[17:49:29.127]   [INJECTED] phase_change ->INJECTED
+[17:49:29.127]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.127] backtrace:
+[17:49:29.127]   ?+? (0x70affcc)
+[17:49:29.127]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.127]   ?+? (0x66f0400)
+[17:49:29.127]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.127]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.127]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.127] =========================
+[17:49:29.127] 
+[17:49:29.127] >>> 信号指向 Apollo。建议:
+[17:49:29.127] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.127] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.128] 
+[17:49:29.128] ===== CRASH SUMMARY =====
+[17:49:29.128] phase: CRASH
+[17:49:29.129] phase_now: CRASH
+[17:49:29.129] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.129] module: ApolloCT.dll
+[17:49:29.129] eip: 0x694f3e32
+[17:49:29.129] rva: 0x690f3e32
+[17:49:29.129] type: breakpoint
+[17:49:29.129] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.129] memory: N/A @ N/A
+[17:49:29.129] registers: eax=0x70aff4d ecx=0x2469764f edx=0x1a5006c ebx=0x9b9dd628
+[17:49:29.129]            esp=0x70afe0c ebp=0x70aff40
+[17:49:29.129] recent events:
+[17:49:29.129]   [INJECTED] phase_change ->INJECTED
+[17:49:29.129]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.129] backtrace:
+[17:49:29.129]   ?+? (0x70affcc)
+[17:49:29.129]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.129]   ?+? (0x66f0400)
+[17:49:29.129]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.129]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.129]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.129] =========================
+[17:49:29.129] 
+[17:49:29.129] >>> 信号指向 Apollo。建议:
+[17:49:29.129] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.129] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.129] 
+[17:49:29.129] ===== CRASH SUMMARY =====
+[17:49:29.129] phase: CRASH
+[17:49:29.129] phase_now: CRASH
+[17:49:29.129] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.129] module: ApolloCT.dll
+[17:49:29.129] eip: 0x694f3e32
+[17:49:29.129] rva: 0x690f3e32
+[17:49:29.129] type: breakpoint
+[17:49:29.129] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.131] memory: N/A @ N/A
+[17:49:29.131] registers: eax=0x70aff4e ecx=0x469764f edx=0x1a5006c ebx=0x99b2d904
+[17:49:29.131]            esp=0x70afe0c ebp=0x70aff40
+[17:49:29.131] recent events:
+[17:49:29.131]   [INJECTED] phase_change ->INJECTED
+[17:49:29.131]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.131] backtrace:
+[17:49:29.131]   ?+? (0x70affcc)
+[17:49:29.131]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.131]   ?+? (0x66f0400)
+[17:49:29.131]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.131]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.131]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.131] =========================
+[17:49:29.131] 
+[17:49:29.131] >>> 信号指向 Apollo。建议:
+[17:49:29.131] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.131] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.132] 
+[17:49:29.132] ===== CRASH SUMMARY =====
+[17:49:29.132] phase: CRASH
+[17:49:29.132] phase_now: CRASH
+[17:49:29.132] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.132] module: ApolloCT.dll
+[17:49:29.132] eip: 0x694f3e32
+[17:49:29.132] rva: 0x690f3e32
+[17:49:29.132] type: breakpoint
+[17:49:29.132] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.132] memory: N/A @ N/A
+[17:49:29.132] registers: eax=0x70aff4f ecx=0x1c69764f edx=0x1a50000 ebx=0x97c7dc0f
+[17:49:29.132]            esp=0x70afe0c ebp=0x70aff40
+[17:49:29.132] recent events:
+[17:49:29.132]   [INJECTED] phase_change ->INJECTED
+[17:49:29.132]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.132] backtrace:
+[17:49:29.132]   ?+? (0x70affcc)
+[17:49:29.132]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.132]   ?+? (0x66f0400)
+[17:49:29.132]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.132]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.132]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.132] =========================
+[17:49:29.132] 
+[17:49:29.132] >>> 信号指向 Apollo。建议:
+[17:49:29.132] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.132] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.133] 
+[17:49:29.133] ===== CRASH SUMMARY =====
+[17:49:29.133] phase: CRASH
+[17:49:29.133] phase_now: CRASH
+[17:49:29.133] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.133] module: ApolloCT.dll
+[17:49:29.133] eip: 0x694f3e32
+[17:49:29.133] rva: 0x690f3e32
+[17:49:29.133] type: breakpoint
+[17:49:29.134] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.134] memory: N/A @ N/A
+[17:49:29.134] registers: eax=0x70aff50 ecx=0x3869764f edx=0x1a50054 ebx=0x97c7dc85
+[17:49:29.134]            esp=0x70afe0c ebp=0x70aff40
+[17:49:29.134] recent events:
+[17:49:29.134]   [INJECTED] phase_change ->INJECTED
+[17:49:29.134]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.134] backtrace:
+[17:49:29.134]   ?+? (0x70affcc)
+[17:49:29.134]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.134]   ?+? (0x66f0400)
+[17:49:29.134]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.134]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.134]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.134] =========================
+[17:49:29.134] 
+[17:49:29.134] >>> 信号指向 Apollo。建议:
+[17:49:29.134] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.134] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.136] 
+[17:49:29.136] ===== CRASH SUMMARY =====
+[17:49:29.136] phase: CRASH
+[17:49:29.136] phase_now: CRASH
+[17:49:29.136] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.136] module: ApolloCT.dll
+[17:49:29.136] eip: 0x694f3e32
+[17:49:29.136] rva: 0x690f3e32
+[17:49:29.136] type: breakpoint
+[17:49:29.136] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.136] memory: N/A @ N/A
+[17:49:29.136] registers: eax=0x70aff51 ecx=0x469764f edx=0x1a50065 ebx=0x97c7dc71
+[17:49:29.136]            esp=0x70afe0c ebp=0x70aff40
+[17:49:29.136] recent events:
+[17:49:29.136]   [INJECTED] phase_change ->INJECTED
+[17:49:29.136]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.136] backtrace:
+[17:49:29.136]   ?+? (0x70affcc)
+[17:49:29.136]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.136]   ?+? (0x66f0400)
+[17:49:29.136]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.136]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.136]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.136] =========================
+[17:49:29.136] 
+[17:49:29.136] >>> 信号指向 Apollo。建议:
+[17:49:29.136] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.137] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.137] 
+[17:49:29.137] ===== CRASH SUMMARY =====
+[17:49:29.137] phase: CRASH
+[17:49:29.137] phase_now: CRASH
+[17:49:29.137] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.137] module: ApolloCT.dll
+[17:49:29.137] eip: 0x694f3e32
+[17:49:29.137] rva: 0x690f3e32
+[17:49:29.137] type: breakpoint
+[17:49:29.137] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.137] memory: N/A @ N/A
+[17:49:29.137] registers: eax=0x70aff53 ecx=0x1c69764f edx=0x1a50074 ebx=0x97c7dcb6
+[17:49:29.137]            esp=0x70afe0c ebp=0x70aff40
+[17:49:29.137] recent events:
+[17:49:29.137]   [INJECTED] phase_change ->INJECTED
+[17:49:29.137]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.137] backtrace:
+[17:49:29.137]   ?+? (0x70affcc)
+[17:49:29.137]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.137]   ?+? (0x66f0400)
+[17:49:29.137]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.137]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.137]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.138] =========================
+[17:49:29.138] 
+[17:49:29.138] >>> 信号指向 Apollo。建议:
+[17:49:29.138] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.138] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.138] 
+[17:49:29.138] ===== CRASH SUMMARY =====
+[17:49:29.138] phase: CRASH
+[17:49:29.138] phase_now: CRASH
+[17:49:29.138] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.138] module: ApolloCT.dll
+[17:49:29.138] eip: 0x694f3e32
+[17:49:29.138] rva: 0x690f3e32
+[17:49:29.138] type: breakpoint
+[17:49:29.138] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.138] memory: N/A @ N/A
+[17:49:29.138] registers: eax=0x70aff54 ecx=0x3869764f edx=0x1a50050 ebx=0x95dd1ed1
+[17:49:29.138]            esp=0x70afe0c ebp=0x70aff40
+[17:49:29.138] recent events:
+[17:49:29.138]   [INJECTED] phase_change ->INJECTED
+[17:49:29.138]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.138] backtrace:
+[17:49:29.138]   ?+? (0x70affcc)
+[17:49:29.138]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.138]   ?+? (0x66f0400)
+[17:49:29.138]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.138]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.138]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.138] =========================
+[17:49:29.138] 
+[17:49:29.138] >>> 信号指向 Apollo。建议:
+[17:49:29.139] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.139] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.139] 
+[17:49:29.139] ===== CRASH SUMMARY =====
+[17:49:29.139] phase: CRASH
+[17:49:29.139] phase_now: CRASH
+[17:49:29.139] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.139] module: ApolloCT.dll
+[17:49:29.139] eip: 0x694f3e32
+[17:49:29.139] rva: 0x690f3e32
+[17:49:29.139] type: breakpoint
+[17:49:29.139] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.139] memory: N/A @ N/A
+[17:49:29.139] registers: eax=0x70aff55 ecx=0x469764f edx=0x1a50061 ebx=0x95dd1ea4
+[17:49:29.139]            esp=0x70afe0c ebp=0x70aff40
+[17:49:29.139] recent events:
+[17:49:29.139]   [INJECTED] phase_change ->INJECTED
+[17:49:29.139]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.139] backtrace:
+[17:49:29.139]   ?+? (0x70affcc)
+[17:49:29.139]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.139]   ?+? (0x66f0400)
+[17:49:29.139]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.139]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.139]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.139] =========================
+[17:49:29.139] 
+[17:49:29.139] >>> 信号指向 Apollo。建议:
+[17:49:29.139] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.139] >>>   2. 或改用 debug_inject.py 方案
+[17:49:29.139] 
+[17:49:29.139] ===== CRASH SUMMARY =====
+[17:49:29.140] phase: CRASH
+[17:49:29.140] phase_now: CRASH
+[17:49:29.140] verdict: STRONG_APOLLO_SIGNAL
+[17:49:29.140] module: ApolloCT.dll
+[17:49:29.140] eip: 0x694f3e32
+[17:49:29.140] rva: 0x690f3e32
+[17:49:29.140] type: breakpoint
+[17:49:29.140] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:29.140] memory: N/A @ N/A
+[17:49:29.140] registers: eax=0x70aff57 ecx=0x3869764f edx=0x1a50000 ebx=0x95dd1e2d
+[17:49:29.140]            esp=0x70afe0c ebp=0x70aff40
+[17:49:29.140] recent events:
+[17:49:29.140]   [INJECTED] phase_change ->INJECTED
+[17:49:29.140]   [CRASH] phase_change INJECTED->CRASH
+[17:49:29.140] backtrace:
+[17:49:29.140]   ?+? (0x70affcc)
+[17:49:29.140]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:29.140]   ?+? (0x66f0400)
+[17:49:29.140]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:29.140]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:29.140]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:29.140] =========================
+[17:49:29.140] 
+[17:49:29.140] >>> 信号指向 Apollo。建议:
+[17:49:29.140] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:29.140] >>>   2. 或改用 debug_inject.py 方案
+[17:49:31.274] 
+[17:49:31.274] ===== CRASH SUMMARY =====
+[17:49:31.274] phase: CRASH
+[17:49:31.274] phase_now: CRASH
+[17:49:31.274] verdict: UNKNOWN
+[17:49:31.274] module: KERNELBASE.dll
+[17:49:31.274] eip: 0x76fe90e2
+[17:49:31.274] rva: 0x76be90e2
+[17:49:31.274] type: system
+[17:49:31.274] instruction: 8b 4c 24 54 33 cc e8 55 6d 00 00 8b e5 5d c2 10
+[17:49:31.274] memory: N/A @ N/A
+[17:49:31.274] registers: eax=0x199180 ecx=0x4 edx=0x0 ebx=0x318a66
+[17:49:31.274]            esp=0x199180 ebp=0x1991dc
+[17:49:31.274] recent events:
+[17:49:31.274]   [INJECTED] phase_change ->INJECTED
+[17:49:31.274]   [CRASH] phase_change INJECTED->CRASH
+[17:49:31.275] backtrace:
+[17:49:31.275]   ?+? (0x406d1388)
+[17:49:31.275]   KERNELBASE.dll+0x1490e2 (0x76fe90e2)
+[17:49:31.275]   mss32.dll+0x1050 (0x21101050)
+[17:49:31.275]   mss32.dll+0x10ba5 (0x21110ba5)
+[17:49:31.275]   mss32.dll+0x1aaa8 (0x2111aaa8)
+[17:49:31.275]   FreeStyle.exe+0x4d80c (0x44d80c)
+[17:49:31.275] =========================
+[17:49:31.275] 
+[17:49:31.275] >>> 无法定性。建议:
+[17:49:31.275] >>>   1. 检查 backtrace 确认模块归属
+[17:49:31.275] >>>   2. 对比不同阶段日志差异
+[17:49:31.620] 
+[17:49:31.620] [phase] CRASH -> ROOM_LOAD
+[17:49:31.620] 
+[17:49:31.620] [sprintf] #1 fmt="customize\item\i%d.xml" 50125461->50125711 ret=0x1ee2563 (FreeStyle.exe+0x1ae2563) ebpD8=False
+[17:49:31.717] [read] tag=SSKF bytes=512
+[17:49:31.717] [read] tag=SSKF bytes=126976
+[17:49:31.855] [read] tag=SSKF bytes=512
+[17:49:31.855] [read] tag=SSKF bytes=84480
+[17:49:31.864] [read] tag=SSKF bytes=512
+[17:49:31.864] [read] tag=SSKF bytes=33792
+[17:49:31.866] [read] tag=SSKF bytes=512
+[17:49:31.866] [read] tag=SSKF bytes=65024
+[17:49:31.875] [read] tag=SSKF bytes=512
+[17:49:31.875] [read] tag=SSKF bytes=22016
+[17:49:31.931] [read] tag=SSKF bytes=512
+[17:49:31.931] [read] tag=SSKF bytes=74240
+[17:49:32.002] [read] tag=SSKF bytes=512
+[17:49:32.002] [read] tag=SSKF bytes=89088
+[17:49:32.009] [read] tag=SSKF bytes=512
+[17:49:32.011] [read] tag=SSKF bytes=17408
+[17:49:32.124] [read] tag=SSKF bytes=512
+[17:49:32.124] [read] tag=SSKF bytes=39424
+[17:49:32.128] [read] tag=SSKF bytes=512
+[17:49:32.128] [read] tag=SSKF bytes=26112
+[17:49:32.132] [read] tag=SSKF bytes=512
+[17:49:32.132] [read] tag=SSKF bytes=21504
+[17:49:32.950] [read] tag=SSKF bytes=512
+[17:49:32.950] [read] tag=SSKF bytes=1536
+[17:49:32.951] [read] tag=SSKF bytes=512
+[17:49:32.951] [read] tag=SSKF bytes=45056
+[17:49:34.141] 
+[17:49:34.141] [phase] ROOM_LOAD -> CRASH
+[17:49:34.141] 
+[17:49:34.143] 
+[17:49:34.143] ===== CRASH SUMMARY =====
+[17:49:34.143] phase: ROOM_LOAD
+[17:49:34.144] phase_now: CRASH
+[17:49:34.144] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.144] module: ApolloCT.dll
+[17:49:34.144] eip: 0x69557e4d
+[17:49:34.144] rva: 0x69157e4d
+[17:49:34.144] type: breakpoint
+[17:49:34.144] instruction: cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff
+[17:49:34.144] memory: N/A @ N/A
+[17:49:34.144] registers: eax=0x0 ecx=0x70affcc edx=0x0 ebx=0x66f0400
+[17:49:34.144]            esp=0x70afee4 ebp=0x70aff58
+[17:49:34.144] recent events:
+[17:49:34.144]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.144]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.144]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.144]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.144]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.144]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.144]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.144]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.144] backtrace:
+[17:49:34.144]   ?+? (0x70affcc)
+[17:49:34.144]   ApolloCT.Dll+0x557e4d (0x69557e4d)
+[17:49:34.145]   ApolloCT.Dll+0x673fe6 (0x69673fe6)
+[17:49:34.145]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.145]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.145]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.145] =========================
+[17:49:34.145] 
+[17:49:34.145] >>> 信号指向 Apollo。建议:
+[17:49:34.145] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.145] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.146] 
+[17:49:34.146] ===== CRASH SUMMARY =====
+[17:49:34.146] phase: CRASH
+[17:49:34.146] phase_now: CRASH
+[17:49:34.146] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.146] module: ApolloCT.dll
+[17:49:34.146] eip: 0x694f3e32
+[17:49:34.146] rva: 0x690f3e32
+[17:49:34.146] type: breakpoint
+[17:49:34.146] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.146] memory: N/A @ N/A
+[17:49:34.146] registers: eax=0x70aff4a ecx=0x3869764f edx=0x1a530073 ebx=0x8c91b3b
+[17:49:34.146]            esp=0x70afe0c ebp=0x70aff44
+[17:49:34.146] recent events:
+[17:49:34.146]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.146]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.146]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.146]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.146]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.146]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.146]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.146]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.146] backtrace:
+[17:49:34.146]   ?+? (0x70affcc)
+[17:49:34.146]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.146]   ?+? (0x6730400)
+[17:49:34.146]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.147]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.147]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.147] =========================
+[17:49:34.147] 
+[17:49:34.147] >>> 信号指向 Apollo。建议:
+[17:49:34.147] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.147] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.147] 
+[17:49:34.147] ===== CRASH SUMMARY =====
+[17:49:34.147] phase: CRASH
+[17:49:34.147] phase_now: CRASH
+[17:49:34.147] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.147] module: ApolloCT.dll
+[17:49:34.147] eip: 0x694f3e32
+[17:49:34.147] rva: 0x690f3e32
+[17:49:34.147] type: breakpoint
+[17:49:34.147] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.147] memory: N/A @ N/A
+[17:49:34.147] registers: eax=0x70aff52 ecx=0x1c69764f edx=0x1a530073 ebx=0x8c91b5b
+[17:49:34.147]            esp=0x70afe0c ebp=0x70aff44
+[17:49:34.147] recent events:
+[17:49:34.147]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.148]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.148]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.148]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.148]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.148]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.148]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.148]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.148] backtrace:
+[17:49:34.148]   ?+? (0x70affcc)
+[17:49:34.148]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.148]   ?+? (0x6730400)
+[17:49:34.148]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.148]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.148]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.148] =========================
+[17:49:34.148] 
+[17:49:34.148] >>> 信号指向 Apollo。建议:
+[17:49:34.148] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.148] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.148] 
+[17:49:34.148] ===== CRASH SUMMARY =====
+[17:49:34.148] phase: CRASH
+[17:49:34.148] phase_now: CRASH
+[17:49:34.149] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.149] module: ApolloCT.dll
+[17:49:34.149] eip: 0x694f3e32
+[17:49:34.149] rva: 0x690f3e32
+[17:49:34.149] type: breakpoint
+[17:49:34.149] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.149] memory: N/A @ N/A
+[17:49:34.149] registers: eax=0x70aff56 ecx=0x3869764f edx=0x1a530073 ebx=0x8c91bd3
+[17:49:34.149]            esp=0x70afe0c ebp=0x70aff44
+[17:49:34.149] recent events:
+[17:49:34.149]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.149]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.149]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.149]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.149]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.149]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.149]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.149]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.149] backtrace:
+[17:49:34.149]   ?+? (0x70affcc)
+[17:49:34.149]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.149]   ?+? (0x6730400)
+[17:49:34.149]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.149]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.149]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.149] =========================
+[17:49:34.149] 
+[17:49:34.149] >>> 信号指向 Apollo。建议:
+[17:49:34.149] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.149] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.149] 
+[17:49:34.149] ===== CRASH SUMMARY =====
+[17:49:34.149] phase: CRASH
+[17:49:34.149] phase_now: CRASH
+[17:49:34.151] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.151] module: ApolloCT.dll
+[17:49:34.151] eip: 0x694f3e32
+[17:49:34.151] rva: 0x690f3e32
+[17:49:34.151] type: breakpoint
+[17:49:34.151] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.151] memory: N/A @ N/A
+[17:49:34.151] registers: eax=0x70aff48 ecx=0x3869764f edx=0x1a50070 ebx=0x9d88d233
+[17:49:34.151]            esp=0x70afe0c ebp=0x70aff40
+[17:49:34.151] recent events:
+[17:49:34.151]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.151]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.151]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.151]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.151]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.151]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.151]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.151]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.151] backtrace:
+[17:49:34.151]   ?+? (0x70affcc)
+[17:49:34.151]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.151]   ?+? (0x66f0400)
+[17:49:34.151]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.151]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.151]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.151] =========================
+[17:49:34.151] 
+[17:49:34.151] >>> 信号指向 Apollo。建议:
+[17:49:34.151] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.151] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.152] 
+[17:49:34.152] ===== CRASH SUMMARY =====
+[17:49:34.152] phase: CRASH
+[17:49:34.152] phase_now: CRASH
+[17:49:34.152] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.152] module: ApolloCT.dll
+[17:49:34.152] eip: 0x694f3e32
+[17:49:34.152] rva: 0x690f3e32
+[17:49:34.152] type: breakpoint
+[17:49:34.153] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.153] memory: N/A @ N/A
+[17:49:34.153] registers: eax=0x70aff49 ecx=0x1c69764f edx=0x1a50061 ebx=0x9d88d242
+[17:49:34.153]            esp=0x70afe0c ebp=0x70aff40
+[17:49:34.153] recent events:
+[17:49:34.153]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.153]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.153]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.153]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.153]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.153]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.153]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.153]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.153] backtrace:
+[17:49:34.153]   ?+? (0x70affcc)
+[17:49:34.153]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.153]   ?+? (0x66f0400)
+[17:49:34.154]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.154]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.154]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.154] =========================
+[17:49:34.154] 
+[17:49:34.154] >>> 信号指向 Apollo。建议:
+[17:49:34.154] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.154] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.154] 
+[17:49:34.154] ===== CRASH SUMMARY =====
+[17:49:34.154] phase: CRASH
+[17:49:34.154] phase_now: CRASH
+[17:49:34.154] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.154] module: ApolloCT.dll
+[17:49:34.154] eip: 0x694f3e32
+[17:49:34.154] rva: 0x690f3e32
+[17:49:34.154] type: breakpoint
+[17:49:34.154] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.154] memory: N/A @ N/A
+[17:49:34.155] registers: eax=0x70aff4b ecx=0x2469764f edx=0x1a5002e ebx=0x9b9dd64b
+[17:49:34.155]            esp=0x70afe0c ebp=0x70aff40
+[17:49:34.155] recent events:
+[17:49:34.155]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.155]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.155]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.155]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.155]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.155]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.155]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.155]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.155] backtrace:
+[17:49:34.155]   ?+? (0x70affcc)
+[17:49:34.155]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.155]   ?+? (0x66f0400)
+[17:49:34.155]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.155]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.155]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.155] =========================
+[17:49:34.155] 
+[17:49:34.155] >>> 信号指向 Apollo。建议:
+[17:49:34.155] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.155] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.156] 
+[17:49:34.156] ===== CRASH SUMMARY =====
+[17:49:34.156] phase: CRASH
+[17:49:34.156] phase_now: CRASH
+[17:49:34.156] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.156] module: ApolloCT.dll
+[17:49:34.156] eip: 0x694f3e32
+[17:49:34.156] rva: 0x690f3e32
+[17:49:34.156] type: breakpoint
+[17:49:34.156] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.156] memory: N/A @ N/A
+[17:49:34.156] registers: eax=0x70aff4c ecx=0x3869764f edx=0x1a50064 ebx=0x9b9dd6cd
+[17:49:34.156]            esp=0x70afe0c ebp=0x70aff40
+[17:49:34.156] recent events:
+[17:49:34.156]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.156]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.156]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.156]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.156]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.157]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.157]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.157]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.157] backtrace:
+[17:49:34.157]   ?+? (0x70affcc)
+[17:49:34.157]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.157]   ?+? (0x66f0400)
+[17:49:34.157]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.157]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.157]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.157] =========================
+[17:49:34.157] 
+[17:49:34.157] >>> 信号指向 Apollo。建议:
+[17:49:34.157] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.157] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.157] 
+[17:49:34.157] ===== CRASH SUMMARY =====
+[17:49:34.157] phase: CRASH
+[17:49:34.157] phase_now: CRASH
+[17:49:34.157] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.157] module: ApolloCT.dll
+[17:49:34.157] eip: 0x694f3e32
+[17:49:34.158] rva: 0x690f3e32
+[17:49:34.158] type: breakpoint
+[17:49:34.158] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.158] memory: N/A @ N/A
+[17:49:34.158] registers: eax=0x70aff4d ecx=0x2469764f edx=0x1a5006c ebx=0x9b9dd628
+[17:49:34.158]            esp=0x70afe0c ebp=0x70aff40
+[17:49:34.158] recent events:
+[17:49:34.158]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.158]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.158]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.158]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.158]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.158]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.158]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.158]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.158] backtrace:
+[17:49:34.158]   ?+? (0x70affcc)
+[17:49:34.158]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.158]   ?+? (0x66f0400)
+[17:49:34.158]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.158]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.158]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.158] =========================
+[17:49:34.159] 
+[17:49:34.159] >>> 信号指向 Apollo。建议:
+[17:49:34.159] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.159] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.159] 
+[17:49:34.159] ===== CRASH SUMMARY =====
+[17:49:34.159] phase: CRASH
+[17:49:34.159] phase_now: CRASH
+[17:49:34.159] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.159] module: ApolloCT.dll
+[17:49:34.159] eip: 0x694f3e32
+[17:49:34.159] rva: 0x690f3e32
+[17:49:34.159] type: breakpoint
+[17:49:34.159] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.159] memory: N/A @ N/A
+[17:49:34.159] registers: eax=0x70aff4e ecx=0x469764f edx=0x1a5006c ebx=0x99b2d904
+[17:49:34.159]            esp=0x70afe0c ebp=0x70aff40
+[17:49:34.159] recent events:
+[17:49:34.159]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.159]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.159]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.159]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.159]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.159]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.159]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.159]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.159] backtrace:
+[17:49:34.159]   ?+? (0x70affcc)
+[17:49:34.159]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.159]   ?+? (0x66f0400)
+[17:49:34.159]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.159]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.159]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.160] =========================
+[17:49:34.160] 
+[17:49:34.160] >>> 信号指向 Apollo。建议:
+[17:49:34.160] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.160] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.161] 
+[17:49:34.161] ===== CRASH SUMMARY =====
+[17:49:34.161] phase: CRASH
+[17:49:34.161] phase_now: CRASH
+[17:49:34.161] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.161] module: ApolloCT.dll
+[17:49:34.161] eip: 0x694f3e32
+[17:49:34.161] rva: 0x690f3e32
+[17:49:34.161] type: breakpoint
+[17:49:34.161] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.161] memory: N/A @ N/A
+[17:49:34.161] registers: eax=0x70aff4f ecx=0x1c69764f edx=0x1a50000 ebx=0x97c7dc0f
+[17:49:34.161]            esp=0x70afe0c ebp=0x70aff40
+[17:49:34.162] recent events:
+[17:49:34.162]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.162]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.162]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.162]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.162]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.162]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.162]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.162]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.162] backtrace:
+[17:49:34.162]   ?+? (0x70affcc)
+[17:49:34.162]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.162]   ?+? (0x66f0400)
+[17:49:34.162]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.162]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.162]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.162] =========================
+[17:49:34.162] 
+[17:49:34.162] >>> 信号指向 Apollo。建议:
+[17:49:34.162] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.162] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.162] 
+[17:49:34.162] ===== CRASH SUMMARY =====
+[17:49:34.162] phase: CRASH
+[17:49:34.162] phase_now: CRASH
+[17:49:34.163] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.163] module: ApolloCT.dll
+[17:49:34.163] eip: 0x694f3e32
+[17:49:34.163] rva: 0x690f3e32
+[17:49:34.163] type: breakpoint
+[17:49:34.163] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.163] memory: N/A @ N/A
+[17:49:34.163] registers: eax=0x70aff50 ecx=0x3869764f edx=0x1a50054 ebx=0x97c7dc85
+[17:49:34.163]            esp=0x70afe0c ebp=0x70aff40
+[17:49:34.163] recent events:
+[17:49:34.164]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.164]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.164]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.164]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.164]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.164]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.164]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.164]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.164] backtrace:
+[17:49:34.164]   ?+? (0x70affcc)
+[17:49:34.164]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.164]   ?+? (0x66f0400)
+[17:49:34.164]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.164]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.164]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.164] =========================
+[17:49:34.164] 
+[17:49:34.164] >>> 信号指向 Apollo。建议:
+[17:49:34.164] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.164] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.164] 
+[17:49:34.164] ===== CRASH SUMMARY =====
+[17:49:34.164] phase: CRASH
+[17:49:34.164] phase_now: CRASH
+[17:49:34.164] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.164] module: ApolloCT.dll
+[17:49:34.164] eip: 0x694f3e32
+[17:49:34.164] rva: 0x690f3e32
+[17:49:34.164] type: breakpoint
+[17:49:34.164] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.165] memory: N/A @ N/A
+[17:49:34.165] registers: eax=0x70aff51 ecx=0x469764f edx=0x1a50065 ebx=0x97c7dc71
+[17:49:34.165]            esp=0x70afe0c ebp=0x70aff40
+[17:49:34.165] recent events:
+[17:49:34.165]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.165]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.165]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.165]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.165]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.165]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.165]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.165]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.165] backtrace:
+[17:49:34.165]   ?+? (0x70affcc)
+[17:49:34.165]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.165]   ?+? (0x66f0400)
+[17:49:34.165]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.165]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.165]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.165] =========================
+[17:49:34.165] 
+[17:49:34.165] >>> 信号指向 Apollo。建议:
+[17:49:34.165] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.165] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.165] 
+[17:49:34.165] ===== CRASH SUMMARY =====
+[17:49:34.165] phase: CRASH
+[17:49:34.166] phase_now: CRASH
+[17:49:34.166] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.166] module: ApolloCT.dll
+[17:49:34.166] eip: 0x694f3e32
+[17:49:34.166] rva: 0x690f3e32
+[17:49:34.166] type: breakpoint
+[17:49:34.166] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.166] memory: N/A @ N/A
+[17:49:34.166] registers: eax=0x70aff53 ecx=0x1c69764f edx=0x1a50074 ebx=0x97c7dcb6
+[17:49:34.166]            esp=0x70afe0c ebp=0x70aff40
+[17:49:34.166] recent events:
+[17:49:34.166]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.166]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.166]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.166]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.166]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.166]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.166]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.166]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.166] backtrace:
+[17:49:34.166]   ?+? (0x70affcc)
+[17:49:34.166]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.166]   ?+? (0x66f0400)
+[17:49:34.166]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.166]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.166]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.166] =========================
+[17:49:34.166] 
+[17:49:34.167] >>> 信号指向 Apollo。建议:
+[17:49:34.167] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.167] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.167] 
+[17:49:34.167] ===== CRASH SUMMARY =====
+[17:49:34.167] phase: CRASH
+[17:49:34.167] phase_now: CRASH
+[17:49:34.167] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.167] module: ApolloCT.dll
+[17:49:34.167] eip: 0x694f3e32
+[17:49:34.167] rva: 0x690f3e32
+[17:49:34.167] type: breakpoint
+[17:49:34.167] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.167] memory: N/A @ N/A
+[17:49:34.167] registers: eax=0x70aff54 ecx=0x3869764f edx=0x1a50050 ebx=0x95dd1ed1
+[17:49:34.167]            esp=0x70afe0c ebp=0x70aff40
+[17:49:34.167] recent events:
+[17:49:34.167]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.167]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.167]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.167]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.167]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.167]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.167]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.167]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.167] backtrace:
+[17:49:34.167]   ?+? (0x70affcc)
+[17:49:34.167]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.167]   ?+? (0x66f0400)
+[17:49:34.167]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.167]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.167]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.167] =========================
+[17:49:34.167] 
+[17:49:34.167] >>> 信号指向 Apollo。建议:
+[17:49:34.167] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.167] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.168] 
+[17:49:34.168] ===== CRASH SUMMARY =====
+[17:49:34.168] phase: CRASH
+[17:49:34.168] phase_now: CRASH
+[17:49:34.168] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.168] module: ApolloCT.dll
+[17:49:34.168] eip: 0x694f3e32
+[17:49:34.168] rva: 0x690f3e32
+[17:49:34.168] type: breakpoint
+[17:49:34.168] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.169] memory: N/A @ N/A
+[17:49:34.169] registers: eax=0x70aff55 ecx=0x469764f edx=0x1a50061 ebx=0x95dd1ea4
+[17:49:34.169]            esp=0x70afe0c ebp=0x70aff40
+[17:49:34.169] recent events:
+[17:49:34.169]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.169]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.169]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.169]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.169]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.169]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.169]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.169]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.169] backtrace:
+[17:49:34.169]   ?+? (0x70affcc)
+[17:49:34.169]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.169]   ?+? (0x66f0400)
+[17:49:34.169]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.169]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.169]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.169] =========================
+[17:49:34.169] 
+[17:49:34.169] >>> 信号指向 Apollo。建议:
+[17:49:34.169] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.169] >>>   2. 或改用 debug_inject.py 方案
+[17:49:34.170] 
+[17:49:34.170] ===== CRASH SUMMARY =====
+[17:49:34.170] phase: CRASH
+[17:49:34.170] phase_now: CRASH
+[17:49:34.170] verdict: STRONG_APOLLO_SIGNAL
+[17:49:34.170] module: ApolloCT.dll
+[17:49:34.170] eip: 0x694f3e32
+[17:49:34.170] rva: 0x690f3e32
+[17:49:34.170] type: breakpoint
+[17:49:34.170] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:34.170] memory: N/A @ N/A
+[17:49:34.170] registers: eax=0x70aff57 ecx=0x3869764f edx=0x1a50000 ebx=0x95dd1e2d
+[17:49:34.170]            esp=0x70afe0c ebp=0x70aff40
+[17:49:34.170] recent events:
+[17:49:34.170]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:34.170]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:34.170]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:34.170]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:34.170]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:34.171]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:34.171]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:34.171]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:34.171] backtrace:
+[17:49:34.171]   ?+? (0x70affcc)
+[17:49:34.171]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:34.171]   ?+? (0x66f0400)
+[17:49:34.171]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:34.171]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:34.171]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:34.171] =========================
+[17:49:34.171] 
+[17:49:34.171] >>> 信号指向 Apollo。建议:
+[17:49:34.171] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:34.171] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.173] 
+[17:49:39.174] ===== CRASH SUMMARY =====
+[17:49:39.174] phase: CRASH
+[17:49:39.174] phase_now: CRASH
+[17:49:39.174] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.174] module: ApolloCT.dll
+[17:49:39.174] eip: 0x69557e4d
+[17:49:39.174] rva: 0x69157e4d
+[17:49:39.174] type: breakpoint
+[17:49:39.174] instruction: cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff
+[17:49:39.174] memory: N/A @ N/A
+[17:49:39.174] registers: eax=0x0 ecx=0x70affcc edx=0x0 ebx=0x66f0400
+[17:49:39.174]            esp=0x70afee4 ebp=0x70aff58
+[17:49:39.174] recent events:
+[17:49:39.174]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.174]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.174]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.174]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.174]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.174]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.174]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.174]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.174] backtrace:
+[17:49:39.174]   ?+? (0x70affcc)
+[17:49:39.174]   ApolloCT.Dll+0x557e4d (0x69557e4d)
+[17:49:39.174]   ApolloCT.Dll+0x673fe6 (0x69673fe6)
+[17:49:39.174]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.174]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.174]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.175] =========================
+[17:49:39.175] 
+[17:49:39.175] >>> 信号指向 Apollo。建议:
+[17:49:39.175] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.175] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.175] 
+[17:49:39.175] ===== CRASH SUMMARY =====
+[17:49:39.175] phase: CRASH
+[17:49:39.175] phase_now: CRASH
+[17:49:39.175] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.175] module: ApolloCT.dll
+[17:49:39.175] eip: 0x694f3e32
+[17:49:39.175] rva: 0x690f3e32
+[17:49:39.175] type: breakpoint
+[17:49:39.175] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.175] memory: N/A @ N/A
+[17:49:39.175] registers: eax=0x70aff4a ecx=0x3869764f edx=0x1a530073 ebx=0x8c91b3b
+[17:49:39.175]            esp=0x70afe0c ebp=0x70aff44
+[17:49:39.175] recent events:
+[17:49:39.175]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.175]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.176]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.176]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.176]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.176]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.176]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.176]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.176] backtrace:
+[17:49:39.176]   ?+? (0x70affcc)
+[17:49:39.176]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.176]   ?+? (0x6730400)
+[17:49:39.176]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.176]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.176]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.176] =========================
+[17:49:39.176] 
+[17:49:39.176] >>> 信号指向 Apollo。建议:
+[17:49:39.176] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.176] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.180] 
+[17:49:39.180] ===== CRASH SUMMARY =====
+[17:49:39.180] phase: CRASH
+[17:49:39.180] phase_now: CRASH
+[17:49:39.180] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.180] module: ApolloCT.dll
+[17:49:39.180] eip: 0x694f3e32
+[17:49:39.180] rva: 0x690f3e32
+[17:49:39.180] type: breakpoint
+[17:49:39.180] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.180] memory: N/A @ N/A
+[17:49:39.180] registers: eax=0x70aff52 ecx=0x1c69764f edx=0x1a530073 ebx=0x8c91b5b
+[17:49:39.180]            esp=0x70afe0c ebp=0x70aff44
+[17:49:39.180] recent events:
+[17:49:39.180]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.180]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.180]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.180]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.180]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.180]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.180]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.180]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.180] backtrace:
+[17:49:39.180]   ?+? (0x70affcc)
+[17:49:39.180]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.180]   ?+? (0x6730400)
+[17:49:39.180]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.180]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.182]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.182] =========================
+[17:49:39.182] 
+[17:49:39.182] >>> 信号指向 Apollo。建议:
+[17:49:39.182] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.182] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.183] 
+[17:49:39.183] ===== CRASH SUMMARY =====
+[17:49:39.183] phase: CRASH
+[17:49:39.183] phase_now: CRASH
+[17:49:39.183] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.183] module: ApolloCT.dll
+[17:49:39.183] eip: 0x694f3e32
+[17:49:39.183] rva: 0x690f3e32
+[17:49:39.184] type: breakpoint
+[17:49:39.184] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.184] memory: N/A @ N/A
+[17:49:39.184] registers: eax=0x70aff56 ecx=0x3869764f edx=0x1a530073 ebx=0x8c91bd3
+[17:49:39.184]            esp=0x70afe0c ebp=0x70aff44
+[17:49:39.184] recent events:
+[17:49:39.184]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.184]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.184]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.184]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.184]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.184]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.184]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.184]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.184] backtrace:
+[17:49:39.184]   ?+? (0x70affcc)
+[17:49:39.184]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.184]   ?+? (0x6730400)
+[17:49:39.184]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.184]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.184]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.185] =========================
+[17:49:39.185] 
+[17:49:39.185] >>> 信号指向 Apollo。建议:
+[17:49:39.185] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.185] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.185] 
+[17:49:39.185] ===== CRASH SUMMARY =====
+[17:49:39.185] phase: CRASH
+[17:49:39.185] phase_now: CRASH
+[17:49:39.185] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.186] module: ApolloCT.dll
+[17:49:39.186] eip: 0x694f3e32
+[17:49:39.186] rva: 0x690f3e32
+[17:49:39.186] type: breakpoint
+[17:49:39.186] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.186] memory: N/A @ N/A
+[17:49:39.186] registers: eax=0x70aff48 ecx=0x3869764f edx=0x1a50070 ebx=0x9d88d233
+[17:49:39.186]            esp=0x70afe0c ebp=0x70aff40
+[17:49:39.186] recent events:
+[17:49:39.186]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.186]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.186]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.186]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.186]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.186]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.186]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.186]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.186] backtrace:
+[17:49:39.186]   ?+? (0x70affcc)
+[17:49:39.186]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.186]   ?+? (0x66f0400)
+[17:49:39.186]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.186]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.186]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.186] =========================
+[17:49:39.186] 
+[17:49:39.186] >>> 信号指向 Apollo。建议:
+[17:49:39.186] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.186] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.186] 
+[17:49:39.186] ===== CRASH SUMMARY =====
+[17:49:39.186] phase: CRASH
+[17:49:39.186] phase_now: CRASH
+[17:49:39.187] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.187] module: ApolloCT.dll
+[17:49:39.187] eip: 0x694f3e32
+[17:49:39.187] rva: 0x690f3e32
+[17:49:39.187] type: breakpoint
+[17:49:39.187] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.187] memory: N/A @ N/A
+[17:49:39.187] registers: eax=0x70aff49 ecx=0x1c69764f edx=0x1a50061 ebx=0x9d88d242
+[17:49:39.187]            esp=0x70afe0c ebp=0x70aff40
+[17:49:39.187] recent events:
+[17:49:39.187]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.187]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.187]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.187]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.187]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.187]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.187]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.187]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.188] backtrace:
+[17:49:39.188]   ?+? (0x70affcc)
+[17:49:39.188]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.188]   ?+? (0x66f0400)
+[17:49:39.188]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.188]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.188]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.188] =========================
+[17:49:39.188] 
+[17:49:39.188] >>> 信号指向 Apollo。建议:
+[17:49:39.188] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.188] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.188] 
+[17:49:39.188] ===== CRASH SUMMARY =====
+[17:49:39.188] phase: CRASH
+[17:49:39.188] phase_now: CRASH
+[17:49:39.188] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.188] module: ApolloCT.dll
+[17:49:39.189] eip: 0x694f3e32
+[17:49:39.189] rva: 0x690f3e32
+[17:49:39.189] type: breakpoint
+[17:49:39.189] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.189] memory: N/A @ N/A
+[17:49:39.189] registers: eax=0x70aff4b ecx=0x2469764f edx=0x1a5002e ebx=0x9b9dd64b
+[17:49:39.189]            esp=0x70afe0c ebp=0x70aff40
+[17:49:39.189] recent events:
+[17:49:39.189]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.189]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.189]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.189]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.189]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.189]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.189]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.189]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.189] backtrace:
+[17:49:39.189]   ?+? (0x70affcc)
+[17:49:39.189]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.189]   ?+? (0x66f0400)
+[17:49:39.189]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.189]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.189]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.189] =========================
+[17:49:39.189] 
+[17:49:39.189] >>> 信号指向 Apollo。建议:
+[17:49:39.189] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.189] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.189] 
+[17:49:39.189] ===== CRASH SUMMARY =====
+[17:49:39.189] phase: CRASH
+[17:49:39.189] phase_now: CRASH
+[17:49:39.189] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.189] module: ApolloCT.dll
+[17:49:39.189] eip: 0x694f3e32
+[17:49:39.189] rva: 0x690f3e32
+[17:49:39.189] type: breakpoint
+[17:49:39.189] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.189] memory: N/A @ N/A
+[17:49:39.189] registers: eax=0x70aff4c ecx=0x3869764f edx=0x1a50064 ebx=0x9b9dd6cd
+[17:49:39.191]            esp=0x70afe0c ebp=0x70aff40
+[17:49:39.191] recent events:
+[17:49:39.191]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.191]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.191]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.191]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.191]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.191]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.191]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.191]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.191] backtrace:
+[17:49:39.191]   ?+? (0x70affcc)
+[17:49:39.191]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.191]   ?+? (0x66f0400)
+[17:49:39.191]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.191]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.191]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.191] =========================
+[17:49:39.191] 
+[17:49:39.191] >>> 信号指向 Apollo。建议:
+[17:49:39.191] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.191] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.192] 
+[17:49:39.192] ===== CRASH SUMMARY =====
+[17:49:39.192] phase: CRASH
+[17:49:39.192] phase_now: CRASH
+[17:49:39.192] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.192] module: ApolloCT.dll
+[17:49:39.192] eip: 0x694f3e32
+[17:49:39.192] rva: 0x690f3e32
+[17:49:39.192] type: breakpoint
+[17:49:39.192] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.192] memory: N/A @ N/A
+[17:49:39.192] registers: eax=0x70aff4d ecx=0x2469764f edx=0x1a5006c ebx=0x9b9dd628
+[17:49:39.192]            esp=0x70afe0c ebp=0x70aff40
+[17:49:39.192] recent events:
+[17:49:39.192]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.192]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.192]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.192]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.192]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.192]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.192]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.192]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.192] backtrace:
+[17:49:39.192]   ?+? (0x70affcc)
+[17:49:39.192]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.192]   ?+? (0x66f0400)
+[17:49:39.192]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.192]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.192]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.193] =========================
+[17:49:39.193] 
+[17:49:39.193] >>> 信号指向 Apollo。建议:
+[17:49:39.193] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.193] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.193] 
+[17:49:39.193] ===== CRASH SUMMARY =====
+[17:49:39.193] phase: CRASH
+[17:49:39.194] phase_now: CRASH
+[17:49:39.194] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.194] module: ApolloCT.dll
+[17:49:39.194] eip: 0x694f3e32
+[17:49:39.194] rva: 0x690f3e32
+[17:49:39.194] type: breakpoint
+[17:49:39.194] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.194] memory: N/A @ N/A
+[17:49:39.194] registers: eax=0x70aff4e ecx=0x469764f edx=0x1a5006c ebx=0x99b2d904
+[17:49:39.194]            esp=0x70afe0c ebp=0x70aff40
+[17:49:39.194] recent events:
+[17:49:39.194]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.194]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.194]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.194]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.194]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.194]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.194]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.194]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.194] backtrace:
+[17:49:39.194]   ?+? (0x70affcc)
+[17:49:39.194]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.195]   ?+? (0x66f0400)
+[17:49:39.195]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.195]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.195]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.195] =========================
+[17:49:39.195] 
+[17:49:39.195] >>> 信号指向 Apollo。建议:
+[17:49:39.195] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.195] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.195] 
+[17:49:39.195] ===== CRASH SUMMARY =====
+[17:49:39.195] phase: CRASH
+[17:49:39.195] phase_now: CRASH
+[17:49:39.195] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.195] module: ApolloCT.dll
+[17:49:39.195] eip: 0x694f3e32
+[17:49:39.195] rva: 0x690f3e32
+[17:49:39.196] type: breakpoint
+[17:49:39.196] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.196] memory: N/A @ N/A
+[17:49:39.196] registers: eax=0x70aff4f ecx=0x1c69764f edx=0x1a50000 ebx=0x97c7dc0f
+[17:49:39.196]            esp=0x70afe0c ebp=0x70aff40
+[17:49:39.196] recent events:
+[17:49:39.196]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.196]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.196]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.196]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.196]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.196]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.196]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.196]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.196] backtrace:
+[17:49:39.196]   ?+? (0x70affcc)
+[17:49:39.196]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.196]   ?+? (0x66f0400)
+[17:49:39.197]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.197]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.197]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.197] =========================
+[17:49:39.197] 
+[17:49:39.197] >>> 信号指向 Apollo。建议:
+[17:49:39.197] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.197] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.197] 
+[17:49:39.197] ===== CRASH SUMMARY =====
+[17:49:39.197] phase: CRASH
+[17:49:39.197] phase_now: CRASH
+[17:49:39.197] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.197] module: ApolloCT.dll
+[17:49:39.197] eip: 0x694f3e32
+[17:49:39.197] rva: 0x690f3e32
+[17:49:39.197] type: breakpoint
+[17:49:39.197] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.197] memory: N/A @ N/A
+[17:49:39.197] registers: eax=0x70aff50 ecx=0x3869764f edx=0x1a50054 ebx=0x97c7dc85
+[17:49:39.197]            esp=0x70afe0c ebp=0x70aff40
+[17:49:39.198] recent events:
+[17:49:39.198]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.198]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.198]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.198]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.198]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.198]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.198]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.198]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.198] backtrace:
+[17:49:39.198]   ?+? (0x70affcc)
+[17:49:39.198]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.198]   ?+? (0x66f0400)
+[17:49:39.198]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.198]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.198]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.198] =========================
+[17:49:39.198] 
+[17:49:39.198] >>> 信号指向 Apollo。建议:
+[17:49:39.198] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.198] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.198] 
+[17:49:39.198] ===== CRASH SUMMARY =====
+[17:49:39.198] phase: CRASH
+[17:49:39.198] phase_now: CRASH
+[17:49:39.198] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.198] module: ApolloCT.dll
+[17:49:39.198] eip: 0x694f3e32
+[17:49:39.198] rva: 0x690f3e32
+[17:49:39.198] type: breakpoint
+[17:49:39.198] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.198] memory: N/A @ N/A
+[17:49:39.198] registers: eax=0x70aff51 ecx=0x469764f edx=0x1a50065 ebx=0x97c7dc71
+[17:49:39.198]            esp=0x70afe0c ebp=0x70aff40
+[17:49:39.198] recent events:
+[17:49:39.198]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.198]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.198]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.198]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.199]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.199]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.199]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.199]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.199] backtrace:
+[17:49:39.199]   ?+? (0x70affcc)
+[17:49:39.199]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.199]   ?+? (0x66f0400)
+[17:49:39.199]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.199]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.199]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.199] =========================
+[17:49:39.199] 
+[17:49:39.199] >>> 信号指向 Apollo。建议:
+[17:49:39.199] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.199] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.199] 
+[17:49:39.199] ===== CRASH SUMMARY =====
+[17:49:39.199] phase: CRASH
+[17:49:39.199] phase_now: CRASH
+[17:49:39.199] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.199] module: ApolloCT.dll
+[17:49:39.199] eip: 0x694f3e32
+[17:49:39.199] rva: 0x690f3e32
+[17:49:39.199] type: breakpoint
+[17:49:39.199] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.199] memory: N/A @ N/A
+[17:49:39.199] registers: eax=0x70aff53 ecx=0x1c69764f edx=0x1a50074 ebx=0x97c7dcb6
+[17:49:39.199]            esp=0x70afe0c ebp=0x70aff40
+[17:49:39.199] recent events:
+[17:49:39.199]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.199]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.199]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.199]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.199]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.199]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.199]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.201]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.201] backtrace:
+[17:49:39.201]   ?+? (0x70affcc)
+[17:49:39.201]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.201]   ?+? (0x66f0400)
+[17:49:39.201]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.201]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.201]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.201] =========================
+[17:49:39.201] 
+[17:49:39.201] >>> 信号指向 Apollo。建议:
+[17:49:39.201] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.201] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.201] 
+[17:49:39.202] ===== CRASH SUMMARY =====
+[17:49:39.202] phase: CRASH
+[17:49:39.202] phase_now: CRASH
+[17:49:39.202] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.202] module: ApolloCT.dll
+[17:49:39.202] eip: 0x694f3e32
+[17:49:39.202] rva: 0x690f3e32
+[17:49:39.202] type: breakpoint
+[17:49:39.202] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.202] memory: N/A @ N/A
+[17:49:39.202] registers: eax=0x70aff54 ecx=0x3869764f edx=0x1a50050 ebx=0x95dd1ed1
+[17:49:39.202]            esp=0x70afe0c ebp=0x70aff40
+[17:49:39.202] recent events:
+[17:49:39.202]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.202]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.202]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.202]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.202]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.202]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.202]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.202]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.202] backtrace:
+[17:49:39.202]   ?+? (0x70affcc)
+[17:49:39.202]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.202]   ?+? (0x66f0400)
+[17:49:39.202]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.202]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.202]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.202] =========================
+[17:49:39.202] 
+[17:49:39.202] >>> 信号指向 Apollo。建议:
+[17:49:39.202] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.202] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.202] 
+[17:49:39.202] ===== CRASH SUMMARY =====
+[17:49:39.203] phase: CRASH
+[17:49:39.203] phase_now: CRASH
+[17:49:39.203] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.203] module: ApolloCT.dll
+[17:49:39.203] eip: 0x694f3e32
+[17:49:39.203] rva: 0x690f3e32
+[17:49:39.203] type: breakpoint
+[17:49:39.203] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.203] memory: N/A @ N/A
+[17:49:39.204] registers: eax=0x70aff55 ecx=0x469764f edx=0x1a50061 ebx=0x95dd1ea4
+[17:49:39.204]            esp=0x70afe0c ebp=0x70aff40
+[17:49:39.204] recent events:
+[17:49:39.204]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.204]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.204]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.204]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.204]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.204]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.204]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.204]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.204] backtrace:
+[17:49:39.204]   ?+? (0x70affcc)
+[17:49:39.204]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.204]   ?+? (0x66f0400)
+[17:49:39.204]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.204]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.204]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.204] =========================
+[17:49:39.205] 
+[17:49:39.205] >>> 信号指向 Apollo。建议:
+[17:49:39.205] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.205] >>>   2. 或改用 debug_inject.py 方案
+[17:49:39.205] 
+[17:49:39.205] ===== CRASH SUMMARY =====
+[17:49:39.205] phase: CRASH
+[17:49:39.205] phase_now: CRASH
+[17:49:39.205] verdict: STRONG_APOLLO_SIGNAL
+[17:49:39.205] module: ApolloCT.dll
+[17:49:39.205] eip: 0x694f3e32
+[17:49:39.205] rva: 0x690f3e32
+[17:49:39.205] type: breakpoint
+[17:49:39.205] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:39.205] memory: N/A @ N/A
+[17:49:39.205] registers: eax=0x70aff57 ecx=0x3869764f edx=0x1a50000 ebx=0x95dd1e2d
+[17:49:39.205]            esp=0x70afe0c ebp=0x70aff40
+[17:49:39.205] recent events:
+[17:49:39.205]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:39.205]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:39.205]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:39.205]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:39.205]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:39.205]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:39.206]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:39.206]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:39.206] backtrace:
+[17:49:39.206]   ?+? (0x70affcc)
+[17:49:39.206]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:39.206]   ?+? (0x66f0400)
+[17:49:39.206]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:39.206]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:39.206]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:39.206] =========================
+[17:49:39.206] 
+[17:49:39.206] >>> 信号指向 Apollo。建议:
+[17:49:39.206] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:39.206] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.206] 
+[17:49:44.206] ===== CRASH SUMMARY =====
+[17:49:44.206] phase: CRASH
+[17:49:44.206] phase_now: CRASH
+[17:49:44.206] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.206] module: ApolloCT.dll
+[17:49:44.206] eip: 0x69557e4d
+[17:49:44.206] rva: 0x69157e4d
+[17:49:44.206] type: breakpoint
+[17:49:44.206] instruction: cc 9d 23 52 e8 e4 6c f9 ff 32 38 e8 dd 6c f9 ff
+[17:49:44.206] memory: N/A @ N/A
+[17:49:44.206] registers: eax=0x0 ecx=0x70affcc edx=0x0 ebx=0x66f0400
+[17:49:44.206]            esp=0x70afee4 ebp=0x70aff58
+[17:49:44.206] recent events:
+[17:49:44.206]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.206]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.206]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.206]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.206]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.206]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.207]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.207]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.207] backtrace:
+[17:49:44.207]   ?+? (0x70affcc)
+[17:49:44.207]   ApolloCT.Dll+0x557e4d (0x69557e4d)
+[17:49:44.207]   ApolloCT.Dll+0x673fe6 (0x69673fe6)
+[17:49:44.207]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.207]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.207]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.207] =========================
+[17:49:44.207] 
+[17:49:44.207] >>> 信号指向 Apollo。建议:
+[17:49:44.207] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.207] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.207] 
+[17:49:44.207] ===== CRASH SUMMARY =====
+[17:49:44.207] phase: CRASH
+[17:49:44.207] phase_now: CRASH
+[17:49:44.207] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.207] module: ApolloCT.dll
+[17:49:44.207] eip: 0x694f3e32
+[17:49:44.207] rva: 0x690f3e32
+[17:49:44.207] type: breakpoint
+[17:49:44.207] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.207] memory: N/A @ N/A
+[17:49:44.207] registers: eax=0x70aff4a ecx=0x3869764f edx=0x1a530073 ebx=0x8c91b3b
+[17:49:44.207]            esp=0x70afe0c ebp=0x70aff44
+[17:49:44.207] recent events:
+[17:49:44.207]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.207]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.207]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.207]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.207]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.207]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.207]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.207]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.207] backtrace:
+[17:49:44.207]   ?+? (0x70affcc)
+[17:49:44.207]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.207]   ?+? (0x6730400)
+[17:49:44.207]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.208]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.208]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.208] =========================
+[17:49:44.208] 
+[17:49:44.208] >>> 信号指向 Apollo。建议:
+[17:49:44.208] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.208] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.208] 
+[17:49:44.208] ===== CRASH SUMMARY =====
+[17:49:44.208] phase: CRASH
+[17:49:44.208] phase_now: CRASH
+[17:49:44.208] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.208] module: ApolloCT.dll
+[17:49:44.208] eip: 0x694f3e32
+[17:49:44.208] rva: 0x690f3e32
+[17:49:44.208] type: breakpoint
+[17:49:44.208] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.208] memory: N/A @ N/A
+[17:49:44.208] registers: eax=0x70aff52 ecx=0x1c69764f edx=0x1a530073 ebx=0x8c91b5b
+[17:49:44.208]            esp=0x70afe0c ebp=0x70aff44
+[17:49:44.208] recent events:
+[17:49:44.208]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.208]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.208]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.208]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.208]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.208]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.208]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.208]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.208] backtrace:
+[17:49:44.209]   ?+? (0x70affcc)
+[17:49:44.209]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.209]   ?+? (0x6730400)
+[17:49:44.209]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.209]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.209]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.209] =========================
+[17:49:44.209] 
+[17:49:44.209] >>> 信号指向 Apollo。建议:
+[17:49:44.209] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.209] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.209] 
+[17:49:44.209] ===== CRASH SUMMARY =====
+[17:49:44.209] phase: CRASH
+[17:49:44.209] phase_now: CRASH
+[17:49:44.209] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.209] module: ApolloCT.dll
+[17:49:44.209] eip: 0x694f3e32
+[17:49:44.209] rva: 0x690f3e32
+[17:49:44.209] type: breakpoint
+[17:49:44.209] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.209] memory: N/A @ N/A
+[17:49:44.209] registers: eax=0x70aff56 ecx=0x3869764f edx=0x1a530073 ebx=0x8c91bd3
+[17:49:44.209]            esp=0x70afe0c ebp=0x70aff44
+[17:49:44.209] recent events:
+[17:49:44.209]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.209]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.209]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.209]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.209]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.209]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.209]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.209]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.209] backtrace:
+[17:49:44.209]   ?+? (0x70affcc)
+[17:49:44.209]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.209]   ?+? (0x6730400)
+[17:49:44.209]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.209]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.209]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.209] =========================
+[17:49:44.209] 
+[17:49:44.209] >>> 信号指向 Apollo。建议:
+[17:49:44.209] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.211] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.211] 
+[17:49:44.211] ===== CRASH SUMMARY =====
+[17:49:44.211] phase: CRASH
+[17:49:44.211] phase_now: CRASH
+[17:49:44.211] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.211] module: ApolloCT.dll
+[17:49:44.211] eip: 0x694f3e32
+[17:49:44.211] rva: 0x690f3e32
+[17:49:44.211] type: breakpoint
+[17:49:44.211] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.211] memory: N/A @ N/A
+[17:49:44.211] registers: eax=0x70aff48 ecx=0x3869764f edx=0x1a50070 ebx=0x9d88d233
+[17:49:44.211]            esp=0x70afe0c ebp=0x70aff40
+[17:49:44.211] recent events:
+[17:49:44.211]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.211]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.211]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.211]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.211]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.211]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.211]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.211]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.211] backtrace:
+[17:49:44.211]   ?+? (0x70affcc)
+[17:49:44.211]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.211]   ?+? (0x66f0400)
+[17:49:44.211]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.211]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.211]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.211] =========================
+[17:49:44.211] 
+[17:49:44.211] >>> 信号指向 Apollo。建议:
+[17:49:44.211] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.211] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.211] 
+[17:49:44.211] ===== CRASH SUMMARY =====
+[17:49:44.211] phase: CRASH
+[17:49:44.211] phase_now: CRASH
+[17:49:44.212] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.212] module: ApolloCT.dll
+[17:49:44.212] eip: 0x694f3e32
+[17:49:44.212] rva: 0x690f3e32
+[17:49:44.212] type: breakpoint
+[17:49:44.212] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.212] memory: N/A @ N/A
+[17:49:44.212] registers: eax=0x70aff49 ecx=0x1c69764f edx=0x1a50061 ebx=0x9d88d242
+[17:49:44.212]            esp=0x70afe0c ebp=0x70aff40
+[17:49:44.212] recent events:
+[17:49:44.212]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.212]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.213]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.213]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.213]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.213]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.213]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.213]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.213] backtrace:
+[17:49:44.213]   ?+? (0x70affcc)
+[17:49:44.213]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.213]   ?+? (0x66f0400)
+[17:49:44.213]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.213]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.213]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.213] =========================
+[17:49:44.213] 
+[17:49:44.213] >>> 信号指向 Apollo。建议:
+[17:49:44.213] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.213] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.213] 
+[17:49:44.213] ===== CRASH SUMMARY =====
+[17:49:44.213] phase: CRASH
+[17:49:44.213] phase_now: CRASH
+[17:49:44.213] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.213] module: ApolloCT.dll
+[17:49:44.213] eip: 0x694f3e32
+[17:49:44.214] rva: 0x690f3e32
+[17:49:44.214] type: breakpoint
+[17:49:44.214] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.214] memory: N/A @ N/A
+[17:49:44.214] registers: eax=0x70aff4b ecx=0x2469764f edx=0x1a5002e ebx=0x9b9dd64b
+[17:49:44.214]            esp=0x70afe0c ebp=0x70aff40
+[17:49:44.214] recent events:
+[17:49:44.214]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.214]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.214]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.214]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.214]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.214]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.214]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.214]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.214] backtrace:
+[17:49:44.214]   ?+? (0x70affcc)
+[17:49:44.214]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.214]   ?+? (0x66f0400)
+[17:49:44.214]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.214]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.214]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.214] =========================
+[17:49:44.214] 
+[17:49:44.214] >>> 信号指向 Apollo。建议:
+[17:49:44.214] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.214] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.215] 
+[17:49:44.215] ===== CRASH SUMMARY =====
+[17:49:44.215] phase: CRASH
+[17:49:44.215] phase_now: CRASH
+[17:49:44.215] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.215] module: ApolloCT.dll
+[17:49:44.215] eip: 0x694f3e32
+[17:49:44.215] rva: 0x690f3e32
+[17:49:44.215] type: breakpoint
+[17:49:44.215] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.215] memory: N/A @ N/A
+[17:49:44.215] registers: eax=0x70aff4c ecx=0x3869764f edx=0x1a50064 ebx=0x9b9dd6cd
+[17:49:44.215]            esp=0x70afe0c ebp=0x70aff40
+[17:49:44.215] recent events:
+[17:49:44.215]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.215]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.215]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.215]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.215]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.215]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.215]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.215]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.215] backtrace:
+[17:49:44.215]   ?+? (0x70affcc)
+[17:49:44.215]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.215]   ?+? (0x66f0400)
+[17:49:44.216]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.216]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.216]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.216] =========================
+[17:49:44.216] 
+[17:49:44.216] >>> 信号指向 Apollo。建议:
+[17:49:44.216] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.216] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.216] 
+[17:49:44.216] ===== CRASH SUMMARY =====
+[17:49:44.216] phase: CRASH
+[17:49:44.216] phase_now: CRASH
+[17:49:44.216] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.216] module: ApolloCT.dll
+[17:49:44.216] eip: 0x694f3e32
+[17:49:44.216] rva: 0x690f3e32
+[17:49:44.216] type: breakpoint
+[17:49:44.216] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.216] memory: N/A @ N/A
+[17:49:44.216] registers: eax=0x70aff4d ecx=0x2469764f edx=0x1a5006c ebx=0x9b9dd628
+[17:49:44.216]            esp=0x70afe0c ebp=0x70aff40
+[17:49:44.216] recent events:
+[17:49:44.217]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.217]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.217]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.217]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.217]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.217]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.217]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.217]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.217] backtrace:
+[17:49:44.217]   ?+? (0x70affcc)
+[17:49:44.217]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.217]   ?+? (0x66f0400)
+[17:49:44.217]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.217]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.217]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.217] =========================
+[17:49:44.217] 
+[17:49:44.217] >>> 信号指向 Apollo。建议:
+[17:49:44.217] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.217] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.218] 
+[17:49:44.218] ===== CRASH SUMMARY =====
+[17:49:44.218] phase: CRASH
+[17:49:44.218] phase_now: CRASH
+[17:49:44.218] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.218] module: ApolloCT.dll
+[17:49:44.218] eip: 0x694f3e32
+[17:49:44.218] rva: 0x690f3e32
+[17:49:44.218] type: breakpoint
+[17:49:44.218] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.218] memory: N/A @ N/A
+[17:49:44.218] registers: eax=0x70aff4e ecx=0x469764f edx=0x1a5006c ebx=0x99b2d904
+[17:49:44.219]            esp=0x70afe0c ebp=0x70aff40
+[17:49:44.219] recent events:
+[17:49:44.219]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.219]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.219]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.219]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.219]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.219]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.219]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.219]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.219] backtrace:
+[17:49:44.219]   ?+? (0x70affcc)
+[17:49:44.219]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.219]   ?+? (0x66f0400)
+[17:49:44.219]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.219]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.219]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.219] =========================
+[17:49:44.220] 
+[17:49:44.220] >>> 信号指向 Apollo。建议:
+[17:49:44.220] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.220] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.221] 
+[17:49:44.221] ===== CRASH SUMMARY =====
+[17:49:44.221] phase: CRASH
+[17:49:44.221] phase_now: CRASH
+[17:49:44.221] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.221] module: ApolloCT.dll
+[17:49:44.221] eip: 0x694f3e32
+[17:49:44.221] rva: 0x690f3e32
+[17:49:44.221] type: breakpoint
+[17:49:44.221] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.221] memory: N/A @ N/A
+[17:49:44.221] registers: eax=0x70aff4f ecx=0x1c69764f edx=0x1a50000 ebx=0x97c7dc0f
+[17:49:44.221]            esp=0x70afe0c ebp=0x70aff40
+[17:49:44.221] recent events:
+[17:49:44.221]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.221]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.221]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.221]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.221]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.221]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.221]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.221]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.221] backtrace:
+[17:49:44.221]   ?+? (0x70affcc)
+[17:49:44.221]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.221]   ?+? (0x66f0400)
+[17:49:44.221]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.221]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.221]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.221] =========================
+[17:49:44.221] 
+[17:49:44.221] >>> 信号指向 Apollo。建议:
+[17:49:44.221] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.221] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.221] 
+[17:49:44.221] ===== CRASH SUMMARY =====
+[17:49:44.221] phase: CRASH
+[17:49:44.221] phase_now: CRASH
+[17:49:44.221] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.223] module: ApolloCT.dll
+[17:49:44.223] eip: 0x694f3e32
+[17:49:44.223] rva: 0x690f3e32
+[17:49:44.223] type: breakpoint
+[17:49:44.223] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.223] memory: N/A @ N/A
+[17:49:44.223] registers: eax=0x70aff50 ecx=0x3869764f edx=0x1a50054 ebx=0x97c7dc85
+[17:49:44.223]            esp=0x70afe0c ebp=0x70aff40
+[17:49:44.223] recent events:
+[17:49:44.223]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.223]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.223]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.223]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.223]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.223]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.223]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.223]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.223] backtrace:
+[17:49:44.223]   ?+? (0x70affcc)
+[17:49:44.224]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.224]   ?+? (0x66f0400)
+[17:49:44.224]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.224]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.224]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.224] =========================
+[17:49:44.224] 
+[17:49:44.224] >>> 信号指向 Apollo。建议:
+[17:49:44.224] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.224] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.225] 
+[17:49:44.225] ===== CRASH SUMMARY =====
+[17:49:44.225] phase: CRASH
+[17:49:44.225] phase_now: CRASH
+[17:49:44.225] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.225] module: ApolloCT.dll
+[17:49:44.225] eip: 0x694f3e32
+[17:49:44.225] rva: 0x690f3e32
+[17:49:44.225] type: breakpoint
+[17:49:44.225] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.225] memory: N/A @ N/A
+[17:49:44.225] registers: eax=0x70aff51 ecx=0x469764f edx=0x1a50065 ebx=0x97c7dc71
+[17:49:44.225]            esp=0x70afe0c ebp=0x70aff40
+[17:49:44.225] recent events:
+[17:49:44.225]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.225]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.225]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.225]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.225]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.225]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.225]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.225]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.225] backtrace:
+[17:49:44.225]   ?+? (0x70affcc)
+[17:49:44.226]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.226]   ?+? (0x66f0400)
+[17:49:44.226]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.226]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.226]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.226] =========================
+[17:49:44.226] 
+[17:49:44.226] >>> 信号指向 Apollo。建议:
+[17:49:44.226] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.226] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.226] 
+[17:49:44.226] ===== CRASH SUMMARY =====
+[17:49:44.226] phase: CRASH
+[17:49:44.226] phase_now: CRASH
+[17:49:44.226] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.226] module: ApolloCT.dll
+[17:49:44.226] eip: 0x694f3e32
+[17:49:44.226] rva: 0x690f3e32
+[17:49:44.226] type: breakpoint
+[17:49:44.226] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.226] memory: N/A @ N/A
+[17:49:44.226] registers: eax=0x70aff53 ecx=0x1c69764f edx=0x1a50074 ebx=0x97c7dcb6
+[17:49:44.226]            esp=0x70afe0c ebp=0x70aff40
+[17:49:44.226] recent events:
+[17:49:44.226]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.226]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.226]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.226]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.226]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.226]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.226]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.226]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.226] backtrace:
+[17:49:44.226]   ?+? (0x70affcc)
+[17:49:44.227]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.227]   ?+? (0x66f0400)
+[17:49:44.227]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.227]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.227]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.227] =========================
+[17:49:44.227] 
+[17:49:44.227] >>> 信号指向 Apollo。建议:
+[17:49:44.227] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.227] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.227] 
+[17:49:44.227] ===== CRASH SUMMARY =====
+[17:49:44.227] phase: CRASH
+[17:49:44.227] phase_now: CRASH
+[17:49:44.227] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.227] module: ApolloCT.dll
+[17:49:44.227] eip: 0x694f3e32
+[17:49:44.227] rva: 0x690f3e32
+[17:49:44.227] type: breakpoint
+[17:49:44.227] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.227] memory: N/A @ N/A
+[17:49:44.227] registers: eax=0x70aff54 ecx=0x3869764f edx=0x1a50050 ebx=0x95dd1ed1
+[17:49:44.227]            esp=0x70afe0c ebp=0x70aff40
+[17:49:44.227] recent events:
+[17:49:44.227]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.227]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.227]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.227]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.227]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.227]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.227]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.228]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.228] backtrace:
+[17:49:44.228]   ?+? (0x70affcc)
+[17:49:44.228]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.228]   ?+? (0x66f0400)
+[17:49:44.228]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.228]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.228]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.228] =========================
+[17:49:44.228] 
+[17:49:44.228] >>> 信号指向 Apollo。建议:
+[17:49:44.228] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.228] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.228] 
+[17:49:44.228] ===== CRASH SUMMARY =====
+[17:49:44.228] phase: CRASH
+[17:49:44.228] phase_now: CRASH
+[17:49:44.228] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.228] module: ApolloCT.dll
+[17:49:44.228] eip: 0x694f3e32
+[17:49:44.228] rva: 0x690f3e32
+[17:49:44.228] type: breakpoint
+[17:49:44.228] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.228] memory: N/A @ N/A
+[17:49:44.228] registers: eax=0x70aff55 ecx=0x469764f edx=0x1a50061 ebx=0x95dd1ea4
+[17:49:44.228]            esp=0x70afe0c ebp=0x70aff40
+[17:49:44.228] recent events:
+[17:49:44.228]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.228]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.228]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.228]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.228]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.228]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.229]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.229]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.229] backtrace:
+[17:49:44.229]   ?+? (0x70affcc)
+[17:49:44.229]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.229]   ?+? (0x66f0400)
+[17:49:44.229]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.229]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.229]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.229] =========================
+[17:49:44.229] 
+[17:49:44.229] >>> 信号指向 Apollo。建议:
+[17:49:44.229] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.229] >>>   2. 或改用 debug_inject.py 方案
+[17:49:44.229] 
+[17:49:44.229] ===== CRASH SUMMARY =====
+[17:49:44.229] phase: CRASH
+[17:49:44.229] phase_now: CRASH
+[17:49:44.229] verdict: STRONG_APOLLO_SIGNAL
+[17:49:44.229] module: ApolloCT.dll
+[17:49:44.229] eip: 0x694f3e32
+[17:49:44.229] rva: 0x690f3e32
+[17:49:44.229] type: breakpoint
+[17:49:44.229] instruction: cc 9d 17 4e 17 e2 c7 c0 3b 2e 6e 1a eb 40 be 5f
+[17:49:44.229] memory: N/A @ N/A
+[17:49:44.229] registers: eax=0x70aff57 ecx=0x3869764f edx=0x1a50000 ebx=0x95dd1e2d
+[17:49:44.229]            esp=0x70afe0c ebp=0x70aff40
+[17:49:44.229] recent events:
+[17:49:44.230]   [ROOM_LOAD] read_file #20 tag=SSKF bytes=26112
+[17:49:44.230]   [ROOM_LOAD] read_file #21 tag=SSKF bytes=512
+[17:49:44.230]   [ROOM_LOAD] read_file #22 tag=SSKF bytes=21504
+[17:49:44.230]   [ROOM_LOAD] read_file #23 tag=SSKF bytes=512
+[17:49:44.230]   [ROOM_LOAD] read_file #24 tag=SSKF bytes=1536
+[17:49:44.230]   [ROOM_LOAD] read_file #25 tag=SSKF bytes=512
+[17:49:44.230]   [ROOM_LOAD] read_file #26 tag=SSKF bytes=45056
+[17:49:44.230]   [CRASH] phase_change ROOM_LOAD->CRASH
+[17:49:44.230] backtrace:
+[17:49:44.230]   ?+? (0x70affcc)
+[17:49:44.230]   ApolloCT.Dll+0x4f3e32 (0x694f3e32)
+[17:49:44.230]   ?+? (0x66f0400)
+[17:49:44.230]   KERNEL32.DLL+0x17ba9 (0x75807ba9)
+[17:49:44.230]   ntdll.dll+0x6bd3b (0x7734bd3b)
+[17:49:44.230]   ntdll.dll+0x6bcbf (0x7734bcbf)
+[17:49:44.230] =========================
+[17:49:44.230] 
+[17:49:44.230] >>> 信号指向 Apollo。建议:
+[17:49:44.230] >>>   1. 确认 ApolloProtect 已完全停止 (STATE 1)
+[17:49:44.230] >>>   2. 或改用 debug_inject.py 方案

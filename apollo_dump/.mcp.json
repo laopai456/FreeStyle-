@@ -1,7 +1,0 @@
-{
-  "x64dbg": {
-    "type": "stdio",
-    "command": "cmd",
-    "args": ["/c", "npx", "-y", "x64dbg-mcp-server"]
-  }
-}

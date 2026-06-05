@@ -1,0 +1,60 @@
+=== Phase B: Hook & Disasm Analysis ===
+
+## CRC Functions (post-patch verification)
+
+### CRC1 @ 0x06803C54
+```
+  Bytes: 83ecfc0f8f4cb0ffff84f33b45fc5289
+  0x06803C54: 83ecfc               sub      esp, -4
+  0x06803C57: 0f8f4cb0ffff         jg       0x67feca9
+  0x06803C5D: 84f3                 test     bl, dh
+  0x06803C5F: 3b45fc               cmp      eax, dword ptr [ebp - 4]
+  0x06803C62: 52                   push     edx
+```
+
+### CRC2 @ 0x0681E222
+```
+  Bytes: 83ecd468da34580f381da49702006689
+  0x0681E222: 83ecd4               sub      esp, -0x2c
+  0x0681E225: 68da34580f           push     0xf5834da
+  0x0681E22A: 381da4970200         cmp      byte ptr [0x297a4], bl
+  0x0681E230: 66890c24             mov      word ptr [esp], cx
+  0x0681E234: 53                   push     ebx
+```
+
+## Interesting Code Regions
+
+### ApolloCT .text area @ 0x06661000
+```
+  0x06661000: 56                   push     esi
+  0x06661001: 8b742408             mov      esi, dword ptr [esp + 8]
+  0x06661005: ba04000000           mov      edx, 4
+  0x0666100A: 8b8604020000         mov      eax, dword ptr [esi + 0x204]
+  0x06661010: c1e002               shl      eax, 2
+  0x06661013: 3bc2                 cmp      eax, edx
+  0x06661015: 7661                 jbe      0x6661078
+  0x06661017: 53                   push     ebx
+  0x06661018: 55                   push     ebp
+  0x06661019: 57                   push     edi
+  0x0666101A: 8d8e10010000         lea      ecx, [esi + 0x110]
+  0x06661020: 8b01                 mov      eax, dword ptr [ecx]
+  0x06661022: 83c104               add      ecx, 4
+  0x06661025: 8bd8                 mov      ebx, eax
+  0x06661027: 8bf8                 mov      edi, eax
+  0x06661029: c1eb10               shr      ebx, 0x10
+  0x0666102C: c1e808               shr      eax, 8
+  0x0666102F: 81e3ff000000         and      ebx, 0xff
+  0x06661035: 25ff000000           and      eax, 0xff
+  0x0666103A: c1ef18               shr      edi, 0x18
+```
+
+## Pattern Scan: Push args + Call [API] patterns
+
+### CALL near +0 (get EIP)
+  Found: 1346 occurrences
+    0x0667A2F9
+    0x0669AD23
+    0x0669AD91
+    0x06A792FA
+    0x06A79339
+

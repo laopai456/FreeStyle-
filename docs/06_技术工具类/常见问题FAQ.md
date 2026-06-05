@@ -3,7 +3,7 @@
 ## 编译相关
 
 ### Q: 编译时提示找不到图标文件
-**A**: 复制 `FS服装搭配专家v5.3.6.ico` 到项目根目录，或注释掉项目文件中的图标引用。
+**A**: 复制 `FS服装搭配专家v1.0.ico` 到项目根目录，或注释掉项目文件中的图标引用。
 
 ### Q: 编译时出现 "应输入 ;" 等语法错误
 **A**: 检查修改代码时是否遗漏了分号或大括号。
@@ -20,7 +20,7 @@
 **A**: 使用 UTF-8 编码的文本编辑器打开，或使用 VS Code。
 
 ### Q: 如何禁用调试监听器？
-**A**: 注释掉 `FrmMain.cs` 构造函数中的 `Elena.Debugger.OperationDebugger.Initialize();`
+**A**: 注释掉 `UI/Windows/MainWindow.xaml.cs` 构造函数中的 `Elena.Debugger.OperationDebugger.Initialize();`
 
 ### Q: 启动程序后主界面显示空白，只弹"Error"错误？
 **A**:

@@ -2,12 +2,12 @@
 
 ## 一、功能概述
 
-为FS服装搭配专家v5.3.6添加Discord风格的梦幻界面效果，包括渐变背景、霓虹发光控件、几何装饰元素等，同时保持原有功能完整。
+为FS服装搭配专家v1.0添加Discord风格的梦幻界面效果，包括渐变背景、霓虹发光控件、几何装饰元素等，同时保持原有功能完整。
 
 ## 二、项目位置
 
-- **主程序**: `d:/py/反编译/FS服装搭配专家v5.3.6/`
-- **源代码**: `FS服装搭配专家v5.3.6.csproj`
+- **主程序**: `d:/py/反编译/FS服装搭配专家v1.0/`
+- **源代码**: `FS服装搭配专家v1.0.csproj`
 
 ## 三、实现内容
 
@@ -23,8 +23,8 @@
 
 | 文件 | 修改内容 |
 |------|----------|
-| `FrmMain.cs` | 添加MaterialSkin引用、实现渐变背景、添加装饰元素 |
-| `FS服装搭配专家v5.3.6.csproj` | 添加新控件的引用 |
+| `UI/Windows/MainWindow.xaml.cs` | 添加WPF资源样式引用、实现渐变背景、添加装饰元素 |
+| `FS服装搭配专家v1.0.csproj` | 添加新控件的引用 |
 
 ### 3.3 技术实现
 
@@ -103,13 +103,13 @@ public class NeonButton : Button
 }
 ```
 
-#### 3.3.4 MaterialSkin集成
+#### 3.3.4 WPF资源样式集成
 
 ```csharp
-// 在FrmMain构造函数中添加
-var materialSkinManager = MaterialSkinManager.Instance;
+// 在MainWindow构造函数中添加
+var materialSkinManager = WPF资源样式Manager.Instance;
 materialSkinManager.AddFormToManage(this);
-materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+materialSkinManager.Theme = WPF资源样式Manager.Themes.DARK;
 materialSkinManager.ColorScheme = new ColorScheme(
     Primary.Purple800,
     Primary.Purple900,
@@ -139,7 +139,7 @@ materialSkinManager.ColorScheme = new ColorScheme(
 - **模块化设计**: 自定义控件可单独使用和修改
 - **兼容性**: 保持与原有功能的完全兼容
 - **性能优化**: 使用双缓冲和高效绘制
-- **错误处理**: MaterialSkin初始化失败时自动降级
+- **错误处理**: WPF资源样式初始化失败时自动降级
 - **可扩展性**: 易于添加更多自定义效果
 
 ## 五、功能保留
@@ -157,7 +157,7 @@ materialSkinManager.ColorScheme = new ColorScheme(
 ### 6.1 打开项目
 
 1. 打开Visual Studio
-2. 打开 `FS服装搭配专家v5.3.6.sln` 解决方案
+2. 打开 `FS服装搭配专家v1.0.sln` 解决方案
 
 ### 6.2 编译项目
 
@@ -189,8 +189,8 @@ materialSkinManager.ColorScheme = new ColorScheme(
 
 | 依赖项 | 版本 | 用途 | 来源 |
 |--------|------|------|------|
-| .NET Framework | 4.8 | 运行环境 | 系统内置 |
-| MaterialSkin | 2.3.1 | 现代控件风格 | NuGet包 |
+| .NET | 8 | 运行环境 | 系统内置 |
+| WPF资源样式 | 2.3.1 | 现代控件风格 | NuGet包 |
 | CSkin | 内置 | 原有皮肤库 | 项目内置 |
 | System.Drawing | 4.8 | 图形绘制 | 系统内置 |
 
@@ -226,11 +226,11 @@ materialSkinManager.ColorScheme = new ColorScheme(
 
 ## 十、总结
 
-本实现成功为FS服装搭配专家v5.3.6添加了Discord风格的梦幻界面效果，包括：
+本实现成功为FS服装搭配专家v1.0添加了Discord风格的梦幻界面效果，包括：
 
 1. **创建了3个自定义控件**：NeonButton、GlassPanel、NeonLabel
 2. **实现了核心视觉效果**：渐变背景、几何装饰、霓虹发光
-3. **集成了MaterialSkin**：使用现代Material Design风格
+3. **集成了WPF资源样式**：使用现代Material Design风格
 4. **保持了功能完整**：所有原有功能都正常工作
 5. **优化了性能**：使用双缓冲确保流畅动画
 
@@ -239,6 +239,6 @@ materialSkinManager.ColorScheme = new ColorScheme(
 ---
 
 **文档创建时间**: 2026-02-11
-**实现版本**: v5.3.6-UI-Enhanced
+**实现版本**: v1.0-UI-Enhanced
 **开发工具**: Visual Studio 2022
-**框架版本**: .NET Framework 4.8
+**框架版本**: .NET 4.8

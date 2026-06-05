@@ -1,9 +1,0 @@
-Log: D:\py\反编译\FreeStyle\apollo_dump\smd_v12_20260523_164431.txt
-Attaching PID 11380...
-  [diag] {'t': 'diag', 'msg': 'step1: loading modules'}
-  [diag] {'t': 'diag', 'msg': 'kernel32 base=0x75ce0000'}
-  [ERROR] findExportByName fail: TypeError: not a function
-  [JS ERROR] Error: missing argument
-Detaching...
-
-!!! PROCESS EXIT: reason=application-requested, crash=None !!!

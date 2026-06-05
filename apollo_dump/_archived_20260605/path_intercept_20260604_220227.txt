@@ -1,0 +1,503 @@
+[22:02:27] === 统一路径拦截器 v2 === PID:3752 ===
+[22:02:27] 替换: 50125461(美丽梦想发型) → 50125671(紫色超赛发型)
+[22:02:27] 等长: 8位 → 8位 ✓
+[22:02:27] 钩子: sprintf + strcpy + lstrcpyA (全部DLL函数)
+[22:02:27] 验证: strstr 观察 (不改)
+[22:02:27] 安全: 零.text hook | NULL guard | Apollo交给外部
+[22:02:27] 日志: D:\py\反编译\FreeStyle\apollo_dump\path_intercept_20260604_220227.txt
+[22:02:28]   [步骤] JS开始执行
+[22:02:28]   [步骤] sprintf=0x62076051
+[22:02:28]   [步骤] strcpy=0x62012700 (MSVCR100.dll)
+[22:02:28]   [步骤] lstrcpyA=0x76728420 (KERNEL32.DLL)
+[22:02:28]   ★ v2 就绪: 50125461 → 50125671 | 仅DLL hook: sprintf+strcpy+lstrcpyA+strstr | 零.text | NULL guard
+[22:02:28] 
+[22:02:28] 后台常驻。进练习场测试。
+[22:02:28] 
+[22:02:28]   [strstr样本] #1 total=1 needle="GroundBone"
+[22:02:28]   [strstr样本] #2 total=2 needle="GroundBone"
+[22:02:28]   [strstr样本] #3 total=3 needle="GroundBone"
+[22:02:28]   [strstr样本] #4 total=4 needle="GroundBone"
+[22:02:28]   [strstr样本] #5 total=5 needle="GroundBone"
+[22:02:28]   [strstr样本] #6 total=6 needle="GroundBone"
+[22:02:28]   [strstr样本] #7 total=7 needle="GroundBone"
+[22:02:28]   [strstr样本] #8 total=8 needle="GroundBone"
+[22:02:28]   [strstr样本] #9 total=9 needle="GroundBone"
+[22:02:28]   [strstr样本] #10 total=10 needle="GroundBone"
+[22:02:38]   [状态] sprintf=0 strcpy=0 strstr总调用=2163 strstr命中=0
+[22:02:48]   [状态] sprintf=0 strcpy=0 strstr总调用=4352 strstr命中=0
+[22:02:58]   [状态] sprintf=0 strcpy=0 strstr总调用=6542 strstr命中=0
+[22:03:08]   [状态] sprintf=0 strcpy=0 strstr总调用=8728 strstr命中=0
+[22:03:18]   [状态] sprintf=0 strcpy=0 strstr总调用=10921 strstr命中=0
+[22:03:28]   [状态] sprintf=0 strcpy=0 strstr总调用=13121 strstr命中=0
+[22:03:38]   [状态] sprintf=0 strcpy=0 strstr总调用=15226 strstr命中=0
+[22:03:40]   [sprintf替换] #1 → i50125671.xml
+[22:03:40]   [strcpy替换] #1 (strcpy) pos=0
+[22:03:40]     → i50125671.bml
+[22:03:40]   [strcpy替换] #2 (strcpy) pos=0
+[22:03:40]     → i50125671_FN.smd
+[22:03:40]   [strcpy替换] #3 (strcpy) pos=0
+[22:03:40]     → i50125671_FN.smd
+[22:03:40]   [strcpy替换] #4 (strcpy) pos=0
+[22:03:40]     → i50125671_FN.smd
+[22:03:40]   [strcpy替换] #5 (strcpy) pos=0
+[22:03:40]     → i50125671_fn.smd
+[22:03:40]   [strcpy替换] #6 (strcpy) pos=0
+[22:03:40]     → i50125671.png
+[22:03:40]   [sprintf替换] #2 → i50125671.xml
+[22:03:40]   [strcpy替换] #7 (strcpy) pos=0
+[22:03:40]     → i50125671.bml
+[22:03:40]   [strcpy替换] #8 (strcpy) pos=0
+[22:03:40]     → i50125671_FN.smd
+[22:03:40]   [strcpy替换] #9 (strcpy) pos=0
+[22:03:40]     → i50125671_FN.smd
+[22:03:40]   [strcpy替换] #10 (strcpy) pos=0
+[22:03:40]     → i50125671_FN.smd
+[22:03:40]   [strcpy替换] #11 (strcpy) pos=0
+[22:03:40]     → i50125671_fn.smd
+[22:03:40]   [strcpy替换] #12 (strcpy) pos=0
+[22:03:40]     → i50125671.png
+[22:03:40]   [sprintf替换] #3 → i50125671.xml
+[22:03:40]   [strcpy替换] #13 (strcpy) pos=0
+[22:03:40]     → i50125671.bml
+[22:03:40]   [strcpy替换] #14 (strcpy) pos=0
+[22:03:40]     → i50125671_FN.smd
+[22:03:40]   [strcpy替换] #15 (strcpy) pos=0
+[22:03:40]     → i50125671_FN.smd
+[22:03:40]   [strcpy替换] #16 (strcpy) pos=0
+[22:03:40]     → i50125671_FN.smd
+[22:03:40]   [strcpy替换] #17 (strcpy) pos=0
+[22:03:40]     → i50125671_fn.smd
+[22:03:40]   [strcpy替换] #18 (strcpy) pos=0
+[22:03:40]     → i50125671.png
+[22:03:48]   [状态] sprintf=3 strcpy=18 strstr总调用=17762 strstr命中=0
+[22:03:53]   [错误] strcpy LEAVE: Error: access violation accessing 0x2c468000
+[22:03:53]   [错误] strcpy LEAVE: Error: access violation accessing 0x2c468000
+[22:03:58]   [状态] sprintf=3 strcpy=18 strstr总调用=26573 strstr命中=0
+[22:04:08]   [状态] sprintf=3 strcpy=18 strstr总调用=39564 strstr命中=0
+[22:04:18]   [状态] sprintf=3 strcpy=18 strstr总调用=52511 strstr命中=0
+[22:04:28]   [状态] sprintf=3 strcpy=18 strstr总调用=65563 strstr命中=0
+[22:04:38]   [状态] sprintf=3 strcpy=18 strstr总调用=78576 strstr命中=0
+[22:04:48]   [状态] sprintf=3 strcpy=18 strstr总调用=91693 strstr命中=0
+[22:04:58]   [状态] sprintf=3 strcpy=18 strstr总调用=104724 strstr命中=0
+[22:05:08]   [状态] sprintf=3 strcpy=18 strstr总调用=117788 strstr命中=0
+[22:05:18]   [状态] sprintf=3 strcpy=18 strstr总调用=130838 strstr命中=0
+[22:05:28]   [状态] sprintf=3 strcpy=18 strstr总调用=143803 strstr命中=0
+[22:05:38]   [状态] sprintf=3 strcpy=18 strstr总调用=156793 strstr命中=0
+[22:05:48]   [状态] sprintf=3 strcpy=18 strstr总调用=169765 strstr命中=0
+[22:05:58]   [状态] sprintf=3 strcpy=18 strstr总调用=183674 strstr命中=0
+[22:06:08]   [状态] sprintf=3 strcpy=18 strstr总调用=196613 strstr命中=0
+[22:06:18]   [状态] sprintf=3 strcpy=18 strstr总调用=209585 strstr命中=0
+[22:06:28]   [状态] sprintf=3 strcpy=18 strstr总调用=222618 strstr命中=0
+[22:06:38]   [状态] sprintf=3 strcpy=18 strstr总调用=235604 strstr命中=0
+[22:06:48]   [状态] sprintf=3 strcpy=18 strstr总调用=248607 strstr命中=0
+[22:06:58]   [状态] sprintf=3 strcpy=18 strstr总调用=261640 strstr命中=0
+[22:07:08]   [状态] sprintf=3 strcpy=18 strstr总调用=274701 strstr命中=0
+[22:07:18]   [状态] sprintf=3 strcpy=18 strstr总调用=287704 strstr命中=0
+[22:07:28]   [状态] sprintf=3 strcpy=18 strstr总调用=300612 strstr命中=0
+[22:07:38]   [状态] sprintf=3 strcpy=18 strstr总调用=313656 strstr命中=0
+[22:07:48]   [状态] sprintf=3 strcpy=18 strstr总调用=326628 strstr命中=0
+[22:07:58]   [状态] sprintf=3 strcpy=18 strstr总调用=339671 strstr命中=0
+[22:08:08]   [状态] sprintf=3 strcpy=18 strstr总调用=352725 strstr命中=0
+[22:08:18]   [状态] sprintf=3 strcpy=18 strstr总调用=365691 strstr命中=0
+[22:08:28]   [状态] sprintf=3 strcpy=18 strstr总调用=378685 strstr命中=0
+[22:08:38]   [状态] sprintf=3 strcpy=18 strstr总调用=391712 strstr命中=0
+[22:08:48]   [状态] sprintf=3 strcpy=18 strstr总调用=404769 strstr命中=0
+[22:08:58]   [状态] sprintf=3 strcpy=18 strstr总调用=417784 strstr命中=0
+[22:09:08]   [状态] sprintf=3 strcpy=18 strstr总调用=430739 strstr命中=0
+[22:09:18]   [状态] sprintf=3 strcpy=18 strstr总调用=443789 strstr命中=0
+[22:09:28]   [状态] sprintf=3 strcpy=18 strstr总调用=456907 strstr命中=0
+[22:09:38]   [状态] sprintf=3 strcpy=18 strstr总调用=469993 strstr命中=0
+[22:09:48]   [状态] sprintf=3 strcpy=18 strstr总调用=483043 strstr命中=0
+[22:09:58]   [状态] sprintf=3 strcpy=18 strstr总调用=496127 strstr命中=0
+[22:10:08]   [状态] sprintf=3 strcpy=18 strstr总调用=509198 strstr命中=0
+[22:10:18]   [状态] sprintf=3 strcpy=18 strstr总调用=522291 strstr命中=0
+[22:10:28]   [状态] sprintf=3 strcpy=18 strstr总调用=535353 strstr命中=0
+[22:10:38]   [状态] sprintf=3 strcpy=18 strstr总调用=548298 strstr命中=0
+[22:10:48]   [状态] sprintf=3 strcpy=18 strstr总调用=561305 strstr命中=0
+[22:10:58]   [状态] sprintf=3 strcpy=18 strstr总调用=574284 strstr命中=0
+[22:11:08]   [状态] sprintf=3 strcpy=18 strstr总调用=587240 strstr命中=0
+[22:11:18]   [状态] sprintf=3 strcpy=18 strstr总调用=600210 strstr命中=0
+[22:11:28]   [状态] sprintf=3 strcpy=18 strstr总调用=613254 strstr命中=0
+[22:11:38]   [状态] sprintf=3 strcpy=18 strstr总调用=626294 strstr命中=0
+[22:11:48]   [状态] sprintf=3 strcpy=18 strstr总调用=639381 strstr命中=0
+[22:11:58]   [状态] sprintf=3 strcpy=18 strstr总调用=652370 strstr命中=0
+[22:12:08]   [状态] sprintf=3 strcpy=18 strstr总调用=665451 strstr命中=0
+[22:12:18]   [状态] sprintf=3 strcpy=18 strstr总调用=678430 strstr命中=0
+[22:12:28]   [状态] sprintf=3 strcpy=18 strstr总调用=691513 strstr命中=0
+[22:12:38]   [状态] sprintf=3 strcpy=18 strstr总调用=704502 strstr命中=0
+[22:12:48]   [状态] sprintf=3 strcpy=18 strstr总调用=717476 strstr命中=0
+[22:12:58]   [状态] sprintf=3 strcpy=18 strstr总调用=730511 strstr命中=0
+[22:13:08]   [状态] sprintf=3 strcpy=18 strstr总调用=743568 strstr命中=0
+[22:13:18]   [状态] sprintf=3 strcpy=18 strstr总调用=756534 strstr命中=0
+[22:13:28]   [状态] sprintf=3 strcpy=18 strstr总调用=769598 strstr命中=0
+[22:13:38]   [状态] sprintf=3 strcpy=18 strstr总调用=782612 strstr命中=0
+[22:13:48]   [状态] sprintf=3 strcpy=18 strstr总调用=795637 strstr命中=0
+[22:13:58]   [sprintf替换] #4 → i50125671.xml
+[22:13:58]   [strcpy替换] #19 (strcpy) pos=0
+[22:13:58]     → i50125671.bml
+[22:13:58]   [strcpy替换] #20 (strcpy) pos=169
+[22:13:58]     → c800.smd
+[22:13:58]   [strcpy替换] #21 (strcpy) pos=57
+[22:13:58]     → c800.smd
+[22:13:58]   [strcpy替换] #22 (strcpy) pos=169
+[22:13:58]     → c800.smd
+[22:13:58]   [strcpy替换] #23 (strcpy) pos=57
+[22:13:58]     → c801.smd
+[22:13:58]   [strcpy替换] #24 (strcpy) pos=57
+[22:13:58]     → c801.smd
+[22:13:58]   [strcpy替换] #25 (strcpy) pos=57
+[22:13:58]     → c801.smd
+[22:13:58]   [strcpy替换] #26 (strcpy) pos=0
+[22:13:58]     → i50125671_FN.smd
+[22:13:58]   [strcpy替换] #27 (strcpy) pos=0
+[22:13:58]     → i50125671_FN.smd
+[22:13:58]   [strcpy替换] #28 (strcpy) pos=0
+[22:13:58]     → i50125671_FN.smd
+[22:13:58]   [strcpy替换] #29 (strcpy) pos=0
+[22:13:58]     → i50125671_fn.smd
+[22:13:58]   [strcpy替换] #30 (strcpy) pos=0
+[22:13:58]     → i50125671.png
+[22:13:58]   [状态] sprintf=4 strcpy=30 strstr总调用=807706 strstr命中=0
+[22:14:08]   [状态] sprintf=4 strcpy=30 strstr总调用=809736 strstr命中=0
+[22:14:18]   [状态] sprintf=4 strcpy=30 strstr总调用=811873 strstr命中=0
+[22:14:28]   [状态] sprintf=4 strcpy=30 strstr总调用=814033 strstr命中=0
+[22:14:38]   [状态] sprintf=4 strcpy=30 strstr总调用=816178 strstr命中=0
+[22:14:48]   [状态] sprintf=4 strcpy=30 strstr总调用=818305 strstr命中=0
+[22:14:58]   [状态] sprintf=4 strcpy=30 strstr总调用=820474 strstr命中=0
+[22:15:08]   [状态] sprintf=4 strcpy=30 strstr总调用=822664 strstr命中=0
+[22:15:18]   [状态] sprintf=4 strcpy=30 strstr总调用=824863 strstr命中=0
+[22:15:28]   [状态] sprintf=4 strcpy=30 strstr总调用=827047 strstr命中=0
+[22:15:38]   [状态] sprintf=4 strcpy=30 strstr总调用=829230 strstr命中=0
+[22:15:48]   [状态] sprintf=4 strcpy=30 strstr总调用=831413 strstr命中=0
+[22:15:58]   [状态] sprintf=4 strcpy=30 strstr总调用=833593 strstr命中=0
+[22:16:08]   [状态] sprintf=4 strcpy=30 strstr总调用=835780 strstr命中=0
+[22:16:18]   [状态] sprintf=4 strcpy=30 strstr总调用=837945 strstr命中=0
+[22:16:28]   [状态] sprintf=4 strcpy=30 strstr总调用=840112 strstr命中=0
+[22:16:38]   [状态] sprintf=4 strcpy=30 strstr总调用=842310 strstr命中=0
+[22:16:48]   [状态] sprintf=4 strcpy=30 strstr总调用=844486 strstr命中=0
+[22:16:58]   [状态] sprintf=4 strcpy=30 strstr总调用=846665 strstr命中=0
+[22:17:08]   [状态] sprintf=4 strcpy=30 strstr总调用=848843 strstr命中=0
+[22:17:18]   [状态] sprintf=4 strcpy=30 strstr总调用=851036 strstr命中=0
+[22:17:28]   [状态] sprintf=4 strcpy=30 strstr总调用=855207 strstr命中=0
+[22:17:38]   [sprintf替换] #5 → i50125671.xml
+[22:17:38]   [strcpy替换] #31 (strcpy) pos=0
+[22:17:38]     → i50125671.bml
+[22:17:38]   [strcpy替换] #32 (strcpy) pos=0
+[22:17:38]     → i50125671_FN.smd
+[22:17:38]   [strcpy替换] #33 (strcpy) pos=0
+[22:17:38]     → i50125671_FN.smd
+[22:17:38]   [strcpy替换] #34 (strcpy) pos=0
+[22:17:38]     → i50125671_FN.smd
+[22:17:38]   [strcpy替换] #35 (strcpy) pos=0
+[22:17:38]     → i50125671_fn.smd
+[22:17:38]   [strcpy替换] #36 (strcpy) pos=0
+[22:17:38]     → i50125671.png
+[22:17:38]   [sprintf替换] #6 → i50125671.xml
+[22:17:38]   [strcpy替换] #37 (strcpy) pos=0
+[22:17:38]     → i50125671.bml
+[22:17:38]   [strcpy替换] #38 (strcpy) pos=0
+[22:17:38]     → i50125671_FN.smd
+[22:17:38]   [strcpy替换] #39 (strcpy) pos=0
+[22:17:38]     → i50125671_FN.smd
+[22:17:38]   [strcpy替换] #40 (strcpy) pos=0
+[22:17:38]     → i50125671_FN.smd
+[22:17:38]   [strcpy替换] #41 (strcpy) pos=0
+[22:17:38]     → i50125671_fn.smd
+[22:17:38]   [strcpy替换] #42 (strcpy) pos=0
+[22:17:38]     → i50125671.png
+[22:17:38]   [状态] sprintf=6 strcpy=42 strstr总调用=859015 strstr命中=0
+[22:17:44]   [sprintf替换] #7 → i50125671.xml
+[22:17:44]   [strcpy替换] #43 (strcpy) pos=0
+[22:17:44]     → i50125671.bml
+[22:17:44]   [strcpy替换] #44 (strcpy) pos=0
+[22:17:44]     → i50125671_FN.smd
+[22:17:44]   [strcpy替换] #45 (strcpy) pos=0
+[22:17:44]     → i50125671_FN.smd
+[22:17:44]   [strcpy替换] #46 (strcpy) pos=0
+[22:17:44]     → i50125671_FN.smd
+[22:17:44]   [strcpy替换] #47 (strcpy) pos=0
+[22:17:44]     → i50125671_fn.smd
+[22:17:44]   [strcpy替换] #48 (strcpy) pos=0
+[22:17:44]     → i50125671.png
+[22:17:48]   [状态] sprintf=7 strcpy=48 strstr总调用=869314 strstr命中=0
+[22:17:58]   [状态] sprintf=7 strcpy=48 strstr总调用=883201 strstr命中=0
+[22:18:08]   [状态] sprintf=7 strcpy=48 strstr总调用=897926 strstr命中=0
+[22:18:18]   [状态] sprintf=7 strcpy=48 strstr总调用=934967 strstr命中=0
+[22:18:28]   [状态] sprintf=7 strcpy=48 strstr总调用=972620 strstr命中=0
+[22:18:38]   [状态] sprintf=7 strcpy=48 strstr总调用=1011416 strstr命中=0
+[22:18:48]   [状态] sprintf=7 strcpy=48 strstr总调用=1051461 strstr命中=0
+[22:18:58]   [状态] sprintf=7 strcpy=48 strstr总调用=1088723 strstr命中=0
+[22:19:08]   [状态] sprintf=7 strcpy=48 strstr总调用=1125190 strstr命中=0
+[22:19:18]   [状态] sprintf=7 strcpy=48 strstr总调用=1162451 strstr命中=0
+[22:19:28]   [状态] sprintf=7 strcpy=48 strstr总调用=1199517 strstr命中=0
+[22:19:38]   [状态] sprintf=7 strcpy=48 strstr总调用=1237494 strstr命中=0
+[22:19:48]   [状态] sprintf=7 strcpy=48 strstr总调用=1279648 strstr命中=0
+[22:19:58]   [状态] sprintf=7 strcpy=48 strstr总调用=1318239 strstr命中=0
+[22:20:08]   [状态] sprintf=7 strcpy=48 strstr总调用=1359168 strstr命中=0
+[22:20:18]   [状态] sprintf=7 strcpy=48 strstr总调用=1399143 strstr命中=0
+[22:20:28]   [状态] sprintf=7 strcpy=48 strstr总调用=1441479 strstr命中=0
+[22:20:38]   [状态] sprintf=7 strcpy=48 strstr总调用=1478789 strstr命中=0
+[22:20:48]   [状态] sprintf=7 strcpy=48 strstr总调用=1521394 strstr命中=0
+[22:20:58]   [状态] sprintf=7 strcpy=48 strstr总调用=1564380 strstr命中=0
+[22:21:08]   [状态] sprintf=7 strcpy=48 strstr总调用=1602147 strstr命中=0
+[22:21:18]   [状态] sprintf=7 strcpy=48 strstr总调用=1644328 strstr命中=0
+[22:21:28]   [状态] sprintf=7 strcpy=48 strstr总调用=1684051 strstr命中=0
+[22:21:38]   [状态] sprintf=7 strcpy=48 strstr总调用=1726386 strstr命中=0
+[22:21:48]   [状态] sprintf=7 strcpy=48 strstr总调用=1767409 strstr命中=0
+[22:21:58]   [状态] sprintf=7 strcpy=48 strstr总调用=1806593 strstr命中=0
+[22:22:08]   [状态] sprintf=7 strcpy=48 strstr总调用=1842926 strstr命中=0
+[22:22:18]   [状态] sprintf=7 strcpy=48 strstr总调用=1883329 strstr命中=0
+[22:22:28]   [状态] sprintf=7 strcpy=48 strstr总调用=1921006 strstr命中=0
+[22:22:38]   [状态] sprintf=7 strcpy=48 strstr总调用=1960379 strstr命中=0
+[22:22:48]   [状态] sprintf=7 strcpy=48 strstr总调用=1999577 strstr命中=0
+[22:22:58]   [状态] sprintf=7 strcpy=48 strstr总调用=2037827 strstr命中=0
+[22:23:08]   [状态] sprintf=7 strcpy=48 strstr总调用=2077012 strstr命中=0
+[22:23:18]   [状态] sprintf=7 strcpy=48 strstr总调用=2115078 strstr命中=0
+[22:23:28]   [状态] sprintf=7 strcpy=48 strstr总调用=2154898 strstr命中=0
+[22:23:38]   [状态] sprintf=7 strcpy=48 strstr总调用=2189095 strstr命中=0
+[22:23:48]   [状态] sprintf=7 strcpy=48 strstr总调用=2224613 strstr命中=0
+[22:23:58]   [状态] sprintf=7 strcpy=48 strstr总调用=2260513 strstr命中=0
+[22:24:08]   [状态] sprintf=7 strcpy=48 strstr总调用=2298723 strstr命中=0
+[22:24:18]   [状态] sprintf=7 strcpy=48 strstr总调用=2339125 strstr命中=0
+[22:24:20]   [sprintf替换] #8 → i50125671.xml
+[22:24:20]   [strcpy替换] #49 (strcpy) pos=0
+[22:24:20]     → i50125671.bml
+[22:24:21]   [strcpy替换] #50 (strcpy) pos=0
+[22:24:21]     → i50125671_FN.smd
+[22:24:21]   [strcpy替换] #51 (strcpy) pos=0
+[22:24:21]     → i50125671_FN.smd
+[22:24:21]   [strcpy替换] #52 (strcpy) pos=0
+[22:24:21]     → i50125671_FN.smd
+[22:24:21]   [strcpy替换] #53 (strcpy) pos=0
+[22:24:21]     → i50125671_fn.smd
+[22:24:21]   [strcpy替换] #54 (strcpy) pos=0
+[22:24:21]     → i50125671.png
+[22:24:21]   [sprintf替换] #9 → i50125671.xml
+[22:24:21]   [strcpy替换] #55 (strcpy) pos=0
+[22:24:21]     → i50125671.bml
+[22:24:21]   [strcpy替换] #56 (strcpy) pos=0
+[22:24:21]     → i50125671_FN.smd
+[22:24:21]   [strcpy替换] #57 (strcpy) pos=0
+[22:24:21]     → i50125671_FN.smd
+[22:24:21]   [strcpy替换] #58 (strcpy) pos=0
+[22:24:21]     → i50125671_FN.smd
+[22:24:21]   [strcpy替换] #59 (strcpy) pos=0
+[22:24:21]     → i50125671_fn.smd
+[22:24:21]   [strcpy替换] #60 (strcpy) pos=0
+[22:24:21]     → i50125671.png
+[22:24:21]   [sprintf替换] #10 → i50125671.xml
+[22:24:21]   [strcpy替换] #61 (strcpy) pos=0
+[22:24:21]     → i50125671.bml
+[22:24:21]   [strcpy替换] #62 (strcpy) pos=0
+[22:24:21]     → i50125671_FN.smd
+[22:24:21]   [strcpy替换] #63 (strcpy) pos=0
+[22:24:21]     → i50125671_FN.smd
+[22:24:21]   [strcpy替换] #64 (strcpy) pos=0
+[22:24:21]     → i50125671_FN.smd
+[22:24:21]   [strcpy替换] #65 (strcpy) pos=0
+[22:24:21]     → i50125671_fn.smd
+[22:24:21]   [strcpy替换] #66 (strcpy) pos=0
+[22:24:21]     → i50125671.png
+[22:24:28]   [状态] sprintf=10 strcpy=66 strstr总调用=2352204 strstr命中=0
+[22:24:29]   [sprintf替换] #11 → i50125671.xml
+[22:24:29]   [strcpy替换] #67 (strcpy) pos=0
+[22:24:29]     → i50125671.bml
+[22:24:29]   [strcpy替换] #68 (strcpy) pos=0
+[22:24:29]     → i50125671_FN.smd
+[22:24:29]   [strcpy替换] #69 (strcpy) pos=0
+[22:24:29]     → i50125671_FN.smd
+[22:24:29]   [strcpy替换] #70 (strcpy) pos=0
+[22:24:29]     → i50125671_FN.smd
+[22:24:29]   [strcpy替换] #71 (strcpy) pos=0
+[22:24:29]     → i50125671_fn.smd
+[22:24:29]   [strcpy替换] #72 (strcpy) pos=0
+[22:24:29]     → i50125671.png
+[22:24:38]   [状态] sprintf=11 strcpy=72 strstr总调用=2366032 strstr命中=0
+[22:24:44]   [错误] strcpy LEAVE: Error: access violation accessing 0x28114000
+[22:24:48]   [状态] sprintf=11 strcpy=72 strstr总调用=2382604 strstr命中=0
+[22:24:58]   [状态] sprintf=11 strcpy=72 strstr总调用=2417092 strstr命中=0
+[22:25:08]   [状态] sprintf=11 strcpy=72 strstr总调用=2451571 strstr命中=0
+[22:25:18]   [状态] sprintf=11 strcpy=72 strstr总调用=2482765 strstr命中=0
+[22:25:28]   [状态] sprintf=11 strcpy=72 strstr总调用=2514710 strstr命中=0
+[22:25:38]   [状态] sprintf=11 strcpy=72 strstr总调用=2545694 strstr命中=0
+[22:25:48]   [状态] sprintf=11 strcpy=72 strstr总调用=2580399 strstr命中=0
+[22:25:58]   [状态] sprintf=11 strcpy=72 strstr总调用=2611309 strstr命中=0
+[22:26:08]   [状态] sprintf=11 strcpy=72 strstr总调用=2643681 strstr命中=0
+[22:26:18]   [状态] sprintf=11 strcpy=72 strstr总调用=2678474 strstr命中=0
+[22:26:28]   [状态] sprintf=11 strcpy=72 strstr总调用=2714424 strstr命中=0
+[22:26:38]   [状态] sprintf=11 strcpy=72 strstr总调用=2747560 strstr命中=0
+[22:26:48]   [状态] sprintf=11 strcpy=72 strstr总调用=2778026 strstr命中=0
+[22:26:58]   [状态] sprintf=11 strcpy=72 strstr总调用=2815337 strstr命中=0
+[22:27:08]   [状态] sprintf=11 strcpy=72 strstr总调用=2849833 strstr命中=0
+[22:27:18]   [状态] sprintf=11 strcpy=72 strstr总调用=2880199 strstr命中=0
+[22:27:28]   [状态] sprintf=11 strcpy=72 strstr总调用=2911424 strstr命中=0
+[22:27:38]   [状态] sprintf=11 strcpy=72 strstr总调用=2943869 strstr命中=0
+[22:27:48]   [状态] sprintf=11 strcpy=72 strstr总调用=2973849 strstr命中=0
+[22:27:58]   [状态] sprintf=11 strcpy=72 strstr总调用=3007259 strstr命中=0
+[22:28:08]   [状态] sprintf=11 strcpy=72 strstr总调用=3037903 strstr命中=0
+[22:28:18]   [状态] sprintf=11 strcpy=72 strstr总调用=3071381 strstr命中=0
+[22:28:28]   [状态] sprintf=11 strcpy=72 strstr总调用=3102442 strstr命中=0
+[22:28:38]   [状态] sprintf=11 strcpy=72 strstr总调用=3133570 strstr命中=0
+[22:28:48]   [状态] sprintf=11 strcpy=72 strstr总调用=3162260 strstr命中=0
+[22:28:58]   [状态] sprintf=11 strcpy=72 strstr总调用=3191153 strstr命中=0
+[22:29:08]   [状态] sprintf=11 strcpy=72 strstr总调用=3224071 strstr命中=0
+[22:29:18]   [状态] sprintf=11 strcpy=72 strstr总调用=3256858 strstr命中=0
+[22:29:28]   [状态] sprintf=11 strcpy=72 strstr总调用=3290254 strstr命中=0
+[22:29:38]   [状态] sprintf=11 strcpy=72 strstr总调用=3319676 strstr命中=0
+[22:29:48]   [状态] sprintf=11 strcpy=72 strstr总调用=3353641 strstr命中=0
+[22:29:58]   [状态] sprintf=11 strcpy=72 strstr总调用=3387901 strstr命中=0
+[22:30:08]   [状态] sprintf=11 strcpy=72 strstr总调用=3417032 strstr命中=0
+[22:30:18]   [状态] sprintf=11 strcpy=72 strstr总调用=3450418 strstr命中=0
+[22:30:28]   [状态] sprintf=11 strcpy=72 strstr总调用=3483009 strstr命中=0
+[22:30:38]   [状态] sprintf=11 strcpy=72 strstr总调用=3517140 strstr命中=0
+[22:30:48]   [状态] sprintf=11 strcpy=72 strstr总调用=3552936 strstr命中=0
+[22:30:51]   [sprintf替换] #12 → i50125671.xml
+[22:30:51]   [strcpy替换] #73 (strcpy) pos=0
+[22:30:51]     → i50125671.bml
+[22:30:51]   [strcpy替换] #74 (strcpy) pos=0
+[22:30:51]     → i50125671_FN.smd
+[22:30:51]   [strcpy替换] #75 (strcpy) pos=0
+[22:30:51]     → i50125671_FN.smd
+[22:30:51]   [strcpy替换] #76 (strcpy) pos=0
+[22:30:51]     → i50125671_FN.smd
+[22:30:51]   [strcpy替换] #77 (strcpy) pos=0
+[22:30:51]     → i50125671_fn.smd
+[22:30:51]   [strcpy替换] #78 (strcpy) pos=0
+[22:30:51]     → i50125671.png
+[22:30:51]   [sprintf替换] #13 → i50125671.xml
+[22:30:51]   [strcpy替换] #79 (strcpy) pos=0
+[22:30:51]     → i50125671.bml
+[22:30:51]   [strcpy替换] #80 (strcpy) pos=0
+[22:30:51]     → i50125671_FN.smd
+[22:30:51]   [strcpy替换] #81 (strcpy) pos=0
+[22:30:51]     → i50125671_FN.smd
+[22:30:51]   [strcpy替换] #82 (strcpy) pos=0
+[22:30:51]     → i50125671_FN.smd
+[22:30:51]   [strcpy替换] #83 (strcpy) pos=0
+[22:30:51]     → i50125671_fn.smd
+[22:30:51]   [strcpy替换] #84 (strcpy) pos=0
+[22:30:51]     → i50125671.png
+[22:30:52]   [sprintf替换] #14 → i50125671.xml
+[22:30:52]   [strcpy替换] #85 (strcpy) pos=0
+[22:30:52]     → i50125671.bml
+[22:30:52]   [strcpy替换] #86 (strcpy) pos=0
+[22:30:52]     → i50125671_FN.smd
+[22:30:52]   [strcpy替换] #87 (strcpy) pos=0
+[22:30:52]     → i50125671_FN.smd
+[22:30:52]   [strcpy替换] #88 (strcpy) pos=0
+[22:30:52]     → i50125671_FN.smd
+[22:30:52]   [strcpy替换] #89 (strcpy) pos=0
+[22:30:52]     → i50125671_fn.smd
+[22:30:52]   [strcpy替换] #90 (strcpy) pos=0
+[22:30:52]     → i50125671.png
+[22:30:55]   [sprintf替换] #15 → i50125671.xml
+[22:30:55]   [strcpy替换] #91 (strcpy) pos=0
+[22:30:55]     → i50125671.bml
+[22:30:55]   [strcpy替换] #92 (strcpy) pos=0
+[22:30:55]     → i50125671_FN.smd
+[22:30:55]   [strcpy替换] #93 (strcpy) pos=0
+[22:30:55]     → i50125671_FN.smd
+[22:30:55]   [strcpy替换] #94 (strcpy) pos=0
+[22:30:55]     → i50125671_FN.smd
+[22:30:55]   [strcpy替换] #95 (strcpy) pos=0
+[22:30:55]     → i50125671_fn.smd
+[22:30:55]   [strcpy替换] #96 (strcpy) pos=0
+[22:30:55]     → i50125671.png
+[22:30:58]   [状态] sprintf=15 strcpy=96 strstr总调用=3563481 strstr命中=0
+[22:31:08]   [状态] sprintf=15 strcpy=96 strstr总调用=3565740 strstr命中=0
+[22:31:18]   [状态] sprintf=15 strcpy=96 strstr总调用=3570580 strstr命中=0
+[22:31:28]   [状态] sprintf=15 strcpy=96 strstr总调用=3572781 strstr命中=0
+[22:31:38]   [状态] sprintf=15 strcpy=96 strstr总调用=3574985 strstr命中=0
+[22:31:48]   [状态] sprintf=15 strcpy=96 strstr总调用=3577185 strstr命中=0
+[22:31:58]   [状态] sprintf=15 strcpy=96 strstr总调用=3579365 strstr命中=0
+[22:32:08]   [状态] sprintf=15 strcpy=96 strstr总调用=3581540 strstr命中=0
+[22:32:18]   [状态] sprintf=15 strcpy=96 strstr总调用=3583721 strstr命中=0
+[22:32:28]   [状态] sprintf=15 strcpy=96 strstr总调用=3585917 strstr命中=0
+[22:32:38]   [状态] sprintf=15 strcpy=96 strstr总调用=3588110 strstr命中=0
+[22:32:48]   [状态] sprintf=15 strcpy=96 strstr总调用=3590297 strstr命中=0
+[22:32:58]   [状态] sprintf=15 strcpy=96 strstr总调用=3592482 strstr命中=0
+[22:33:08]   [状态] sprintf=15 strcpy=96 strstr总调用=3594667 strstr命中=0
+[22:33:18]   [状态] sprintf=15 strcpy=96 strstr总调用=3596866 strstr命中=0
+[22:33:28]   [状态] sprintf=15 strcpy=96 strstr总调用=3599082 strstr命中=0
+[22:33:38]   [状态] sprintf=15 strcpy=96 strstr总调用=3601288 strstr命中=0
+[22:33:48]   [状态] sprintf=15 strcpy=96 strstr总调用=3603504 strstr命中=0
+[22:33:58]   [状态] sprintf=15 strcpy=96 strstr总调用=3605697 strstr命中=0
+[22:34:08]   [状态] sprintf=15 strcpy=96 strstr总调用=3607876 strstr命中=0
+[22:34:18]   [状态] sprintf=15 strcpy=96 strstr总调用=3610067 strstr命中=0
+[22:34:28]   [状态] sprintf=15 strcpy=96 strstr总调用=3612263 strstr命中=0
+[22:34:38]   [状态] sprintf=15 strcpy=96 strstr总调用=3614454 strstr命中=0
+[22:34:48]   [状态] sprintf=15 strcpy=96 strstr总调用=3616651 strstr命中=0
+[22:34:53]   [sprintf替换] #16 → i50125671.xml
+[22:34:53]   [strcpy替换] #97 (strcpy) pos=0
+[22:34:53]     → i50125671.bml
+[22:34:53]   [strcpy替换] #98 (strcpy) pos=57
+[22:34:53]     → c801.smd
+[22:34:53]   [strcpy替换] #99 (strcpy) pos=57
+[22:34:53]     → c801.smd
+[22:34:53]   [strcpy替换] #100 (strcpy) pos=57
+[22:34:53]     → i51616261_F.smd
+[22:34:53]   [strcpy替换] #101 (strcpy) pos=169
+[22:34:53]     → i51616261.png
+[22:34:53]   [strcpy替换] #102 (strcpy) pos=0
+[22:34:53]     → i50125671_FN.smd
+[22:34:53]   [strcpy替换] #103 (strcpy) pos=0
+[22:34:53]     → i50125671_FN.smd
+[22:34:53]   [strcpy替换] #104 (strcpy) pos=0
+[22:34:53]     → i50125671_FN.smd
+[22:34:53]   [strcpy替换] #105 (strcpy) pos=0
+[22:34:53]     → i50125671_fn.smd
+[22:34:53]   [strcpy替换] #106 (strcpy) pos=0
+[22:34:53]     → i50125671.png
+[22:34:58]   [状态] sprintf=16 strcpy=106 strstr总调用=3620455 strstr命中=0
+[22:35:01]   [sprintf替换] #17 → i50125671.xml
+[22:35:01]   [strcpy替换] #107 (strcpy) pos=0
+[22:35:01]     → i50125671.bml
+[22:35:02]   [strcpy替换] #108 (strcpy) pos=0
+[22:35:02]     → i50125671_FN.smd
+[22:35:02]   [strcpy替换] #109 (strcpy) pos=0
+[22:35:02]     → i50125671_FN.smd
+[22:35:02]   [strcpy替换] #110 (strcpy) pos=0
+[22:35:02]     → i50125671_FN.smd
+[22:35:02]   [strcpy替换] #111 (strcpy) pos=0
+[22:35:02]     → i50125671_fn.smd
+[22:35:02]   [strcpy替换] #112 (strcpy) pos=0
+[22:35:02]     → i50125671.png
+[22:35:08]   [状态] sprintf=17 strcpy=112 strstr总调用=3624532 strstr命中=0
+[22:35:18]   [状态] sprintf=17 strcpy=112 strstr总调用=3626737 strstr命中=0
+[22:35:28]   [状态] sprintf=17 strcpy=112 strstr总调用=3628935 strstr命中=0
+[22:35:38]   [状态] sprintf=17 strcpy=112 strstr总调用=3631134 strstr命中=0
+[22:35:48]   [状态] sprintf=17 strcpy=112 strstr总调用=3633343 strstr命中=0
+[22:35:58]   [状态] sprintf=17 strcpy=112 strstr总调用=3635543 strstr命中=0
+[22:36:08]   [状态] sprintf=17 strcpy=112 strstr总调用=3637753 strstr命中=0
+[22:36:18]   [状态] sprintf=17 strcpy=112 strstr总调用=3639962 strstr命中=0
+[22:36:28]   [状态] sprintf=17 strcpy=112 strstr总调用=3642152 strstr命中=0
+[22:36:38]   [状态] sprintf=17 strcpy=112 strstr总调用=3644335 strstr命中=0
+[22:36:48]   [状态] sprintf=17 strcpy=112 strstr总调用=3646537 strstr命中=0
+[22:36:58]   [状态] sprintf=17 strcpy=112 strstr总调用=3648738 strstr命中=0
+[22:37:08]   [状态] sprintf=17 strcpy=112 strstr总调用=3650928 strstr命中=0
+[22:37:18]   [状态] sprintf=17 strcpy=112 strstr总调用=3653109 strstr命中=0
+[22:37:28]   [状态] sprintf=17 strcpy=112 strstr总调用=3655317 strstr命中=0
+[22:37:38]   [状态] sprintf=17 strcpy=112 strstr总调用=3657500 strstr命中=0
+[22:37:48]   [状态] sprintf=17 strcpy=112 strstr总调用=3659678 strstr命中=0
+[22:37:58]   [状态] sprintf=17 strcpy=112 strstr总调用=3661865 strstr命中=0
+[22:38:08]   [状态] sprintf=17 strcpy=112 strstr总调用=3664067 strstr命中=0
+[22:38:18]   [状态] sprintf=17 strcpy=112 strstr总调用=3666264 strstr命中=0
+[22:38:28]   [状态] sprintf=17 strcpy=112 strstr总调用=3668445 strstr命中=0
+[22:38:38]   [状态] sprintf=17 strcpy=112 strstr总调用=3670635 strstr命中=0
+[22:38:48]   [状态] sprintf=17 strcpy=112 strstr总调用=3672820 strstr命中=0
+[22:38:58]   [状态] sprintf=17 strcpy=112 strstr总调用=3675020 strstr命中=0
+[22:39:08]   [状态] sprintf=17 strcpy=112 strstr总调用=3677222 strstr命中=0
+[22:39:18]   [状态] sprintf=17 strcpy=112 strstr总调用=3679426 strstr命中=0
+[22:39:28]   [状态] sprintf=17 strcpy=112 strstr总调用=3681628 strstr命中=0
+[22:39:38]   [状态] sprintf=17 strcpy=112 strstr总调用=3686833 strstr命中=0
+[22:39:48]   [状态] sprintf=17 strcpy=112 strstr总调用=3691190 strstr命中=0
+[22:39:58]   [状态] sprintf=17 strcpy=112 strstr总调用=3693375 strstr命中=0
+[22:40:08]   [状态] sprintf=17 strcpy=112 strstr总调用=3695569 strstr命中=0
+[22:40:18]   [状态] sprintf=17 strcpy=112 strstr总调用=3697764 strstr命中=0
+[22:40:28]   [状态] sprintf=17 strcpy=112 strstr总调用=3699957 strstr命中=0
+[22:40:38]   [状态] sprintf=17 strcpy=112 strstr总调用=3702135 strstr命中=0
+[22:40:48]   [状态] sprintf=17 strcpy=112 strstr总调用=3704334 strstr命中=0
+[22:40:58]   [状态] sprintf=17 strcpy=112 strstr总调用=3706522 strstr命中=0
+[22:41:08]   [状态] sprintf=17 strcpy=112 strstr总调用=3708710 strstr命中=0
+[22:41:18]   [状态] sprintf=17 strcpy=112 strstr总调用=3710902 strstr命中=0
+[22:41:28]   [状态] sprintf=17 strcpy=112 strstr总调用=3713086 strstr命中=0

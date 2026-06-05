@@ -1,0 +1,249 @@
+[20:54:51] === 统一路径拦截器 v2 === PID:6972 ===
+[20:54:51] 替换: 50125461(美丽梦想发型) → 50125711(紫色超赛发型)
+[20:54:51] 等长: 8位 → 8位 ✓
+[20:54:51] 钩子: sprintf + strcpy + lstrcpyA (全部DLL函数)
+[20:54:51] 验证: strstr 观察 (不改)
+[20:54:51] 安全: 零.text hook | NULL guard | Apollo交给外部
+[20:54:51] 日志: D:\py\反编译\FreeStyle\apollo_dump\path_intercept_20260604_205451.txt
+[20:54:51]   [步骤] JS开始执行
+[20:54:51]   [步骤] sprintf=0x61bd6051
+[20:54:51]   [步骤] strcpy=0x61b72700 (MSVCR100.dll)
+[20:54:51]   [步骤] lstrcpyA=0x76728420 (KERNEL32.DLL)
+[20:54:51]   ★ v2 就绪: 50125461 → 50125711 | 仅DLL hook: sprintf+strcpy+lstrcpyA+strstr | 零.text | NULL guard
+[20:54:51] 
+[20:54:51] 后台常驻。进练习场测试。
+[20:54:51] 
+[20:55:01]   [状态] sprintf=0 strcpy=0 strstr命中=0
+[20:55:11]   [状态] sprintf=0 strcpy=0 strstr命中=0
+[20:55:12]   [sprintf替换] #1 → i50125711.xml
+[20:55:18]   [sprintf替换] #2 → i50125711.xml
+[20:55:21]   [状态] sprintf=2 strcpy=0 strstr命中=0
+[20:55:31]   [状态] sprintf=2 strcpy=0 strstr命中=0
+[20:55:41]   [状态] sprintf=2 strcpy=0 strstr命中=0
+[20:55:42]   [sprintf替换] #3 → i50125711.xml
+[20:55:45]   [sprintf替换] #4 → i50125711.xml
+[20:55:51]   [状态] sprintf=4 strcpy=0 strstr命中=0
+[20:55:59]   [sprintf替换] #5 → i50125711.xml
+[20:55:59]   [sprintf替换] #6 → i50125711.xml
+[20:56:01]   [状态] sprintf=6 strcpy=0 strstr命中=0
+[20:56:09]   [sprintf替换] #7 → i50125711.xml
+[20:56:11]   [状态] sprintf=7 strcpy=0 strstr命中=0
+[20:56:19]   [sprintf替换] #8 → i50125711.xml
+[20:56:19]   [sprintf替换] #9 → i50125711.xml
+[20:56:19]   [sprintf替换] #10 → i50125711.xml
+[20:56:21]   [状态] sprintf=10 strcpy=0 strstr命中=0
+[20:56:30]   [strcpy替换] #1 (strcpy) pos=15
+[20:56:30]     → customize\item\i50125711.xml
+[20:56:31]   [状态] sprintf=10 strcpy=1 strstr命中=0
+[20:56:41]   [状态] sprintf=10 strcpy=1 strstr命中=0
+[20:56:51]   [状态] sprintf=10 strcpy=1 strstr命中=0
+[20:57:01]   [状态] sprintf=10 strcpy=1 strstr命中=0
+[20:57:11]   [状态] sprintf=10 strcpy=1 strstr命中=0
+[20:57:21]   [状态] sprintf=10 strcpy=1 strstr命中=0
+[20:57:31]   [状态] sprintf=10 strcpy=1 strstr命中=0
+[20:57:41]   [状态] sprintf=10 strcpy=1 strstr命中=0
+[20:57:41]   [sprintf替换] #11 → i50125711.xml
+[20:57:46]   [sprintf替换] #12 → i50125711.xml
+[20:57:51]   [状态] sprintf=12 strcpy=1 strstr命中=0
+[20:58:01]   [状态] sprintf=12 strcpy=1 strstr命中=0
+[20:58:11]   [状态] sprintf=12 strcpy=1 strstr命中=0
+[20:58:21]   [状态] sprintf=12 strcpy=1 strstr命中=0
+[20:58:31]   [sprintf替换] #13 → i50125711.xml
+[20:58:31]   [状态] sprintf=13 strcpy=1 strstr命中=0
+[20:58:36]   [sprintf替换] #14 → i50125711.xml
+[20:58:41]   [状态] sprintf=14 strcpy=1 strstr命中=0
+[20:58:47]   [sprintf替换] #15 → i50125711.xml
+[20:58:47]   [sprintf替换] #16 → i50125711.xml
+[20:58:47]   [sprintf替换] #17 → i50125711.xml
+[20:58:51]   [状态] sprintf=17 strcpy=1 strstr命中=0
+[20:59:01]   [状态] sprintf=17 strcpy=1 strstr命中=0
+[20:59:11]   [状态] sprintf=17 strcpy=1 strstr命中=0
+[20:59:19]   [sprintf替换] #18 → i50125711.xml
+[20:59:20]   [sprintf替换] #19 → i50125711.xml
+[20:59:20]   [sprintf替换] #20 → i50125711.xml
+[20:59:20]   [sprintf替换] #21 → i50125711.xml
+[20:59:21]   [状态] sprintf=21 strcpy=1 strstr命中=0
+[20:59:21]   [sprintf替换] #22 → i50125711.xml
+[20:59:21]   [sprintf替换] #23 → i50125711.xml
+[20:59:22]   [sprintf替换] #24 → i50125711.xml
+[20:59:27]   [sprintf替换] #25 → i50125711.xml
+[20:59:31]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[20:59:41]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[20:59:51]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:00:01]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:00:11]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:00:21]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:00:31]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:00:41]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:00:51]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:01:01]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:01:11]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:01:21]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:01:31]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:01:41]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:01:51]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:02:01]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:02:11]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:02:21]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:02:31]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:02:41]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:02:51]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:03:01]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:03:11]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:03:21]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:03:31]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:03:41]   [状态] sprintf=25 strcpy=1 strstr命中=0
+[21:03:47]   [sprintf替换] #26 → i50125711.xml
+[21:03:51]   [状态] sprintf=26 strcpy=1 strstr命中=0
+[21:03:52]   [sprintf替换] #27 → i50125711.xml
+[21:03:59]   [sprintf替换] #28 → i50125711.xml
+[21:04:01]   [状态] sprintf=28 strcpy=1 strstr命中=0
+[21:04:02]   [sprintf替换] #29 → i50125711.xml
+[21:04:03]   [sprintf替换] #30 → i50125711.xml
+[21:04:04]   [sprintf替换] #31 → i50125711.xml
+[21:04:06]   [sprintf替换] #32 → i50125711.xml
+[21:04:08]   [sprintf替换] #33 → i50125711.xml
+[21:04:10]   [sprintf替换] #34 → i50125711.xml
+[21:04:11]   [sprintf替换] #35 → i50125711.xml
+[21:04:11]   [状态] sprintf=35 strcpy=1 strstr命中=0
+[21:04:13]   [sprintf替换] #36 → i50125711.xml
+[21:04:15]   [sprintf替换] #37 → i50125711.xml
+[21:04:15]   [sprintf替换] #38 → i50125711.xml
+[21:04:17]   [sprintf替换] #39 → i50125711.xml
+[21:04:18]   [sprintf替换] #40 → i50125711.xml
+[21:04:21]   [状态] sprintf=40 strcpy=1 strstr命中=0
+[21:04:24]   [sprintf替换] #41 → i50125711.xml
+[21:04:31]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:04:41]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:04:51]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:05:01]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:05:11]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:05:21]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:05:31]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:05:41]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:05:51]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:06:01]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:06:11]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:06:21]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:06:31]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:06:41]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:06:51]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:07:01]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:07:11]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:07:21]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:07:31]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:07:41]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:07:51]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:08:01]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:08:11]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:08:21]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:08:31]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:08:41]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:08:51]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:09:01]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:09:11]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:09:21]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:09:31]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:09:41]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:09:51]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:10:01]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:10:11]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:10:21]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:10:31]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:10:41]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:10:51]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:11:01]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:11:11]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:11:21]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:11:31]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:11:41]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:11:51]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:12:01]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:12:11]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:12:21]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:12:31]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:12:41]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:12:51]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:13:01]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:13:11]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:13:21]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:13:30]   [错误] strcpy LEAVE: Error: access violation accessing 0x5ac07000
+[21:13:30]   [错误] strcpy LEAVE: Error: access violation accessing 0x5ac07000
+[21:13:30]   [错误] strcpy LEAVE: Error: access violation accessing 0x5ac07000
+[21:13:31]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:13:41]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:13:51]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:14:01]   [状态] sprintf=41 strcpy=1 strstr命中=0
+[21:14:08]   [strcpy替换] #2 (strcpy) pos=0
+[21:14:08]     → i50125711.bml
+[21:14:08]   [strcpy替换] #3 (strcpy) pos=0
+[21:14:08]     → i50125711_FN.smd
+[21:14:08]   [strcpy替换] #4 (strcpy) pos=0
+[21:14:08]     → i50125711_FN.smd
+[21:14:08]   [strcpy替换] #5 (strcpy) pos=0
+[21:14:08]     → i50125711_FN.smd
+[21:14:08]   [strcpy替换] #6 (strcpy) pos=0
+[21:14:08]     → i50125711_fn.smd
+[21:14:08]   [strcpy替换] #7 (strcpy) pos=0
+[21:14:08]     → i50125711_f.png
+[21:14:08]   [strcpy替换] #8 (strcpy) pos=0
+[21:14:08]     → i50125711.bml
+[21:14:08]   [strcpy替换] #9 (strcpy) pos=0
+[21:14:08]     → i50125711_FN.smd
+[21:14:08]   [strcpy替换] #10 (strcpy) pos=0
+[21:14:08]     → i50125711_FN.smd
+[21:14:08]   [strcpy替换] #11 (strcpy) pos=0
+[21:14:08]     → i50125711_FN.smd
+[21:14:08]   [strcpy替换] #12 (strcpy) pos=0
+[21:14:08]     → i50125711_fn.smd
+[21:14:11]   [状态] sprintf=41 strcpy=12 strstr命中=0
+[21:14:21]   [状态] sprintf=41 strcpy=12 strstr命中=0
+[21:14:31]   [状态] sprintf=41 strcpy=12 strstr命中=0
+[21:14:35]   [错误] strcpy LEAVE: Error: access violation accessing 0x8b05e000
+[21:14:36]   [strcpy替换] #13 (strcpy) pos=15
+[21:14:36]     → customize\item\i50125711.xml
+[21:14:36]   [strcpy替换] #14 (strcpy) pos=15
+[21:14:36]     → customize\item\i50125711.xml
+[21:14:41]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:14:51]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:15:01]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:15:11]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:15:21]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:15:31]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:15:41]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:15:51]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:16:01]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:16:11]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:16:21]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:16:31]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:16:41]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:16:51]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:17:01]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:17:11]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:17:21]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:17:31]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:17:41]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:17:51]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:18:01]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:18:11]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:18:21]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:18:31]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:18:41]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:18:51]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:19:01]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:19:11]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:19:21]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:19:31]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:19:41]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:19:51]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:20:01]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:20:11]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:20:21]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:20:31]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:20:41]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:20:51]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:21:01]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:21:11]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:21:21]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:21:31]   [状态] sprintf=41 strcpy=14 strstr命中=0
+[21:21:41]   [状态] sprintf=41 strcpy=14 strstr命中=0

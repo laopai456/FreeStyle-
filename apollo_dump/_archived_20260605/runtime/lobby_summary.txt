@@ -1,0 +1,22 @@
+APOLLO Lobby State Dump
+Date: 2026-05-17 20:35:13
+PID: 29876
+ApolloCT: 0x06580000
+FreeStyle: 0x00400000
+WS2_32: 0x77530000
+D3D9: 0x650C0000
+Apollo modules: 1
+  ApolloCT.Dll: 0x06580000 (6880KB)
+
+WS2_32 Functions:
+  send = 0x775467F0
+  recv = 0x77545F50
+  WSASend = 0x775402B0
+  WSARecv = 0x77540C60
+  connect = 0x77546980
+
+D3D9 Functions:
+  Present = not found
+  EndScene = not found
+  Reset = not found
+  DrawIndexedPrimitive = not found

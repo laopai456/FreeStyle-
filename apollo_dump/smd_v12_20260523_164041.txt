@@ -1,6 +1,0 @@
-Log: D:\py\反编译\FreeStyle\apollo_dump\smd_v12_20260523_164041.txt
-Attaching PID 11380...
-  [JS ERROR] TypeError: not a function
-Detaching...
-
-!!! PROCESS EXIT: reason=application-requested, crash=None !!!

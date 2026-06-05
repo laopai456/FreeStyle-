@@ -1,0 +1,21 @@
+[19:19:21] === 统一路径拦截器 v1 === PID:14208 ===
+[19:19:21] 替换: 50125461(美丽梦想发型) → 50125711(紫色超赛发型)
+[19:19:21] 等长: 8位 → 8位 ✓
+[19:19:21] 钩子: sprintf(房间) + strcpy/lstrcpyA(练习场)
+[19:19:21] 验证: strstr → 必须 res767/i50125711_FN.smd
+[19:19:21] 前置: sc.exe stop ApolloProtect
+[19:19:21] 日志: D:\py\反编译\FreeStyle\apollo_dump\path_intercept_20260604_191921.txt
+[19:19:22]   [步骤] JS开始执行
+[19:19:22]   [步骤] sprintf=0x5f9e6051
+[19:19:22]   [步骤] strcpy=0x5f982700 (MSVCR100.dll)
+[19:19:22]   [步骤] lstrcpyA=0x76728420 (KERNEL32.DLL)
+[19:19:22]   ★ 统一路径拦截器就绪: 50125461 → 50125711 | sprintf(房间) + strcpy/lstrcpyA(练习场) | strstr验证
+[19:19:22] 
+[19:19:22] 测试方法:
+[19:19:22]   1. 房间: 进房间看发型是否变化
+[19:19:22]   2. 练习场: 进练习场, 观察:
+[19:19:22]      - strcpy_patch 出现 → 路径被拦截
+[19:19:22]      - strstr_verify = SUCCESS → dst被下游消费 ✅
+[19:19:22]      - strstr_verify = FAIL → 需挖上游builder
+[19:19:22] 命令: status | quit
+[19:19:22] 

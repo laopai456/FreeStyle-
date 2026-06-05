@@ -1,0 +1,57 @@
+[21:22:08] === 统一路径拦截器 v2 === PID:3752 ===
+[21:22:08] 替换: 50125461(美丽梦想发型) → 50125711(紫色超赛发型)
+[21:22:08] 等长: 8位 → 8位 ✓
+[21:22:08] 钩子: sprintf + strcpy + lstrcpyA (全部DLL函数)
+[21:22:08] 验证: strstr 观察 (不改)
+[21:22:08] 安全: 零.text hook | NULL guard | Apollo交给外部
+[21:22:08] 日志: D:\py\反编译\FreeStyle\apollo_dump\path_intercept_20260604_212208.txt
+[21:22:09]   [步骤] JS开始执行
+[21:22:09]   [步骤] sprintf=0x62076051
+[21:22:09]   [步骤] strcpy=0x62012700 (MSVCR100.dll)
+[21:22:09]   [步骤] lstrcpyA=0x76728420 (KERNEL32.DLL)
+[21:22:09]   ★ v2 就绪: 50125461 → 50125711 | 仅DLL hook: sprintf+strcpy+lstrcpyA+strstr | 零.text | NULL guard
+[21:22:09] 
+[21:22:09] 后台常驻。进练习场测试。
+[21:22:09] 
+[21:22:19]   [状态] sprintf=0 strcpy=0 strstr命中=0
+[21:22:29]   [状态] sprintf=0 strcpy=0 strstr命中=0
+[21:22:39]   [状态] sprintf=0 strcpy=0 strstr命中=0
+[21:22:49]   [状态] sprintf=0 strcpy=0 strstr命中=0
+[21:22:50]   [sprintf替换] #1 → i50125711.xml
+[21:22:58]   [sprintf替换] #2 → i50125711.xml
+[21:22:59]   [状态] sprintf=2 strcpy=0 strstr命中=0
+[21:23:06]   [sprintf替换] #3 → i50125711.xml
+[21:23:06]   [sprintf替换] #4 → i50125711.xml
+[21:23:06]   [sprintf替换] #5 → i50125711.xml
+[21:23:09]   [状态] sprintf=5 strcpy=0 strstr命中=0
+[21:23:19]   [状态] sprintf=5 strcpy=0 strstr命中=0
+[21:23:20]   [strcpy替换] #1 (strcpy) pos=15
+[21:23:20]     → customize\item\i50125711.xml
+[21:23:29]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:23:39]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:23:49]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:23:59]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:24:09]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:24:19]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:24:29]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:24:39]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:24:49]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:24:59]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:25:09]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:25:19]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:25:29]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:25:39]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:25:49]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:25:59]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:26:09]   [状态] sprintf=5 strcpy=1 strstr命中=0
+[21:26:09]   [sprintf替换] #6 → i50125711.xml
+[21:26:19]   [状态] sprintf=6 strcpy=1 strstr命中=0
+[21:26:29]   [状态] sprintf=6 strcpy=1 strstr命中=0
+[21:26:39]   [状态] sprintf=6 strcpy=1 strstr命中=0
+[21:26:49]   [状态] sprintf=6 strcpy=1 strstr命中=0
+[21:26:59]   [状态] sprintf=6 strcpy=1 strstr命中=0
+[21:27:09]   [状态] sprintf=6 strcpy=1 strstr命中=0
+[21:27:19]   [状态] sprintf=6 strcpy=1 strstr命中=0
+[21:27:29]   [状态] sprintf=6 strcpy=1 strstr命中=0
+[21:27:39]   [状态] sprintf=6 strcpy=1 strstr命中=0
+[21:27:49]   [状态] sprintf=6 strcpy=1 strstr命中=0
