@@ -1,0 +1,22 @@
+[00:24:13.797] === engine start ===
+[00:24:13.797] Python: C:\Users\w\AppData\Local\Programs\Python\Python312\python.exe
+[00:24:13.797] CWD: D:\py\反编译\FreeStyle\2.0\engine
+[00:24:13.848] frida: 17.9.10 from C:\Users\w\AppData\Local\Programs\Python\Python312\Lib\site-packages\frida\__init__.py
+[01:17:58.126] === engine start ===
+[01:17:58.126] Python: C:\Users\w\AppData\Local\Programs\Python\Python312\python.exe
+[01:17:58.126] CWD: D:\py\反编译\FreeStyle\2.0\engine
+[01:17:58.187] frida: 17.9.10 from C:\Users\w\AppData\Local\Programs\Python\Python312\Lib\site-packages\frida\__init__.py
+[13:29:35.871] === engine start ===
+[13:29:35.871] Python: C:\Users\w\AppData\Local\Programs\Python\Python312\python.exe
+[13:29:35.872] CWD: D:\py\反编译\FreeStyle\2.0\engine
+[13:29:35.929] frida: 17.9.10 from C:\Users\w\AppData\Local\Programs\Python\Python312\Lib\site-packages\frida\__init__.py
+[13:30:44.909] === engine start ===
+[13:30:44.909] Python: C:\Users\w\AppData\Local\Programs\Python\Python312\python.exe
+[13:30:44.909] CWD: D:\py\反编译\FreeStyle\2.0\engine
+[13:30:44.956] frida: 17.9.10 from C:\Users\w\AppData\Local\Programs\Python\Python312\Lib\site-packages\frida\__init__.py
+[12:09:08.147] === engine start ===
+[12:09:08.147] Python: C:\Users\w\AppData\Local\Programs\Python\Python312\python.exe
+[12:09:08.148] CWD: D:\py\反编译\FreeStyle\2.0\engine
+[12:09:08.218] frida: 17.9.10 from C:\Users\w\AppData\Local\Programs\Python\Python312\Lib\site-packages\frida\__init__.py
+[12:09:08.223] [INIT] ccode_map loaded: 64 entries
+[12:09:08.228] FS v2.0 engine listening on 127.0.0.1:18731

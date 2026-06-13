@@ -35,3 +35,6 @@ videos/
 .DS_Store
 Thumbs.db
 config.ini
+# 诊断/调试产生的临时文件
+tmp/
+apollo_dump/effect_*.txt

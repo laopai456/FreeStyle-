@@ -1,0 +1,12 @@
+[
+  {"id": 0, "key": "hair",    "name": "发型",   "prefix": "i501", "hidden": false},
+  {"id": 1, "key": "top",     "name": "上衣",   "prefix": "i502,i504", "hidden": false},
+  {"id": 2, "key": "bottom",  "name": "下衣",   "prefix": "i503,i505", "hidden": false},
+  {"id": 3, "key": "shoes",   "name": "鞋子",   "prefix": "i506", "hidden": false},
+  {"id": 4, "key": "acc1",    "name": "饰品1",  "prefix": "", "hidden": false},
+  {"id": 5, "key": "acc2",    "name": "饰品2",  "prefix": "", "hidden": false},
+  {"id": 6, "key": "acc3",    "name": "饰品3",  "prefix": "", "hidden": false},
+  {"id": 7, "key": "acc4",    "name": "饰品4",  "prefix": "", "hidden": false},
+  {"id": 8, "key": "acc5",    "name": "饰品5",  "prefix": "", "hidden": false},
+  {"id": 9, "key": "acc6",    "name": "饰品6",  "prefix": "", "hidden": false}
+]
